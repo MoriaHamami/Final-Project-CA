@@ -5,6 +5,7 @@ import { BtnCmp } from './btn-cmp.jsx'
 import { WapHeader } from './wap-header-cmp.jsx'
 
 import { useEffect, useState } from 'react'
+import { CardCmp } from './card-cmp.jsx'
 
 
 export const DynamicCmp = (props) => {
@@ -36,6 +37,12 @@ export const DynamicCmp = (props) => {
     case 'btn':
       return (
         <BtnCmp
+          cmp={cmp}
+        />
+      )
+    case 'card':
+      return (
+        <CardCmp
           cmp={cmp}
         />
       )
