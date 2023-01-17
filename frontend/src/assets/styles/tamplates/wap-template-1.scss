@@ -121,4 +121,18 @@
       }
   
     }
-  }
+
+}
+.wap-section-1{
+    color: white;
+    display: flex;
+    justify-items: center;
+    .card{
+        position: relative;
+        img{
+            max-height: 200px;
+        }
+
+    }
+
+}
