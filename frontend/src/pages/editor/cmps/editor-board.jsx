@@ -1,5 +1,6 @@
 
 import { useSelector, useDispatch } from 'react-redux'
+import { DynamicCmp } from './dynamic-cmp/dynamic-cmp.jsx'
 
 export function EditorBoard() {
 
@@ -8,7 +9,9 @@ export function EditorBoard() {
 
     return (
         <div>
-            <h2>{wap.cmps[0].info.title}</h2>
+            {wap.cmps.map((cmp, idx) => {
+                return <DynamicCmp cmp={cmp}/>
+            })}
         </div>
     )
 }
