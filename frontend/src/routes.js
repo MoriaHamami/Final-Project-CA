@@ -1,11 +1,8 @@
 import { HomePage } from './pages/home-page.jsx'
-import { AboutUs } from './pages/about-us.jsx'
-import { CarIndex } from './pages/car-index.jsx'
-import { ReviewIndex } from './pages/review-index.jsx'
-import { ChatApp } from './pages/chat-app.jsx'
-import { AdminApp } from './pages/admin-app.jsx'
+import { LoginSignup } from './pages/login-signup.jsx'
+import { Tamplates } from './pages/templates/templates-page.jsx'
+import { Editor } from './pages/editor/editor-page.jsx'
 
-// Routes accesible from the main navigation (in AppHeader)
 const routes = [
     {
         path: '/',
@@ -17,13 +14,16 @@ const routes = [
         component: <Tamplates />,
         label: 'tamplates',
     },
-   
     {
-        path: 'admin',
-        component: <AdminApp />,
-        label: 'Admin Only'
+        path: '/editor',
+        component: <Editor />,
+        label: 'editor',
+    },
+    {
+        path: '/user',
+        component: <LoginSignup />,
+        label: 'login',
     }
-   
 ]
 
 export default routes

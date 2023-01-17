@@ -1,53 +1,46 @@
 .app-header {
     background-color: $clr4;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
 
 
-    .user-info {
-        // background-color: $clr2;
-        // padding: 2px 8px;
-        padding-left: 100px;
-        color: $clr1;
+    .header-profile-container {
 
-        .score {
-            background-color: $clr2;
-            color: $clr6;
-            padding: 8px;
-            margin: 10px;
-            border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: space-around;
+
+        .profile-img {
+            padding-top: 10px;
+            font-size: 2rem;
+            // padding: 1.3rem 0;
+            align-self: center;
+            justify-self: center;
         }
 
-        img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
+        .username-header {
+            @media (max-width: 520px) {
+                display: none;
+            }
         }
-    }
-
-    .user-info .btn-link {
-        color: $clr2;
     }
 
     nav {
-        font-size: .8em;
-        background-color: $clr5;
-        padding: 5px;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
 
-    }
-
-    nav a:first-child {
-        margin-right: 30px;
-    }
-
-    nav a:not(:first-child) {
-        border-top: 1px solid $clr1;
-        padding: 0 5px;
-        margin: 10px;
     }
 
     nav .active {
         color: $clr1;
+    }
+
+    .logo{
+        margin: 0;
     }
 
 }
