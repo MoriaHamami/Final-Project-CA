@@ -2,6 +2,7 @@
 import { ContainerCmp } from './container-cmp.jsx'
 import { TxtCmp } from './txt-cmp.jsx'
 import { BtnCmp } from './btn-cmp.jsx'
+import { WapHeader } from './wap-header-cmp.jsx'
 
 import { useEffect, useState } from 'react'
 
@@ -15,6 +16,13 @@ export const DynamicCmp = (props) => {
     case 'container':
       return (
         <ContainerCmp
+          {...props}
+          style={cmp.style}
+        />
+      )
+      case 'wap-header':
+      return (
+        <WapHeader
           {...props}
           style={cmp.style}
         />
