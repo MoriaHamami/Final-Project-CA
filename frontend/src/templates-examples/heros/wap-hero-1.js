@@ -1,6 +1,6 @@
 import {utilService} from '../../services/util.service.js'
 
-export const heroWap1 = {
+export const WapHero1 = {
   name: 'wap-hero-1',
   id: utilService.makeId(),
   type: 'container',
