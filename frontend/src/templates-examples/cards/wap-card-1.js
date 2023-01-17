@@ -1,32 +1,10 @@
 import { utilService } from '../../services/util.service.js'
 
-// export const wapCards1 = {
-//     id: "wc04",
-//     type: "wap-card",
-//     name: "wap-card-1",
-//     info: {
-//         logo: "MarioPizza",
-//         txt: 'Latest Projects', 
-//     },
-//     theme: "theme-header-happy",
-//     style: {
-//         background: "url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673983504/wap-header-1_qd5dap.png')",
-//         font: "Fontush",
-//         color: "red",
-//         height: "200px",
-//     }
-// }
-
 export const wapCards1 = {
     id: "wc00",
     type: "container",
     name: "wap-card-1",
-    // type: 'container',
-    // name: 'wap-cards-1',
-    // themePalette: 'primary',
-    // category: 'cards',
     theme: "theme-header-happy",
-    // id: utilService.makeId(),
     thumbnail: 'https://i.postimg.cc/7h0qq8v4/wap-cards-1.png',
     style: {},
     cmps: [
