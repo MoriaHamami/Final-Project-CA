@@ -3,7 +3,7 @@ import { wapCards1 } from './cards/wap-card-1'
 import { wapFooter1 } from './footers/wap-footer-1'
 import { WapHeader1 } from './headers/wap-header-1'
 import { WapHero1 } from './heros/wap-hero-1'
-import { wapSection1 } from './sections/wap-section-1'
+import { WapSection1 } from './sections/wap-section-1'
 
 
 export const wapTemplate1 = {
@@ -15,7 +15,7 @@ export const wapTemplate1 = {
 		WapHeader1,
 		WapHero1,
 		wapCards1,
-		// wapSection1,
+		WapSection1,
 		wapFooter1
 		// {
 		// 	id: "wc04",
