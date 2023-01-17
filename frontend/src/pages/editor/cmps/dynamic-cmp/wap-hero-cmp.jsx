@@ -13,9 +13,9 @@ export function WapHero({ style, cmp, onHoverCmp, onSelectCmp, selectedCmp, disp
   return (
     <div className={cmp.name}>
         <div>
-            <p>{cmp.info.title}</p>
-            <h2>{cmp.info.subtitle}</h2>
-            <p>{cmp.info.txt}</p>
+            <p className='title'>{cmp.info.title}</p>
+            <h2 className='subtitle'>{cmp.info.subtitle}</h2>
+            <p className='txt'>{cmp.info.txt}</p>
         </div>
         <nav>
 

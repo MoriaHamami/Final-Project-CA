@@ -5,6 +5,12 @@
     padding: 1rem 5.5rem;
     align-items: center;
     color: white;
+
+    .logo{
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+    }
     
     p{
         margin: 0;
@@ -18,26 +24,26 @@
     .nav-bar {
       display: flex;
       gap: 1rem;
-      .hamburger {
-        display: none;
-        height: 50px;
-        width: 50px;
-      }
-  
-      &.mobile-layout,
-      &.tablet-layout {
-        & > p {
-          display: none;
-        }
-  
-        .hamburger {
-          display: block;
-        }
+
+      a{
+        color: white;
       }
       
     }
   }
 
+
+//   <div className={cmp.name}>
+//   <div>
+//       <p>{cmp.info.title}</p>
+//       <h2>{cmp.info.subtitle}</h2>
+//       <p>{cmp.info.txt}</p>
+//   </div>
+//   <nav>
+
+//    <button href={cmp.info.btn.link}>{cmp.info.btn.label}</button>
+// </nav>
+// </div>
 
   .wap-hero-1 {
     background-color: #a1a1a1;
@@ -51,10 +57,20 @@
     text-align: center;
     padding: 2.5rem 5.5rem;
     flex-direction: column;
+    color: black;
   
-    &.mobile-layout,
-    &.tablet-layout {
-      padding: 2.5rem 0.5rem;
+    .title{
+        font-weight: 600;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .subtitle{
+        font-size: 3.5em;
+    }
+
+    .txt{
+        font-size: 1.3rem;
     }
   
     img {
