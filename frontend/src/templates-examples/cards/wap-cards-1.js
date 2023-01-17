@@ -20,7 +20,7 @@ import { utilService } from '../../services/util.service.js'
 export const wapCards1 = {
     id: "wc00",
     type: "container",
-    name: "wap-card-1",
+    name: "wap-cards-1",
     // type: 'container',
     // name: 'wap-cards-1',
     // themePalette: 'primary',

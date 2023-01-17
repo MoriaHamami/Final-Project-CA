@@ -1,5 +1,5 @@
 
-import { wapCards1 } from './cards/wap-card-1'
+import { wapCards1 } from './cards/wap-cards-1'
 import { wapFooter1 } from './footers/wap-footer-1'
 import { WapHeader1 } from './headers/wap-header-1'
 import { WapHero1 } from './heros/wap-hero-1'
