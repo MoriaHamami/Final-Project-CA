@@ -8,7 +8,7 @@ export function HomePage() {
     return (
         <section>
             <h2>this is home page</h2>
-            <Link to="/tamplates">
+            <Link to="/templates">
                     <button>Get Started</button>
                 </Link>
         </section >

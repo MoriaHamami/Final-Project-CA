@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { loadTemplate } from '../../store/wap.actions.js'
 import { wapTemplate1 } from '../../templates-examples/wap-template-1'
 
-export function Tamplates() {
+export function Templates() {
     const dispatch = useDispatch()
 
     function onSelectTemplate(id) {
@@ -13,7 +13,7 @@ export function Tamplates() {
 
     return (
         <div>
-            <h2>Tamplates Page!</h2>
+            <h2>Templates Page!</h2>
             <div>
                 <h2>this is template card</h2>
                 <Link to="/editor">

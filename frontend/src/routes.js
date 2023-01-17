@@ -1,6 +1,6 @@
 import { HomePage } from './pages/home-page.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
-import { Tamplates } from './pages/templates/templates-page.jsx'
+import { Templates } from './pages/templates/templates-page.jsx'
 import { Editor } from './pages/editor/editor-page.jsx'
 
 const routes = [
@@ -10,9 +10,9 @@ const routes = [
         label: 'Home 🏠',
     },
     {
-        path: '/tamplates',
-        component: <Tamplates />,
-        label: 'tamplates',
+        path: '/templates',
+        component: <Templates />,
+        label: 'templates',
     },
     {
         path: '/editor',
