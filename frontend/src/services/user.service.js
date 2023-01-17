@@ -13,7 +13,8 @@ export const userService = {
     getById,
     remove,
     update,
-    changeScore
+    // changeScore,
+    getEmptyCredentials
 }
 
 window.userService = userService
@@ -50,7 +51,7 @@ async function update({_id, score}) {
 
 async function login(userCred) {
     const users = await storageService.query('user')
-    const user = users.find(user => user.username === userCred.username)
+    const user = users.find(user => user.username === userCred.username && user.password === userCred.password)
     // const user = await httpService.post('auth/login', userCred)
     if (user) {
         // socketService.login(user._id)
@@ -71,13 +72,13 @@ async function logout() {
     // return await httpService.post('auth/logout')
 }
 
-async function changeScore(by) {
-    const user = getLoggedinUser()
-    if (!user) throw new Error('Not loggedin')
-    user.score = user.score + by || by
-    await update(user)
-    return user.score
-}
+// async function changeScore(by) {
+//     const user = getLoggedinUser()
+//     if (!user) throw new Error('Not loggedin')
+//     user.score = user.score + by || by
+//     await update(user)
+//     return user.score
+// }
 
 
 function saveLocalUser(user) {
@@ -97,5 +98,12 @@ function getLoggedinUser() {
 //     await userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 10000})
 // })()
 
-
+function getEmptyCredentials() {
+    return ({
+        fullname:'',
+        username: '',
+        password: '',
+        isAdmin: false
+    })
+}
 

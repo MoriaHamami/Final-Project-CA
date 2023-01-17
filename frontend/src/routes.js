@@ -4,6 +4,7 @@ import { CarIndex } from './pages/car-index.jsx'
 import { ReviewIndex } from './pages/review-index.jsx'
 import { ChatApp } from './pages/chat-app.jsx'
 import { AdminApp } from './pages/admin-app.jsx'
+import { LoginSignup } from './pages/login-signup.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
@@ -36,6 +37,10 @@ const routes = [
         path: 'admin',
         component: <AdminApp />,
         label: 'Admin Only'
+    }, {
+        path: 'user',
+        component: <LoginSignup />,
+        label: 'Login'
     }
 ]
 
