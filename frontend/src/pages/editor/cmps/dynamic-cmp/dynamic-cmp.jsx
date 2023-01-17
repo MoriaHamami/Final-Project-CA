@@ -8,9 +8,8 @@ import { useEffect, useState } from 'react'
 
 export const DynamicCmp = (props) => {
   const { cmp } = props
-  console.log('cmp:',cmp)
-  console.log('props:',props)
 
+// ADD WAP-(case) TO ALL THE SWITCH CASES
 
   switch (cmp.type) {
     case 'container':

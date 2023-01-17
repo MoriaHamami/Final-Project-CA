@@ -34,7 +34,7 @@ export const headerWap1 = {
       type: 'txt',
       id: utilService.makeId(),
       info: {
-        txt: 'Techflow',
+        txt: 'MarioPizza',
       },
       style: {
         fontSize: '2rem',

@@ -1,0 +1,64 @@
+.wap-header-1 {
+    background-color: #242424;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5.5rem;
+    align-items: center;
+    color: white;
+    
+    p{
+        margin: 0;
+    }
+  
+    &.mobile-layout,
+    &.tablet-layout {
+      padding: 1rem 1.5rem;
+    }
+  
+    .nav-bar {
+      display: flex;
+      gap: 1rem;
+      .hamburger {
+        display: none;
+        height: 50px;
+        width: 50px;
+      }
+  
+      &.mobile-layout,
+      &.tablet-layout {
+        & > p {
+          display: none;
+        }
+  
+        .hamburger {
+          display: block;
+        }
+      }
+      
+    }
+  }
+
+
+  .wap-hero-1 {
+    background-color: #a1a1a1;
+    background-image: url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673990946/wap-hero-background-1_tailti.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 5.5rem;
+    flex-direction: column;
+  
+    &.mobile-layout,
+    &.tablet-layout {
+      padding: 2.5rem 0.5rem;
+    }
+  
+    img {
+      margin-top: 3rem;
+      max-width: 100%;
+    }
+  }
