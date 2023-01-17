@@ -49,15 +49,6 @@ export const headerWap1 = {
       style: {},
       cmps: [
         {
-          type: 'img',
-          name: 'hamburger',
-          id: utilService.makeId(),
-          info: {
-            imgUrl: 'https://icon-library.com/images/hamburger-menu-icon-png/hamburger-menu-icon-png-29.jpg',
-          },
-          style: {},
-        },
-        {
           type: 'txt',
           id: utilService.makeId(),
           info: {
