@@ -21,6 +21,7 @@ export const wapTemplate1 = {
 				background: "url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673819141/%D7%A6%D7%91%D7%90_%D7%A2%D7%9D_%D7%92%D7%9C_dxaphz.jpg')",
 				font: "Fontush",
 				color: "red",
+				height: "200px",
 			}
 		},	
 		{
@@ -50,6 +51,7 @@ export const wapTemplate1 = {
 				background: "url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673870018/%D7%95%D7%95%D7%90%D7%9C_%D7%98%D7%95%D7%A8%D7%A0%D7%A1_%D7%9E%D7%A8%D7%99%D7%9E%D7%99%D7%9D_%D7%90%D7%AA_%D7%A2%D7%99%D7%A0%D7%91_iktqg8.jpg')",
 				font: "Fontush",
 				color: "blue",
+				height: "200px",
 			}
 		},
 	],
