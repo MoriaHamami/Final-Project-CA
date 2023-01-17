@@ -10,9 +10,9 @@ import { AppFooter } from './cmps/app-footer'
 export function RootCmp() {
 
     return (
-        <div>
-            <AppHeader />
-            <main>
+        <div className="app">
+            <AppHeader/>
+            <main className='app-main-container'>
                 <Routes>
                     {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
                     {/* <Route path="user/:id" element={<UserDetails />} /> */}
