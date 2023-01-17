@@ -12,13 +12,14 @@ export function Templates() {
     }
 
     return (
-        <div>
-            <h2>Templates Page!</h2>
-            <div>
-                <h2>this is template card</h2>
-                <Link to="/editor">
-                    <button onClick={() => onSelectTemplate(wapTemplate1._id)}>Create Site!!!!</button>
-                </Link>
+        <div className="templates-page">
+            <h2>Choose a template</h2>
+            <div className="preview-card">
+                <img className="preview-img" src={wapTemplate1.imgUrl} />
+                    <Link className='templates-btn-container' to="/editor">
+                        <button className="edit-btn" onClick={() => onSelectTemplate(wapTemplate1._id)}>Edit</button>
+                        <button className="preview-btn">Preview</button>
+                    </Link>
             </div>
         </div>
     )
