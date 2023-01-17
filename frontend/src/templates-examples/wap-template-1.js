@@ -1,7 +1,4 @@
 
-
-
-
 export const wapTemplate1 = {
 	_id: "5e28393890dd7201a06d4e44",
 	name: "HairDresser Baluta Marketing Site",
@@ -14,7 +11,7 @@ export const wapTemplate1 = {
 			info: {
 				title: "HairDresser Baluta",
 				substitle: "Your Hair is !(Who you Are)",
-				btn: {"label": "Schedule Today!", "link" : "#wc03"}
+				btn: { "label": "Schedule Today!", "link": "#wc03" }
 			},
 			theme: "theme-header-happy",
 			style: {
@@ -22,7 +19,7 @@ export const wapTemplate1 = {
 				font: "Fontush",
 				color: "red",
 			}
-		},	
+		},
 		{
 			id: "wc03",
 			type: "wap-container",
@@ -37,13 +34,13 @@ export const wapTemplate1 = {
 			style: {
 			}
 		},
-        {
+		{
 			id: "wc04",
 			type: "wap-main",
 			info: {
 				title: "Best salon in the place",
 				substitle: "Come and have the bust hair style possible",
-				btn: {"label": "Schedule Today!", "link" : "#wc03"}
+				btn: { "label": "Schedule Today!", "link": "#wc03" }
 			},
 			theme: "theme-header-happy",
 			style: {
@@ -53,5 +50,10 @@ export const wapTemplate1 = {
 			}
 		},
 	],
-	isPublic : true
+	isPublic: true
 }
+
+
+
+
+
