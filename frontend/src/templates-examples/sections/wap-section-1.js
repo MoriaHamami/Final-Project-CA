@@ -1,25 +1,33 @@
-import {utilService} from '../../services/util.service.js'
+import { utilService } from '../../services/util.service.js'
 
 //   thumbnail: require('../../../assets/img/thumbnails/section/wap-section-1.jpg'),
 export const WapSection1 = {
   id: "wc04",
-  type: "wap-section",
+  type: "container",
   name: "wap-section-1",
-  // info: {
-  //   logo: "MarioPizza",
-  //   btns: [
-  //     { label: "Home", link: "#wc03" },
-  //     { label: "About", link: "#wc04" },
-  //     { label: "Contact Us", link: "#wc05" }
-  //   ]
-  // },
+  info: {
+    btn: [],
+    txt: 'AENEAN CONSECTETUR PORTA. Nullam quis risus eget urna mollis ornare vel eu leo.'
+  },
   theme: "theme-section-happy",
   style: {
     background: "url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673983504/wap-header-1_qd5dap.png')",
     font: "Fontush",
     color: "red",
     height: "200px",
-  }
+  },
+  cmps: [
+    {
+      type: 'card',
+      name: 'wap-cards-2-img-container',
+      id: utilService.makeId(),
+      style: {},
+      info: {
+        txt: '',
+        imgUrl: 'https://uploads-ssl.webflow.com/5af49de0dbb1e3637f2d8886/5afa1b861bc189407c1a9b2c_dash-device.png',
+      },
+    },
+  ]
 }
 
 
@@ -34,37 +42,4 @@ export const WapSection1 = {
 //     backgroundColor: '#1b1b1b',
 //     color: 'black'
 //   },
-//   cmps: [
-//     {
-//       type: 'txt',
-//       name: 'wap-cards-2-sub-header',
-//       id: utilService.makeId(),
-//       info: {
-//         txt: 'AENEAN CONSECTETUR PORTA',
-//       },
-//       style: {
-//         fontSize: '0.75rem',
-//       },
-//     },
-//     {
-//       type: 'txt',
-//       name: 'wap-cards-2-main-header',
-//       id: utilService.makeId(),
-//       info: {
-//         txt: 'Nullam quis risus eget urna mollis ornare vel eu leo.',
-//       },
-//       style: {
-//         fontSize: '2.375rem',
-//       },
-//     },
-//     {
-//       type: 'img',
-//       name: 'wap-cards-2-img-container',
-//       id: utilService.makeId(),
-//       style: {},
-//       info: {
-//         imgUrl: 'https://uploads-ssl.webflow.com/5af49de0dbb1e3637f2d8886/5afa1b861bc189407c1a9b2c_dash-device.png',
-//       },
-//     },
-//   ],
 // }
