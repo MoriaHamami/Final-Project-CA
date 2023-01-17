@@ -17,22 +17,6 @@ export const wapTemplate1 = {
 		wapCards1,
 		WapSection1,
 		wapFooter1
-		// {
-		// 	id: "wc04",
-		// 	type: "wap-hero",
-		// 	info: {
-		// 		title: "Best salon in the place",
-		// 		substitle: "Come and have the bust hair style possible",
-		// 		btn: { "label": "Schedule Today!", "link": "#wc03" }
-		// 	},
-		// 	theme: "theme-header-happy",
-		// 	style: {
-		// 		background: "url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673870018/%D7%95%D7%95%D7%90%D7%9C_%D7%98%D7%95%D7%A8%D7%A0%D7%A1_%D7%9E%D7%A8%D7%99%D7%9E%D7%99%D7%9D_%D7%90%D7%AA_%D7%A2%D7%99%D7%A0%D7%91_iktqg8.jpg')",
-		// 		font: "Fontush",
-		// 		color: "blue",
-		// 		height: "200px",
-		// 	}
-		// },
 	],
 	isPublic: true
 }

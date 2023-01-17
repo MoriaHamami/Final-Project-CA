@@ -29,15 +29,4 @@ export const WapSection1 = {
 }
 
 
-// export const wapSection12 = {
-//   type: 'container',
-//   name: 'wap-cards-2',
-//   themePalette: 'secondary',
-//   category: 'cards',
-//   thumbnail: "url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673819141/%D7%A6%D7%91%D7%90_%D7%A2%D7%9D_%D7%92%D7%9C_dxaphz.jpg')",
-//   id: utilService.makeId(),
-//   style: {
-//     backgroundColor: '#1b1b1b',
-//     color: 'black'
-//   },
-// }
+
