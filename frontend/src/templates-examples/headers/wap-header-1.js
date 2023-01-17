@@ -19,7 +19,7 @@ import {utilService} from '../../services/util.service.js'
 // }
 
 
-export const headerWap1 = {
+export const WapHeader1 = {
   name: 'wap-header-1',
   type: 'container',
   category: 'header',
