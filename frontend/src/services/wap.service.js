@@ -60,13 +60,8 @@ async function save(wap) {
 // }
 
 function _createWaps() {
-    // TODO 
-    // if()
-    // else
     let waps = storageService.loadFromStorage(STORAGE_KEY)
     if (!waps || !waps.length) {
-        // wapTemplates.map(wap => save(wap))
-        // mails = []
         storageService.saveToStorage(STORAGE_KEY, wapTemplates)
     }
 }
