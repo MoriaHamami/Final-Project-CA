@@ -9,6 +9,7 @@ import { wapPreview2 } from './previews/wap-preview-2'
 
 
 export const wapTemplate2 = {
+	// _id: '',
 	_id: "5e28393890dd7201a06d4e42",
 	name: "Adventure Tour Company Traveling Agency",
 	imgUrl: "https://res.cloudinary.com/dimirmc9j/image/upload/v1674069927/demi-template-2.1_uitjmw.png",

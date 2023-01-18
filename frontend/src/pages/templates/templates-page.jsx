@@ -1,13 +1,20 @@
 
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { loadTemplate } from '../../store/wap.actions.js'
+import { createWap, loadTemplate, saveWap } from '../../store/wap.actions.js'
 import { wapTemplates } from '../../services/templates.service.local'
 
 export function Templates() {
     const dispatch = useDispatch()
 
+    // TODO USE QUERY IN ACTION , CALL ACTION
+    // ADD TO STORE WAPS
+    // function loadTemplates() {
+
+    // }
+
     function onSelectTemplate(id) {
+        // console.log('id:', id)
         loadTemplate(id)
     }
 

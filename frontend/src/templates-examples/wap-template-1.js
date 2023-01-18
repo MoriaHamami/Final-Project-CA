@@ -8,6 +8,7 @@ import { wapContainer1B } from './containers/wap-container-1b.js'
 
 
 export const wapTemplate1 = {
+	// _id: '',
 	_id: "5e28393890dd7201a06d4e41",
 	name: "Mario Shop Food Site",
 	imgUrl: "https://res.cloudinary.com/dimirmc9j/image/upload/v1674039873/demi-template_e1ka0d.png",

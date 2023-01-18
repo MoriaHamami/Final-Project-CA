@@ -68,7 +68,7 @@ async function remove(userId) {
         await collection.deleteOne({ _id: ObjectId(userId) })
     } catch (err) {
         logger.error(`cannot remove user ${userId}`, err)
-        throw err
+        console.log('err:', err)
     }
 }
 
