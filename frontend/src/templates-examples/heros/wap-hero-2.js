@@ -7,9 +7,7 @@ export const wapHero2 = {
   info: {
     title: "Urban Nomad Adventures",
     subtitle: "Experience Oregon like a Local",
-    txt: 'Let\'s Go',
-
-    btn: { label: "Order NOW", link: "#wc03" },
+    btn: { label: "Let\'s Go", link: "#wc20b" },
   },
   theme: "theme-header-happy",
   style: {

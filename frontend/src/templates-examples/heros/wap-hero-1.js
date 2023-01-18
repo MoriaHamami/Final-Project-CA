@@ -9,7 +9,7 @@ export const wapHero1 = {
     subtitle: "PIZZA PLACE",
     txt: 'TAKEOUT & DELIVERY',
 
-    btn: { label: "Order NOW", link: "#wc03" },
+    btn: { label: "Order NOW", link: "#wc10b" },
   },
   theme: "theme-header-happy",
   style: {

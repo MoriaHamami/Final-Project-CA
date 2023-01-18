@@ -7,11 +7,7 @@ export const wapContainer1B = {
   id: "wc10b",
   type: "wap-container",
   name: "wap-container-1b",
-  info: {
-    subtitle: 'Reservations',
-    title: 'BOOK A TABLE',
-    btn: { label: "Book Now", link: "#wc03" },
-  },
+  info: {},
   theme: "theme-section-happy",
   style: {
     font: "Fontush",
@@ -22,8 +18,8 @@ export const wapContainer1B = {
       id: utilService.makeId(),
       name: 'wap-form-1',
       info: {
-        subtitle: 'Reservations',
-        title: 'BOOK A TABLE',
+        title: 'Reservations',
+        subtitle: 'BOOK A TABLE',
         inputs:[
           { dataType: 'date', name: 'wap-input', placeholder: '' },
           { dataType: 'time', name: 'wap-input', placeholder: '' },
