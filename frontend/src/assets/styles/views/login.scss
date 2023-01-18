@@ -1,0 +1,49 @@
+.login-signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // justify-content: start;
+    padding-top: 40px;
+    gap: 30px;
+    
+        .login-signup-form{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            // align-items: center;
+    
+            // div{
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: space-between;
+            //     gap: 20px;
+            // }
+    
+            input{
+                @include input($type: round, $width:300px);
+            }
+    
+            .login-signup-btn{
+                @include btn($type: round, $padding: em(12px) em(42px), $hover: $almost-white);
+            }
+    
+        }
+        
+        .logout-btn{
+            @include btn($type: round, $padding: em(12px) em(42px));
+        }
+    
+        .user-profile{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    
+        .user-greeting{
+            color:  $clr1;
+            font-size: 2rem;
+        }
+    }
+    

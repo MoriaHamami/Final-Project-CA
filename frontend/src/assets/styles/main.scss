@@ -15,6 +15,7 @@
 @import "views/home-page";
 @import "views/templates-page";
 @import "views/editor-page";
+@import 'views/login.scss';
 
 // Templates
 @import "templates/wap-template-1.scss";
@@ -23,6 +24,7 @@
 // Components
 @import "cmps/app-header";
 @import "cmps/app-footer";
+@import "cmps/editor/editor-sidebar";
 @import "cmps/user-msg";
 
 

@@ -1,15 +1,10 @@
-// import { signup, login, logout } from '../store/user.action.js'
-// import { userService } from '../services/user.service.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
-// import { UserProfile } from './user-profile.jsx'
 import { userService } from '../services/user.service.js'
 import { Fragment, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { signup, login, logout } from '../store/user.actions.js'
 
-// const { useNavigate } = ReactRouterDOM
-// const {useSelector} = ReactRedux
 
 export function LoginSignup() {
 
@@ -49,34 +44,38 @@ export function LoginSignup() {
     const { fullname, username, password } = credentails
 
     return <section className="login-signup">
-        {!user && <form onSubmit={onSubmit}>
-            <label>User name:
-                <input type="text"
-                    id='username'
-                    name="username"
-                    placeholder="User name.."
-                    value={username}
-                    onChange={handleChange} />
-            </label>
+        {!user && <form form className='login-signup-form' onSubmit={onSubmit}>
+            <div>
 
-            <label >Password :
-                <input type="password"
-                    name="password"
-                    id='password'
-                    placeholder="Password"
-                    value={password}
-                    onChange={handleChange} />
-            </label>
 
-            {isSignupState && <Fragment>
-                <label>Full name:
+                <label htmlFor="username">User name: </label>
                     <input type="text"
-                        id='fullname'
-                        name="fullname"
-                        placeholder="Full name.."
-                        value={fullname}
+                        id='username'
+                        name="username"
+                        placeholder="User name.."
+                        value={username}
                         onChange={handleChange} />
-                </label>
+                
+            </div>
+            <div>
+                <label htmlFor="password">Password :</label>
+                    <input type="password"
+                        name="password"
+                        id='password'
+                        placeholder="Password"
+                        value={password}
+                        onChange={handleChange} />
+            </div>
+            {isSignupState && <Fragment>
+                <div>
+                    <label htmlFor='fullname'>Full name: </label>
+                        <input type="text"
+                            id='fullname'
+                            name="fullname"
+                            placeholder="Full name.."
+                            value={fullname}
+                            onChange={handleChange} />
+                </div>
             </Fragment>
             }
 

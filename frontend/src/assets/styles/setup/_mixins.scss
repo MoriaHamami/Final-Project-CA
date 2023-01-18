@@ -57,7 +57,7 @@
     }
   }
 
-  @mixin input($type: regular,  $padding: em(12px) em(44px), $width: 190px, $borderClr: $clr5) {
+  @mixin input($type: regular,  $padding: em(12px) em(44px), $width: 190px, $borderClr: $clr1) {
     width: $width;
     padding: $padding;
     border: 1px solid $borderClr;
@@ -78,7 +78,7 @@
   
   }
 
-  @mixin btn($type: regular, $bg: $clr0, $clr: $clr5, $padding: em(12px) em(24px), $hover: darken($bg, 8%)) {
+  @mixin btn($type: regular, $bg: $almost-white, $clr: $clr1, $padding: em(12px) em(24px), $hover: darken($bg, 8%)) {
     align-items: center;
     text-decoration: none;
     // text-transform: uppercase;
