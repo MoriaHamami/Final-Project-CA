@@ -6,13 +6,32 @@ import { useSelector } from 'react-redux'
 import { getCmpById, wapTemplates } from '../../services/templates.service.local'
 import { updateWap } from '../../store/wap.actions.js'
 import { DragDropContext } from 'react-beautiful-dnd'
+import { useState } from 'react';
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
-    console.log('wap:', wap)
+    // console.log('wap:', wap.cmps)
+
+    const [list, setList] = useState(wap.cmps)
+
+    const reOrder = (list, startIndex, endIndex) => {
+        // console.log('hey');
+        const result = Array.from(list)
+        console.log('list', list);
+        const [removed] = result.splice(startIndex, 1)
+        result.splice(endIndex, 0, removed)
+        return result
+    }
+
+
+    const onEnd = (result) => {
+        // console.log(result)
+        setList(reOrder(list, result.source.index, result.destination.index))
+    }
+
 
     function addCmpToBoard(cmp) {
-        wap.cmps.unshift(cmp)
+        // wap.cmps.unshift(cmp)
         const newState = { ...wap }
         // console.log('newState:',newState)
         updateWap(newState)
@@ -25,7 +44,7 @@ export function Editor() {
         // console.log('cmp:', cmp)
         addCmpToBoard(cmp)
     }
-    console.log(wap)
+    // console.log(wap)
     return (
         <section>
             {wap && <div>
@@ -41,7 +60,7 @@ export function Editor() {
                     </select>
                 </div>
                 <section className='editor-page'>
-                    <DragDropContext>
+                    <DragDropContext onDragEnd={onEnd}>
                         <EditorSideBar />
                         {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
                     </DragDropContext>
