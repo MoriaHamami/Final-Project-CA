@@ -5,11 +5,11 @@ import { EditorSideBar } from './cmps/editor-sidebar.jsx'
 import { useSelector } from 'react-redux'
 import { getCmpById, wapTemplates } from '../../services/templates.service.local'
 import { updateWap } from '../../store/wap.actions.js'
-
+import { DragDropContext } from 'react-beautiful-dnd'
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
-    // console.log('wap:', wap)
+    console.log('wap:', wap)
 
     function addCmpToBoard(cmp) {
         wap.cmps.unshift(cmp)
@@ -24,13 +24,13 @@ export function Editor() {
         // console.log('cmp:', cmp)
         addCmpToBoard(cmp)
     }
-
+    console.log(wap)
     return (
         <section>
             {wap && <div>
                 <div>
                     <label htmlFor="cmps">Cmps : </label>
-                    <select onChange={onPickedCmp}>
+                    <select name="cars" id="cars" onChange={onPickedCmp}>
                         <option value={'wc12'}>Header</option>
                         <option value={'wc13'}>Hero</option>
                         <option value={'wc14'}>Preview</option>
@@ -40,8 +40,10 @@ export function Editor() {
                     </select>
                 </div>
                 <section className='editor-page'>
-                    <EditorSideBar />
-                    {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
+                    <DragDropContext>
+                        <EditorSideBar />
+                        {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
+                    </DragDropContext>
                 </section>
             </div>}
 
