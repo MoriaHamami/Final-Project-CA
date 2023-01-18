@@ -1,23 +1,33 @@
 .templates-page {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    h2 {
+        font-family: title;
+    }
+
+    .preview-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 15px;
+    }
 }
 
 .preview-card {
 
     position: relative;
     border: 1px solid lightgray;
-    border-radius: 10px;
+    // border-radius: 10px;
     text-align: center;
+    // margin: 0;
 
     padding: 0.3em;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .preview-img {
-        width: 100%;
+    // .preview-img {}
+
+    .preview-name {
+        font-family: txt;
+        // text-align: left;
     }
 
     .templates-btn-container {
@@ -26,7 +36,8 @@
 
     &:hover {
         .templates-btn-container {
-            backdrop-filter: blur(4px);
+            // backdrop-filter: blur(4px);
+            background-color: $bgc-almost-white;
             display: flex;
             flex-direction: column;
             justify-items: center;
@@ -35,6 +46,22 @@
             position: absolute;
             inset: 0;
             margin: auto;
+            text-decoration: none;
+        }
+
+        button {
+            border-radius: 3em;
+            padding: 10px 20px;
+        }
+
+        .preview-btn {
+            border: 1px solid $clr1;
+            background: none;
+            color: $clr1;
+        }
+
+        button:hover {
+            opacity: 0.5;
         }
     }
 
