@@ -79,7 +79,6 @@
   }
 
   @mixin btn($type: regular, $bg: $clr0, $clr: $clr5, $padding: em(12px) em(24px), $hover: darken($bg, 8%)) {
-    display: inline-flex;
     align-items: center;
     text-decoration: none;
     // text-transform: uppercase;
@@ -94,14 +93,18 @@
     border: $clr 1px solid ;
     
     &:hover {
-      background-color: $clr;
+      background-color: $hover;
       color: $bg;
       border: $bg 1px solid ;
     }
   
     transition: background-color 0.2s;
+
+    @if $type == min-round {
+      border-radius: 4px;
+    }
   
-    @if $type ==round {
+    @if $type == round {
       border-radius: 1rem;
     }
   }

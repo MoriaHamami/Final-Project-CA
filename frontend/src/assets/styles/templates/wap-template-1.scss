@@ -63,6 +63,11 @@
     margin-top: 3rem;
     max-width: 100%;
   }
+
+  button{
+    @include btn($type: round, $bg: inherit, $clr: #1f1f1f, $padding: em(8px) em(12px), $hover: #0b0b0b42);
+    font-weight: 500;
+  }
 }
 
 .wap-preview-1 {
@@ -114,7 +119,7 @@
 
   .cards-container {
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
 
 
     .wap-card {
@@ -136,14 +141,15 @@
     }
 
     .wap-card-img-container {
-      height: 200px;
+      min-height: 100px;
       // height: 100%;
       position: relative;
+      aspect-ratio: 1/1;
 
       img {
         // width: 100%;
         height: 100%;
-        min-height: 200px;
+        min-height: 100px;
         background-position: center;
         object-fit: cover;
         transition: filter 0.1s;
@@ -154,18 +160,6 @@
   }
 
 }
-
-// fo: {
-//     subtitle: 'Reservations',
-//     title: 'BOOK A TABLE',
-//     inputs:[
-//       { dataType: 'date', name: 'wap-input', placeholder: '' },
-//       { dataType: 'time', name: 'wap-input', placeholder: '' },
-//       { dataType: 'number', name: 'wap-input', placeholder: '' }
-//     ],
-//     btn: { label: "Book Now", link: "#wc03" },
-//   },
-
 
 
 .wap-form-1 {
@@ -200,14 +194,9 @@
     }
 
     button{
-      @include btn($type: round, $bg: #fafafa, $clr: #1f1f1f, $padding: em(12px) em(24px), $hover: #171717)
+      @include btn($type: min-round, $bg: #fafafa, $clr: #1f1f1f, $padding: em(8px) em(12px), $hover: #171717)
     }
   }
-
-  // background-color: #fafafa;
-  // color: #1f1f1f;
-  // display: flex;
-  // justify-items: center;
 
 
 
@@ -217,5 +206,26 @@
     background-color: #1f1f1f;
     color: white;
     padding: 0 2rem;
+  }
+}
+
+.wap-footer-1{
+  padding:  2rem 5.5rem;
+  background-color: #171717;
+  color: white;
+
+  .icons-container{
+    display: flex;
+    gap: 20px;
+
+    .footer-icon{
+      aspect-ratio: 1/1;
+      background-color: white;
+      border-radius: 50%;
+      padding: 0.2rem;
+      font-size: 1.2rem;
+      color: #171717;
+      cursor: pointer;
+    }
   }
 }
