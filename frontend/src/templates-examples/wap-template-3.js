@@ -1,5 +1,5 @@
 export const wapTemplate3 = {
-  _id: "5e28393890dd7209a06d4e45",
+  _id: "5e28393890dd7209a06d4e43",
   name: "Mario Pizza site ",
   imgUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg",
 

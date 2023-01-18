@@ -7,8 +7,8 @@ export function WapHeader({ style, cmp, onHoverCmp, onSelectCmp, selectedCmp, di
         <h2 className='logo'>{cmp.info.logo}</h2>
         <nav className='nav-bar'>
         {cmp?.info?.btns.map((btn) => {
-        return <a href={btn.link}>{btn.label}</a>
-      })}
+          return <a href={btn.link}>{btn.label}</a>
+        })}
       </nav>
     </div>
   )

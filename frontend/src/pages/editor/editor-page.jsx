@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom'
-import {EditorBoard} from './cmps/editor-board.jsx'
-import { useSelector, useDispatch } from 'react-redux'
+import { EditorBoard } from './cmps/editor-board.jsx'
+import { EditorSideBar } from './cmps/editor-sidebar.jsx'
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
@@ -14,10 +14,10 @@ export function Editor() {
     return (
         <div>
             <section className='editor-page'>
-            <EditorBoard wap = {wap}/>
-            {/* <EditorSideBar/> */}
+                <EditorSideBar />
+                <EditorBoard />
             </section>
-            
+
         </div>
     )
 }

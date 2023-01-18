@@ -1,12 +1,12 @@
 import { utilService } from '../../services/util.service.js'
 
-//   thumbnail: require('../../../assets/img/thumbnails/section/wap-section-1.jpg'),
+//   thumbnail: require('../../../assets/img/thumbnails/section/wap-section-2.jpg'),
 
 
-export const wapContainer1B = {
-  id: "wc10b",
+export const wapContainer2B = {
+  id: "wc20b",
   type: "wap-container",
-  name: "wap-container-1b",
+  name: "wap-container-2b",
   info: {
     subtitle: 'Reservations',
     title: 'BOOK A TABLE',
@@ -20,7 +20,7 @@ export const wapContainer1B = {
     {
       type: 'wap-form',
       id: utilService.makeId(),
-      name: 'wap-form-1',
+      name: 'wap-form-2',
       info: {
         subtitle: 'Reservations',
         title: 'BOOK A TABLE',

@@ -1,4 +1,4 @@
-export const wapTemplate2 = {
+export const wapTemplate5 = {
   _id: "5e28393890dd7209a06d4e45",
   name: " Doctor Moshe dentist site",
   imgUrl: "https://img.freepik.com/free-vector/dentist-man-examining-patient-teeth-white-background_1308-92452.jpg?w=2000",

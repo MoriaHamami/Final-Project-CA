@@ -1,14 +1,14 @@
 import {utilService} from '../../services/util.service.js'
 
-export const wapFooter1 = {
-  name: 'wap-footer-1',
+export const wapFooter2 = {
+  name: 'wap-footer-2',
   type: 'wap-footer',
-  id: 'wc17',
+  id: 'wc27',
   info: {
     txt: "© 2023 by Mario shop. Created using Webix",
     btns: [
-      { label: "facebook", link: "#wc14" },
-      { label: "instagram", link: "#wc16" }
+      { label: "facebook", link: "#wc24" },
+      { label: "instagram", link: "#wc26" }
     ]
   },
   thumbnail: null,

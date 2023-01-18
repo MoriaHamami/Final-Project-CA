@@ -1,5 +1,5 @@
-export const wapTemplate3 = {
-  _id: "5e28393890dd7209a06d4e45",
+export const wapTemplate4 = {
+  _id: "5e28393890dd7209a06d4e44",
   name: "Yoad the nomad",
   imgUrl: "https://www.lametayel.co.il/limages/ee4ee243bba8ea4ddab76e1758ff4dc4.jpg?size=830x467",
 

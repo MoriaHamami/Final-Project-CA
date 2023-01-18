@@ -1,15 +1,16 @@
 
 import { utilService } from '../../services/util.service.js'
 
-export const wapHeader1 = {
-  id: "wc12",
+export const wapHeader2 = {
+  id: "wc22",
   type: "wap-header",
-  name: "wap-header-1",
+  name: "wap-header-2",
   info: {
-    logo: "MarioPizza",
+    logo: "Urban Nomad Adventures",
     btns: [
-      { label: "Our Story", link: "#wc14" },
-      { label: "Reservation", link: "#wc10b" }
+      { label: "Home", link: "#wc23" },
+      { label: "About", link: "#wc24" },
+      { label: "Book Online", link: "#wc25" }
     ]
   },
   theme: "theme-header-happy",
