@@ -11,10 +11,8 @@ export const WapSection1 = {
   },
   theme: "theme-section-happy",
   style: {
-    background: "url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673983504/wap-header-1_qd5dap.png')",
+    background: "url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673814062/%D7%95%D7%95%D7%90%D7%99_%D7%95%D7%95%D7%A9_%D7%91%D7%9C%D7%99%D7%9C%D7%94_b4urev.jpg')",
     font: "Fontush",
-    color: "red",
-    height: "200px",
   },
   cmps: [
     {

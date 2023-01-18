@@ -12,7 +12,7 @@ export const wapFooter1 = {
       type: 'txt',
       id: utilService.makeId(),
       info: {
-        txt: 'Logo',
+        txt: 'footer',
       },
       style: {
         fontSize: '2rem',
