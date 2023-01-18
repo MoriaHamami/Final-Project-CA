@@ -16,6 +16,7 @@ export function WapPreview({ cmp }) {
             <h2 className='title'>{cmp.info.title}</h2>
             <img src={cmp.info.imgUrl} alt="" />
             <p className='txt'>{cmp.info.txt}</p>
+            {cmp.info.btn && <button>{cmp.info.btn}</button>}
     </div>
   )
 }

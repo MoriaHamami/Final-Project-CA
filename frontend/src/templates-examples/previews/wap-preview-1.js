@@ -2,7 +2,7 @@ import { utilService } from '../../services/util.service.js'
 
 
 export const wapPreview1 = {
-  id: "wc04",
+  id: "wc14",
   type: "wap-preview",
   name: "wap-preview-1",
   info: {

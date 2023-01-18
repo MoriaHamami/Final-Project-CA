@@ -1,13 +1,13 @@
 import { utilService } from '../../services/util.service.js'
 
-export const wapHero1 = {
-  id: "wc13",
+export const wapHero2 = {
+  id: "wc23",
   type: "wap-hero",
-  name: "wap-hero-1",
+  name: "wap-hero-2",
   info: {
-    title: "Mario",
-    subtitle: "PIZZA PLACE",
-    txt: 'TAKEOUT & DELIVERY',
+    title: "Urban Nomad Adventures",
+    subtitle: "Experience Oregon like a Local",
+    txt: 'Let\'s Go',
 
     btn: { label: "Order NOW", link: "#wc03" },
   },
