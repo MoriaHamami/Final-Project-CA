@@ -23,6 +23,8 @@
 
     .preview-img {
         height: 100%;
+        aspect-ratio: 6/8;
+        object-fit: fill;
     }
 
     .img-container {
