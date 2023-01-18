@@ -4,8 +4,8 @@ import { DynamicCmp } from './dynamic-cmp/dynamic-cmp.jsx'
 
 export function EditorBoard({wap}) {
 
-    const wap = useSelector((storestate) => storestate.wapModule.wap)
-    console.log('wap:', wap)
+    console.log(wap.cmps);
+
 
     return (
         <div className='editor-site'>
