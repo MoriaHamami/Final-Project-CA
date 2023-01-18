@@ -23,7 +23,7 @@ export function Templates() {
             <h2>Choose Your Template</h2>
             <div className="preview-list">
                 {wapTemplates?.map((wapTemplate) => {
-                    return <div className="preview-card">
+                    return <div key={wapTemplate._id} className="preview-card">
                         <div className="img-container">
                             <img className="preview-img" src={wapTemplate.imgUrl} />
                             <Link className="templates-btn-container" to="/editor">
