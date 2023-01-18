@@ -14,15 +14,17 @@ export function Templates() {
     return (
         <div className="templates-page">
             <h2>Choose Your Template</h2>
-            <div className='preview-list'>
+            <div className="preview-list">
                 {wapTemplates?.map((wapTemplate) => {
                     return <div className="preview-card">
-                        <img className="preview-img" src={wapTemplate.imgUrl} />
+                        <div className="img-container">
+                            <img className="preview-img" src={wapTemplate.imgUrl} />
+                            <Link className="templates-btn-container" to="/editor">
+                                <button className="edit-btn" onClick={() => onSelectTemplate(wapTemplate._id)}>Edit</button>
+                                <button className="preview-btn">Preview</button>
+                            </Link>
+                        </div>
                         <div className="preview-name">{wapTemplate.name}</div>
-                        <Link className="templates-btn-container" to="/editor">
-                            <button className="edit-btn" onClick={() => onSelectTemplate(wapTemplate._id)}>Edit</button>
-                            <button className="preview-btn">Preview</button>
-                        </Link>
                     </div>
                 })}
             </div>
