@@ -44,7 +44,7 @@ async function save(wap) {
     } else {
         // Later, owner is set by the backend
         // console.log('wap:', wap)
-        wap.createdBy = userService.getLoggedinUser().username
+        wap.createdBy = userService.getLoggedinUser()?.username || 'guest'
         savedWap = await storageService.post(STORAGE_KEY, wap)
         // savedWap = await httpService.post('wap', wap)
     }
@@ -60,13 +60,8 @@ async function save(wap) {
 // }
 
 function _createWaps() {
-    // TODO 
-    // if()
-    // else
     let waps = storageService.loadFromStorage(STORAGE_KEY)
     if (!waps || !waps.length) {
-        // wapTemplates.map(wap => save(wap))
-        // mails = []
         storageService.saveToStorage(STORAGE_KEY, wapTemplates)
     }
 }
