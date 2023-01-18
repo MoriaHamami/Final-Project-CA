@@ -25,7 +25,7 @@ export function Editor() {
         // console.log('cmp:', cmp)
         addCmpToBoard(cmp)
     }
-
+    console.log(wap)
     return (
         <section>
             {wap && <div>
@@ -41,8 +41,10 @@ export function Editor() {
                     </select>
                 </div>
                 <section className='editor-page'>
-                    <EditorSideBar />
-                    {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
+                    <DragDropContext>
+                        <EditorSideBar />
+                        {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
+                    </DragDropContext>
                 </section>
             </div>}
 

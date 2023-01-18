@@ -1,5 +1,4 @@
 import { Draggable, Droppable } from 'react-beautiful-dnd';
-
 import { DynamicCmp } from './dynamic-cmp/dynamic-cmp.jsx'
 
 export function EditorBoard({ wap }) {
