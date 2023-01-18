@@ -4,7 +4,7 @@ import { wapFooter1 } from './footers/wap-footer-1'
 import { wapHeader1 } from './headers/wap-header-1'
 import { wapHero1 } from './heros/wap-hero-1'
 import { wapPreview1 } from './previews/wap-preview-1'
-// import { wapContainer1B } from './containers/wap-container-1b.js'
+import { wapContainer1B } from './containers/wap-container-1b.js'
 
 
 export const wapTemplate1 = {
@@ -17,7 +17,7 @@ export const wapTemplate1 = {
 		wapHero1,
 		wapPreview1,
 		wapContainer1A,
-		// wapContainer1B,
+		wapContainer1B,
 		wapFooter1
 	],
 	isPublic: true

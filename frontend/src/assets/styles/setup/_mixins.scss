@@ -56,3 +56,54 @@
         }
     }
   }
+
+  @mixin input($type: regular,  $padding: em(12px) em(44px), $width: 190px, $borderClr: $clr5) {
+    width: $width;
+    padding: $padding;
+    border: 1px solid $borderClr;
+  
+    &:focus-visible {
+      outline: none;
+    }
+  
+    @if $type ==regular {
+      border-radius: 4px;
+  
+    }
+  
+    @else if $type ==round {
+      border-radius: 1rem;
+  
+    }
+  
+  }
+
+  @mixin btn($type: regular, $bg: $clr0, $clr: $clr5, $padding: em(12px) em(24px), $hover: darken($bg, 8%)) {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    // text-transform: uppercase;
+    padding: $padding;
+    line-height: 1.25;
+    font-size: em(14px);
+    font-variation-settings: "wght" 430;
+    border: none;
+    cursor: pointer;
+    background-color: $bg;
+    color: $clr;
+    border: $clr 1px solid ;
+    
+    &:hover {
+      background-color: $clr;
+      color: $bg;
+      border: $bg 1px solid ;
+    }
+  
+    transition: background-color 0.2s;
+  
+    @if $type ==round {
+      border-radius: 1rem;
+    }
+  }
+  
+  

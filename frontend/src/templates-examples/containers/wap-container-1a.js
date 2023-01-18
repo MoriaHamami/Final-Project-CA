@@ -20,7 +20,7 @@ export const wapContainer1A = {
             
             cmps: [
                 {
-                    type: 'card',
+                    type: 'wap-card',
                     id: utilService.makeId(),
                     name: 'cards-container',
                     info: {
@@ -30,7 +30,7 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'card',
+                    type: 'wap-card',
                     id: utilService.makeId(),
                     name: 'cards-container',
 
@@ -41,7 +41,7 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'card',
+                    type: 'wap-card',
                     id: utilService.makeId(),
                     name: 'cards-container',
 
@@ -52,7 +52,7 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'card',
+                    type: 'wap-card',
                     id: utilService.makeId(),
                     name: 'cards-container',
 
@@ -63,7 +63,7 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'card',
+                    type: 'wap-card',
                     id: utilService.makeId(),
                     name: 'cards-container',
 
@@ -74,7 +74,7 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'card',
+                    type: 'wap-card',
                     id: utilService.makeId(),
                     name: 'cards-container',
 
@@ -85,7 +85,7 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'card',
+                    type: 'wap-card',
                     id: utilService.makeId(),
                     name: 'cards-container',
 
@@ -96,7 +96,7 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'card',
+                    type: 'wap-card',
                     id: utilService.makeId(),
                     name: 'cards-container',
 
