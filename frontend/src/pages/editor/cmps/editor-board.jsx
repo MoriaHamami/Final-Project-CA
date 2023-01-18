@@ -4,14 +4,14 @@ import { DynamicCmp } from './dynamic-cmp/dynamic-cmp.jsx'
 
 export function EditorBoard({ wap }) {
 
-    console.log(wap.cmps);
+    // console.log(wap.cmps);
 
 
     return (
         <Droppable droppableId='editor'>
             {(provided, snapshot) => (
                 <div className='editor-board' ref={provided.innerRef}>
-                    {wap.cmps.map((cmp, index) => {
+                    {wap?.cmps?.map((cmp, index) => {
                         { console.log(cmp.id) }
                         return <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
                             {

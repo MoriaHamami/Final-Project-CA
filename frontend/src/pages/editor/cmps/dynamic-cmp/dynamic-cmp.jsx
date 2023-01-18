@@ -15,7 +15,7 @@ export const DynamicCmp = (props) => {
 
   // ADD WAP-(case) TO ALL THE SWITCH CASES
 
-  switch (cmp.type) {
+  switch (cmp?.type) {
     case 'wap-container':
       return (
         <ContainerCmp

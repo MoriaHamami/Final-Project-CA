@@ -82,7 +82,7 @@ async function logout() {
 
 
 function saveLocalUser(user) {
-    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score }
+    user = { _id: user._id, fullname: user.fullname, username: user.username, password: user.password, imgUrl: user.imgUrl }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -106,4 +106,6 @@ function getEmptyCredentials() {
         isAdmin: false
     })
 }
+
+
 

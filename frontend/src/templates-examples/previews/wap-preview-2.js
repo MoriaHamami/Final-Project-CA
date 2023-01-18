@@ -7,10 +7,10 @@ export const wapPreview2 = {
   name: 'wap-preview-2',
   info: {
     subtitle: '',
-    title: 'THE LOVE FOR PIZZA',
+    title: 'Our Story',
     imgUrl: '',
-    txt: 'I\'m a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.',
-    // btn: { label: "Read More", link: "#wc20b" }
+    txt: 'We are a couple for 3 years who has always been passionate about exploring new places and cultures. We started my vlog as a way to document my travels and share our experiences with others.',
+    btn: { label: "Read More", link: "#wc20b" }
   },
   theme: 'theme-section-happy',
   style: {
