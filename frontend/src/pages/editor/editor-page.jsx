@@ -13,7 +13,7 @@ export function Editor() {
 
     function addCmpToBoard(cmp) {
         wap.cmps.unshift(cmp)
-        const newState ={...wap , cmps : wap.cmps } 
+        const newState ={...wap } 
         console.log('newState:',newState)
         updateWap(newState)
 

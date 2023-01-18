@@ -7,10 +7,6 @@ export const wapContainer2A = {
     info: {
         txt: 'What Makes Us Special'
     },
-    // type: 'container',
-    // name: 'wap-cards-1',
-    // themePalette: 'primary',
-    // category: 'cards',
     theme: 'theme-header-happy',
     thumbnail: 'https://i.postimg.cc/7h0qq8v4/wap-cards-1.png',
     style: {},
@@ -23,37 +19,37 @@ export const wapContainer2A = {
                 {
                     type: 'wap-card',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'wap-card',
                     info: {
                         title: 'Local Expert Guides',
                         subtitle: 'I\'m a title.Click here to add your own text and edit me.',
                         imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030131/card-img-1_tkzkif.webp',
+                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674060775/container-guide_wc4cyf.png',
                     },
                 },
                 {
                     type: 'wap-card',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'wap-card',
 
                     info: {
                         title:'Handpicked Adventures',
                         subtitle: 'I\'m a title. Click here to add your own text and edit me.',
                         imgUrl:
-                            'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-7_u3vjoc.jpg',
+                            'https://res.cloudinary.com/dimirmc9j/image/upload/v1674060778/container-hidden_kxlflq.png',
 
                     },
                 },
                 {
                     type: 'wap-card',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'wap-card',
 
                     info: {
                         title: 'Hidden Gem Destinations',
                         subtitle: 'I\'m a title.Click here to add your own text and edit me.',
                         imgUrl:
-                            'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-3_nt8pvb.jpg',
+                            'https://res.cloudinary.com/dimirmc9j/image/upload/v1674060782/container-adventure_n9ejiq.webp',
 
                     },
                 }

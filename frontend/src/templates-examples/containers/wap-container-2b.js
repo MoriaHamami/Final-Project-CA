@@ -29,7 +29,7 @@ export const wapContainer2B = {
                 name: 'cards-container',
                 info: {
                     imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030131/card-img-1_tkzkif.webp',
+                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063387/card8_wm0gfc.jpg',
 
                 },
             },
@@ -40,7 +40,7 @@ export const wapContainer2B = {
 
                 info: {
                     imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-7_u3vjoc.jpg',
+                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063404/card4_whirwv.jpg',
 
                 },
             },
@@ -51,7 +51,7 @@ export const wapContainer2B = {
 
                 info: {
                     imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-3_nt8pvb.jpg',
+                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674055390/hero3-wap-2_peid7t.jpg',
 
                 },
             },
@@ -62,54 +62,11 @@ export const wapContainer2B = {
 
                 info: {
                     imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-8_a5pr2p.jpg',
+                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063393/card11_uynqjs.webp',
 
                 },
             },
-            {
-                type: 'wap-card',
-                id: utilService.makeId(),
-                name: 'cards-container',
-
-                info: {
-                    imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-6_rxv4ii.jpg',
-
-                },
-            },
-            {
-                type: 'wap-card',
-                id: utilService.makeId(),
-                name: 'cards-container',
-
-                info: {
-                    imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-4_bxzn7k.jpg',
-
-                },
-            },
-            {
-                type: 'wap-card',
-                id: utilService.makeId(),
-                name: 'cards-container',
-
-                info: {
-                    imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-5_k00sxt.jpg',
-
-                },
-            },
-            {
-                type: 'wap-card',
-                id: utilService.makeId(),
-                name: 'cards-container',
-
-                info: {
-                    imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-2_k87gbe.jpg',
-
-                },
-            },
+            
 
         ],
     },
