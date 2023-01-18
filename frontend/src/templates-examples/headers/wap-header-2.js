@@ -8,9 +8,9 @@ export const wapHeader2 = {
   info: {
     logo: "Urban Nomad Adventures",
     btns: [
-      { label: "Home", link: "#wc03" },
-      { label: "About", link: "#wc04" },
-      { label: "Book Online", link: "#wc05" }
+      { label: "Home", link: "#wc23" },
+      { label: "About", link: "#wc24" },
+      { label: "Book Online", link: "#wc25" }
     ]
   },
   theme: "theme-header-happy",

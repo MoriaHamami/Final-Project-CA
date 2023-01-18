@@ -1,7 +1,7 @@
 import { utilService } from '../../services/util.service.js'
 
 export const wapContainer2A = {
-    id: "wc00",
+    id: "wc20a",
     type: "wap-container",
     name: "wap-container-2a",
     info: {},

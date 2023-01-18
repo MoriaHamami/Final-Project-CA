@@ -8,8 +8,8 @@ export const wapHeader1 = {
   info: {
     logo: "MarioPizza",
     btns: [
-      { label: "Our Story", link: "#wc04" },
-      { label: "Reservation", link: "#wc06" }
+      { label: "Our Story", link: "#wc14" },
+      { label: "Reservation", link: "#wc20b" }
     ]
   },
   theme: "theme-header-happy",
