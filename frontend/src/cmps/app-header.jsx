@@ -16,14 +16,11 @@ export function AppHeader() {
                     else return <NavLink key={route.path} to={route.path}>{route.label}</NavLink>
                 })} */}
                     <NavLink key='/templates' to='/templates'>Templates</NavLink>
-                    <div className='header-profile-container'>
+                    <Link to="/user" className='header-profile-container'>
                         |
-                        <Link to="/user" className='user-info'>
-                            <span className="material-symbols-outlined profile-img">account_circle</span>
-                            {user ? <button className='username-header'>{user.fullname}</button> : <h4 className='username-header'></h4>}
-                        </Link>
-                        <NavLink key='/user' to='/user'>Login</NavLink>
-                    </div>
+                        <span className="material-symbols-outlined profile-img">account_circle</span>
+                        {user ? <span className='user-name'>{user.fullname}</span> : <NavLink key='/user' to='/user'>Login</NavLink>}
+                    </Link>
                 </nav>
             </div>
         </header >
