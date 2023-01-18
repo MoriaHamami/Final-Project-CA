@@ -1,6 +1,7 @@
 
 import { ContainerCmp } from './container-cmp.jsx'
 import { WapHeader } from './wap-header-cmp.jsx'
+import { WapFooter } from './wap-footer-cmp.jsx'
 import { WapHero } from './wap-hero-cmp.jsx'
 import { WapPreview } from './wap-preview-cmp.jsx'
 
@@ -53,6 +54,13 @@ export const DynamicCmp = (props) => {
       return (
         <FormCmp
           cmp={cmp}
+        />
+      )
+      case 'wap-footer':
+      return (
+        <WapFooter
+          {...props}
+          style={cmp.style}
         />
       )
     default:
