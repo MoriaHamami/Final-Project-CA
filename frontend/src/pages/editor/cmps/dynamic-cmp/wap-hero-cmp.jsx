@@ -11,7 +11,7 @@ import { DynamicCmp } from './dynamic-cmp'
 
 export function WapHero({ style, cmp, onHoverCmp, onSelectCmp, selectedCmp, displayClass }) {
   return (
-    <div className={cmp.name}>
+    <div style={style} className={cmp.name}>
         <div>
             <p className='title'>{cmp.info.title}</p>
             <h2 className='subtitle'>{cmp.info.subtitle}</h2>

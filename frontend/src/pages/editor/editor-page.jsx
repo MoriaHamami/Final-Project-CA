@@ -7,7 +7,11 @@ export function Editor() {
     return (
         <div>
             <h2>Editor Page!</h2>
+            <section className='editor-page'>
             <EditorBoard/>
+            {/* <EditorSideBar/> */}
+            </section>
+            
         </div>
     )
 }

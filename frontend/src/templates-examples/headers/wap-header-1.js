@@ -1,7 +1,7 @@
 
 import { utilService } from '../../services/util.service.js'
 
-export const WapHeader1 = {
+export const wapHeader1 = {
   id: "wc02",
   type: "wap-header",
   name: "wap-header-1",

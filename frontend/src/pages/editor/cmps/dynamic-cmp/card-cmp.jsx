@@ -1,8 +1,9 @@
 export function CardCmp({ cmp }) {
     return (
         <div className='card'>
-            <span>{cmp.info.txt}</span>
-            <img src={cmp.info.imgUrl} />
+            {cmp.info.txt ? <span>{cmp.info.txt}</span> : ''}
+            <div className="card-img-container"><img src={cmp.info.imgUrl} /></div>
+            
         </div>
     )
 }
