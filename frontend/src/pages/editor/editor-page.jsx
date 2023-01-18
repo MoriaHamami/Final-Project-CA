@@ -5,32 +5,38 @@ import { useSelector } from 'react-redux'
 import { getCmpById, wapTemplates } from '../../services/templates.service.local'
 import { updateWap } from '../../store/wap.actions.js'
 import { DragDropContext } from 'react-beautiful-dnd'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
     // console.log('wap:', wap.cmps)
 
-    const [list, setList] = useState(wap.cmps)
+    const [list, setList] = useState([])
+
+    useEffect(() =>{
+        console.log('wap.cmps:',wap.cmps)
+        setList(wap.cmps)
+    } ,[wap])
 
     const reOrder = (list, startIndex, endIndex) => {
         // console.log('hey');
-        const result = Array.from(list)
+        const result = list
         console.log('list', list);
         const [removed] = result.splice(startIndex, 1)
         result.splice(endIndex, 0, removed)
+        const newState = { ...wap, cmps: result }
+        updateWap(newState)
         return result
     }
 
 
     const onEnd = (result) => {
-        // console.log(result)
         setList(reOrder(list, result.source.index, result.destination.index))
     }
 
 
     function addCmpToBoard(cmp) {
-        // wap.cmps.unshift(cmp)
+        wap.cmps.unshift(cmp)
         const newState = { ...wap }
         updateWap(newState)
     }
