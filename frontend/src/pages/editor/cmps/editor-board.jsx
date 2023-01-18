@@ -1,11 +1,10 @@
 
-import { useSelector, useDispatch } from 'react-redux'
+
 import { DynamicCmp } from './dynamic-cmp/dynamic-cmp.jsx'
 
-export function EditorBoard() {
+export function EditorBoard({wap}) {
 
-    const wap = useSelector((storestate) => storestate.wapModule.wap)
-    console.log('wap:',wap)
+   
 
     return (
         <div>

@@ -8,3 +8,8 @@ export function loadTemplate(wapId) {
     delete wapCopy._id
     store.dispatch({ type: 'SET_WAP', wap: wapCopy })
 }
+
+
+export function updateTemplate(wapId) {
+
+}
