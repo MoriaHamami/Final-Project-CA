@@ -9,7 +9,7 @@ export const wapHeader1 = {
     logo: "MarioPizza",
     btns: [
       { label: "Our Story", link: "#wc14" },
-      { label: "Reservation", link: "#wc20b" }
+      { label: "Reservation", link: "#wc10b" }
     ]
   },
   theme: "theme-header-happy",
