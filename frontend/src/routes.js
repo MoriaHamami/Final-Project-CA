@@ -7,22 +7,22 @@ const routes = [
     {
         path: '/',
         component: <HomePage />,
-        label: 'Home 🏠',
+        label: 'Home',
     },
     {
         path: '/templates',
         component: <Templates />,
-        label: 'templates',
+        label: 'Templates',
     },
     {
         path: '/editor',
         component: <Editor />,
-        label: 'editor',
+        label: 'Editor',
     },
     {
         path: '/user',
         component: <LoginSignup />,
-        label: 'login',
+        label: 'Login',
     }
 ]
 
