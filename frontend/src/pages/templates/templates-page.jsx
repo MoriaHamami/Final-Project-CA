@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { loadTemplate } from '../../store/wap.actions.js'
-import { wapTemplate1 } from '../../templates-examples/wap-template-1'
+import { wapTemplates } from '../../services/templates.service.local'
 
 export function Templates() {
     const dispatch = useDispatch()
@@ -14,12 +14,19 @@ export function Templates() {
     return (
         <div className="templates-page">
             <h2>Choose Your Template</h2>
-            <div className="preview-card">
-                <img className="preview-img" src={wapTemplate1.imgUrl} />
-                    <Link className='templates-btn-container' to="/editor">
-                        <button className="edit-btn" onClick={() => onSelectTemplate(wapTemplate1._id)}>Edit</button>
-                        <button className="preview-btn">Preview</button>
-                    </Link>
+            <div className="preview-list">
+                {wapTemplates?.map((wapTemplate) => {
+                    return <div className="preview-card">
+                        <div className="img-container">
+                            <img className="preview-img" src={wapTemplate.imgUrl} />
+                            <Link className="templates-btn-container" to="/editor">
+                                <button className="edit-btn" onClick={() => onSelectTemplate(wapTemplate._id)}>Edit</button>
+                                <button className="preview-btn">Preview</button>
+                            </Link>
+                        </div>
+                        <div className="preview-name">{wapTemplate.name}</div>
+                    </div>
+                })}
             </div>
         </div>
     )

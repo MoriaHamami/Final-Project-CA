@@ -1,6 +1,6 @@
 .app-header {
     background-color: $almost-white;
-
+    border-bottom: 1px solid lightgray;
     .header-txt-container {
         display: flex;
         align-items: center;
@@ -21,18 +21,22 @@
             margin-inline-start: 20px;
             text-decoration: none;
         }
-
-        .user-info {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-img {
-            font-size: 1.8rem;
-        }
-
     }
+
+    .user-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .user-name {
+        text-transform: capitalize;
+    }
+
+    .profile-img {
+        font-size: 1.8rem;
+    }
+
 
     .logo {
         text-transform: capitalize;

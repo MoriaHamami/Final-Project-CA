@@ -1,32 +1,39 @@
 import { utilService } from '../../services/util.service.js'
 
 //   thumbnail: require('../../../assets/img/thumbnails/section/wap-section-1.jpg'),
+
+
 export const wapContainer1B = {
-  id: "wc04",
+  id: "wc06",
   type: "wap-container",
   name: "wap-container-1b",
   info: {
-    btn: [],
-    txt: 'AENEAN CONSECTETUR PORTA. Nullam quis risus eget urna mollis ornare vel eu leo.'
+    subtitle: 'Reservations',
+    title: 'BOOK A TABLE',
+    btn: { label: "Book Now", link: "#wc03" },
   },
   theme: "theme-section-happy",
   style: {
-    background: "url('https://res.cloudinary.com/dimirmc9j/image/upload/v1673814062/%D7%95%D7%95%D7%90%D7%99_%D7%95%D7%95%D7%A9_%D7%91%D7%9C%D7%99%D7%9C%D7%94_b4urev.jpg')",
     font: "Fontush",
   },
   cmps: [
     {
-      type: 'card',
-      name: 'wap-cards-2-img-container',
+      type: 'wap-form',
       id: utilService.makeId(),
-      style: {},
+      name: 'wap-form-1',
       info: {
-        txt: '',
-        imgUrl: 'https://uploads-ssl.webflow.com/5af49de0dbb1e3637f2d8886/5afa1b861bc189407c1a9b2c_dash-device.png',
+        subtitle: 'Reservations',
+        title: 'BOOK A TABLE',
+        inputs:[
+          { dataType: 'date', name: 'wap-input', placeholder: '' },
+          { dataType: 'time', name: 'wap-input', placeholder: '' },
+          { dataType: 'number', name: 'wap-input', placeholder: '' }
+        ],
+        btn: { label: "Book Now", link: "#wc03" },
       },
-    },
+
+    }
   ]
 }
-
 
 
