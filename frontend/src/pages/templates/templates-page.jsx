@@ -13,7 +13,7 @@ export function Templates() {
 
     return (
         <div className="templates-page">
-            <h2>Choose a template</h2>
+            <h2>Choose Your Template</h2>
             <div className="preview-card">
                 <img className="preview-img" src={wapTemplate1.imgUrl} />
                     <Link className='templates-btn-container' to="/editor">
