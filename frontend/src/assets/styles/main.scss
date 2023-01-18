@@ -8,9 +8,8 @@
 @import "basics/helpers";
 @import "basics/layout";
 @import "basics/base";
-@import "basics/links";
+// @import "basics/links";
 @import "basics/forms";
-
 
 // Views
 @import "views/home-page";
@@ -20,8 +19,6 @@
 // Templates
 @import "templates/wap-template-1.scss";
 @import "templates/wap-template-2.scss";
-
-
 
 // Components
 @import "cmps/app-header";

@@ -1,5 +1,4 @@
 
-import { Link } from 'react-router-dom'
 import { EditorBoard } from './cmps/editor-board.jsx'
 import { EditorSideBar } from './cmps/editor-sidebar.jsx'
 import { useSelector } from 'react-redux'
@@ -33,7 +32,6 @@ export function Editor() {
     function addCmpToBoard(cmp) {
         // wap.cmps.unshift(cmp)
         const newState = { ...wap }
-        // console.log('newState:',newState)
         updateWap(newState)
     }
 
@@ -41,7 +39,6 @@ export function Editor() {
     function onPickedCmp({ target }) {
         const pickedCmpId = target.value
         let cmp = getCmpById(pickedCmpId)
-        // console.log('cmp:', cmp)
         addCmpToBoard(cmp)
     }
     // console.log(wap)
