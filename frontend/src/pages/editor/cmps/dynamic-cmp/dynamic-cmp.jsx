@@ -2,6 +2,7 @@
 import { ContainerCmp } from './container-cmp.jsx'
 import { WapHeader } from './wap-header-cmp.jsx'
 import { WapHero } from './wap-hero-cmp.jsx'
+import { WapPreview } from './wap-preview-cmp.jsx'
 
 import { useEffect, useState } from 'react'
 import { CardCmp } from './card-cmp.jsx'
@@ -13,7 +14,7 @@ export const DynamicCmp = (props) => {
 // ADD WAP-(case) TO ALL THE SWITCH CASES
 
   switch (cmp.type) {
-    case 'container':
+    case 'wap-container':
       return (
         <ContainerCmp
           {...props}
@@ -30,6 +31,13 @@ export const DynamicCmp = (props) => {
       case 'wap-hero':
         return (
           <WapHero
+            {...props}
+            style={cmp.style}
+          />
+        )
+        case 'wap-preview':
+        return (
+          <WapPreview
             {...props}
             style={cmp.style}
           />

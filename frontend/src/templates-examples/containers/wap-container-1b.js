@@ -1,10 +1,10 @@
 import { utilService } from '../../services/util.service.js'
 
 //   thumbnail: require('../../../assets/img/thumbnails/section/wap-section-1.jpg'),
-export const WapSection1 = {
+export const wapContainer1B = {
   id: "wc04",
-  type: "container",
-  name: "wap-section-1",
+  type: "wap-container",
+  name: "wap-container-1b",
   info: {
     btn: [],
     txt: 'AENEAN CONSECTETUR PORTA. Nullam quis risus eget urna mollis ornare vel eu leo.'
