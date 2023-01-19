@@ -11,12 +11,12 @@ export function EditorSideBar({ onPickedCmp }) {
       <div>
         <label htmlFor="cmps">Cmps : </label>
         <select onChange={onPickedCmp}>
-          <option value={'wap-header'}>Header</option>
-          <option value={'wap-hero'}>Hero</option>
-          <option value={'wap-preview'}>Preview</option>
-          <option value={'wap-cards'}>Cards</option>
-          <option value={'wap-form'}>Form</option>
-          <option value={'wap-footer'}>Footer</option>
+          <option value={"wap-header"}>Header</option>
+          <option value={"wap-hero"}>Hero</option>
+          <option value={"wap-preview"}>Preview</option>
+          <option value={"wap-cards"}>Cards</option>
+          <option value={"wap-form"}>Form</option>
+          <option value={"wap-footer"}>Footer</option>
         </select>
       </div>
 

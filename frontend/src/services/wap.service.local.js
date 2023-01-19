@@ -27,11 +27,11 @@ import { wapContainer2C } from '../waps/containers/wap-container-2c'
 import { wapFooter2 } from '../waps/footers/wap-footer-2'
 
 const mapCmpByCategory = {
-    header: [wapHeader1, wapHeader2],
-    hero: [wapHero1, wapHero2],
-    preview: [wapPreview1, wapPreview2],
-    container: [wapContainer1A, wapContainer1B, wapContainer2A, wapContainer2B, wapContainer2C],
-    footer: [wapFooter1, wapFooter2],
+    headers: [wapHeader1, wapHeader2],
+    heros: [wapHero1, wapHero2],
+    previews: [wapPreview1, wapPreview2],
+    containers: [wapContainer1A, wapContainer1B, wapContainer2A, wapContainer2B, wapContainer2C],
+    footers: [wapFooter1, wapFooter2],
 }
 
 export const wapDemos = [

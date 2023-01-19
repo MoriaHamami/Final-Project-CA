@@ -61,16 +61,16 @@ export function LoginSignup() {
                 <label htmlFor="password">Password :</label>
                     <input type="password"
                         name="password"
-                        id='password'
+                        id="password"
                         placeholder="Password"
                         value={password}
                         onChange={handleChange} />
             </div>
             {isSignupState && <Fragment>
                 <div>
-                    <label htmlFor='fullname'>Full name: </label>
+                    <label htmlFor="fullname">Full name: </label>
                         <input type="text"
-                            id='fullname'
+                            id="fullname"
                             name="fullname"
                             placeholder="Full name.."
                             value={fullname}
@@ -79,15 +79,15 @@ export function LoginSignup() {
             </Fragment>
             }
 
-            <button className='login-signup-btn'>{isSignupState ? 'Sign up' : 'Login'}</button>
-            <a className='signup-link' href="#" onClick={onToggleSignupState}>
-                {isSignupState ? 'Already a member ? Login' : 'New user ? sign up here'}
+            <button className="login-signup-btn">{isSignupState ? "Sign up" : "Login"}</button>
+            <a className="signup-link" href="#" onClick={onToggleSignupState}>
+                {isSignupState ? "Already a member ? Login" : "New user ? sign up here"}
             </a>
         </form>}
 
-        {user && <div className='user-profile'>
-            <h2 className='user-greeting'>Hello {user.fullname}</h2>
-            <button className='logout-btn' onClick={onLogout}>Logout</button>
+        {user && <div className="user-profile">
+            <h2 className="user-greeting">Hello {user.fullname}</h2>
+            <button className="logout-btn" onClick={onLogout}>Logout</button>
         </div>}
 
         {/* {user && <UserProfile user={user} />} */}

@@ -82,15 +82,15 @@ export function Editor() {
     return (
            <div>
            {wap && <DragDropContext onDragEnd={onEnd}>
-                    <Droppable droppableId='delete'>
+                    <Droppable droppableId="delete">
                         {(provided, snapshot) => (
                             <div ref={provided.innerRef}>
-                                <FontAwesomeIcon className='editor-delete-icon' icon={faTrashCan} />
+                                <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
                             </div>
                         )
                         }
                     </Droppable >
-                    <section className='editor-page'>
+                    <section className="editor-page">
                         <EditorSideBar onPickedCmp={onPickedCmp} />
                         {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
                     </section>

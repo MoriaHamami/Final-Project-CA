@@ -12,10 +12,10 @@ import { DynamicCmp } from './dynamic-cmp'
 export function WapPreview({ style, cmp }) {
   return (
     <div id={cmp.type} style={style} className={cmp.name}>
-            <span className='subtitle'>{cmp.info.subtitle}</span>
-            <h2 className='title'>{cmp.info.title}</h2>
+            <span className="subtitle">{cmp.info.subtitle}</span>
+            <h2 className="title">{cmp.info.title}</h2>
             {cmp.info.imgUrl && <img src={cmp.info.imgUrl} alt="" />}
-            <p className='txt'>{cmp.info.txt}</p>
+            <p className="txt">{cmp.info.txt}</p>
             {cmp.info.btn && <button>{cmp.info.btn.label}</button>}
     </div>
   )

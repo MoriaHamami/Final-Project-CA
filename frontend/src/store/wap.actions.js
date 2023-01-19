@@ -50,3 +50,23 @@ export async function updateWap(wap) {
         console.log('err:', err)
     }
 }
+
+export async function removeWap(wap) {
+    try {
+        // console.log('wap:', wap)
+        await wapService.save(wap)
+        store.dispatch({ type: UPDATE_WAP, wap })
+    } catch (err) {
+        console.log('err:', err)
+    }
+}
+
+// export async function saveWap(wap) {
+//     try {
+//         // console.log('wap:', wap)
+//         await wapService.save(wap)
+//         store.dispatch({ type: UPDATE_WAP, wap })
+//     } catch (err) {
+//         console.log('err:', err)
+//     }
+// }
