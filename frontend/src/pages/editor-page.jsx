@@ -1,6 +1,7 @@
 
 import { EditorBoard } from '../cmps/editor/editor-board.jsx'
 import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
+import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
 import { getCmpById, wapDemos } from '../services/wap.service.local'
 import { getCmpByName, getWapById, updateWap } from '../store/wap.actions.js'
@@ -82,6 +83,8 @@ export function Editor() {
     return (
            <div>
            {wap && <DragDropContext onDragEnd={onEnd}>
+           <EditorHeader />
+           
                     <Droppable droppableId="delete">
                         {(provided, snapshot) => (
                             <div ref={provided.innerRef}>

@@ -19,8 +19,7 @@ export function EditorSideBar({ onPickedCmp }) {
       </div>
 
       <div className={`editor-tools ${openMenu ? 'open' : ''}`}>
-        <div>
-          {/* <label htmlFor="cmps">Cmps : </label> */}
+        {/* <div>
           <select name="cars" id="cars" onChange={onPickedCmp}>
             <option value={"wc12"}>Header</option>
             <option value={"wc13"}>Hero</option>
@@ -29,7 +28,7 @@ export function EditorSideBar({ onPickedCmp }) {
             <option value={"wc10b"}>Form</option>
             <option value={"wc17"}>Footer</option>
           </select>
-        </div>
+        </div> */}
 
       </div>
 

@@ -1,0 +1,42 @@
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px 1px;
+
+    .editor-actions {
+        display: flex;
+
+        .editor-action {
+            padding: 1rem;
+
+            &:first-child{
+                padding-left: 0;
+            }
+            &:hover {
+                background-color: $almost-white;
+                cursor:not-allowed;
+            }
+        }
+    }
+
+    .site-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .preview-btn {
+            @include btn($type: min-round, $bg: $almost-white, $clr: $t2clr1,$padding: em(6px) em(12px), $hover: #171717);
+            font-size: 0.7rem;
+            cursor:not-allowed;
+        }
+
+        .publish-btn {
+            @include btn($type: min-round, $bg: $almost-white, $clr: $t2clr1,$padding: em(6px) em(12px), $hover: #171717);
+            font-size: 0.7rem;
+            cursor:not-allowed;
+        }
+    }
+}
