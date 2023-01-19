@@ -10,6 +10,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { wapService } from '../../services/wap.service.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { utilService } from '../../services/util.service.js'
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
@@ -52,6 +53,11 @@ export function Editor() {
     }
 
     function addCmpToBoard(cmp) {
+        // Change cmp id
+        cmp.id = utilService.makeId()
+        // Change id of each cmp in the current cmp 
+        wapService.changeCmpId(cmp)
+        // Add cmp to wap and save
         wap.cmps.unshift(cmp)
         const newState = { ...wap }
         updateWap(newState)

@@ -14,6 +14,7 @@ export const wapService = {
     getById,
     save,
     remove,
+    changeCmpId
     // getEmptyWap,
     // addWapMsg
 }
