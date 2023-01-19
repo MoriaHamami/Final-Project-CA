@@ -15,7 +15,7 @@ const routes = [
         label: 'Templates',
     },
     {
-        path: '/editor',
+        path: '/editor/:wapId',
         component: <Editor />,
         label: 'Editor',
     },
