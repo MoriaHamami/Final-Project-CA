@@ -34,27 +34,3 @@ export function EditorBoard({ wap }) {
         </>
     )
 }
-
-
-{/* <div style={{ backgroundColor: 'blue', height: '90px', transition: 'background 500ms' }}>shit</div> */ }
-{/* <DragDropContext onDragEnd={onEnd}>
-    <Droppable droppableId="123456">
-        {(provided, snapshot) => (
-            <div ref={provided.innerRef} style={{ backgroundColor: snapshot.isDraggingOver ? 'lightblue' : 'grey' }}
-            >
-                {list.map((item, index) => (
-                    <Draggable draggableId={item.id} key={item.id} index={index}>
-                        {(provided, snapshot) => (
-                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                <div style={{ backgroundColor: snapshot.isDragging ? 'white' : `${item.color}`, height: '90px', transition: 'background 500ms' }}>{item.name}</div>
-                            </div>
-                        )}
-                    </Draggable>
-                ))}
-                {provided.placeholder}
-            </div>
-        )}
-
-    </Droppable>
-</DragDropContext>
-  ); */}

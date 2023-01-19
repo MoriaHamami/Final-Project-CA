@@ -14,6 +14,7 @@ export const wapService = {
     getById,
     save,
     remove,
+    changeCmpId
     // getEmptyWap,
     // addWapMsg
 }
@@ -53,7 +54,7 @@ async function save(wap) {
 
 function changeCmpId(cmp) {
     cmp?.cmps?.forEach((currCmp) => {
-        currCmp.id = uuidv4()
+        currCmp.id = utilService.makeId()
         if (!cmp.cmps || !cmp.cmps.length) return
         else changeCmpId(currCmp)
     })
