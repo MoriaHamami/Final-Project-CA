@@ -3,12 +3,22 @@
     border-bottom: 1px solid lightgray;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px 1px;
     z-index: 1;
+
     .header-txt-container {
         display: flex;
         align-items: center;
         font-family: Arial, Helvetica, sans-serif;
         margin-inline: 40px;
         max-width: 1500px;
+    }
+
+    .pages-container > * {
+        text-decoration: none;
+        color: $almost-black;
+
+        &:not(:first-child) {
+            margin-inline-start: 20px;
+        }
     }
 
     .header-profile-container {
@@ -38,7 +48,6 @@
     .profile-img {
         font-size: 1.8rem;
     }
-
 
     .logo {
         text-transform: capitalize;

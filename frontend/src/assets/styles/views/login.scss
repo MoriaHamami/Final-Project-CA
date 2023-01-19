@@ -1,49 +1,43 @@
-.login-signup{
+.login-signup {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // justify-content: start;
-    padding-top: 40px;
-    gap: 30px;
-    
-        .login-signup-form{
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            // align-items: center;
-    
-            // div{
-            //     display: flex;
-            //     align-items: center;
-            //     justify-content: space-between;
-            //     gap: 20px;
-            // }
-    
-            input{
-                @include input($type: round, $width:300px);
-            }
-    
-            .login-signup-btn{
-                @include btn($type: round, $padding: em(12px) em(42px), $hover: $almost-white);
-            }
-    
+
+    .login-signup-form {
+        display: flex;
+        flex-direction: column;
+        font-family: txt-regular;
+        font-size: 1rem;
+        margin-top: 20px;
+        width: 300px;
+
+        input {
+            @include input($type: round, $width: 300px);
         }
-        
-        .logout-btn{
-            @include btn($type: round, $padding: em(12px) em(42px));
+
+        .login-signup-btn {
+            align-self: center;
+            margin-top: 20px;
+            width: 150px;
+            @include btn($type: round, $padding: em(12px) em(42px), $bg: $clr1, $hover: $almost-white, $clr: $almost-white);
         }
-    
-        .user-profile{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-    
-        .user-greeting{
-            color:  $clr1;
-            font-size: 2rem;
-        }
+
     }
-    
+
+    .logout-btn {
+        @include btn($type: round, $padding: em(12px) em(42px), $bg: $clr1, $hover: $almost-white, $clr: $almost-white);
+    }
+
+    .signup-link {
+        text-align: center;
+        align-self: center;
+    }
+
+    .user-greeting {
+        text-transform: capitalize;
+        padding-top: 20px;
+        color: $almost-black;
+        font-size: 2rem;
+    }
+}
