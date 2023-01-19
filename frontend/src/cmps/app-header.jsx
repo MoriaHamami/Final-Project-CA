@@ -9,11 +9,14 @@ export function AppHeader() {
             <div className='header-txt-container'>
                 <Link className='logo' key='/' to='/'>webix</Link>
                 <nav>
-                    <NavLink key='/templates' to='/templates'>Templates</NavLink>
-                    {user ?<Link to="/user" className='header-profile-container'>
+                    <div className='pages-container'>
+                        <NavLink key='/templates' to='/templates'>Templates</NavLink>
+                        {user && <NavLink key='/drafts' to='/drafts'>Drafts</NavLink>}
+                    </div>
+                    {user ? <Link to="/user" className='header-profile-container'>
                         |
                         <span className="material-symbols-outlined profile-img">account_circle</span>
-                         <span className='user-name'>{user.fullname}</span> 
+                        <span className='user-name'>{user.fullname}</span>
                     </Link> : <NavLink className='header-profile-container' key='/user' to='/user'>Login</NavLink>}
                 </nav>
             </div>
