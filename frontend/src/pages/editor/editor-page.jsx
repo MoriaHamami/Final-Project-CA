@@ -27,8 +27,8 @@ export function Editor() {
         }
     }, [])
 
-    useEffect(() =>{
-        console.log('wap.cmps:',wap.cmps)
+    useEffect(() => {
+        console.log('wap.cmps:', wap.cmps)
         setList(wap.cmps)
     }, [wap])
 
@@ -72,7 +72,7 @@ export function Editor() {
                 <DragDropContext onDragEnd={onEnd}>
                     <Droppable droppableId='delete'>
                         {(provided, snapshot) => (
-                            <div ref={provided.innerRef}>
+                            <div ref={provided.innerRef} >
                                 <div>DELETE PAH</div>
                             </div>
                         )

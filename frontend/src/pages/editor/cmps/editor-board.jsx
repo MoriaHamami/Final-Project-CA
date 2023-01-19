@@ -13,7 +13,7 @@ export function EditorBoard({ wap }) {
 
             <Droppable droppableId='editor'>
                 {(provided, snapshot) => (
-                    <div className='editor-board' ref={provided.innerRef}>
+                    <div className='editor-board' ref={provided.innerRef} style={{ backgroundColor: snapshot.isDraggingOver ? 'lightblue' : 'white' }}>
                         {wap?.cmps?.map((cmp, index) => {
                             return <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
                                 {
