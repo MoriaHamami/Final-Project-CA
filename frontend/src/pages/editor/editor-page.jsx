@@ -28,8 +28,8 @@ export function Editor() {
         }
     }, [])
 
-    useEffect(() =>{
-        console.log('wap.cmps:',wap.cmps)
+    useEffect(() => {
+        console.log('wap.cmps:', wap.cmps)
         setList(wap.cmps)
     }, [wap])
 
@@ -75,28 +75,17 @@ export function Editor() {
     return (
         <section>
             {wap && <div>
-                <div>
-                    <label htmlFor="cmps">Cmps : </label>
-                    <select name="cars" id="cars" onChange={onPickedCmp}>
-                        <option value={'wc12'}>Header</option>
-                        <option value={'wc13'}>Hero</option>
-                        <option value={'wc14'}>Preview</option>
-                        <option value={'wc10a'}>Cards</option>
-                        <option value={'wc10b'}>Form</option>
-                        <option value={'wc17'}>Footer</option>
-                    </select>
-                </div>
                 <DragDropContext onDragEnd={onEnd}>
                     <Droppable droppableId='delete'>
                         {(provided, snapshot) => (
-                            <div ref={provided.innerRef}>
+                            <div ref={provided.innerRef} >
                                 <div>DELETE PAH</div>
                             </div>
                         )
                         }
                     </Droppable >
                     <section className='editor-page'>
-                        <EditorSideBar />
+                        <EditorSideBar onPickedCmp={onPickedCmp} />
                         {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
                     </section>
                 </DragDropContext>
