@@ -9,8 +9,8 @@ export function WapFooter({ style, cmp }) {
     <div id={cmp.id} className={cmp.name}>
       <div className='icons-container'>
         {cmp?.info?.btns.map((btn) => {
-          if (btn.label === 'facebook') return <FontAwesomeIcon className='footer-icon' icon={faFacebookF} />
-          else if (btn.label === 'instagram') return <FontAwesomeIcon className='footer-icon' icon={faInstagram} />
+          if (btn.label === 'facebook') return <FontAwesomeIcon className='footer-icon' icon={faFacebookF} key={btn.id} />
+          else if (btn.label === 'instagram') return <FontAwesomeIcon className='footer-icon' icon={faInstagram} key={btn.id} />
         })}
       </div>
       <p className='copy-rights'>{cmp.info.txt}</p>

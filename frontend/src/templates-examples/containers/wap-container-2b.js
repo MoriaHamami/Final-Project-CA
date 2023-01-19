@@ -10,7 +10,7 @@ export const wapContainer2B = {
   info: {
     subtitle: 'Reservations',
     title: 'BOOK A TABLE',
-    btn: { label: "Book Now", link: "#wc03" },
+    btn: { label: "Book Now", link: "#wc03", id: utilService.makeId() },
   },
   theme: "theme-section-happy",
   style: {

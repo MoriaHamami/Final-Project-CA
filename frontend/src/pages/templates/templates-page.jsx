@@ -30,7 +30,7 @@ export function Templates() {
             <h2>Choose Your Template</h2>
             <div className="preview-list">
                 {wapTemplates?.map((wapTemplate) => {
-                    return <TemplateCard wapTemplate={wapTemplate} onSelectTemplate={onSelectTemplate}/>
+                    return <TemplateCard key={wapTemplate._id} wapTemplate={wapTemplate} onSelectTemplate={onSelectTemplate}/>
                 })}
                 {/* <Link className="templates-btn-container" to={`/editor/${wapTemplate._id}`}> */}
             </div>

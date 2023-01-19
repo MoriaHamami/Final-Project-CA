@@ -21,11 +21,11 @@ export const wapContainer1B = {
         title: 'Reservations',
         subtitle: 'BOOK A TABLE',
         inputs:[
-          { dataType: 'date', name: 'wap-input', placeholder: '' },
-          { dataType: 'time', name: 'wap-input', placeholder: '' },
-          { dataType: 'number', name: 'wap-input', placeholder: '' }
+          { dataType: 'date', name: 'wap-input', placeholder: '', id: utilService.makeId() },
+          { dataType: 'time', name: 'wap-input', placeholder: '', id: utilService.makeId() },
+          { dataType: 'number', name: 'wap-input', placeholder: '', id: utilService.makeId() }
         ],
-        btn: { label: "Book Now", link: "#wc03" },
+        btn: { label: "Book Now", link: "#wc03", id: utilService.makeId() },
       },
 
     }

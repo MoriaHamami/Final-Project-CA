@@ -21,10 +21,10 @@ export const wapContainer2C = {
         title: 'Ask Us Anything',
         subtitle: 'info@mysite.com | 123-456-7890',
         inputs:[
-          { dataType: 'text', name: 'wap-input', placeholder: 'Name' },
-          { dataType: 'text', name: 'wap-input', placeholder: 'Email' },
-          { dataType: 'text', name: 'wap-input', placeholder: 'Subject' },
-          { dataType: 'text', name: 'wap-input', placeholder: 'Type your message here...' }
+          { dataType: 'text', name: 'wap-input', placeholder: 'Name', id: utilService.makeId() },
+          { dataType: 'text', name: 'wap-input', placeholder: 'Email', id: utilService.makeId() },
+          { dataType: 'text', name: 'wap-input', placeholder: 'Subject', id: utilService.makeId() },
+          { dataType: 'text', name: 'wap-input', placeholder: 'Type your message here...', id: utilService.makeId() }
         ],
         btn: { label: "Submit", link: "#wc03" },
       },

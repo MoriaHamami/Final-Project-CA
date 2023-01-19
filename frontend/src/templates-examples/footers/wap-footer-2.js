@@ -7,8 +7,8 @@ export const wapFooter2 = {
   info: {
     txt: "© 2023 Adventure Tour Company | Created using Webix",
     btns: [
-      { label: "facebook", link: "#wc24" },
-      { label: "instagram", link: "#wc26" }
+      { label: "facebook", link: "#wc24", id: utilService.makeId() },
+      { label: "instagram", link: "#wc26", id: utilService.makeId() }
     ]
   },
   thumbnail: null,

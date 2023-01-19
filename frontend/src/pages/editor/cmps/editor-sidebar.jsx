@@ -6,6 +6,8 @@ export function EditorSideBar({ onPickedCmp }) {
   return (
     <div className={openMenu ? 'editSideBar' : 'editSideBarClosed'}>
 
+      <div className="side-bar-editor"></div>
+
       <div>
         <label htmlFor="cmps">Cmps : </label>
         <select name="cars" id="cars" onChange={onPickedCmp}>

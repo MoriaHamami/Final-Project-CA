@@ -10,7 +10,7 @@ export function FormCmp({ cmp }) {
             <span className='subtitle'>{cmp.info.subtitle}</span>
             <form>
                 {cmp.info.inputs?.map(input => {
-                    return <input type={input.dataType} placeholder={input.placeholder} />
+                    return <input type={input.dataType} placeholder={input.placeholder} key={input.id} />
                 })}
                 <button>{cmp.info.btn.label}</button>
             </form>

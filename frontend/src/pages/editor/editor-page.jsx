@@ -8,11 +8,12 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { wapService } from '../../services/wap.service.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
     const [isDragging, setIsDragging] = useState(false)
-    // console.log('wap:', wap.cmps)
 
     const [list, setList] = useState([])
     const navigate = useNavigate()
@@ -27,15 +28,12 @@ export function Editor() {
         }
     }, [])
 
-    useEffect(() =>{
-        console.log('wap.cmps:',wap.cmps)
+    useEffect(() => {
         setList(wap.cmps)
     }, [wap])
 
     const reOrder = (list, startIndex, endIndex) => {
-        // console.log('hey');
         const result = list
-        // console.log('list', list);
         const [removed] = result.splice(startIndex, 1)
         result.splice(endIndex, 0, removed)
         const newState = { ...wap, cmps: result }
@@ -45,8 +43,7 @@ export function Editor() {
 
     const onEnd = (result) => {
         if (result.destination.droppableId === 'delete') {
-            console.log('deleting ', result.source)
-            // handleDelete
+            removeCmpFromBoard(result)
             return
         }
 
@@ -66,6 +63,13 @@ export function Editor() {
         addCmpToBoard(cmp)
     }
 
+    function removeCmpFromBoard(result) {
+        const idx = result.source.index
+        wap.cmps.splice(idx, 1)
+        const newState = { ...wap }
+        updateWap(newState)
+    }
+
     return (
         <section>
             {wap && <div>
@@ -73,7 +77,7 @@ export function Editor() {
                     <Droppable droppableId='delete'>
                         {(provided, snapshot) => (
                             <div ref={provided.innerRef}>
-                                <div>DELETE PAH</div>
+                                <FontAwesomeIcon className='footer-icon' icon={faTrashCan} />
                             </div>
                         )
                         }

@@ -7,8 +7,8 @@ export const wapFooter1 = {
   info: {
     txt: "© 2023 Mario shop | Created using Webix",
     btns: [
-      { label: "facebook", link: "#wc14" },
-      { label: "instagram", link: "#wc16" }
+      { label: "facebook", link: "#wc14", id: utilService.makeId() },
+      { label: "instagram", link: "#wc16", id: utilService.makeId() }
     ]
   },
   thumbnail: null,
