@@ -5,10 +5,8 @@
     color: $almost-white;
 
     .editor-options {
-        // flex-grow: 1;
         height: 85vh;
         width: 60px;
-        
     }
     
     .editor-tools{
@@ -23,21 +21,3 @@
     }
 }
     
-
-
-// .editSideBar {
-//     width: 180px;
-//     transition: width 0.4s ease-in-out;
-//     background-color: rgb(40, 40, 40);
-//     display: block;
-//     height: 85vh;
-//     position: sticky;
-// }
-
-// .editSideBarClosed {
-//     // flex-grow: 1;
-//     background-color: rgb(40, 40, 40);
-//     transition: width 0.4s ease-in-out;
-//     height: 85vh;
-//     width: 60px;
-// }
