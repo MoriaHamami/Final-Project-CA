@@ -2,8 +2,8 @@
 import { Link, useNavigate } from 'react-router-dom'
 // import { useDispatch } from 'react-redux'
 import { createWap, saveWap } from '../store/wap.actions.js'
-import { WapDemoPreview } from '../cmps/waps/wap-demo-preview.jsx'
-import { WapDemoList } from '../cmps/waps/wap-demo-list.jsx'
+// import { WapDemoPreview } from '../cmps/waps/wap-demo-preview.jsx'
+import { WapDemoList } from '../cmps/wap-demos/wap-demo-list'
 
 export function WapDemos() {
     // const dispatch = useDispatch()
