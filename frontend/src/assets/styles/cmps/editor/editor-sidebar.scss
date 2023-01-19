@@ -8,26 +8,28 @@
 
     .editor-options {
         height: 85vh;
-        width:  60px;
-        display: grid;
+        display: flex;
         // justify-content: center;
-        grid-template-rows: repeat(1, 60px);
-        border-right: 1px solid rgb(181, 181, 181);
+        flex-direction: column;
+        padding-top: 10px;
         
-        .editor-option{
+        .option-container{
             align-self: center;
             justify-self: center;
             font-size: 1.3rem;
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            align-items: center;
+            padding: 10px 20px;
+
+            &:hover {
+                background-color: $almost-white;
+            }
 
             .option-name{
                 font-size: 0.8rem;
             }
-            // align-self: flex-start;
-            // margin: auto;
         }
     }
     

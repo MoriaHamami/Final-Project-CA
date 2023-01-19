@@ -1,10 +1,19 @@
 import { useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaintbrush, faPencil, faDisplay, faTabletScreenButton, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons'
+import {SidebarEdit} from './sidebar-edit.jsx'
+import {SidebarAdd} from './sidebar-add.jsx'
+import { faAdd, faPencil, faDisplay, faTabletScreenButton, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons'
 import 'animate.css';
+import { wapHero2 } from "../../waps/heros/wap-hero-2";
 
 export function EditorSideBar({ onPickedCmp }) {
   const [openMenu, setOpenMenu] = useState(false)
+  const [editType, setEditType] = useState('')
+
+  function onOptionClick(type) {
+    setOpenMenu(!openMenu)
+    setEditType(type)
+  }
 
   return (
 
@@ -12,24 +21,29 @@ export function EditorSideBar({ onPickedCmp }) {
 
 
       <div className={`editor-options ${openMenu ? 'open' : ''}`}>
-        <div className="editor-option">
-        <FontAwesomeIcon className="edit-btn" icon={faPencil} onClick={() => { setOpenMenu(!openMenu) }}/>
-        <span className="option-name">Edit</span> 
+
+        <div className="option-container" onClick={() => onOptionClick('edit')}>
+          <FontAwesomeIcon className="edit-btn" icon={faPencil}  />
+          <span className="option-name">Edit</span>
+        </div>
+        <div className="option-container" onClick={() => onOptionClick('add')}>
+          <FontAwesomeIcon className="add-btn" icon={faAdd}  />
+          <span className="option-name">Add</span>
         </div>
       </div>
 
       <div className={`editor-tools ${openMenu ? 'open' : ''}`}>
-        <div>
-          {/* <label htmlFor="cmps">Cmps : </label> */}
-          <select name="cars" id="cars" onChange={onPickedCmp}>
-            <option value={"wc12"}>Header</option>
-            <option value={"wc13"}>Hero</option>
-            <option value={"wc14"}>Preview</option>
-            <option value={"wc10a"}>Cards</option>
-            <option value={"wc10b"}>Form</option>
-            <option value={"wc17"}>Footer</option>
-          </select>
-        </div>
+        {editType === 'edit' && <SidebarEdit />}
+
+        {/* FOR GUY */}
+        {/* FOR GUY */}
+        {/* FOR GUY */}
+        {editType === 'add' && <SidebarAdd onPickedCmp= {onPickedCmp} />}
+        {/* FOR GUY */}
+        {/* FOR GUY */}
+        {/* FOR GUY */}
+
+        
 
       </div>
 
