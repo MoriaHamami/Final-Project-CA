@@ -58,17 +58,6 @@ export function Editor() {
     return (
         <section>
             {wap && <div>
-                <div>
-                    <label htmlFor="cmps">Cmps : </label>
-                    <select name="cars" id="cars" onChange={onPickedCmp}>
-                        <option value={'wc12'}>Header</option>
-                        <option value={'wc13'}>Hero</option>
-                        <option value={'wc14'}>Preview</option>
-                        <option value={'wc10a'}>Cards</option>
-                        <option value={'wc10b'}>Form</option>
-                        <option value={'wc17'}>Footer</option>
-                    </select>
-                </div>
                 <DragDropContext onDragEnd={onEnd}>
                     <Droppable droppableId='delete'>
                         {(provided, snapshot) => (
@@ -79,7 +68,7 @@ export function Editor() {
                         }
                     </Droppable >
                     <section className='editor-page'>
-                        <EditorSideBar />
+                        <EditorSideBar onPickedCmp={onPickedCmp} />
                         {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
                     </section>
                 </DragDropContext>
