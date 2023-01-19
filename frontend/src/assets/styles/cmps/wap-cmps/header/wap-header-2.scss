@@ -1,0 +1,33 @@
+.wap-header-2 {
+    background-color: $almost-white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5.5rem;
+    align-items: center;
+    color: $t2clr1;
+  
+    .logo {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0;
+    }
+  
+    p {
+      margin: 0;
+    }
+  
+    &.mobile-layout,
+    &.tablet-layout {
+      padding: 1rem 1.5rem;
+    }
+  
+    .nav-bar {
+      display: flex;
+      gap: 1rem;
+  
+      a {
+        color: $t2clr1;
+        font-size: 0.8rem;
+      }
+    }
+  }

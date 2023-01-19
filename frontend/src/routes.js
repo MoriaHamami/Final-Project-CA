@@ -1,7 +1,7 @@
 import { HomePage } from './pages/home-page.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
-import { Templates } from './pages/templates/templates-page.jsx'
-import { Editor } from './pages/editor/editor-page.jsx'
+import { WapDemos } from './pages/wap-demos-page.jsx'
+import { Editor } from './cmps/editor-page.jsx'
 import { Drafts } from './pages/drafts.jsx'
 
 const routes = [
@@ -11,8 +11,8 @@ const routes = [
         label: 'Home',
     },
     {
-        path: '/templates',
-        component: <Templates />,
+        path: '/WapDemos',
+        component: <WapDemos />,
         label: 'Templates',
     },
     {

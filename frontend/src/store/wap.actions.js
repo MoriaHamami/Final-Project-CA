@@ -1,11 +1,11 @@
-import { getTemplateExById } from '../services/templates.service.local.js'
+import { getWapDemoById } from '../services/wap.service.local.js'
 import { wapService } from '../services/wap.service.js'
 import { store } from '../store/store.js'
 import { SET_WAP, UPDATE_WAP } from './wap.reducer.js'
 
-// Saves new template and loads in editor
-export async function saveTemplateDraft(wapId) {
-    let wap = getTemplateExById(wapId)
+// Saves new wap and loads in editor
+export async function saveWap(wapId) {
+    let wap = getWapDemoById(wapId)
     if (!wap) {
         throw new Error('wap not found')
     }
@@ -21,10 +21,19 @@ export async function saveTemplateDraft(wapId) {
     }
 }
 
-// Loads template when page is refreshed
+// Loads demo waps when page is refreshed
 export async function getWapById(wapId) {
     try {
-        let wap = await wapService.getById(wapId)
+        let wap = await wapService.getWapById(wapId)
+        store.dispatch({ type: SET_WAP, wap })
+    } catch (err) {
+        console.log('err:', err)
+    }
+}
+
+export async function getCmpByName(wapName) {
+    try {
+        let wap = await wapService.getWapByName(wapName)
         store.dispatch({ type: SET_WAP, wap })
     } catch (err) {
         console.log('err:', err)

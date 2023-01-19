@@ -1,0 +1,41 @@
+.wap-form-2 {
+
+  background-color: $almost-white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 5.5rem;
+  flex-direction: column;
+  color: $almost-black;
+
+  .title {
+    font-size: 1.5em;
+    margin-bottom: 2rem;
+    color: $t2clr1;
+    // color: $almost-white;
+    padding: 0 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      @include input($width: 300px, $borderClr: $t2clr1, $padding: em(8px) em(42px) em(8px) em(12px));
+      margin: 0.3rem;
+    }
+
+    button {
+      @include btn($type: min-round, $bg: $almost-white, $clr: $t2clr1,$padding: em(8px) em(12px), $hover: #171717)
+    }
+  }
+}
