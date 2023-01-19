@@ -24,7 +24,7 @@ export function Templates() {
             <div className="preview-list">
                 {wapTemplates?.map((wapTemplate) => {
                     return <div key={wapTemplate._id} className="preview-card">
-                        <div className="img-container">
+                        <div onClick={() => onSelectTemplate(wapTemplate._id)} className="img-container">
                             <img className="preview-img" src={wapTemplate.imgUrl} />
                             <Link className="templates-btn-container" to="/editor">
                                 <button className="edit-btn" onClick={() => onSelectTemplate(wapTemplate._id)}>Edit</button>

@@ -13,10 +13,10 @@ export function Editor() {
 
     const [list, setList] = useState([])
 
-    useEffect(() =>{
-        console.log('wap.cmps:',wap.cmps)
+    useEffect(() => {
+        console.log('wap.cmps:', wap.cmps)
         setList(wap.cmps)
-    } ,[wap])
+    }, [wap])
 
     const reOrder = (list, startIndex, endIndex) => {
         // console.log('hey');
@@ -47,29 +47,14 @@ export function Editor() {
         let cmp = getCmpById(pickedCmpId)
         addCmpToBoard(cmp)
     }
-    // console.log(wap)
     return (
-        <section>
-            {wap && <div>
-                <div>
-                    <label htmlFor="cmps">Cmps : </label>
-                    <select name="cars" id="cars" onChange={onPickedCmp}>
-                        <option value={'wc12'}>Header</option>
-                        <option value={'wc13'}>Hero</option>
-                        <option value={'wc14'}>Preview</option>
-                        <option value={'wc10a'}>Cards</option>
-                        <option value={'wc10b'}>Form</option>
-                        <option value={'wc17'}>Footer</option>
-                    </select>
-                </div>
-                <section className='editor-page'>
-                    <DragDropContext onDragEnd={onEnd}>
-                        <EditorSideBar />
-                        {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
-                    </DragDropContext>
-                </section>
-            </div>}
-
-        </section>
+        <div>
+            {wap && <section className='editor-page'>
+                <DragDropContext onDragEnd={onEnd}>
+                    <EditorSideBar onPickedCmp={onPickedCmp} />
+                    {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
+                </DragDropContext>
+            </section>}
+        </div>
     )
 }
