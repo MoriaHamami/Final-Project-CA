@@ -10,7 +10,7 @@ export function AppHeader() {
                 <Link className='logo' key='/' to='/'>webix</Link>
                 <nav>
                     <div className='pages-container'>
-                        <NavLink key='/templates' to='/templates'>Templates</NavLink>
+                        <NavLink key='/WapDemos' to='/WapDemos'>Templates</NavLink>
                         {user && <NavLink key='/drafts' to='/drafts'>Drafts</NavLink>}
                     </div>
                     {user ? <Link to="/user" className='header-profile-container'>

@@ -13,13 +13,9 @@
 
 // Views
 @import "views/home-page";
-@import "views/templates-page";
+@import "views/wap-demos-page";
 @import "views/editor-page";
 @import 'views/login.scss';
-
-// Templates
-@import "templates/wap-template-1.scss";
-@import "templates/wap-template-2.scss";
 
 // Components
 @import "cmps/app-header";
@@ -28,6 +24,20 @@
 @import "cmps/editor/editor-board";
 @import "cmps/user-msg";
 
+// Wap-Cmps
+@import "cmps/wap-cmps/container/wap-container-1a.scss";
+@import "cmps/wap-cmps/container/wap-container-2a.scss";
+@import "cmps/wap-cmps/container/wap-container-2b.scss";
+@import "cmps/wap-cmps/footer/wap-footer-1.scss";
+@import "cmps/wap-cmps/footer/wap-footer-2.scss";
+@import "cmps/wap-cmps/form/wap-form-1.scss";
+@import "cmps/wap-cmps/form/wap-form-2.scss";
+@import "cmps/wap-cmps/header/wap-header-1.scss";
+@import "cmps/wap-cmps/header/wap-header-2.scss";
+@import "cmps/wap-cmps/hero/wap-hero-1.scss";
+@import "cmps/wap-cmps/hero/wap-hero-2.scss";
+@import "cmps/wap-cmps/preview/wap-preview-1.scss";
+@import "cmps/wap-cmps/preview/wap-preview-2.scss";
 
 
 

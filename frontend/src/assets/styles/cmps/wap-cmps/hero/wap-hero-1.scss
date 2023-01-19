@@ -1,0 +1,36 @@
+.wap-hero-1 {
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 7.5rem 5.5rem;
+    flex-direction: column;
+    color: $almost-black;
+  
+    .title {
+      font-weight: 600;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+  
+    .subtitle {
+      font-size: 3.5em;
+    }
+  
+    .txt {
+      font-size: 1.3rem;
+    }
+  
+    img {
+      margin-top: 3rem;
+      max-width: 100%;
+    }
+  
+    button{
+      @include btn($type: round, $bg: inherit, $clr: $t1clr1, $padding: em(8px) em(12px), $hover: #0b0b0b42);
+      font-weight: 500;
+    }
+  }

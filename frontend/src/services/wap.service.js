@@ -3,7 +3,7 @@
 import { httpService } from './http.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
-import { wapTemplates } from './templates.service.local.js'
+import { wapDemos } from './wap.service.local.js'
 import { storageService } from './async-storage.service.js'
 
 
@@ -11,10 +11,11 @@ const STORAGE_KEY = 'waps'
 
 export const wapService = {
     query,
-    getById,
+    getWapById,
     save,
     remove,
-    changeCmpId
+    changeCmpId,
+    getWapByName
     // getEmptyWap,
     // addWapMsg
 }
@@ -26,8 +27,13 @@ async function query(filterBy = { txt: '', price: 0 }) {
     // return httpService.get(STORAGE_KEY, filterBy)
 }
 
-function getById(wapId) {
-    return storageService.get(STORAGE_KEY, wapId)
+function getWapById(wapId) {
+    return storageService.getById(STORAGE_KEY, wapId)
+    // return httpService.get(`wap/${wapId}`)
+}
+
+function getWapByName(wapName) {
+    return storageService.getByName(STORAGE_KEY, wapName)
     // return httpService.get(`wap/${wapId}`)
 }
 
@@ -63,7 +69,7 @@ function changeCmpId(cmp) {
 function _createWaps() {
     let waps = storageService.loadFromStorage(STORAGE_KEY)
     if (!waps || !waps.length) {
-        storageService.saveToStorage(STORAGE_KEY, wapTemplates)
+        storageService.saveToStorage(STORAGE_KEY, wapDemos)
     }
 }
 

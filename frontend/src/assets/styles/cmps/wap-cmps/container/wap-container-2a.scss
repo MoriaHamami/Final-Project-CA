@@ -1,0 +1,38 @@
+.wap-container-2a {
+  display: flex;
+  flex-direction: column;
+  color: $almost-black;
+  background-color: $almost-white;
+  padding: 5rem 2rem;
+  text-align: center;
+
+  .container-txt {
+    padding-bottom: 50px;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 50px;
+    margin: auto;
+
+    .wap-card {
+      position: relative;
+
+      .wap-card-img-container {
+        max-width: 50px;
+        margin: 50px auto;
+      }
+
+      .card-title {
+        font-size: 1.2rem;
+      }
+
+      .card-subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
