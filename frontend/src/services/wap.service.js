@@ -3,7 +3,7 @@
 import { httpService } from './http.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
-import { wapDemos } from './wap.service.local.js'
+import { getWapDemoById, wapDemos } from './wap.service.local.js'
 import { storageService } from './async-storage.service.js'
 
 
@@ -13,9 +13,10 @@ export const wapService = {
     query,
     getWapById,
     save,
-    remove,
+    removeWap,
+    // removeCmp,
     changeCmpId,
-    getWapByName
+    // getWapByName
     // getEmptyWap,
     // addWapMsg
 }
@@ -32,25 +33,33 @@ function getWapById(wapId) {
     // return httpService.get(`wap/${wapId}`)
 }
 
-function getWapByName(wapName) {
-    return storageService.getByName(STORAGE_KEY, wapName)
-    // return httpService.get(`wap/${wapId}`)
-}
+// function getWapByName(wapName) {
+//     return storageService.getByName(STORAGE_KEY, wapName)
+//     // return httpService.get(`wap/${wapId}`)
+// }
 
-async function remove(wapId) {
+async function removeWap(wapId) {
     await storageService.remove(STORAGE_KEY, wapId)
     // return httpService.delete(`wap/${wapId}`)
 }
 
+// async function removeCmp(wap, cmpId) {
+
+//     await storageService.remove(STORAGE_KEY, wapId)
+//     // return httpService.delete(`wap/${wapId}`)
+// }
+
 async function save(wap) {
-    var savedWap
-    if (wap._id) {
-        return storageService.put(STORAGE_KEY, wap)
+    let savedWap
+    if (wap.createdBy) {
+        // const wapCopy = { ...wap }
+        savedWap = storageService.put(STORAGE_KEY, wap)
+        // return storageService.put(STORAGE_KEY, wap)
         // savedWap = await httpService.put(`wap/${wap._id}`, wap)
 
     } else {
         // Later, owner is set by the backend
-        // console.log('wap:', wap)
+        delete wap._id
         wap.createdBy = userService.getLoggedinUser()?.username || 'guest'
         savedWap = await storageService.post(STORAGE_KEY, wap)
         // savedWap = await httpService.post('wap', wap)

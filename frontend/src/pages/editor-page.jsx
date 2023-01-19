@@ -3,7 +3,7 @@ import { EditorBoard } from '../cmps/editor/editor-board.jsx'
 import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { useSelector } from 'react-redux'
 import { getCmpById, wapDemos } from '../services/wap.service.local'
-import { getCmpByName, getWapById, updateWap } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
@@ -16,30 +16,36 @@ export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
     const [isDragging, setIsDragging] = useState(false)
 
-    const [list, setList] = useState([])
+    // const [list, setList] = useState([])
     const navigate = useNavigate()
     const { wapId } = useParams()
 
+    // useEffect(() => {
+    //     try {
+    //         loadWap(wapId)
+    //     } catch (err) {
+    //         console.log('Had issues in wap editor', err)
+    //         navigate('/WapDemos')
+    //     }
+    // }, [])
+    
     useEffect(() => {
         try {
-            getWapById(wapId)
+            loadWap(wapId)
         } catch (err) {
             console.log('Had issues in wap editor', err)
             navigate('/WapDemos')
         }
-    }, [])
-
-    useEffect(() => {
-        setList(wap.cmps)
+        // console.log('wap heree:', wap)
+        // setList(wap.cmps)
+        // loadWap(wapId)
     }, [wap])
 
-    const reOrder = (list, startIndex, endIndex) => {
-        const result = list
-        const [removed] = result.splice(startIndex, 1)
-        result.splice(endIndex, 0, removed)
-        const newState = { ...wap, cmps: result }
-        updateWap(newState)
-        return result
+    const reOrder = (startIdx, endIdx) => { 
+        // const [removed] = cmps.splice(startIdx, 1)
+        // cmps.splice(endIdx, 0, removed)
+        // const newState = { ...wap, cmps: cmps }
+        removeCmp(wap, startIdx, endIdx)
     }
 
     const onEnd = (result) => {
@@ -49,34 +55,34 @@ export function Editor() {
         }
 
         setIsDragging(false);
-        setList(reOrder(list, result.source.index, result.destination.index))
+        // setList(reOrder(list, result.source.index, result.destination.index))
+        reOrder(result.source.index, result.destination.index)
     }
 
     function addCmpToBoard(cmp) {
-        console.log('cmp:', cmp)
-        // Change cmp id
-        cmp.id = utilService.makeId()
-        // Change id of each cmp in the current cmp 
-        wapService.changeCmpId(cmp)
-        // Add cmp to wap and save
-        wap.cmps.unshift(cmp)
-        const newState = { ...wap }
-        updateWap(newState)
+        // console.log('cmp:', cmp)
+        // // Change cmp id
+        // cmp.id = utilService.makeId()
+        // // Change id of each cmp in the current cmp 
+        // wapService.changeCmpId(cmp)
+        // // Add cmp to wap and save
+        // wap.cmps.unshift(cmp)
+        // const newState = { ...wap }
+        addCmp(wap, cmp)
     }
 
 
     // TODO: ADD CMP TO WAP
     function onPickedCmp({ target }) {
         const pickedCmpName = target.value
-        let cmp = getCmpByName(pickedCmpName)
-        addCmpToBoard(cmp)
+        // let cmp = getCmpByName(pickedCmpName)
+        // addCmpToBoard(cmp)
     }
 
     function removeCmpFromBoard(result) {
         const idx = result.source.index
-        wap.cmps.splice(idx, 1)
-        const newState = { ...wap }
-        updateWap(newState)
+        // wap.cmps.splice(idx, 1)
+        removeCmp(wap, idx)
     }
 
     return (
