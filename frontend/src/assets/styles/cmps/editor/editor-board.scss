@@ -1,7 +1,12 @@
 .editor-board {
-    max-height: 90vh;
+    max-height: 85vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
+
+    &.drop-zone{
+        background-image: url('https://res.cloudinary.com/dimirmc9j/image/upload/v1674121344/dot-grid-blank_ekmq4f.webp');
+        background-size: contain;
+    }
 
     &::-webkit-scrollbar {
         width: 10px;
