@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { createWap, saveTemplateDraft, saveWap } from '../../store/wap.actions.js'
 import { wapTemplates } from '../../services/templates.service.local'
-import { useNavigate } from 'react-router-dom'
-import { TemplateCard } from './template-card.jsx'
+import { TemplateCard } from './template-card/template-card.jsx'
+import { emptyTemplate } from '../../templates-examples/create-new-template.js'
 
 export function Templates() {
     const dispatch = useDispatch()
@@ -38,3 +38,4 @@ export function Templates() {
         </div>
     )
 }
+

@@ -6,6 +6,10 @@ import { SET_WAP, UPDATE_WAP } from './wap.reducer.js'
 // Saves new template and loads in editor
 export async function saveTemplateDraft(wapId) {
     let wap = getTemplateExById(wapId)
+    if (!wap) {
+        throw new Error('wap not found')
+    }
+    console.log('wap:', wap)
     try {
         const wapCopy = { ...wap }
         delete wapCopy._id

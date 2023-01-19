@@ -1,6 +1,7 @@
 // TEMPLATES
 import { wapTemplate1 } from '../templates-examples/wap-template-1'
 import { wapTemplate2 } from '../templates-examples/wap-template-2'
+import { emptyTemplate } from '../templates-examples/create-new-template'
 
 // HEADERS
 import { wapHeader1 } from '../templates-examples/headers/wap-header-1.js'
@@ -27,8 +28,9 @@ const mapCmpByCategory = {
 }
 
 export const wapTemplates = [
+    emptyTemplate,
     wapTemplate1,
-    wapTemplate2
+    wapTemplate2,
 ]
 
 export function getTemplateExById(templateId) {

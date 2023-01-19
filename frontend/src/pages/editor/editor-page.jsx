@@ -3,7 +3,7 @@ import { EditorBoard } from './cmps/editor-board.jsx'
 import { EditorSideBar } from './cmps/editor-sidebar.jsx'
 import { useSelector } from 'react-redux'
 import { getCmpById, wapTemplates } from '../../services/templates.service.local'
-import { getWapById as getWapById, updateWap } from '../../store/wap.actions.js'
+import { updateWap } from '../../store/wap.actions.js'
 import { DragDropContext } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
@@ -11,6 +11,7 @@ import { wapService } from '../../services/wap.service.js'
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
+    const [isDragging, setIsDragging] = useState(false)
     // console.log('wap:', wap.cmps)
 
     const [list, setList] = useState([])
@@ -26,7 +27,8 @@ export function Editor() {
         }
     }, [])
 
-    useEffect(() => {
+    useEffect(() =>{
+        console.log('wap.cmps:',wap.cmps)
         setList(wap.cmps)
     }, [wap])
 
@@ -43,6 +45,13 @@ export function Editor() {
 
 
     const onEnd = (result) => {
+        if (result.destination.droppableId === 'delete') {
+            console.log('deleting ', result.source)
+            // handleDelete
+            return
+        }
+
+        setIsDragging(false);
         setList(reOrder(list, result.source.index, result.destination.index))
     }
 
@@ -59,7 +68,6 @@ export function Editor() {
         let cmp = getCmpById(pickedCmpId)
         addCmpToBoard(cmp)
     }
-    // console.log(wap)
     return (
         <section>
             {wap && <div>
@@ -74,12 +82,21 @@ export function Editor() {
                         <option value={'wc17'}>Footer</option>
                     </select>
                 </div>
-                <section className='editor-page'>
-                    <DragDropContext onDragEnd={onEnd}>
+                <DragDropContext onDragEnd={onEnd}>
+                    <Droppable droppableId='delete'>
+                        {(provided, snapshot) => (
+                            <div ref={provided.innerRef}>
+                                <div>DELETE PAH</div>
+                            </div>
+                        )
+                        }
+                    </Droppable >
+                    <section className='editor-page'>
                         <EditorSideBar />
                         {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
-                    </DragDropContext>
-                </section>
+                    </section>
+                </DragDropContext>
+
             </div>}
 
         </section>
