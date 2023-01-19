@@ -1,27 +1,39 @@
 import { useState } from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaintbrush, faPencil, faDisplay, faTabletScreenButton, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons'
+import 'animate.css';
 
 export function EditorSideBar({ onPickedCmp }) {
   const [openMenu, setOpenMenu] = useState(false)
 
   return (
-    <div className={openMenu ? 'editSideBar' : 'editSideBarClosed'}>
 
-      <div className="side-bar-editor"></div>
+    <div className={`editor-side-bar ${openMenu ? 'open' : ''}`}>
 
-      <div>
-        <label htmlFor="cmps">Cmps : </label>
-        <select onChange={onPickedCmp}>
-          <option value={"wap-header"}>Header</option>
-          <option value={"wap-hero"}>Hero</option>
-          <option value={"wap-preview"}>Preview</option>
-          <option value={"wap-cards"}>Cards</option>
-          <option value={"wap-form"}>Form</option>
-          <option value={"wap-footer"}>Footer</option>
-        </select>
+
+      <div className={`editor-options ${openMenu ? 'open' : ''}`}>
+        <div className="editor-option">
+        <FontAwesomeIcon className="edit-btn" icon={faPencil} onClick={() => { setOpenMenu(!openMenu) }}/>
+        <span className="option-name">Edit</span> 
+        </div>
       </div>
 
+      <div className={`editor-tools ${openMenu ? 'open' : ''}`}>
+        <div>
+          {/* <label htmlFor="cmps">Cmps : </label> */}
+          <select name="cars" id="cars" onChange={onPickedCmp}>
+            <option value={"wc12"}>Header</option>
+            <option value={"wc13"}>Hero</option>
+            <option value={"wc14"}>Preview</option>
+            <option value={"wc10a"}>Cards</option>
+            <option value={"wc10b"}>Form</option>
+            <option value={"wc17"}>Footer</option>
+          </select>
+        </div>
 
-      <button onClick={() => { setOpenMenu(!openMenu) }}>{openMenu ? 'close' : 'open'}</button>
+      </div>
+
     </div>
+
   )
 }

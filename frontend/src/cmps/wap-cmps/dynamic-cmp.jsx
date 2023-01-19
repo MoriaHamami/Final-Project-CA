@@ -7,6 +7,7 @@ import { WapPreview } from './wap-preview-cmp.jsx'
 
 import { useEffect, useState } from 'react'
 import { CardCmp } from './card-cmp.jsx'
+import { VideoCmp } from './video-cmp.jsx'
 import { FormCmp } from './form-cmp.jsx'
 
 
@@ -42,23 +43,30 @@ export const DynamicCmp = (props) => {
         <WapPreview
           {...props}
           style={cmp.style}
-          />
-          )
+        />
+      )
     case 'wap-card':
       return (
         <CardCmp
-        cmp={cmp}
-        style={cmp.style}
+          cmp={cmp}
+          style={cmp.style}
         />
-        )
+      )
+    case 'wap-video':
+      return (
+        <VideoCmp
+          cmp={cmp}
+          style={cmp.style}
+        />
+      )
     case 'wap-form':
       return (
         <FormCmp
-        cmp={cmp}
-        style={cmp.style}
+          cmp={cmp}
+          style={cmp.style}
         />
       )
-      case 'wap-footer':
+    case 'wap-footer':
       return (
         <WapFooter
           {...props}
