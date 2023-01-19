@@ -40,6 +40,17 @@ export const wapDemos = [
     wapDemo2,
 ]
 
+
+export function getCmpsByCategory(category) {
+    if (mapCmpByCategory[category]) {
+      return mapCmpByCategory[category].map((cmp) => ({
+        id: cmp.id,
+        thumbnail: cmp.thumbnail,
+        category,
+      }))
+    }
+  }
+
 export function getWapDemoById(wapDemoId) {
     // if (wapDemoId === 'blank') return { cmps: [] }
     return wapDemos.find((wapDemo) => wapDemo._id === wapDemoId)

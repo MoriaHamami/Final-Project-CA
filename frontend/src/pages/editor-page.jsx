@@ -67,9 +67,8 @@ export function Editor() {
 
 
     // TODO: ADD CMP TO WAP
-    function onPickedCmp({ target }) {
-        const pickedCmpName = target.value
-        let cmp = getCmpByName(pickedCmpName)
+    function onPickedCmp(cmpId) {
+        let cmp = getCmpById(cmpId)
         addCmpToBoard(cmp)
     }
 
