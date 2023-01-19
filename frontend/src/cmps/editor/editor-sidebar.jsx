@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaintbrush, faPencil, faDisplay, faTabletScreenButton, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons'
 import 'animate.css';
 
 export function EditorSideBar({ onPickedCmp }) {
@@ -10,7 +12,10 @@ export function EditorSideBar({ onPickedCmp }) {
 
 
       <div className={`editor-options ${openMenu ? 'open' : ''}`}>
-        <button onClick={() => { setOpenMenu(!openMenu) }}>{openMenu ? 'close' : 'open'}</button>
+        <div className="editor-option">
+        <FontAwesomeIcon className="edit-btn" icon={faPencil} onClick={() => { setOpenMenu(!openMenu) }}/>
+        <span className="option-name">Edit</span> 
+        </div>
       </div>
 
       <div className={`editor-tools ${openMenu ? 'open' : ''}`}>
@@ -28,6 +33,7 @@ export function EditorSideBar({ onPickedCmp }) {
 
       </div>
 
-    </div>
+    </div>
 
-  )}
+  )
+}
