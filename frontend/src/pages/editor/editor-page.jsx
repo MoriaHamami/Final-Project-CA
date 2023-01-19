@@ -4,11 +4,12 @@ import { EditorSideBar } from './cmps/editor-sidebar.jsx'
 import { useSelector } from 'react-redux'
 import { getCmpById, wapTemplates } from '../../services/templates.service.local'
 import { updateWap } from '../../store/wap.actions.js'
-import { DragDropContext } from 'react-beautiful-dnd'
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
+    const [isDragging, setIsDragging] = useState(false)
     // console.log('wap:', wap.cmps)
 
     const [list, setList] = useState([])
@@ -31,6 +32,13 @@ export function Editor() {
 
 
     const onEnd = (result) => {
+        if (result.destination.droppableId === 'delete') {
+            console.log('deleting ', result.source)
+            // handleDelete
+            return
+        }
+
+        setIsDragging(false);
         setList(reOrder(list, result.source.index, result.destination.index))
     }
 
@@ -48,13 +56,36 @@ export function Editor() {
         addCmpToBoard(cmp)
     }
     return (
-        <div>
-            {wap && <section className='editor-page'>
+        <section>
+            {wap && <div>
+                <div>
+                    <label htmlFor="cmps">Cmps : </label>
+                    <select name="cars" id="cars" onChange={onPickedCmp}>
+                        <option value={'wc12'}>Header</option>
+                        <option value={'wc13'}>Hero</option>
+                        <option value={'wc14'}>Preview</option>
+                        <option value={'wc10a'}>Cards</option>
+                        <option value={'wc10b'}>Form</option>
+                        <option value={'wc17'}>Footer</option>
+                    </select>
+                </div>
                 <DragDropContext onDragEnd={onEnd}>
-                    <EditorSideBar onPickedCmp={onPickedCmp} />
-                    {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
+                    <Droppable droppableId='delete'>
+                        {(provided, snapshot) => (
+                            <div ref={provided.innerRef}>
+                                <div>DELETE PAH</div>
+                            </div>
+                        )
+                        }
+                    </Droppable >
+                    <section className='editor-page'>
+                        <EditorSideBar />
+                        {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
+                    </section>
                 </DragDropContext>
-            </section>}
-        </div>
+
+            </div>}
+
+        </section>
     )
 }
