@@ -1,6 +1,6 @@
 
-import { EditorBoard } from './editor/editor-board.jsx'
-import { EditorSideBar } from './editor/editor-sidebar.jsx'
+import { EditorBoard } from '../cmps/editor/editor-board.jsx'
+import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { useSelector } from 'react-redux'
 import { getCmpById, wapDemos } from '../services/wap.service.local'
 import { getCmpByName, getWapById, updateWap } from '../store/wap.actions.js'
