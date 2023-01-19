@@ -1,10 +1,9 @@
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { createWap, saveTemplateDraft, saveWap } from '../../store/wap.actions.js'
 import { wapTemplates } from '../../services/templates.service.local'
-import { TemplateCard } from './template-card/template-card.jsx'
-import { emptyTemplate } from '../../templates-examples/create-new-template.js'
+import { TemplateCard } from './template-card.jsx'
 
 export function Templates() {
     const dispatch = useDispatch()
@@ -31,7 +30,7 @@ export function Templates() {
             <h2>Choose Your Template</h2>
             <div className="preview-list">
                 {wapTemplates?.map((wapTemplate) => {
-                    <TemplateCard wapTemplate={wapTemplate} onSelectTemplate={onSelectTemplate}/>
+                    return <TemplateCard wapTemplate={wapTemplate} onSelectTemplate={onSelectTemplate}/>
                 })}
                 {/* <Link className="templates-btn-container" to={`/editor/${wapTemplate._id}`}> */}
             </div>

@@ -51,13 +51,13 @@ async function save(wap) {
     return savedWap
 }
 
-
-// function getEmptyWap() {
-//     return {
-//         vendor: 'Susita-' + (Date.now() % 1000),
-//         price: utilService.getRandomIntInclusive(1000, 9000),
-//     }
-// }
+function changeCmpId(cmp) {
+    cmp?.cmps?.forEach((currCmp) => {
+        currCmp.id = uuidv4()
+        if (!cmp.cmps || !cmp.cmps.length) return
+        else changeCmpId(currCmp)
+    })
+}
 
 function _createWaps() {
     let waps = storageService.loadFromStorage(STORAGE_KEY)
