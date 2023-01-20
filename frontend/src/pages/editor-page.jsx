@@ -60,7 +60,6 @@ export function Editor() {
     }
 
     function addCmpToBoard(cmp) {
-        // console.log('cmp:', cmp)
         // // Change cmp id
         // cmp.id = utilService.makeId()
         // // Change id of each cmp in the current cmp 
