@@ -13,6 +13,7 @@ export const wapVideo1 = {
     width: 450,
     height: 250
   },
+  // cmps: [],
   theme: 'theme-section-happy',
   style: {},
 }

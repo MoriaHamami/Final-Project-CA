@@ -12,6 +12,7 @@ export async function saveWap(wap) {
             // let wap = getWapDemoById(wap._id)
             // const wapCopy = { ...wap }
             // delete wapCopy._id
+            // console.log('wap:', wap)
             const savedWap = await wapService.save(wap)
         // } else {
             // savedWap = await wapService.save(wap)

@@ -59,7 +59,7 @@ async function save(wap) {
 
     } else {
         // Later, owner is set by the backend
-        delete wap._id
+        // delete wap._id
         wap.createdBy = userService.getLoggedinUser()?.username || 'guest'
         savedWap = await storageService.post(STORAGE_KEY, wap)
         // savedWap = await httpService.post('wap', wap)
