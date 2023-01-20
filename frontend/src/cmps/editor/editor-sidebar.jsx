@@ -18,7 +18,6 @@ export function EditorSideBar({ onPickedCmp, chosenContainer, handleWapEdit, cho
 
 
 
-
   return (
 
     <div className={`editor-side-bar ${openMenu ? 'open' : ''}`}>
@@ -27,6 +26,7 @@ export function EditorSideBar({ onPickedCmp, chosenContainer, handleWapEdit, cho
           <FontAwesomeIcon className="edit-btn" icon={faPencil} />
           <span className="option-name">Edit</span>
         </div>
+
         <div className="option-container" onClick={() => onOptionClick('add')}>
           <FontAwesomeIcon className="add-btn" icon={faAdd} />
           <span className="option-name">Add</span>
@@ -36,12 +36,13 @@ export function EditorSideBar({ onPickedCmp, chosenContainer, handleWapEdit, cho
       <div className={`editor-tools ${openMenu ? 'open' : ''}`}>
       {editType === 'edit' && <SidebarEdit chosenContainer={chosenContainer} handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
 
-         {/* <Droppable droppableId="from-sidebar-add">
-          {editType === 'add' && <SidebarAdd onPickedCmp={onPickedCmp} />}
-        </Droppable> */}
-
-
-        
+        <Droppable droppableId="from-sidebar-add">
+          {(provided, snapshot) => (
+            <div ref={provided.innerRef}>
+              {editType === 'add' && <SidebarAdd onPickedCmp={onPickedCmp} />}
+            </div>
+          )}
+        </Droppable>
 
       </div>
 

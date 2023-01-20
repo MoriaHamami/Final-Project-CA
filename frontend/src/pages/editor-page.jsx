@@ -89,14 +89,15 @@ export function Editor() {
                     <EditorSideBar onPickedCmp={onPickedCmp} chosenContainer={chosenContainer} chosenComponent={chosenCmp} handleWapEdit={handleWapEdit} />
                     {wap ? <EditorBoard wap={wap} setChosenContainer={setChosenContainer} handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
                 </section>
-                <Droppable droppableId="delete">
+
+                {/* <Droppable droppableId="delete">
                     {(provided, snapshot) => (
                         <div ref={provided.innerRef}>
                             <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
                         </div>
-                    )
-                    }
-                </Droppable >
+                    )}
+                    </Droppable > */}
+
             </DragDropContext>}
 
        </div>
