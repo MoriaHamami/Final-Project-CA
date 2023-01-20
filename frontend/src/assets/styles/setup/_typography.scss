@@ -1,16 +1,36 @@
-// @font-face {
-//     font-family: title;
-//     src: url(../../fonts/Roboto-Bold.ttf);
-// }
 @font-face {
-    font-family: txt-regular;
-    src: url(../../fonts/Roboto-Regular.ttf);
+    font-family: roboto-bold;
+    src: url(../../fonts/roboto/Roboto-Bold.ttf);
 }
 @font-face {
-    font-family: txt-light;
-    src: url(../../fonts/Roboto-Light.ttf);
+    font-family: roboto-regular;
+    src: url(../../fonts/roboto/Roboto-Regular.ttf);
 }
 @font-face {
-    font-family: logo;
-    src: url(../../fonts/CaviarDreams_Bold.ttf);
+    font-family:roboto-light;
+    src: url(../../fonts/roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: caviar-dreams-Bold;
+    src: url(../../fonts/caviar-dreams/CaviarDreams_Bold.ttf);
+}
+@font-face {
+    font-family: fe-serif;
+    src: url(../../fonts/serif/FeFCrm2.ttf);
+}
+@font-face {
+    font-family: dream-orphans;
+    src: url(../../fonts/sans-serif/Dream-Orphans.otf);
+}
+@font-face {
+    font-family: dream-orphans-bold;
+    src: url(../../fonts/sans-serif/Dream-Orphans-Bd.otf);
+}
+@font-face {
+    font-family:breamcatcher;
+    src: url(../../fonts/retro/breamcatcher.otf);
+}
+@font-face {
+    font-family: handlee;
+    src: url(../../fonts/hand-write/Handlee-Regular.ttf);
 }

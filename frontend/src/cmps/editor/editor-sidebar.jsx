@@ -15,6 +15,17 @@ export function EditorSideBar({ onPickedCmp }) {
     setEditType(type)
   }
 
+
+  //FOR OPEN EDITOR FOR CMP EDIT  
+  function onCmpClick(cmpId) {
+    setOpenMenu(true)
+    setEditType('edit')
+  }
+
+  //BACKGROUD COLOR EDITOR
+
+
+
   return (
 
     <div className={`editor-side-bar ${openMenu ? 'open' : ''}`}>

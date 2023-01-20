@@ -31,6 +31,7 @@ export function Editor() {
     // }, [])
     
     useEffect(() => {
+        console.log('here:')
         try {
             loadWap(wapId)
         } catch (err) {
@@ -40,7 +41,7 @@ export function Editor() {
         // console.log('wap heree:', wap)
         // setList(wap.cmps)
         // loadWap(wapId)
-    }, [wap])
+    }, [])
 
     const reOrder = (startIdx, endIdx) => { 
         // const [removed] = cmps.splice(startIdx, 1)
@@ -90,6 +91,10 @@ export function Editor() {
            {wap && <DragDropContext onDragEnd={onEnd}>
            <EditorHeader />
            
+                    <section className="editor-page">
+                        <EditorSideBar onPickedCmp={onPickedCmp} />
+                        {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
+                    </section>
                     <Droppable droppableId="delete">
                         {(provided, snapshot) => (
                             <div ref={provided.innerRef}>
@@ -98,10 +103,6 @@ export function Editor() {
                         )
                         }
                     </Droppable >
-                    <section className="editor-page">
-                        <EditorSideBar onPickedCmp={onPickedCmp} />
-                        {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
-                    </section>
                 </DragDropContext>}
 
             </div>
