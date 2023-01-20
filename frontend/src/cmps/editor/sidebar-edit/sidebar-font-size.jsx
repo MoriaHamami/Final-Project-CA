@@ -11,7 +11,7 @@ function onChangeRange({target}){
 }
 
     return <div>
-      <div>{title}</div>
+      <label>{title}</label>
       <input type="range" min="0.5" max="10" step="0.1" onChange={onChangeRange} />
     </div>
 }

@@ -20,7 +20,7 @@ export const wapHeader1 = {
     },
     logoContainer: {
       // color: ''
-    }
-  }
+}
+}
 }
 

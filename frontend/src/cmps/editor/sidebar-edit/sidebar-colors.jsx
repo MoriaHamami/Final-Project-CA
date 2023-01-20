@@ -1,7 +1,5 @@
 
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaintbrush } from '@fortawesome/free-solid-svg-icons'
 
 export function SidebarColors({ title, onChange, propertyName }) {
   const [color, setColor] = useState({
@@ -15,28 +13,15 @@ export function SidebarColors({ title, onChange, propertyName }) {
     onChange(propertyName, colorInput)
   }
 
-  const backgroundColors = ['#FFFFFF', '#F28B82', '#FBBC04', '#CCFF90', '#A7FFEB', '#CBF0F8', '#F1E4DE', '#D7AEFB', '#FDCFE8', '#E6C9A8', 'transparent']
 
-  const colors = ['#FFFFFF', '#F28B82', '#FBBC04', '#CCFF90', '#A7FFEB', '#CBF0F8', '#F1E4DE', '#D7AEFB', '#FDCFE8', '#E6C9A8', '#151515']
+  const colors = ['#FFFFFF', '#FFEF82', '#F28B82', '#FBBC04', '#CCFF90', '#A7FFEB', '#CBF0F8', '#F1E4DE', '#D7AEFB', '#FDCFE8', '#E6C9A8', '#151515']
 
   let renderedColors = colors
 
   return (
     <div>
-      <div>{title}</div>
+      <span>{title}</span>
       <div className="colors-container">
-        <label
-          htmlFor="color-input"
-          style={{
-            height: '1.5rem',
-            width: '1.5rem',
-            borderRadius: '50%',
-            backgroundColor: color.background === 'transparent' ? '#FFF' : color.background,
-            cursor: 'pointer',
-            border: '1px solid rgba(0, 0, 0, 0.4)',
-          }}
-        >
-        </label>
         {renderedColors.map((color) => (
           <div
             onClick={() => onChangeColor(color)}
