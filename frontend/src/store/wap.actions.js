@@ -1,4 +1,4 @@
-import { getWapDemoById } from '../services/wap.service.local.js'
+// import { getWapDemoById } from '../services/wap.service.local.js'
 import { wapService } from '../services/wap.service.js'
 import { store } from '../store/store.js'
 import { SET_WAP } from './wap.reducer.js'

@@ -1,6 +1,3 @@
-import { wapService } from "../services/wap.service"
-import { wapDemos } from "../services/wap.service.local"
-
 export const SET_WAP = 'SET_WAP'
 export const SET_SAVED_WAPS = 'SET_SAVED_WAPS'
 export const REMOVE_SAVED_WAP = 'REMOVE_SAVED_WAP'

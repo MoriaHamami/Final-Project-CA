@@ -4,7 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { createWap, saveWap } from '../store/wap.actions.js'
 // import { WapDemoPreview } from '../cmps/waps/wap-demo-preview.jsx'
 import { WapDemoList } from '../cmps/wap-demos/wap-demo-list'
-import { getWapDemoById } from '../services/wap.service.local.js'
+import { wapService } from '../services/wap.service.js'
+// import { getWapDemoById } from '../services/wap.service.local.js'
 
 export function WapDemos() {
     // const dispatch = useDispatch()
@@ -18,7 +19,7 @@ export function WapDemos() {
 
     async function onSelectWapDemo(id) {
         try {
-            let wap = getWapDemoById(id)
+            let wap = wapService.getWapDemoById(id)
             const savedWapId = await saveWap(wap)
             // console.log('savedWapId:', savedWapId)
             navigate(`/editor/${savedWapId}`)

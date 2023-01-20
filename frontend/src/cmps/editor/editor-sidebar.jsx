@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {SidebarEdit} from './sidebar-edit.jsx'
-import {SidebarAdd} from './sidebar-add.jsx'
+import { SidebarEdit } from './sidebar-edit.jsx'
+import { SidebarAdd } from './sidebar-add.jsx'
 import { faAdd, faPencil, faDisplay, faTabletScreenButton, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons'
 import 'animate.css';
 import { wapHero2 } from "../../waps/heros/wap-hero-2";
+import { Droppable } from "react-beautiful-dnd"
 
 export function EditorSideBar({ onPickedCmp }) {
   const [openMenu, setOpenMenu] = useState(false)
@@ -34,11 +35,11 @@ export function EditorSideBar({ onPickedCmp }) {
       <div className={`editor-options ${openMenu ? 'open' : ''}`}>
 
         <div className="option-container" onClick={() => onOptionClick('edit')}>
-          <FontAwesomeIcon className="edit-btn" icon={faPencil}  />
+          <FontAwesomeIcon className="edit-btn" icon={faPencil} />
           <span className="option-name">Edit</span>
         </div>
         <div className="option-container" onClick={() => onOptionClick('add')}>
-          <FontAwesomeIcon className="add-btn" icon={faAdd}  />
+          <FontAwesomeIcon className="add-btn" icon={faAdd} />
           <span className="option-name">Add</span>
         </div>
       </div>
@@ -49,12 +50,14 @@ export function EditorSideBar({ onPickedCmp }) {
         {/* FOR GUY */}
         {/* FOR GUY */}
         {/* FOR GUY */}
-        {editType === 'add' && <SidebarAdd onPickedCmp= {onPickedCmp} />}
+        {/* <Droppable droppableId="from-sidebar-add">
+          {editType === 'add' && <SidebarAdd onPickedCmp={onPickedCmp} />}
+        </Droppable> */}
         {/* FOR GUY */}
         {/* FOR GUY */}
         {/* FOR GUY */}
 
-        
+
 
       </div>
 
