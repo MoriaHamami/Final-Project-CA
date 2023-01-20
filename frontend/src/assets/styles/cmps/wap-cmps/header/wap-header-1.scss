@@ -1,33 +1,66 @@
 .wap-header-1 {
-    background-color: $t1clr1;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 5.5rem;
-    align-items: center;
-    color: $almost-white;
-  
-    .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      margin: 0;
-    }
-  
-    p {
-      margin: 0;
-    }
-  
-    &.mobile-layout,
-    &.tablet-layout {
-      padding: 1rem 1.5rem;
-    }
-  
-    .nav-bar {
-      display: flex;
-      gap: 1rem;
-  
-      a {
-        color: $almost-white;
-      }
-  
+  background-color: $t1clr1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $almost-white;
+  padding: 1rem $mobile-padding;
+  font-size: 0.8rem;
+
+
+ 
+  @container (min-width: 460px) {
+    padding: 1rem $narrow-padding;
+    font-size: 0.9rem;
+  }
+
+  @container (min-width: 960px) {
+    padding: 1rem $normal-padding;
+    font-size: 1rem;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 2em;
+
+    @container (min-width: 720px) {
+      display: none;
     }
   }
+
+  .nav-bar {
+    display: none;
+    gap: 1em;
+
+    a {
+      color: $almost-white;
+    }
+
+    @container (min-width: 720px) {
+      display: flex;
+    }
+
+    
+
+  }
+
+
+
+  .logo {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+
+  }
+
+  &.mobile-layout,
+  &.tablet-layout {
+    padding: 1em 1.5em;
+  }
+
+
+}

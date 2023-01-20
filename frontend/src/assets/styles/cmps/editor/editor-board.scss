@@ -1,7 +1,9 @@
 .editor-board {
-    max-height: 85vh;
+    max-height: 70vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    resize: both;
+    container-type: inline-size;
 
     &.drop-zone{
         background-image: url('https://res.cloudinary.com/dimirmc9j/image/upload/v1674121344/dot-grid-blank_ekmq4f.webp');
