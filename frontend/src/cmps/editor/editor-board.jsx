@@ -4,9 +4,14 @@ import { DynamicCmp } from '../wap-cmps/wap-dynamic-cmp';
 
 
 
-export function EditorBoard({ wap }) {
+export function EditorBoard({ wap, setChosenContainer, handleSelectCmpForEdit }) {
 
     // console.log(wap.cmps);
+
+    const handleChooseContainer = ({target}) => {
+        const container = target.getAttribute('data-container')
+        setChosenContainer(container)
+    }
 
 
     return (
@@ -17,11 +22,11 @@ export function EditorBoard({ wap }) {
                     <div className={`editor-board ${snapshot.isDraggingOver ? "drop-zone" : ""}`} ref={provided.innerRef}>
                         {/* style={{ backgroundColor: snapshot.isDraggingOver ? "#DDDDDD" : "white" }} */}
                         {wap?.cmps?.map((cmp, index) => {
-                            return <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
+                            return <Draggable draggableId={cmp.id} key={cmp.id} index={index}  >
                                 {
                                     (provided, snapshot) => (
-                                        <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                            <DynamicCmp cmp={cmp} />
+                                        <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                            <DynamicCmp cmp={cmp} handleChooseContainer={handleChooseContainer} />
                                         </div>
                                     )
                                 }
@@ -33,6 +38,6 @@ export function EditorBoard({ wap }) {
                 )
                 }
             </Droppable >
-        </>
-    )
+   </>
+)
 }

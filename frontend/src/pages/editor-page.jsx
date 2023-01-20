@@ -4,7 +4,7 @@ import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
 import { getCmpById, wapDemos } from '../services/wap.service.local'
-import { addCmp, loadWap, removeCmp } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp, saveWap } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
@@ -16,20 +16,13 @@ import { utilService } from '../services/util.service.js'
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
     const [isDragging, setIsDragging] = useState(false)
+    const [chosenContainer, setChosenContainer] = useState();
+    const [chosenCmp, setChosenCmp] = useState();
 
-    // const [list, setList] = useState([])
     const navigate = useNavigate()
     const { wapId } = useParams()
+    console.log('wap:',wap)
 
-    // useEffect(() => {
-    //     try {
-    //         loadWap(wapId)
-    //     } catch (err) {
-    //         console.log('Had issues in wap editor', err)
-    //         navigate('/WapDemos')
-    //     }
-    // }, [])
-    
     useEffect(() => {
         console.log('here:')
         try {
@@ -38,15 +31,9 @@ export function Editor() {
             console.log('Had issues in wap editor', err)
             navigate('/WapDemos')
         }
-        // console.log('wap heree:', wap)
-        // setList(wap.cmps)
-        // loadWap(wapId)
     }, [])
 
-    const reOrder = (startIdx, endIdx) => { 
-        // const [removed] = cmps.splice(startIdx, 1)
-        // cmps.splice(endIdx, 0, removed)
-        // const newState = { ...wap, cmps: cmps }
+    const reOrder = (startIdx, endIdx) => {
         removeCmp(wap, startIdx, endIdx)
     }
 
@@ -57,19 +44,10 @@ export function Editor() {
         }
 
         setIsDragging(false);
-        // setList(reOrder(list, result.source.index, result.destination.index))
         reOrder(result.source.index, result.destination.index)
     }
 
     function addCmpToBoard(cmp) {
-        // console.log('cmp:', cmp)
-        // // Change cmp id
-        // cmp.id = utilService.makeId()
-        // // Change id of each cmp in the current cmp 
-        // wapService.changeCmpId(cmp)
-        // // Add cmp to wap and save
-        // wap.cmps.unshift(cmp)
-        // const newState = { ...wap }
         addCmp(wap, cmp)
     }
 
@@ -82,30 +60,47 @@ export function Editor() {
 
     function removeCmpFromBoard(result) {
         const idx = result.source.index
-        // wap.cmps.splice(idx, 1)
         removeCmp(wap, idx)
     }
 
+    function handleSelectCmpForEdit(cmpId){
+        setChosenCmp(cmpId)
+    }
+
+    function handleWapEdit(propertyName, propertyValue){
+        const compIndex = wap.cmps.findIndex(cmp => cmp.id === chosenCmp)
+        const editedCmp = wap.cmps[compIndex]
+        console.log('chosenContainer:',chosenContainer)
+        const updatedCompStyle = editedCmp.style[chosenContainer] = {...editedCmp.style[chosenContainer], [propertyName]: propertyValue}
+        wap.cmps[compIndex].style[chosenContainer] = updatedCompStyle
+        saveWap(wap)
+
+        // update state (dispatch)
+        // save to localstorage
+
+
+    }
+
     return (
-           <div>
-           {wap && <DragDropContext onDragEnd={onEnd}>
-           <EditorHeader />
-           
-                    <section className="editor-page">
-                        <EditorSideBar onPickedCmp={onPickedCmp} />
-                        {wap ? <EditorBoard wap={wap} /> : <p>Loading</p>}
-                    </section>
-                    <Droppable droppableId="delete">
-                        {(provided, snapshot) => (
-                            <div ref={provided.innerRef}>
-                                <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
-                            </div>
-                        )
-                        }
-                    </Droppable >
-                </DragDropContext>}
+        <div>
+            {wap && <DragDropContext onDragEnd={onEnd}>
+                <EditorHeader />
 
-            </div>
+                <section className="editor-page">
+                    <EditorSideBar onPickedCmp={onPickedCmp} chosenContainer={chosenContainer} chosenComponent={chosenCmp} handleWapEdit={handleWapEdit} />
+                    {wap ? <EditorBoard wap={wap} setChosenContainer={setChosenContainer} handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
+                </section>
+                <Droppable droppableId="delete">
+                    {(provided, snapshot) => (
+                        <div ref={provided.innerRef}>
+                            <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
+                        </div>
+                    )
+                    }
+                </Droppable >
+            </DragDropContext>}
 
-    )
+       </div>
+
+)
 }

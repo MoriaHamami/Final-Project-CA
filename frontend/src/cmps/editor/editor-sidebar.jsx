@@ -6,7 +6,7 @@ import { faAdd, faPencil, faDisplay, faTabletScreenButton, faMobileScreenButton 
 import 'animate.css';
 import { wapHero2 } from "../../waps/heros/wap-hero-2";
 
-export function EditorSideBar({ onPickedCmp }) {
+export function EditorSideBar({ onPickedCmp, chosenContainer, handleWapEdit, chosenComponent }) {
   const [openMenu, setOpenMenu] = useState(false)
   const [editType, setEditType] = useState('')
 
@@ -15,14 +15,6 @@ export function EditorSideBar({ onPickedCmp }) {
     setEditType(type)
   }
 
-
-  //FOR OPEN EDITOR FOR CMP EDIT  
-  function onCmpClick(cmpId) {
-    setOpenMenu(true)
-    setEditType('edit')
-  }
-
-  //BACKGROUD COLOR EDITOR
 
 
 
@@ -34,31 +26,21 @@ export function EditorSideBar({ onPickedCmp }) {
       <div className={`editor-options ${openMenu ? 'open' : ''}`}>
 
         <div className="option-container" onClick={() => onOptionClick('edit')}>
-          <FontAwesomeIcon className="edit-btn" icon={faPencil}  />
+          <FontAwesomeIcon className="edit-btn" icon={faPencil} />
           <span className="option-name">Edit</span>
         </div>
         <div className="option-container" onClick={() => onOptionClick('add')}>
-          <FontAwesomeIcon className="add-btn" icon={faAdd}  />
+          <FontAwesomeIcon className="add-btn" icon={faAdd} />
           <span className="option-name">Add</span>
         </div>
       </div>
 
       <div className={`editor-tools ${openMenu ? 'open' : ''}`}>
-        {editType === 'edit' && <SidebarEdit />}
-
-        {/* FOR GUY */}
-        {/* FOR GUY */}
-        {/* FOR GUY */}
-        {editType === 'add' && <SidebarAdd onPickedCmp= {onPickedCmp} />}
-        {/* FOR GUY */}
-        {/* FOR GUY */}
-        {/* FOR GUY */}
-
-        
-
+        {editType === 'edit' && <SidebarEdit chosenContainer={chosenContainer} handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
+        {editType === 'add' && <SidebarAdd onPickedCmp={onPickedCmp} />}
       </div>
 
-    </div>
+ </div>
 
-  )
+)
 }
