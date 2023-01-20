@@ -1,5 +1,5 @@
 import { Draggable, Droppable } from 'react-beautiful-dnd';
-import { DynamicCmp } from '../wap-cmps/dynamic-cmp';
+import { DynamicCmp } from '../wap-cmps/wap-dynamic-cmp';
 // import { DynamicCmp } from '../../../cmps/wap-cmps/go/dynamic-cmp.jsx'
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { DynamicCmp } from './dynamic-cmp'
+import { DynamicCmp } from './wap-dynamic-cmp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'

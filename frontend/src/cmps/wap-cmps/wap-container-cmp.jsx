@@ -1,5 +1,5 @@
 import React from 'react'
-import { DynamicCmp } from './dynamic-cmp'
+import { DynamicCmp } from './wap-dynamic-cmp'
 
 export function ContainerCmp({ style, cmp }) {
   return (
