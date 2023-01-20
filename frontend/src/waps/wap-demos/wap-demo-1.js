@@ -4,7 +4,7 @@ import { wapFooter1 } from "../footers/wap-footer-1";
 import { wapHeader1 } from "../headers/wap-header-1";
 import { wapHero1 } from "../heros/wap-hero-1";
 import { wapPreview1 } from "../previews/wap-preview-1";
-import { wapVideo1 } from "../videos/wap-video";
+import { wapVideo1 } from "../videos/wap-video-1";
 
 
 export const wapDemo1 = {
