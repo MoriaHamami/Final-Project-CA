@@ -72,15 +72,12 @@ export function Editor() {
     function handleWapEdit(propertyName, propertyValue) {
         const compIndex = wap.cmps.findIndex(cmp => cmp.id === chosenCmp)
         const editedCmp = wap.cmps[compIndex]
-        console.log('chosenContainer:', chosenContainer)
-        const updatedCompStyle = editedCmp.style[chosenContainer] = { ...editedCmp.style[chosenContainer], [propertyName]: propertyValue }
-        wap.cmps[compIndex].style[chosenContainer] = updatedCompStyle
+        console.log('chosenContainer:',chosenContainer)
+        const updatedCompStyle = {...editedCmp.style, [propertyName]: propertyValue}
+        wap.cmps[compIndex].style = updatedCompStyle
+        // const updatedCompStyle = editedCmp.style[chosenContainer] = {...editedCmp.style[chosenContainer], [propertyName]: propertyValue}
+        // wap.cmps[compIndex].style[chosenContainer] = updatedCompStyle
         saveWap(wap)
-
-        // update state (dispatch)
-        // save to localstorage
-
-
     }
 
     return (

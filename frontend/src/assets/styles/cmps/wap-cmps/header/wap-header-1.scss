@@ -1,4 +1,5 @@
 .wap-header-1 {
+  position: relative;
   background-color: $t1clr1;
   display: flex;
   justify-content: space-between;
@@ -8,7 +9,6 @@
   font-size: 0.8rem;
 
 
- 
   @container (min-width: 460px) {
     padding: 1rem $narrow-padding;
     font-size: 0.9rem;
@@ -36,9 +36,6 @@
     @container (min-width: 720px) {
       display: flex;
     }
-
-    
-
   }
 
 

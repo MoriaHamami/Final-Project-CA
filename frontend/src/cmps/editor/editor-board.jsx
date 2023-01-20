@@ -9,8 +9,6 @@ export function EditorBoard({ wap, setChosenContainer, handleSelectCmpForEdit })
     // console.log(wap.cmps);
 
     const handleChooseContainer = ({ target }) => {
-        console.log('target:', target)
-
         const container = target.getAttribute('data-container')
         setChosenContainer(container)
     }
@@ -28,22 +26,18 @@ export function EditorBoard({ wap, setChosenContainer, handleSelectCmpForEdit })
                                 {
                                     (provided, snapshot) => (
                                         <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                            {/* <div> */}
                                             <DynamicCmp cmp={cmp} handleChooseContainer={handleChooseContainer} />
-                                            {/* </div> */}
-                                            {/* <div style={{transform: snapshot.isDragging? "scale(0.2)" : "scale(1)" }}> */}
-                                            {/* </div> */}
                                         </div>
                                     )
-                                }
-                            </Draggable>
+                        }
+                    </Draggable>
                         })}
-                        {provided.placeholder}
+                {provided.placeholder}
 
-                    </div>
-                )
+            </div>
+            )
                 }
             </Droppable >
-        </>
-    )
+   </>
+)
 }

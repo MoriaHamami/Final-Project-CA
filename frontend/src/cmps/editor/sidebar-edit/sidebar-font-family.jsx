@@ -10,7 +10,7 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
 
     }
 
-    return <div>
+    return <div className='flex space-between'>
         <label for="fonts">{title}</label>
 
         <select name="fonts" id="fonts" onChange={onChangeFont}>

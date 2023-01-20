@@ -28,9 +28,9 @@ export function SidebarFontDecoration({title,  onChange}) {
         onChange('font-style', value)
     }
 
-        return <div>
+        return <div className='flex space-between'>
           <span>{title}</span>
-          <div className="editor-decoration--container">
+          <div className="editor-decoration-container">
           <FontAwesomeIcon className="bold-btn" icon={faBold} onClick={onBoldClick} />
           <FontAwesomeIcon className="underline-btn" icon={faUnderline} onClick={onUnderlineClick} />
           <FontAwesomeIcon className="italic-btn" icon={faItalic} onClick={onItalicClick} />

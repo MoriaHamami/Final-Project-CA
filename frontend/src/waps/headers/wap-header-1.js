@@ -6,7 +6,7 @@ export const wapHeader1 = {
   type: 'wap-header',
   name: 'wap-header-1',
   info: {
-    logo: 'MarioPizza',
+    logo: {txt: 'MarioPizza', style: {}},
     btns: [
       { label: 'Our Story', link: '#wc14', id: utilService.makeId() },
       { label: 'Reservation', link: '#wc10b', id: utilService.makeId() }
@@ -14,13 +14,9 @@ export const wapHeader1 = {
   },
   theme: 'theme-header-happy',
   style: {
-    parentContainer: {
       fontFamily: 'fe-serif',
       // backgroundColor: '',
-    },
-    logoContainer: {
-      // color: ''
-}
+
 }
 }
 
