@@ -13,7 +13,7 @@ export function VideoCmp({ style, cmp }) {
                     style={cmp.info.iframeStyle}
                     // style={{width: cmp.info.width, height: cmp.info.height}}
                     src={`https://www.youtube.com/embed/${cmp.info.embedId}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; "
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
                     allowFullScreen
                     // frameBorder="0"
                     title="Embedded youtube"

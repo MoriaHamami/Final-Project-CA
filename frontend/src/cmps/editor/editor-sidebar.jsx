@@ -12,8 +12,14 @@ export function EditorSideBar({ onPickedCmp, chosenContainer, handleWapEdit, cho
   const [editType, setEditType] = useState('')
 
   function onOptionClick(type) {
-    setOpenMenu(!openMenu)
-    setEditType(type)
+    if(!editType || editType != type){
+      if(!openMenu) setOpenMenu(true)
+      setEditType(type)
+      
+    }else{
+      setOpenMenu(!openMenu)
+      setEditType(type)
+    }
   }
 
 

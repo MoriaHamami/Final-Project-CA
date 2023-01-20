@@ -27,13 +27,7 @@ export function SidebarColors({ title, onChange, propertyName }) {
             onClick={() => onChangeColor(color)}
             key={color}
             style={{
-              height: '1.5rem',
-              width: '1.5rem',
-              borderRadius: '50%',
-              background: color === 'transparent' ? 'url(https://images.saymedia-content.com/.image/t_share/MTc0NTEwNzkwMDA5ODI1Mjcw/how-many-squares-are-on-a-chessboard-a-maths-problem.png)' : color,
-              backgroundSize: '100%',
-              cursor: 'pointer',
-              border: `1px solid ${color === '#151515' ? 'rgba(255,255,255,0.4)' : 'rgba(0, 0, 0, 0.4)'}`,
+              background: color,
             }}
           ></div>
         ))}
