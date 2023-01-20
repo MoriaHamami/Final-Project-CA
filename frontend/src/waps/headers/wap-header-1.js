@@ -6,7 +6,7 @@ export const wapHeader1 = {
   type: 'wap-header',
   name: 'wap-header-1',
   info: {
-    logo: {txt: 'MarioPizza', style: {}},
+    logo: {txt: 'MarioPizza', style: {}, id: utilService.makeId()},
     btns: [
       { label: 'Our Story', link: '#wc14', id: utilService.makeId() },
       { label: 'Reservation', link: '#wc10b', id: utilService.makeId() }

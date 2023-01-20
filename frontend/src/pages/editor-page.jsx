@@ -4,7 +4,7 @@ import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
 
-import { addCmp, loadWap, removeCmp, saveWap } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp, saveWap, setSelectedCmpId } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
@@ -15,13 +15,12 @@ import { utilService } from '../services/util.service.js'
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
+    const selectedCmpId = useSelector((storestate) => storestate.wapModule.selectedCmpId)
+    // const [selectedCmpId, setSelectedCmpId] = useState();
     const [isDragging, setIsDragging] = useState(false)
     const [chosenContainer, setChosenContainer] = useState();
-    const [chosenCmp, setChosenCmp] = useState();
-
     const navigate = useNavigate()
     const { wapId } = useParams()
-    // console.log('wap:', wap)
 
     useEffect(() => {
         try {
@@ -37,17 +36,14 @@ export function Editor() {
     }
 
     const onEnd = (result) => {
-        // console.log('result:', result)
         if (result.source.droppableId === 'from-sidebar-add') {
             const idx = result.source.index
             const cmpsByCurrType = wapService.getCmpsByCategory('headers')
-            // console.log('cmpsByCurrType:', cmpsByCurrType)
             const currCmp = cmpsByCurrType[idx]
             return addCmpToBoard(currCmp)
         }
         if (result.destination.droppableId === 'delete') return removeCmpFromBoard(result)
 
-        // setIsDragging(false)
         reOrder(result.source.index, result.destination.index)
     }
 
@@ -67,17 +63,22 @@ export function Editor() {
     }
 
     function handleSelectCmpForEdit(cmpId) {
-        setChosenCmp(cmpId)
+        setSelectedCmpId(cmpId)
     }
 
     function handleWapEdit(propertyName, propertyValue) {
-        const compIndex = wap.cmps.findIndex(cmp => cmp.id === chosenCmp)
+        const compIndex = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)
         const editedCmp = wap.cmps[compIndex]
-        console.log('chosenContainer:',chosenContainer)
-        const updatedCompStyle = {...editedCmp.style, [propertyName]: propertyValue}
-        wap.cmps[compIndex].style = updatedCompStyle
-        // const updatedCompStyle = editedCmp.style[chosenContainer] = {...editedCmp.style[chosenContainer], [propertyName]: propertyValue}
-        // wap.cmps[compIndex].style[chosenContainer] = updatedCompStyle
+        if(chosenContainer !== 'parent'){
+           const childCmp = editedCmp.info[chosenContainer]
+           console.log('childCmp:',childCmp)
+           const updatedCompStyle = {...childCmp.style, [propertyName]: propertyValue}
+            wap.cmps[compIndex].info[chosenContainer].style = updatedCompStyle
+        }
+        else{
+            const updatedCompStyle = {...editedCmp.style, [propertyName]: propertyValue}
+            wap.cmps[compIndex].style = updatedCompStyle
+        }
         saveWap(wap)
     }
 
@@ -87,7 +88,7 @@ export function Editor() {
                 <EditorHeader />
 
                 <section className="editor-page">
-                    <EditorSideBar onPickedCmp={onPickedCmp} chosenContainer={chosenContainer} chosenComponent={chosenCmp} handleWapEdit={handleWapEdit} />
+                    <EditorSideBar onPickedCmp={onPickedCmp} chosenContainer={chosenContainer} chosenComponent={selectedCmpId} handleWapEdit={handleWapEdit} />
                     {wap ? <EditorBoard wap={wap} setChosenContainer={setChosenContainer} handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
                 </section>
 

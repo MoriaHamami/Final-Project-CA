@@ -14,7 +14,7 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
     return <div>
         <label>{title}</label>
 
-        <Box width={92}>
+        <Box marginLeft ={'5px'} width={100}>
             <Slider
                 size='small'
                 key={'fontSizeSlider123'}

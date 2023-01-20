@@ -2,32 +2,24 @@
 import { utilService } from '../services/util.service.js'
 import { wapService } from '../services/wap.service.js'
 import { store } from '../store/store.js'
-import { SET_WAP } from './wap.reducer.js'
+import { SET_WAP, SET_CMP } from './wap.reducer.js'
 
-// Saves new wap and loads in editor
 export async function saveWap(wap) {
-    // console.log('wap:', wap)
-
     try {
-        // if(wap.createdBy) {
-            // let wap = getWapDemoById(wap._id)
-            // const wapCopy = { ...wap }
-            // delete wapCopy._id
-            // console.log('wap:', wap)
-            const savedWap = await wapService.save(wap)
-        // } else {
-            // savedWap = await wapService.save(wap)
-            // store.dispatch({ type: SET_WAP, wap })
-        // }
+        const savedWap = await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap: savedWap })
         return savedWap._id
     } catch (err) {
-
-        // console.log('err:', err)
         throw new Error('wap not found')
-
     }
 }
+
+export function setSelectedCmpId(cmpId){
+    console.log('cmpId:',cmpId)
+        store.dispatch({ type: SET_CMP, cmpId })
+}
+
+
 // export async function saveWap(wapId) {
 //     let wap = getWapDemoById(wapId)
 //     if (!wap) {
@@ -76,11 +68,8 @@ export async function loadWap(wapId) {
 
 export async function removeCmp(wap, startIdx, endIdx = null) {
     try {
-        // console.log('endIdx:', endIdx)
         const [removed] = wap.cmps.splice(startIdx, 1)
-        // console.log('wap:', wap)
-        if(endIdx !== null) wap.cmps.splice(endIdx, 0, removed)
-        // console.log('wap:', wap)
+        if (endIdx !== null) wap.cmps.splice(endIdx, 0, removed)
         await saveWap(wap)
     } catch (err) {
         console.log('err in removeCmp', err)
@@ -90,7 +79,7 @@ export async function removeCmp(wap, startIdx, endIdx = null) {
 
 // export async function removeWap(wap) {
 //     try {
-    //         // console.log('wap:', wap)
+//         // console.log('wap:', wap)
 //         await wapService.save(wap)
 //         store.dispatch({ type: SET_WAP, wap })
 //     } catch (err) {
@@ -101,7 +90,7 @@ export async function removeCmp(wap, startIdx, endIdx = null) {
 export async function addCmp(wap, cmp) {
     try {
         // Change cmp id so the cmp in sidebar and wap wont be similar
-        const cmpCopy = {...cmp}
+        const cmpCopy = { ...cmp }
         cmp.id = utilService.makeId()
 
         wap.cmps.unshift(cmpCopy)

@@ -5,9 +5,9 @@ export const wapHero1 = {
   type: 'wap-hero',
   name: 'wap-hero-1',
   info: {
-    title: 'Mario',
-    subtitle: 'PIZZA PLACE',
-    txt: 'TAKEOUT & DELIVERY',
+    title: {txt: 'Mario', id: utilService.makeId(), style: {}},
+    subtitle: {txt: 'PIZZA PLACE', id: utilService.makeId(), style: {}},
+    txt: {txt: 'TAKEOUT & DELIVERY', id: utilService.makeId(), style: {}},
 
     btn: { label: 'Order NOW', link: '#wc10b', id: utilService.makeId() },
   },

@@ -8,7 +8,8 @@ export function EditorBoard({ wap, setChosenContainer, handleSelectCmpForEdit })
 
     // console.log(wap.cmps);
 
-    const handleChooseContainer = ({ target }) => {
+    function handleChooseContainer({target}){
+        console.log('target:',target)
         const container = target.getAttribute('data-container')
         setChosenContainer(container)
     }
