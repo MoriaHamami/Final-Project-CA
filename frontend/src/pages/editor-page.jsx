@@ -37,7 +37,6 @@ export function Editor() {
     }
 
     const onEnd = (result) => {
-        // console.log('result:', result)
         if (result.source.droppableId === 'from-sidebar-add') {
             const idx = result.source.index
             const cmpsByCurrType = wapService.getCmpsByCategory('headers')
