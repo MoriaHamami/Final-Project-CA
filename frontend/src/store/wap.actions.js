@@ -1,4 +1,5 @@
 // import { getWapDemoById } from '../services/wap.service.local.js'
+import { utilService } from '../services/util.service.js'
 import { wapService } from '../services/wap.service.js'
 import { store } from '../store/store.js'
 import { SET_WAP } from './wap.reducer.js'
@@ -99,7 +100,11 @@ export async function removeCmp(wap, startIdx, endIdx = null) {
 
 export async function addCmp(wap, cmp) {
     try {
-        wap.cmps.unshift(cmp)
+        // Change cmp id so the cmp in sidebar and wap wont be similar
+        const cmpCopy = {...cmp}
+        cmp.id = utilService.makeId()
+
+        wap.cmps.unshift(cmpCopy)
         await saveWap(wap)
     } catch (err) {
         console.log('ReviewActions: err in addReview', err)

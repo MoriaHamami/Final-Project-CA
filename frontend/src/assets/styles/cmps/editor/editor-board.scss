@@ -3,11 +3,13 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     resize:both;
-    container-type: inline-size;
+    // container-type: inline-size;
+
 
     &.drop-zone{
         background-image: url('https://res.cloudinary.com/dimirmc9j/image/upload/v1674121344/dot-grid-blank_ekmq4f.webp');
         background-size: contain;
+        
     }
 
     &::-webkit-scrollbar {

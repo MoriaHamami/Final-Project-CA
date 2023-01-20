@@ -8,21 +8,21 @@ import { wapService } from "../../services/wap.service"
 export function SidebarAdd({ onPickedCmp }) {
 
     const headerCmps = wapService.getCmpsByCategory('headers')
-    console.log('headerCmps:', headerCmps)
+    // console.log('headerCmps:', headerCmps)
     return <div>
-        
+
         {headerCmps.map((cmp, index) => {
             return <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
                 {
                     (provided, snapshot) => (
                         <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                             <div>{cmp.id}</div>
+                            {provided.placeholder}
                         </div>
-                    )
+                )
                 }
             </Draggable>
         })}
-        {/* {provided.placeholder} */}
 
 
     </div>

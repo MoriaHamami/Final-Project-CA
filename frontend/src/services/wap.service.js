@@ -76,11 +76,12 @@ function getCmpTypes() {
 
 function getCmpsByCategory(category) {
     if (mapCmpByCategory[category]) {
-      return mapCmpByCategory[category].map((cmp) => ({
-        id: cmp.id,
-        thumbnail: cmp.thumbnail,
-        category,
-      }))
+      return mapCmpByCategory[category]
+    //   return mapCmpByCategory[category].map((cmp) => ({
+    //     id: cmp.id,
+    //     thumbnail: cmp.thumbnail,
+    //     category,
+    //   }))
     }
   }
 
