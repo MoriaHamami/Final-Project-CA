@@ -3,7 +3,7 @@ import { EditorBoard } from '../cmps/editor/editor-board.jsx'
 import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
-import { getCmpById, wapDemos } from '../services/wap.service.local'
+
 import { addCmp, loadWap, removeCmp, saveWap } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
@@ -24,7 +24,6 @@ export function Editor() {
     console.log('wap:',wap)
 
     useEffect(() => {
-        console.log('here:')
         try {
             loadWap(wapId)
         } catch (err) {
@@ -54,7 +53,7 @@ export function Editor() {
 
     // TODO: ADD CMP TO WAP
     function onPickedCmp(cmpId) {
-        let cmp = getCmpById(cmpId)
+        let cmp = wapService.getCmpById(cmpId)
         addCmpToBoard(cmp)
     }
 
