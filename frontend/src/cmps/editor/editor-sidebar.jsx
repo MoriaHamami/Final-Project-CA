@@ -34,7 +34,7 @@ export function EditorSideBar({ onPickedCmp, chosenContainer, handleWapEdit, cho
       </div>
 
       <div className={`editor-tools ${openMenu ? 'open' : ''}`}>
-      {editType === 'edit' && <SidebarEdit chosenContainer={chosenContainer} handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
+        {editType === 'edit' && <SidebarEdit chosenContainer={chosenContainer} handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
 
         <Droppable droppableId="from-sidebar-add">
           {(provided, snapshot) => (
@@ -45,8 +45,7 @@ export function EditorSideBar({ onPickedCmp, chosenContainer, handleWapEdit, cho
         </Droppable>
 
       </div>
+    </div>
 
- </div>
-
-)
+  )
 }

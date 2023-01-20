@@ -8,7 +8,9 @@ export function EditorBoard({ wap, setChosenContainer, handleSelectCmpForEdit })
 
     // console.log(wap.cmps);
 
-    const handleChooseContainer = ({target}) => {
+    const handleChooseContainer = ({ target }) => {
+        console.log('target:', target)
+
         const container = target.getAttribute('data-container')
         setChosenContainer(container)
     }
@@ -19,14 +21,18 @@ export function EditorBoard({ wap, setChosenContainer, handleSelectCmpForEdit })
 
             <Droppable droppableId="editor">
                 {(provided, snapshot) => (
-                    <div className={`editor-board ${snapshot.isDraggingOver ? "drop-zone" : ""}`} ref={provided.innerRef}>
+                    <div ref={provided.innerRef} className={`editor-board ${snapshot.isDraggingOver ? "drop-zone" : ""}`} style={{top: '0 !important',left: '0 !important'}} >
                         {/* style={{ backgroundColor: snapshot.isDraggingOver ? "#DDDDDD" : "white" }} */}
                         {wap?.cmps?.map((cmp, index) => {
                             return <Draggable draggableId={cmp.id} key={cmp.id} index={index}  >
                                 {
                                     (provided, snapshot) => (
                                         <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                            {/* <div> */}
                                             <DynamicCmp cmp={cmp} handleChooseContainer={handleChooseContainer} />
+                                            {/* </div> */}
+                                            {/* <div style={{transform: snapshot.isDragging? "scale(0.2)" : "scale(1)" }}> */}
+                                            {/* </div> */}
                                         </div>
                                     )
                                 }
@@ -38,6 +44,6 @@ export function EditorBoard({ wap, setChosenContainer, handleSelectCmpForEdit })
                 )
                 }
             </Droppable >
-   </>
-)
+        </>
+    )
 }

@@ -21,7 +21,7 @@ export function Editor() {
 
     const navigate = useNavigate()
     const { wapId } = useParams()
-    console.log('wap:',wap)
+    // console.log('wap:', wap)
 
     useEffect(() => {
         try {
@@ -37,19 +37,23 @@ export function Editor() {
     }
 
     const onEnd = (result) => {
-        if (result.destination.droppableId === 'delete') {
-            removeCmpFromBoard(result)
-            return
+        // console.log('result:', result)
+        if (result.source.droppableId === 'from-sidebar-add') {
+            const idx = result.source.index
+            const cmpsByCurrType = wapService.getCmpsByCategory('headers')
+            // console.log('cmpsByCurrType:', cmpsByCurrType)
+            const currCmp = cmpsByCurrType[idx]
+            return addCmpToBoard(currCmp)
         }
+        if (result.destination.droppableId === 'delete') return removeCmpFromBoard(result)
 
-        setIsDragging(false);
+        // setIsDragging(false)
         reOrder(result.source.index, result.destination.index)
     }
 
     function addCmpToBoard(cmp) {
         addCmp(wap, cmp)
     }
-
 
     // TODO: ADD CMP TO WAP
     function onPickedCmp(cmpId) {
@@ -62,15 +66,15 @@ export function Editor() {
         removeCmp(wap, idx)
     }
 
-    function handleSelectCmpForEdit(cmpId){
+    function handleSelectCmpForEdit(cmpId) {
         setChosenCmp(cmpId)
     }
 
-    function handleWapEdit(propertyName, propertyValue){
+    function handleWapEdit(propertyName, propertyValue) {
         const compIndex = wap.cmps.findIndex(cmp => cmp.id === chosenCmp)
         const editedCmp = wap.cmps[compIndex]
-        console.log('chosenContainer:',chosenContainer)
-        const updatedCompStyle = editedCmp.style[chosenContainer] = {...editedCmp.style[chosenContainer], [propertyName]: propertyValue}
+        console.log('chosenContainer:', chosenContainer)
+        const updatedCompStyle = editedCmp.style[chosenContainer] = { ...editedCmp.style[chosenContainer], [propertyName]: propertyValue }
         wap.cmps[compIndex].style[chosenContainer] = updatedCompStyle
         saveWap(wap)
 
@@ -90,17 +94,17 @@ export function Editor() {
                     {wap ? <EditorBoard wap={wap} setChosenContainer={setChosenContainer} handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
                 </section>
 
-                {/* <Droppable droppableId="delete">
+                <Droppable droppableId="delete">
                     {(provided, snapshot) => (
                         <div ref={provided.innerRef}>
                             <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
                         </div>
                     )}
-                    </Droppable > */}
+                </Droppable >
 
             </DragDropContext>}
 
-       </div>
+        </div>
 
-)
+    )
 }
