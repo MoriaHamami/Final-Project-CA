@@ -20,7 +20,7 @@ export const wapDemo1 = {
 		wapPreview1,
 		wapContainer1A,
 		wapContainer1B,
-		wapVideo1,
+		// wapVideo1,
 		wapFooter1
 	],
 	isPublic: true

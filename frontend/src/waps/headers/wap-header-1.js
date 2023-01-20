@@ -14,8 +14,13 @@ export const wapHeader1 = {
   },
   theme: 'theme-header-happy',
   style: {
-    fontFamily: 'fe-serif',
-    // backgroundColor: 'red',
-  }
+    parentContainer: {
+      fontFamily: 'fe-serif',
+      // backgroundColor: '',
+    },
+    logoContainer: {
+      // color: ''
+}
+}
 }
 
