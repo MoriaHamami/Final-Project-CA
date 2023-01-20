@@ -101,7 +101,7 @@ export function Editor() {
                             <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
                         </div>
                     )}
-                </Droppable > */}
+                    </Droppable > */}
 
             </DragDropContext>}
 
