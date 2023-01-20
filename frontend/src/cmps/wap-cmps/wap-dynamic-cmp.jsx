@@ -1,14 +1,14 @@
 
-import { ContainerCmp } from './container-cmp.jsx'
+import { ContainerCmp } from './wap-container-cmp.jsx'
 import { WapHeader } from './wap-header-cmp.jsx'
 import { WapFooter } from './wap-footer-cmp.jsx'
 import { WapHero } from './wap-hero-cmp.jsx'
 import { WapPreview } from './wap-preview-cmp.jsx'
 
 import { useEffect, useState } from 'react'
-import { CardCmp } from './card-cmp.jsx'
-import { VideoCmp } from './video-cmp.jsx'
-import { FormCmp } from './form-cmp.jsx'
+import { CardCmp } from './wap-card-cmp.jsx'
+import { VideoCmp } from './wap-video-cmp.jsx'
+import { FormCmp } from './wap-form-cmp.jsx'
 
 
 export const DynamicCmp = (props) => {

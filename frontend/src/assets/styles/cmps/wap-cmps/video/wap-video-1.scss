@@ -1,0 +1,10 @@
+.wap-video-1{
+    color: $almost-black;
+    background-color: $t2clr2;
+    text-align: center;
+    
+    & > * {
+        margin: 0;
+        padding: 10px;
+    }
+}

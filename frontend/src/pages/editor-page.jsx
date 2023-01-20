@@ -40,7 +40,7 @@ export function Editor() {
         // console.log('wap heree:', wap)
         // setList(wap.cmps)
         // loadWap(wapId)
-    }, [wap])
+    }, [])
 
     const reOrder = (startIdx, endIdx) => { 
         // const [removed] = cmps.splice(startIdx, 1)
