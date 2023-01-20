@@ -13,6 +13,9 @@ export const wapHeader1 = {
     ]
   },
   theme: 'theme-header-happy',
-  style: {}
+  style: {
+    fontFamily: 'fe-serif',
+    // backgroundColor: 'red',
+  }
 }
 

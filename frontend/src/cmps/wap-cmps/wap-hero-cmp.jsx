@@ -5,7 +5,7 @@ export function WapHero({ style, cmp }) {
     <div id={cmp.type} style={style} className={cmp.name}>
         <div>
             <p className="title">{cmp.info.title}</p>
-            <h2 className="subtitle">{cmp.info.subtitle}</h2>
+            <p className="subtitle">{cmp.info.subtitle}</p>
             <p className="txt">{cmp.info.txt}</p>
         </div>
         <nav>
