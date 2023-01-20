@@ -1,7 +1,7 @@
 
 
 export function VideoCmp({ style, cmp }) {
-    console.log(cmp.embedId)
+    // console.log(cmp.embedId)
     return (
         <div id={cmp.type} style={style} className={cmp.name}>
             {cmp.info.title && <h2 className="title">{cmp.info.title}</h2>}

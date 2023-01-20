@@ -44,7 +44,7 @@ export const wapService = {
     getCmpsByCategory,
     getWapDemoById,
     getCmpById,
-    getCmpsList
+    getCmpTypes
     // getWapByName
     // getEmptyWap,
     // addWapMsg
@@ -70,7 +70,7 @@ function getWapDemos()  {
     ]
 }
 
-function getCmpsList() {
+function getCmpTypes() {
     return Object.keys(mapCmpByCategory)
 }
 
