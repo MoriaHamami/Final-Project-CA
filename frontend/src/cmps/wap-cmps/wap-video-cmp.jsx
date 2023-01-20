@@ -4,8 +4,8 @@ export function VideoCmp({ style, cmp }) {
     console.log(cmp.embedId)
     return (
         <div id={cmp.type} style={style} className={cmp.name}>
-            {cmp.info.title && <h2 className="card-title">{cmp.info.title}</h2>}
-            {cmp.info.subtitle && <p className="card-subtitle">{cmp.info.subtitle}</p>}
+            {cmp.info.title && <h2 className="title">{cmp.info.title}</h2>}
+            {cmp.info.subtitle && <p className="subtitle">{cmp.info.subtitle}</p>}
             <div className="wap-card-video-container">
                 <iframe
                     // width={`${cmp.info.width}`}
