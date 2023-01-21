@@ -5,9 +5,6 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
     function onChangeFont({ target }) {
         target.title = target.value
         onChange(propertyName, target.value)
-
-
-
     }
 
     return <div className='flex space-between'>

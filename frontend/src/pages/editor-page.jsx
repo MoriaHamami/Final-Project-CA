@@ -81,9 +81,9 @@ export function Editor() {
                     wap.cmps[compIndex].info[key].style = updatedElementStyle
                     break
                 }else if(Array.isArray(childElement)) {
-                    console.log('here');
+                    // console.log('here');
                     const idx = childElement.findIndex((elm) => elm.id === selectedElementId)
-                    console.log('childElement:',childElement)
+                    // console.log('childElement:',childElement)
                     if (idx !== -1){
                         const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
                         wap.cmps[compIndex].info[key][idx].style = updatedElementStyle
@@ -98,6 +98,8 @@ export function Editor() {
         }
         saveWap(wap)
     }
+
+    
 
     return (
         <div>

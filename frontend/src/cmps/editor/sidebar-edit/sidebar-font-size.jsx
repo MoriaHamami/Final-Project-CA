@@ -7,9 +7,6 @@ function onChangeRange({target}){
     console.log('target:',target)
     target.title = target.value
     onChange(propertyName, target.value + 'px')
-
-
-
 }
 
     return <div>
