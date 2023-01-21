@@ -3,6 +3,7 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     resize: both;
+    // container-type: inline-size;
 
     // &.mobile{
     //     width: 380px;
@@ -15,7 +16,6 @@
     // &.desktop{
     //     width: 100%;
     // }
-    // container-type: inline-size;
 
 
     &.drop-zone {
