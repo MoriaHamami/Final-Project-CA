@@ -9,9 +9,10 @@ export const wapVideo1 = {
     subtitle: '',
     title: 'Discover Us',
     embedId: 'G-jPoROGHGE',
-    txt: 'Mario takes great pride in crafting each pizza with care. He tirelessly experiments with new recipes to perfect his craft. He takes the time to listen to customers\' feedback to improve his pizzas. His enthusiasm for his work is contagious and it\'s clear that he truly loves what he does.',
+    subtitle: 'Watch the Master in Action!',
     iframeStyle: {
-      width: '100%',
+      width: '50%',
+      minWidth: '300px',
       // height: '100%',
       // padding: 0,
       // margin: 0,
@@ -21,6 +22,8 @@ export const wapVideo1 = {
   },
   // cmps: [],
   theme: 'theme-section-happy',
-  style: {},
+  style: {
+    fontFamily: 'fe-serif',
+  },
 }
 
