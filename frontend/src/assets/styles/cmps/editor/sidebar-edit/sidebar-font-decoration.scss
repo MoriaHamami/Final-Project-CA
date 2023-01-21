@@ -5,4 +5,13 @@
     gap: 10px;
     align-items:center;
     cursor: pointer;
+    span{
+        font-size: 1.1rem;
+
+        &.bold{
+            font-size: 1.3rem;
+        }
+    }
+
+   
 }

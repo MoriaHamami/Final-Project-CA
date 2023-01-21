@@ -7,8 +7,8 @@ import { SidebarBorderRadius } from './sidebar-edit/sidebar-border-radius.jsx'
 
 export function SidebarEdit({ selectedElementId, handleWapEdit, chosenComponent }) {
     return <div className='tools-container'>
-        <p>Editing component: {chosenComponent}</p>
-        <p>Editing container: {selectedElementId}</p>
+        {/* <p>Editing component: {chosenComponent}</p>
+        <p>Editing container: {selectedElementId}</p> */}
 
         <SidebarFontDecoration title='Decoration' onChange={handleWapEdit} />
         <SidebarFontFamily title='Font' propertyName='fontFamily' onChange={handleWapEdit} />

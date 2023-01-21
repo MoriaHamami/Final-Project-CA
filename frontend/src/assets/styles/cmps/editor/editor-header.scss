@@ -4,7 +4,7 @@
     padding: 0 40px;
     padding-left: calc(40px - 1rem);
     background-color: white;
-       border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px 1px;
     color: $icon-clr;
 
@@ -12,12 +12,19 @@
         display: flex;
 
         .editor-action {
-            padding: 1rem;
-            
+            padding: 0.6rem 1rem;
+            font-size: 21px;
 
-            // &:first-child{
-            //     padding-left: 0;
-            // }
+            span{
+                font-size: 1.3rem;
+            }
+            
+            &.desktop{
+                padding: 0.5rem 1rem 0.7rem;
+                font-size: 24px;
+                
+            }
+
             &:hover {
                 background-color: $almost-white;
                 cursor:not-allowed;

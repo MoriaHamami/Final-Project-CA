@@ -7,13 +7,18 @@ export function EditorHeader() {
         <header className="editor-header">
             <div className="editor-actions">
                 {/* <FontAwesomeIcon className='editor-action' icon={faUserGroup} /> */}
-                <FontAwesomeIcon className='editor-action' icon={faReply} />
-                <FontAwesomeIcon className='editor-action' icon={faShare} />
+                <span class="material-symbols-outlined editor-action">undo</span>
+                <span class="material-symbols-outlined editor-action">redo</span>
+                {/* <FontAwesomeIcon className='editor-action' icon={faReply} />
+                <FontAwesomeIcon className='editor-action' icon={faShare} /> */}
             </div>
             <div className='editor-size-container'>
-                <FontAwesomeIcon className='editor-action' icon={faDisplay} />
+                <span class="material-symbols-outlined editor-action desktop">desktop_windows</span>
+                <span class="material-symbols-outlined editor-action">tablet_mac</span>
+                <span class="material-symbols-outlined editor-action">phone_iphone</span>
+                {/* <FontAwesomeIcon className='editor-action' icon={faDisplay} />
                 <FontAwesomeIcon className='editor-action' icon={faTabletScreenButton} />
-                <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} />
+                <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} /> */}
             </div>
             <div className="site-actions">
                 <button className='preview-btn'>PREVIEW</button>

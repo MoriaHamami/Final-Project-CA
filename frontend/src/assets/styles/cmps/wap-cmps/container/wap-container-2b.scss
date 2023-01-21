@@ -1,41 +1,44 @@
 .wap-container-2b {
+.wap-gallery-img-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  position: relative;
 
-  // .wap-gallery-img-container{
-  // display: flex;
-  // // flex-direction: column;
-  // flex-wrap: wrap;
-  // }
   .photo-container {
+    flex-basis: 33.33%;
 
     img {
-      position: relative;
-      width: 33.33%;
-      aspect-ratio: 3/2;
-
-    }
-
-    &:first-child img {
       width: 100%;
-      aspect-ratio: 3/1;
-    }
-  }
-
-  .wap-gallery-img-container {
-    height: 100%;
-    position: relative;
-
-    img {
+      position: relative;
+      aspect-ratio: 3/2;
       height: 100%;
-      background-position: center;
-      object-fit: cover;
-      transition: filter 0.1s;
+    background-position: center;
+    object-fit: cover;
+    transition: filter 0.1s;
 
-      &:hover {
-        filter: brightness(70%);
+    &:hover {
+      filter: brightness(70%);
+    }
+
+    }
+
+    &:first-child {
+      flex-basis: 100%;
+
+      img {
+        width: 100%;
+        aspect-ratio: 3/1;
       }
     }
   }
 }
+}
+
+
+
+
+
 
 
 // .wap-container-2b {
