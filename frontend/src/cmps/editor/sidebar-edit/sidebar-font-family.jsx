@@ -20,7 +20,7 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
     return <div className='flex space-between'>
         <label htmlFor="fonts">{title}</label>
 
-        {/* <Select
+        <Select
             //BE AWARE!, sans-serif is the default font-family when no font-family found on the selected element
             onChange={onChangeFont}
             id="fonts"
@@ -28,6 +28,7 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
             size='small'
             inputProps={{ 'aria-label': 'Without label' }}
             style={{ fontSize: '13px', width: '100px', height: '25px' }}
+            value=''
         >
             {fonts.map((font) => (
                 <MenuItem
@@ -38,7 +39,7 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
                     {font}
                 </MenuItem>
             ))}
-        </Select> */}
+        </Select>
 
         {/* <select name="fonts" id="fonts" onChange={onChangeFont}>
             <option value="roboto-regular">Roboto</option>
