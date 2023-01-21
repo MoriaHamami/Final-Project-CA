@@ -12,6 +12,6 @@ export const wapHero2 = {
   theme: 'theme-header-happy',
   style: {
     backgroundImage: 'url("https://res.cloudinary.com/dimirmc9j/image/upload/v1674060120/card1_cbglsw.jpg")',
-    // font: 'Fontush',
+    fontFamily: 'handlee',
   }
 }

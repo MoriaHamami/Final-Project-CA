@@ -17,7 +17,7 @@ function onChangeRange({target}){
         key={'fontSizeSlider123'}
         onChange={onChangeRange}
         // value={currValue ? currValue : 0}
-        defaultValue={7}
+        defaultValue={27}
         aria-label='Default'
         valueLabelDisplay='auto'
         step={1}

@@ -12,6 +12,8 @@ export const wapFooter2 = {
     ]
   },
   thumbnail: null,
-  style: {},
+  style: {
+    fontFamily: 'handlee',
+  },
   
 }

@@ -12,6 +12,8 @@ export const wapFooter1 = {
     ]
   },
   thumbnail: null,
-  style: {},
+  style: {
+    fontFamily: 'fe-serif',
+  },
 
 }

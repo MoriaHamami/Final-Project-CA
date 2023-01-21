@@ -79,13 +79,14 @@
   }
 
   @mixin btn($type: regular, $bg: $almost-white, $clr: $clr1, $padding: em(12px) em(24px), $hover: darken($bg, 8%)) {
+    font-family: inherit;
     align-items: center;
     text-decoration: none;
     // text-transform: uppercase;
     padding: $padding;
     line-height: 1.25;
     font-size: em(14px);
-    font-variation-settings: "wght" 430;
+    // font-variation-settings: "wght" 430;
     border: none;
     cursor: pointer;
     background-color: $bg;

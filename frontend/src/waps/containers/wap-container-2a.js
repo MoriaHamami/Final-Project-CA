@@ -9,7 +9,9 @@ export const wapContainer2A = {
     },
     theme: 'theme-header-happy',
     thumbnail: 'https://i.postimg.cc/7h0qq8v4/wap-cards-1.png',
-    style: {},
+    style: {
+        fontFamily: 'handlee',
+    },
     cmps: [
         {
             type: 'wap-container',

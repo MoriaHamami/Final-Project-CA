@@ -22,6 +22,7 @@
 
   button {
     @include btn($bg: inherit, $clr: $t2clr1, $padding: em(12px) em(16px), $hover: rgba(35, 35, 35, 0.065));
+    border: 0.5px solid rgba(26, 26, 26, 0.635);
     font-size: 0.8rem;
     font-weight: 300;
   }

@@ -11,8 +11,7 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit,
     const [elText, setElText] = useState('')
 
     function onElementClick({ target }) {
-
-        console.log('target:', target)
+        console.log('here:', {target})
         const elementId = target.getAttribute('data-container')
         onCmpClick()
         setSelectedElementId(elementId)
