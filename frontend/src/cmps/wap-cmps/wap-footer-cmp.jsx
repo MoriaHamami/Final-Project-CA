@@ -22,7 +22,7 @@ export function WapFooter({ style, cmp, onElementClick }) {
           else return ''
         })}
       </div>
-      {info.txt?.txt && <p style={info.txt.style} onClick={onElementClick} contentEditable={selectedElementId === info.txt.id} data-container={info.txt.id} className="copy-rights">{info.txt.txt}</p>}
+      {info.txt?.txt && <p suppressContentEditableWarning={true} style={info.txt.style} onClick={onElementClick} contentEditable={selectedElementId === info.txt.id} data-container={info.txt.id} className="copy-rights">{info.txt.txt}</p>}
 
     </div>
   )

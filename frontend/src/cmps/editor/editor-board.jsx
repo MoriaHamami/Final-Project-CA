@@ -8,6 +8,7 @@ import { DynamicCmp } from '../wap-cmps/wap-dynamic-cmp';
 export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit, onCmpClick }) {
 
     function onElementClick({ target }) {
+
         console.log('target:', target)
         const elementId = target.getAttribute('data-container')
         onCmpClick()
@@ -38,7 +39,9 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit,
                             return <Draggable draggableId={cmp.id} key={cmp.id} index={index}  >
                                 {(provided, snapshot) => (
                                     <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                        <DynamicCmp cmp={cmp} onElementClick={onElementClick} />
+                                        <div className={snapshot.isDragging && !snapshot.isDropAnimating ? 'dragging' : ''}>
+                                            <DynamicCmp cmp={cmp} onElementClick={onElementClick} />
+                                        </div>
                                     </div>
                                 )}
                             </Draggable>

@@ -2,34 +2,39 @@
     max-height: calc(100vh - 120px);
     overflow-y: scroll;
     scroll-behavior: smooth;
-    resize:both;
+    resize: both;
     // container-type: inline-size;
 
 
-    &.drop-zone{
+    &.drop-zone {
         background-image: url('https://res.cloudinary.com/dimirmc9j/image/upload/v1674121344/dot-grid-blank_ekmq4f.webp');
         background-size: contain;
-        
+
     }
 
     &::-webkit-scrollbar {
         width: 10px;
     }
-    
+
     &::-webkit-scrollbar-track {
         border-radius: 1px;
         background-color: white;
         border: 1px solid $almost-white;
     }
-    
+
     &::-webkit-scrollbar-thumb {
         border-radius: 4px;
         background-color: #DDDDDD;
         z-index: 1;
-        
-        &:hover{
+
+        &:hover {
             cursor: pointer;
             background-color: #cbcbcb;
         }
     }
+}
+
+.dragging {
+    background-color: red;
+    width: 100vh;
 }
