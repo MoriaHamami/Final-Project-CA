@@ -1,6 +1,8 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 import { useSelector } from 'react-redux'
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+
 
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -29,7 +31,7 @@ export function MapCmp({ style, cmp, onElClick }) {
             <AnyReactComponent
               lat={info.cords.lat}
               lng={info.cords.lng}
-              text="📍"
+              text={<LocationOnIcon />}
             />
           </GoogleMapReact>
         </div>
