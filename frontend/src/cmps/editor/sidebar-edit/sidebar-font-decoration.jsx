@@ -31,9 +31,9 @@ export function SidebarFontDecoration({title,  onChange}) {
         return <div className='flex space-between'>
           <span>{title}</span>
           <div className="editor-decoration-container">
-          <span onClick={onBoldClick} class="material-symbols-outlined bold">format_bold</span>
-          <span onClick={onUnderlineClick} class="material-symbols-outlined">format_underlined</span>
-          <span onClick={onItalicClick} class="material-symbols-outlined">format_italic</span>
+          <span onClick={onBoldClick} className="material-symbols-outlined bold">format_bold</span>
+          <span onClick={onUnderlineClick} className="material-symbols-outlined">format_underlined</span>
+          <span onClick={onItalicClick} className="material-symbols-outlined">format_italic</span>
           {/* <FontAwesomeIcon className="bold-btn" icon={faBold} onClick={onBoldClick} />
           <FontAwesomeIcon className="underline-btn" icon={faUnderline} onClick={onUnderlineClick} />
           <FontAwesomeIcon className="italic-btn" icon={faItalic} onClick={onItalicClick} /> */}

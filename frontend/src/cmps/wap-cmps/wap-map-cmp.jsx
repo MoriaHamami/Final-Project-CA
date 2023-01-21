@@ -8,7 +8,6 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 export function MapCmp({ style, cmp, onElClick }) {
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info
-  console.log(cmp.name)
   const defaultProps = {
     center: {
       lat: info.cords.lat,

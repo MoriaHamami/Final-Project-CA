@@ -8,19 +8,24 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
   const [fontSizeVal, setFontSizeVal] = useState(1.6)
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
+
+  console.log('fontSizeVal:',fontSizeVal)
   // TODO !!!!!!!!!!!!!!!!!!!!!!!
   useEffect(() => {
-    // console.log('here:')
-    console.log('propertyName:', selectedElement.style[propertyName])
-    // console.log('chosenComponent:', chosenComponent)
-    const fontSize = selectedElement.style[propertyName].replace('rem', '')
-    console.log('+fontSize:',+fontSize)
-    setFontSizeVal(+fontSize)
+    console.log('selectedElement:',selectedElement)
+    const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('rem', '') : 1
+    console.log('fontSize:',fontSize)
+    setFontSizeVal(fontSize)
   }, [selectedElement])
+
+  
 
   function onChangeRange({ target }) {
     target.title = target.value
+    setFontSizeVal(target.value)
     onChange(propertyName, target.value + 'rem')
+    // const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('rem', '') : 1
+    // setFontSizeVal(fontSize)
   }
 
   return <div>
@@ -30,8 +35,7 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
         size='small'
         key={'fontSizeSlider123'}
         onChange={onChangeRange}
-        // value={currValue ? currValue : 0}
-        defaultValue={fontSizeVal}
+        value={fontSizeVal}
         aria-label='Default'
         valueLabelDisplay='auto'
         step={0.1}
