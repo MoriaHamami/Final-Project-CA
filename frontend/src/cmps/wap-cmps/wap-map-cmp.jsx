@@ -19,23 +19,24 @@ export function MapCmp({ style, cmp, onElClick }) {
   };
 
   return (
-    <div style={style} id={cmp.type} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
+    <div id={cmp.type} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
       {cmp.info.name && <h2 data-container={JSON.stringify(info.name)} onClick={onElClick} style={info.name.style} className="title" contentEditable={selectedElement?.id === info.name.id} suppressContentEditableWarning={true} >{info.name.txt}</h2>}
 
-
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyCB0AieRfE8jFeAQWL8okf7J69APWc8VTI" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent
-          lat={info.cords.lat}
-          lng={info.cords.lng}
-          text="📍"
-        />
-      </GoogleMapReact>
+      <div className="map-container" style={style}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: "AIzaSyCB0AieRfE8jFeAQWL8okf7J69APWc8VTI" }}
+          defaultCenter={defaultProps.center}
+          defaultZoom={defaultProps.zoom}
+        >
+          <AnyReactComponent
+            lat={info.cords.lat}
+            lng={info.cords.lng}
+            text="📍"
+          />
+        </GoogleMapReact>
+      </div>
 
     </div>
 
-  );
+  )
 }

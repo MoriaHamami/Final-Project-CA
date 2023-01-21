@@ -14,8 +14,7 @@ export const wapMap1 = {
   theme: 'theme-map-exciting',
   style: {
     height: '200px',
-    width: '50%',
-
+    width: '70%',
   }
 }
 
