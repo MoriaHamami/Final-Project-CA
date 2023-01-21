@@ -5,7 +5,7 @@ export const wapFooter2 = {
   type: 'wap-footer',
   id: utilService.makeId(),
   info: {
-    txt: "© 2023 Adventure Tour Company | Created using Webix",
+    txt: { txt: "© 2023 Adventure Tour Company | Created using Webix", style: {}, id: utilService.makeId() },
     btns: [
       { label: "facebook", link: "#wc24", id: utilService.makeId() },
       { label: "instagram", link: "#wc26", id: utilService.makeId() }
