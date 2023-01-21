@@ -16,7 +16,7 @@ export const wapForm2 = {
     btn: { label: 'Submit', link: '#wc03', style: {} },
   },
   theme: 'theme-section-happy',
-  style: { color: 'red' }
+  style: {}
 }
 
 
