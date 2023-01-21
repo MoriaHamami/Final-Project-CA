@@ -6,7 +6,7 @@ import { WapHero } from './wap-hero-cmp.jsx'
 import { WapPreview } from './wap-preview-cmp.jsx'
 
 import { useEffect, useState } from 'react'
-import { CardCmp } from './wap-card-cmp.jsx'
+import { GalleryCmp } from './wap-gallery-cmp.jsx'
 import { VideoCmp } from './wap-video-cmp.jsx'
 import { FormCmp } from './wap-form-cmp.jsx'
 
@@ -45,9 +45,9 @@ export function DynamicCmp(props){
           style={cmp.style}
         />
       )
-    case 'wap-card':
+    case 'wap-gallery':
       return (
-        <CardCmp
+        <GalleryCmp
           cmp={cmp}
           style={cmp.style}
         />

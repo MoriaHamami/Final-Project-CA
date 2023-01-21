@@ -12,25 +12,25 @@
     font-weight: 700;
   }
 
-  .cards-container {
+  .gallery-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     gap: 50px;
     margin: auto;
 
-    .wap-card {
+    .wap-gallery {
       position: relative;
 
-      .wap-card-img-container {
+      .wap-gallery-img-container {
         max-width: 50px;
         margin: 50px auto;
       }
 
-      .card-title {
+      .gallery-title {
         font-size: 1.2rem;
       }
 
-      .card-subtitle {
+      .gallery-subtitle {
         font-size: 0.9rem;
       }
     }

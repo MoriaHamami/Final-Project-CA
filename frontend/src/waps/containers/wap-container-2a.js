@@ -14,12 +14,12 @@ export const wapContainer2A = {
         {
             type: 'wap-container',
             id: utilService.makeId(),
-            name: 'cards-container',
+            name: 'gallery-container',
             cmps: [
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'wap-card',
+                    name: 'wap-gallery',
                     info: {
                         title: 'Local Expert Guides',
                         subtitle: 'I\'m a title.Click here to add your own text and edit me.',
@@ -28,9 +28,9 @@ export const wapContainer2A = {
                     },
                 },
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'wap-card',
+                    name: 'wap-gallery',
 
                     info: {
                         title:'Handpicked Adventures',
@@ -41,9 +41,9 @@ export const wapContainer2A = {
                     },
                 },
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'wap-card',
+                    name: 'wap-gallery',
 
                     info: {
                         title: 'Hidden Gem Destinations',
