@@ -12,31 +12,23 @@
     font-weight: 700;
   }
 
-  // .gallery-container {
   .wap-gallery-img-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     gap: 50px;
     margin: auto;
 
-    // .wap-gallery {
-    // .gallery-container {
-      // position: relative;
+    img {
+      max-width: 50px;
+      margin: 50px auto;
+    }
 
-      // wap-gallery-img-container
-      img {
-        max-width: 50px;
-        // background-color: red;
-        margin: 50px auto;
-      }
+    .gallery-title {
+      font-size: 1.2rem;
+    }
 
-      .gallery-title {
-        font-size: 1.2rem;
-      }
-
-      .gallery-txt {
-        font-size: 0.9rem;
-      }
-    // }
+    .gallery-txt {
+      font-size: 0.9rem;
+    }
   }
 }

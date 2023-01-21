@@ -3,50 +3,23 @@
   flex-direction: column;
   color: whitesmoke;
   width: 100%;
-  // min-height: 100px;
   align-content: center;
   background-color: #464646;
 
-  // .gallery-container {
   .wap-gallery-img-container {
     display: grid;
     grid-template-columns: repeat(4, minmax(50px, 1fr));
 
-    // .wap-gallery{
-    // // .wap-gallery-img-container{
-    //   position: relative;
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: space-between;
-    //   //   background-color: $almost-whitesmoke;
-    //   border-radius: 10px;
-    //   cursor: pointer;
+    img:hover {
+      filter: brightness(70%);
+    }
 
-    //   &:hover {
-    //     img:hover {
-    //     // img {
-    //       filter: brightness(70%);
-    //     }
-
-    //   }
-      
-    // }
-      img:hover {
-      // img {
-        filter: brightness(70%);
-      }
-
-    
-
-    // wap-gallery-img-container
     .photo-container {
       min-height: 50px;
-      // height: 100%;
       position: relative;
       aspect-ratio: 1/1;
 
       img {
-        // width: 100%;
         height: 100%;
         min-height: 50px;
         background-position: center;
@@ -54,7 +27,6 @@
         transition: filter 0.1s;
       }
     }
-
 
   }
 
