@@ -17,11 +17,11 @@ export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
     const selectedCmpId = useSelector((storestate) => storestate.wapModule.selectedCmpId)
     const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
+    const [isOpenMenu, setIsOpenMenu] = useState(false)
+    const [editType, setEditType] = useState('')
 
 
-    // const [selectedElementId, setSelectedElementId] = useState();
 
-    // const [selectedCmpId, setSelectedCmpId] = useState();
     const [isDragging, setIsDragging] = useState(false)
     const navigate = useNavigate()
     const { wapId } = useParams()
@@ -99,7 +99,21 @@ export function Editor() {
         saveWap(wap)
     }
 
-    
+    function onOptionClick(type) {
+        if (!editType || editType != type) {
+            if (!isOpenMenu) setIsOpenMenu(true)
+            setEditType(type)
+
+        } else {
+            setIsOpenMenu(false)
+            setEditType('')
+        }
+    }
+
+    function onCmpClick() {
+        setIsOpenMenu(true)
+        setEditType('edit')
+    }
 
     return (
         <div>
@@ -107,17 +121,28 @@ export function Editor() {
                 <EditorHeader />
 
                 <section className="editor-page">
-                    <EditorSideBar onPickedCmp={onPickedCmp} selectedElementId={selectedElementId} chosenComponent={selectedCmpId} handleWapEdit={handleWapEdit} />
-                    {wap ? <EditorBoard wap={wap} setSelectedElementId={setSelectedElementId} handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
+                    <EditorSideBar
+                        isOpenMenu={isOpenMenu}
+                        editType={editType}
+                        onPickedCmp={onPickedCmp}
+                        onOptionClick={onOptionClick}
+                        selectedElementId={selectedElementId}
+                        chosenComponent={selectedCmpId}
+                        handleWapEdit={handleWapEdit} />
+                    {wap ? <EditorBoard
+                        wap={wap}
+                        onCmpClick={onCmpClick}
+                        setSelectedElementId={setSelectedElementId}
+                        handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
                 </section>
 
-                <Droppable droppableId="delete">
+                {/* <Droppable droppableId="delete">
                     {(provided, snapshot) => (
                         <div ref={provided.innerRef}>
                             <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
                         </div>
                     )}
-                </Droppable >
+                </Droppable > */}
 
             </DragDropContext>}
 
