@@ -10,7 +10,7 @@ export const wapContainer2A = {
     theme: 'theme-header-happy',
     thumbnail: 'https://i.postimg.cc/7h0qq8v4/wap-cards-1.png',
     style: {},
-    cmps: [,
+    cmps: [
         {
             type: 'wap-container',
             id: utilService.makeId(),
@@ -39,8 +39,8 @@ export const wapContainer2A = {
                             txt: 'I\'m a title.Click here to add your own text and edit me.'
                         }
                     ]
-                    }
-                    ]
+                }
+            ]
 
         },
 

@@ -16,14 +16,14 @@ export const wapContainer1B = {
       id: utilService.makeId(),
       name: 'wap-form-1',
       info: {
-        title: 'Reservations',
-        subtitle: 'BOOK A TABLE',
-        inputs:[
-          { dataType: 'date', name: 'wap-input', placeholder: '', id: utilService.makeId() },
-          { dataType: 'time', name: 'wap-input', placeholder: '', id: utilService.makeId() },
-          { dataType: 'number', name: 'wap-input', placeholder: '', id: utilService.makeId() }
+        title: { txt: 'Reservations', style: {}, id: utilService.makeId(), },
+        subtitle: { txt: 'BOOK A TABLE', style: {}, id: utilService.makeId(), },
+        inputs: [
+          { dataType: 'date', name: 'wap-input', placeholder: '', id: utilService.makeId(), style: {} },
+          { dataType: 'time', name: 'wap-input', placeholder: '', id: utilService.makeId(), style: {} },
+          { dataType: 'number', name: 'wap-input', placeholder: '', id: utilService.makeId(), style: {} }
         ],
-        btn: { label: 'Book Now', link: '#wc03', id: utilService.makeId() },
+        btn: { label: 'Book Now', link: '#wc03', id: utilService.makeId(), style: {} },
       },
 
     }

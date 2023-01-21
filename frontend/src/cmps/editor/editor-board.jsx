@@ -6,27 +6,20 @@ import { DynamicCmp } from '../wap-cmps/wap-dynamic-cmp';
 
 
 export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit, onCmpClick }) {
+    
 
     function onElementClick({ target }) {
         console.log('target:', target)
         const elementId = target.getAttribute('data-container')
         onCmpClick()
         setSelectedElementId(elementId)
-        // document.addEventListener('mouseleave', onLeaveElement)
     }
 
-    function onLeaveElement(ev) {
-        // saveWap(wap)
-        // dispatch(saveToHistory())
-        console.log('ev:', ev)
-        // if (txtRef.current && !txtRef.current.contains(ev.target)) {
-        //   txtRef.current.blur()
-        //   document.removeEventListener('mouseleave', handleClickOutside)
-        //   if (cmp.info.txt === txtRef.current.innerText) return
-        //   cmp.info.txt = txtRef.current.innerText
-        //   dispatch(updateCmp(cmp))
-        // }
-    }
+    function getText(txt){
+        console.log('txt:',txt)
+      }
+
+
 
     return (
         <>
@@ -38,7 +31,7 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit,
                             return <Draggable draggableId={cmp.id} key={cmp.id} index={index}  >
                                 {(provided, snapshot) => (
                                     <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                        <DynamicCmp cmp={cmp} onElementClick={onElementClick} />
+                                        <DynamicCmp cmp={cmp} onElementClick={onElementClick} getText={getText} />
                                     </div>
                                 )}
                             </Draggable>

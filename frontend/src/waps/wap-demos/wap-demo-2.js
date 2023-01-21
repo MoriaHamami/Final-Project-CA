@@ -5,7 +5,7 @@ import { wapFooter2 } from "../footers/wap-footer-2";
 import { wapHeader2 } from "../headers/wap-header-2";
 import { wapHero2 } from "../heros/wap-hero-2";
 import { wapPreview2 } from "../previews/wap-preview-2";
-
+import { wapForm2 } from "../forms/wap-form-2";
 
 export const wapDemo2 = {
 	_id: "5e28393890dd7201a06d4e42",
@@ -18,7 +18,7 @@ export const wapDemo2 = {
 		wapPreview2,
 		wapContainer2A,
 		wapContainer2B,
-		wapContainer2C,
+		wapForm2,
 		wapFooter2
 	],
 	isPublic: true
