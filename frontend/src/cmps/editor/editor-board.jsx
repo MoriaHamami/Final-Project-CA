@@ -11,10 +11,10 @@ export function EditorBoard({ wap, handleSelectCmpForEdit, onElClick, onElementT
     const [elText, setElText] = useState('')
 
     // function onElClick({ target }) {
-        // console.log('target:', target)
-        // const element =  JSON.parse(target.getAttribute('data-container'))
-        // setSelectedElement(element)
-        // onCmpClick()
+    // console.log('target:', target)
+    // const element =  JSON.parse(target.getAttribute('data-container'))
+    // setSelectedElement(element)
+    // onCmpClick()
     // }
 
     function onElementTxtChange(txt) {
@@ -35,7 +35,10 @@ export function EditorBoard({ wap, handleSelectCmpForEdit, onElClick, onElementT
                             return <Draggable draggableId={cmp.id} key={cmp.id} index={index}  >
                                 {(provided, snapshot) => (
                                     <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                        <DynamicCmp cmp={cmp} onElClick={onElClick} getElementTxt={getElementTxt} />
+                                        <div className={`dragable-container ${snapshot.isDragging ? 'dragging' : ''}`}>
+                                            <DynamicCmp cmp={cmp} onElClick={onElClick} getElementTxt={getElementTxt} />
+                                            {provided.placeholder}
+                                        </div>
                                     </div>
                                 )}
                             </Draggable>

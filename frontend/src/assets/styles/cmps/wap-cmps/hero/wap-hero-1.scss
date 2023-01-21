@@ -1,35 +1,25 @@
 .wap-hero-1 {
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 7rem $normal-padding;
-    flex-direction: column;
-    color: $almost-black;
-  
-    .title {
-      font-weight: 600;
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-  
-    .subtitle {
-      font-size: 3.5em;
-      margin-bottom: 20px;
-    }
-  
-    .txt {
-      font-size: 1.3rem;
-      font-weight: 500;
-      
-    }
-  
-    button{
-      @include btn($type: round, $bg: inherit, $clr: $t1clr1, $padding: em(8px) em(12px), $hover: #0b0b0b42);
-      background-color: rgba(255, 255, 255, 0.276);
-      font-weight: 600;
-    }
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 7rem $normal-padding;
+  flex-direction: column;
+  color: $almost-black;
+
+  .title {
+    margin-bottom: 10px;
   }
+
+  .subtitle {
+    margin-bottom: 20px;
+  }
+
+
+  button {
+    @include btn($type: round, $bg: inherit, $clr: $t1clr1, $padding: em(8px) em(12px), $hover: #0b0b0b42);
+  }
+}

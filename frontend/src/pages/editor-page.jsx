@@ -160,11 +160,9 @@ export function Editor() {
     // }
 
     function onElClick({ target }) {
-        console.log('target:', target)
         setIsOpenMenu(true)
         setEditOpt('edit')
         const element = JSON.parse(target.getAttribute('data-container'))
-        console.log('element:', element)
         setSelectedElement(element)
     }
 

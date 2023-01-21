@@ -13,7 +13,7 @@ export const wapMap1 = {
   },
   theme: 'theme-map-exciting',
   style: {
-    height: '300px',
+    height: '200px',
     width: '50%',
 
   }

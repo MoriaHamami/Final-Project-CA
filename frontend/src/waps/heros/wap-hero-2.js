@@ -5,9 +5,9 @@ export const wapHero2 = {
   type: 'wap-hero',
   name: 'wap-hero-2',
   info: {
-    title: { txt: 'Urban Nomad Adventures', style: {}, id: utilService.makeId() },
-    subtitle: { txt: 'Experience Oregon like a Local', style: {}, id: utilService.makeId() },
-    btn: { label: 'Let\'s Go', link: '#wc20b', id: utilService.makeId() },
+    title: { txt: 'Urban Nomad Adventures', style: { fontWeight: '600', fontSize: '3.5em' }, id: utilService.makeId() },
+    subtitle: { txt: 'Experience Oregon like a Local', style: { fontSize: '1.2em' }, id: utilService.makeId() },
+    btn: { label: 'Let\'s Go', link: '#wc20b', id: utilService.makeId(), style: { fontWeight: '500' } },
   },
   theme: 'theme-header-happy',
   style: {
