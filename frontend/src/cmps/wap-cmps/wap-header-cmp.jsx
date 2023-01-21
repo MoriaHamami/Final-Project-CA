@@ -9,12 +9,11 @@ export function WapHeader({ style, cmp, onElementClick }) {
 
   return (
     <div id={cmp.type} data-container='parent' style={style} className={cmp.name} onClick={onElementClick}>
-      <p contentEditable={selectedElementId === info.logo.id} data-container={info.logo.id} className="logo" style={info.logo.style} onClick={onElementClick}>{info.logo.txt}</p>
+      <p suppressContentEditableWarning={true} contentEditable={selectedElementId === info.logo.id} data-container={info.logo.id} className="logo" style={info.logo.style} onClick={onElementClick}>{info.logo.txt}</p>
       {/* <span className="material-symbols-outlined menu-btn">menu</span> */}
       <nav className="nav-bar">
         {info.btns?.map((btn) => {
-          console.log('btn.style:',btn.style)
-          return <a contentEditable={selectedElementId === btn.id} style={btn.style} data-container={btn.id} href={btn.link} key={btn.id}>{btn.label}</a>
+          return <a suppressContentEditableWarning={true} contentEditable={selectedElementId === btn.id} style={btn.style} data-container={btn.id} href={btn.link} key={btn.id}>{btn.label}</a>
         })}
       </nav>
 </div>

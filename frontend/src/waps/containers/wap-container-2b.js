@@ -25,52 +25,31 @@ export const wapContainer2B = {
                 type: 'wap-gallery',
                 id: utilService.makeId(),
                 name: 'gallery-container',
-                info: {
-                    txt: '',
-                    imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063387/card8_wm0gfc.jpg',
-
-                },
-            },
-            {
-                type: 'wap-gallery',
-                id: utilService.makeId(),
-                name: 'gallery-container',
-
-                info: {
-                    txt: '',
-                    imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063404/card4_whirwv.jpg',
-
-                },
-            },
-            {
-                type: 'wap-gallery',
-                id: utilService.makeId(),
-                name: 'gallery-container',
-
-                info: {
-                    txt: '',
-                    imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674055390/hero3-wap-2_peid7t.jpg',
-
-                },
-            },
-            {
-                type: 'wap-gallery',
-                id: utilService.makeId(),
-                name: 'gallery-container',
-
-                info: {
-                    txt: '',
-                    imgUrl:
-                    'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063393/card11_uynqjs.webp',
-
-                },
-            },
-            
-
-        ],
+                style: {},
+                photos: [
+                    {
+                        url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063387/card8_wm0gfc.jpg',
+                        title: '',
+                        txt: ''
+                    },
+                    {
+                        url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063404/card4_whirwv.jpg',
+                        title: '',
+                        txt: ''
+                    },
+                    {
+                        url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674055390/hero3-wap-2_peid7t.jpg',
+                        title: '',
+                        txt: ''
+                    },
+                    {
+                        url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063393/card11_uynqjs.webp',
+                        title: '',
+                        txt: ''
+                    }
+                ]
+                }
+                ]
     },
     
 ],

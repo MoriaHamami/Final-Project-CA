@@ -1,5 +1,5 @@
 .editor-board {
-    max-height: 70vh;
+    max-height: calc(100vh - 120px);
     overflow-y: scroll;
     scroll-behavior: smooth;
     resize:both;

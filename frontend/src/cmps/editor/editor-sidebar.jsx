@@ -7,20 +7,10 @@ import 'animate.css';
 import { wapHero2 } from "../../waps/heros/wap-hero-2";
 import { Droppable } from "react-beautiful-dnd"
 
-export function EditorSideBar({ onPickedCmp, selectedElementId, handleWapEdit, chosenComponent }) {
-  const [isOpenMenu, setIsOpenMenu] = useState(false)
-  const [editType, setEditType] = useState('')
+export function EditorSideBar({ onPickedCmp, selectedElementId, handleWapEdit, chosenComponent, onOptionClick, isOpenMenu, editType }) {
 
-  function onOptionClick(type) {
-    if(!editType || editType != type){
-      if(!isOpenMenu) setIsOpenMenu(true)
-      setEditType(type)
-      
-    }else{
-      setIsOpenMenu(false)
-      setEditType('')
-    }
-  }
+
+
 
 
 
