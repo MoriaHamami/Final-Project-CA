@@ -180,7 +180,6 @@ export function Editor() {
                         editType={editOpt}
                         onPickedCmp={onPickedCmp}
                         onOptionClick={onOptionClick}
-                        selectedElement={selectedElement}
                         chosenComponent={selectedCmpId}
                         handleWapEdit={handleWapEdit} />
                     {wap ? <EditorBoard

@@ -3,6 +3,7 @@ import { LoginSignup } from './pages/login-signup.jsx'
 import { WapDemos } from './pages/wap-demos-page.jsx'
 import { Editor } from './pages/editor-page.jsx'
 import { Drafts } from './pages/drafts.jsx'
+import { Preview } from './pages/preview.jsx'
 
 const routes = [
     {
@@ -29,6 +30,11 @@ const routes = [
         path: '/user',
         component: <LoginSignup />,
         label: 'Login',
+    },
+    {
+        path: '/preview/:wapId',
+        component: <Preview />,
+        label: '',
     }
 ]
 
