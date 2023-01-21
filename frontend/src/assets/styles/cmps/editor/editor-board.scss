@@ -3,6 +3,18 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     resize: both;
+
+    // &.mobile{
+    //     width: 380px;
+    // }
+
+    // &.tablet{
+    //     width: 720px;
+    // }
+ 
+    // &.desktop{
+    //     width: 100%;
+    // }
     // container-type: inline-size;
 
 
@@ -34,7 +46,12 @@
     }
 }
 
-.dragging {
-    background-color: red;
-    width: 100vh;
+
+.dragable-container {
+
+    &.dragging {
+        transition: transform 0.3s ease-in;
+        transform: scale(0.8);
+        opacity: 0.3;
+    }
 }

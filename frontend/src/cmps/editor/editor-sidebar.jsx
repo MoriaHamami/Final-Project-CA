@@ -29,7 +29,7 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
           </div>
         </div>
 
-        <div className={`option-container ${editType === 'add' ? 'active' : ''}`} onClick={() => onOptionClick('add')}>
+        <div className='option-container delete' onClick={() => onOptionClick('add')}>
           <Droppable droppableId="delete">
             {(provided, snapshot) => (
               <div ref={provided.innerRef} className="delete-container">

@@ -13,7 +13,9 @@ export const wapContainer2B = {
     btn: { label: 'Book Now', link: '#wc03', id: utilService.makeId() },
   },
   theme: 'theme-section-happy',
-  style: {},
+  style: {
+    fontFamily: 'handlee',
+  },
   cmps: [
     {
         type: 'wap-container',
@@ -38,7 +40,7 @@ export const wapContainer2B = {
                         txt: ''
                     },
                     {
-                        url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674055390/hero3-wap-2_peid7t.jpg',
+                        url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674317426/card6_nhuv58.jpg',
                         title: '',
                         txt: ''
                     },

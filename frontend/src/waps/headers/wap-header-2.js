@@ -16,10 +16,7 @@ export const wapHeader2 = {
   },
   theme: 'theme-header-happy',
   style: {
-    //   background: 'url("https://res.cloudinary.com/dimirmc9j/image/upload/v1673983504/wap-header-1_qd5dap.png")',
-    //   font: 'Fontush',
-    //   color: 'red',
-    //   height: '200px',
+    fontFamily: 'handlee',
   }
 }
 

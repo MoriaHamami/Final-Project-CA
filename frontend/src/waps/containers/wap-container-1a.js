@@ -47,17 +47,17 @@ export const wapContainer1A = {
                             txt: ''
                         },
                         {
-                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-4_bxzn7k.jpg',
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674325042/pizza-cards2_qydcel.jpg',
                             title: '',
                             txt: ''
                         },
                         {
-                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-5_k00sxt.jpg',
+                            url: 'https://res.cloudinary.com/tf-lab/image/upload/restaurant/51f12210-940b-465f-a6c4-8208da1330b9/468ab0f6-2c22-487d-b6d2-dd1f07433e9d.jpg',
                             title: '',
                             txt: ''
                         },
                         {
-                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-2_k87gbe.jpg',
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674325022/pizza-cards-img_f9db7g.webp',
                             title: '',
                             txt: ''
                         },

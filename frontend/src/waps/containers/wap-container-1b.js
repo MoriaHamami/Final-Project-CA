@@ -9,7 +9,9 @@ export const wapContainer1B = {
   name: 'wap-container-1b',
   info: {},
   theme: 'theme-section-happy',
-  style: {},
+  style: {
+    fontFamily: 'fe-serif',
+  },
   cmps: [
     {
       type: 'wap-form',

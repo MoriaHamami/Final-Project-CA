@@ -152,6 +152,12 @@ export function Editor() {
             setEditOpt('')
         }
     }
+    // function onDragUpdate(result) {
+    //     console.log('updated===', result.destination)
+    //     // if (result.destination === 'delete') {
+
+    //     // }
+    // }
 
     function onElClick({ target }) {
         console.log('target:', target)

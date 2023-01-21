@@ -18,9 +18,9 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
     ]
 
     return <div className='flex space-between'>
-        <label for="fonts">{title}</label>
+        <label htmlFor="fonts">{title}</label>
 
-        <Select
+        {/* <Select
             //BE AWARE!, sans-serif is the default font-family when no font-family found on the selected element
             onChange={onChangeFont}
             id="fonts"
@@ -38,7 +38,7 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
                     {font}
                 </MenuItem>
             ))}
-        </Select>
+        </Select> */}
 
         {/* <select name="fonts" id="fonts" onChange={onChangeFont}>
             <option value="roboto-regular">Roboto</option>

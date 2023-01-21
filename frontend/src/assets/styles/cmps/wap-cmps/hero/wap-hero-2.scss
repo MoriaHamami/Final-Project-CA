@@ -33,6 +33,7 @@
   
     button {
       @include btn($bg: inherit, $clr: $almost-white, $padding: em(8px) em(12px), $hover: rgba(255, 255, 255, 0.134));
+      border: 0.5px solid rgba(255, 255, 255, 0.795);
       font-weight: 500;
     }
   }

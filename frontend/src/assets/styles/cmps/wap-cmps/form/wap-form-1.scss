@@ -13,16 +13,25 @@
   flex-direction: column;
   color: $almost-black;
 
+  .title {
+    font-size: 1.5em;
+    margin-bottom: 2rem;
+    background-color: $t1clr1;
+    color: $almost-white;
+    padding: 0 2rem 3px;
+  }
+
   .subtitle {
     font-weight: 600;
-    margin-bottom: 4rem;
-    font-size: 3.5em;
+    margin-bottom: 3rem;
+    font-size: 2.8em;
   }
 
   form {
     display: flex;
     flex-wrap: wrap;
     justify-items: center;
+    justify-content: center;
     gap: 2rem;
 
     input{
@@ -36,11 +45,5 @@
 
 
 
-  .title {
-    font-size: 1.5em;
-    margin-bottom: 2rem;
-    background-color: $t1clr1;
-    color: $almost-white;
-    padding: 0 2rem;
-  }
+  
 }

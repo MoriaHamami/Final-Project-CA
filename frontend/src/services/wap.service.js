@@ -16,6 +16,12 @@ import { wapPreview1 } from '../waps/previews/wap-preview-1'
 import { wapContainer1A } from '../waps/containers/wap-container-1a'
 import { wapContainer1B } from '../waps/containers/wap-container-1b'
 
+// VIDEOS
+import { wapVideo1 } from '../waps/videos/wap-video-1.js'
+
+// FORM
+import { wapForm2 } from '../waps/forms/wap-form-2.js'
+
 // FOOTERS
 import { wapFooter1 } from '../waps/footers/wap-footer-1'
 import { wapHeader2 } from '../waps/headers/wap-header-2'
@@ -59,6 +65,8 @@ const mapCmpByCategory = {
     heros: [wapHero1, wapHero2],
     previews: [wapPreview1, wapPreview2],
     containers: [wapContainer1A, wapContainer1B, wapContainer2A, wapContainer2B, wapContainer2C],
+    videos: [wapVideo1],
+    forms: [wapForm2],
     footers: [wapFooter1, wapFooter2],
 }
 

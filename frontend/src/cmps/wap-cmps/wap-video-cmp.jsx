@@ -1,11 +1,15 @@
+import React from 'react'
 
+import { useSelector } from 'react-redux'
 
-export function VideoCmp({ style, cmp }) {
-    // console.log(cmp.embedId)
+export function VideoCmp({ style, cmp, onElementClick }) {
+    const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
+    const info = cmp.info
+
     return (
-        <div id={cmp.type} style={style} className={cmp.name}>
-            {cmp.info.title && <h2 className="title">{cmp.info.title}</h2>}
-            {cmp.info.subtitle && <p className="subtitle">{cmp.info.subtitle}</p>}
+        <div id={cmp.type} style={style} className={cmp.name} data-container='parent' onClick={onElementClick}>
+            {cmp.info.title && <h2 data-container={info.subtitle.id} onClick={onElementClick} style={info.title.style} className="title" contentEditable={selectedElementId === info.title.id} suppressContentEditableWarning={true} >{cmp.info.title}</h2>}
+            {cmp.info.subtitle && <p data-container={info.subtitle.id} onClick={onElementClick} style={info.subtitle.style} className="subtitle" contentEditable={selectedElementId === info.subtitle.id} suppressContentEditableWarning={true} >{cmp.info.subtitle}</p>}
             <div className="wap-card-video-container">
                 <iframe
                     // width={`${cmp.info.width}`}

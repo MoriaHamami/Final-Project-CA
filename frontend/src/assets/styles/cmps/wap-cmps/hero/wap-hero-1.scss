@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 7.5rem $normal-padding;
+    padding: 7rem $normal-padding;
     flex-direction: column;
     color: $almost-black;
   
@@ -18,19 +18,18 @@
   
     .subtitle {
       font-size: 3.5em;
+      margin-bottom: 20px;
     }
   
     .txt {
       font-size: 1.3rem;
-    }
-  
-    img {
-      margin-top: 3rem;
-      max-width: 100%;
+      font-weight: 500;
+      
     }
   
     button{
       @include btn($type: round, $bg: inherit, $clr: $t1clr1, $padding: em(8px) em(12px), $hover: #0b0b0b42);
-      font-weight: 500;
+      background-color: rgba(255, 255, 255, 0.276);
+      font-weight: 600;
     }
   }

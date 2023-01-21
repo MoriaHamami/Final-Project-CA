@@ -29,7 +29,7 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
         key={'fontSizeSlider123'}
         onChange={onChangeRange}
         // value={currValue ? currValue : 0}
-        defaultValue={fontSizeVal}
+        defaultValue={27}
         aria-label='Default'
         valueLabelDisplay='auto'
         step={1}

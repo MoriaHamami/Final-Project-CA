@@ -5,6 +5,7 @@ import { wapHeader1 } from "../headers/wap-header-1";
 import { wapHero1 } from "../heros/wap-hero-1";
 import { wapPreview1 } from "../previews/wap-preview-1";
 import { wapVideo1 } from "../videos/wap-video-1";
+import { wapMap1 } from "../maps/wap-map";
 
 
 export const wapDemo1 = {
@@ -20,7 +21,8 @@ export const wapDemo1 = {
 		wapPreview1,
 		wapContainer1A,
 		wapContainer1B,
-		// wapVideo1,
+		wapMap1,
+		wapVideo1,
 		wapFooter1
 	],
 	isPublic: true

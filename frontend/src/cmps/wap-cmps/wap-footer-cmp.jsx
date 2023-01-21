@@ -13,8 +13,8 @@ export function WapFooter({ style, cmp, onElClick }) {
     <div id={cmp.type} style={style} data-container={JSON.stringify(cmp)} className={cmp.name} onClick={onElClick}>
       <div className="icons-container">
         {info.btns?.map((btn) => {
-          if (btn.label === "facebook") return <FontAwesomeIcon className="footer-icon" icon={faFacebookF} key={btn.id} />
-          else if (btn.label === "instagram") return <FontAwesomeIcon className="footer-icon" icon={faInstagram} key={btn.id} />
+          if (btn.label === "facebook") return <FontAwesomeIcon className="footer-icon" style={btn.style} icon={faFacebookF} key={btn.id} />
+          else if (btn.label === "instagram") return <FontAwesomeIcon className="footer-icon" style={btn.style} icon={faInstagram} key={btn.id} />
           else return ''
         })}
       </div>

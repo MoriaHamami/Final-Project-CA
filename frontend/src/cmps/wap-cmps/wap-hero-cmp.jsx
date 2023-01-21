@@ -10,6 +10,7 @@ export function WapHero({ style, cmp, onElClick }) {
     <div id={cmp.type} style={style} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
       <div>
         <p suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.title.id} style={info.title.style} className="title" data-container={JSON.stringify(info.title)} onClick={onElClick}>{info.title.txt}</p>
+        {info.subtitle && <p suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.subtitle.id} style={info.subtitle.style} className="subtitle" data-container={JSON.stringify(info.subtitle)} onClick={onElClick}>{info.subtitle.txt}</p>}
         {info.txt && <p suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.txt.id} style={info.txt.style} className="txt" data-container={JSON.stringify(info.txt)} onClick={onElClick}>{info.txt.txt}</p>}
       </div>
       <nav>

@@ -13,6 +13,8 @@ export const wapPreview2 = {
     btn: { label: "Read More", link: "#wc20b", id: utilService.makeId(), style: {} }
   },
   theme: 'theme-section-happy',
-  style: {}
+  style: {
+    fontFamily: 'handlee',
+  }
 }
 
