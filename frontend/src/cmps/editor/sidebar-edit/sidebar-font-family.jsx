@@ -27,7 +27,7 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
             displayEmpty
             size='small'
             inputProps={{ 'aria-label': 'Without label' }}
-            style={{ fontSize: '14px', width: '100px', height: '30px' }}
+            style={{ fontSize: '13px', width: '100px', height: '25px' }}
         >
             {fonts.map((font) => (
                 <MenuItem

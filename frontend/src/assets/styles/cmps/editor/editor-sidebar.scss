@@ -5,10 +5,10 @@
     border-right: 1px solid rgb(181, 181, 181);
     border-right: none;
     font-family: roboto-regular;
+    // max-height: calc(100vh - 120px);
 
 
     .editor-options {
-        max-height: calc(100vh - 120px);
         display: flex;
         // justify-content: center;
         flex-direction: column;
@@ -39,7 +39,7 @@
     }
 
     .editor-tools {
-        height: 70vh;
+        // height: 70vh;
         width: 0px;
         overflow-x: hidden;
         transition: width 0.3s ease-in-out;
@@ -50,13 +50,14 @@
         .tools-container{
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            
-            
+            // gap: 15px;
             >* {
                 border-bottom: 0.1px solid rgb(217, 217, 217);
                 padding-bottom: 5px;
+                padding: 10px 3px;
             }
+            
+            
         }
 
         &::-webkit-scrollbar {
@@ -81,10 +82,12 @@
         }
 
         &.open {
-            border-right: 1px solid rgb(181, 181, 181);
+            border-right: 1px solid rgb(217, 217, 217);
             width: 180px;
             transition: width 0.2s ease-in-out;
-            padding: 1rem;
+            padding: 0.5rem;
+            box-shadow: rgba(0, 0, 0, 0.372) 2px 0 4px -2px;
+            z-index: 1;
         }
     }
 }
