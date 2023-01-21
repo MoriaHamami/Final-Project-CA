@@ -11,7 +11,7 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
   // TODO !!!!!!!!!!!!!!!!!!!!!!!
   useEffect(() => {
     // console.log('here:')
-    // console.log('propertyName:', selectedElement.style[propertyName])
+    console.log('propertyName:', selectedElement.style[propertyName])
     // console.log('chosenComponent:', chosenComponent)
     // setFontSizeVal(+selectedElement.style[propertyName])
   }, [selectedElement])
@@ -29,7 +29,7 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
         key={'fontSizeSlider123'}
         onChange={onChangeRange}
         // value={currValue ? currValue : 0}
-        defaultValue={27}
+        defaultValue={fontSizeVal}
         aria-label='Default'
         valueLabelDisplay='auto'
         step={1}
