@@ -58,6 +58,7 @@ export function DynamicCmp(props) {
         <VideoCmp
           cmp={cmp}
           style={cmp.style}
+          {...props}
         />
       )
     case 'wap-form':

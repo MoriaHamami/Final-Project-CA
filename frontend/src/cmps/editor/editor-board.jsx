@@ -10,7 +10,9 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit,
 
     const [elText, setElText] = useState('')
 
-    function onElementClick({ target }) {
+    function onElementClick(ev) {
+        // ev.stopPropagation()
+        const {target} = ev
         console.log('here:')
         const elementId = target.getAttribute('data-container')
         onCmpClick()

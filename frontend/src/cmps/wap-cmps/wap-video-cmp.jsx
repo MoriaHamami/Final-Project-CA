@@ -8,6 +8,7 @@ export function VideoCmp({ style, cmp, onElementClick }) {
 
     return (
         <div id={cmp.type} style={style} className={cmp.name} data-container='parent' onClick={onElementClick}>
+            <h2>HEY</h2>
             {cmp.info.title && <h2 data-container={info.subtitle.id} onClick={onElementClick} style={info.title.style} className="title" contentEditable={selectedElementId === info.title.id} suppressContentEditableWarning={true} >{cmp.info.title}</h2>}
             {cmp.info.subtitle && <p data-container={info.subtitle.id} onClick={onElementClick} style={info.subtitle.style} className="subtitle" contentEditable={selectedElementId === info.subtitle.id} suppressContentEditableWarning={true} >{cmp.info.subtitle}</p>}
             <div className="wap-card-video-container">
