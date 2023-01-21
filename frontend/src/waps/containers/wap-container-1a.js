@@ -13,98 +13,149 @@ export const wapContainer1A = {
             type: 'wap-container',
             id: utilService.makeId(),
             name: 'gallery-container',
-            
+
             cmps: [
                 {
                     type: 'wap-gallery',
                     id: utilService.makeId(),
                     name: 'gallery-container',
-                    info: {
-                        imgUrl:
-                            'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030131/card-img-1_tkzkif.webp',
+                    style: {},
+                    photos: [
+                        {
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030131/card-img-1_tkzkif.webp',
+                            title: '',
+                            txt: ''
+                        },
+                        {
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-7_u3vjoc.jpg',
+                            title: '',
+                            txt: ''
+                        },
+                        {
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-3_nt8pvb.jpg',
+                            title: '',
+                            txt: ''
+                        },
+                        {
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-8_a5pr2p.jpg',
+                            title: '',
+                            txt: ''
+                        },
+                        {
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-6_rxv4ii.jpg',
+                            title: '',
+                            txt: ''
+                        },
+                        {
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-4_bxzn7k.jpg',
+                            title: '',
+                            txt: ''
+                        },
+                        {
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-5_k00sxt.jpg',
+                            title: '',
+                            txt: ''
+                        },
+                        {
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-2_k87gbe.jpg',
+                            title: '',
+                            txt: ''
+                        },
+                    ]
 
-                    },
-                },
-                {
-                    type: 'wap-gallery',
-                    id: utilService.makeId(),
-                    name: 'gallery-container',
 
-                    info: {
-                        imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-7_u3vjoc.jpg',
+                    // {
+                    //     type: 'wap-gallery',
+                    //     id: utilService.makeId(),
+                    //     name: 'gallery-container',
+                    //     info: {
+                    //         imgUrl:
+                    //             'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030131/card-img-1_tkzkif.webp',
 
-                    },
-                },
-                {
-                    type: 'wap-gallery',
-                    id: utilService.makeId(),
-                    name: 'gallery-container',
+                    //     },
+                    // },
+                    // {
+                    //     type: 'wap-gallery',
+                    //     id: utilService.makeId(),
+                    //     name: 'gallery-container',
 
-                    info: {
-                        imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-3_nt8pvb.jpg',
+                    //     info: {
+                    //         imgUrl:
+                    //         'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-7_u3vjoc.jpg',
 
-                    },
-                },
-                {
-                    type: 'wap-gallery',
-                    id: utilService.makeId(),
-                    name: 'gallery-container',
+                    //     },
+                    // },
+                    // {
+                    //     type: 'wap-gallery',
+                    //     id: utilService.makeId(),
+                    //     name: 'gallery-container',
 
-                    info: {
-                        imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-8_a5pr2p.jpg',
+                    //     info: {
+                    //         imgUrl:
+                    //         'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-3_nt8pvb.jpg',
 
-                    },
-                },
-                {
-                    type: 'wap-gallery',
-                    id: utilService.makeId(),
-                    name: 'gallery-container',
+                    //     },
+                    // },
+                    // {
+                    //     type: 'wap-gallery',
+                    //     id: utilService.makeId(),
+                    //     name: 'gallery-container',
 
-                    info: {
-                        imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-6_rxv4ii.jpg',
+                    //     info: {
+                    //         imgUrl:
+                    //         'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-8_a5pr2p.jpg',
 
-                    },
-                },
-                {
-                    type: 'wap-gallery',
-                    id: utilService.makeId(),
-                    name: 'gallery-container',
+                    //     },
+                    // },
+                    // {
+                    //     type: 'wap-gallery',
+                    //     id: utilService.makeId(),
+                    //     name: 'gallery-container',
 
-                    info: {
-                        imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-4_bxzn7k.jpg',
+                    //     info: {
+                    //         imgUrl:
+                    //         'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-6_rxv4ii.jpg',
 
-                    },
-                },
-                {
-                    type: 'wap-gallery',
-                    id: utilService.makeId(),
-                    name: 'gallery-container',
+                    //     },
+                    // },
+                    // {
+                    //     type: 'wap-gallery',
+                    //     id: utilService.makeId(),
+                    //     name: 'gallery-container',
 
-                    info: {
-                        imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-5_k00sxt.jpg',
+                    //     info: {
+                    //         imgUrl:
+                    //         'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-4_bxzn7k.jpg',
 
-                    },
-                },
-                {
-                    type: 'wap-gallery',
-                    id: utilService.makeId(),
-                    name: 'gallery-container',
+                    //     },
+                    // },
+                    // {
+                    //     type: 'wap-gallery',
+                    //     id: utilService.makeId(),
+                    //     name: 'gallery-container',
 
-                    info: {
-                        imgUrl:
-                        'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-2_k87gbe.jpg',
+                    //     info: {
+                    //         imgUrl:
+                    //         'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-5_k00sxt.jpg',
 
-                    },
+                    //     },
+                    // },
+                    // {
+                    //     type: 'wap-gallery',
+                    //     id: utilService.makeId(),
+                    //     name: 'gallery-container',
+
+                    //     info: {
+                    //         imgUrl:
+                    //         'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-2_k87gbe.jpg',
+
+                    //     },
+                    // },
+
+                    // ],
                 },
 
             ],
-        },
-        
-    ],
+        }
+    ]
 }

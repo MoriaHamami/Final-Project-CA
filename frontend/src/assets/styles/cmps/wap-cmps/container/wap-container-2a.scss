@@ -12,17 +12,21 @@
     font-weight: 700;
   }
 
-  .gallery-container {
+  // .gallery-container {
+  .wap-gallery-img-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     gap: 50px;
     margin: auto;
 
-    .wap-gallery {
-      position: relative;
+    // .wap-gallery {
+    // .gallery-container {
+      // position: relative;
 
-      .wap-gallery-img-container {
+      // wap-gallery-img-container
+      img {
         max-width: 50px;
+        // background-color: red;
         margin: 50px auto;
       }
 
@@ -30,9 +34,9 @@
         font-size: 1.2rem;
       }
 
-      .gallery-subtitle {
+      .gallery-txt {
         font-size: 0.9rem;
       }
-    }
+    // }
   }
 }
