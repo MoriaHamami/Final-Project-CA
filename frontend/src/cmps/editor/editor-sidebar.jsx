@@ -8,17 +8,17 @@ import { wapHero2 } from "../../waps/heros/wap-hero-2";
 import { Droppable } from "react-beautiful-dnd"
 
 export function EditorSideBar({ onPickedCmp, chosenContainer, handleWapEdit, chosenComponent }) {
-  const [openMenu, setOpenMenu] = useState(false)
+  const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [editType, setEditType] = useState('')
 
   function onOptionClick(type) {
     if(!editType || editType != type){
-      if(!openMenu) setOpenMenu(true)
+      if(!isOpenMenu) setIsOpenMenu(true)
       setEditType(type)
       
     }else{
-      setOpenMenu(!openMenu)
-      setEditType(type)
+      setIsOpenMenu(false)
+      setEditType('')
     }
   }
 
@@ -26,20 +26,20 @@ export function EditorSideBar({ onPickedCmp, chosenContainer, handleWapEdit, cho
 
   return (
 
-    <div className={`editor-side-bar ${openMenu ? 'open' : ''}`}>
-      <div className={`editor-options ${openMenu ? 'open' : ''}`}>
-        <div className="option-container" onClick={() => onOptionClick('edit')}>
+    <div className={`editor-side-bar ${isOpenMenu ? 'open' : ''}`}>
+      <div className={`editor-options ${isOpenMenu ? 'open' : ''}`}>
+        <div className={`option-container ${editType === 'edit' ? 'active' : ''}`} onClick={() => onOptionClick('edit')}>
           <FontAwesomeIcon className="edit-btn" icon={faPencil} />
           <span className="option-name">Edit</span>
         </div>
 
-        <div className="option-container" onClick={() => onOptionClick('add')}>
+        <div className={`option-container ${editType === 'add' ? 'active' : ''}`} onClick={() => onOptionClick('add')}>
           <FontAwesomeIcon className="add-btn" icon={faAdd} />
           <span className="option-name">Add</span>
         </div>
       </div>
 
-      <div className={`editor-tools ${openMenu ? 'open' : ''}`}>
+      <div className={`editor-tools ${isOpenMenu ? 'open' : ''}`}>
         {editType === 'edit' && <SidebarEdit chosenContainer={chosenContainer} handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
 
         <Droppable droppableId="from-sidebar-add">

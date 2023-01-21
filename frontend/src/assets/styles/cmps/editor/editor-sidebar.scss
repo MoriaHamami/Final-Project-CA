@@ -11,7 +11,7 @@
         display: flex;
         // justify-content: center;
         flex-direction: column;
-        padding-top: 10px;
+        background-color: white;
 
         .option-container {
             align-self: center;
@@ -21,9 +21,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 10px 20px;
+            padding: 15px 20px;
 
             &:hover {
+                background-color: $almost-white;
+            }
+
+            &.active {
                 background-color: $almost-white;
             }
 
@@ -39,6 +43,7 @@
         overflow-x: hidden;
         transition: width 0.3s ease-in-out;
         font-size: 0.7em;
+        background-color: $almost-white;
         
         
         .tools-container{
@@ -46,10 +51,11 @@
             flex-direction: column;
             gap: 15px;
             
-        }
-
-        >* {
-            border-bottom: 0.1px solid rgb(217, 217, 217);
+            
+            >* {
+                border-bottom: 0.1px solid rgb(217, 217, 217);
+                padding-bottom: 5px;
+            }
         }
 
         &::-webkit-scrollbar {

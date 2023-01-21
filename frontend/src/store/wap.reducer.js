@@ -1,9 +1,11 @@
 export const SET_WAP = 'SET_WAP'
+export const SET_CMP = 'SET_CMP'
 export const SET_SAVED_WAPS = 'SET_SAVED_WAPS'
 export const REMOVE_SAVED_WAP = 'REMOVE_SAVED_WAP'
 
 const initialState = {
     wap: null,
+    selectedCmpId: null,
     // savedWaps: null,
 }
 
@@ -11,6 +13,9 @@ export function wapReducer(state = initialState, action) {
     switch (action.type) {
         case SET_WAP:
             return { ...state, wap: { ...action.wap } }
+        case SET_CMP:
+            return { ...state, selectedCmpId: action.cmpId }
+
 
         // case SET_SAVED_WAPS:
         //     return { ...state, savedWaps: action.savedWaps }

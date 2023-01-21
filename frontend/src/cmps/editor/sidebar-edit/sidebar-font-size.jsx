@@ -14,7 +14,7 @@ function onChangeRange({target}){
 
     return <div>
       <label>{title}</label>
-      <Box width={92}>
+      <Box marginLeft ={'5px'} width={100}>
       <Slider
         size='small'
         key={'fontSizeSlider123'}

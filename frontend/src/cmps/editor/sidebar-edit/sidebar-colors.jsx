@@ -2,15 +2,14 @@
 import { useState } from 'react'
 
 export function SidebarColors({ title, onChange, propertyName }) {
-  const [color, setColor] = useState({
-    color: '#FFFFFF',
-    backgroundColor: '#FFFFFF',
-  })
+  const [color, setColor] = useState('#FFFFFF')
+
+  console.log('color:',color)
 
 
-  const onChangeColor = (colorInput) => {
-    setColor((prevState) => ({ ...prevState, backgroundColor: colorInput }))
-    onChange(propertyName, colorInput)
+  const onChangeColor = (color) => {
+    setColor(color)
+    onChange(propertyName, color)
   }
 
 
@@ -22,12 +21,13 @@ export function SidebarColors({ title, onChange, propertyName }) {
     <div>
       <span>{title}</span>
       <div className="colors-container">
-        {renderedColors.map((color) => (
+        {renderedColors.map((clr) => (
           <div
-            onClick={() => onChangeColor(color)}
-            key={color}
+            onClick={() => onChangeColor(clr)}
+            key={clr}
+            className={clr === color ? 'active' : ''}
             style={{
-              background: color,
+              background: clr,
             }}
           ></div>
         ))}
