@@ -1,0 +1,15 @@
+.wap-map-1 {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    align-self: center;
+    font-size: 1.3em;
+    background-color: $t1clr1;
+    color: $almost-white;
+    padding: 0.7rem;
+  }
+
+}
