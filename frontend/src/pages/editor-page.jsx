@@ -17,11 +17,11 @@ export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
     const selectedCmpId = useSelector((storestate) => storestate.wapModule.selectedCmpId)
     const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
+    const [isOpenMenu, setIsOpenMenu] = useState(false)
+    const [editType, setEditType] = useState('')
 
 
-    // const [selectedElementId, setSelectedElementId] = useState();
 
-    // const [selectedCmpId, setSelectedCmpId] = useState();
     const [isDragging, setIsDragging] = useState(false)
     const navigate = useNavigate()
     const { wapId } = useParams()
@@ -80,11 +80,11 @@ export function Editor() {
                     const updatedElementStyle = { ...childElement.style, [propertyName]: propertyValue }
                     wap.cmps[compIndex].info[key].style = updatedElementStyle
                     break
-                }else if(Array.isArray(childElement)) {
+                } else if (Array.isArray(childElement)) {
                     console.log('here');
                     const idx = childElement.findIndex((elm) => elm.id === selectedElementId)
-                    console.log('childElement:',childElement)
-                    if (idx !== -1){
+                    console.log('childElement:', childElement)
+                    if (idx !== -1) {
                         const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
                         wap.cmps[compIndex].info[key][idx].style = updatedElementStyle
                         break
@@ -99,23 +99,50 @@ export function Editor() {
         saveWap(wap)
     }
 
+    function onOptionClick(type) {
+        if (!editType || editType != type) {
+            if (!isOpenMenu) setIsOpenMenu(true)
+            setEditType(type)
+
+        } else {
+            setIsOpenMenu(false)
+            setEditType('')
+        }
+    }
+
+    function onCmpClick() {
+        setIsOpenMenu(true)
+        setEditType('edit')
+    }
+
     return (
         <div>
             {wap && <DragDropContext onDragEnd={onEnd}>
                 <EditorHeader />
 
                 <section className="editor-page">
-                    <EditorSideBar onPickedCmp={onPickedCmp} selectedElementId={selectedElementId} chosenComponent={selectedCmpId} handleWapEdit={handleWapEdit} />
-                    {wap ? <EditorBoard wap={wap} setSelectedElementId={setSelectedElementId} handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
+                    <EditorSideBar
+                        isOpenMenu={isOpenMenu}
+                        editType={editType}
+                        onPickedCmp={onPickedCmp}
+                        onOptionClick={onOptionClick}
+                        selectedElementId={selectedElementId}
+                        chosenComponent={selectedCmpId}
+                        handleWapEdit={handleWapEdit} />
+                    {wap ? <EditorBoard
+                        wap={wap}
+                        onCmpClick={onCmpClick}
+                        setSelectedElementId={setSelectedElementId}
+                        handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
                 </section>
 
-                <Droppable droppableId="delete">
+                {/* <Droppable droppableId="delete">
                     {(provided, snapshot) => (
                         <div ref={provided.innerRef}>
                             <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
                         </div>
                     )}
-                </Droppable >
+                </Droppable > */}
 
             </DragDropContext>}
 

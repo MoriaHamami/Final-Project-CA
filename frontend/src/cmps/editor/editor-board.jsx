@@ -4,41 +4,35 @@ import { DynamicCmp } from '../wap-cmps/wap-dynamic-cmp';
 
 
 
-export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit }) {
+export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit, onCmpClick }) {
 
-    // console.log(wap.cmps);
-
-    function onElementClick({target}){
-        console.log('target:',target)
+    function onElementClick({ target }) {
+        console.log('target:', target)
         const elementId = target.getAttribute('data-container')
+        onCmpClick()
         setSelectedElementId(elementId)
     }
 
 
     return (
         <>
-
             <Droppable droppableId="editor">
                 {(provided, snapshot) => (
-                    <div ref={provided.innerRef} className={`editor-board ${snapshot.isDraggingOver ? "drop-zone" : ""}`} style={{top: '0 !important',left: '0 !important'}} >
+                    <div ref={provided.innerRef} className={`editor-board ${snapshot.isDraggingOver ? "drop-zone" : ""}`} style={{ top: '0 !important', left: '0 !important' }} >
                         {/* style={{ backgroundColor: snapshot.isDraggingOver ? "#DDDDDD" : "white" }} */}
                         {wap?.cmps?.map((cmp, index) => {
                             return <Draggable draggableId={cmp.id} key={cmp.id} index={index}  >
-                                {
-                                    (provided, snapshot) => (
-                                        <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                            <DynamicCmp cmp={cmp} onElementClick={onElementClick} />
-                                        </div>
-                                    )
-                        }
-                    </Draggable>
+                                {(provided, snapshot) => (
+                                    <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                        <DynamicCmp cmp={cmp} onElementClick={onElementClick} />
+                                    </div>
+                                )}
+                            </Draggable>
                         })}
-                {provided.placeholder}
-
-            </div>
-            )
-                }
+                        {provided.placeholder}
+                    </div>
+                )}
             </Droppable >
-   </>
-)
+        </>
+    )
 }
