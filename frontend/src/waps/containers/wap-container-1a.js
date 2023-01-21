@@ -12,13 +12,13 @@ export const wapContainer1A = {
         {
             type: 'wap-container',
             id: utilService.makeId(),
-            name: 'cards-container',
+            name: 'gallery-container',
             
             cmps: [
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'gallery-container',
                     info: {
                         imgUrl:
                             'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030131/card-img-1_tkzkif.webp',
@@ -26,9 +26,9 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'gallery-container',
 
                     info: {
                         imgUrl:
@@ -37,9 +37,9 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'gallery-container',
 
                     info: {
                         imgUrl:
@@ -48,9 +48,9 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'gallery-container',
 
                     info: {
                         imgUrl:
@@ -59,9 +59,9 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'gallery-container',
 
                     info: {
                         imgUrl:
@@ -70,9 +70,9 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'gallery-container',
 
                     info: {
                         imgUrl:
@@ -81,9 +81,9 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'gallery-container',
 
                     info: {
                         imgUrl:
@@ -92,9 +92,9 @@ export const wapContainer1A = {
                     },
                 },
                 {
-                    type: 'wap-card',
+                    type: 'wap-gallery',
                     id: utilService.makeId(),
-                    name: 'cards-container',
+                    name: 'gallery-container',
 
                     info: {
                         imgUrl:

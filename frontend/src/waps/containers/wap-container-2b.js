@@ -18,13 +18,13 @@ export const wapContainer2B = {
     {
         type: 'wap-container',
         id: utilService.makeId(),
-        name: 'cards-container',
+        name: 'gallery-container',
         
         cmps: [
             {
-                type: 'wap-card',
+                type: 'wap-gallery',
                 id: utilService.makeId(),
-                name: 'cards-container',
+                name: 'gallery-container',
                 info: {
                     txt: '',
                     imgUrl:
@@ -33,9 +33,9 @@ export const wapContainer2B = {
                 },
             },
             {
-                type: 'wap-card',
+                type: 'wap-gallery',
                 id: utilService.makeId(),
-                name: 'cards-container',
+                name: 'gallery-container',
 
                 info: {
                     txt: '',
@@ -45,9 +45,9 @@ export const wapContainer2B = {
                 },
             },
             {
-                type: 'wap-card',
+                type: 'wap-gallery',
                 id: utilService.makeId(),
-                name: 'cards-container',
+                name: 'gallery-container',
 
                 info: {
                     txt: '',
@@ -57,9 +57,9 @@ export const wapContainer2B = {
                 },
             },
             {
-                type: 'wap-card',
+                type: 'wap-gallery',
                 id: utilService.makeId(),
-                name: 'cards-container',
+                name: 'gallery-container',
 
                 info: {
                     txt: '',

@@ -7,12 +7,12 @@
   align-content: center;
   background-color: #464646;
 
-  .cards-container {
+  .gallery-container {
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr));
 
 
-    .wap-card {
+    .wap-gallery {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -30,7 +30,7 @@
 
     }
 
-    .wap-card-img-container {
+    .wap-gallery-img-container {
       min-height: 100px;
       // height: 100%;
       position: relative;

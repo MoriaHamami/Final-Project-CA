@@ -1,9 +1,9 @@
 .wap-container-2b {
-  .cards-container {
+  .gallery-container {
     display: flex;
     flex-wrap: wrap;
 
-    .wap-card {
+    .wap-gallery {
       position: relative;
       flex-basis: 33.33%;
       aspect-ratio: 3/2;
@@ -15,7 +15,7 @@
     }
   }
 
-  .wap-card-img-container {
+  .wap-gallery-img-container {
     height: 100%;
     position: relative;
 
