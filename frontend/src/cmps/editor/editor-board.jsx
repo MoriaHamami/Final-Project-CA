@@ -4,14 +4,14 @@ import { DynamicCmp } from '../wap-cmps/wap-dynamic-cmp';
 
 
 
-export function EditorBoard({ wap, setChosenContainer, handleSelectCmpForEdit }) {
+export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit }) {
 
     // console.log(wap.cmps);
 
     function handleChooseContainer({target}){
         console.log('target:',target)
-        const container = target.getAttribute('data-container')
-        setChosenContainer(container)
+        const elementId = target.getAttribute('data-container')
+        setSelectedElementId(elementId)
     }
 
 
