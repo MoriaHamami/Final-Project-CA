@@ -5,8 +5,8 @@ export const wapHero2 = {
   type: 'wap-hero',
   name: 'wap-hero-2',
   info: {
-    title: 'Urban Nomad Adventures',
-    subtitle: 'Experience Oregon like a Local',
+    title: { txt: 'Urban Nomad Adventures', style: {}, id: utilService.makeId() },
+    subtitle: { txt: 'Experience Oregon like a Local', style: {}, id: utilService.makeId() },
     btn: { label: 'Let\'s Go', link: '#wc20b', id: utilService.makeId() },
   },
   theme: 'theme-header-happy',
