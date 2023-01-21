@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 export function SidebarFontSize({ title, propertyName, onChange, chosenComponent }) {
 
-  const [fontSizeVal, setFontSizeVal] = useState(0)
+  const [fontSizeVal, setFontSizeVal] = useState(1.6)
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
   // TODO !!!!!!!!!!!!!!!!!!!!!!!
@@ -13,12 +13,14 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
     // console.log('here:')
     // console.log('propertyName:', selectedElement.style[propertyName])
     // console.log('chosenComponent:', chosenComponent)
-    // setFontSizeVal(+selectedElement.style[propertyName])
+    const fontSize = selectedElement.style[propertyName].replace('rem', '')
+    console.log('+fontSize:',+fontSize)
+    setFontSizeVal(+fontSize)
   }, [selectedElement])
 
   function onChangeRange({ target }) {
     target.title = target.value
-    onChange(propertyName, target.value + 'px')
+    onChange(propertyName, target.value + 'rem')
   }
 
   return <div>
@@ -29,12 +31,12 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
         key={'fontSizeSlider123'}
         onChange={onChangeRange}
         // value={currValue ? currValue : 0}
-        defaultValue={27}
+        defaultValue={fontSizeVal}
         aria-label='Default'
         valueLabelDisplay='auto'
-        step={1}
-        min={10}
-        max={50}
+        step={0.1}
+        min={0.1}
+        max={4}
         sx={{ color: '#aedff9' }}
       />
       {/* <input type="range" min="0.5" max="10" step="0.1" onChange={onChangeRange} /> */}
