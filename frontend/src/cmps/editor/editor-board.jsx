@@ -8,8 +8,7 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit 
 
     // console.log(wap.cmps);
 
-    function onElementClick({target}){
-        console.log('target:',target)
+    function onElementClick({ target }) {
         const elementId = target.getAttribute('data-container')
         setSelectedElementId(elementId)
     }
@@ -20,7 +19,7 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit 
 
             <Droppable droppableId="editor">
                 {(provided, snapshot) => (
-                    <div ref={provided.innerRef} className={`editor-board ${snapshot.isDraggingOver ? "drop-zone" : ""}`} style={{top: '0 !important',left: '0 !important'}} >
+                    <div ref={provided.innerRef} className={`editor-board ${snapshot.isDraggingOver ? "drop-zone" : ""}`} style={{ top: '0 !important', left: '0 !important' }} >
                         {/* style={{ backgroundColor: snapshot.isDraggingOver ? "#DDDDDD" : "white" }} */}
                         {wap?.cmps?.map((cmp, index) => {
                             return <Draggable draggableId={cmp.id} key={cmp.id} index={index}  >
@@ -30,15 +29,15 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit 
                                             <DynamicCmp cmp={cmp} onElementClick={onElementClick} />
                                         </div>
                                     )
-                        }
-                    </Draggable>
+                                }
+                            </Draggable>
                         })}
-                {provided.placeholder}
+                        {provided.placeholder}
 
-            </div>
-            )
+                    </div>
+                )
                 }
             </Droppable >
-   </>
-)
+        </>
+    )
 }
