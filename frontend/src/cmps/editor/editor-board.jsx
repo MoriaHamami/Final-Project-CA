@@ -35,7 +35,9 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit,
                             return <Draggable draggableId={cmp.id} key={cmp.id} index={index}  >
                                 {(provided, snapshot) => (
                                     <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                        <DynamicCmp cmp={cmp} onElementClick={onElementClick} getElementTxt={getElementTxt} />
+                                        <div className={`dragable-container ${(snapshot.isDragging && !snapshot.isDropAnimating) && 'dragging'}`}>
+                                            <DynamicCmp cmp={cmp} onElementClick={onElementClick} getElementTxt={getElementTxt} />
+                                        </div>
                                     </div>
                                 )}
                             </Draggable>

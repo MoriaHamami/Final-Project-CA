@@ -80,10 +80,10 @@ export function Editor() {
                     const updatedElementStyle = { ...childElement.style, [propertyName]: propertyValue }
                     wap.cmps[compIndex].info[key].style = updatedElementStyle
                     break
-                }else if(Array.isArray(childElement)) {
+                } else if (Array.isArray(childElement)) {
                     // console.log('here');
                     const idx = childElement.findIndex((elm) => elm.id === selectedElementId)
-                    if (idx !== -1){
+                    if (idx !== -1) {
                         const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
                         wap.cmps[compIndex].info[key][idx].style = updatedElementStyle
                         break
@@ -108,6 +108,12 @@ export function Editor() {
             setEditType('')
         }
     }
+    // function onDragUpdate(result) {
+    //     console.log('updated===', result.destination)
+    //     // if (result.destination === 'delete') {
+
+    //     // }
+    // }
 
     function onCmpClick() {
         setIsOpenMenu(true)
@@ -117,6 +123,7 @@ export function Editor() {
     return (
         <div>
             {wap && <DragDropContext onDragEnd={onEnd}>
+
                 <EditorHeader />
 
                 <section className="editor-page">
@@ -144,6 +151,8 @@ export function Editor() {
                 </Droppable > */}
 
             </DragDropContext>}
+
+
 
         </div>
 

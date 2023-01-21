@@ -5,7 +5,8 @@
     border-right: 1px solid rgb(181, 181, 181);
     border-right: none;
     font-family: roboto-regular;
-    // max-height: calc(100vh - 120px);
+    // position: relative;
+    min-height: calc(100vh - 120px);
 
 
     .editor-options {
@@ -13,6 +14,13 @@
         // justify-content: center;
         flex-direction: column;
         background-color: white;
+        justify-content: space-between;
+
+
+        .delete-container {
+            display: flex;
+            flex-direction: column;
+        }
 
         .option-container {
             align-self: center;
@@ -25,16 +33,26 @@
             padding: 15px 20px;
 
             &:hover {
-                background-color: $almost-white;
+                background-color: $hover-clr1;
+            }
+
+            &.delete:hover {
+                background-color: red;
             }
 
             &.active {
-                background-color: $almost-white;
+                background-color: $hover-clr1;
             }
 
             .option-name {
                 font-size: 0.8rem;
             }
+
+            .editor-delete-icon {
+                font-size: 1.7rem;
+                text-align: center;
+            }
+
         }
     }
 
@@ -44,20 +62,21 @@
         overflow-x: hidden;
         transition: width 0.3s ease-in-out;
         font-size: 0.7em;
-        background-color: $almost-white;
-        
-        
-        .tools-container{
+        background-color: $hover-clr1;
+
+
+        .tools-container {
             display: flex;
             flex-direction: column;
+
             // gap: 15px;
             >* {
                 border-bottom: 0.1px solid rgb(217, 217, 217);
                 padding-bottom: 5px;
                 padding: 10px 3px;
             }
-            
-            
+
+
         }
 
         &::-webkit-scrollbar {
@@ -90,4 +109,6 @@
             z-index: 1;
         }
     }
+
+
 }
