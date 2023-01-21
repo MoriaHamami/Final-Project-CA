@@ -2,7 +2,7 @@
 import { utilService } from '../services/util.service.js'
 import { wapService } from '../services/wap.service.js'
 import { store } from '../store/store.js'
-import { SET_WAP, SET_CMP } from './wap.reducer.js'
+import { SET_WAP, SET_CMP_ID, SET_ELEMENT_ID } from './wap.reducer.js'
 
 export async function saveWap(wap) {
     try {
@@ -16,7 +16,12 @@ export async function saveWap(wap) {
 
 export function setSelectedCmpId(cmpId){
     console.log('cmpId:',cmpId)
-        store.dispatch({ type: SET_CMP, cmpId })
+        store.dispatch({ type: SET_CMP_ID, cmpId })
+}
+
+export function setSelectedElementId(elementId){
+    console.log('elementId:',elementId)
+        store.dispatch({ type: SET_ELEMENT_ID, elementId })
 }
 
 

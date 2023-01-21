@@ -4,7 +4,7 @@ import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
 
-import { addCmp, loadWap, removeCmp, saveWap, setSelectedCmpId } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp, saveWap, setSelectedCmpId, setSelectedElementId } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
@@ -16,9 +16,13 @@ import { utilService } from '../services/util.service.js'
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
     const selectedCmpId = useSelector((storestate) => storestate.wapModule.selectedCmpId)
+    const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
+
+
+    // const [selectedElementId, setSelectedElementId] = useState();
+
     // const [selectedCmpId, setSelectedCmpId] = useState();
     const [isDragging, setIsDragging] = useState(false)
-    const [chosenContainer, setChosenContainer] = useState();
     const navigate = useNavigate()
     const { wapId } = useParams()
 
@@ -69,14 +73,22 @@ export function Editor() {
     function handleWapEdit(propertyName, propertyValue) {
         const compIndex = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)
         const editedCmp = wap.cmps[compIndex]
-        if(chosenContainer !== 'parent'){
-           const childCmp = editedCmp.info[chosenContainer]
-           console.log('childCmp:',childCmp)
-           const updatedCompStyle = {...childCmp.style, [propertyName]: propertyValue}
-            wap.cmps[compIndex].info[chosenContainer].style = updatedCompStyle
+        if (selectedElementId !== 'parent') {
+            //    const childCmp = editedCmp.info[selectedElementId]
+            //    console.log('childCmp:',childCmp)
+            //    const updatedCompStyle = {...childCmp.style, [propertyName]: propertyValue}
+            //     wap.cmps[compIndex].info[selectedElementId].style = updatedCompStyle
+            for (const key in editedCmp.info) {
+                if (editedCmp.info[key].id === selectedElementId) {
+                    const childCmp = editedCmp.info[key]
+                    const updatedCmpStyle = { ...childCmp.style, [propertyName]: propertyValue }
+                    wap.cmps[compIndex].info[key].style = updatedCmpStyle
+
+                }
+            }
         }
-        else{
-            const updatedCompStyle = {...editedCmp.style, [propertyName]: propertyValue}
+        else {
+            const updatedCompStyle = { ...editedCmp.style, [propertyName]: propertyValue }
             wap.cmps[compIndex].style = updatedCompStyle
         }
         saveWap(wap)
@@ -88,8 +100,8 @@ export function Editor() {
                 <EditorHeader />
 
                 <section className="editor-page">
-                    <EditorSideBar onPickedCmp={onPickedCmp} chosenContainer={chosenContainer} chosenComponent={selectedCmpId} handleWapEdit={handleWapEdit} />
-                    {wap ? <EditorBoard wap={wap} setChosenContainer={setChosenContainer} handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
+                    <EditorSideBar onPickedCmp={onPickedCmp} selectedElementId={selectedElementId} chosenComponent={selectedCmpId} handleWapEdit={handleWapEdit} />
+                    {wap ? <EditorBoard wap={wap} setSelectedElementId={setSelectedElementId} handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
                 </section>
 
                 <Droppable droppableId="delete">
