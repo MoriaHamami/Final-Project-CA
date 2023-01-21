@@ -9,6 +9,7 @@ export function SidebarAdd({ onPickedCmp }) {
 
     const headerCmps = wapService.getCmpsByCategory('headers')
     // console.log('headerCmps:', headerCmps)
+    
     return <div>
 
         {headerCmps.map((cmp, index) => {
@@ -16,7 +17,8 @@ export function SidebarAdd({ onPickedCmp }) {
                 {
                     (provided, snapshot) => (
                         <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                            <div>{cmp.id}</div>
+                            <img src={cmp.imgUrl} />
+                            {/* <div>{cmp.imgUrl}</div> */}
                             {provided.placeholder}
                         </div>
                 )

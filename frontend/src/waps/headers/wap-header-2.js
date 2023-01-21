@@ -5,6 +5,7 @@ export const wapHeader2 = {
   id: utilService.makeId(),
   type: 'wap-header',
   name: 'wap-header-2',
+  imgUrl: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674323590/header2_cqdk4t.png',
   info: {
     logo: { txt: 'Urban Nomad Adventures', style: {fontSize:'1.3em', fontWeight: '700'}, id: utilService.makeId() },
     btns: [

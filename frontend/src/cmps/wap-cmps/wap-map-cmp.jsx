@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export function MapCmp({ style, cmp, onElClick }) {
-  const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
+  const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info
   console.log(cmp.name)
   const defaultProps = {
@@ -19,7 +19,7 @@ export function MapCmp({ style, cmp, onElClick }) {
 
   return (
     <div id={cmp.type} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
-      {cmp.info.name && <h2 data-container={JSON.stringify(info.name)} onClick={onElClick} style={info.name.style} className="title" contentEditable={selectedElementId === info.name.id} suppressContentEditableWarning={true} >{info.name.txt}</h2>}
+      {cmp.info.name && <h2 data-container={JSON.stringify(info.name)} onClick={onElClick} style={info.name.style} className="title" contentEditable={selectedElement?.id === info.name.id} suppressContentEditableWarning={true} >{info.name.txt}</h2>}
       <div>
         <div className='wap-map-container'>
           <GoogleMapReact

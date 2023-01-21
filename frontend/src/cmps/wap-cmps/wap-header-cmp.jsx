@@ -2,23 +2,23 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 
-export function WapHeader({ style, cmp, onElementClick, getElementTxt }) {
+export function WapHeader({ style, cmp, onElClick, getElementTxt }) {
 
-  const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
+  const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info
 
   return (
-    <div id={cmp.type} data-container='parent' style={style} className={cmp.name} onClick={onElementClick}>
-      <p suppressContentEditableWarning={true} contentEditable={selectedElementId === info.logo.id} data-container={info.logo.id} className="logo" style={info.logo.style} onClick={onElementClick}
+    <div id={cmp.type} data-container={JSON.stringify(cmp)} style={style} className={cmp.name} onClick={onElClick}>
+      <p suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.logo.id} data-container={JSON.stringify(info.logo)} className="logo" style={info.logo.style} onClick={onElClick}
        onInput={ev => getElementTxt(ev.currentTarget.textContent)}>{info.logo.txt}</p>
       {/* <span className="material-symbols-outlined menu-btn">menu</span> */}
       <nav className="nav-bar">
         {info.btns?.map((btn) => {
-          return <a suppressContentEditableWarning={true} contentEditable={selectedElementId === btn.id} style={btn.style} data-container={btn.id} href={btn.link} key={btn.id}>{btn.label}</a>
+          return <a suppressContentEditableWarning={true} contentEditable={selectedElement?.id === btn.id} style={btn.style} data-container={JSON.stringify(btn)} href={btn.link} key={btn.id}>{btn.label}</a>
         })}
       </nav>
 </div>
 )
 }
 
-{/* <button contentEditable={selectedElementId === info.btn.id} style={info.btn.style} data-container={info.btn.id} href={info.btn.link}>{cmp.info.btn.label}</button> */}
+{/* <button contentEditable={selectedElement?.id === info.btn.id} style={info.btn.style} data-container={info.btn.id} href={info.btn.link}>{cmp.info.btn.label}</button> */}
