@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function WapDemoPreview({ demoWap, onSelectDemoWap }) {
     return <div key={demoWap._id} className="preview-card">
@@ -10,7 +10,7 @@ export function WapDemoPreview({ demoWap, onSelectDemoWap }) {
                 : <div className="btn-container">
                     <button className="edit-btn" onClick={() => onSelectDemoWap(demoWap._id)}>Edit</button>
                     
-                    <NavLink key="/preview" to={`/preview/${demoWap._id}`}><button className="preview-btn">Preview</button></NavLink>
+                    <Link key="/preview" to={`/preview/${demoWap._id}`}><button className="preview-btn">Preview</button></Link>
                 </div>}
       </div>
         <div className="preview-name">{demoWap.name}</div>

@@ -21,5 +21,6 @@
 
   button {
     @include btn($type: round, $bg: inherit, $clr: $t1clr1, $padding: em(8px) em(12px), $hover: #0b0b0b42);
+    background-color: rgba(255, 255, 255, 0.276);
   }
 }

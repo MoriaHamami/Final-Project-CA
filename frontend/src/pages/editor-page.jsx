@@ -170,7 +170,7 @@ export function Editor() {
         <div>
             {wap && <DragDropContext onDragEnd={onEnd}>
 
-                <EditorHeader />
+                <EditorHeader wap ={wap}/>
 
                 <section className="editor-page">
                     <EditorSideBar
