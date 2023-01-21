@@ -13,8 +13,8 @@ export const wapDemo2 = {
 	imgUrl: "https://res.cloudinary.com/dimirmc9j/image/upload/v1674069927/demi-template-2.1_uitjmw.png",
 
 	cmps: [
-		wapHeader2,
-		wapHero2,
+		// wapHeader2,
+		// wapHero2,
 		wapPreview2,
 		wapContainer2A,
 		wapContainer2B,
