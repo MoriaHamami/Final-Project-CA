@@ -6,7 +6,7 @@
     border-right: none;
     font-family: roboto-regular;
     // position: relative;
-    // max-height: calc(100vh - 120px);
+    min-height: calc(100vh - 120px);
 
 
     .editor-options {
@@ -34,6 +34,10 @@
 
             &:hover {
                 background-color: $hover-clr1;
+            }
+
+            &.delete:hover {
+                background-color: red;
             }
 
             &.active {

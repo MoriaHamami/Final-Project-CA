@@ -108,6 +108,12 @@ export function Editor() {
             setEditType('')
         }
     }
+    // function onDragUpdate(result) {
+    //     console.log('updated===', result.destination)
+    //     // if (result.destination === 'delete') {
+
+    //     // }
+    // }
 
     function onCmpClick() {
         setIsOpenMenu(true)
@@ -117,7 +123,7 @@ export function Editor() {
     return (
         <div>
             {wap && <DragDropContext onDragEnd={onEnd}>
-                
+
                 <EditorHeader />
 
                 <section className="editor-page">

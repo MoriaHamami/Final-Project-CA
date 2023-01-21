@@ -25,11 +25,11 @@ export function EditorSideBar({ onPickedCmp, selectedElementId, handleWapEdit, c
           <div className={`option-container ${editType === 'add' ? 'active' : ''}`} onClick={() => onOptionClick('add')}>
             {/* <FontAwesomeIcon className="add-btn" icon={faAdd} /> */}
             <span class="material-symbols-outlined">add_box</span>
-          <span className="option-name">Add</span>
+            <span className="option-name">Add</span>
           </div>
         </div>
 
-        <div className={`option-container ${editType === 'add' ? 'active' : ''}`} onClick={() => onOptionClick('add')}>
+        <div className='option-container delete' onClick={() => onOptionClick('add')}>
           <Droppable droppableId="delete">
             {(provided, snapshot) => (
               <div ref={provided.innerRef} className="delete-container">

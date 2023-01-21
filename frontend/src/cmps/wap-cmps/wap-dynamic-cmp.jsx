@@ -9,9 +9,10 @@ import { useEffect, useState } from 'react'
 import { GalleryCmp } from './wap-gallery-cmp.jsx'
 import { VideoCmp } from './wap-video-cmp.jsx'
 import { FormCmp } from './wap-form-cmp.jsx'
+import { MapCmp } from './wap-map-cmp.jsx'
 
 
-export function DynamicCmp(props){
+export function DynamicCmp(props) {
   const { cmp } = props
 
   // ADD WAP-(case) TO ALL THE SWITCH CASES
@@ -62,6 +63,13 @@ export function DynamicCmp(props){
     case 'wap-form':
       return (
         <FormCmp
+          cmp={cmp}
+          style={cmp.style}
+        />
+      )
+    case 'wap-map':
+      return (
+        <MapCmp
           cmp={cmp}
           style={cmp.style}
         />
