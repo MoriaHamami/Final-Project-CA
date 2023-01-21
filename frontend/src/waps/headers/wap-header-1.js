@@ -5,6 +5,8 @@ export const wapHeader1 = {
   id: utilService.makeId(),
   type: 'wap-header',
   name: 'wap-header-1',
+  // imgUrl: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674323590/header2_cqdk4t.png',
+  imgUrl: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674323679/header1_k18zgy.png',
   info: {
     logo: { txt: 'MarioPizza', style: {}, id: utilService.makeId() },
     btns: [

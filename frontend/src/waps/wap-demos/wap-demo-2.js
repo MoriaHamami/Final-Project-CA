@@ -10,7 +10,7 @@ import { wapForm2 } from "../forms/wap-form-2";
 export const wapDemo2 = {
 	_id: "5e28393890dd7201a06d4e42",
 	name: "Adventure Tour Company Traveling Agency",
-	imgUrl: "https://res.cloudinary.com/dimirmc9j/image/upload/v1674069927/demi-template-2.1_uitjmw.png",
+	imgUrl: "https://res.cloudinary.com/dimirmc9j/image/upload/v1674323391/template2_njflc4.png",
 
 	cmps: [
 		wapHeader2,

@@ -4,7 +4,7 @@ import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
 
-import { addCmp, loadWap, removeCmp, saveWap, setSelectedCmpId, setSelectedElementId } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp, saveWap, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
@@ -16,9 +16,9 @@ import { utilService } from '../services/util.service.js'
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
     const selectedCmpId = useSelector((storestate) => storestate.wapModule.selectedCmpId)
-    const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
+    const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const [isOpenMenu, setIsOpenMenu] = useState(false)
-    const [editType, setEditType] = useState('')
+    const [editOpt, setEditOpt] = useState('')
 
 
 
@@ -70,69 +70,117 @@ export function Editor() {
         setSelectedCmpId(cmpId)
     }
 
+    // function handleWapEdit(propertyName, propertyValue) {
+    //     selectedElement.style = { ...selectedElement.style, [propertyName]: propertyValue }
+    //     console.log('selectedElement:', selectedElement)
+    //     saveWap(wap)
+    // }
+
+    // function handleWapEdit(propertyName, propertyValue) {
+
+    //     // Find the current edited cmp
+    //     const elIdx = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)
+    //     const editedEl = wap.cmps[elIdx]
+
+    //     // Check if the edited element is a cmp or elemnt
+    //     if (selectedElement !== 'parent') {
+    //         for (const key in editedEl.info) {
+    //             let childElement = editedEl.info[key]
+    //             if (childElement.id === selectedElement) {
+    //                 // Check if the element found is instead an array of elemnts
+    //                 if (Array.isArray(childElement)) {
+    //                     const idx = childElement.findIndex((el) => el.id === selectedElement)
+    //                     if (idx !== -1) {
+    //                         const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
+    //                         wap.cmps[elIdx].info[key][idx].style = updatedElementStyle
+    //                         break
+    //                     }
+    //                 } else {
+    //                     const updatedElementStyle = { ...childElement.style, [propertyName]: propertyValue }
+    //                     wap.cmps[elIdx].info[key].style = updatedElementStyle
+    //                     break
+    //                 }
+    //             }
+    //         }
+    //     } else {
+    //         const updatedCompStyle = { ...editedEl.style, [propertyName]: propertyValue }
+    //         wap.cmps[elIdx].style = updatedCompStyle
+    //     }
+
+    //     saveWap(wap)
+    // }
+
     function handleWapEdit(propertyName, propertyValue) {
-        const compIndex = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)
-        const editedElement = wap.cmps[compIndex]
-        if (selectedElementId !== 'parent') {
+
+        // Find the current edited cmp
+        const cmpIndex = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)
+        const editedElement = wap.cmps[cmpIndex]
+
+        // Check if the edited element is a cmp or an elemnt
+        if (!selectedElement.theme) {
             for (const key in editedElement.info) {
                 let childElement = editedElement.info[key]
-                if (childElement.id === selectedElementId) {
+                // Check if the id of the edited element is found inside another elemnt
+                if (childElement.id === selectedElement.id) {
                     const updatedElementStyle = { ...childElement.style, [propertyName]: propertyValue }
-                    wap.cmps[compIndex].info[key].style = updatedElementStyle
+                    wap.cmps[cmpIndex].info[key].style = updatedElementStyle
                     break
                 } else if (Array.isArray(childElement)) {
-                    // console.log('here');
-                    const idx = childElement.findIndex((elm) => elm.id === selectedElementId)
+                    const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
                     if (idx !== -1) {
                         const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
-                        wap.cmps[compIndex].info[key][idx].style = updatedElementStyle
+                        wap.cmps[cmpIndex].info[key][idx].style = updatedElementStyle
                         break
                     }
                 }
             }
+        } else {
+            const updatedCmpStyle = { ...editedElement.style, [propertyName]: propertyValue }
+            wap.cmps[cmpIndex].style = updatedCmpStyle
         }
-        else {
-            const updatedCompStyle = { ...editedElement.style, [propertyName]: propertyValue }
-            wap.cmps[compIndex].style = updatedCompStyle
-        }
+
         saveWap(wap)
     }
 
     function onOptionClick(type) {
-        if (!editType || editType != type) {
+        if (!editOpt || editOpt != type) {
             if (!isOpenMenu) setIsOpenMenu(true)
-            setEditType(type)
+            setEditOpt(type)
 
         } else {
             setIsOpenMenu(false)
-            setEditType('')
+            setEditOpt('')
         }
     }
 
-    function onCmpClick() {
+    function onElClick({ target }) {
+        console.log('target:', target)
         setIsOpenMenu(true)
-        setEditType('edit')
+        setEditOpt('edit')
+        const element = JSON.parse(target.getAttribute('data-container'))
+        console.log('element:', element)
+        setSelectedElement(element)
     }
 
     return (
         <div>
             {wap && <DragDropContext onDragEnd={onEnd}>
-                
+
                 <EditorHeader />
 
                 <section className="editor-page">
                     <EditorSideBar
                         isOpenMenu={isOpenMenu}
-                        editType={editType}
+                        editType={editOpt}
                         onPickedCmp={onPickedCmp}
                         onOptionClick={onOptionClick}
-                        selectedElementId={selectedElementId}
+                        selectedElement={selectedElement}
                         chosenComponent={selectedCmpId}
                         handleWapEdit={handleWapEdit} />
                     {wap ? <EditorBoard
                         wap={wap}
-                        onCmpClick={onCmpClick}
-                        setSelectedElementId={setSelectedElementId}
+                        onElClick={onElClick}
+                        setSelectedElement={setSelectedElement}
                         handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
                 </section>
 

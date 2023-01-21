@@ -1,24 +1,23 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-export function FormCmp({ style, cmp, onElementClick }) {
-    const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
+export function FormCmp({ style, cmp, onElClick }) {
+    const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const info = cmp.info
-    console.log('cmp', cmp);
 
     return (
-        <div id={cmp.type} style={style} className={cmp.name} data-container='parent' onClick={onElementClick}>
-            <h2 style={info.title.style} data-container={info.title.id} contentEditable={selectedElementId === info.title.id} onClick={onElementClick} className="title">{info.title.txt}</h2>
+        <div id={cmp.type} style={style} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
+            <h2 style={info.title.style} data-container={JSON.stringify(info.title)} contentEditable={selectedElement?.id === info.title.id} onClick={onElClick} className="title">{info.title.txt}</h2>
             {/* {console.log('info', info.title.id)}
-            <span style={info.subtitle.style} data-container={info.subtitle.id} contentEditable={selectedElementId === info.subtitle.id} onClick={onElementClick} className="subtitle">{info.subtitle.txt}</span>
+            <span style={info.subtitle.style} data-container={info.subtitle.id} contentEditable={selectedElement?.id === info.subtitle.id} onClick={onElClick} className="subtitle">{info.subtitle.txt}</span>
             <form>
                 {info.inputs?.map(input => {
                     return <input type={input.dataType} placeholder={input.placeholder} key={input.id}
-                        style={input.style} data-container={input.id} onClick={onElementClick} />
+                        style={input.style} data-container={input.id} onClick={onElClick} />
                 })}
-                <button style={info.btn.style} data-container={info.btn.id} contentEditable={selectedElementId === info.btn.id} onClick={onElementClick} >{info.btn.label}</button>
+                <button style={info.btn.style} data-container={info.btn.id} contentEditable={selectedElement?.id === info.btn.id} onClick={onElClick} >{info.btn.label}</button>
             </form> */}
         </div>
     )
 }
-// style={info.txt.style} onClick={onElementClick} contentEditable={selectedElementId === info.txt.id} data-container={info.txt.id}
+// style={info.txt.style} onClick={onElClick} contentEditable={selectedElement?.id === info.txt.id} data-container={info.txt.id}
