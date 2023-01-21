@@ -6,7 +6,7 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
     function onChangeRange({ target }) {
         console.log('target:', target)
         target.title = target.value
-        onChange(propertyName, target.value + 'rem')
+        onChange(propertyName, target.value + 'px')
 
 
 

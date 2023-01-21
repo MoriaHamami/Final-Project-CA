@@ -5,37 +5,37 @@
   justify-content: space-between;
   align-items: center;
   color: $almost-white;
-  padding: 1rem $mobile-padding;
-  font-size: 0.8rem;
+  // padding: 1rem $mobile-padding;
+  // font-size: 0.8rem;
 
 
-  @container (min-width: 460px) {
-    padding: 1rem $narrow-padding;
-    font-size: 0.9rem;
-  }
+  // @container (min-width: 460px) {
+  //   padding: 1rem $narrow-padding;
+  //   font-size: 0.9rem;
+  // }
 
-  @container (min-width: 960px) {
-    padding: 1rem $normal-padding;
-    font-size: 1rem;
-  }
+  // @container (min-width: 960px) {
+  padding: 1rem $normal-padding;
+  font-size: 1rem;
+  // }
 
   .menu-btn {
-    display: block;
-    font-size: 2em;
+    // display: block;
+    // font-size: 2em;
 
-    @container (min-width: 720px) {
-      display: none;
-    }
+    // @container (min-width: 720px) {
+    display: none;
+    // }
   }
 
   .nav-bar {
-    display: none;
+    // display: none;
     gap: 1em;
 
 
-    @container (min-width: 720px) {
-      display: flex;
-    }
+    // @container (min-width: 720px) {
+    display: flex;
+    // }
   }
 
 
