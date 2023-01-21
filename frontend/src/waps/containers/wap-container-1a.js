@@ -47,7 +47,7 @@ export const wapContainer1A = {
                             txt: ''
                         },
                         {
-                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-4_bxzn7k.jpg',
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674325042/pizza-cards2_qydcel.jpg',
                             title: '',
                             txt: ''
                         },
@@ -57,7 +57,7 @@ export const wapContainer1A = {
                             txt: ''
                         },
                         {
-                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030130/card-img-2_k87gbe.jpg',
+                            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674325022/pizza-cards-img_f9db7g.webp',
                             title: '',
                             txt: ''
                         },
