@@ -7,7 +7,7 @@ export const wapMap1 = {
   type: 'wap-map',
   name: 'wap-map-1',
   info: {
-    name: { txt: 'Our palce location', style: {}, id: utilService.makeId() },
+    name: { txt: 'Our place location', style: {}, id: utilService.makeId() },
     cords: { lat: 40.83479928947879, lng: 14.106100441161631 },
     zoom: 14,
   },

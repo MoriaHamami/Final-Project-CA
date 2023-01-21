@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-export function MapCmp({ style, cmp, onElementClick }) {
+export function MapCmp({ style, cmp, onElClick }) {
   const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
   const info = cmp.info
-
+  console.log(cmp.name)
   const defaultProps = {
     center: {
       lat: info.cords.lat,
@@ -18,22 +18,23 @@ export function MapCmp({ style, cmp, onElementClick }) {
   };
 
   return (
-    // Important! Always set the container height explicitly
-    // <div id={cmp.type} style={style} className={cmp.name} data-container='parent' onClick={onElementClick}>
-    //   <h2 style={info.name.style} data-container={info.name.id} contentEditable={selectedElementId === info.name.id} onClick={onElementClick} className="title" >{info.name.txt}</h2>
-    <div style={style}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyCB0AieRfE8jFeAQWL8okf7J69APWc8VTI" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent
-          lat={info.cords.lat}
-          lng={info.cords.lng}
-          text="📍"
-        />
-      </GoogleMapReact>
+    <div id={cmp.type} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
+      {cmp.info.name && <h2 data-container={JSON.stringify(info.name)} onClick={onElClick} style={info.name.style} className="title" contentEditable={selectedElementId === info.name.id} suppressContentEditableWarning={true} >{info.name.txt}</h2>}
+      <div>
+        <div className='wap-map-container'>
+          <GoogleMapReact
+            bootstrapURLKeys={{ key: "AIzaSyCB0AieRfE8jFeAQWL8okf7J69APWc8VTI" }}
+            defaultCenter={defaultProps.center}
+            defaultZoom={defaultProps.zoom}
+          >
+            <AnyReactComponent
+              lat={info.cords.lat}
+              lng={info.cords.lng}
+              text="📍"
+            />
+          </GoogleMapReact>
+        </div>
+      </div>
     </div>
-    // </div>
   );
 }

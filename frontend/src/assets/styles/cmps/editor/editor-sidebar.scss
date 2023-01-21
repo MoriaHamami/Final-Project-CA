@@ -37,7 +37,8 @@
             }
 
             &.delete:hover {
-                background-color: red;
+                background: none;
+                color: red;
             }
 
             &.active {
