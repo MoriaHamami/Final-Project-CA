@@ -28,6 +28,9 @@
     .img-container {
         position: relative;
         box-shadow: 0px 0px 12px 0px #00000057;
+        // -webkit-transition: background-color 1000ms linear;
+        // -ms-transition: background-color 1000ms linear;
+        // transition: background-color 1000ms linear;
 
     }
 
@@ -35,6 +38,8 @@
 
         .btn-container {
             background-color: $bgc-almost-white;
+
+
             display: flex;
             flex-direction: column;
             justify-items: center;
@@ -64,7 +69,7 @@
     }
 
     .preview-name {
-        font-family:roboto-light;
+        font-family: roboto-light;
         padding: 10px 0;
         font-size: 0.9rem;
     }

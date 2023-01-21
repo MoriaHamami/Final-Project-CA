@@ -8,7 +8,7 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit 
 
     // console.log(wap.cmps);
 
-    function handleChooseContainer({target}){
+    function onElementClick({target}){
         console.log('target:',target)
         const elementId = target.getAttribute('data-container')
         setSelectedElementId(elementId)
@@ -27,7 +27,7 @@ export function EditorBoard({ wap, setSelectedElementId, handleSelectCmpForEdit 
                                 {
                                     (provided, snapshot) => (
                                         <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                            <DynamicCmp cmp={cmp} handleChooseContainer={handleChooseContainer} />
+                                            <DynamicCmp cmp={cmp} onElementClick={onElementClick} />
                                         </div>
                                     )
                         }

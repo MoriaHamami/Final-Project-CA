@@ -6,9 +6,11 @@ export function EditorHeader() {
     return (
         <header className="editor-header">
             <div className="editor-actions">
-                <FontAwesomeIcon className='editor-action' icon={faUserGroup} />
+                {/* <FontAwesomeIcon className='editor-action' icon={faUserGroup} /> */}
                 <FontAwesomeIcon className='editor-action' icon={faReply} />
                 <FontAwesomeIcon className='editor-action' icon={faShare} />
+            </div>
+            <div className='editor-size-container'>
                 <FontAwesomeIcon className='editor-action' icon={faDisplay} />
                 <FontAwesomeIcon className='editor-action' icon={faTabletScreenButton} />
                 <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} />

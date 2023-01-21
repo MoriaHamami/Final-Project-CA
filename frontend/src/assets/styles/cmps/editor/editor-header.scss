@@ -2,19 +2,22 @@
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
+    padding-left: calc(40px - 1rem);
     background-color: white;
-    border-bottom: 1px solid lightgray;
+       border-bottom: 1px solid lightgray;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px 1px;
+    color: $icon-clr;
 
-    .editor-actions {
+    .editor-actions, .editor-size-container {
         display: flex;
 
         .editor-action {
             padding: 1rem;
+            
 
-            &:first-child{
-                padding-left: 0;
-            }
+            // &:first-child{
+            //     padding-left: 0;
+            // }
             &:hover {
                 background-color: $almost-white;
                 cursor:not-allowed;
@@ -28,14 +31,22 @@
         gap: 10px;
 
         .preview-btn {
-            @include btn($type: min-round, $bg: $almost-white, $clr: $t2clr1,$padding: em(6px) em(12px), $hover: #171717);
-            font-size: 0.7rem;
+            @include btn($type: regular, $bg: $icon-clr, $clr: $icon-clr ,$padding: em(8px) em(16px), $hover: #f5f5f5);
+            background-color: white;
+            border-radius: 0.7rem;
+            border-color: #CDC9C3;
+            font-size: 0.6rem;
             cursor:not-allowed;
         }
-
+        
         .publish-btn {
-            @include btn($type: min-round, $bg: $almost-white, $clr: $t2clr1,$padding: em(6px) em(12px), $hover: #171717);
-            font-size: 0.7rem;
+            @include btn($type: regular, $bg: $icon-clr, $clr: $icon-clr ,$padding: em(8px) em(16px), $hover: #f5f5f5);
+            
+            border-color: #CDC9C3;
+            
+            background-color: white;
+            border-radius: 0.7rem;
+            font-size: 0.6rem;
             cursor:not-allowed;
         }
     }

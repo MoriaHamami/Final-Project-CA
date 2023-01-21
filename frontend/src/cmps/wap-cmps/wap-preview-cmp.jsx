@@ -1,22 +1,20 @@
 import React from 'react'
 import { DynamicCmp } from './wap-dynamic-cmp'
+import { useSelector } from 'react-redux'
 
-// info: {
-//     subtitle: 'Our Story',
-//     title: 'THE LOVE FOR PIZZA',
-//     imgUrl: 'https://uploads-ssl.webflow.com/5af49de0dbb1e3637f2d8886/5afa1b861bc189407c1a9b2c_dash-device.png',
-//     txt: "Mario takes great pride in crafting each pizza with care. He tirelessly experiments with new recipes to perfect his craft. He takes the time to listen to customers' feedback to improve his pizzas. His enthusiasm for his work is contagious and it's clear that he truly loves what he does."
 
-//   },
 
-export function WapPreview({ style, cmp }) {
+export function WapPreview({ style, cmp, onElementClick }) {
+  const selectedElementId = useSelector((storestate) => storestate.wapModule.selectedElementId)
+  const info = cmp.info
+
   return (
-    <div id={cmp.type} style={style} className={cmp.name}>
-            <span className="subtitle">{cmp.info.subtitle}</span>
-            <h2 className="title">{cmp.info.title}</h2>
-            {cmp.info.imgUrl && <img src={cmp.info.imgUrl} alt="" />}
-            <p className="txt">{cmp.info.txt}</p>
-            {cmp.info.btn && <button>{cmp.info.btn.label}</button>}
+    <div id={cmp.type} style={style} data-container='parent' className={cmp.name} onClick={onElementClick}>
+      <span style={info.subtitle.style} data-container={info.subtitle.id} contentEditable={selectedElementId === info.subtitle.id} onClick={onElementClick} className="subtitle" >{cmp.info.subtitle.txt}</span>
+      <h2 style={info.title.style} data-container={info.title.id} contentEditable={selectedElementId === info.title.id} onClick={onElementClick} className="title">{cmp.info.title.txt}</h2>
+      {cmp.info.imgUrl && <img src={cmp.info.imgUrl} alt="" />}
+      <p style={info.txt.style} data-container={info.txt.id} contentEditable={selectedElementId === info.txt.id} onClick={onElementClick} className="txt">{cmp.info.txt.txt}</p>
+      {cmp.info.btn && <button style={info.btn.style} data-container={info.btn.id} contentEditable={selectedElementId === info.btn.id} onClick={onElementClick}>{cmp.info.btn.label}</button>}
     </div>
   )
 }

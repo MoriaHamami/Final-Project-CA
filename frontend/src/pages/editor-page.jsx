@@ -72,23 +72,28 @@ export function Editor() {
 
     function handleWapEdit(propertyName, propertyValue) {
         const compIndex = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)
-        const editedCmp = wap.cmps[compIndex]
+        const editedElement = wap.cmps[compIndex]
         if (selectedElementId !== 'parent') {
-            //    const childCmp = editedCmp.info[selectedElementId]
-            //    console.log('childCmp:',childCmp)
-            //    const updatedCompStyle = {...childCmp.style, [propertyName]: propertyValue}
-            //     wap.cmps[compIndex].info[selectedElementId].style = updatedCompStyle
-            for (const key in editedCmp.info) {
-                if (editedCmp.info[key].id === selectedElementId) {
-                    const childCmp = editedCmp.info[key]
-                    const updatedCmpStyle = { ...childCmp.style, [propertyName]: propertyValue }
-                    wap.cmps[compIndex].info[key].style = updatedCmpStyle
-
+            for (const key in editedElement.info) {
+                let childElement = editedElement.info[key]
+                if (childElement.id === selectedElementId) {
+                    const updatedElementStyle = { ...childElement.style, [propertyName]: propertyValue }
+                    wap.cmps[compIndex].info[key].style = updatedElementStyle
+                    break
+                }else if(Array.isArray(childElement)) {
+                    console.log('here');
+                    const idx = childElement.findIndex((elm) => elm.id === selectedElementId)
+                    console.log('childElement:',childElement)
+                    if (idx !== -1){
+                        const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
+                        wap.cmps[compIndex].info[key][idx].style = updatedElementStyle
+                        break
+                    }
                 }
             }
         }
         else {
-            const updatedCompStyle = { ...editedCmp.style, [propertyName]: propertyValue }
+            const updatedCompStyle = { ...editedElement.style, [propertyName]: propertyValue }
             wap.cmps[compIndex].style = updatedCompStyle
         }
         saveWap(wap)

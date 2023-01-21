@@ -1,9 +1,10 @@
 .editor-side-bar {
     display: flex;
     background-color: white;
-    color: $almost-black;
+    color: $icon-clr;
     border-right: 1px solid rgb(181, 181, 181);
     border-right: none;
+    font-family: roboto-regular;
 
 
     .editor-options {
