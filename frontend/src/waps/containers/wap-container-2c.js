@@ -16,15 +16,15 @@ export const wapContainer2C = {
       id: utilService.makeId(),
       name: 'wap-form-2',
       info: {
-        title: 'Ask Us Anything',
-        subtitle: 'info@mysite.com | 123-456-7890',
-        inputs:[
-          { dataType: 'text', name: 'wap-input', placeholder: 'Name', id: utilService.makeId() },
-          { dataType: 'text', name: 'wap-input', placeholder: 'Email', id: utilService.makeId() },
-          { dataType: 'text', name: 'wap-input', placeholder: 'Subject', id: utilService.makeId() },
-          { dataType: 'text', name: 'wap-input', placeholder: 'Type your message here...', id: utilService.makeId() }
+        title: { txt: 'Ask Us Anything', style: {}, id: utilService.makeId() },
+        subtitle: { txt: 'info@mysite.com | 123-456-7890', style: {}, id: utilService.makeId() },
+        inputs: [
+          { dataType: 'text', name: 'wap-input', placeholder: 'Name', id: utilService.makeId(), style: {} },
+          { dataType: 'text', name: 'wap-input', placeholder: 'Email', id: utilService.makeId(), style: {} },
+          { dataType: 'text', name: 'wap-input', placeholder: 'Subject', id: utilService.makeId(), style: {} },
+          { dataType: 'text', name: 'wap-input', placeholder: 'Type your message here...', id: utilService.makeId(), style: {} }
         ],
-        btn: { label: 'Submit', link: '#wc03' },
+        btn: { label: 'Submit', link: '#wc03', style: {} },
       },
 
     }

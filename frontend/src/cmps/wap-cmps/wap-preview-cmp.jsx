@@ -1,5 +1,5 @@
 import React from 'react'
-import { DynamicCmp } from './wap-dynamic-cmp'
+// import { DynamicCmp } from './wap-dynamic-cmp'
 import { useSelector } from 'react-redux'
 
 
