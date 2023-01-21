@@ -1,7 +1,4 @@
 .wap-form-1 {
-
-
-
   border-top: 5px solid $t1clr1;
   background-color: $almost-white;
   width: 100%;
@@ -34,16 +31,16 @@
     justify-content: center;
     gap: 2rem;
 
-    input{
+    input {
       @include input($borderClr: $t1clr1, $padding: em(8px) em(42px) em(8px) em(12px))
     }
 
-    button{
+    button {
       @include btn($type: min-round, $bg: $almost-white, $clr: $t1clr1, $padding: em(8px) em(12px), $hover: #171717)
     }
   }
 
 
 
-  
+
 }

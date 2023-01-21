@@ -5,8 +5,8 @@ export const wapForm2 = {
   type: 'wap-form',
   name: 'wap-form-2',
   info: {
-    title: { txt: 'Ask Us Anything', style: {}, id: utilService.makeId() },
-    subtitle: { txt: 'info@mysite.com | 123-456-7890', style: {}, id: utilService.makeId() },
+    title: { txt: 'Ask Us Anything', style: { fontSize: '1.5em' }, id: utilService.makeId() },
+    subtitle: { txt: 'info@mysite.com | 123-456-7890', style: { fontSize: '0.9em', fontWeight: '300' }, id: utilService.makeId() },
     inputs: [
       { dataType: 'text', name: 'wap-input', placeholder: 'Name', id: utilService.makeId(), style: {} },
       { dataType: 'text', name: 'wap-input', placeholder: 'Email', id: utilService.makeId(), style: {} },

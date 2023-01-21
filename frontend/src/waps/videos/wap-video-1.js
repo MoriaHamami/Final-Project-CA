@@ -6,10 +6,9 @@ export const wapVideo1 = {
   type: 'wap-video',
   name: 'wap-video-1',
   info: {
-    subtitle: '',
-    title: 'Discover Us',
+    title: { txt: 'Discover Us', style: { fontSize: '1.3em' }, id: utilService.makeId() },
     embedId: 'G-jPoROGHGE',
-    subtitle: 'Watch the Master in Action!',
+    subtitle: { txt: 'Watch the Master in Action!', style: { fontWeight: '600', fontSize: '2.5em' }, id: utilService.makeId() },
     iframeStyle: {
       width: '50%',
       minWidth: '300px',
