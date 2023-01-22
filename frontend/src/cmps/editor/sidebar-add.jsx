@@ -7,42 +7,49 @@ import { wapService } from "../../services/wap.service"
 
 export function SidebarAdd({ onPickedCmp, innerRef }) {
 
-    const headerCmps = wapService.getCmpsByCategory('headers')
-    // console.log('headerCmps:', headerCmps)
+    const [cmpsByCurrType, setCmpsByCurrType] = useState(wapService.getCmpsByCategory('headers'))
+    const [selectedType, setSelectedType] = useState('headers')
+
+    useEffect(() => {
+        
+        const cmpsByCurrType = wapService.getCmpsByCategory(selectedType)
+        // console.log('cmpsByCurrType:', cmpsByCurrType)
+        // console.log('setSelectedType:', selectedType)
+        setCmpsByCurrType(cmpsByCurrType)
+    }, [selectedType])
+
+    // function onSetCmpsByCurrType(type) {
+    // }
+    // const headerCmps = wapService.getCmpsByCategory('headers')
+
+    const cmpTypes = wapService.getCmpTypes()
 
     return <div className="add-main-container" ref={innerRef}>
 
-           <h2 className="add-header">Add section</h2>
+        <h2 className="add-header">Add section</h2>
 
         <div className="add-container">
 
-        
-        <div className="add-side-bar">
-            <div>Headers</div>
-            <div>Heros</div>
-            <div>Previews</div>
-            <div>Maps</div>
-            <div>Videos</div>
-            <div>Forms</div>
-            <div>Footers</div>
 
-        </div>
+            <div className="add-sidebar-type">
+                {cmpTypes.map(cmpType => <div className={cmpType === selectedType ? 'active' : ''} onClick={() => setSelectedType(cmpType)}>{cmpType}</div>)}
+            </div>
 
-        <div className="elements-container">
-            {headerCmps.map((cmp, index) => {
-                return <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
-                    {
-                        (provided, snapshot) => (
-                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                <img src={cmp.imgUrl} />
-                                {/* <div>{cmp.imgUrl}</div> */}
-                                {provided.placeholder}
-                            </div>
-                        )
-                    }
-                </Draggable>
-            })}
-        </div>
+            <div className="elements-container">
+                {cmpsByCurrType.map((cmp, index) => {
+                    return <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
+                        {
+                            (provided, snapshot) => (
+                                <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                    {/* <img src={cmp.imgUrl} /> */}
+                                    <div className="active">{cmp.name}</div>
+                                    {provided.placeholder}
+                                </div>
+                            )
+                        }
+                    </Draggable>
+                })}
+            </div>
         </div>
 
 
