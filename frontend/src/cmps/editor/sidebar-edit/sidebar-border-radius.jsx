@@ -33,14 +33,17 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
     target.title = target.value
     setBorderRadiusVal(target.value)
     onChange(propertyName, target.value + 'em')
-    // const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('rem', '') : 1
-    // setFontSizeVal(fontSize)
+
   }
 
   return <div>
-    <label>{title} </label>
 
-    <Box marginLeft={'5px'} width={100}>
+    <div className='slider-container'>
+    <label>{title} </label>
+    <span>{borderRadiusVal}</span>
+    </div>
+
+    <Box marginLeft={'5px'} width={200}>
       <Slider
         size='small'
         key={'fontSizeSlider123'}
@@ -51,9 +54,9 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
         step={0.1}
         min={0}
         max={3}
-        sx={{ color: '#aedff9' }}
+        sx={{ color: '#434242' }}
       />
-      <span>{borderRadiusVal}</span>
     </Box>
+
   </div>
 }

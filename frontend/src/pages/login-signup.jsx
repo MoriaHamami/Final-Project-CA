@@ -43,54 +43,57 @@ export function LoginSignup() {
 
     const { fullname, username, password } = credentails
 
-    return <section className="login-signup">
-        {!user && <form form className='login-signup-form' onSubmit={onSubmit}>
-            <div>
+    return (
 
-
-                <label htmlFor="username">User name: </label>
-                    <input type="text"
-                        id='username'
-                        name="username"
-                        placeholder="User name.."
-                        value={username}
-                        onChange={handleChange} />
-                
-            </div>
-            <div>
-                <label htmlFor="password">Password :</label>
-                    <input type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={handleChange} />
-            </div>
-            {isSignupState && <Fragment>
-                <div>
-                    <label htmlFor="fullname">Full name: </label>
+        <section className="login-signup">
+            <div className='form-container'>
+                {!user && <form form className='login-signup-form' onSubmit={onSubmit}>
+                    <div className='txt-field'>
+                        <label className='input-label' htmlFor="username">User name: </label>
                         <input type="text"
-                            id="fullname"
-                            name="fullname"
-                            placeholder="Full name.."
-                            value={fullname}
+                            id='username'
+                            name="username"
+                            placeholder="User name.."
+                            value={username}
                             onChange={handleChange} />
-                </div>
-            </Fragment>
-            }
 
-            <button className="login-signup-btn">{isSignupState ? "Sign up" : "Login"}</button>
-            <a className="signup-link" href="#" onClick={onToggleSignupState}>
-                {isSignupState ? "Already a member ? Login" : "New user ? sign up here"}
-            </a>
-        </form>}
+                    </div>
+                    <div>
+                        <label className='input-label' htmlFor="password">Password :</label>
+                        <input type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={handleChange} />
+                    </div>
+                    {isSignupState && <Fragment>
+                        <div>
+                            <label htmlFor="fullname">Full name: </label>
+                            <input type="text"
+                                id="fullname"
+                                name="fullname"
+                                placeholder="Full name.."
+                                value={fullname}
+                                onChange={handleChange} />
+                        </div>
+                    </Fragment>
+                    }
 
-        {user && <div className="user-profile">
-            <h2 className="user-greeting">Hello {user.fullname}</h2>
-            <button className="logout-btn" onClick={onLogout}>Logout</button>
-        </div>}
+                    <button className="login-signup-btn">{isSignupState ? "Sign up" : "Login"}</button>
+                    <a className="signup-link" href="#" onClick={onToggleSignupState}>
+                        {isSignupState ? "Already a member ? Login" : "New user ? sign up here"}
+                    </a>
+                </form>}
+            </div>
 
-        {/* {user && <UserProfile user={user} />} */}
+            {user && <div className="user-profile">
+                <h2 className="user-greeting">Hello {user.fullname}</h2>
+                <button className="logout-btn" onClick={onLogout}>Logout</button>
+            </div>}
 
-    </section>
+            {/* {user && <UserProfile user={user} />} */}
+
+        </section>
+    )
 }
