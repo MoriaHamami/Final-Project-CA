@@ -4,7 +4,7 @@ export const emptyWapDemo = {
 	name: 'Start from Scratch',
 	isBlack: true,
 	// TODO: replace picture with plus image
-	imgUrl: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674125480/add-template_ooawuz.png',
+	imgUrl: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674374672/blank_template_etqdlm.png',
 	info : {},
 	cmps: [],
 	isPublic: true
