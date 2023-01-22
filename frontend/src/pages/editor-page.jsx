@@ -146,7 +146,6 @@ export function Editor() {
         if (!editOpt || editOpt != type) {
             if (!isOpenMenu) setIsOpenMenu(true)
             setEditOpt(type)
-
         } else {
             setIsOpenMenu(false)
             setEditOpt('')

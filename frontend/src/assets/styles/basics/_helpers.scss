@@ -41,3 +41,7 @@
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
+
+.margin-inline-start {
+    margin-inline-start: 15px;
+}
