@@ -3,6 +3,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(180deg, $clr1, rgba(185, 203, 219, 0.147));
+    // background: linear-gradient(120deg, #2980b9, #8e44ad);
+    // background: linear-gradient(120deg, #2980b9, #8e44ad);
+    height: 100vh;
+
+    .form-container {
+        background-color: $almost-white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 8px 0px #00000041;
+    }
+
 
     .login-signup-form {
         display: flex;
@@ -12,8 +24,14 @@
         margin-top: 20px;
         width: 300px;
 
+        .input-label {
+            padding: 0.67em;
+        }
+
         input {
             @include input($type: round, $width: 300px);
+            background-color: rgba(255, 255, 255, 0.41);
+            border: 1px solid lightgray;
         }
 
         .login-signup-btn {
