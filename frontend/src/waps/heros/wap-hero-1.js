@@ -9,7 +9,7 @@ export const wapHero1 = {
     subtitle: {txt: 'PIZZA PLACE', id: utilService.makeId(), style: {fontSize: '3.5em'}},
     txt: {txt: 'TAKEOUT & DELIVERY', id: utilService.makeId(), style: {fontWeight: '500', fontSize: '1.3em'}},
 
-    btn: { label: 'Order Now', link: '#wc10b', id: utilService.makeId(), style: {borderRadius: '1rem',backgroundColor: 'rgba(255, 255, 255, 0.276)', fontWeight: '600'} },
+    btn: { label: 'Order Now', link: '#wc10b', id: utilService.makeId(), style: {borderRadius: '1em',backgroundColor: 'rgba(255, 255, 255, 0.276)', fontWeight: '600'} },
   },
   theme: 'theme-header-happy',
   style: {
