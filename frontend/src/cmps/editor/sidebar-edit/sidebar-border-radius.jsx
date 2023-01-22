@@ -33,8 +33,7 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
     target.title = target.value
     setBorderRadiusVal(target.value)
     onChange(propertyName, target.value + 'em')
-    // const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('rem', '') : 1
-    // setFontSizeVal(fontSize)
+
   }
 
   return <div>

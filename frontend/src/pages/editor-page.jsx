@@ -19,7 +19,7 @@ export function Editor() {
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const [isOpenMenu, setIsOpenMenu] = useState(false)
     const [editOpt, setEditOpt] = useState('')
-
+    const [isHoverTrash, setisHoverTrash] = useState(false)
 
 
     const [isDragging, setIsDragging] = useState(false)
@@ -40,6 +40,7 @@ export function Editor() {
     }
 
     const onEnd = (result) => {
+        setIsDragging(false)
         if (result.source.droppableId === 'from-sidebar-add') {
             const idx = result.source.index
             const cmpsByCurrType = wapService.getCmpsByCategory('headers')
@@ -47,8 +48,8 @@ export function Editor() {
             return addCmpToBoard(currCmp)
         }
         if (result.destination.droppableId === 'delete') return removeCmpFromBoard(result)
-
         reOrder(result.source.index, result.destination.index)
+
     }
 
     function addCmpToBoard(cmp) {
@@ -70,45 +71,6 @@ export function Editor() {
         setSelectedCmpId(cmpId)
     }
 
-    // function handleWapEdit(propertyName, propertyValue) {
-    //     selectedElement.style = { ...selectedElement.style, [propertyName]: propertyValue }
-    //     console.log('selectedElement:', selectedElement)
-    //     saveWap(wap)
-    // }
-
-    // function handleWapEdit(propertyName, propertyValue) {
-
-    //     // Find the current edited cmp
-    //     const elIdx = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)
-    //     const editedEl = wap.cmps[elIdx]
-
-    //     // Check if the edited element is a cmp or elemnt
-    //     if (selectedElement !== 'parent') {
-    //         for (const key in editedEl.info) {
-    //             let childElement = editedEl.info[key]
-    //             if (childElement.id === selectedElement) {
-    //                 // Check if the element found is instead an array of elemnts
-    //                 if (Array.isArray(childElement)) {
-    //                     const idx = childElement.findIndex((el) => el.id === selectedElement)
-    //                     if (idx !== -1) {
-    //                         const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
-    //                         wap.cmps[elIdx].info[key][idx].style = updatedElementStyle
-    //                         break
-    //                     }
-    //                 } else {
-    //                     const updatedElementStyle = { ...childElement.style, [propertyName]: propertyValue }
-    //                     wap.cmps[elIdx].info[key].style = updatedElementStyle
-    //                     break
-    //                 }
-    //             }
-    //         }
-    //     } else {
-    //         const updatedCompStyle = { ...editedEl.style, [propertyName]: propertyValue }
-    //         wap.cmps[elIdx].style = updatedCompStyle
-    //     }
-
-    //     saveWap(wap)
-    // }
 
     function handleWapEdit(propertyName, propertyValue) {
 
@@ -143,7 +105,7 @@ export function Editor() {
     }
 
     function onOptionClick(type) {
-        if (!editOpt || editOpt != type) {
+        if (!editOpt || editOpt !== type) {
             if (!isOpenMenu) setIsOpenMenu(true)
             setEditOpt(type)
         } else {
@@ -151,12 +113,11 @@ export function Editor() {
             setEditOpt('')
         }
     }
-    // function onDragUpdate(result) {
-    //     console.log('updated===', result.destination)
-    //     // if (result.destination === 'delete') {
 
-    //     // }
-    // }
+    function onStartDragging() {
+        setIsDragging(true)
+    }
+
 
     function onElClick(ev) {
         ev.stopPropagation()
@@ -169,9 +130,9 @@ export function Editor() {
 
     return (
         <div>
-            {wap && <DragDropContext onDragEnd={onEnd}>
+            {wap && <DragDropContext onDragEnd={onEnd} onDragStart={onStartDragging}>
 
-                <EditorHeader wap ={wap}/>
+                <EditorHeader wap={wap} />
 
                 <section className="editor-page">
                     <EditorSideBar
@@ -179,6 +140,7 @@ export function Editor() {
                         editType={editOpt}
                         onPickedCmp={onPickedCmp}
                         onOptionClick={onOptionClick}
+                        isDragging={isDragging}
                         chosenComponent={selectedCmpId}
                         handleWapEdit={handleWapEdit} />
                     {wap ? <EditorBoard

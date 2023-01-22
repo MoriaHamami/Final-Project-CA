@@ -52,6 +52,14 @@
             .editor-delete-icon {
                 font-size: 1.7rem;
                 text-align: center;
+                transition: 0.3s;
+                transform: scale(1.6);
+            }
+
+            .editor-delete-icon-hidden {
+                transition: 0.1s;
+                transform: scale(1);
+                visibility: hidden;
             }
         }
     }
@@ -69,6 +77,7 @@
     .tools-container {
         display: flex;
         flex-direction: column;
+
         // edit-container
         // gap: 15px;
         >* {

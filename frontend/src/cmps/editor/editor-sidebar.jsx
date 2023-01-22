@@ -8,8 +8,7 @@ import { wapHero2 } from "../../waps/heros/wap-hero-2";
 import { Droppable } from "react-beautiful-dnd"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onOptionClick, isOpenMenu, editType }) {
-
+export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onOptionClick, isOpenMenu, editType, isDragging, }) {
   return (
 
     <div className={`editor-side-bar ${isOpenMenu ? 'open' : ''}`}>
@@ -24,7 +23,7 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
           <div className={`option-container ${editType === 'add' ? 'active' : ''}`} onClick={() => onOptionClick('add')}>
             {/* <FontAwesomeIcon className="add-btn" icon={faAdd} /> */}
             <span className="material-symbols-outlined">add_box</span>
-          <span className="option-name">Add</span>
+            <span className="option-name">Add</span>
           </div>
         </div>
 
@@ -32,14 +31,12 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
           <Droppable droppableId="delete">
             {(provided, snapshot) => (
               <div ref={provided.innerRef} className="delete-container">
-                <span className="material-symbols-outlined editor-delete-icon">delete</span>
-                <span className="option-name">Delete</span>
-                {/* <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} /> */}
+                <span className={`material-symbols-outlined  ${isDragging ? "editor-delete-icon" : "editor-delete-icon-hidden"}`}>delete</span>
               </div>
             )}
           </Droppable >
         </div>
-      </div>
+      </div >
 
       <div className={`editor-tools ${isOpenMenu ? 'open' : ''}`}>
 
@@ -54,7 +51,7 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
         </Droppable>
 
       </div>
-    </div>
+    </div >
 
   )
 }
