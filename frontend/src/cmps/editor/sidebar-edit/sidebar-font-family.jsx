@@ -1,11 +1,23 @@
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
-
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 export function SidebarFontFamily({ title, propertyName, onChange }) {
+    const [fontFamilyVal, setfontFamilyVal] = useState('roboto-regular')
+    const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
+
+    useEffect(() => {
+        const fontFamily = selectedElement?.style[propertyName] ? selectedElement.style[propertyName] : 'roboto-regular'
+        console.log('fontFamily:', fontFamily)
+        setfontFamilyVal(fontFamily)
+    }, [selectedElement])
+
+
 
     function onChangeFont({ target }) {
         target.title = target.value
+        setfontFamilyVal(target.value)
         onChange(propertyName, target.value)
     }
 
@@ -28,7 +40,7 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
             size='small'
             inputProps={{ 'aria-label': 'Without label' }}
             style={{ fontSize: '13px', width: '100px', height: '25px' }}
-            value=''
+            value={fontFamilyVal}
         >
             {fonts.map((font) => (
                 <MenuItem
