@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShare, faReply, faDisplay, faTabletScreenButton, faMobileScreenButton, faUserGroup } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 
-export function EditorHeader() {
+export function EditorHeader({wap}) {
 
     return (
         <header className="editor-header">
@@ -21,7 +22,7 @@ export function EditorHeader() {
                 <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} /> */}
             </div>
             <div className="site-actions">
-                <button className='preview-btn'>PREVIEW</button>
+                <Link key="/preview" to={`/preview/${wap._id}`}><button className='preview-btn'>PREVIEW</button></Link>
                 <button className='publish-btn'>PUBLISH</button>
 
             </div>
