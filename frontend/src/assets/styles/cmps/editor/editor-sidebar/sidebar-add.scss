@@ -1,0 +1,36 @@
+
+.add-main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .add-header {
+        padding: 1rem;
+        font-size: 1.4rem;
+        border-bottom: 1px solid rgb(181, 181, 181);
+    }
+
+    
+}
+
+.add-container {
+    display: flex;
+
+    .add-side-bar {
+        display: flex;
+        flex-direction: column;
+        
+        >* {
+            padding: 1rem 0 1rem 1rem;
+        }
+    }
+
+    .elements-container {
+        padding: 0.7rem 20px 0 20px;
+        display: flex;
+        flex-direction: column;
+        >* {
+            padding: 0.3rem 0;
+        }
+    }
+}

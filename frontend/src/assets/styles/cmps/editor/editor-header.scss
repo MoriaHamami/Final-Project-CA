@@ -1,8 +1,9 @@
 .editor-header {
     display: flex;
     justify-content: space-between;
-    padding: 0 40px;
-    padding-left: calc(40px - 1rem);
+    padding: 0 40px ;
+    // padding: 0 40px;
+    // padding-left: calc(40px - 1rem);
     background-color: white;
     border-bottom: 1px solid lightgray;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px 1px;
@@ -11,9 +12,10 @@
 
     .editor-actions, .editor-size-container {
         display: flex;
+        align-items: center;
 
         .editor-action {
-            padding: 0.6rem 1rem;
+            // padding: 0.6rem 1rem;
             font-size: 21px;
 
             span{
@@ -21,7 +23,7 @@
             }
             
             &.desktop{
-                padding: 0.5rem 1rem 0.7rem;
+                // padding: 0.5rem 1rem 0.7rem;
                 font-size: 24px;
                 
             }
@@ -36,25 +38,48 @@
     .site-actions {
         display: flex;
         align-items: center;
-        gap: 10px;
+        // gap: 10px;
 
-        .preview-btn {
-            @include btn($type: regular, $bg: $icon-clr, $clr: $icon-clr ,$padding: em(8px) em(16px), $hover: #f5f5f5);
-            background-color: white;
-            border-radius: 0.7rem;
-            border-color: #CDC9C3;
+        // .preview-btn {
+        //     @include btn($type: regular, $bg: $icon-clr, $clr: $icon-clr ,$padding: em(8px) em(16px), $hover: #f5f5f5);
+        //     background-color: white;
+        //     border-radius: 0.7rem;
+        //     border-color: #CDC9C3;
+        // }
+        
+        // .publish-btn {
+        //     @include btn($type: regular, $bg: $icon-clr, $clr: $icon-clr ,$padding: em(8px) em(16px), $hover: #f5f5f5);
+            
+        //     border-color: #CDC9C3;
+            
+        //     background-color: white;
+        //     border-radius: 0.7rem;
+        //     font-size: 0.6rem;
+        //     cursor:not-allowed;
+        // }
+        
+        button {
             font-size: 0.6rem;
+            border-radius: 3em;
+            padding: 7px 5px;
+            min-width: 4rem;
+            margin-inline-end: 0;
         }
         
-        .publish-btn {
-            @include btn($type: regular, $bg: $icon-clr, $clr: $icon-clr ,$padding: em(8px) em(16px), $hover: #f5f5f5);
-            
-            border-color: #CDC9C3;
-            
-            background-color: white;
-            border-radius: 0.7rem;
-            font-size: 0.6rem;
+        .pulish-btn {
             cursor:not-allowed;
+            border-radius: 0;
+        //     background-color: $bgc-almost-white;
+        }
+        
+        .preview-btn {
+            border: 1px solid $clr1;
+            background: none;
+            color: $clr1;
+        }
+        
+        button:hover {
+            opacity: 0.5;
         }
     }
 }
