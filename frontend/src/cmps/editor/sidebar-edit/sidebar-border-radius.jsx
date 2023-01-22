@@ -20,8 +20,8 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
   
     // TODO !!!!!!!!!!!!!!!!!!!!!!!
     useEffect(() => {
-      console.log('selectedElement.style[propertyName]:',selectedElement.style[propertyName])
-      console.log('propertyName:',propertyName)
+    //   console.log('selectedElement.style[propertyName]:',selectedElement.style[propertyName])
+    //   console.log('propertyName:',propertyName)
       const borderRad = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('em', '') : 0
       console.log('borderRad:',borderRad)
       setFontSizeVal(borderRad)
@@ -50,7 +50,7 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
                 valueLabelDisplay='auto'
                 step={0.1}
                 min={0}
-                max={10}
+                max={3}
                 sx={{ color: '#aedff9' }}
             />
         </Box>

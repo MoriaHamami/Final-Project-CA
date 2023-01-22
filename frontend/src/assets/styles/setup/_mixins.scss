@@ -67,18 +67,18 @@
     }
   
     @if $type ==regular {
-      border-radius: 4px;
+      border-radius: 0.25em;
   
     }
   
     @else if $type ==round {
-      border-radius: 1rem;
+      border-radius: 1em;
   
     }
   
   }
 
-  @mixin btn($type: regular, $bg: $almost-white, $clr: $clr1, $padding: em(12px) em(24px), $hover: darken($bg, 8%)) {
+  @mixin btn($type: min-round, $bg: $almost-white, $clr: $clr1, $padding: em(12px) em(24px), $hover: darken($bg, 8%)) {
     font-family: inherit;
     align-items: center;
     text-decoration: none;
@@ -102,11 +102,11 @@
     transition: background-color 0.2s;
 
     @if $type == min-round {
-      border-radius: 4px;
+      border-radius: 0.25em;
     }
   
     @if $type == round {
-      border-radius: 1rem;
+      border-radius: 1em;
     }
   }
   
