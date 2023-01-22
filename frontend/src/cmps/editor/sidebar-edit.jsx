@@ -6,7 +6,7 @@ import { SidebarFontSize } from './sidebar-edit/sidebar-font-size.jsx'
 import { SidebarBorderRadius } from './sidebar-edit/sidebar-border-radius.jsx'
 
 export function SidebarEdit({ handleWapEdit, chosenComponent }) {
-    return <div className='tools-container'>
+    return <div className='tools-container edit-container'>
         {/* <p>Editing component: {chosenComponent}</p> */}
         {/* <p>Editing container: {selectedElement}</p> */}
 

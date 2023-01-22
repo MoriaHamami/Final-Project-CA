@@ -53,6 +53,7 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
                 max={3}
                 sx={{ color: '#aedff9' }}
             />
+            
         </Box>
     </div>
 }

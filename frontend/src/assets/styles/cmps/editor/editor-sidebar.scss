@@ -53,63 +53,60 @@
                 font-size: 1.7rem;
                 text-align: center;
             }
+        }
+    }
+}
 
+.editor-tools {
+    // height: 70vh;
+    width: 0px;
+    overflow-x: hidden;
+    transition: width 0.3s ease-in-out;
+    font-size: 0.7em;
+    background-color: $hover-clr1;
+
+
+    .tools-container {
+        display: flex;
+        flex-direction: column;
+        // edit-container
+        // gap: 15px;
+        >* {
+            border-bottom: 0.1px solid rgb(217, 217, 217);
+            padding-bottom: 5px;
+            padding: 10px 3px;
+        }
+
+
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 1px;
+        background-color: white;
+        border: 1px solid $almost-white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #DDDDDD;
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #cbcbcb;
         }
     }
 
-    .editor-tools {
-        // height: 70vh;
-        width: 0px;
-        overflow-x: hidden;
-        transition: width 0.3s ease-in-out;
-        font-size: 0.7em;
-        background-color: $hover-clr1;
-
-
-        .tools-container {
-            display: flex;
-            flex-direction: column;
-
-            // gap: 15px;
-            >* {
-                border-bottom: 0.1px solid rgb(217, 217, 217);
-                padding-bottom: 5px;
-                padding: 10px 3px;
-            }
-
-
-        }
-
-        &::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        &::-webkit-scrollbar-track {
-            border-radius: 1px;
-            background-color: white;
-            border: 1px solid $almost-white;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            border-radius: 4px;
-            background-color: #DDDDDD;
-            z-index: 1;
-
-            &:hover {
-                cursor: pointer;
-                background-color: #cbcbcb;
-            }
-        }
-
-        &.open {
-            border-right: 1px solid rgb(217, 217, 217);
-            width: 180px;
-            transition: width 0.2s ease-in-out;
-            padding: 0.5rem;
-            box-shadow: rgba(0, 0, 0, 0.372) 2px 0 4px -2px;
-            z-index: 1;
-        }
+    &.open {
+        border-right: 1px solid rgb(217, 217, 217);
+        width: 250px;
+        transition: width 0.2s ease-in-out;
+        padding: 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0.372) 2px 0 4px -2px;
+        z-index: 1;
     }
-
-
 }
