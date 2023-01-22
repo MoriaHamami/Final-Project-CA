@@ -15,16 +15,17 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
     <div className={`editor-side-bar ${isOpenMenu ? 'open' : ''}`}>
       <div className={`editor-options ${isOpenMenu ? 'open' : ''}`}>
         <div className="edit-add-container">
+
+        <div className={`option-container ${editType === 'add' ? 'active' : ''}`} onClick={() => onOptionClick('add')}>
+            {/* <FontAwesomeIcon className="add-btn" icon={faAdd} /> */}
+            <span className="material-symbols-outlined">add_box</span>
+            <span className="option-name">Add</span>
+          </div>
+
           <div className={`option-container ${editType === 'edit' ? 'active' : ''}`} onClick={() => onOptionClick('edit')}>
             <span className="material-symbols-outlined">draw</span>
             {/* <FontAwesomeIcon className="edit-btn" icon={faPencil} /> */}
             <span className="option-name">Edit</span>
-          </div>
-
-          <div className={`option-container ${editType === 'add' ? 'active' : ''}`} onClick={() => onOptionClick('add')}>
-            {/* <FontAwesomeIcon className="add-btn" icon={faAdd} /> */}
-            <span className="material-symbols-outlined">add_box</span>
-          <span className="option-name">Add</span>
           </div>
         </div>
 
@@ -43,15 +44,15 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
 
       <div className={`editor-tools ${isOpenMenu ? 'open' : ''}`}>
 
-        {editType === 'edit' && <SidebarEdit handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
-
-        <Droppable droppableId="from-sidebar-add">
+        {editType === 'add' && <Droppable droppableId="from-sidebar-add">
           {(provided, snapshot) => (
-            <div ref={provided.innerRef}>
-              {editType === 'add' && <SidebarAdd onPickedCmp={onPickedCmp} />}
-            </div>
+            // <div ref={provided.innerRef}>
+            <SidebarAdd innerRef={provided.innerRef} onPickedCmp={onPickedCmp} />
+            // </div>
           )}
-        </Droppable>
+        </Droppable>}
+
+        {editType === 'edit' && <SidebarEdit handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
 
       </div>
     </div>
