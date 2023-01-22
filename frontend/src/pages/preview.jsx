@@ -1,5 +1,5 @@
 // import { EditorBoard } from "./editor/cmps/editor-board";
-
+import { AppHeader } from '../cmps/app-header'
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
@@ -25,6 +25,8 @@ export function Preview() {
 
     // return <EditorBoard />
     return <div>
+        <AppHeader />
+
         {wap?.cmps.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
     </div>
 }

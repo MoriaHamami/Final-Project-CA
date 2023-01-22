@@ -1,4 +1,4 @@
-
+import { AppHeader } from '../cmps/app-header'
 import { EditorBoard } from '../cmps/editor/editor-board.jsx'
 import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
@@ -12,6 +12,8 @@ import { wapService } from '../services/wap.service.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { utilService } from '../services/util.service.js'
+
+
 
 export function Editor() {
     const wap = useSelector((storestate) => storestate.wapModule.wap)
@@ -130,6 +132,7 @@ export function Editor() {
 
     return (
         <div>
+            <AppHeader/>
             {wap && <DragDropContext onDragEnd={onEnd} onDragStart={onStartDragging}>
 
                 <EditorHeader wap={wap} />

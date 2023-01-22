@@ -1,5 +1,7 @@
 
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaintbrush } from '@fortawesome/free-solid-svg-icons'
 
 export function SidebarColors({ title, onChange, propertyName }) {
   const [color, setColor] = useState('#FFFFFF')
@@ -16,6 +18,24 @@ export function SidebarColors({ title, onChange, propertyName }) {
     <div>
       <span>{title}</span>
       <div className="colors-container">
+      <label
+          htmlFor="color-input"
+          style={{
+            height: '28px',
+            width: '28px',
+            borderRadius: '28px',
+            backgroundColor: color,
+            cursor: 'pointer',
+            // border: '1px solid rgba(255, 255, 255, 0.4)',
+          }}
+        >
+          
+          <input onChange={(ev) => onChangeColor(ev.target.value)} style={{visibility:'hidden'}} id="color-input" type="color" />
+          <FontAwesomeIcon icon={faPaintbrush} 
+          style={{
+            margin:'auto',
+          }}/>
+        </label>
         {renderedColors.map((clr) => (
           <div
             onClick={() => onChangeColor(clr)}

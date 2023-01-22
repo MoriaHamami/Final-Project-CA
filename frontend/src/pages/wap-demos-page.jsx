@@ -1,4 +1,5 @@
 
+import { AppHeader } from '../cmps/app-header'
 import { Link, useNavigate } from 'react-router-dom'
 // import { useDispatch } from 'react-redux'
 import { createWap, saveWap } from '../store/wap.actions.js'
@@ -29,9 +30,13 @@ export function WapDemos() {
     }
 
     return (
+        <div>
+            <AppHeader />
         <div className="wap-demos-page">
+
             <h2>Choose your template</h2>
             <WapDemoList onSelectDemoWap={onSelectWapDemo} />
+        </div>
         </div>
     )
 }

@@ -1,3 +1,5 @@
+
+import { AppHeader } from '../cmps/app-header'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { Fragment, useState } from 'react'
@@ -43,54 +45,58 @@ export function LoginSignup() {
 
     const { fullname, username, password } = credentails
 
-    return <section className="login-signup">
-        {!user && <form form className='login-signup-form' onSubmit={onSubmit}>
-            <div>
+    return <div>
+        <AppHeader />
+        <section className="login-signup">
+
+            {!user && <form form className='login-signup-form' onSubmit={onSubmit}>
+                <div>
 
 
-                <label htmlFor="username">User name: </label>
+                    <label htmlFor="username">User name: </label>
                     <input type="text"
                         id='username'
                         name="username"
                         placeholder="User name.."
                         value={username}
                         onChange={handleChange} />
-                
-            </div>
-            <div>
-                <label htmlFor="password">Password :</label>
+
+                </div>
+                <div>
+                    <label htmlFor="password">Password :</label>
                     <input type="password"
                         name="password"
                         id="password"
                         placeholder="Password"
                         value={password}
                         onChange={handleChange} />
-            </div>
-            {isSignupState && <Fragment>
-                <div>
-                    <label htmlFor="fullname">Full name: </label>
+                </div>
+                {isSignupState && <Fragment>
+                    <div>
+                        <label htmlFor="fullname">Full name: </label>
                         <input type="text"
                             id="fullname"
                             name="fullname"
                             placeholder="Full name.."
                             value={fullname}
                             onChange={handleChange} />
-                </div>
-            </Fragment>
-            }
+                    </div>
+                </Fragment>
+                }
 
-            <button className="login-signup-btn">{isSignupState ? "Sign up" : "Login"}</button>
-            <a className="signup-link" href="#" onClick={onToggleSignupState}>
-                {isSignupState ? "Already a member ? Login" : "New user ? sign up here"}
-            </a>
-        </form>}
+                <button className="login-signup-btn">{isSignupState ? "Sign up" : "Login"}</button>
+                <a className="signup-link" href="#" onClick={onToggleSignupState}>
+                    {isSignupState ? "Already a member ? Login" : "New user ? sign up here"}
+                </a>
+            </form>}
 
-        {user && <div className="user-profile">
-            <h2 className="user-greeting">Hello {user.fullname}</h2>
-            <button className="logout-btn" onClick={onLogout}>Logout</button>
-        </div>}
+            {user && <div className="user-profile">
+                <h2 className="user-greeting">Hello {user.fullname}</h2>
+                <button className="logout-btn" onClick={onLogout}>Logout</button>
+            </div>}
 
-        {/* {user && <UserProfile user={user} />} */}
+            {/* {user && <UserProfile user={user} />} */}
 
-    </section>
+        </section>
+    </div>
 }

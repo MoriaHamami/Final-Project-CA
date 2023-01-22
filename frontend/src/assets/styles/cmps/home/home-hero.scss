@@ -1,0 +1,40 @@
+.home-page-hero {
+    background-color: #282828;
+    color: $almost-white;
+    // padding-top: 130px;
+    padding: 7rem 10rem;
+    text-align: center;
+
+    .hero-title {
+        font-weight: 900;
+        font-size: 5rem;
+        line-height: 1.2;
+        font-family: mont-heavy;
+        margin-bottom: 0.5em;
+
+        span {
+            background: linear-gradient(140deg, #92fe9d 0%, #00c9ff 70%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+    }
+
+    .hero-txt {
+        font-size: 1rem;
+        padding-bottom: 32px;
+    }
+
+    .hero-btn {
+        @include btn($padding: em(20px) em(36px), $bg: $almost-white, $hover: $almost-white, $clr: $almost-black);
+        font-weight: 900;
+        border-radius: 2em;
+        border: none;
+
+        &:hover{
+            background: linear-gradient(140deg, #92fe9d 0%, #00c9ff 70%);
+        }
+    }
+
+}

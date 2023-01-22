@@ -1,17 +1,13 @@
+import { HomeHero } from '../cmps/home/home-hero.jsx'
+import { HomeHeader } from '../cmps/home/home-header.jsx'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 
 export function HomePage() {
 
-    return (
-        <section className="home-page">
-            <img src="" />
-            <h1>Create your first site</h1>
-            <h4>You're on your way to creating your first professional website.</h4>
-            <Link to="/WapDemos">
-                <button>Create New Site</button>
-            </Link>
-        </section >
-    )
+    return <main className='home-page'>
+        <HomeHeader />
+        <HomeHero />
+    </main>
+
 }
