@@ -4,9 +4,14 @@ import { SidebarColors } from './sidebar-edit/sidebar-colors.jsx'
 import { SidebarFontFamily } from './sidebar-edit/sidebar-font-family.jsx'
 import { SidebarFontSize } from './sidebar-edit/sidebar-font-size.jsx'
 import { SidebarBorderRadius } from './sidebar-edit/sidebar-border-radius.jsx'
+import { useSelector } from 'react-redux'
 
 export function SidebarEdit({ handleWapEdit, chosenComponent }) {
-    return <div className='tools-container edit-container'>
+
+    const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
+    if(!selectedElement) return <span>Choose item to edit</span>
+
+    return <div className='tools-container'>
         {/* <p>Editing component: {chosenComponent}</p> */}
         {/* <p>Editing container: {selectedElement}</p> */}
 
