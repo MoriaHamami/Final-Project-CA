@@ -11,9 +11,7 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
 
   // TODO !!!!!!!!!!!!!!!!!!!!!!!
   useEffect(() => {
-    console.log('selectedElement.style[propertyName]:',selectedElement.style[propertyName])
-    console.log('propertyName:',propertyName)
-    const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('rem', '') : 1
+    const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('em', '') : 1
     console.log('fontSize:',fontSize)
     setFontSizeVal(fontSize)
   }, [selectedElement])
@@ -23,7 +21,7 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
   function onChangeRange({ target }) {
     target.title = target.value
     setFontSizeVal(target.value)
-    onChange(propertyName, target.value + 'rem')
+    onChange(propertyName, target.value + 'em')
     // const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('rem', '') : 1
     // setFontSizeVal(fontSize)
   }
@@ -33,7 +31,7 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
     <Box marginLeft={'5px'} width={100}>
       <Slider
         size='small'
-        key={'fontSizeSlider123'}
+        key={'fontSize1'}
         onChange={onChangeRange}
         value={fontSizeVal}
         aria-label='Default'
