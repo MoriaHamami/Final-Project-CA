@@ -1,0 +1,11 @@
+.home-page {
+    background-color: $bgc-bright-gray;
+    font-family: roboto-regular;
+    color: $almost-black;
+    height: 100%;
+    button {
+        @include btn( $padding: em(10px) em(38px), $bg: $clr1, $hover: $almost-white, $clr: $almost-white);
+        border-radius: 2em;
+    }
+}
+

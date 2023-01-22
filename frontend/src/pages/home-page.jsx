@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom'
 export function HomePage() {
 
     return (
-        <section>
-            <h2>this is home page</h2>
+        <section className="home-page">
+            <img src="" />
+            <h1>Create your first site</h1>
+            <h4>You're on your way to creating your first professional website.</h4>
             <Link to="/WapDemos">
-                <button>Get Started</button>
+                <button>Create New Site</button>
             </Link>
         </section >
     )
