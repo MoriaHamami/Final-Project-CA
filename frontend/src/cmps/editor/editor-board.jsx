@@ -21,8 +21,8 @@ export function EditorBoard({ wap, handleSelectCmpForEdit, onElClick, onElementT
         // setElText(txt)
     }
 
-    function getElementTxt() {
-        // return txt        
+    function getElementTxt(value) {
+        console.log('value:',value)       
     }
 
     return (

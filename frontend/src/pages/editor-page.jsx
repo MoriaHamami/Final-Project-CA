@@ -159,7 +159,9 @@ export function Editor() {
     //     // }
     // }
 
-    function onElClick({ target }) {
+    function onElClick(ev) {
+        ev.stopPropagation()
+        const { target } = ev
         setIsOpenMenu(true)
         setEditOpt('edit')
         const element = JSON.parse(target.getAttribute('data-container'))
