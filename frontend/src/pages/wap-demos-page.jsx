@@ -30,7 +30,7 @@ export function WapDemos() {
 
     return (
         <div className="wap-demos-page">
-            <h2>Choose Your Template</h2>
+            <h2>Choose your template</h2>
             <WapDemoList onSelectDemoWap={onSelectWapDemo} />
         </div>
     )

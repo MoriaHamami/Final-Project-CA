@@ -9,10 +9,10 @@ export function WapDemoPreview({ demoWap, onSelectDemoWap }) {
             </div>
                 : <div className="btn-container">
                     <button className="edit-btn" onClick={() => onSelectDemoWap(demoWap._id)}>Edit</button>
-                    
+
                     <Link key="/preview" to={`/preview/${demoWap._id}`}><button className="preview-btn">Preview</button></Link>
                 </div>}
-      </div>
+        </div>
         <div className="preview-name">{demoWap.name}</div>
     </div>
 }

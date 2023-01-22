@@ -16,21 +16,26 @@
         text-decoration: none;
         color: $almost-black;
 
-        &:not(:first-child) {
-            margin-inline-start: 20px;
-        }
     }
-
+    
+    .pages-container {
+        display: flex;
+        align-items: center;
+    }
+    // &:not(:first-child) {
+    //     margin-inline-start: 20px;
+    // }
+    
     .header-profile-container {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 20px;
+        margin-block: 15px;
 
         >* {
             color: $almost-black;
             font-size: 1rem;
-            margin-inline-start: 20px;
+            // margin-inline-end: 20px;
             text-decoration: none;
         }
     }
@@ -68,7 +73,7 @@
         >* {
             color: $almost-black;
             font-size: 1rem;
-            margin-inline-start: 20px;
+            // margin-inline-start: 20px;
             text-decoration: none;
 
         }

@@ -10,7 +10,6 @@ import { Droppable } from "react-beautiful-dnd"
 
 export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onOptionClick, isOpenMenu, editType }) {
 
-
   return (
 
     <div className={`editor-side-bar ${isOpenMenu ? 'open' : ''}`}>

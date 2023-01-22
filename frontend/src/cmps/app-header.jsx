@@ -8,10 +8,10 @@ export function AppHeader() {
     return (
         <header className="app-header">
             <div className="header-txt-container">
-                <Link className="logo" key="/" to="/">webix</Link>
                 <nav>
                     <div className="pages-container">
-                        <NavLink key="/WapDemos" to="/WapDemos">Templates</NavLink>
+                        <Link className="logo" key="/" to="/">webix</Link>
+                        <NavLink key="/WapDemos" to="/WapDemos" className="margin-inline-start">Templates</NavLink>
                         {user && <NavLink key="/drafts" to="/drafts">Drafts</NavLink>}
                     </div>
                     {user ? <Link to="/user" className="header-profile-container">
