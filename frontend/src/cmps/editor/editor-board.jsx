@@ -22,7 +22,7 @@ export function EditorBoard({ wap, handleSelectCmpForEdit, onElClick, onElementT
     }
 
     function getElementTxt(value) {
-        console.log('value:',value)       
+        console.log('value:', value)
     }
 
     return (
@@ -37,8 +37,8 @@ export function EditorBoard({ wap, handleSelectCmpForEdit, onElClick, onElementT
                                     <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                                         <div className={`dragable-container ${snapshot.isDragging ? 'dragging' : ''}`}>
                                             <DynamicCmp cmp={cmp} onElClick={onElClick} getElementTxt={getElementTxt} />
-                                            {provided.placeholder}
                                         </div>
+                                        {provided.placeholder}
                                     </div>
                                 )}
                             </Draggable>

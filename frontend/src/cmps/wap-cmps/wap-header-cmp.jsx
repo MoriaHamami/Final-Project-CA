@@ -6,7 +6,6 @@ export function WapHeader({ style, cmp, onElClick, getElementTxt }) {
 
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info
-  console.log('selectedElement:',selectedElement)
 
   return (
     <div id={cmp.type} data-container={JSON.stringify(cmp)} style={style} className={cmp.name} onClick={onElClick}>
