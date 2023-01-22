@@ -20,7 +20,7 @@ export const wapDemo2 = {
 		wapContainer2A,
 		wapContainer2B,
 		wapForm2,
-		// wapVideo2,
+		wapVideo2,
 		wapFooter2
 	],
 	isPublic: true
