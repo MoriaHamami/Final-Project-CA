@@ -22,8 +22,8 @@ export function EditorHeader({wap}) {
                 <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} /> */}
             </div>
             <div className="site-actions">
-                <Link key="/preview" to={`/preview/${wap._id}`}><button className='preview-btn'>PREVIEW</button></Link>
-                <button className='publish-btn'>PUBLISH</button>
+                <Link key="/preview" to={`/preview/${wap._id}`}><button className='preview-btn'>Preview</button></Link>
+                <button className='publish-btn'>Publish</button>
 
             </div>
         </header >

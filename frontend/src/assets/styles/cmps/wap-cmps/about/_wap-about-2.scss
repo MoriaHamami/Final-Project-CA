@@ -1,4 +1,4 @@
-.wap-preview-2 {
+.wap-about-2 {
   background-color: $t2clr2;
   width: 100%;
   display: flex;
@@ -13,11 +13,11 @@
     margin-bottom: 30px;
   }
 
-  .txt {
+  .subtitle {
     margin-bottom: 30px;
   }
 
-  button {
+  a {
     @include btn($bg: inherit, $clr: $t2clr1, $padding: em(12px) em(16px), $hover: rgba(35, 35, 35, 0.065));
     border: 0.5px solid rgba(26, 26, 26, 0.635);
   }

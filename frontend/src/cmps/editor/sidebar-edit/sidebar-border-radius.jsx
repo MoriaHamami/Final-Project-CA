@@ -23,7 +23,6 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
     //   console.log('selectedElement.style[propertyName]:',selectedElement.style[propertyName])
     //   console.log('propertyName:',propertyName)
     const borderRad = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('em', '') : 0
-    console.log('borderRad:', borderRad)
     setBorderRadiusVal(borderRad)
   }, [selectedElement])
 

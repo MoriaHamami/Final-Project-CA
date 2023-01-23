@@ -1,12 +1,12 @@
-import { wapContainer2A } from "../containers/wap-container-2a";
-import { wapContainer2B } from "../containers/wap-container-2b";
-import { wapContainer2C } from "../containers/wap-container-2c";
+import { wapGallery2A } from "../galleries/wap-gallery-2a";
+import { wapGallery2B } from "../galleries/wap-gallery-2b";
 import { wapFooter2 } from "../footers/wap-footer-2";
 import { wapHeader2 } from "../headers/wap-header-2";
 import { wapHero2 } from "../heros/wap-hero-2";
 import { wapVideo2 } from "../videos/wap-video-2";
-import { wapPreview2 } from "../previews/wap-preview-2";
+// import { wapGallery2C } from "../galleries/wap-gallery-2b";
 import { wapForm2 } from "../forms/wap-form-2";
+import { wapAbout2 } from "../about/wap-about-2";
 
 export const wapDemo2 = {
 	_id: "5e28393890dd7201a06d4e42",
@@ -16,9 +16,10 @@ export const wapDemo2 = {
 	cmps: [
 		wapHeader2,
 		wapHero2,
-		wapPreview2,
-		wapContainer2A,
-		wapContainer2B,
+		wapAbout2,
+		// wapGallery,
+		wapGallery2A,
+		wapGallery2B,
 		wapForm2,
 		wapVideo2,
 		wapFooter2

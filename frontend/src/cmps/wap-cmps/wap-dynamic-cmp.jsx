@@ -4,6 +4,7 @@ import { WapHeader } from './wap-header-cmp.jsx'
 import { WapFooter } from './wap-footer-cmp.jsx'
 import { WapHero } from './wap-hero-cmp.jsx'
 import { WapPreview } from './wap-preview-cmp.jsx'
+import { AboutCmp} from './wap-about-cmp.jsx'
 
 import { useEffect, useState } from 'react'
 import { GalleryCmp } from './wap-gallery-cmp.jsx'
@@ -39,6 +40,13 @@ export function DynamicCmp(props) {
           style={cmp.style}
         />
       )
+    case 'wap-about':
+      return (
+        <AboutCmp
+          {...props}
+          style={cmp.style}
+        />
+      )
     case 'wap-preview':
       return (
         <WapPreview
@@ -49,6 +57,7 @@ export function DynamicCmp(props) {
     case 'wap-gallery':
       return (
         <GalleryCmp
+        {...props}
           cmp={cmp}
           style={cmp.style}
         />
@@ -64,6 +73,7 @@ export function DynamicCmp(props) {
     case 'wap-form':
       return (
         <FormCmp
+        {...props}
           cmp={cmp}
           style={cmp.style}
         />
@@ -71,6 +81,7 @@ export function DynamicCmp(props) {
     case 'wap-map':
       return (
         <MapCmp
+        {...props}
           cmp={cmp}
           style={cmp.style}
         />

@@ -32,7 +32,7 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
 
 
             <div className="add-sidebar-type">
-                {cmpTypes.map(cmpType => <div className={cmpType === selectedType ? 'active' : ''} onClick={() => setSelectedType(cmpType)}>{cmpType}</div>)}
+                {cmpTypes.map(cmpType => <div key={cmpType} className={cmpType === selectedType ? 'active' : ''} onClick={() => setSelectedType(cmpType)}>{cmpType}</div>)}
             </div>
 
             <div className="elements-container">

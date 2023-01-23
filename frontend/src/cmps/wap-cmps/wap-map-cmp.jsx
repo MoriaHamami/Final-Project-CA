@@ -3,12 +3,10 @@ import GoogleMapReact from 'google-map-react';
 import { useSelector } from 'react-redux'
 // import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 export function MapCmp({ style, cmp, onElClick }) {
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
+  const AnyReactComponent = ({ text }) => <div>{text}</div>
+
   const info = cmp.info
   const defaultProps = {
     center: {
@@ -20,9 +18,18 @@ export function MapCmp({ style, cmp, onElClick }) {
 
   return (
     <div id={cmp.type} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
-      {cmp.info.name && <h2 data-container={JSON.stringify(info.name)} onClick={onElClick} style={info.name.style} className="title" contentEditable={selectedElement?.id === info.name.id} suppressContentEditableWarning={true} >{info.name.txt}</h2>}
+      
+      {cmp.info.title && <h2
+        data-container={JSON.stringify(info.title)}
+        onClick={onElClick}
+        style={info.title.style}
+        className="title"
+        contentEditable={selectedElement?.id === info.title.id}
+        suppressContentEditableWarning={true} >
+        {info.title.txt}
+      </h2>}
 
-      <div className="map-container" style={style}>
+      <div className="map-container" style={style} data-container={JSON.stringify(info.name)} onClick={onElClick}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyCB0AieRfE8jFeAQWL8okf7J69APWc8VTI" }}
           defaultCenter={defaultProps.center}

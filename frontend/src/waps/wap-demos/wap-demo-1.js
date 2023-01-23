@@ -1,11 +1,11 @@
-import { wapContainer1A } from "../containers/wap-container-1a";
-import { wapContainer1B } from "../containers/wap-container-1b";
+import { wapForm1 } from "../forms/wap-form-1";
 import { wapFooter1 } from "../footers/wap-footer-1";
 import { wapHeader1 } from "../headers/wap-header-1";
 import { wapHero1 } from "../heros/wap-hero-1";
-import { wapPreview1 } from "../previews/wap-preview-1";
+import { wapGallery1 } from "../galleries/wap-gallery-1";
 import { wapVideo1 } from "../videos/wap-video-1";
 import { wapMap1 } from "../maps/wap-map-1";
+import { wapAbout1 } from "../about/wap-about-1";
 
 
 export const wapDemo1 = {
@@ -18,9 +18,10 @@ export const wapDemo1 = {
 	cmps: [
 		wapHeader1,
 		wapHero1,
-		wapPreview1,
-		wapContainer1A,
-		wapContainer1B,
+		wapAbout1,
+		// wapGallery1A,
+		wapGallery1,
+		wapForm1,
 		wapMap1,
 		wapVideo1,
 		wapFooter1

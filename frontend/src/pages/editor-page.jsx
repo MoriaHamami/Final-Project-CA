@@ -4,7 +4,7 @@ import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
 
-import { addCmp, loadWap, removeCmp, saveWap, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp, saveElement, saveWap, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
@@ -75,35 +75,7 @@ export function Editor() {
 
 
     function handleWapEdit(propertyName, propertyValue) {
-
-        // Find the current edited cmp
-        const cmpIndex = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)
-        const editedElement = wap.cmps[cmpIndex]
-
-        // Check if the edited element is a cmp or an elemnt
-        if (!selectedElement.theme) {
-            for (const key in editedElement.info) {
-                let childElement = editedElement.info[key]
-                // Check if the id of the edited element is found inside another elemnt
-                if (childElement.id === selectedElement.id) {
-                    const updatedElementStyle = { ...childElement.style, [propertyName]: propertyValue }
-                    wap.cmps[cmpIndex].info[key].style = updatedElementStyle
-                    break
-                } else if (Array.isArray(childElement)) {
-                    const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
-                    if (idx !== -1) {
-                        const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
-                        wap.cmps[cmpIndex].info[key][idx].style = updatedElementStyle
-                        break
-                    }
-                }
-            }
-        } else {
-            const updatedCmpStyle = { ...editedElement.style, [propertyName]: propertyValue }
-            wap.cmps[cmpIndex].style = updatedCmpStyle
-        }
-
-        saveWap(wap)
+        saveElement(wap, selectedCmpId, selectedElement, propertyName, propertyValue)
     }
 
     function onOptionClick(type) {
@@ -128,6 +100,8 @@ export function Editor() {
         setEditOpt('edit')
         const element = JSON.parse(target.getAttribute('data-container'))
         setSelectedElement(element)
+        if(element.type === 'btn') ev.preventDefault()
+        // console.log('element:', element)
     }
 
     return (

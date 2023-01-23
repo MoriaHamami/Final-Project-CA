@@ -12,7 +12,6 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
   // TODO !!!!!!!!!!!!!!!!!!!!!!!
   useEffect(() => {
     const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('em', '') : 1
-    console.log('fontSize:', fontSize)
     setFontSizeVal(fontSize)
   }, [selectedElement])
 

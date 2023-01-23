@@ -14,12 +14,12 @@ export async function saveWap(wap) {
     }
 }
 
-export function setSelectedCmpId(cmpId){
-        store.dispatch({ type: SET_CMP_ID, cmpId })
+export function setSelectedCmpId(cmpId) {
+    store.dispatch({ type: SET_CMP_ID, cmpId })
 }
 
-export function setSelectedElement(element){
-        store.dispatch({ type: SET_ELEMENT, element })
+export function setSelectedElement(element) {
+    store.dispatch({ type: SET_ELEMENT, element })
 }
 
 
@@ -94,7 +94,7 @@ export async function addCmp(wap, cmp) {
     try {
         // Change cmp id so the cmp in sidebar and wap wont be similar
         const cmpCopy = { ...cmp }
-        cmp.id = utilService.makeId()
+        cmpCopy.id = utilService.makeId()
 
         wap.cmps.unshift(cmpCopy)
         await saveWap(wap)
@@ -114,3 +114,49 @@ export async function addCmp(wap, cmp) {
 //         console.log('err:', err)
 //     }
 // }
+
+export function saveElement(wap, selectedCmpId, selectedElement, propertyName, propertyValue) {
+    // export function handleWapEdit(wap, propertyName, propertyValue) {
+
+    // Find the current edited cmp
+    const cmpIndex = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)
+    const editedElement = wap.cmps[cmpIndex]
+
+    // Check if the edited element is a cmp or an elemnt
+    if (!selectedElement.theme) {
+        for (const key in editedElement.info) {
+            let childElement = editedElement.info[key]
+            // Check if the id of the edited element is found inside another elemnt
+            if (childElement.id === selectedElement.id) {
+                const updatedElementStyle = { ...childElement.style, [propertyName]: propertyValue }
+                wap.cmps[cmpIndex].info[key].style = updatedElementStyle
+                break
+            } else if (Array.isArray(childElement)) {
+                const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
+                while (!idx) {
+                    if (idx !== -1) {
+                        const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
+                        wap.cmps[cmpIndex].info[key][idx].style = updatedElementStyle
+                        break
+                    }
+                    const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
+                }
+            }
+        }
+    } else {
+        const updatedCmpStyle = { ...editedElement.style, [propertyName]: propertyValue }
+        wap.cmps[cmpIndex].style = updatedCmpStyle
+    }
+
+    saveWap(wap)
+}
+
+// function findCmp(parentCmp, cmp, cb) {
+//     const idx = parentCmp?.cmps?.findIndex((currCmp) => currCmp.id === cmp.id)
+//     if (idx > -1) {
+//       cb(parentCmp, idx, cmp)
+//       return
+//     } else {
+//       parentCmp?.cmps?.forEach((currCmp) => findCmp(currCmp, cmp, cb))
+//     }
+//   }

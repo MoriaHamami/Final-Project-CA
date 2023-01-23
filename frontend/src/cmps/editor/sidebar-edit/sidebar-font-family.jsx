@@ -9,7 +9,6 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
 
     useEffect(() => {
         const fontFamily = selectedElement?.style[propertyName] ? selectedElement.style[propertyName] : 'roboto-regular'
-        console.log('fontFamily:', fontFamily)
         setfontFamilyVal(fontFamily)
     }, [selectedElement])
 

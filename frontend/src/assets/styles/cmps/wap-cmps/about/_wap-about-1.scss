@@ -1,4 +1,4 @@
-.wap-preview-1 {
+.wap-about-1 {
   border-top: 5px solid $t1clr1;
   background-color: $almost-white;
   width: 100%;
@@ -10,20 +10,27 @@
   flex-direction: column;
   color: $almost-black;
 
-  .title {
+  .subtitle {
     margin-bottom: 10px;
   }
 
-  .subtitle {
+  .title {
     margin-bottom: 2rem;
     background-color: $t1clr1;
     color: $almost-white;
     padding: 0 2rem;
   }
 
-  img {
-    margin-top: 3rem auto;
-    max-width: 300px;
-    margin: 20px auto;
+  .img-container{
+    display: flex;
+    flex-direction: column;
+
+    img {
+      align-self: center;
+      max-width: 300px;
+      
+    }
+
   }
+
 }
