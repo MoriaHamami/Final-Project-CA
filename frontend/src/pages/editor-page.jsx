@@ -43,7 +43,7 @@ export function Editor() {
 
     const onEnd = (result) => {
         setIsDragging(false)
-        if (result.source.droppableId === 'from-sidebar-add') {
+        if (result.source.droppableId === 'from-sidebar-add' && result.destination.droppableId === 'editor') {
             const idx = result.source.index
             const cmpsByCurrType = wapService.getCmpsByCategory('headers')
             const currCmp = cmpsByCurrType[idx]
@@ -132,7 +132,7 @@ export function Editor() {
 
     return (
         <div>
-            <AppHeader/>
+            <AppHeader />
             {wap && <DragDropContext onDragEnd={onEnd} onDragStart={onStartDragging}>
 
                 <EditorHeader wap={wap} />
