@@ -7,6 +7,9 @@ import { Fragment, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { signup, login, logout } from '../store/user.actions.js'
+import { GoogleLogin, useGoogleLogin } from '@react-oauth/google'
+import jwt_decode from "jwt-decode";
+import axios from 'axios'
 
 
 export function LoginSignup() {
@@ -43,6 +46,21 @@ export function LoginSignup() {
         logout()
         userService.logout()
     }
+
+    const googleLogin = useGoogleLogin({
+        onSuccess: async respose => {
+            try {
+                const userData = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+                    headers: {
+                        "Authorization": `Bearer ${respose.access_token}`
+                    }
+                })
+                console.log('data= ', userData.data)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+    });
 
     const { fullname, username, password } = credentails
 
@@ -96,17 +114,27 @@ export function LoginSignup() {
                             <div className='middle-line-login'></div>
                         </div>
 
+
                         <div className='login-by-container'>
-                            <button className='google-login'>Continue with Google</button>
+                            <GoogleLogin
+                                onSuccess={credentialResponse => {
+                                    console.log(credentialResponse);
+                                    var decoded = jwt_decode(credentialResponse.credential);
+                                    console.log(decoded)
+                                }}
+                                onError={() => {
+                                    console.log('Login Failed');
+                                }} />
+                            <button className='google-login' onClick={googleLogin}>Continue with Google</button>
                             <button className='facebook-login'>Continue with Facebook</button>
                         </div>
                     </form>
                 </div>}
                 {user && <div className="user-profile">
-                        <h2 className="user-greeting">Hello {user.fullname}</h2>
-                        <h3 style={{color:'red'}}>This is gonna be a draft page</h3>
-                        <button className="logout-btn" onClick={onLogout}>Logout</button>
-                    </div>}
+                    <h2 className="user-greeting">Hello {user.fullname}</h2>
+                    <h3 style={{ color: 'red' }}>This is gonna be a draft page</h3>
+                    <button className="logout-btn" onClick={onLogout}>Logout</button>
+                </div>}
             </section >
         </div >
     )

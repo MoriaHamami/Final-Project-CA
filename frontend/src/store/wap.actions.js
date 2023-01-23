@@ -15,12 +15,12 @@ export async function saveWap(wap) {
     }
 }
 
-export function setSelectedCmpId(cmpId){
-        store.dispatch({ type: SET_CMP_ID, cmpId })
+export function setSelectedCmpId(cmpId) {
+    store.dispatch({ type: SET_CMP_ID, cmpId })
 }
 
-export function setSelectedElement(element){
-        store.dispatch({ type: SET_ELEMENT, element })
+export function setSelectedElement(element) {
+    store.dispatch({ type: SET_ELEMENT, element })
 }
 
 
@@ -91,13 +91,13 @@ export async function removeCmp(wap, startIdx, endIdx = null) {
 //     }
 // }
 
-export async function addCmp(wap, cmp) {
+export async function addCmp(wap, cmp, idx) {
     try {
         // Change cmp id so the cmp in sidebar and wap wont be similar
         const cmpCopy = { ...cmp }
         cmp.id = utilService.makeId()
-
-        wap.cmps.unshift(cmpCopy)
+        wap.cmps.splice(idx, 0, cmpCopy)
+        // wap.cmps.unshift(cmpCopy)
         await saveWap(wap)
     } catch (err) {
         console.log('ReviewActions: err in addReview', err)
