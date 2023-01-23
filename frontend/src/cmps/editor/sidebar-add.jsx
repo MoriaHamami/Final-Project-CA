@@ -38,16 +38,32 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
             <div className="elements-container">
                 {cmpsByCurrType.map((cmp, index) => {
                     return <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
-                        {
-                            (provided, snapshot) => (
+                    {
+                        (provided, snapshot) => (
+                            <>
                                 <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                                     {/* <img src={cmp.imgUrl} /> */}
                                     <div className="active">{cmp.name}</div>
                                     {provided.placeholder}
                                 </div>
-                            )
-                        }
-                    </Draggable>
+                                {snapshot.isDragging && <div>{cmp.name}</div>}
+                            </>
+
+                        )
+                    }
+                </Draggable>
+                    
+                    // <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
+                    //     {
+                    //         (provided, snapshot) => (
+                    //             <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                    //                 {/* <img src={cmp.imgUrl} /> */}
+                    //                 <div className="active">{cmp.name}</div>
+                    //                 {provided.placeholder}
+                    //             </div>
+                    //         )
+                    //     }
+                    // </Draggable>
                 })}
             </div>
         </div>

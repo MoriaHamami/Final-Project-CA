@@ -9,7 +9,6 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
 
-  // TODO !!!!!!!!!!!!!!!!!!!!!!!
   useEffect(() => {
     const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('em', '') : 1
     setFontSizeVal(fontSize)
@@ -21,8 +20,6 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
     target.title = target.value
     setFontSizeVal(target.value)
     onChange(propertyName, target.value + 'em')
-    // const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('rem', '') : 1
-    // setFontSizeVal(fontSize)
   }
 
   return <div>
@@ -46,7 +43,6 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
           max={4}
           sx={{ color: '#434242' }}
         />
-        {/* <input type="range" min="0.5" max="10" step="0.1" onChange={onChangeRange} /> */}
       </Box>
 
    

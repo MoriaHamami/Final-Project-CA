@@ -1,21 +1,25 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 
 
-export function HomeHeader() {
+export function LoginHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
+    const navigate = useNavigate()
+
+    function onGoBack(){
+        navigate(-1)
+    }
 
     return (
-        <header className="home-header">
+        <header className="login-header">
             <div className="header-txt-container">
                 <nav>
                     <div className="pages-container">
                         <Link className="logo" key="/" to="/">webix</Link>
                     </div>
-                    {user ? <Link to="/user" className="header-profile-container">
-                        <span className="material-symbols-outlined profile-img">account_circle</span>
-                        <span className="user-name">{user.fullname}</span>
-                    </Link> : <NavLink className="login-btn" key="/user" to="/user">Login</NavLink>}
+
+                    <span onClick={onGoBack} class="login-close material-symbols-outlined">close</span>
                 </nav>
             </div>
         </header >

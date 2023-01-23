@@ -14,7 +14,8 @@
 @import "views/home-page";
 @import "views/wap-demos-page";
 @import "views/editor-page";
-@import 'views/login.scss';
+@import "views/preview-page";
+@import "views/login";
 
 // Components
 @import "cmps/app-header";
@@ -23,8 +24,12 @@
 
 
 // Home Components
-@import "cmps/home/home-hero";
 @import "cmps/home/home-header";
+@import "cmps/home/home-hero";
+@import "cmps/home/home-preview";
+
+// Home Components
+@import "cmps/login/login-header";
 
 // Editor Components
 @import "cmps/editor/editor-sidebar";

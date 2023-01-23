@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { Draggable, Droppable } from 'react-beautiful-dnd';
-import { saveWap } from '../../store/wap.actions';
 import { DynamicCmp } from '../wap-cmps/wap-dynamic-cmp';
 // import { DynamicCmp } from '../../../cmps/wap-cmps/go/dynamic-cmp.jsx'
 
@@ -8,7 +6,6 @@ import { DynamicCmp } from '../wap-cmps/wap-dynamic-cmp';
 
 export function EditorBoard({ wap, handleSelectCmpForEdit, onElClick, onElementTxtChange }) {
 
-    const [elText, setElText] = useState('')
 
     // function onElClick({ target }) {
     // console.log('target:', target)
@@ -17,13 +14,8 @@ export function EditorBoard({ wap, handleSelectCmpForEdit, onElClick, onElementT
     // onCmpClick()
     // }
 
-    function onElementTxtChange(txt) {
-        // setElText(txt)
-    }
+  
 
-    function getElementTxt(value) {
-        console.log('value:', value)
-    }
 
     return (
         <>
@@ -36,7 +28,7 @@ export function EditorBoard({ wap, handleSelectCmpForEdit, onElClick, onElementT
                                 {(provided, snapshot) => (
                                     <div onMouseDown={() => handleSelectCmpForEdit(cmp.id)} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                                         <div className={`dragable-container ${snapshot.isDragging ? 'dragging' : ''}`}>
-                                            <DynamicCmp cmp={cmp} onElClick={onElClick} getElementTxt={getElementTxt} />
+                                            <DynamicCmp cmp={cmp} onElClick={onElClick} onElementTxtChange={onElementTxtChange} />
                                         </div>
                                         {provided.placeholder}
                                     </div>

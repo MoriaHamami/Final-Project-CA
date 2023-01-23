@@ -7,6 +7,7 @@ import { SET_WAP, SET_CMP_ID, SET_ELEMENT } from './wap.reducer.js'
 export async function saveWap(wap) {
     try {
         const savedWap = await wapService.save(wap)
+        // const savedWap = wap
         store.dispatch({ type: SET_WAP, wap: savedWap })
         return savedWap._id
     } catch (err) {
@@ -90,13 +91,13 @@ export async function removeCmp(wap, startIdx, endIdx = null) {
 //     }
 // }
 
-export async function addCmp(wap, cmp) {
+export async function addCmp(wap, cmp, idx) {
     try {
         // Change cmp id so the cmp in sidebar and wap wont be similar
         const cmpCopy = { ...cmp }
-        cmpCopy.id = utilService.makeId()
-
-        wap.cmps.unshift(cmpCopy)
+        cmp.id = utilService.makeId()
+        wap.cmps.splice(idx, 0, cmpCopy)
+        // wap.cmps.unshift(cmpCopy)
         await saveWap(wap)
     } catch (err) {
         console.log('ReviewActions: err in addReview', err)

@@ -28,8 +28,8 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
         'handlee',
     ]
 
-    return <div className='flex space-between'>
-        <label htmlFor="fonts">{title}</label>
+    return <div className='flex space-between font-family-container'>
+        <label className='font-family-label' htmlFor="fonts">{title}</label>
 
         <Select
             //BE AWARE!, sans-serif is the default font-family when no font-family found on the selected element
