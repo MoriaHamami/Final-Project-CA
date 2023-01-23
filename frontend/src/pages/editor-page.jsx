@@ -47,15 +47,16 @@ export function Editor() {
             const idx = result.source.index
             const cmpsByCurrType = wapService.getCmpsByCategory('headers')
             const currCmp = cmpsByCurrType[idx]
-            return addCmpToBoard(currCmp)
+            const destIdx = result.destination.index
+            return addCmpToBoard(currCmp, destIdx)
         }
         if (result.destination.droppableId === 'delete') return removeCmpFromBoard(result)
         reOrder(result.source.index, result.destination.index)
 
     }
 
-    function addCmpToBoard(cmp) {
-        addCmp(wap, cmp)
+    function addCmpToBoard(cmp, idx) {
+        addCmp(wap, cmp, idx)
     }
 
     // TODO: ADD CMP TO WAP
