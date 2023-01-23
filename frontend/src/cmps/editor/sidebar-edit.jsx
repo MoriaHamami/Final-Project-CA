@@ -19,7 +19,7 @@ export function SidebarEdit({ handleWapEdit, chosenComponent }) {
         <SidebarFontFamily title='Font' propertyName='fontFamily' onChange={handleWapEdit} />
         <SidebarColors title='Text Color' propertyName='color' onChange={handleWapEdit} />
         <SidebarColors title='Background Color' propertyName='backgroundColor' onChange={handleWapEdit} />
-        <SidebarFontSize title='Text Size' propertyName='fontSize' onChange={handleWapEdit} chosenComponent={chosenComponent} />
+        <SidebarFontSize title='Text Size' propertyName='fontSize' onChange={handleWapEdit} />
         <SidebarBorderRadius title='Border Radius' propertyName='borderRadius' onChange={handleWapEdit} />
     </div>
 }

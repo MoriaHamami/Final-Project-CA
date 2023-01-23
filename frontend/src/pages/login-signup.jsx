@@ -1,9 +1,9 @@
 
-import { AppHeader } from '../cmps/app-header'
+// import { AppHeader } from '../cmps/app-header'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { Fragment, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { signup, login, logout } from '../store/user.actions.js'
 
@@ -28,7 +28,7 @@ export function LoginSignup() {
         return funcs[method](credentails)
             .then((user) => {
                 showSuccessMsg(`Welcome ${user.fullname}`)
-                // navigate('/toy')
+                navigate('/')
             })
             .catch(() => showErrorMsg('Oops try again'))
     }
@@ -47,7 +47,7 @@ export function LoginSignup() {
 
     return (
         <div>
-            <AppHeader />
+            {/* <AppHeader /> */}
             <section className="login-signup">
                 <div className='form-container'>
                     {!user && <form form className='login-signup-form' onSubmit={onSubmit}>
@@ -95,6 +95,7 @@ export function LoginSignup() {
                     </div>}
 
                     {/* {user && <UserProfile user={user} />} */}
+                    <Link to="/">Back to home page</Link>
                 </div>
 
             </section>
