@@ -8,10 +8,11 @@
         display: flex;
         align-items: bottom;
         font-family: Arial, Helvetica, sans-serif;
-        padding: 40px 80px 20px;
+        padding: 5px $normal-padding 0;
         // margin-inline: 40px;
         // max-width: 1500px;
     }
+
 
     .pages-container>* {
         text-decoration: none;
@@ -27,18 +28,7 @@
     //     margin-inline-start: 20px;
     // }
 
-    .header-profile-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-block: 15px;
 
-        >* {
-            font-size: 1.2rem;
-            // margin-inline-end: 20px;
-            text-decoration: none;
-        }
-    }
 
     .user-info {
         display: flex;
@@ -51,14 +41,15 @@
     }
 
     .profile-img {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .logo {
         text-transform: capitalize;
         font-family: caviar-dreams-Bold;
         margin: 0;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        padding: 5px 0;
         text-decoration: none;
     }
 
@@ -70,22 +61,48 @@
         flex-basis: 100%;
 
         .header-profile-container {
-            @include btn($bg: inherit, $clr: $almost-white, $padding: em(6px) em(8px), $hover: rgba(255, 255, 255, 0.134));
+            font-size: 0.9rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            >* {
+                text-decoration: none;
+            }
+        }
+
+        .login-btn {
+            @include btn($bg: inherit, $clr: $almost-white, $padding: em(4px) em(8px), $hover: rgba(255, 255, 255, 0.134));
             border: 0.5px solid rgba(255, 255, 255, 0.795);
-            font-size: 1.2rem;
+            font-size: 0.9rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
+            >* {
+                text-decoration: none;
+            }
         }
 
-        >* {
-            font-size: 1.2rem;
-            text-decoration: none;
-        }
+    
 
+    .pages-container {
+        display: flex;
+        gap: 20px;
     }
 
-    nav .active {
-        color: $clr1;
+    >* {
+        font-size: 0.8rem;
+        text-decoration: none;
     }
+
+}
+
+nav .active {
+    color: $clr1;
+}
 }
 
 @media (min-width: 1500px) {

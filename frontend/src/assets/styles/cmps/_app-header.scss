@@ -1,14 +1,14 @@
 .app-header {
     background-color: white;
     border-bottom: 1px solid lightgray;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px 1px;
+    box-shadow: rgba(0, 0, 0, 0.074) 1px 1px 4px 0.5px;
 
 
     .header-txt-container {
         display: flex;
         align-items: center;
         font-family: Arial, Helvetica, sans-serif;
-        padding: 0 40px;
+        padding: 0 $normal-padding;
         // margin-inline: 40px;
         // max-width: 1500px;
     }
@@ -31,7 +31,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-block: 15px;
+        // margin-block: 15px;
 
         >* {
             color: $almost-black;
@@ -52,13 +52,13 @@
     }
 
     .profile-img {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .logo {
         text-transform: capitalize;
         font-family: caviar-dreams-Bold;
-        margin: 0;
+        padding: 5px 0;
         font-size: 1.5rem;
         text-decoration: none;
         color: $almost-black;

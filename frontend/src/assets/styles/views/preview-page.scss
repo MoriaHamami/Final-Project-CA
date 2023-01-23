@@ -1,0 +1,59 @@
+.preview-page {
+    height: 100vh;
+    overflow-y: scroll;
+
+    .preview-close-container-hover {
+        position: fixed;
+        right: 20px;
+        top: 10px;
+        border-radius: 50%;
+        padding: 5px;
+        z-index: 2;
+        
+        &:hover {
+            background-color: rgba(161, 161, 161, 0.652);
+            cursor: pointer;
+        }
+
+        .preview-close-container {
+            padding: 3px 1px;
+            padding-bottom: 0;
+            background-color: rgba(57, 57, 57, 0.993);
+            border-radius: 50%;
+
+
+            .preview-close {
+                color: white;
+                font-size: 1.5rem;
+                line-height: 0.5;
+                position: relative;
+                top: 4px;
+            }
+
+        }
+    }
+
+
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 1px;
+        background-color: white;
+        border: 1px solid $almost-white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #DDDDDD;
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #cbcbcb;
+        }
+    }
+
+}

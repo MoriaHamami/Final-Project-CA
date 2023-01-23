@@ -1,0 +1,54 @@
+.login-header {
+    background-color: white;
+
+    .header-txt-container {
+        display: flex;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0 $normal-padding;
+        // margin-inline: 40px;
+        // max-width: 1500px;
+    }
+    
+
+    
+    .pages-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo {
+        text-transform: capitalize;
+        font-family: caviar-dreams-Bold;
+        margin: 0;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: $almost-black;
+        padding: 0.5rem 0;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        justify-content: space-between;
+        flex-basis: 100%;
+    }
+
+    nav .active {
+        color: $clr1;
+    }
+
+    .login-close{
+        cursor: pointer;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+}
+
+@media (min-width: 1500px) {
+    .login-header .header-txt-container {
+        margin: auto;
+    }
+}

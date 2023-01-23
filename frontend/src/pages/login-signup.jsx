@@ -1,5 +1,6 @@
 
 // import { AppHeader } from '../cmps/app-header'
+import { LoginHeader } from '../cmps/login/login-header.jsx'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { Fragment, useState } from 'react'
@@ -47,58 +48,66 @@ export function LoginSignup() {
 
     return (
         <div>
-            {/* <AppHeader /> */}
+            <LoginHeader />
             <section className="login-signup">
-                <div className='form-container'>
-                    {!user && <form form className='login-signup-form' onSubmit={onSubmit}>
-                        <div className='txt-field'>
-                            <label className='input-label' htmlFor="username">User name: </label>
-                            <input type="text"
-                                id='username'
-                                name="username"
-                                placeholder="User name.."
-                                value={username}
-                                onChange={handleChange} />
 
-                        </div>
-                        <div>
-                            <label className='input-label' htmlFor="password">Password :</label>
-                            <input type="password"
-                                name="password"
-                                id="password"
-                                placeholder="Password"
-                                value={password}
-                                onChange={handleChange} />
-                        </div>
-                        {isSignupState && <Fragment>
-                            <div>
-                                <label htmlFor="fullname">Full name: </label>
+                {!user && <div className='login-container'>
+                    <h2 className='login-title'>{isSignupState ? "Sign Up" : "Log In"}</h2>
+                    <p className='login-subtitle'>{isSignupState ? "Already a member?" : "Don't have an account?"} <span className="signup-link" onClick={onToggleSignupState}>{isSignupState ? "Log In" : "Sign Up"}</span></p>
+
+                    <form form className='login-signup-form' onSubmit={onSubmit}>
+                        <div className='form-container'>
+                            <div className='txt-field'>
                                 <input type="text"
-                                    id="fullname"
-                                    name="fullname"
-                                    placeholder="Full name.."
-                                    value={fullname}
+                                    id='username'
+                                    name="username"
+                                    // className='login-input'
+                                    placeholder="User name.."
+                                    value={username}
+                                    onChange={handleChange} />
+
+                            </div>
+                            <div>
+                                <input type="password"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Password"
+                                    value={password}
                                     onChange={handleChange} />
                             </div>
-                        </Fragment>
-                        }
+                            {isSignupState && <Fragment>
+                                <div>
+                                    <input type="text"
+                                        id="fullname"
+                                        name="fullname"
+                                        placeholder="Full name.."
+                                        value={fullname}
+                                        onChange={handleChange} />
+                                </div>
+                            </Fragment>
+                            }
+                            <button className="login-signup-btn">{isSignupState ? "Sign up" : "Login"}</button>
+                        </div>
 
-                        <button className="login-signup-btn">{isSignupState ? "Sign up" : "Login"}</button>
-                        <a className="signup-link" href="#" onClick={onToggleSignupState}>
-                            {isSignupState ? "Already a member ? Login" : "New user ? sign up here"}
-                        </a>
-                    </form>}
 
-                    {user && <div className="user-profile">
+                        <div className='middle-line-login-container'>
+                            <div className='middle-line-login'></div>
+                            <div>or</div>
+                            <div className='middle-line-login'></div>
+                        </div>
+
+                        <div className='login-by-container'>
+                            <button className='google-login'>Continue with Google</button>
+                            <button className='facebook-login'>Continue with Facebook</button>
+                        </div>
+                    </form>
+                </div>}
+                {user && <div className="user-profile">
                         <h2 className="user-greeting">Hello {user.fullname}</h2>
+                        <h3 style={{color:'red'}}>This is gonna be a draft page</h3>
                         <button className="logout-btn" onClick={onLogout}>Logout</button>
                     </div>}
-
-                    {/* {user && <UserProfile user={user} />} */}
-                    <Link to="/">Back to home page</Link>
-                </div>
-
-            </section>
-        </div>
+            </section >
+        </div >
     )
 }

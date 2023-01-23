@@ -34,7 +34,8 @@ export function WapDemos() {
             <AppHeader />
         <div className="wap-demos-page">
 
-            <h2>Choose your template</h2>
+            <h2 className='title'>Pick one of our professionally designed templates for your website</h2>
+            <p className='subtitle'>Or express your inner creativity and start from scratch</p>
             <WapDemoList onSelectDemoWap={onSelectWapDemo} />
         </div>
         </div>
