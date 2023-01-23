@@ -9,8 +9,6 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { wapService } from '../services/wap.service.js'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { utilService } from '../services/util.service.js'
 
 
@@ -106,6 +104,41 @@ export function Editor() {
         saveWap(wap)
     }
 
+
+
+    function onElementTxtChange(txt) {
+        console.log('txt:', txt)
+        const wapCopy = structuredClone(wap)
+        const cmpIndex = wapCopy.cmps.findIndex(cmp => cmp.id === selectedCmpId)
+        const editedElement = wapCopy.cmps[cmpIndex]
+
+        // Check if the edited element is a cmp or an element
+        if (!selectedElement.theme) {
+            for (const key in editedElement.info) {
+                let childElement = editedElement.info[key]
+                // Check if the id of the edited element is found inside another element
+                if (childElement.id === selectedElement.id) {
+                    const updatedElementTxt = { ...childElement, txt }
+                    wapCopy.cmps[cmpIndex].info[key] = updatedElementTxt
+                    break
+                } else if (childElement.length) {
+                    const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
+                    if (idx !== -1) {
+                        const updatedElementTxt = { ...childElement[idx], txt }
+                        wapCopy.cmps[cmpIndex].info[key][idx] = updatedElementTxt
+                        break
+                    }
+                }
+            }
+        } else {
+            const updatedCmpStyle = { ...editedElement, txt }
+            wapCopy.cmps[cmpIndex] = updatedCmpStyle
+        }
+
+        saveWap(wapCopy)
+    }
+
+
     function onOptionClick(type) {
         if (!editOpt || editOpt !== type) {
             if (!isOpenMenu) setIsOpenMenu(true)
@@ -130,9 +163,10 @@ export function Editor() {
         setSelectedElement(element)
     }
 
+
     return (
         <div>
-            <AppHeader/>
+            <AppHeader />
             {wap && <DragDropContext onDragEnd={onEnd} onDragStart={onStartDragging}>
 
                 <EditorHeader wap={wap} />
@@ -150,6 +184,7 @@ export function Editor() {
                         wap={wap}
                         onElClick={onElClick}
                         setSelectedElement={setSelectedElement}
+                        onElementTxtChange={onElementTxtChange}
                         handleSelectCmpForEdit={handleSelectCmpForEdit} /> : <p>Loading</p>}
                 </section>
 

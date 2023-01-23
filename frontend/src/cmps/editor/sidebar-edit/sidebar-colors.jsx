@@ -1,10 +1,9 @@
 
-import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaintbrush } from '@fortawesome/free-solid-svg-icons'
+import { useEffect, useState } from 'react'
 
 export function SidebarColors({ title, onChange, propertyName }) {
   const [color, setColor] = useState('#FFFFFF')
+
 
   const onChangeColor = (color) => {
     setColor(color)
@@ -26,7 +25,6 @@ export function SidebarColors({ title, onChange, propertyName }) {
             borderRadius: '28px',
             backgroundColor: color,
             cursor: 'pointer',
-            // border: '1px solid rgba(255, 255, 255, 0.4)',
           }}
         >
           

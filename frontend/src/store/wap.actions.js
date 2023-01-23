@@ -7,6 +7,7 @@ import { SET_WAP, SET_CMP_ID, SET_ELEMENT } from './wap.reducer.js'
 export async function saveWap(wap) {
     try {
         const savedWap = await wapService.save(wap)
+        // const savedWap = wap
         store.dispatch({ type: SET_WAP, wap: savedWap })
         return savedWap._id
     } catch (err) {
