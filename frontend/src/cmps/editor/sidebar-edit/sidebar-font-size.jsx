@@ -24,27 +24,28 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
 
   return <div>
     <div className='slider-container'>
-    <label>{title}</label>
+      <label>{title}: </label>
       <span>{fontSizeVal}</span>
     </div>
 
-    
-      <Box marginLeft={'5px'} width={200}>
-        <Slider
-          size='small'
-          key={'fontSize1'}
-          color='primary'
-          onChange={onChangeRange}
-          value={fontSizeVal}
-          aria-label='Default'
-          valueLabelDisplay='auto'
-          step={0.1}
-          min={0.1}
-          max={4}
-          sx={{ color: '#434242' }}
-        />
-      </Box>
 
-   
+    {/* <Box> */}
+      <Slider
+        className="range-container"
+        size='small'
+        key={'fontSize1'}
+        color='primary'
+        onChange={onChangeRange}
+        value={fontSizeVal}
+        aria-label='Default'
+        valueLabelDisplay='auto'
+        step={0.1}
+        min={0.1}
+        max={4}
+        sx={{ color: '#434242' }}
+      />
+    {/* </Box> */}
+
+
   </div>
 }

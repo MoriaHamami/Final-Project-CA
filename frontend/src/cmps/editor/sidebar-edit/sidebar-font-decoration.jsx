@@ -42,7 +42,7 @@ export function SidebarFontDecoration({title,  onChange}) {
         onChange('font-style', value)
     }
 
-        return <div className='flex space-between'>
+        return <div className='flex space-between '>
           <span>{title}</span>
           <div className="editor-decoration-container">
           <span onClick={onBoldClick} className={`material-symbols-outlined bold ${isBold ? 'active' : ''}`}>format_bold</span>

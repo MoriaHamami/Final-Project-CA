@@ -37,7 +37,7 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
 
             <div className="elements-container">
                 {cmpsByCurrType.map((cmp, index) => {
-                    return <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
+                    return <Draggable draggableId={cmp.id} key={cmp.id} index={index}>
                     {
                         (provided, snapshot) => (
                             <>

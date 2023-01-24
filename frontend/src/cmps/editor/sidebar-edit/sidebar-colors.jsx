@@ -10,16 +10,29 @@ export function SidebarColors({ title, onChange, propertyName, selectedElement }
     onChange(propertyName, color)
   }
 
-  const colors = ['#FFFFFF', '#FFEF82', '#F28B82', '#FBBC04', '#CCFF90', '#A7FFEB', '#F1E4DE', '#D7AEFB', '#FDCFE8', '#E6C9A8', '#151515']
+  const colors = [
+    '#ddd9d9',
+    '#e1de9a',
+    '#d6c085',
+    '#d3b0c0',
+    '#d6a4a4',
+    '#b0cfd3',
+    '#9bc1b3',
+    '#86aac5',
+    '#a391b1',
+    '#b1afaa',
+    '#73726e',
+  ]
+
   let renderedColors = colors
 
-  if(propertyName==="backgroundColor" && (selectedElement.type === 'txt' || selectedElement.type === 'img' || selectedElement.type === 'map' || selectedElement.type === 'video')) return
-  if(propertyName==="color" && selectedElement.type !== 'txt' && selectedElement.type !== 'btn' && selectedElement.type !== 'input') return
-// console.log('propertyName:', propertyName)
+  if (propertyName === "backgroundColor" && (selectedElement.type === 'txt' || selectedElement.type === 'img' || selectedElement.type === 'map' || selectedElement.type === 'video')) return
+  if (propertyName === "color" && selectedElement.type !== 'txt' && selectedElement.type !== 'btn' && selectedElement.type !== 'input') return
+  // console.log('propertyName:', propertyName)
   return (
     <div>
 
-      <span>{title}</span>
+      <div className="label">{title}</div>
       <div className="colors-container">
         <label
           htmlFor="color-input"
@@ -31,9 +44,9 @@ export function SidebarColors({ title, onChange, propertyName, selectedElement }
             cursor: 'pointer',
           }}
         >
-          
-          <input onChange={(ev) => onChangeColor(ev.target.value)} style={{visibility:'hidden'}} id="color-input" type="color" />
-          <span class="material-symbols-outlined colorize-icon">colorize</span>
+
+          <input onChange={(ev) => onChangeColor(ev.target.value)} style={{ visibility: 'hidden' }} id="color-input" type="color" />
+          <span className="material-symbols-outlined colorize-icon">colorize</span>
         </label>
         {renderedColors.map((clr) => (
           <div

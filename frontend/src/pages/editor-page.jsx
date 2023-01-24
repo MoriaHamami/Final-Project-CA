@@ -50,14 +50,13 @@ export function Editor() {
         }
         if (result.destination.droppableId === 'delete') return removeCmpFromBoard(result)
         reOrder(result.source.index, result.destination.index)
-
     }
 
     function addCmpToBoard(cmp, idx) {
         addCmp(wap, cmp, idx)
     }
 
-    // TODO: ADD CMP TO WAP
+    // TODO: REMOVE LATER MAYBE FROM EVERUYWHERE
     function onPickedCmp(cmpId) {
         let cmp = wapService.getCmpById(cmpId)
         addCmpToBoard(cmp)
@@ -108,7 +107,8 @@ export function Editor() {
             wapCopy.cmps[cmpIndex] = updatedCmpStyle
         }
 
-        saveWap(wapCopy)
+        // LATER CHANGE TO: saveWap(wapCopy) (doesnt work with editable for now because of refresh) - FIND SOLUTION
+        wapService.save(wapCopy)
     }
 
 

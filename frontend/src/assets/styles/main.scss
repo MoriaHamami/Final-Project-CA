@@ -38,34 +38,35 @@
 @import "cmps/editor/sidebar-edit/sidebar-colors";
 @import "cmps/editor/sidebar-edit/sidebar-font-decoration";
 @import "cmps/editor/sidebar-edit/sidebar-font-family";
+@import "cmps/editor/sidebar-edit/sidebar-range";
 // @import "cmps/editor/sidebar-edit/sidebar-font-size";
 // @import "cmps/editor/sidebar-edit/sidebar-border-radius";
 @import "cmps/editor/editor-header";
 @import "cmps/editor/editor-board";
 
 
-// Wap-Cmps
+// Wap Cmps
 // Gallery
-@import "cmps/wap-cmps/gallery/wap-gallery-1.scss"; //V
-@import "cmps/wap-cmps/gallery/wap-gallery-2a.scss"; //VVV
-@import "cmps/wap-cmps/gallery/wap-gallery-2b.scss"; //XXXXXXXXXXX
+@import "cmps/wap-cmps/gallery/wap-gallery-1"; //V
+@import "cmps/wap-cmps/gallery/wap-gallery-2a"; //VVV
+@import "cmps/wap-cmps/gallery/wap-gallery-2b"; //XXXXXXXXXXX
 // Footer
-@import "cmps/wap-cmps/footer/wap-footer-1.scss"; // V
-@import "cmps/wap-cmps/footer/wap-footer-2.scss"; // V
+@import "cmps/wap-cmps/footer/wap-footer-1"; // V
+@import "cmps/wap-cmps/footer/wap-footer-2"; // V
 // Form
-@import "cmps/wap-cmps/form/wap-form-1.scss"; //XXXXXXX
-@import "cmps/wap-cmps/form/wap-form-2.scss"; //VVV
+@import "cmps/wap-cmps/form/wap-form-1"; //XXXXXXX
+@import "cmps/wap-cmps/form/wap-form-2"; //VVV
 // Header
-@import "cmps/wap-cmps/header/wap-header-1.scss"; // V
-@import "cmps/wap-cmps/header/wap-header-2.scss"; // V
+@import "cmps/wap-cmps/header/wap-header-1"; // V
+@import "cmps/wap-cmps/header/wap-header-2"; // V
 // Hero
-@import "cmps/wap-cmps/hero/wap-hero-1.scss"; // V
-@import "cmps/wap-cmps/hero/wap-hero-2.scss"; ///VVV
+@import "cmps/wap-cmps/hero/wap-hero-1"; // V
+@import "cmps/wap-cmps/hero/wap-hero-2"; ///VVV
 // About
-@import "cmps/wap-cmps/about/wap-about-1.scss"; ///VVV
-@import "cmps/wap-cmps/about/wap-about-2.scss"; ///VVV
+@import "cmps/wap-cmps/about/wap-about-1"; ///VVV
+@import "cmps/wap-cmps/about/wap-about-2"; ///VVV
 // Video
-@import "cmps/wap-cmps/video/wap-video-1.scss"; //VV
-@import "cmps/wap-cmps/video/wap-video-2.scss"; //VV
+@import "cmps/wap-cmps/video/wap-video-1"; //VV
+@import "cmps/wap-cmps/video/wap-video-2"; //VV
 // Map
-@import "cmps/wap-cmps/map/wap-map-1.scss"; //VVV
+@import "cmps/wap-cmps/map/wap-map-1"; //VVV
