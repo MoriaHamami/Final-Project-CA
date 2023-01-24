@@ -21,6 +21,7 @@ import { wapAbout2 } from '../waps/about/wap-about-2'
 
 // VIDEOS
 import { wapVideo1 } from '../waps/videos/wap-video-1.js'
+import { wapVideo2 } from '../waps/videos/wap-video-2.js'
 
 // FORMS
 import { wapForm1 } from '../waps/forms/wap-form-1'
@@ -72,13 +73,13 @@ const mapCmpByCategory = {
     about: [wapAbout1, wapAbout2],
     containers: [],
     galleries: [wapGallery1, wapGallery2A, wapGallery2B],
-    videos: [wapVideo1],
+    videos: [wapVideo1, wapVideo2],
     forms: [wapForm1, wapForm2],
     maps: [wapMap1],
     footers: [wapFooter1, wapFooter2],
 }
 
-function getWapDemos()  {
+function getWapDemos() {
     return [
         emptyWapDemo,
         wapDemo1,
@@ -93,14 +94,14 @@ function getCmpTypes() {
 
 function getCmpsByCategory(category) {
     if (mapCmpByCategory[category]) {
-      return mapCmpByCategory[category]
-    //   return mapCmpByCategory[category].map((cmp) => ({
-    //     id: cmp.id,
-    //     thumbnail: cmp.thumbnail,
-    //     category,
-    //   }))
+        return mapCmpByCategory[category]
+        //   return mapCmpByCategory[category].map((cmp) => ({
+        //     id: cmp.id,
+        //     thumbnail: cmp.thumbnail,
+        //     category,
+        //   }))
     }
-  }
+}
 
 function getWapDemoById(wapDemoId) {
     // if (wapDemoId === 'blank') return { cmps: [] }

@@ -11,7 +11,7 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
     const [selectedType, setSelectedType] = useState('headers')
 
     useEffect(() => {
-        
+
         const cmpsByCurrType = wapService.getCmpsByCategory(selectedType)
         // console.log('cmpsByCurrType:', cmpsByCurrType)
         // console.log('setSelectedType:', selectedType)
@@ -37,22 +37,22 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
 
             <div className="elements-container">
                 {cmpsByCurrType.map((cmp, index) => {
-                    return <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
-                    {
-                        (provided, snapshot) => (
-                            <>
-                                <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                    {/* <img src={cmp.imgUrl} /> */}
-                                    <div className="active">{cmp.name}</div>
-                                    {provided.placeholder}
-                                </div>
-                                {snapshot.isDragging && <div>{cmp.name}</div>}
-                            </>
+                    return <Draggable draggableId={JSON.stringify(cmp)} key={cmp.id} index={index}>
+                        {
+                            (provided, snapshot) => (
+                                <>
+                                    <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                        {/* <div className="active">{cmp.imgUrl}</div> */}
+                                        <img src={cmp.imgUrl} />
+                                        {provided.placeholder}
+                                    </div>
+                                    {snapshot.isDragging && <img src={cmp.imgUrl} />}
+                                </>
 
-                        )
-                    }
-                </Draggable>
-                    
+                            )
+                        }
+                    </Draggable>
+
                     // <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
                     //     {
                     //         (provided, snapshot) => (

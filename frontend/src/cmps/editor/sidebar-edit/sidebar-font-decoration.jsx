@@ -12,13 +12,14 @@ export function SidebarFontDecoration({title,  onChange}) {
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
   useEffect(() => {
-    const fontWeight = selectedElement.style['font-weight']
+    console.log('selectedElement:', selectedElement)
+    const fontWeight = selectedElement?.style['font-weight']
     if(fontWeight && fontWeight > '600') setIsBold(true)
     else setIsBold(false)
-    const fontItalic = selectedElement.style['font-style']
+    const fontItalic = selectedElement?.style['font-style']
     if(fontItalic && fontItalic === 'italic') setIsItalic(true)
     else setIsItalic(false)
-    const textDec = selectedElement.style['text-decoration']
+    const textDec = selectedElement?.style['text-decoration']
     if(textDec && textDec === 'underline') setIsUnderline(true)
     else setIsUnderline(false)
   }, [selectedElement])
@@ -42,7 +43,7 @@ export function SidebarFontDecoration({title,  onChange}) {
         onChange('font-style', value)
     }
 
-        return <div className='flex space-between'>
+        return <div className='flex space-between '>
           <span>{title}</span>
           <div className="editor-decoration-container">
           <span onClick={onBoldClick} className={`material-symbols-outlined bold ${isBold ? 'active' : ''}`}>format_bold</span>

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
-export function WapFooter({ style, cmp, onElClick }) {
+export function WapFooter({ style, cmp, onElClick, selectedCmpId }) {
 
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info

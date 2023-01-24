@@ -1,5 +1,7 @@
 // Colors
 $clr1: #3899ec;
+$editor-board-clr: #5da8e9ad;
+// $clr2: #1670c0;
 // $clr1: #166aea;
 $almost-white: #faf6f6;
 $almost-black: #393737;
@@ -19,7 +21,12 @@ $bgc-almost-white : rgba(250, 245, 245, 0.9);
 $bgc-bright-gray: #f0f4f7;
 
 // Hover colors
-$hover-clr1: #f8f7f7;
+$hover-clr1: #e2f5ffe4;
+$editor-hover: #83c2d25e;
+
+// selected colors
+// $editor-selected: #21a8f1e4;
+// $hover-clr1: #f8f7f7;
 
 // Breakpoints
 $mobile-breakpoint: 460px;

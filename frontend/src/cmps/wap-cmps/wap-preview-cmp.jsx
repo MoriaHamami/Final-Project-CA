@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 
 
-export function WapPreview({ style, cmp, onElClick }) {
+export function WapPreview({ style, cmp, onElClick, selectedCmpId }) {
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info
 

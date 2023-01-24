@@ -7,15 +7,16 @@ export const wapGallery1 = {
     theme: 'theme-header-happy',
     thumbnail: 'https://i.postimg.cc/7h0qq8v4/wap-cards-1.png',
     info: {
-        title: {txt: '', id: utilService.makeId(), type: 'txt'},
-        subtitle: {txt: '', id: utilService.makeId(), type: 'txt'},
-        btn: {label: '', link: '', id: utilService.makeId(), type: 'btn'},
+        title: {txt: '', id: utilService.makeId(), type: 'txt', style: {}},
+        subtitle: {txt: '', id: utilService.makeId(), type: 'txt', style: {}},
+        btn: {label: '', link: '', id: utilService.makeId(), type: 'btn', style: {}},
         photos: [
             {
                 url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674030131/card-img-1_tkzkif.webp',
                 title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 type: 'img',
+                style: {},
                 id: utilService.makeId()
             },
             {
@@ -23,6 +24,7 @@ export const wapGallery1 = {
                 title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 type: 'img',
+                style: {},
                 id: utilService.makeId()
             },
             {
@@ -30,6 +32,7 @@ export const wapGallery1 = {
                 title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 type: 'img',
+                style: {},
                 id: utilService.makeId()
             },
             {
@@ -37,6 +40,7 @@ export const wapGallery1 = {
                 title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 type: 'img',
+                style: {},
                 id: utilService.makeId()
             },
             {
@@ -44,6 +48,7 @@ export const wapGallery1 = {
                 title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
                 type: 'img',
+                style: {},
                 id: utilService.makeId()
             },
             {

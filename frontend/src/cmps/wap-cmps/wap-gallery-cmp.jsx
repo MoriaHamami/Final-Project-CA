@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 
-export function GalleryCmp({ style, cmp, onElClick }) {
+export function GalleryCmp({ style, cmp, onElClick, selectedCmpId }) {
 
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const info = cmp.info

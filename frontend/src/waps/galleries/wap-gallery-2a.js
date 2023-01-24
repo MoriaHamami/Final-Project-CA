@@ -4,29 +4,32 @@ export const wapGallery2A = {
     id: utilService.makeId(),
     type: 'wap-gallery',
     name: 'wap-gallery-2a',
+    imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-gallery-2a_zzwqzw.jpg',
+
     info: {
-        title: {txt: 'What Makes Us Special', type: 'txt', id: utilService.makeId()},
-        subtitle: {txt: '', id: utilService.makeId(), type: 'txt'},
-        btn: {label: '', link: '', id: utilService.makeId(), type: 'btn'},
+        title: {txt: 'What Makes Us Special', type: 'txt', id: utilService.makeId(), style: {}},
+        subtitle: {txt: '', id: utilService.makeId(), type: 'txt', style: {}},
+        btn: {label: '', link: '', id: utilService.makeId(), type: 'btn', style: {}},
         photos: [
             {
                 url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674060775/container-guide_wc4cyf.png',
-                title: { txt: 'Local Expert Guides', id: utilService.makeId(), style: { }, type: 'txt' },
-                subtitle: { txt: 'I\'m a title.Click here to add your own text and edit me.', id: utilService.makeId(), style: { }, type: 'txt' },
+                title: { txt: 'Local Expert Guides', id: utilService.makeId(), style: {}, type: 'txt' },
+                subtitle: { txt: 'I\'m a title.Click here to add your own text and edit me.', id: utilService.makeId(), style: {}, type: 'txt' },
                 type: 'img',
                 id: utilService.makeId()
             },
             {
                 url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674060778/container-hidden_kxlflq.png',
-                title: { txt: 'Handpicked Adventures', id: utilService.makeId(), style: { }, type: 'txt' },
-                subtitle: { txt: 'I\'m a title. Click here to add your own text and edit me.', id: utilService.makeId(), style: { }, type: 'txt' },
+                title: { txt: 'Handpicked Adventures', id: utilService.makeId(), style: {}, type: 'txt' },
+                subtitle: { txt: 'I\'m a title. Click here to add your own text and edit me.', id: utilService.makeId(), style: {}, type: 'txt' },
                 type: 'img',
+                style: {},
                 id: utilService.makeId()
             },
             {
                 url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674060782/container-adventure_n9ejiq.webp',
-                title: { txt: 'Hidden Gem Destinations', id: utilService.makeId(), style: { }, type: 'txt' },
-                subtitle: { txt: 'I\'m a title.Click here to add your own text and edit me.', id: utilService.makeId(), style: { }, type: 'txt' },
+                title: { txt: 'Hidden Gem Destinations', id: utilService.makeId(), style: {}, type: 'txt' },
+                subtitle: { txt: 'I\'m a title.Click here to add your own text and edit me.', id: utilService.makeId(), style: {}, type: 'txt' },
                 type: 'img',
                 id: utilService.makeId()
             }

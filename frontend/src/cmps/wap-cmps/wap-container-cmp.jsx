@@ -1,7 +1,7 @@
 import React from 'react'
 import { DynamicCmp } from './wap-dynamic-cmp'
 
-export function ContainerCmp({ style, cmp }) {
+export function ContainerCmp({ style, cmp, selectedCmpId }) {
   
   return (
     <div id={cmp?.type} style={style} className={cmp.name}>

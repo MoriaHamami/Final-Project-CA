@@ -42,22 +42,23 @@ export function Editor() {
     const onEnd = (result) => {
         setIsDragging(false)
         if (result.source.droppableId === 'from-sidebar-add' && result.destination.droppableId === 'editor') {
-            const idx = result.source.index
-            const cmpsByCurrType = wapService.getCmpsByCategory('headers')
-            const currCmp = cmpsByCurrType[idx]
+            // const idx = result.source.index
+            // const cmpsByCurrType = wapService.getCmpsByCategory('headers')
+            console.log('rsult===', result)
+            const currCmp = JSON.parse(result.draggableId)
+            // const currCmp = cmpsByCurrType[idx]
             const destIdx = result.destination.index
             return addCmpToBoard(currCmp, destIdx)
         }
         if (result.destination.droppableId === 'delete') return removeCmpFromBoard(result)
         reOrder(result.source.index, result.destination.index)
-
     }
 
     function addCmpToBoard(cmp, idx) {
         addCmp(wap, cmp, idx)
     }
 
-    // TODO: ADD CMP TO WAP
+    // TODO: REMOVE LATER MAYBE FROM EVERUYWHERE
     function onPickedCmp(cmpId) {
         let cmp = wapService.getCmpById(cmpId)
         addCmpToBoard(cmp)
@@ -108,7 +109,8 @@ export function Editor() {
             wapCopy.cmps[cmpIndex] = updatedCmpStyle
         }
 
-        saveWap(wapCopy)
+        // LATER CHANGE TO: saveWap(wapCopy) (doesnt work with editable for now because of refresh) - FIND SOLUTION
+        wapService.save(wapCopy)
     }
 
 
@@ -134,7 +136,7 @@ export function Editor() {
         setEditOpt('edit')
         const element = JSON.parse(target.getAttribute('data-container'))
         setSelectedElement(element)
-        if(element.type === 'btn') ev.preventDefault()
+        if (element.type === 'btn' || element.type === 'map' || element.type === 'video') ev.preventDefault()
         // console.log('element:', element)
     }
 
@@ -156,6 +158,7 @@ export function Editor() {
                         chosenComponent={selectedCmpId}
                         handleWapEdit={handleWapEdit} />
                     {wap ? <EditorBoard
+                        selectedCmpId={selectedCmpId}
                         wap={wap}
                         onElClick={onElClick}
                         setSelectedElement={setSelectedElement}

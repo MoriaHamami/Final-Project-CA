@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 
-export function VideoCmp({ style, cmp, onElClick }) {
+export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const info = cmp.info
 
@@ -20,17 +20,17 @@ export function VideoCmp({ style, cmp, onElClick }) {
             </h2>}
 
             {cmp.info.subtitle && <p data-container={JSON.stringify(info.subtitle)}
-                onClick={onElClick}
                 style={info.subtitle.style} className="subtitle"
+                onClick={onElClick}
                 contentEditable={selectedElement?.id === info.subtitle.id}
                 suppressContentEditableWarning={true} >
                 {info.subtitle.txt}
             </p>}
 
-            <div className="wap-card-video-container">
+            <div className="wap-card-video-container" data-container={JSON.stringify(info.video)} onClick={onElClick}>
                 <iframe
-                    style={cmp.info.iframeStyle}
-                    src={`https://www.youtube.com/embed/${cmp.info.embedId}`}
+                    style={cmp.info.video.style}
+                    src={cmp.info.video.url}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
                     allowFullScreen
                     title="Embedded youtube"
