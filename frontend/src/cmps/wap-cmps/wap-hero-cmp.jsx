@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { useSelector } from 'react-redux'
 
-export function HeroCmp({ style, cmp, onElClick }) {
+export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
   const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false })
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info
@@ -12,7 +12,7 @@ export function HeroCmp({ style, cmp, onElClick }) {
       style={style}
       data-container={JSON.stringify(cmp)}
       onClick={onElClick}
-      className={(selectedElement?.id === cmp.id ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover')}
+      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover')}
       onMouseOut={() => setIsOn((prevIsOn) => {
         return { ...prevIsOn, cmp: false }
       })}
@@ -27,7 +27,7 @@ export function HeroCmp({ style, cmp, onElClick }) {
           style={info.title.style}
           // className="title"
           data-container={JSON.stringify(info.title)}
-          className={`${selectedElement?.id === info.title.id ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover'}`}
+          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover'}`}
           onMouseOut={() => setIsOn((prevIsOn) => {
             return { ...prevIsOn, title: false }
           })}
@@ -44,7 +44,7 @@ export function HeroCmp({ style, cmp, onElClick }) {
           contentEditable={selectedElement?.id === info.subtitle.id}
           style={info.subtitle.style}
           data-container={JSON.stringify(info.subtitle)}
-          className={`${selectedElement?.id === info.subtitle.id ? 'selected' : ''} subtitle ${selectedElement?.id !== info.subtitle.id && isOn.subtitle && 'hover'}`}
+          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.subtitle.id) ? 'selected' : ''} subtitle ${selectedElement?.id !== info.subtitle.id && isOn.subtitle && 'hover'}`}
           // onMouseOut={() => setIsOn(false)}
           onMouseOut={() => setIsOn((prevIsOn) => {
             return { ...prevIsOn, subtitle: false }
@@ -62,7 +62,7 @@ export function HeroCmp({ style, cmp, onElClick }) {
           contentEditable={selectedElement?.id === info.txt.id}
           style={info.txt.style}
           data-container={JSON.stringify(info.txt)}
-          className={`${selectedElement?.id === info.txt.id ? 'selected' : ''} txt ${selectedElement?.id !== info.txt.id && isOn.txt && 'hover'}`}
+          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.txt.id) ? 'selected' : ''} txt ${selectedElement?.id !== info.txt.id && isOn.txt && 'hover'}`}
           onMouseOut={() => setIsOn((prevIsOn) => {
             return { ...prevIsOn, txt: false }
           })}
@@ -79,7 +79,7 @@ export function HeroCmp({ style, cmp, onElClick }) {
           contentEditable={selectedElement?.id === info.btn.id}
           style={info.btn.style}
           data-container={JSON.stringify(info.btn)}
-          className={`${selectedElement?.id === info.btn.id ? 'selected' : ''} ${selectedElement?.id !== info.btn.id && isOn.btn && 'hover'}`}
+          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.btn.id) ? 'selected' : ''} ${selectedElement?.id !== info.btn.id && isOn.btn && 'hover'}`}
           onMouseOut={() => setIsOn((prevIsOn) => {
             return { ...prevIsOn, btn: false }
           })}

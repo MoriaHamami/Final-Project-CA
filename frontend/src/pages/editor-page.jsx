@@ -136,7 +136,7 @@ export function Editor() {
         setEditOpt('edit')
         const element = JSON.parse(target.getAttribute('data-container'))
         setSelectedElement(element)
-        if(element.type === 'btn' || element.type === 'map' || element.type === 'video') ev.preventDefault()
+        if (element.type === 'btn' || element.type === 'map' || element.type === 'video') ev.preventDefault()
         // console.log('element:', element)
     }
 
@@ -158,6 +158,7 @@ export function Editor() {
                         chosenComponent={selectedCmpId}
                         handleWapEdit={handleWapEdit} />
                     {wap ? <EditorBoard
+                        selectedCmpId={selectedCmpId}
                         wap={wap}
                         onElClick={onElClick}
                         setSelectedElement={setSelectedElement}

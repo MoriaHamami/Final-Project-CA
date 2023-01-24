@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-export function FormCmp({ style, cmp, onElClick }) {
+export function FormCmp({ style, cmp, onElClick, selectedCmpId }) {
 
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const info = cmp.info

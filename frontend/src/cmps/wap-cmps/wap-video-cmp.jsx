@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 
-export function VideoCmp({ style, cmp, onElClick }) {
+export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const info = cmp.info
 
