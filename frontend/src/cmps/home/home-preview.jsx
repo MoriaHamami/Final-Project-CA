@@ -1,65 +1,91 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow, Autoplay, Pagination } from 'swiper'
+import { Link, useNavigate } from 'react-router-dom'
+import { saveWap } from '../../store/wap.actions.js'
+import { wapService } from "../../services/wap.service"
 import 'swiper/css'
 import 'swiper/css/pagination'
 import "swiper/css/effect-coverflow"
 
 
 export function HomePreview() {
+  const navigate = useNavigate()
+
+
+  async function onSelectWapDemo(id) {
+    try {
+      let wap = wapService.getWapDemoById(id)
+      const savedWapId = await saveWap(wap)
+      navigate(`/editor/${savedWapId}`)
+    } catch (err) {
+      console.log('Had issues in wap editor', err)
+    }
+  }
 
 
 
-    return <div className='home-preview-page'>
-        <h2 className="preview-title">introducing <span>Webix</span></h2>
-        <>
-        <Swiper
+
+
+  return <div className='home-preview-page'>
+    <h2 className="preview-title">introducing <span>Webix</span></h2>
+    <p className="preview-subtitle">We will provide you the freedom to create the Website You want according to your needs.
+      Whether you’re promoting your business, showcasing your work, opening your online store or starting a blog
+      - you can do it all with the Webix website builder.</p>
+
+      <h1 style={{color:'red', padding:'100px'}}>ANOTHER SECTION</h1>
+
+    <>
+      <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={"auto"}
+        slidesPerView={4}
+        loop={true}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         coverflowEffect={{
-          rotate: 50,
+          rotate: 60,
           stretch: 0,
           depth: 100,
-          modifier: 1,
-          slideShadows: true,
+          modifier: 3,
+          // slideShadows: true,
         }}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
+        {wapService.getWapDemos()?.map((demoWap, idx) => {
+          if (idx === 0) return
+          return <SwiperSlide style={{width:'200px', aspectRatio:'6/8'}}>
+            <img className="home-preview-demo-img" src={demoWap.imgUrl} onClick={() => onSelectWapDemo(demoWap._id)} />
+          </SwiperSlide>
+        })}
+        {wapService.getWapDemos()?.map((demoWap, idx) => {
+          if (idx === 0) return
+          return <SwiperSlide style={{width:'200px', aspectRatio:'6/8'}}>
+            <img className="home-preview-demo-img" src={demoWap.imgUrl} onClick={() => onSelectWapDemo(demoWap._id)} />
+          </SwiperSlide>
+        })}
+        {wapService.getWapDemos()?.map((demoWap, idx) => {
+          if (idx === 0) return
+          return <SwiperSlide style={{width:'200px', aspectRatio:'6/8'}}>
+            <img className="home-preview-demo-img" src={demoWap.imgUrl} onClick={() => onSelectWapDemo(demoWap._id)} />
+          </SwiperSlide>
+        })}
+        {wapService.getWapDemos()?.map((demoWap, idx) => {
+          if (idx === 0) return
+          return <SwiperSlide style={{width:'200px', aspectRatio:'6/8'}}>
+            <img className="home-preview-demo-img" src={demoWap.imgUrl} onClick={() => onSelectWapDemo(demoWap._id)} />
+          </SwiperSlide>
+        })}
+        
       </Swiper>
-        </>
+    </>
 
 
-    </div>
+  </div>
 
 }
 

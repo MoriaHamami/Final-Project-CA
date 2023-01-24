@@ -1,4 +1,5 @@
 
+import { SidebarTextAlign } from './sidebar-edit/sidebar-text-align.jsx'
 import { SidebarFontDecoration } from './sidebar-edit/sidebar-font-decoration.jsx'
 import { SidebarColors } from './sidebar-edit/sidebar-colors.jsx'
 import { SidebarFontFamily } from './sidebar-edit/sidebar-font-family.jsx'
@@ -21,6 +22,12 @@ export function SidebarEdit({ handleWapEdit, chosenComponent }) {
     return <div className='tools-container edit-container'>
         {/* <p>Editing component: {chosenComponent}</p> */}
         {/* <p>Editing container: {selectedElement}</p> */}
+
+        {(selectedElement.type === 'txt' ||
+            selectedElement.type === 'input' ||
+            selectedElement.type === 'btn') &&
+            <SidebarTextAlign title='Text align' onChange={handleWapEdit} />
+        }
 
         {(selectedElement.type === 'txt' ||
             selectedElement.type === 'input' ||

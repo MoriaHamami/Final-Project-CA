@@ -1,0 +1,47 @@
+
+  .wap-header-3 {
+    display: flex;
+    z-index: 1;
+    position: fixed;
+    background-color: white;
+    width: 97%;
+    justify-content: center;
+    gap: 4rem;
+    padding: 1rem $normal-padding;
+    align-items: center;
+    color: $t2clr1;
+  
+    .logo {
+      margin: 0;
+      font-weight: 100;
+    }
+  
+    p {
+      margin: 0;
+    }
+  
+    &.mobile-layout,
+    &.tablet-layout {
+      padding: 1rem 1.5rem;
+    }
+
+    .login{
+        margin-left: 100px;
+    }
+  
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+  
+      a {
+        color: $t2clr1;
+        
+
+        &:hover{
+          text-decoration: none;
+          font-weight: 600;
+        }
+      }
+    }
+  }

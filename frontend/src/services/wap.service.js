@@ -2,10 +2,12 @@
 import { emptyWapDemo } from '../waps/wap-demos/empty-wap-demo'
 import { wapDemo1 } from '../waps/wap-demos/wap-demo-1.js'
 import { wapDemo2 } from '../waps/wap-demos/wap-demo-2.js'
+import { wapDemo3 } from '../waps/wap-demos/wap-demo-3.js'
 
 // HEADERS
 import { wapHeader1 } from '../waps/headers/wap-header-1.js'
 import { wapHeader2 } from '../waps/headers/wap-header-2'
+import  {wapHeader3}  from '../waps/headers/wap-header-3'
 
 // HEROS
 import { wapHero1 } from '../waps/heros/wap-hero-1'
@@ -65,7 +67,7 @@ window.cs = wapService
 _createWaps()
 
 const mapCmpByCategory = {
-    headers: [wapHeader1, wapHeader2],
+    headers: [wapHeader1, wapHeader2, wapHeader3],
     heros: [wapHero1, wapHero2],
     about: [wapAbout1, wapAbout2],
     containers: [],
@@ -81,6 +83,7 @@ function getWapDemos()  {
         emptyWapDemo,
         wapDemo1,
         wapDemo2,
+        wapDemo3,
     ]
 }
 

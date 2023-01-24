@@ -1,37 +1,37 @@
 .wap-header-2 {
-    background-color: $almost-white;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem $normal-padding;
-    align-items: center;
-    color: $t2clr1;
-  
-    .logo {
-      margin: 0;
-    }
-  
-    p {
-      margin: 0;
-    }
-  
-    &.mobile-layout,
-    &.tablet-layout {
-      padding: 1rem 1.5rem;
-    }
-  
-    .nav-bar {
-      display: flex;
-      align-items: center;
-      gap: 1.3rem;
-  
-      a {
-        color: $t2clr1;
-        
+  background-color: $almost-white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem $normal-padding;
+  align-items: center;
+  color: $t2clr1;
 
-        &:hover{
-          text-decoration: none;
-          font-weight: 600;
-        }
+  .logo {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &.mobile-layout,
+  &.tablet-layout {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+
+    a {
+      color: $t2clr1;
+      
+
+      &:hover{
+        text-decoration: none;
+        font-weight: 600;
       }
     }
   }
+}

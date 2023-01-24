@@ -1,0 +1,35 @@
+.wap-hero-3a {
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    padding: 17.5rem $normal-padding;
+    flex-direction: column;
+    color: whitesmoke;
+  
+    .title {
+      margin-bottom: 10px;
+      // line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+  
+  
+  
+    // .txt {
+    //   font-size: 1.3rem;
+    // }
+  
+    img {
+      margin-top: 3rem;
+      max-width: 100%;
+    }
+  
+    button {
+        background-color: inherit;
+        padding: 3px 0;
+      border-bottom: 0.5px solid $almost-black;
+    }
+  }

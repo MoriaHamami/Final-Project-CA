@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useSelector } from 'react-redux'
+import { wapHero1 } from '../../waps/heros/wap-hero-1'
 
 export function WapHeader({ style, cmp, onElClick, onElementTxtChange }) {
 
@@ -15,7 +16,7 @@ export function WapHeader({ style, cmp, onElClick, onElementTxtChange }) {
         className="logo" style={info.logo.style}
         onClick={onElClick}
         onInput={ev => onElementTxtChange(ev.currentTarget.textContent)}>{info.logo.txt}</p>
-      {/* <span className="material-symbols-outlined menu-btn">menu</span> */}
+      <span className="material-symbols-outlined menu-btn">menu</span>
       <nav className="nav-bar">
         {info.btns?.map((btn) => {
           return <a suppressContentEditableWarning={true}
@@ -28,6 +29,15 @@ export function WapHeader({ style, cmp, onElClick, onElementTxtChange }) {
             key={btn.id}>{btn.label}</a>
         })}
       </nav>
+      {info.login && <a suppressContentEditableWarning={true}
+        className="login"
+        contentEditable={selectedElement?.id === info.login.id}
+        style={info.login.style}
+        data-container={JSON.stringify(info.login)}
+        href={info.login.link}
+        onClick={onElClick}
+        onInput={ev => onElementTxtChange(ev.currentTarget.textContent)}
+        key={info.login.id}>{info.login.label}</a>}
     </div>
   )
 }

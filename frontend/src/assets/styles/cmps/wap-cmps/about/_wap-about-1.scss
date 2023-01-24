@@ -10,25 +10,34 @@
   flex-direction: column;
   color: $almost-black;
 
-  .subtitle {
-    margin-bottom: 10px;
+  div {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+
+    .subtitle {
+      margin-bottom: 10px;
+    }
+
+    .title {
+      margin-bottom: 2rem;
+      background-color: $t1clr1;
+      color: $almost-white;
+      padding: 0 2rem;
+    }
   }
 
-  .title {
-    margin-bottom: 2rem;
-    background-color: $t1clr1;
-    color: $almost-white;
-    padding: 0 2rem;
-  }
 
-  .img-container{
+  .img-container {
     display: flex;
     flex-direction: column;
 
     img {
       align-self: center;
       max-width: 300px;
-      
+
     }
 
   }
