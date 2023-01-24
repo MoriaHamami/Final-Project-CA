@@ -4,6 +4,8 @@ export const wapHero2 = {
   id: utilService.makeId(),
   type: 'wap-hero',
   name: 'wap-hero-2',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557657/Webix/wap-hero-2_rz0crj.jpg',
+
   info: {
     title: { txt: 'Urban Nomad Adventures', style: { fontWeight: '600', fontSize: '3.5em' }, id: utilService.makeId(), type: 'txt' },
     subtitle: { txt: 'Experience Oregon like a Local', style: { fontSize: '1.2em' }, id: utilService.makeId(), type: 'txt' },

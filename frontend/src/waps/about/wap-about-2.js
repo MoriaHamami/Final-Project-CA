@@ -5,6 +5,8 @@ export const wapAbout2 = {
   id: utilService.makeId(),
   type: 'wap-about',
   name: 'wap-about-2',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-about-2_t3yxcn.jpg',
+
   info: {
     title: { txt: 'Our Story', id: utilService.makeId(), style: { fontWeight: '600', fontSize: '1.7em' }, type: 'txt' },
     subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
