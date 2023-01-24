@@ -5,9 +5,9 @@ export const wapGallery2A = {
     type: 'wap-gallery',
     name: 'wap-gallery-2a',
     info: {
-        title: {txt: 'What Makes Us Special', type: 'txt', id: utilService.makeId()},
-        subtitle: {txt: '', id: utilService.makeId(), type: 'txt'},
-        btn: {label: '', link: '', id: utilService.makeId(), type: 'btn'},
+        title: {txt: 'What Makes Us Special', type: 'txt', id: utilService.makeId(), style: {}},
+        subtitle: {txt: '', id: utilService.makeId(), type: 'txt', style: {}},
+        btn: {label: '', link: '', id: utilService.makeId(), type: 'btn', style: {}},
         photos: [
             {
                 url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674060775/container-guide_wc4cyf.png',
@@ -21,6 +21,7 @@ export const wapGallery2A = {
                 title: { txt: 'Handpicked Adventures', id: utilService.makeId(), style: { }, type: 'txt' },
                 subtitle: { txt: 'I\'m a title. Click here to add your own text and edit me.', id: utilService.makeId(), style: { }, type: 'txt' },
                 type: 'img',
+                style: {},
                 id: utilService.makeId()
             },
             {

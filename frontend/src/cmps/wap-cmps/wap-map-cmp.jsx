@@ -10,14 +10,14 @@ export function MapCmp({ style, cmp, onElClick }) {
   const info = cmp.info
   const defaultProps = {
     center: {
-      lat: info.cords.lat,
-      lng: info.cords.lng
+      lat: info.map.cords.lat,
+      lng: info.map.cords.lng
     },
-    zoom: info.zoom
+    zoom: info.map.zoom
   };
 
   return (
-    <div id={cmp.type} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
+    <div id={cmp.type} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick} style={style} >
       
       {cmp.info.title && <h2
         data-container={JSON.stringify(info.title)}
@@ -29,15 +29,15 @@ export function MapCmp({ style, cmp, onElClick }) {
         {info.title.txt}
       </h2>}
 
-      <div className="map-container" style={style} data-container={JSON.stringify(info.name)} onClick={onElClick}>
+      <div className="map-container" data-container={JSON.stringify(info.map)} onClick={onElClick} style={info.map.style}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyCB0AieRfE8jFeAQWL8okf7J69APWc8VTI" }}
           defaultCenter={defaultProps.center}
           defaultZoom={defaultProps.zoom}
         >
           <AnyReactComponent
-            lat={info.cords.lat}
-            lng={info.cords.lng}
+            lat={defaultProps.center.lat}
+            lng={defaultProps.center.lng}
             text="📍"
           />
         </GoogleMapReact>

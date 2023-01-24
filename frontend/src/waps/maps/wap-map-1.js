@@ -8,13 +8,19 @@ export const wapMap1 = {
   theme: 'theme-map-exciting',
   info: {
     title: { txt: 'Our location', style: { fontSize: '1.3em', fontFamily: 'fe-serif' }, id: utilService.makeId(), type: 'txt' },
-    cords: { lat: 40.83479928947879, lng: 14.106100441161631 },
-    zoom: 14,
+    map: {
+      cords: { lat: 40.83479928947879, lng: 14.106100441161631 },
+      zoom: 14,
+      type: 'map',
+      style: {
+        height: '200px',
+        width: '70%',
+      },
+      id: utilService.makeId()
+    }
   },
   style: {
     fontFamily: 'fe-serif',
-    height: '200px',
-    width: '70%',
   }
 }
 

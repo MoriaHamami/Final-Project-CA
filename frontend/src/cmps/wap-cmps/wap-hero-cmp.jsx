@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { useSelector } from 'react-redux'
 
-export function WapHero({ style, cmp, onElClick }) {
+export function HeroCmp({ style, cmp, onElClick }) {
   const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false })
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info

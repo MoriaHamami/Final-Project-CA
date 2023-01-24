@@ -12,15 +12,16 @@ export const wapGallery2B = {
     fontFamily: 'handlee',
   },
   info: {
-    subtitle: {txt: 'Reservations', type: 'txt', id: utilService.makeId(), type: 'txt'},
-    title: {txt: 'BOOK A TABLE', type: 'txt', id: utilService.makeId(), type: 'txt'},
-    btn: { label: 'Book Now', link: '#wc03', type: 'btn', id: utilService.makeId(), type: 'btn' },
+    subtitle: {txt: 'Reservations', type: 'txt', id: utilService.makeId(), type: 'txt', style: {}},
+    title: {txt: 'BOOK A TABLE', type: 'txt', id: utilService.makeId(), type: 'txt', style: {}},
+    btn: { label: 'Book Now', link: '#wc03', type: 'btn', id: utilService.makeId(), type: 'btn', style: {} },
     photos: 
         [{
             url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063387/card8_wm0gfc.jpg',
             title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
             subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
             type: 'img',
+            style: {},
             id: utilService.makeId()
         },
         {
@@ -28,6 +29,7 @@ export const wapGallery2B = {
             title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
             subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
             type: 'img',
+            style: {},
             id: utilService.makeId()
         },
         {
@@ -35,6 +37,7 @@ export const wapGallery2B = {
             title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
             subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
             type: 'img',
+            style: {},
             id: utilService.makeId()
         },
         {
@@ -42,6 +45,7 @@ export const wapGallery2B = {
             title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
             subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
             type: 'img',
+            style: {},
             id: utilService.makeId()
         }]
     }

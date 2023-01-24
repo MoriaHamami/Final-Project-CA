@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 
-export function WapHeader({ style, cmp, onElClick, onElementTxtChange }) {
+export function HeaderCmp({ style, cmp, onElClick, onElementTxtChange }) {
 
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info

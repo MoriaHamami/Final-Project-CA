@@ -1,8 +1,8 @@
 
 import { ContainerCmp } from './wap-container-cmp.jsx'
-import { WapHeader } from './wap-header-cmp.jsx'
+import { HeaderCmp } from './wap-header-cmp.jsx'
 import { WapFooter } from './wap-footer-cmp.jsx'
-import { WapHero } from './wap-hero-cmp.jsx'
+import { HeroCmp } from './wap-hero-cmp.jsx'
 import { WapPreview } from './wap-preview-cmp.jsx'
 import { AboutCmp} from './wap-about-cmp.jsx'
 
@@ -28,14 +28,14 @@ export function DynamicCmp(props) {
       )
     case 'wap-header':
       return (
-        <WapHeader
+        <HeaderCmp
           {...props}
           style={cmp.style}
         />
       )
     case 'wap-hero':
       return (
-        <WapHero
+        <HeroCmp
           {...props}
           style={cmp.style}
         />
