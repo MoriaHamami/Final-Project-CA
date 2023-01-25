@@ -1,33 +1,20 @@
-.wap-hero-5{
-        background-position: bottom;
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-        color: whitesmoke;
-        position: relative;
-    
-            
-          padding: 18rem $normal-padding 20rem;
-        //   max-height: 650px;
-      
-        .title {
-          margin-bottom: 10px;
-          // line-height: 1.2;
-          margin-bottom: 2rem;
-        }
-      
-        button {
-            padding: 10px 20px;
-    
-            &:hover{
-                opacity: 0.9;
-            }
-    
-        }
+.wap-hero-5 {
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: whitesmoke;
+  padding: 7.5rem $normal-padding;
+
+
+  .title {
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+
 }

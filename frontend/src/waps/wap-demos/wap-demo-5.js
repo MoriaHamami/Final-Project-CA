@@ -1,9 +1,9 @@
-import { wapGallery4A } from "../galleries/wap-gallery-4a.js";
-import { wapGallery4B } from "../galleries/wap-gallery-4b.js";
+import { wapGallery5A } from "../galleries/wap-gallery-5a.js";
+import { wapGallery5B } from "../galleries/wap-gallery-5b.js";
 import { wapHeader5 }  from "../headers/wap-header-5.js";
 import { wapHero5 } from "../heros/wap-hero-5.js";
 import { wapForm4 } from "../forms/wap-form-4.js";
-import { wapAbout4 } from "../about/wap-about-4.js";
+import { wapAbout5 } from "../about/wap-about-5.js";
 import { wapFooter4 } from "../footers/wap-footer-4.js";
 
 
@@ -16,10 +16,10 @@ export const wapDemo5 = {
 
 	cmps: [
 		wapHeader5,
+		wapAbout5,
+		wapGallery5A,
 		wapHero5,
-		// wapGallery4A,
-		// wapAbout4,
-        // wapGallery4B,
+        wapGallery5B,
 		// wapForm4,
         // wapFooter4
 	],

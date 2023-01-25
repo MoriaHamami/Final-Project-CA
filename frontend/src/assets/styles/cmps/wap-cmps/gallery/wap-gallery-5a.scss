@@ -1,0 +1,44 @@
+.wap-gallery-5a {
+    display: flex;
+    flex-direction: column;
+    color: $almost-black;
+    background-color: #d8b6b6;
+    padding: 5rem 2rem;
+    text-align: center;
+
+    .title{
+        margin-bottom: 30px;
+    }
+  
+    .container-txt {
+      padding-bottom: 50px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  
+    .wap-gallery-img-container {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+      gap: 20px;
+      margin: auto;
+      
+      .photo-container{
+          padding: 1rem;
+          background-color: white;
+
+      }
+  
+      img {
+        max-width: 15rem;
+        margin-bottom: 1rem;
+      }
+  
+      .gallery-title {
+        font-size: 1.2rem;
+      }
+  
+      .gallery-subsubtitle {
+        max-width: 15rem;
+      }
+    }
+  }

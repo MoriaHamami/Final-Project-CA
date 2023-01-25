@@ -5,13 +5,12 @@ export const wapHero5 = {
   type: 'wap-hero',
   name: 'wap-hero-5',
   info: {
-    title: { txt: 'Urban Adventures - Graffiti Art', style: { fontFamily: 'open-sans', fontSize: '1.5em',  color: 'black', textAlign:'center' }, id: utilService.makeId(), type: 'txt' },
-    // subtitle: { txt: 'We are strategic consulting & media agency for apps. We are committed to meeting your company’s needs.', style: { fontSize: '1.1em',  color: 'white', textAlign:'center' }, id: utilService.makeId(), type: 'txt' },
-    btn: { label: 'V', link: '#wc20b', id: utilService.makeId(), style: { fontSize: '1.2em', color:'black', backgroundColor: 'inherit' }, type: 'btn' },
+    title: { txt: `I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.`, style: { fontSize: '1.3em', color:'black', fontFamily: 'roboto-light' }, id: utilService.makeId(), type: 'txt' },
+    subtitle: { txt: '| Rosie Gomez |', link: '#wc20b', id: utilService.makeId(), style: { fontSize: '1.3em', color:'black', fontFamily: 'playfair-regular' }, type: 'btn' },
   },
   theme: 'theme-header-happy',
   style: {
-    backgroundImage: 'url("https://res.cloudinary.com/dimirmc9j/image/upload/v1674631446/hero5_gfyf4y.webp")',
-    fontFamily: 'roboto-light',
+    backgroundImage: 'url("https://res.cloudinary.com/dimirmc9j/image/upload/v1674662607/%D7%A9%D7%9B%D7%A9%D7%93%D7%92%D7%A9%D7%92_m1cite.png")',
+    backgroundAttachment: 'fixed',
   }
 }

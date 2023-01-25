@@ -1,0 +1,45 @@
+.wap-about-5 {
+    width: 100%;
+    padding: 0 $normal-padding 8.5rem;
+    text-align: center;
+    position: relative;
+    background-color: #d8b6b6;
+    margin-top: 40rem;
+    max-height: 400px;
+
+
+
+
+    .text-container {
+        position: relative;
+        bottom: 50px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+
+        .subtitle {
+            align-self: center;
+            max-width: 800px;
+        }
+
+        .title {
+            margin-bottom: 30px;
+        }
+    }
+
+    .img-container {
+        background-size: cover;
+        position: relative;
+        bottom: 950px;
+
+        img {
+            z-index: 0;
+            // position: relative;
+            min-height: 250px;
+
+            // bottom: 200px;
+        }
+
+    }
+
+}

@@ -51,27 +51,29 @@ export function GalleryCmp({ style, cmp, onElClick, selectedCmpId }) {
                                 })}
 
                                 suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.id} style={photo.style} data-container={JSON.stringify(photo)} onClick={onElClick} />
-                            {photo.title?.txt && <h2
+                            <div className="txt-container">
+                                {photo.title?.txt && <h2
 
-                                className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''}gallery-title  ${selectedElement?.id !== info.title.id && isOn['title' + idx] && 'hover'}`}
-                                onMouseOut={() => setIsOn((prevIsOn) => {
-                                    return { ...prevIsOn, ['title' + idx]: false }
-                                })}
-                                onMouseOver={() => setIsOn((prevIsOn) => {
-                                    return { ...prevIsOn, ['title' + idx]: true }
-                                })}
-                                suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.title.id} style={photo.title.style} data-container={JSON.stringify(photo.title)} onClick={onElClick}>{photo.title.txt}
-                            </h2>}
-                            {photo.subtitle?.txt &&
-                                <p
-                                    className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.subtitle.id) ? 'selected' : ''}gallery-subsubtitle  ${selectedElement?.id !== info.subtitle?.id && isOn['subtitle' + idx] && 'hover'}`}
+                                    className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''}gallery-title  ${selectedElement?.id !== info.title.id && isOn['title' + idx] && 'hover'}`}
                                     onMouseOut={() => setIsOn((prevIsOn) => {
-                                        return { ...prevIsOn, ['subtitle' + idx]: false }
+                                        return { ...prevIsOn, ['title' + idx]: false }
                                     })}
                                     onMouseOver={() => setIsOn((prevIsOn) => {
-                                        return { ...prevIsOn, ['subtitle' + idx]: true }
+                                        return { ...prevIsOn, ['title' + idx]: true }
                                     })}
-                                    suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.subtitle.id} style={photo.subtitle.style} data-container={JSON.stringify(photo.subtitle)} onClick={onElClick}>{photo.subtitle.txt}</p>}
+                                    suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.title.id} style={photo.title.style} data-container={JSON.stringify(photo.title)} onClick={onElClick}>{photo.title.txt}
+                                </h2>}
+                                {photo.subtitle?.txt &&
+                                    <p
+                                        className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.subtitle.id) ? 'selected' : ''}gallery-subsubtitle  ${selectedElement?.id !== info.subtitle?.id && isOn['subtitle' + idx] && 'hover'}`}
+                                        onMouseOut={() => setIsOn((prevIsOn) => {
+                                            return { ...prevIsOn, ['subtitle' + idx]: false }
+                                        })}
+                                        onMouseOver={() => setIsOn((prevIsOn) => {
+                                            return { ...prevIsOn, ['subtitle' + idx]: true }
+                                        })}
+                                        suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.subtitle.id} style={photo.subtitle.style} data-container={JSON.stringify(photo.subtitle)} onClick={onElClick}>{photo.subtitle.txt}</p>}
+                            </div>
                         </div>
                     )
                 })}

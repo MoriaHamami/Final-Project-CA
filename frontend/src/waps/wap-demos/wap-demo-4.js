@@ -11,7 +11,7 @@ import { wapFooter4 } from "../footers/wap-footer-4.js";
 
 export const wapDemo4 = {
 	_id: "5e28393890asd01785d4e42",
-	name: "Go mobile",
+	name: "Marketing agency",
 	imgUrl: "https://res.cloudinary.com/dimirmc9j/image/upload/v1674597989/demo4img_thh8v5.png",
 
 	cmps: [

@@ -73,7 +73,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
           {info.txt.txt}
         </p>}
 
-        <nav>
+        {info.btn && <nav>
           <button suppressContentEditableWarning={true}
             contentEditable={selectedElement?.id === info.btn.id}
             style={info.btn.style}
@@ -88,7 +88,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
             href={info.btn.link}>
             {cmp.info.btn.label}
           </button>
-        </nav>
+        </nav>}
 
         {info.photo && <div className="img-container">
                 <img src={info.photo.url} alt={''} suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.photo.id} style={info.photo.style} data-container={JSON.stringify(info.photo)} onClick={onElClick} />
