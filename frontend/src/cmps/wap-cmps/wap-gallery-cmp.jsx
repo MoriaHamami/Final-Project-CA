@@ -55,25 +55,26 @@ export function GalleryCmp({ style, cmp, onElClick, selectedCmpId }) {
                             <div className="txt-container">
                                 {photoInfo.title?.txt && <h2
 
-                                className={`${(selectedCmpId === cmp.id && selectedElement?.id === photoInfo.title.id) ? 'selected' : ''} gallery-title  ${selectedElement?.id !== photoInfo.title.id && isOn['img-title' + idx] && 'hover'}`}
-                                onMouseOut={() => setIsOn((prevIsOn) => {
-                                    return { ...prevIsOn, ['img-title' + idx]: false }
-                                })}
-                                onMouseOver={() => setIsOn((prevIsOn) => {
-                                    return { ...prevIsOn, ['img-title' + idx]: true }
-                                })}
-                                suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photoInfo.title.id} style={photoInfo.title.style} data-container={JSON.stringify(photoInfo.title)} onClick={onElClick}>{photoInfo.title.txt}
-                            </h2>}
-                            {photoInfo.subtitle?.txt &&
-                                <p
-                                    className={`${(selectedCmpId === cmp.id && selectedElement?.id === photoInfo.subtitle.id) ? 'selected' : ''} gallery-subtitle  ${selectedElement?.id !== photoInfo.subtitle?.id && isOn['img-subtitle' + idx] && 'hover'}`}
+                                    className={`${(selectedCmpId === cmp.id && selectedElement?.id === photoInfo.title.id) ? 'selected' : ''} gallery-title  ${selectedElement?.id !== photoInfo.title.id && isOn['img-title' + idx] && 'hover'}`}
                                     onMouseOut={() => setIsOn((prevIsOn) => {
-                                        return { ...prevIsOn, ['img-subtitle' + idx]: false }
+                                        return { ...prevIsOn, ['img-title' + idx]: false }
                                     })}
                                     onMouseOver={() => setIsOn((prevIsOn) => {
-                                        return { ...prevIsOn, ['img-subtitle' + idx]: true }
+                                        return { ...prevIsOn, ['img-title' + idx]: true }
                                     })}
-                                    suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photoInfo.subtitle.id} style={photoInfo.subtitle.style} data-container={JSON.stringify(photoInfo.subtitle)} onClick={onElClick}>{photoInfo.subtitle.txt}</p>}
+                                    suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photoInfo.title.id} style={photoInfo.title.style} data-container={JSON.stringify(photoInfo.title)} onClick={onElClick}>{photoInfo.title.txt}
+                                </h2>}
+                                {photoInfo.subtitle?.txt &&
+                                    <p
+                                        className={`${(selectedCmpId === cmp.id && selectedElement?.id === photoInfo.subtitle.id) ? 'selected' : ''} gallery-subtitle  ${selectedElement?.id !== photoInfo.subtitle?.id && isOn['img-subtitle' + idx] && 'hover'}`}
+                                        onMouseOut={() => setIsOn((prevIsOn) => {
+                                            return { ...prevIsOn, ['img-subtitle' + idx]: false }
+                                        })}
+                                        onMouseOver={() => setIsOn((prevIsOn) => {
+                                            return { ...prevIsOn, ['img-subtitle' + idx]: true }
+                                        })}
+                                        suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photoInfo.subtitle.id} style={photoInfo.subtitle.style} data-container={JSON.stringify(photoInfo.subtitle)} onClick={onElClick}>{photoInfo.subtitle.txt}</p>}
+                            </div>
                         </div>
                     )
                 })}
@@ -89,8 +90,8 @@ export function GalleryCmp({ style, cmp, onElClick, selectedCmpId }) {
                 })}
                 suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.btn.id} style={info.btn.style} data-container={JSON.stringify(info.btn)} onClick={onElClick}>{info.btn.label}</a>}
         </div>
-        
-        )
-        // </div>
+
+    )
+    // </div>
 }
 
