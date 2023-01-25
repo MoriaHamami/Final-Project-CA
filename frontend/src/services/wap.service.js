@@ -74,7 +74,9 @@ export const wapService = {
     getCmpsByCategory,
     getWapDemoById,
     getCmpById,
-    getCmpTypes
+    getCmpTypes,
+    saveCmp,
+    findCmpIdx
     // getWapByName
     // getEmptyWap,
     // addWapMsg
@@ -168,7 +170,6 @@ async function save(wap) {
         savedWap = storageService.put(STORAGE_KEY, wap)
         // return storageService.put(STORAGE_KEY, wap)
         // savedWap = await httpService.put(`wap/${wap._id}`, wap)
-
     } else {
         // Later, owner is set by the backend
         // delete wap._id
@@ -177,6 +178,31 @@ async function save(wap) {
         // savedWap = await httpService.post('wap', wap)
     }
     return savedWap
+}
+
+async function saveCmp(wap, cmp, idx) {
+    let savedWap
+    if (wap.cmps[idx].id === cmp.id) {
+        wap.cmps[idx] = cmp
+        savedWap = storageService.put(STORAGE_KEY, wap)
+    } else {
+        // Change cmp id so the cmp in sidebar and wap wont be similar
+        const cmpCopy = { ...cmp }
+        cmpCopy.id = utilService.makeId()
+        wap.cmps.splice(idx, 0, cmpCopy)
+        savedWap = await storageService.post(STORAGE_KEY, wap)
+    }
+    return savedWap
+}
+
+// TO CHECKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+function findCmpIdx(parentCmp, cmp) {
+    const idx = parentCmp?.cmps?.findIndex((currCmp) => currCmp.id === cmp.id)
+    if (idx > -1) {
+      return idx
+    } else {
+        parentCmp?.cmps?.forEach((currCmp) => findCmpIdx(currCmp, cmp))
+    }
 }
 
 function _createWaps() {

@@ -13,7 +13,7 @@ export function HeaderCmp({ style, cmp, onElClick, onElementTxtChange, selectedC
 
   return (
     <div id={cmp.type} data-container={JSON.stringify(cmp)} style={style} onClick={onElClick}
-      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover')}
+      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
       onMouseOut={() => setIsOn((prevIsOn) => {
         return { ...prevIsOn, cmp: false }
       })}

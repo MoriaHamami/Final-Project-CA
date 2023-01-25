@@ -20,7 +20,7 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
 
   return (
     <div id={cmp.type}
-      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover')}
+      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
       onMouseOut={() => setIsOn((prevIsOn) => {
         return { ...prevIsOn, cmp: false }
       })}
@@ -45,7 +45,7 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
         {info.title.txt}
       </h2>}
 
-      <div className="map-container" data-container={JSON.stringify(info.map)} onClick={onElClick} style={info.map.style}
+      <div className="map-container" style={info.map.style}
         onMouseOut={() => setIsOn((prevIsOn) => {
           return { ...prevIsOn, map: false }
         })}
@@ -67,9 +67,10 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
         </GoogleMapReact>
         <div
           className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.map.id) ? 'selected' : ''} map-edit ${selectedElement?.id !== info.map.id && isOn.map && 'hover'}`}
-
-
-        >✎</div>
+          data-container={JSON.stringify(info.map)}
+          onClick={onElClick} >
+          ✎
+        </div>
       </div>
 
     </div>

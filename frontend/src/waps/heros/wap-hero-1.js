@@ -5,10 +5,10 @@ export const wapHero1 = {
   type: 'wap-hero',
   name: 'wap-hero-1',
   info: {
-    title: {txt: 'Mario', id: utilService.makeId(), style: { fontWeight: '600', fontSize: '2em'}, type: 'txt'},
-    subtitle: {txt: 'PIZZA PLACE', id: utilService.makeId(), style: {fontSize: '3.5em'}, type: 'txt'},
-    txt: {txt: 'TAKEOUT & DELIVERY', id: utilService.makeId(), style: {fontWeight: '500', fontSize: '1.3em'}, type: 'txt'},
-    btn: { label: 'Order Now', link: '#wc10b', id: utilService.makeId(), style: {borderRadius: '1em',backgroundColor: 'rgba(255, 255, 255, 0.276)', fontWeight: '600'}, type: 'btn' },
+    title: {txt: 'Mario', id: utilService.makeId(), style: { fontWeight: '600', fontSize: '2em'}, type: 'txt', key: 'title'},
+    subtitle: {txt: 'PIZZA PLACE', id: utilService.makeId(), style: {fontSize: '3.5em'}, type: 'txt', key: 'subtitle'},
+    txt: {txt: 'TAKEOUT & DELIVERY', id: utilService.makeId(), style: {fontWeight: '500', fontSize: '1.3em'}, type: 'txt', key: 'txt'},
+    btn: { label: 'Order Now', link: '#wc10b', id: utilService.makeId(), style: {borderRadius: '1em',backgroundColor: 'rgba(255, 255, 255, 0.276)', fontWeight: '600'}, type: 'btn', key: 'btn' },
   },
   theme: 'theme-header-happy',
   style: {

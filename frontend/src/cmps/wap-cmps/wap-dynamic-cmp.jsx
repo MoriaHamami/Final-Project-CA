@@ -3,7 +3,6 @@ import { ContainerCmp } from './wap-container-cmp.jsx'
 import { HeaderCmp } from './wap-header-cmp.jsx'
 import { WapFooter } from './wap-footer-cmp.jsx'
 import { HeroCmp } from './wap-hero-cmp.jsx'
-import { WapPreview } from './wap-preview-cmp.jsx'
 import { AboutCmp} from './wap-about-cmp.jsx'
 
 import { useEffect, useState } from 'react'
@@ -43,13 +42,6 @@ export function DynamicCmp(props) {
     case 'wap-about':
       return (
         <AboutCmp
-          {...props}
-          style={cmp.style}
-        />
-      )
-    case 'wap-preview':
-      return (
-        <WapPreview
           {...props}
           style={cmp.style}
         />
