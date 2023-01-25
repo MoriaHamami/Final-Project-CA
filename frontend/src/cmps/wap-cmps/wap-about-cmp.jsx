@@ -41,7 +41,7 @@ export function AboutCmp({ style, cmp, onElClick, selectedCmpId }) {
             </div>
             {/* {info.photos.map(photo => { */}
             {/* return <div key={photo.url} className="photo-container"> */}
-            <div
+           {info.photo &&  <div
                 className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.photo.id) ? 'selected' : ''} img-container ${selectedElement?.id !== info.photo.id && isOn.img && 'hover'}`}
                 onMouseOut={() => setIsOn((prevIsOn) => {
                     return { ...prevIsOn, img: false }
@@ -52,7 +52,7 @@ export function AboutCmp({ style, cmp, onElClick, selectedCmpId }) {
                 })}
             >
                 <img src={info.photo.url} alt={''} suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.photo.id} style={info.photo.style} data-container={JSON.stringify(info.photo)} onClick={onElClick} />
-            </div >
+            </div >}
             {info.txt?.txt && <p suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.txt.id} style={info.txt.style} data-container={JSON.stringify(info.txt)} onClick={onElClick}
                 className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.txt.id) ? 'selected' : ''} gallery-subtitle ${selectedElement?.id !== info.txt.id && isOn.txt && 'hover'}`}
                 onMouseOut={() => setIsOn((prevIsOn) => {
