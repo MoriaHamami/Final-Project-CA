@@ -2,6 +2,7 @@
 // import { getCmpsByCategory } from '../../services/wap.service.local'
 import { useState, useEffect } from "react"
 import { Draggable } from "react-beautiful-dnd"
+import { utilService } from "../../services/util.service"
 import { wapService } from "../../services/wap.service"
 
 
@@ -37,45 +38,47 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
 
             <div className="elements-container">
                 {cmpsByCurrType.map((cmp, index) => {
-                    return <Draggable draggableId={JSON.stringify(cmp)} key={cmp.id} index={index}>
-                        {
-                            (provided, snapshot) => (
-                                <>
-                                    <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                        {/* <div className="active">{cmp.imgUrl}</div> */}
-                                        <img src={cmp.imgUrl} />
-                                        {provided.placeholder}
-                                    </div>
-                                    {snapshot.isDragging && <img src={cmp.imgUrl} />}
-                                </>
+                    // return <Draggable draggableId={cmp.name} key={cmp.id} index={index}>
 
-                            )
-                        }
-                    </Draggable>
+                        return <Draggable draggableId={JSON.stringify(cmp)} key={cmp.id} index={index}>
+                            {
+                                (provided, snapshot) => (
+                                    <>
+                                        <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                            {/* <div className="active">{cmp.imgUrl}</div> */}
+                                            <img src={cmp.imgUrl} />
+                                        </div>
+                                            {provided.placeholder}
+                                        {snapshot.isDragging && <img src={cmp.imgUrl} />}
+                                    </>
+
+                                )
+                            }
+                        </Draggable>
 
                     // <Draggable draggableId={cmp.id} key={cmp.id} index={index} >
                     //     {
-                    //         (provided, snapshot) => (
-                    //             <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                    //                 {/* <img src={cmp.imgUrl} /> */}
-                    //                 <div className="active">{cmp.name}</div>
-                    //                 {provided.placeholder}
-                    //             </div>
-                    //         )
-                    //     }
-                    // </Draggable>
-                })}
-            </div>
-        </div>
+                                //         (provided, snapshot) => (
+                                //             <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                //                 {/* <img src={cmp.imgUrl} /> */}
+                                //                 <div className="active">{cmp.name}</div>
+                                //                 {provided.placeholder}
+                                //             </div>
+                                //         )
+                                //     }
+                                // </Draggable>
+                            })}
+                        </div>
+                    </div>
 
 
     </div>
 }
-{/* {cmps.length && <div>
+            {/* {cmps.length && <div>
     <div onClick={() => onPickedCmp(cmps[1].id)}>HEADER 2</div>
 </div>} */}
 
-{/* {cmps.length && <select name="cars" id="cars" onChange={onPickedCmp}>
+            {/* {cmps.length && <select name="cars" id="cars" onChange={onPickedCmp}>
     <option value={cmps[0].id}>Header1</option>
     <option value={cmps[1].id}>Header2</option>
 </select>} */}

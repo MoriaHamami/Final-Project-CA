@@ -42,10 +42,14 @@ export function Editor() {
     const onEnd = (result) => {
         setIsDragging(false)
         if (result.source.droppableId === 'from-sidebar-add' && result.destination.droppableId === 'editor') {
-            // const idx = result.source.index
-            // const cmpsByCurrType = wapService.getCmpsByCategory('headers')
-            console.log('rsult===', result)
+            // const name = result.draggableId.split()[1]   + 's'
+            // const cmpId = wapService.getCmpsByCategory(name)
+            // console.log(cmpId);
+        //   const currCmp = wapService.getCmpById(cmpId)
+            // console.log(currCmp);
+            // console.log('rsult===', result)
             const currCmp = JSON.parse(result.draggableId)
+            // const idx = result.source.index
             // const currCmp = cmpsByCurrType[idx]
             const destIdx = result.destination.index
             return addCmpToBoard(currCmp, destIdx)

@@ -33,6 +33,7 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
             {(provided, snapshot) => (
               <div ref={provided.innerRef} className="delete-container">
                 <span className={`material-symbols-outlined  ${isDragging ? "editor-delete-icon" : "editor-delete-icon-hidden"}`}>delete</span>
+                {/* {provided.placeholder} */}
               </div>
             )}
           </Droppable >
@@ -43,10 +44,11 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
 
         {editType === 'add' && <Droppable droppableId="from-sidebar-add">
           {(provided, snapshot) => (
-            // <div ref={provided.innerRef}>
+            <div className="dorppable-container" ref={provided.innerRef}>
             <SidebarAdd innerRef={provided.innerRef} onPickedCmp={onPickedCmp} />
-            // </div>
-          )}
+            {/* {provided.placeholder} */}
+            </div>
+            )}
         </Droppable>}
 
         {editType === 'edit' && <SidebarEdit handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}

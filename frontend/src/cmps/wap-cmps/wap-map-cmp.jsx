@@ -41,6 +41,7 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
             text="📍"
           />
         </GoogleMapReact>
+        <div className="map-edit">✎</div>
       </div>
 
     </div>

@@ -43,6 +43,7 @@ import { wapFooter2 } from '../waps/footers/wap-footer-2'
 // import { httpService } from './http.service.js'
 import { userService } from './user.service.js'
 import { storageService } from './async-storage.service.js'
+import { utilService } from './util.service'
 
 
 const STORAGE_KEY = 'waps'
@@ -93,12 +94,12 @@ function getCmpTypes() {
 }
 
 function getCmpsByCategory(category) {
+    // console.log(category );
     if (mapCmpByCategory[category]) {
         return mapCmpByCategory[category]
         //   return mapCmpByCategory[category].map((cmp) => ({
-        //     id: cmp.id,
-        //     thumbnail: cmp.thumbnail,
-        //     category,
+        //     ...cmp,
+        //     id: utilService.makeId(),
         //   }))
     }
 }
