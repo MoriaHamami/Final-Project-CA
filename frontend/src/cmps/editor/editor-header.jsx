@@ -52,10 +52,10 @@ export function EditorHeader({ wap }) {
                 <button onClick={() => setIsVisible(!isVisible)} className='publish-btn'>Publish</button>
                 {/* <Link key="/publish" to={`/ publish / ${ wap.name } `}><button className='publish-btn'>Publish</button></Link> */}
             </div>
-            <div style={{ backgroundcolor: 'red', height: '70px', width: '70px', visibility: isVisible ? 'visible' : 'hidden', zIndex: '1' }}>
+            {/* <div style={{ backgroundcolor: 'red', height: '70px', width: '70px', visibility: isVisible ? 'visible' : 'hidden', zIndex: '1' }}>
                 <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
                 <button onClick={changeWapName}>Save your website</button>
-            </div>
+            </div> */}
 
         </header >
     )

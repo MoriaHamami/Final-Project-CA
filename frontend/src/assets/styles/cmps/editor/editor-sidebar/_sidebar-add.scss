@@ -6,6 +6,8 @@
     height: 100%;
 
 
+
+
     .add-header {
         padding-block: 1.65rem;
         font-size: 1.1rem;
@@ -16,12 +18,10 @@
 }
 
 .add-container {
-    height: 100%;
     display: flex;
     border-top: 1px solid lightgray;
     
     .add-sidebar-type {
-        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -52,8 +52,30 @@
     .elements-container {
         display: flex;
         flex-direction: column;
-        // height: 100%;
-        // padding-top: 5px;
+
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            border-radius: 1px;
+            background-color: white;
+            border: 1px solid $almost-white;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: #DDDDDD;
+            z-index: 1;
+    
+            &:hover {
+                cursor: pointer;
+                background-color: #cbcbcb;
+            }
+        }
+        
         
         // padding: 1rem 0 1rem 1rem;
         > * {
@@ -64,5 +86,7 @@
         } 
         
     }
+
+  
     
 }
