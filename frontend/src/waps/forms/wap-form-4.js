@@ -4,7 +4,7 @@ export const wapForm4 = {
     id: utilService.makeId(),
     type: 'wap-form',
     name: 'wap-form-4',
-    imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-form-2_aw6wgw.jpg',
+    imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674680444/Webix/wap-form-4_k54tya.jpg',
 
     info: {
         title: { txt: 'BE IN', style: { fontFamily: 'open-sans', fontSize: '1.1em', letterSpacing: '0.3em', lineHeight: '1.4em', color: 'white' }, id: utilService.makeId(), type: 'txt', key: 'title' },

@@ -186,7 +186,8 @@ async function save(wap) {
     let savedWap
     if (wap.createdBy) {
         // const wapCopy = { ...wap }
-        savedWap = storageService.put(STORAGE_KEY, wap)
+        savedWap = await storageService.put(STORAGE_KEY, wap)
+        console.log(savedWap);
         // return storageService.put(STORAGE_KEY, wap)
         // savedWap = await httpService.put(`wap/${wap._id}`, wap)
     } else {

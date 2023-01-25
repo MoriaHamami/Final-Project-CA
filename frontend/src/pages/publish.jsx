@@ -9,6 +9,7 @@ export function Publish() {
   const wap = useSelector((storestate) => storestate.wapModule.wap)
   const navigate = useNavigate()
   const { wapName } = useParams()
+  let isNamed = false
 
   useEffect(() => {
     try {
@@ -25,5 +26,6 @@ export function Publish() {
 
     <div className="preview-page">
       {wap?.cmps.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
-    </div>)
+    </div>
+  )
 }
