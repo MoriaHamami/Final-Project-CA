@@ -3,11 +3,11 @@ import { utilService } from '../../services/util.service.js'
 export const wapGallery5B = {
     id: utilService.makeId(),
     type: 'wap-gallery',
-    name: 'wap-gallery-1',
+    name: 'wap-gallery-5b',
     theme: 'theme-header-happy',
     thumbnail: 'https://i.postimg.cc/7h0qq8v4/wap-cards-1.png',
     info: {
-        title: {txt: 'PORTFOLIO', id: utilService.makeId(), type: 'txt', style: {}, key: 'title'},
+        title: {txt: 'PORTFOLIO', id: utilService.makeId(), type: 'txt', style: {fontSize:'3rem', fontFamily:'roboto-regular',textAlign:'center',letterSpacing: '0.2em'}, key: 'title'},
         subtitle: {txt: '', id: utilService.makeId(), type: 'txt', style: {},  key: 'subtitle'},
         btn: {label: '', link: '', id: utilService.makeId(), type: 'btn', style: {},  key: 'btn'},
         photos: [

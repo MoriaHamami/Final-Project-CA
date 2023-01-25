@@ -27,7 +27,7 @@ export function AboutCmp({ style, cmp, onElClick, selectedCmpId }) {
                         return { ...prevIsOn, title: true }
                     })}>{info.title.txt}
                 </div>}
-                {info.subtitle.txt && <div suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.subtitle.id} style={info.subtitle.style} data-container={JSON.stringify(info.subtitle)} onClick={onElClick}
+                {info.subtitle && <div suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.subtitle.id} style={info.subtitle.style} data-container={JSON.stringify(info.subtitle)} onClick={onElClick}
                     className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.subtitle.id) ? 'selected' : ''} subtitle ${selectedElement?.id !== info.subtitle.id && isOn.subtitle && 'hover'}`}
                     onMouseOut={() => setIsOn((prevIsOn) => {
                         return { ...prevIsOn, subtitle: false }

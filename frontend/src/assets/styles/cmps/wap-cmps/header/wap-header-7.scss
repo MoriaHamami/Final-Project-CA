@@ -1,19 +1,21 @@
 
-  .wap-header-5 {
+  .wap-header-7 {
     display: flex;
+    position: relative;
     // z-index: 1;
     // position: fixed;
-    background-color: white;
+    background-color: #f7e5d2;
     // width: 97%;
     justify-content: center;
-    gap: 8rem;
-    padding: 2rem $normal-padding;
+    gap: 4rem;
+    padding: 1.3rem $normal-padding;
     align-items: center;
     color: $t2clr1;
   
     .logo {
       margin: 0;
       font-weight: 100;
+      flex-grow: 1;
     }
   
     p {
@@ -26,8 +28,8 @@
     }
 
     .login{
-        margin-left: 100px;
         display: flex;
+        align-items: center;
     }
   
     .nav-bar {
