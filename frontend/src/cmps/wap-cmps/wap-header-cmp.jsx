@@ -67,7 +67,7 @@ export function HeaderCmp({ style, cmp, onElClick, onElementTxtChange, selectedC
         href={info.login.link}
         onClick={onElClick}
         onInput={ev => onElementTxtChange(ev.currentTarget.textContent)}
-        key={info.login.id}>{info.login.label}</a>}
+        key={info.login.id}><span class="material-symbols-outlined">account_circle</span>{info.login.label}</a>}
     </div>
   )
 }

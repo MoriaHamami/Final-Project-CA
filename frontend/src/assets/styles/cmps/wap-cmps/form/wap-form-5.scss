@@ -1,0 +1,81 @@
+.wap-form-5 {
+
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 6rem $normal-padding 9rem;
+    flex-direction: column;
+    color: $almost-black;
+  
+    .title {
+      // color: $almost-white;
+      padding: 0 2rem;
+      margin: 0;
+    }
+  
+    .subtitle {
+      margin-bottom: 1rem;
+    }
+    .txt {
+      margin-bottom: 2rem;
+    }
+  
+    form {
+      display: flex;
+        flex-direction: column;
+        max-height: 100px;
+      flex-wrap: wrap;
+      // align-items: center;
+      // justify-content: space-between;
+      gap: 15px;
+      margin: 0 auto;
+      position: relative;
+      right: 100px;
+  
+      input {
+        flex-basis: 48%;
+        // background-color: white;
+        padding: 8px 8px;
+        border: none;
+        margin: 0;
+        // border-bottom: 1px solid white;
+        // padding: 8px 0;
+        border-radius: 0;
+        background-color: rgb(216 182 182);
+        color: white;
+        
+        &:nth-of-type(3) {
+          height: 100px;
+          padding-bottom: 55px;
+          background-color: darken(rgb(216 182 182), 10%);
+        }
+        
+        
+        
+        &::placeholder {
+          color: white;
+        }
+  
+        &:hover {
+            background-color: darken(rgb(216 182 182), 10%);
+        }
+        
+        &:focus-visible {
+            background-color: lighten(black, 40%);
+  
+        }
+      }
+  
+      button {
+        // flex-basis: 100%;
+        position: relative;
+       right: 95px;
+       top: 80px;
+        padding: 8px 24px;
+        background-color: inherit;
+      }
+    }
+  }

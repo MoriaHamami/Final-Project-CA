@@ -2,7 +2,7 @@ import { wapGallery6A } from "../galleries/wap-gallery-6a.js";
 import { wapGallery6B } from "../galleries/wap-gallery-6b.js";
 import { wapHeader6 }  from "../headers/wap-header-6.js";
 import { wapHero6 } from "../heros/wap-hero-6.js";
-import { wapForm4 } from "../forms/wap-form-4.js";
+// import { wapForm4 } from "../forms/wap-form-4.js";
 import { wapMap6 } from "../maps/wap-map-6.js";
 import { wapAbout6 } from "../about/wap-about-6.js";
 import { wapFooter6 } from "../footers/wap-footer-6.js";
@@ -22,7 +22,6 @@ export const wapDemo6 = {
 		wapGallery6A,
         wapGallery6B,
         wapMap6,
-		// wapForm4,
         wapFooter6
 	],
 	isPublic: true
