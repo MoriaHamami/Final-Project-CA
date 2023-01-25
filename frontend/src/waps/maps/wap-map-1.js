@@ -6,6 +6,7 @@ export const wapMap1 = {
   type: 'wap-map',
   name: 'wap-map-1',
   theme: 'theme-map-exciting',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674683980/Webix/wap-map_yxxpuj.jpg',
   info: {
     title: { txt: 'Our location', style: { fontSize: '1.3em', fontFamily: 'fe-serif' }, id: utilService.makeId(), type: 'txt', key: 'title' },
     map: {
