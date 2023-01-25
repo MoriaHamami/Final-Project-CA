@@ -9,8 +9,8 @@ import { wapDemo4 } from '../waps/wap-demos/wap-demo-4.js'
 // HEADERS
 import { wapHeader1 } from '../waps/headers/wap-header-1.js'
 import { wapHeader2 } from '../waps/headers/wap-header-2'
-import  {wapHeader3}  from '../waps/headers/wap-header-3'
-import  {wapHeader4}  from '../waps/headers/wap-header-4'
+import { wapHeader3 } from '../waps/headers/wap-header-3'
+import { wapHeader4 } from '../waps/headers/wap-header-4'
 
 // HEROS
 import { wapHero1 } from '../waps/heros/wap-hero-1'
@@ -74,8 +74,8 @@ export const wapService = {
     getCmpsByCategory,
     getWapDemoById,
     getCmpById,
-    getCmpTypes
-    // getWapByName
+    getCmpTypes,
+    getWapByName
     // getEmptyWap,
     // addWapMsg
 }
@@ -93,7 +93,7 @@ const mapCmpByCategory = {
     videos: [wapVideo1, wapVideo2],
     forms: [wapForm1, wapForm2, wapForm3, wapForm4],
     maps: [wapMap1],
-    footers: [wapFooter1, wapFooter2,wapFooter3, wapFooter4],
+    footers: [wapFooter1, wapFooter2, wapFooter3, wapFooter4],
 }
 
 function getWapDemos() {
@@ -145,10 +145,11 @@ function getWapById(wapId) {
     // return httpService.get(`wap/${wapId}`)
 }
 
-// function getWapByName(wapName) {
-//     return storageService.getByName(STORAGE_KEY, wapName)
-//     // return httpService.get(`wap/${wapId}`)
-// }
+
+function getWapByName(wapName) {
+    return storageService.getByName(STORAGE_KEY, wapName)
+    // return httpService.get(`wap/${wapId}`)
+}
 
 async function removeWap(wapId) {
     await storageService.remove(STORAGE_KEY, wapId)

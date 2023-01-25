@@ -23,11 +23,11 @@ export function SidebarMapLat({ title, propertyName, onChange }) {
 
     return <div className='lat-container'>
 
-        <label className='lat-label' htmlFor="lat">{title}</label>
+        {/* <label className='lat-label' htmlFor="lat">{title}</label>
         <form>
             <input type={input.dataType} placeholder={input.placeholder} key={input.id} />
             <button onClick={onSubmit}>{info.btn.label}</button>
-        </form>
+        </form> */}
 
     </div>
 }

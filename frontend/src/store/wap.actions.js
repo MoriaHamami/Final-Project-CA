@@ -51,6 +51,16 @@ export async function loadWap(wapId) {
     }
 }
 
+export async function loadPublishWap(wapPublishedName) {
+    try {
+        let wap = await wapService.getWapByName(wapPublishedName)
+        store.dispatch({ type: SET_WAP, wap })
+        console.log(wap)
+    } catch (err) {
+        console.log('err:', err)
+    }
+}
+
 // export async function getCmpByName(wapName) {
 //     try {
 //         let wap = await wapService.getWapByName(wapName)
@@ -135,12 +145,12 @@ export function saveElement(wap, selectedCmpId, selectedElement, propertyName, p
             } else if (Array.isArray(childElement)) {
                 const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
                 // while (idx === -1) {
-                    if (idx !== -1) {
-                        const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
-                        wap.cmps[cmpIndex].info[key][idx].style = updatedElementStyle
-                        break
-                    }
-                    // const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
+                if (idx !== -1) {
+                    const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
+                    wap.cmps[cmpIndex].info[key][idx].style = updatedElementStyle
+                    break
+                }
+                // const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
                 // }
             }
         }

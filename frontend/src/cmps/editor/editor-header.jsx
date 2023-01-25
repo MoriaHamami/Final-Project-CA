@@ -21,9 +21,9 @@ export function EditorHeader({ wap }) {
                 <span className='divider'>|</span>
 
                 <div className='editor-size-container'>
-                    <span onClick={() => setDisplayType('desktop')} className={`material-symbols-outlined editor-action desktop ${displayType === 'desktop' ? 'active' :''}`}>desktop_windows</span>
-                    <span onClick={() => setDisplayType('tablet')} className={`material-symbols-outlined editor-action ${displayType === 'tablet' ? 'active' :''}`}>tablet_mac</span>
-                    <span onClick={() => setDisplayType('phone')} className={`material-symbols-outlined editor-action ${displayType === 'phone' ? 'active' :''}`}>phone_iphone</span>
+                    <span onClick={() => setDisplayType('desktop')} className={`material-symbols-outlined editor-action desktop ${displayType === 'desktop' ? 'active' : ''}`}>desktop_windows</span>
+                    <span onClick={() => setDisplayType('tablet')} className={`material-symbols-outlined editor-action ${displayType === 'tablet' ? 'active' : ''}`}>tablet_mac</span>
+                    <span onClick={() => setDisplayType('phone')} className={`material-symbols-outlined editor-action ${displayType === 'phone' ? 'active' : ''}`}>phone_iphone</span>
                     {/* <FontAwesomeIcon className='editor-action' icon={faDisplay} />
                 <FontAwesomeIcon className='editor-action' icon={faTabletScreenButton} />
                 <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} /> */}
@@ -31,7 +31,7 @@ export function EditorHeader({ wap }) {
             </div>
             <div className="site-actions">
                 <Link key="/preview" to={`/preview/${wap._id}`}><button className='preview-btn'>Preview</button></Link>
-                <button className='publish-btn'>Publish</button>
+                <Link key="/publish" to={`/publish/${wap.name}`}><button className='publish-btn'>Publish</button></Link>
 
             </div>
 

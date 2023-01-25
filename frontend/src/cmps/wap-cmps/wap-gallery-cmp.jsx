@@ -77,7 +77,7 @@ export function GalleryCmp({ style, cmp, onElClick, selectedCmpId }) {
                 })}
 
             </div >
-            {info.btn.label && <a href="#"
+            {info.btn?.label && <a href="#"
                 onMouseOut={() => setIsOn((prevIsOn) => {
                     return { ...prevIsOn, btn: false }
                 })}
