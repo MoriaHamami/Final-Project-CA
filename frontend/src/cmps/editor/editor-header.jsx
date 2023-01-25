@@ -47,15 +47,15 @@ export function EditorHeader({ wap }) {
                 <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} /> */}
                 </div>
             </div>
+            <div className='publish-container' style={{ display: isVisible ? 'block' : 'none'}}>
+                <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
+                <button onClick={changeWapName} className='publish-btn'>Save</button>
+            </div>
             <div className="site-actions">
                 <Link key="/preview" to={`/ preview / ${wap._id} `}><button className='preview-btn'>Preview</button></Link>
                 <button onClick={() => setIsVisible(!isVisible)} className='publish-btn'>Publish</button>
                 {/* <Link key="/publish" to={`/ publish / ${ wap.name } `}><button className='publish-btn'>Publish</button></Link> */}
             </div>
-            {/* <div style={{ backgroundcolor: 'red', height: '70px', width: '70px', visibility: isVisible ? 'visible' : 'hidden', zIndex: '1' }}>
-                <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
-                <button onClick={changeWapName}>Save your website</button>
-            </div> */}
 
         </header >
     )

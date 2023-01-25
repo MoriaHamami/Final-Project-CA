@@ -10,6 +10,30 @@
     color: $icon-clr;
     font-family: roboto-regular;
 
+    .publish-container {
+        button {
+            border-radius: 2rem;
+            font-size: 0.8rem;
+        }
+
+        input{
+            background-color: lighten($clr1, 40%);
+            border: 1px solid $clr1;
+            padding: 4px;
+            border-radius: 4px;
+
+            &:focus-visible{
+                outline: none;
+            }
+
+            &::placeholder{
+                color: $almost-black;
+            }
+        }
+
+    }
+
+
     .site-actions {
         display: flex;
         align-items: center;
@@ -42,7 +66,6 @@
         }
 
         .publish-btn {
-            cursor: not-allowed;
             border: 1px solid $clr1;
             //     background-color: $bgc-almost-white;
         }
@@ -89,7 +112,8 @@
 
             }
 
-            &:hover, &.active {
+            &:hover,
+            &.active {
                 background-color: lighten($clr1, 35%);
                 color: $clr1;
                 font-weight: 300;

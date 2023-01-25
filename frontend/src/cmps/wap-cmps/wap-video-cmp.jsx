@@ -67,7 +67,7 @@ export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
                     title="Embedded youtube"
                 />
             </div>
-            <div className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.video.id) ? 'selected' : ''} video-edit ${selectedElement?.id !== info.video.id && isOn.video && 'hover'}`}>
+            <div className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.video.id) ? 'selected' : ''}  edit-icon ${selectedElement?.id !== info.video.id && isOn.video && 'hover'}`}>
                 ✎
             </div>
         </div>

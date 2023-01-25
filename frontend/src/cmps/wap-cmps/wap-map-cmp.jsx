@@ -66,7 +66,7 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
           />
         </GoogleMapReact>
         <div
-          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.map.id) ? 'selected' : ''} map-edit ${selectedElement?.id !== info.map.id && isOn.map && 'hover'}`}
+          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.map.id) ? 'selected' : ''} edit-icon ${selectedElement?.id !== info.map.id && isOn.map && 'hover'}`}
           data-container={JSON.stringify(info.map)}
           onClick={onElClick} >
           ✎
