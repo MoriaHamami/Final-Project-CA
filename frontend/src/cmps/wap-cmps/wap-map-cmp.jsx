@@ -45,7 +45,8 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
         {info.title.txt}
       </h2>}
 
-      <div className="map-container" style={info.map.style}
+      <div style={info.map.style}
+      className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.map.id) ? 'selected' : ''} map-container ${selectedElement?.id !== info.map.id && isOn.map && 'hover'}`}
         onMouseOut={() => setIsOn((prevIsOn) => {
           return { ...prevIsOn, map: false }
         })}
