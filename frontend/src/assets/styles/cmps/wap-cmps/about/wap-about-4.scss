@@ -2,13 +2,17 @@
     width: 100%;
     padding: 0 $normal-padding 8.5rem;
     text-align: center;
+    position: relative;
 
     .subtitle {
-        position: relative;
-        width: 400px;
+        position: absolute;
+        width: 40%;
+        max-width: 350px;
+        aspect-ratio: 1/1;
+        overflow-y: hidden;
         text-align: left;
         left: 60%;
-        top: 250px;
+        bottom: 20px;
         background-color: white;
         padding: 1.5rem;
         z-index: 1;
@@ -20,9 +24,16 @@
         margin-bottom: 50px;
     }
 
-    img{
-        position: relative;
-        bottom: 200px;
+    .img-container{
+        background-size: cover;
+        
+            img{
+                // position: relative;
+                min-height: 250px;
+        
+                // bottom: 200px;
+            }
+
     }
 
 }

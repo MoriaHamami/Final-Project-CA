@@ -7,9 +7,9 @@ export const wapForm4 = {
     imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-form-2_aw6wgw.jpg',
 
     info: {
-        title: { txt: 'BE IN', style: { fontSize: '1.1em', letterSpacing: '0.3em', lineHeight: '1.4em', color: 'white' }, id: utilService.makeId(), type: 'txt', key: 'title' },
-        subtitle: { txt: 'TOUCH', style: { fontSize: '2.8em', letterSpacing: '0.3em', lineHeight: '1.4em', color: 'white' }, id: utilService.makeId(), type: 'txt', key: 'subtitle' },
-        txt: { txt: 'Please fill your contact details below:', style: { fontSize: '1.3em' }, id: utilService.makeId(), type: 'txt', key: 'txt' },
+        title: { txt: 'BE IN', style: { fontFamily: 'open-sans', fontSize: '1.1em', letterSpacing: '0.3em', lineHeight: '1.4em', color: 'white' }, id: utilService.makeId(), type: 'txt', key: 'title' },
+        subtitle: { txt: 'TOUCH', style: { fontFamily: 'open-sans', fontSize: '2.8em', letterSpacing: '0.3em', lineHeight: '1.4em', color: 'white' }, id: utilService.makeId(), type: 'txt', key: 'subtitle' },
+        txt: { txt: 'Please fill your contact details below:', style: { fontSize: '1em', color: 'white' }, id: utilService.makeId(), type: 'txt', key: 'txt' },
         inputs: [
             { dataType: 'text', name: 'wap-input', placeholder: 'Name', id: utilService.makeId(), style: {}, type: 'input', key: 'inputs' },
             { dataType: 'text', name: 'wap-input', placeholder: 'Email', id: utilService.makeId(), style: {}, type: 'input', key: 'inputs' },
@@ -19,7 +19,7 @@ export const wapForm4 = {
     },
     theme: 'theme-section-happy',
     style: {
-        fontFamily: 'roboto-regular',
+        fontFamily: 'roboto-light',
     }
 }
 

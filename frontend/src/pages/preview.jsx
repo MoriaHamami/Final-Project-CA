@@ -23,7 +23,7 @@ export function Preview() {
         }
     }, [])
 
-    function onGoBack(){
+    function onGoBack() {
         navigate(-1)
     }
 
@@ -31,9 +31,9 @@ export function Preview() {
     return <div className="preview-page">
         {/* <AppHeader /> */}
         <div onClick={onGoBack} className="preview-close-container-hover">
-        <div className="preview-close-container">
-        <span class="preview-close material-symbols-outlined">close</span>
-        </div>
+            <div className="preview-close-container">
+                <span class="preview-close material-symbols-outlined">close</span>
+            </div>
         </div>
         {wap?.cmps.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
     </div>

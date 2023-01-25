@@ -7,8 +7,8 @@ export const wapGallery4B = {
     imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-gallery-2a_zzwqzw.jpg',
 
     info: {
-        title: { txt: 'CASE', type: 'txt', id: utilService.makeId(), style: { color: 'black', fontSize: '1.1rem', letterSpacing: '0.3em' }, key: 'title' },
-        subtitle: { txt: 'STUDIES', id: utilService.makeId(), type: 'txt', style: { color: '#34d1b6', letterSpacing: '0.3em', fontSize: '2.75rem' }, key: 'subtitle' },
+        title: { txt: 'CASE', type: 'txt', id: utilService.makeId(), style: { fontFamily: 'open-sans',color: 'black', fontSize: '1.1rem', letterSpacing: '0.3em' }, key: 'title' },
+        subtitle: { txt: 'STUDIES', id: utilService.makeId(), type: 'txt', style: { fontFamily: 'open-sans', color: '#34d1b6', letterSpacing: '0.3em', fontSize: '2.75rem' }, key: 'subtitle' },
         photos: [
             {
                 photo: {url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674599225/democar4_e5wh0i.png', style: {}, id: utilService.makeId(),type: 'img', key: 'photos' },
@@ -52,6 +52,6 @@ export const wapGallery4B = {
     theme: 'theme-header-happy',
     thumbnail: 'https://i.postimg.cc/7h0qq8v4/wap-cards-1.png',
     style: {
-        fontFamily: 'roboto-regular',
+        fontFamily: 'roboto-light',
     }
 }

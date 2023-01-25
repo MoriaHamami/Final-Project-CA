@@ -14,7 +14,7 @@ export const wapFooter4 = {
   },
   thumbnail: null,
   style: {
-    fontFamily: 'roboto-regular',
+    fontFamily: 'roboto-light',
   },
 
 }

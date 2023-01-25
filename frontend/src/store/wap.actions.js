@@ -51,6 +51,16 @@ export async function loadWap(wapId) {
     }
 }
 
+export async function loadPublishWap(wapPublishedName) {
+    try {
+        let wap = await wapService.getWapByName(wapPublishedName)
+        store.dispatch({ type: SET_WAP, wap })
+        console.log(wap)
+    } catch (err) {
+        console.log('err:', err)
+    }
+}
+
 // export async function getCmpByName(wapName) {
 //     try {
 //         let wap = await wapService.getWapByName(wapName)
@@ -134,7 +144,7 @@ export function saveElement(wap, cmpId, element) {
     const cmp = wap.cmps.find(cmp => cmp.id === cmpId)
     // Find cmp idx
     const idx = wapService.findCmpIdx(wap, cmp)
-    console.log('cmp action line 136:', wap[idx])
+    // console.log('cmp action line 136:', wap[idx])
 
     if(cmp.id === element.id) return saveCmp(wap, cmp, idx)
 
@@ -157,7 +167,7 @@ export function saveElement(wap, cmpId, element) {
     } else {
         cmp.info[element.key] = element
     }
-    console.log('cmp action line 158:', cmp)
+    // console.log('cmp action line 158:', cmp)
     saveCmp(wap, cmp, idx)
 }
 
