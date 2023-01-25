@@ -9,7 +9,7 @@ export function AboutCmp({ style, cmp, onElClick, selectedCmpId }) {
 
     return (
         <div id={cmp.type} style={style} data-container={JSON.stringify(cmp)} onClick={onElClick}
-            className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover')}
+            className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
             onMouseOut={() => setIsOn((prevIsOn) => {
                 return { ...prevIsOn, cmp: false }
             })}

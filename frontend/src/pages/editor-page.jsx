@@ -4,7 +4,7 @@ import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
 
-import { addCmp, loadWap, removeCmp, saveElement, saveWap, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp, saveCmp, saveElement, saveWap, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
@@ -45,7 +45,7 @@ export function Editor() {
             // const name = result.draggableId.split()[1]   + 's'
             // const cmpId = wapService.getCmpsByCategory(name)
             // console.log(cmpId);
-        //   const currCmp = wapService.getCmpById(cmpId)
+            //   const currCmp = wapService.getCmpById(cmpId)
             // console.log(currCmp);
             // console.log('rsult===', result)
             const currCmp = JSON.parse(result.draggableId)
@@ -59,9 +59,17 @@ export function Editor() {
     }
 
     function addCmpToBoard(cmp, idx) {
-        addCmp(wap, cmp, idx)
+        saveCmp(wap, cmp, idx)
     }
 
+    // TO CHECKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+    function setElementStyle(wap, cmpId, element, propertyName, propertyValue) {
+        if (propertyValue === 'coords' || propertyValue === 'url') element[propertyName] = propertyValue
+        else element.style[propertyName] = propertyValue
+        // console.log('element editorpage line 69:', element)
+        saveElement(wap, cmpId, element)
+    }
+    
     // TODO: REMOVE LATER MAYBE FROM EVERUYWHERE
     function onPickedCmp(cmpId) {
         let cmp = wapService.getCmpById(cmpId)
@@ -77,15 +85,14 @@ export function Editor() {
         setSelectedCmpId(cmpId)
     }
 
-
+    // TO CHANGEEEEEEEEEEEEEEEEEEEE
     function handleWapEdit(propertyName, propertyValue) {
-        saveElement(wap, selectedCmpId, selectedElement, propertyName, propertyValue)
+        setElementStyle(wap, selectedCmpId, selectedElement, propertyName, propertyValue) 
+        // saveElement(wap, selectedCmpId, selectedElement, propertyName, propertyValue)
     }
 
-
-
     function onElementTxtChange(txt) {
-        console.log('txt:', txt)
+        // console.log('txt:', txt)
         const wapCopy = structuredClone(wap)
         const cmpIndex = wapCopy.cmps.findIndex(cmp => cmp.id === selectedCmpId)
         const editedElement = wapCopy.cmps[cmpIndex]

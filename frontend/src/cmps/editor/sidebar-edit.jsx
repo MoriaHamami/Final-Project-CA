@@ -66,7 +66,7 @@ export function SidebarEdit({ handleWapEdit, chosenComponent }) {
         }
 
         {selectedElement.type === 'map' &&
-            <SidebarMapLat title='Latitude coordinates' propertyName='lat' onChange={handleWapEdit} />
+            <SidebarMapLat title='Latitude coordinate' propertyName='lat' onChange={handleWapEdit} />
         }
 
         {/* {selectedElement.type === 'map' &&

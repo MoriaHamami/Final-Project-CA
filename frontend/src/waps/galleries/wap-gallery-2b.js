@@ -12,101 +12,47 @@ export const wapGallery2B = {
     fontFamily: 'handlee',
   },
   info: {
-    subtitle: {txt: 'Reservations', type: 'txt', id: utilService.makeId(), type: 'txt', style: {}},
-    title: {txt: 'BOOK A TABLE', type: 'txt', id: utilService.makeId(), type: 'txt', style: {}},
-    btn: { label: 'Book Now', link: '#wc03', type: 'btn', id: utilService.makeId(), type: 'btn', style: {} },
+    subtitle: {txt: 'Reservations', type: 'txt', id: utilService.makeId(), type: 'txt', style: {}, key: 'subtitle'},
+    title: {txt: 'BOOK A TABLE', type: 'txt', id: utilService.makeId(), type: 'txt', style: {}, key: 'title'},
+    btn: { label: 'Book Now', link: '#wc03', type: 'btn', id: utilService.makeId(), type: 'btn', style: {}, key: 'btn' },
     photos: 
         [{
-            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063387/card8_wm0gfc.jpg',
-            title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
-            subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
-            type: 'img',
-            style: {},
-            id: utilService.makeId()
+            photo: {url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063387/card8_wm0gfc.jpg', style: {}, id: utilService.makeId(),type: 'img', key: 'photos' },
+            // url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063387/card8_wm0gfc.jpg',
+            title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt', key: 'photos' },
+            subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt', key: 'photos' },
+            // type: 'img',
+            // style: {},
+            // id: utilService.makeId()
         },
         {
-            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063404/card4_whirwv.jpg',
-            title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
-            subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
-            type: 'img',
-            style: {},
-            id: utilService.makeId()
+            photo: {url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063404/card4_whirwv.jpg', style: {}, id: utilService.makeId(),type: 'img', key: 'photos' },
+            // url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063404/card4_whirwv.jpg',
+            title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt', key: 'photos' },
+            subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt', key: 'photos' },
+            // type: 'img',
+            // style: {},
+            // id: utilService.makeId()
         },
         {
-            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674317426/card6_nhuv58.jpg',
-            title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
-            subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
-            type: 'img',
-            style: {},
-            id: utilService.makeId()
+            photo: {url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674317426/card6_nhuv58.jpg', style: {}, id: utilService.makeId(),type: 'img', key: 'photos' },
+            // url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674317426/card6_nhuv58.jpg',
+            title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt', key: 'photos' },
+            subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt', key: 'photos' },
+            // type: 'img',
+            // style: {},
+            // id: utilService.makeId()
         },
         {
-            url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063393/card11_uynqjs.webp',
-            title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
-            subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
-            type: 'img',
-            style: {},
-            id: utilService.makeId()
+            photo: {url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063393/card11_uynqjs.webp', style: {}, id: utilService.makeId(),type: 'img', key: 'photos' },
+            // url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063393/card11_uynqjs.webp',
+            title: { txt: '', id: utilService.makeId(), style: {}, type: 'txt', key: 'photos' },
+            subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt', key: 'photos' },
+            // type: 'img',
+            // style: {},
+            // id: utilService.makeId()
         }]
     }
 }
-        // id: utilService.makeId(),
-        // type: 'gallery',
-        
-
-    
-// export const wapContainer2B = {
-//   id: utilService.makeId(),
-//   type: 'wap-container',
-//   name: 'wap-container-2b',
-//   info: {
-//     subtitle: 'Reservations',
-//     title: 'BOOK A TABLE',
-//     btn: { label: 'Book Now', link: '#wc03', id: utilService.makeId() },
-//   },
-//   theme: 'theme-section-happy',
-//   style: {
-//     fontFamily: 'handlee',
-//   },
-//   cmps: [
-//     {
-//         type: 'wap-container',
-//         id: utilService.makeId(),
-//         name: 'gallery-container',
-        
-//         cmps: [
-//             {
-//                 type: 'wap-gallery',
-//                 id: utilService.makeId(),
-//                 name: 'gallery-container',
-//                 style: {},
-//                 photos: [
-//                     {
-//                         url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063387/card8_wm0gfc.jpg',
-//                         title: '',
-//                         txt: ''
-//                     },
-//                     {
-//                         url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063404/card4_whirwv.jpg',
-//                         title: '',
-//                         txt: ''
-//                     },
-//                     {
-//                         url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674317426/card6_nhuv58.jpg',
-//                         title: '',
-//                         txt: ''
-//                     },
-//                     {
-//                         url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674063393/card11_uynqjs.webp',
-//                         title: '',
-//                         txt: ''
-//                     }
-//                 ]
-//                 }
-//                 ]
-//     },
-    
-// ],
-// }
 
 

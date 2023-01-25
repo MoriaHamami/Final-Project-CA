@@ -5,29 +5,45 @@ import { useSelector } from 'react-redux'
 import { TextField } from '@mui/material'
 
 export function SidebarMapLat({ title, propertyName, onChange }) {
-    // const [latCoordVal, setLatCoordVal] = useState('roboto-regular')
-    // const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
+    const [cords, setCords] = useState({lat: 0, lng: 0})
+    const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
-    // useEffect(() => {
-    //     const latCoord = selectedElement?.style[propertyName] ? selectedElement.style[propertyName] : 'roboto-regular'
-    //     setLatCoordVal(latCoord)
-    // }, [selectedElement])
+    useEffect(() => {
+        // console.log('selectedElement:', selectedElement)
+        const cords = selectedElement?.cords ? selectedElement.cords[propertyName] : ({lat: 0, lng: 0})
+        setCords(cords)
+    }, [selectedElement])
 
+    function handleChange({ target }) {
+        setCords(target.value)
+    }
 
+    function submitCords(ev) {
+        ev.preventDefault()
+        // console.log('target.value:',cords)
+        // target.title = target.value
+        // setCords(target.value)
+        onChange(propertyName, cords)
+    }
 
-    // function onChangeLatCoord({ target }) {
-    //     target.title = target.value
-    //     setLatCoordVal(target.value)
-    //     onChange(propertyName, target.value)
-    // }
+    return <div className="lat-container">
 
-    return <div className='lat-container'>
+        <form onChange={handleChange} onSubmit={submitCords}>
+            <label className="lat-label">{title}</label>
+            <input type="number"
+                value={cords.lat}
+                placeholder="Enter map latitude" />
+            {/* <button onClick={onSubmit}>{info.btn.label}</button> */}
+        </form>
 
-        {/* <label className='lat-label' htmlFor="lat">{title}</label>
-        <form>
-            <input type={input.dataType} placeholder={input.placeholder} key={input.id} />
-            <button onClick={onSubmit}>{info.btn.label}</button>
-        </form> */}
+        <form onChange={handleChange} onSubmit={submitCords}>
+            <label className="lng-label">{title}</label>
+            <input type="number"
+                name=""
+                value={cords.lng}
+                placeholder="Enter map longitude" />
+            {/* <button onClick={onSubmit}>{info.btn.label}</button> */}
+        </form>
 
     </div>
 }

@@ -27,7 +27,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
           style={info.title.style}
           // className="title"
           data-container={JSON.stringify(info.title)}
-          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover'}`}
+          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover-cmp'}`}
           onMouseOut={() => setIsOn((prevIsOn) => {
             return { ...prevIsOn, title: false }
           })}
@@ -73,7 +73,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
           {info.txt.txt}
         </p>}
 
-        <nav>
+        {info.btn && <nav>
           <button suppressContentEditableWarning={true}
             contentEditable={selectedElement?.id === info.btn.id}
             style={info.btn.style}
@@ -88,7 +88,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
             href={info.btn.link}>
             {cmp.info.btn.label}
           </button>
-        </nav>
+        </nav>}
 
         {info.photo && <div className="img-container">
                 <img src={info.photo.url} alt={''} suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.photo.id} style={info.photo.style} data-container={JSON.stringify(info.photo)} onClick={onElClick} />
