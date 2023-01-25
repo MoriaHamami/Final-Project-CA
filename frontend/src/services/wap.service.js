@@ -4,6 +4,8 @@ import { wapDemo1 } from '../waps/wap-demos/wap-demo-1.js'
 import { wapDemo2 } from '../waps/wap-demos/wap-demo-2.js'
 import { wapDemo3 } from '../waps/wap-demos/wap-demo-3.js'
 import { wapDemo4 } from '../waps/wap-demos/wap-demo-4.js'
+import { wapDemo5 } from '../waps/wap-demos/wap-demo-5.js'
+import { wapDemo6 } from '../waps/wap-demos/wap-demo-6.js'
 
 
 // HEADERS
@@ -99,10 +101,12 @@ const mapCmpByCategory = {
 function getWapDemos() {
     return [
         emptyWapDemo,
+        wapDemo4,
+        wapDemo6,
+        wapDemo3,
         wapDemo1,
         wapDemo2,
-        wapDemo3,
-        wapDemo4,
+        wapDemo5,
     ]
 }
 

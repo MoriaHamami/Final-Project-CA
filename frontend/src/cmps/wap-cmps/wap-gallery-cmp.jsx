@@ -8,14 +8,15 @@ export function GalleryCmp({ style, cmp, onElClick, selectedCmpId }) {
     return (
         <div id={cmp.type} style={style} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
             {info.title.txt && <div className="title" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.title.id} style={info.title.style} data-container={JSON.stringify(info.title)} onClick={onElClick}>{info.title.txt}</div>}
-            {info.subtitle.txt && <div className="subtitle" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.subtitle.id} style={info.subtitle.style} data-container={JSON.stringify(info.subtitle)} onClick={onElClick}>{info.subtitle.txt}</div>}
+            {info.subtitle?.txt && <div className="subtitle" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.subtitle.id} style={info.subtitle.style} data-container={JSON.stringify(info.subtitle)} onClick={onElClick}>{info.subtitle.txt}</div>}
             <div className="wap-gallery-img-container">
                 {info.photos.map(photo => {
                     return <div key={photo.url} className="photo-container">
                         <img src={photo.url} alt={''} suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.id} style={photo.style} data-container={JSON.stringify(photo)} onClick={onElClick} />
                         <div className="txt-container">
                             {photo.title.txt && <h2 className="gallery-title" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.title.id} style={photo.title.style} data-container={JSON.stringify(photo.title)} onClick={onElClick}>{photo.title.txt}</h2>}
-                            {photo.subtitle.txt && <p className="gallery-subtitle" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.subtitle.id} style={photo.subtitle.style} data-container={JSON.stringify(photo.subtitle)} onClick={onElClick}>{photo.subtitle.txt}</p>}
+                            {photo.subtitle && <p className="gallery-subtitle" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.subtitle.id} style={photo.subtitle.style} data-container={JSON.stringify(photo.subtitle)} onClick={onElClick}>{photo.subtitle.txt}</p>}
+                            {photo.btn && <p className="gallery-btn" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.btn.id} style={photo.btn.style} data-container={JSON.stringify(photo.btn)} onClick={onElClick}>{photo.btn.label}</p>}
                         </div>
                     </div>
                 })}

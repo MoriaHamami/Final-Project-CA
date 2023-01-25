@@ -6,7 +6,7 @@
     justify-content: center;
     justify-items: center;
     align-items: center;
-    padding: 8rem $normal-padding 9rem;
+    padding: 7rem $normal-padding 9rem;
     flex-direction: column;
     color: $almost-black;
   
@@ -17,7 +17,10 @@
     }
   
     .subtitle {
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
+    }
+    .txt {
+      margin-bottom: 2rem;
     }
   
     form {

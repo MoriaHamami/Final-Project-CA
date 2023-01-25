@@ -1,0 +1,35 @@
+.wap-hero-6 {
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+    color: whitesmoke;
+    padding: 17.5rem $normal-padding;
+
+    .title {
+        max-width: 800px;
+        margin-bottom: 10px;
+        margin-left: 100px;
+    }
+
+    .subtitle {
+        max-width: 700px;
+        margin-left: 100px;
+        margin-bottom: 100px;
+    }
+
+    button {
+        margin-left: 100px;
+        background-color: inherit;
+        padding: 1rem 1.5rem;
+
+        &:hover {
+            background-color: gray;
+            color: white;
+        }
+    }
+}
