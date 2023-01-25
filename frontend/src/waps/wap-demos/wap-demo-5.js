@@ -1,6 +1,6 @@
 import { wapGallery5A } from "../galleries/wap-gallery-5a.js";
 import { wapGallery5B } from "../galleries/wap-gallery-5b.js";
-import { wapHeader5 }  from "../headers/wap-header-5.js";
+import { wapHeader5 } from "../headers/wap-header-5.js";
 import { wapHero5 } from "../heros/wap-hero-5.js";
 import { wapAbout5 } from "../about/wap-about-5.js";
 import { wapForm5 } from "../forms/wap-form-5.js";
@@ -21,7 +21,7 @@ export const wapDemo5 = {
 		wapAbout5,
 		wapGallery5A,
 		wapHero5,
-        wapGallery5B,
+		wapGallery5B,
 		wapForm5,
 		wapFooter5
 	],
