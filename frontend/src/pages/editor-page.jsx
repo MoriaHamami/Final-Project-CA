@@ -64,12 +64,20 @@ export function Editor() {
 
     // TO CHECKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
     function setElementStyle(wap, cmpId, element, propertyName, propertyValue) {
-        if (propertyValue === 'coords' || propertyValue === 'url') element[propertyName] = propertyValue
+        if ( propertyName === 'url') {
+            if(propertyValue.includes('//www.youtube.com')) {
+                const idx = propertyValue.indexOf('?v=') + 3
+                const newPropertyValue = 'https://www.youtube.com/embed/' + propertyValue.slice(-(propertyValue.length-idx))
+                // console.log('propertyValue:', newPropertyValue)
+                element[propertyName] = newPropertyValue
+            } else element[propertyName] = propertyValue
+        } else if (propertyName === 'cords') element[propertyName] = propertyValue
         else element.style[propertyName] = propertyValue
         // console.log('element editorpage line 69:', element)
+        console.log('element:', element)
         saveElement(wap, cmpId, element)
     }
-    
+
     // TODO: REMOVE LATER MAYBE FROM EVERUYWHERE
     function onPickedCmp(cmpId) {
         let cmp = wapService.getCmpById(cmpId)
@@ -87,10 +95,18 @@ export function Editor() {
 
     // TO CHANGEEEEEEEEEEEEEEEEEEEE
     function handleWapEdit(propertyName, propertyValue) {
-        setElementStyle(wap, selectedCmpId, selectedElement, propertyName, propertyValue) 
+        setElementStyle(wap, selectedCmpId, selectedElement, propertyName, propertyValue)
         // saveElement(wap, selectedCmpId, selectedElement, propertyName, propertyValue)
     }
 
+
+    // function setElementTxt(txt) {
+    //     selectedElement.txt = txt
+    //     saveElement(wap, selectedCmpId, selectedElement)
+    // }
+
+
+    // FUNCTION TO CHANGE FOR ALL EDIT SAVE OPTIONS!!
     function onElementTxtChange(txt) {
         // console.log('txt:', txt)
         const wapCopy = structuredClone(wap)
@@ -147,7 +163,7 @@ export function Editor() {
         setEditOpt('edit')
         const element = JSON.parse(target.getAttribute('data-container'))
         setSelectedElement(element)
-        if (element.type === 'btn' || element.type === 'map' || element.type === 'video') ev.preventDefault()
+        if (element?.type === 'btn' || element?.type === 'map' || element?.type === 'video') ev.preventDefault()
         // console.log('element:', element)
     }
 

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
 
-export function AboutCmp({ style, cmp, onElClick, selectedCmpId }) {
+export function AboutCmp({ style, cmp, onElClick, selectedCmpId, onElementTxtChange }) {
     const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false, img: false })
 
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
@@ -18,7 +18,7 @@ export function AboutCmp({ style, cmp, onElClick, selectedCmpId }) {
             })}
         >
             <div className="text-container">
-                {info.title.txt && <div suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.title.id} style={info.title.style} data-container={JSON.stringify(info.title)} onClick={onElClick}
+                {info.title.txt && <div suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.title.id}  onInput={ev => onElementTxtChange(ev.currentTarget.textContent)} style={info.title.style} data-container={JSON.stringify(info.title)} onClick={onElClick}
                     className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover'}`}
                     onMouseOut={() => setIsOn((prevIsOn) => {
                         return { ...prevIsOn, title: false }
@@ -27,7 +27,7 @@ export function AboutCmp({ style, cmp, onElClick, selectedCmpId }) {
                         return { ...prevIsOn, title: true }
                     })}>{info.title.txt}
                 </div>}
-                {info.subtitle.txt && <div suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.subtitle.id} style={info.subtitle.style} data-container={JSON.stringify(info.subtitle)} onClick={onElClick}
+                {info.subtitle.txt && <div suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.subtitle.id} onInput={ev => onElementTxtChange(ev.currentTarget.textContent)} style={info.subtitle.style} data-container={JSON.stringify(info.subtitle)} onClick={onElClick}
                     className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.subtitle.id) ? 'selected' : ''} subtitle ${selectedElement?.id !== info.subtitle.id && isOn.subtitle && 'hover'}`}
                     onMouseOut={() => setIsOn((prevIsOn) => {
                         return { ...prevIsOn, subtitle: false }
@@ -51,9 +51,9 @@ export function AboutCmp({ style, cmp, onElClick, selectedCmpId }) {
                     return { ...prevIsOn, img: true }
                 })}
             >
-                <img src={info.photo.url} alt={''} suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.photo.id} style={info.photo.style} data-container={JSON.stringify(info.photo)} onClick={onElClick} />
+                <img src={info.photo.url} alt={''} style={info.photo.style} data-container={JSON.stringify(info.photo)} onClick={onElClick} />
             </div >}
-            {info.txt?.txt && <p suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.txt.id} style={info.txt.style} data-container={JSON.stringify(info.txt)} onClick={onElClick}
+            {info.txt?.txt && <p suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.txt.id}  onInput={ev => onElementTxtChange(ev.currentTarget.textContent)} style={info.txt.style} data-container={JSON.stringify(info.txt)} onClick={onElClick}
                 className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.txt.id) ? 'selected' : ''} gallery-subtitle ${selectedElement?.id !== info.txt.id && isOn.txt && 'hover'}`}
                 onMouseOut={() => setIsOn((prevIsOn) => {
                     return { ...prevIsOn, txt: false }
@@ -73,7 +73,7 @@ export function AboutCmp({ style, cmp, onElClick, selectedCmpId }) {
                 onMouseOver={() => setIsOn((prevIsOn) => {
                     return { ...prevIsOn, btn: true }
                 })}
-                suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.btn.id} style={info.btn.style} data-container={JSON.stringify(info.btn)} onClick={onElClick}>{info.btn.label}</a>}
+                suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.btn.id}  onInput={ev => onElementTxtChange(ev.currentTarget.textContent)} style={info.btn.style} data-container={JSON.stringify(info.btn)} onClick={onElClick}>{info.btn.label}</a>}
         </div>
 
     )

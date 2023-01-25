@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GoogleMapReact from 'google-map-react';
 import { useSelector } from 'react-redux'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -7,7 +7,7 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const AnyReactComponent = ({ text }) => <div>{text}</div>
   const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false, img: false, map: false })
-
+  // const [isOn, setIsOn] = useState({lat: '', lng: ''})
 
   const info = cmp.info
   const defaultProps = {
@@ -66,7 +66,7 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
           />
         </GoogleMapReact>
         <div
-          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.map.id) ? 'selected' : ''} map-edit ${selectedElement?.id !== info.map.id && isOn.map && 'hover'}`}
+          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.map.id) ? 'selected' : ''} edit-icon ${selectedElement?.id !== info.map.id && isOn.map && 'hover'}`}
           data-container={JSON.stringify(info.map)}
           onClick={onElClick} >
           ✎

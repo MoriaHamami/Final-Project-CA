@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { useSelector } from 'react-redux'
 
-export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
+export function HeroCmp({ style, cmp, onElClick, selectedCmpId, onElementTxtChange }) {
   const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false })
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info
@@ -13,7 +13,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
       style={style}
       data-container={JSON.stringify(cmp)}
       onClick={onElClick}
-      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover')}
+      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
       onMouseOut={() => setIsOn((prevIsOn) => {
         return { ...prevIsOn, cmp: false }
       })}
@@ -23,11 +23,12 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
       <div className='wap-hero-container'>
 
         <p suppressContentEditableWarning={true}
+         onInput={ev => onElementTxtChange(ev.currentTarget.textContent)}
           contentEditable={selectedElement?.id === info.title.id}
           style={info.title.style}
           // className="title"
           data-container={JSON.stringify(info.title)}
-          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover-cmp'}`}
+          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover'}`}
           onMouseOut={() => setIsOn((prevIsOn) => {
             return { ...prevIsOn, title: false }
           })}
@@ -42,6 +43,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
         {info.subtitle && <p
           suppressContentEditableWarning={true}
           contentEditable={selectedElement?.id === info.subtitle.id}
+          onInput={ev => onElementTxtChange(ev.currentTarget.textContent)}
           style={info.subtitle.style}
           data-container={JSON.stringify(info.subtitle)}
           className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.subtitle.id) ? 'selected' : ''} subtitle ${selectedElement?.id !== info.subtitle.id && isOn.subtitle && 'hover'}`}
@@ -60,6 +62,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
         {info.txt && <p
           suppressContentEditableWarning={true}
           contentEditable={selectedElement?.id === info.txt.id}
+          onInput={ev => onElementTxtChange(ev.currentTarget.textContent)}
           style={info.txt.style}
           data-container={JSON.stringify(info.txt)}
           className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.txt.id) ? 'selected' : ''} txt ${selectedElement?.id !== info.txt.id && isOn.txt && 'hover'}`}
@@ -76,6 +79,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
         {info.btn && <nav>
           <button suppressContentEditableWarning={true}
             contentEditable={selectedElement?.id === info.btn.id}
+            onInput={ev => onElementTxtChange(ev.currentTarget.textContent)}
             style={info.btn.style}
             data-container={JSON.stringify(info.btn)}
             className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.btn.id) ? 'selected' : ''} ${selectedElement?.id !== info.btn.id && isOn.btn && 'hover'}`}
@@ -91,7 +95,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
         </nav>}
 
         {info.photo && <div className="img-container">
-                <img src={info.photo.url} alt={''} suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.photo.id} style={info.photo.style} data-container={JSON.stringify(info.photo)} onClick={onElClick} />
+                <img src={info.photo.url} alt={''} style={info.photo.style} data-container={JSON.stringify(info.photo)} onClick={onElClick} />
             </div >}
       </div>
 

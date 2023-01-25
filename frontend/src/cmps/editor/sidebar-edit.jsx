@@ -5,7 +5,7 @@ import { SidebarColors } from './sidebar-edit/sidebar-colors.jsx'
 import { SidebarFontFamily } from './sidebar-edit/sidebar-font-family.jsx'
 import { SidebarFontSize } from './sidebar-edit/sidebar-font-size.jsx'
 import { SidebarBorderRadius } from './sidebar-edit/sidebar-border-radius.jsx'
-import { SidebarMapLat } from './sidebar-edit/sidebar-map-lat.jsx'
+import { SidebarCords } from './sidebar-edit/sidebar-cords.jsx'
 import { SidebarMapLng } from './sidebar-edit/sidebar-map-lng.jsx'
 import { SidebarUrl } from './sidebar-edit/sidebar-url.jsx'
 import { useSelector } from 'react-redux'
@@ -66,15 +66,12 @@ export function SidebarEdit({ handleWapEdit, chosenComponent }) {
         }
 
         {selectedElement.type === 'map' &&
-            <SidebarMapLat title='Latitude coordinate' propertyName='lat' onChange={handleWapEdit} />
+            <SidebarCords title='Map cordinates' propertyName='cords' onChange={handleWapEdit} />
         }
 
-        {/* {selectedElement.type === 'map' &&
-            <SidebarMapLng title='Longitude coordinates' propertyName='lng' onChange={handleWapEdit} />
-        } */}
-
-        {/* {selectedElement.type === 'img' &&
-            <SidebarUrl title='URL' propertyName='src' onChange={handleWapEdit} />
-        } */}
+        {(selectedElement.type === 'img' ||
+            selectedElement.type === 'video') &&
+            <SidebarUrl title='URL' propertyName='url' onChange={handleWapEdit} />
+        }
     </div>
 }
