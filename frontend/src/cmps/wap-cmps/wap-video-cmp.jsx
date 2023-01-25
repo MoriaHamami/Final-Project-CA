@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { useSelector } from 'react-redux'
 
 export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
+    const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false, img: false, video: false })
+
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const info = cmp.info
 
@@ -27,7 +29,13 @@ export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
                 {info.subtitle.txt}
             </p>}
 
-            <div className="wap-card-video-container" data-container={JSON.stringify(info.video)} onClick={onElClick}>
+            <div className="wap-card-video-container" data-container={JSON.stringify(info.video)} onClick={onElClick}
+                onMouseOut={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, video: false }
+                })}
+                onMouseOver={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, video: true }
+                })}>
                 <iframe
                     style={cmp.info.video.style}
                     src={cmp.info.video.url}
@@ -36,6 +44,10 @@ export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
                     title="Embedded youtube"
                 />
             </div>
+            <div
+                className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.video.id) ? 'selected' : ''} video-edit ${selectedElement?.id !== info.video.id && isOn.video && 'hover'}`}
+
+            >✎</div>
         </div>
     )
 }
