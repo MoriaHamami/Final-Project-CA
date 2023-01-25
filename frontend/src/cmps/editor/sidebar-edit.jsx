@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux'
 export function SidebarEdit({ handleWapEdit, chosenComponent }) {
 
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
-    if (!selectedElement) return <span>Choose an item to edit</span>
+    if (!selectedElement) return <div className='no-item'>Choose an item to edit</div>
     // console.log('selectedElement:', selectedElement)
     // KEY[0] = txt === txt
     // KEY[0] = label === btn
@@ -65,15 +65,15 @@ export function SidebarEdit({ handleWapEdit, chosenComponent }) {
             <SidebarBorderRadius title='Border Radius' propertyName='borderRadius' onChange={handleWapEdit} />
         }
 
-        {/* {selectedElement.type === 'map' &&
+        {selectedElement.type === 'map' &&
             <SidebarMapLat title='Latitude coordinates' propertyName='lat' onChange={handleWapEdit} />
         }
 
-        {selectedElement.type === 'map' &&
+        {/* {selectedElement.type === 'map' &&
             <SidebarMapLng title='Longitude coordinates' propertyName='lng' onChange={handleWapEdit} />
-        }
+        } */}
 
-        {selectedElement.type === 'img' &&
+        {/* {selectedElement.type === 'img' &&
             <SidebarUrl title='URL' propertyName='src' onChange={handleWapEdit} />
         } */}
     </div>
