@@ -20,8 +20,8 @@ export const wapDemo2 = {
 		// wapGallery,
 		wapGallery2A,
 		wapGallery2B,
-		wapForm2,
 		wapVideo2,
+		wapForm2,
 		wapFooter2
 	],
 	isPublic: true

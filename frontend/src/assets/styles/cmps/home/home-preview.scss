@@ -4,9 +4,10 @@
     flex-direction: column;
     align-items: center;
     // background-color: aqua;
+    background: linear-gradient(0deg, #2d3236,1%, white );
     width: 100%;
     position: relative;
-    margin-bottom: 200px;
+    padding-bottom: 300px;
 
     .preview-title {
       padding: 50px 0 0;
@@ -40,8 +41,9 @@
     // }
 
     .swiper {
-        width: 60%;
+        width: 90%;
         padding: 50px 0;
+        max-width: 1400px;
         
       }
       
@@ -49,7 +51,6 @@
         background-position: center;
         background-size: cover;
         width: 100px;
-        height: 322px;
       }
       
       .swiper-slide img {

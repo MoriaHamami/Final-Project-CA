@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useSelector } from 'react-redux'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookF, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 export function WapFooter({ style, cmp, onElClick, selectedCmpId }) {
 
@@ -15,6 +15,8 @@ export function WapFooter({ style, cmp, onElClick, selectedCmpId }) {
         {info.btns?.map((btn) => {
           if (btn.label === "facebook") return <FontAwesomeIcon className="footer-icon" style={btn.style} icon={faFacebookF} key={btn.id} />
           else if (btn.label === "instagram") return <FontAwesomeIcon className="footer-icon" style={btn.style} icon={faInstagram} key={btn.id} />
+          else if (btn.label === "linkedin") return <FontAwesomeIcon className="footer-icon" style={btn.style} icon={faLinkedin} key={btn.id} />
+          else if (btn.label === "twitter") return <FontAwesomeIcon className="footer-icon" style={btn.style} icon={faTwitter} key={btn.id} />
           else return ''
         })}
       </div>

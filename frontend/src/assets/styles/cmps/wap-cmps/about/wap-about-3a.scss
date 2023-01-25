@@ -1,9 +1,9 @@
-.wap-about-3 {
-    background-color: rgb(255,232,227);
+.wap-about-3a {
+    background-color: #ffe8e3;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 380px;
+    gap: 200px;
     justify-items: center;
     align-items: center;
     padding: 2.5rem $normal-padding 2.5rem;
@@ -32,7 +32,7 @@
   
     .img-container{
         position: relative;
-        right: 100px;
+        right: 50px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;

@@ -16,9 +16,9 @@
     // background-color: #282828;
     color: $almost-white;
     // padding-top: 130px;
-    padding: 7rem 3rem;
+    padding: 7rem 3rem 5rem;
     text-align: center;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     gap: 50px;
 
@@ -71,13 +71,13 @@
     .hero-btn {
         @include btn($padding: em(12px) em(24px), $bg: $almost-white, $hover: $almost-white, $clr: $almost-black);
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 1.2rem;
         border-radius: 2em;
         border: none;
         
         &:hover{
-            text-shadow: 0px 1px 3px rgb(0, 0, 0);
-            background: linear-gradient(140deg,  lighten($clr1, 5%), rgb(222, 233, 243));
+            // text-shadow: 0px 1px 3px rgb(0, 0, 0);
+            background: $clr1;
             border: none;
         }
     }

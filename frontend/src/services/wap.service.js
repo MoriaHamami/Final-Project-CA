@@ -3,19 +3,28 @@ import { emptyWapDemo } from '../waps/wap-demos/empty-wap-demo'
 import { wapDemo1 } from '../waps/wap-demos/wap-demo-1.js'
 import { wapDemo2 } from '../waps/wap-demos/wap-demo-2.js'
 import { wapDemo3 } from '../waps/wap-demos/wap-demo-3.js'
+import { wapDemo4 } from '../waps/wap-demos/wap-demo-4.js'
+
 
 // HEADERS
 import { wapHeader1 } from '../waps/headers/wap-header-1.js'
 import { wapHeader2 } from '../waps/headers/wap-header-2'
 import  {wapHeader3}  from '../waps/headers/wap-header-3'
+import  {wapHeader4}  from '../waps/headers/wap-header-4'
 
 // HEROS
 import { wapHero1 } from '../waps/heros/wap-hero-1'
 import { wapHero2 } from '../waps/heros/wap-hero-2'
+import { wapHero3A } from "../waps/heros/wap-hero-3a";
+import { wapHero3B } from "../waps/heros/wap-hero-3b.js";
+import { wapHero4 } from "../waps/heros/wap-hero-4.js";
 
 //ABOUT
 import { wapAbout1 } from '../waps/about/wap-about-1'
 import { wapAbout2 } from '../waps/about/wap-about-2'
+import { wapAbout3A } from "../waps/about/wap-about-3a.js";
+import { wapAbout3B } from "../waps/about/wap-about-3b.js";
+import { wapAbout4 } from "../waps/about/wap-about-4.js";
 
 // CONTAINERS
 
@@ -26,6 +35,8 @@ import { wapVideo2 } from '../waps/videos/wap-video-2.js'
 // FORMS
 import { wapForm1 } from '../waps/forms/wap-form-1'
 import { wapForm2 } from '../waps/forms/wap-form-2.js'
+import { wapForm3 } from "../waps/forms/wap-form-3.js";
+import { wapForm4 } from "../waps/forms/wap-form-4.js";
 
 // MAPS
 import { wapMap1 } from '../waps/maps/wap-map-1'
@@ -34,10 +45,15 @@ import { wapMap1 } from '../waps/maps/wap-map-1'
 import { wapGallery1 } from '../waps/galleries/wap-gallery-1'
 import { wapGallery2A } from '../waps/galleries/wap-gallery-2a'
 import { wapGallery2B } from '../waps/galleries/wap-gallery-2b'
+import { wapGallery3 } from "../waps/galleries/wap-gallery-3.js";
+import { wapGallery4A } from '../waps/galleries/wap-gallery-4a'
+import { wapGallery4B } from '../waps/galleries/wap-gallery-4b'
 
 // FOOTERS
 import { wapFooter1 } from '../waps/footers/wap-footer-1'
 import { wapFooter2 } from '../waps/footers/wap-footer-2'
+import { wapFooter3 } from '../waps/footers/wap-footer-3'
+import { wapFooter4 } from '../waps/footers/wap-footer-4'
 
 // SERVICES
 // import { httpService } from './http.service.js'
@@ -68,15 +84,15 @@ window.cs = wapService
 _createWaps()
 
 const mapCmpByCategory = {
-    headers: [wapHeader1, wapHeader2, wapHeader3],
-    heros: [wapHero1, wapHero2],
-    about: [wapAbout1, wapAbout2],
+    headers: [wapHeader1, wapHeader2, wapHeader3, wapHeader4],
+    heros: [wapHero1, wapHero2, wapHero3A, wapHero3B, wapHero4],
+    about: [wapAbout1, wapAbout2, wapAbout3A, wapAbout3B, wapAbout4],
     containers: [],
-    galleries: [wapGallery1, wapGallery2A, wapGallery2B],
+    galleries: [wapGallery1, wapGallery2A, wapGallery2B, wapGallery3, wapGallery4A, wapGallery4B],
     videos: [wapVideo1, wapVideo2],
-    forms: [wapForm1, wapForm2],
+    forms: [wapForm1, wapForm2, wapForm3, wapForm4],
     maps: [wapMap1],
-    footers: [wapFooter1, wapFooter2],
+    footers: [wapFooter1, wapFooter2,wapFooter3, wapFooter4],
 }
 
 function getWapDemos() {
@@ -85,6 +101,7 @@ function getWapDemos() {
         wapDemo1,
         wapDemo2,
         wapDemo3,
+        wapDemo4,
     ]
 }
 

@@ -13,13 +13,15 @@ export function GalleryCmp({ style, cmp, onElClick, selectedCmpId }) {
                 {info.photos.map(photo => {
                     return <div key={photo.url} className="photo-container">
                         <img src={photo.url} alt={''} suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.id} style={photo.style} data-container={JSON.stringify(photo)} onClick={onElClick} />
-                        {photo.title.txt && <h2 className="gallery-title" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.title.id} style={photo.title.style} data-container={JSON.stringify(photo.title)} onClick={onElClick}>{photo.title.txt}</h2>}
-                        {photo.subtitle.txt && <p className="gallery-subtitle" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.subtitle.id} style={photo.subtitle.style} data-container={JSON.stringify(photo.subtitle)} onClick={onElClick}>{photo.subtitle.txt}</p>}
+                        <div className="txt-container">
+                            {photo.title.txt && <h2 className="gallery-title" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.title.id} style={photo.title.style} data-container={JSON.stringify(photo.title)} onClick={onElClick}>{photo.title.txt}</h2>}
+                            {photo.subtitle.txt && <p className="gallery-subtitle" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === photo.subtitle.id} style={photo.subtitle.style} data-container={JSON.stringify(photo.subtitle)} onClick={onElClick}>{photo.subtitle.txt}</p>}
+                        </div>
                     </div>
                 })}
 
             </div >
-            {info.btn.label && <a href="#" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.btn.id} style={info.btn.style} data-container={JSON.stringify(info.btn)} onClick={onElClick}>{info.btn.label}</a>}
+            {info.btn?.label && <button href="#" suppressContentEditableWarning={true} contentEditable={selectedElement?.id === info.btn.id} style={info.btn.style} data-container={JSON.stringify(info.btn)} onClick={onElClick}>{info.btn.label}</button>}
         </div>
 
     )

@@ -1,0 +1,42 @@
+.wap-gallery-3 {
+    display: flex;
+    flex-direction: column;
+    color: $almost-black;
+    background-color: #ffe8e3;
+    padding: 5rem 2rem;
+    text-align: center;
+
+    .container-txt {
+        padding-bottom: 50px;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .wap-gallery-img-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        gap: 50px;
+        margin: auto;
+        padding-bottom: 50px;
+
+        img {
+            max-width: 8rem;
+            margin: 50px auto;
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+        }
+
+        .gallery-txt {
+            font-size: 0.9rem;
+        }
+    }
+
+    button {
+        background-color: inherit;
+        padding: 3px 0;
+        border-bottom: 0.5px solid $almost-black;
+        align-self: center;
+    }
+}
