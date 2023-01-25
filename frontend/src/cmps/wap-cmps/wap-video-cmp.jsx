@@ -9,23 +9,46 @@ export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
     const info = cmp.info
 
     return (
-        <div id={cmp.type} style={style} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
+        <div id={cmp.type}
+            style={style}
+            data-container={JSON.stringify(cmp)}
+            onClick={onElClick}
+            className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
+            onMouseOut={() => setIsOn((prevIsOn) => {
+                return { ...prevIsOn, cmp: false }
+            })}
+            onMouseOver={() => setIsOn((prevIsOn) => {
+                return { ...prevIsOn, cmp: true }
+            })}>
 
             {cmp.info.title && <h2
                 data-container={JSON.stringify(info.title)}
                 onClick={onElClick}
                 style={info.title.style}
-                className="title"
                 contentEditable={selectedElement?.id === info.title.id}
-                suppressContentEditableWarning={true} >
+                suppressContentEditableWarning={true}
+                className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover'}`}
+                onMouseOut={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, title: false }
+                })}
+                onMouseOver={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, title: true }
+                })} >
                 {info.title.txt}
             </h2>}
 
             {cmp.info.subtitle && <p data-container={JSON.stringify(info.subtitle)}
-                style={info.subtitle.style} className="subtitle"
+                style={info.subtitle.style}
                 onClick={onElClick}
                 contentEditable={selectedElement?.id === info.subtitle.id}
-                suppressContentEditableWarning={true} >
+                suppressContentEditableWarning={true}
+                className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.subtitle.id) ? 'selected' : ''} subtitle ${selectedElement?.id !== info.subtitle.id && isOn.subtitle && 'hover'}`}
+                onMouseOut={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, subtitle: false }
+                })}
+                onMouseOver={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, subtitle: true }
+                })} >
                 {info.subtitle.txt}
             </p>}
 
@@ -44,10 +67,9 @@ export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
                     title="Embedded youtube"
                 />
             </div>
-            <div
-                className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.video.id) ? 'selected' : ''} video-edit ${selectedElement?.id !== info.video.id && isOn.video && 'hover'}`}
-
-            >✎</div>
+            <div className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.video.id) ? 'selected' : ''} video-edit ${selectedElement?.id !== info.video.id && isOn.video && 'hover'}`}>
+                ✎
+            </div>
         </div>
     )
 }

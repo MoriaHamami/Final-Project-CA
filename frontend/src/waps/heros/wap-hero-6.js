@@ -5,9 +5,9 @@ export const wapHero6 = {
   type: 'wap-hero',
   name: 'wap-hero-6',
   info: {
-    title: { txt: 'MAXIMIZE YOUR FULL POTENTIAL.', style: { fontSize: '5.9em', color:'white', fontFamily: 'mont-heavy', lineHeight: '1em', letterSpacing: '0.1em'}, id: utilService.makeId(), type: 'txt' },
-    subtitle: { txt: 'Mental and performance training for athletes and coaches', style: { fontSize: '2.5em', color:'#fd6c2e', fontFamily: 'roboto-light', fontStyle: 'italic' }, id: utilService.makeId(), type: 'txt' },
-    btn: { label: 'BOOK NOW', link: '#wc20b', id: utilService.makeId(), style: { fontSize: '1em',color:'black',backgroundColor:'white', fontFamily: 'mont-heavy'}, type: 'btn' },
+    title: { txt: 'MAXIMIZE YOUR FULL POTENTIAL.', style: { fontSize: '5.9em', color:'white', fontFamily: 'mont-heavy', lineHeight: '1em', letterSpacing: '0.1em'}, id: utilService.makeId(), type: 'txt', key: 'title' },
+    subtitle: { txt: 'Mental and performance training for athletes and coaches', style: { fontSize: '2.5em', color:'#fd6c2e', fontFamily: 'roboto-light', fontStyle: 'italic' }, id: utilService.makeId(), type: 'txt', key: 'subtitle' },
+    btn: { label: 'BOOK NOW', link: '#wc20b', id: utilService.makeId(), style: { fontSize: '1em',color:'black',backgroundColor:'white', fontFamily: 'mont-heavy'}, type: 'btn', key: 'btn' },
   },
   theme: 'theme-header-happy',
   style: {

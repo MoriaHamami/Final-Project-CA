@@ -27,7 +27,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId }) {
           style={info.title.style}
           // className="title"
           data-container={JSON.stringify(info.title)}
-          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover'}`}
+          className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover-cmp'}`}
           onMouseOut={() => setIsOn((prevIsOn) => {
             return { ...prevIsOn, title: false }
           })}

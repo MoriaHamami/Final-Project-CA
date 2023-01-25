@@ -5,14 +5,14 @@ export const wapForm1 = {
     type: 'wap-form',
     name: 'wap-form-1',
     info: {
-        title: { txt: 'Reservations', style: {}, id: utilService.makeId(), type: 'txt' },
-        subtitle: { txt: 'BOOK A TABLE', style: {}, id: utilService.makeId(), type: 'txt' },
+        title: { txt: 'Reservations', style: {}, id: utilService.makeId(), type: 'txt', key: 'title' },
+        subtitle: { txt: 'BOOK A TABLE', style: {}, id: utilService.makeId(), type: 'txt', key: 'subtitle' },
         inputs: [
-            { dataType: 'date', name: 'wap-input', placeholder: '', id: utilService.makeId(), style: {}, type: 'input' },
-            { dataType: 'time', name: 'wap-input', placeholder: '', id: utilService.makeId(), style: {}, type: 'input' },
-            { dataType: 'number', name: 'wap-input', placeholder: '', id: utilService.makeId(), style: {}, type: 'input' }
+            { dataType: 'date', name: 'wap-input', placeholder: '', id: utilService.makeId(), style: {}, type: 'input', key: 'inputs' },
+            { dataType: 'time', name: 'wap-input', placeholder: '', id: utilService.makeId(), style: {}, type: 'input', key: 'inputs' },
+            { dataType: 'number', name: 'wap-input', placeholder: '', id: utilService.makeId(), style: {}, type: 'input', key: 'inputs' }
         ],
-        btn: { label: 'Book Now', link: '#wc03', id: utilService.makeId(), style: {}, type: 'btn' },
+        btn: { label: 'Book Now', link: '#wc03', id: utilService.makeId(), style: {}, type: 'btn', key: 'btn' },
     },
     theme: 'theme-section-happy',
     style: {

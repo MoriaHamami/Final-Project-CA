@@ -7,7 +7,7 @@ export const wapMap1 = {
   name: 'wap-map-1',
   theme: 'theme-map-exciting',
   info: {
-    title: { txt: 'Our location', style: { fontSize: '1.3em', fontFamily: 'fe-serif' }, id: utilService.makeId(), type: 'txt' },
+    title: { txt: 'Our location', style: { fontSize: '1.3em', fontFamily: 'fe-serif' }, id: utilService.makeId(), type: 'txt', key: 'title' },
     map: {
       cords: { lat: 40.83479928947879, lng: 14.106100441161631 },
       zoom: 14,
@@ -16,7 +16,8 @@ export const wapMap1 = {
         height: '200px',
         width: '70%',
       },
-      id: utilService.makeId()
+      id: utilService.makeId(),
+      key: 'map'
     }
   },
   style: {

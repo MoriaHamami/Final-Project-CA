@@ -5,8 +5,8 @@ export const wapHero5 = {
   type: 'wap-hero',
   name: 'wap-hero-5',
   info: {
-    title: { txt: `I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.`, style: { fontSize: '1.3em', color:'black', fontFamily: 'roboto-light' }, id: utilService.makeId(), type: 'txt' },
-    subtitle: { txt: '| Rosie Gomez |', link: '#wc20b', id: utilService.makeId(), style: { fontSize: '1.3em', color:'black', fontFamily: 'playfair-regular' }, type: 'btn' },
+    title: { txt: `I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.`, style: { fontSize: '1.3em', color:'black', fontFamily: 'roboto-light' }, id: utilService.makeId(), type: 'txt', key: 'title' },
+    subtitle: { txt: '| Rosie Gomez |', link: '#wc20b', id: utilService.makeId(), style: { fontSize: '1.3em', color:'black', fontFamily: 'playfair-regular' }, type: 'btn', key: 'btn' },
   },
   theme: 'theme-header-happy',
   style: {

@@ -8,14 +8,16 @@ export const wapAbout2 = {
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-about-2_t3yxcn.jpg',
 
   info: {
-    title: { txt: 'Our Story', id: utilService.makeId(), style: { fontWeight: '600', fontSize: '1.7em' }, type: 'txt' },
-    subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt' },
-    txt: { txt: 'We are a couple for 3 years who have always been passionate about exploring new places and cultures. We started my vlog as a way to document my travels and share our experiences with others.', style: { fontSize: '0.9em' }, id: utilService.makeId(), type: 'txt' },
-    btn: { label: "Read More", link: "#wc20b", id: utilService.makeId(), style: { fontSize: '0.8em', fontWeight: '300', borderRadius: '0.25em' }, type: 'btn' },
+    title: { txt: 'Our Story', id: utilService.makeId(), style: { fontWeight: '600', fontSize: '1.7em' }, type: 'txt', key: 'title' },
+    subtitle: { txt: '', id: utilService.makeId(), style: {}, type: 'txt', key: 'subtitle' },
+    txt: { txt: 'We are a couple for 3 years who have always been passionate about exploring new places and cultures. We started my vlog as a way to document my travels and share our experiences with others.', style: { fontSize: '0.9em' }, id: utilService.makeId(), type: 'txt', key: 'txt' },
+    btn: { label: "Read More", link: "#wc20b", id: utilService.makeId(), style: { fontSize: '0.8em', fontWeight: '300', borderRadius: '0.25em' }, type: 'btn', key: 'btn' },
     photo: {
         url: '',
         type: 'img',
-        id: utilService.makeId()
+        id: utilService.makeId(),
+        style: {},
+        key: 'photo'
       },
 
   },

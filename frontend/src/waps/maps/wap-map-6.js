@@ -15,7 +15,8 @@ export const wapMap6 = {
         height: '300px',
         width: '100%',
       },
-      id: utilService.makeId()
+      id: utilService.makeId(),
+      key: 'map'
     }
   },
   style: {

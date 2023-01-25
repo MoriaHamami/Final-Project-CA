@@ -4,6 +4,7 @@ import { WapDemos } from './pages/wap-demos-page.jsx'
 import { Editor } from './pages/editor-page.jsx'
 import { Drafts } from './pages/drafts.jsx'
 import { Preview } from './pages/preview.jsx'
+import { Publish } from './pages/publish.jsx'
 
 const routes = [
     {
@@ -35,7 +36,13 @@ const routes = [
         path: '/preview/:wapId',
         component: <Preview />,
         label: '',
+    },
+    {
+        path: '/publish/:wapName',
+        component: <Publish />,
+        label: '',
     }
 ]
+
 
 export default routes

@@ -5,28 +5,35 @@ import { useSelector } from 'react-redux'
 import { TextField } from '@mui/material'
 
 export function SidebarMapLat({ title, propertyName, onChange }) {
-    // const [latCoordVal, setLatCoordVal] = useState('roboto-regular')
-    // const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
+    const [latCordVal, setLatCordVal] = useState(0)
+    const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
-    // useEffect(() => {
-    //     const latCoord = selectedElement?.style[propertyName] ? selectedElement.style[propertyName] : 'roboto-regular'
-    //     setLatCoordVal(latCoord)
-    // }, [selectedElement])
+    useEffect(() => {
+        console.log('selectedElement:', selectedElement)
+        // const latCord = selectedElement?.cords[propertyName] ? selectedElement.cords[propertyName] : 0
+        // setLatCordVal(latCord)
+    }, [selectedElement])
 
+    function handleChange({ target }) {
+        setLatCordVal(target.value)
+    }
 
+    function submitLatCord(ev) {
+        ev.preventDefault()
+        console.log('target.value:', ev.target.value)
+        // target.title = target.value
+        // setLatCordVal(target.value)
+        // onChange(propertyName, target.value)
+    }
 
-    // function onChangeLatCoord({ target }) {
-    //     target.title = target.value
-    //     setLatCoordVal(target.value)
-    //     onChange(propertyName, target.value)
-    // }
+    return <div className="lat-container">
 
-    return <div className='lat-container'>
-
-        <label className='lat-label' htmlFor="lat">{title}</label>
-        <form>
-            {/* <input type={input.dataType} placeholder={input.placeholder} key={input.id} />
-            <button onClick={onSubmit}>{info.btn.label}</button> */}
+        <form onChange={handleChange} onSubmit={submitLatCord}>
+            <label className="lat-label">{title}</label>
+            <input type="number"
+                value={latCordVal}
+                placeholder="Enter cordinate" />
+            {/* <button onClick={onSubmit}>{info.btn.label}</button> */}
         </form>
 
     </div>
