@@ -56,7 +56,7 @@
     }
     
     .hover {
-        // background-color: lighten($editor-hover, 17%);
+        background-color: lighten($editor-hover, 17%);
         outline: 2px solid lighten($editor-board-clr, 10%);
         // box-shadow: inset 0px 0px 0 2px lighten($editor-board-clr, 10%);
     }

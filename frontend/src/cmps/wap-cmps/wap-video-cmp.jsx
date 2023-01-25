@@ -52,7 +52,7 @@ export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
                 {info.subtitle.txt}
             </p>}
 
-            <div className="wap-card-video-container" data-container={JSON.stringify(info.video)} onClick={onElClick}
+            <div className="wap-card-video-container" 
                 onMouseOut={() => setIsOn((prevIsOn) => {
                     return { ...prevIsOn, video: false }
                 })}
@@ -67,7 +67,15 @@ export function VideoCmp({ style, cmp, onElClick, selectedCmpId }) {
                     title="Embedded youtube"
                 />
             </div>
-            <div className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.video.id) ? 'selected' : ''}  edit-icon ${selectedElement?.id !== info.video.id && isOn.video && 'hover'}`}>
+            <div className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.video.id) ? 'selected' : ''} edit-icon ${selectedElement?.id !== info.video.id && isOn.video && 'hover'}`}
+                data-container={JSON.stringify(info.video)} 
+                onClick={onElClick}
+                onMouseOut={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, video: false }
+                })}
+                onMouseOver={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, video: true }
+                })}>
                 ✎
             </div>
         </div>

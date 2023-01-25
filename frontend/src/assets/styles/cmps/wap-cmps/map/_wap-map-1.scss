@@ -12,6 +12,17 @@
     background-color: $t1clr1;
     color: $almost-white;
     padding: 0.3rem 0.7rem;
+  }
+
 }
+
+.map-container {
+  display: flex;
+  align-items: center;
+  .edit-icon {
+    background-color: white;
+    color: $almost-white;
+    // align-self: center;
+  }
 
 }

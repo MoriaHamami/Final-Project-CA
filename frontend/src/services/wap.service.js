@@ -75,6 +75,8 @@ import { wapFooter6 } from '../waps/footers/wap-footer-6'
 import { userService } from './user.service.js'
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service'
+import { wapFooter5 } from '../waps/footers/wap-footer-5'
+import { wapForm5 } from '../waps/forms/wap-form-5'
 
 
 const STORAGE_KEY = 'waps'
@@ -108,9 +110,9 @@ const mapCmpByCategory = {
     containers: [],
     galleries: [wapGallery1, wapGallery2A, wapGallery2B, wapGallery3, wapGallery4A, wapGallery4B, wapGallery5A, wapGallery5B, wapGallery6A, wapGallery6B],
     videos: [wapVideo1, wapVideo2],
-    forms: [wapForm1, wapForm2, wapForm3, wapForm4],
+    forms: [wapForm1, wapForm2, wapForm3, wapForm4, wapForm5],
     maps: [wapMap1, wapMap6],
-    footers: [wapFooter1, wapFooter2, wapFooter3, wapFooter4, wapFooter6],
+    footers: [wapFooter1, wapFooter2, wapFooter3, wapFooter4, wapFooter5, wapFooter6],
 }
 
 function getWapDemos() {
@@ -219,7 +221,7 @@ async function saveCmp(wap, cmp, idx) {
 function findCmpIdx(parentCmp, cmp) {
     const idx = parentCmp?.cmps?.findIndex((currCmp) => currCmp.id === cmp.id)
     if (idx > -1) {
-      return idx
+        return idx
     } else {
         parentCmp?.cmps?.forEach((currCmp) => findCmpIdx(currCmp, cmp))
     }

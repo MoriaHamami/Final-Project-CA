@@ -1,44 +1,39 @@
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faBold, faUnderline, faItalic } from '@fortawesome/free-solid-svg-icons'
-// import { useState } from "react"
+export function SidebarUrl({ title, propertyName, onChange }) {
+    const [url, setUrl] = useState('')
+    const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
+    useEffect(() => {
+        // console.log('selectedElement:', selectedElement)
+        const url = selectedElement?.url ? selectedElement?.url : ('')
+        setUrl(url)
+    }, [selectedElement])
 
-// export function SidebarFontDecoration({title,  onChange}) {
-//   const [isBold, setIsBold] = useState(false)
-//   const [isUnderline, setIsUnderline] = useState(false)
-//   const [isItalic, setIsItalic] = useState(false)
+    function handleChange({ target }) {
+        setUrl(target.value)
+    }
 
+    function submitUrl(ev) {
+        ev.preventDefault()
+        // console.log('target.value:', url)
+        // target.title = target.value
+        // setUrl(target.value)
+        onChange(propertyName, url)
+    }
 
-//     function onBoldClick(){
-//         const value = isBold ? '400' : '700'
-//         setIsBold((prevState) => !prevState)
-//         onChange('font-weight', value)
-//     }
+    return <div className="map-url">
 
-//     function onUnderlineClick(){
-//         const value = isUnderline ? 'none' : 'underline'
-//         setIsUnderline((prevState) => !prevState)
-//         onChange('text-decoration', value)
-//     }
+        <form onChange={handleChange} onSubmit={submitUrl}>
+            <label className="map">{title}</label>
+            <input type="url"
+                value={url}
+                placeholder="Enter url" />
+            {/* <button onClick={onSubmit}>{info.btn.label}</button> */}
+        </form>
 
-//     function onItalicClick(){
-//         const value = isItalic ? '' : 'italic'
-//         setIsItalic((prevState) => !prevState)
-//         onChange('font-style', value)
-//     }
-
-//         return <div className='flex space-between'>
-//           <span>{title}</span>
-//           <div className="editor-decoration-container">
-//           <span onClick={onBoldClick} className="material-symbols-outlined bold">format_bold</span>
-//           <span onClick={onUnderlineClick} className="material-symbols-outlined">format_underlined</span>
-//           <span onClick={onItalicClick} className="material-symbols-outlined">format_italic</span>
-//           {/* <FontAwesomeIcon className="bold-btn" icon={faBold} onClick={onBoldClick} />
-//           <FontAwesomeIcon className="underline-btn" icon={faUnderline} onClick={onUnderlineClick} />
-//           <FontAwesomeIcon className="italic-btn" icon={faItalic} onClick={onItalicClick} /> */}
-
-//           </div>
-//         </div>
-//         // value={chosenContainer.style}
-//     }
+    </div>
+}
