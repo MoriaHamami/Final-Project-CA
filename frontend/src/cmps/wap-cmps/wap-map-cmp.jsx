@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import GoogleMapReact from 'google-map-react';
 import { useSelector } from 'react-redux'
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+// import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
@@ -62,7 +62,7 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
           <AnyReactComponent
             lat={defaultProps.center.lat}
             lng={defaultProps.center.lng}
-            text={<LocationOnIcon style={{color:'red', fontSize:'2rem'}}/>}
+          // text={<LocationOnIcon style={{color:'red', fontSize:'2rem'}}/>}
           />
         </GoogleMapReact>
         <div

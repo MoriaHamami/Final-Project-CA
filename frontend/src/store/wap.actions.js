@@ -9,6 +9,7 @@ export async function saveWap(wap) {
         const savedWap = await wapService.save(wap)
         // const savedWap = wap
         store.dispatch({ type: SET_WAP, wap: savedWap })
+        // console.log(ssavedWap._id)
         return savedWap._id
     } catch (err) {
         throw new Error('wap not found')
