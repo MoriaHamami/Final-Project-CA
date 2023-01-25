@@ -7,6 +7,7 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    align-items: center;
     color: whitesmoke;
     position: relative;
 
@@ -18,6 +19,11 @@
       margin-bottom: 10px;
       // line-height: 1.2;
       margin-bottom: 2rem;
+    }
+    .subtitle {
+      align-self: center;
+      text-align: center;
+      max-width: 600px;
     }
   
   

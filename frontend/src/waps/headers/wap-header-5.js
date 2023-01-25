@@ -1,6 +1,6 @@
 import { utilService } from '../../services/util.service.js'
 
-export const wapHeader4 = {
+export const wapHeader5 = {
     id: utilService.makeId(),
     type: 'wap-header',
     name: 'wap-header-4',
