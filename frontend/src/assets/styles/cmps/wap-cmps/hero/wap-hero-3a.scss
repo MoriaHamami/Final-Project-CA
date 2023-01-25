@@ -1,3 +1,4 @@
+
 .wap-hero-3a {
     background-position: bottom;
     background-size: cover;
@@ -6,10 +7,14 @@
     display: flex;
     justify-content: center;
     text-align: left;
-    padding: 17.5rem $normal-padding;
     flex-direction: column;
     color: whitesmoke;
-  
+    
+    .wap-hero-container{
+      padding: 17.5rem $normal-padding;
+      background-color: rgba(232, 153, 137, 0.105);
+      z-index: 1;
+    }
     .title {
       margin-bottom: 10px;
       // line-height: 1.2;

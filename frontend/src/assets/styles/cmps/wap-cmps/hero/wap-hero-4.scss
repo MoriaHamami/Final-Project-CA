@@ -1,4 +1,4 @@
-.wap-hero-3b {
+.wap-hero-4 {
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -8,13 +8,11 @@
     text-align: center;
     flex-direction: column;
     color: whitesmoke;
+    position: relative;
 
         
-    .wap-hero-container{
-      padding: 17.5rem $normal-padding;
-      background-color: rgba(232, 153, 137, 0.105);
-      z-index: 1;
-    }
+      padding: 4rem $normal-padding 0;
+    //   max-height: 650px;
   
     .title {
       margin-bottom: 10px;
@@ -29,13 +27,20 @@
     // }
   
     img {
-      margin-top: 3rem;
-      max-width: 100%;
+    //   margin-top: 3rem;
+      max-width: 300px;
+      position: relative;
+      right: 5px;
+      top: 100px;
+    //   box-shadow: 0.00px 0.00px 45px 2px rgba(15,2,78,0.42);
     }
   
     button {
-        background-color: inherit;
-        padding: 3px 0;
-      border-bottom: 0.5px solid $almost-black;
+        padding: 10px 20px;
+
+        &:hover{
+            opacity: 0.9;
+        }
+
     }
   }

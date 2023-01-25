@@ -18,6 +18,6 @@ export const wapHeader3 = {
   },
   theme: 'theme-header-happy',
   style: {
-    fontFamily: 'roboto-light',
+    fontFamily: 'playfair-regular',
   }
 }

@@ -1,0 +1,28 @@
+.wap-about-4 {
+    width: 100%;
+    padding: 0 $normal-padding 8.5rem;
+    text-align: center;
+
+    .subtitle {
+        position: relative;
+        width: 400px;
+        text-align: left;
+        left: 60%;
+        top: 250px;
+        background-color: white;
+        padding: 1.5rem;
+        z-index: 1;
+        border-radius: 4px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .title {
+        margin-bottom: 50px;
+    }
+
+    img{
+        position: relative;
+        bottom: 200px;
+    }
+
+}

@@ -8,20 +8,27 @@
         max-width: 700px;
         padding-left: 5px;
         line-height: 1.2;
-        margin-top: 30px;
+        margin: 60px 0 10px;
+        // margin-bottom: 10px;
+        // margin-top: 30px;
         border-left: 5px solid $clr1;
     }
 
     .subtitle{
         font-size: 0.9rem;
         color: gray;
+        margin-bottom: 3rem;
+        font-family: mont-light;
+        font-weight: 600;
+        letter-spacing: .075rem;
+        
 
     }
 
     .preview-list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 50px;
+        gap: 40px;
     }
 }
 
@@ -78,9 +85,12 @@
     }
 
     .preview-name {
-        font-family: roboto-light;
-        padding: 10px 0;
+        font-family: mont-light;
+        padding: 20px 0;
         font-size: 0.9rem;
+        color: gray;
+        letter-spacing: .075rem;
+        font-weight: 600;
     }
 
     .btn-container {

@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 export function HomeFooter() {
 
     return <div className='home-footer'>
-        <div className='footer-shadow-container-1'></div>
+        {/* <div className='footer-shadow-container-1'></div>
         <div className='footer-shadow-container-2'></div>
-        <div className='footer-shadow-container-3'></div>
+        <div className='footer-shadow-container-3'></div> */}
         <div className='footer-container'>
             <h2 className='home-footer-title'>Build your <span>unique</span> online website Now</h2>
             <h4 className='home-footer-subtitle'>To create your own website, follow these steps </h4>

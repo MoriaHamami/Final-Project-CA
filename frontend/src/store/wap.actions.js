@@ -95,7 +95,7 @@ export async function addCmp(wap, cmp, idx) {
     try {
         // Change cmp id so the cmp in sidebar and wap wont be similar
         const cmpCopy = { ...cmp }
-        cmp.id = utilService.makeId()
+        cmpCopy.id = utilService.makeId()
         wap.cmps.splice(idx, 0, cmpCopy)
         // wap.cmps.unshift(cmpCopy)
         await saveWap(wap)
@@ -134,14 +134,14 @@ export function saveElement(wap, selectedCmpId, selectedElement, propertyName, p
                 break
             } else if (Array.isArray(childElement)) {
                 const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
-                while (!idx) {
+                // while (idx === -1) {
                     if (idx !== -1) {
                         const updatedElementStyle = { ...childElement[idx].style, [propertyName]: propertyValue }
                         wap.cmps[cmpIndex].info[key][idx].style = updatedElementStyle
                         break
                     }
-                    const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
-                }
+                    // const idx = childElement.findIndex((elm) => elm.id === selectedElement.id)
+                // }
             }
         }
     } else {
