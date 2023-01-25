@@ -1,18 +1,54 @@
 import React from 'react'
+import { useState } from "react"
+
 import { useSelector } from 'react-redux'
 
 export function FormCmp({ style, cmp, onElClick, selectedCmpId }) {
+
+    const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false, img: false, input: false })
 
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const info = cmp.info
 
     return (
-        <div id={cmp.type} style={style} className={cmp.name} data-container={JSON.stringify(cmp)} onClick={onElClick}>
-            <h2 style={info.title.style} data-container={JSON.stringify(info.title)} contentEditable={selectedElement?.id === info.title.id} onClick={onElClick} className="title">{info.title.txt}</h2>
-            <span style={info.subtitle.style} data-container={JSON.stringify(info.subtitle)} contentEditable={selectedElement?.id === info.subtitle.id} onClick={onElClick} className="subtitle">{info.subtitle.txt}</span>
+        <div id={cmp.type} style={style}
+            className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover')}
+            onMouseOut={() => setIsOn((prevIsOn) => {
+                return { ...prevIsOn, cmp: false }
+            })}
+            onMouseOver={() => setIsOn((prevIsOn) => {
+                return { ...prevIsOn, cmp: true }
+            })}
+            data-container={JSON.stringify(cmp)} onClick={onElClick}>
+            <h2 style={info.title.style} data-container={JSON.stringify(info.title)} contentEditable={selectedElement?.id === info.title.id} onClick={onElClick}
+                className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.title.id) ? 'selected' : ''} title ${selectedElement?.id !== info.title.id && isOn.title && 'hover'}`}
+                onMouseOut={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, title: false }
+                })}
+                onMouseOver={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, title: true }
+                })}
+            >{info.title.txt}</h2>
+            <span style={info.subtitle.style} data-container={JSON.stringify(info.subtitle)} contentEditable={selectedElement?.id === info.subtitle.id} onClick={onElClick}
+                className={`${(selectedCmpId === cmp.id && selectedElement?.id === info.subtitle.id) ? 'selected' : ''} subtitle ${selectedElement?.id !== info.subtitle.id && isOn.subtitle && 'hover'}`}
+                onMouseOut={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, subtitle: false }
+                })}
+                onMouseOver={() => setIsOn((prevIsOn) => {
+                    return { ...prevIsOn, subtitle: true }
+                })}
+            >{info.subtitle.txt}</span>
             <form>
                 {info.inputs?.map(input => {
-                    return <input type={input.dataType} placeholder={input.placeholder} key={input.id}
+                    return <input type={input.dataType}
+                        // className={`${(selectedCmpId === cmp.id && selectedElement?.id === input.id) ? 'selected' : ''}  ${selectedElement?.id !== input.id && isOn.input && 'hover'}`}
+                        // onMouseOut={() => setIsOn((prevIsOn) => {
+                        //     return { ...prevIsOn, input: false }
+                        // })}
+                        // onMouseOver={() => setIsOn((prevIsOn) => {
+                        //     return { ...prevIsOn, input: true }
+                        // })}
+                        placeholder={input.placeholder} key={input.id}
                         style={input.style} data-container={JSON.stringify(input)} onClick={onElClick} />
                 })}
                 <button style={info.btn.style} data-container={JSON.stringify(info.btn)} contentEditable={selectedElement?.id === info.btn.id} onClick={onElClick} >{info.btn.label}</button>
