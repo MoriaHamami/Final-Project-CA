@@ -70,8 +70,19 @@
     .hover-cmp {
         box-shadow: inset 0px 0px 0 2px lighten($editor-board-clr, 10%);
     }
-}
 
+    .desktop-layout {
+        width: 100%;
+    }
+    
+    .tablet-layout {
+        width: $narrow-breakpoint;
+    }
+    
+    .mobile-layout {
+        width: $mobile-breakpoint;
+    }
+}
 
 .dragable-container {
 

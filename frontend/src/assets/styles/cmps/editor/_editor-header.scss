@@ -109,14 +109,12 @@
         gap: 2px;
 
         .editor-action {
-            // padding: 0.6rem 1rem;
             font-size: 21px;
             font-size: 1.3rem;
             padding: 5px;
 
 
             &.desktop {
-                // padding: 0.5rem 1rem 0.7rem;
                 font-size: 24px;
                 padding: 3.3px;
 
@@ -129,6 +127,7 @@
                 font-weight: 300;
                 border-radius: 3px;
                 cursor: pointer;
+                // cursor: not-allowed;
             }
         }
 

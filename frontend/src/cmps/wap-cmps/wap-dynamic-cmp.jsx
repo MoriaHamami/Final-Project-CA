@@ -10,10 +10,27 @@ import { GalleryCmp } from './wap-gallery-cmp.jsx'
 import { VideoCmp } from './wap-video-cmp.jsx'
 import { FormCmp } from './wap-form-cmp.jsx'
 import { MapCmp } from './wap-map-cmp.jsx'
+import { useSelector } from 'react-redux'
 
 
 export function DynamicCmp(props) {
   const { cmp } = props
+
+  const { displaySize } = useSelector((storeState) => storeState.wapModule)
+  const [displayClass, setDisplayClass] = useState('')
+
+  useEffect(() => {
+    switch (displaySize) {
+      case '720px':
+        setDisplayClass('tablet-layout')
+        break
+      case '420px':
+        setDisplayClass('mobile-layout')
+        break
+      default:
+        setDisplayClass('desktop-layout')
+    }
+  }, [displaySize])
 
   // ADD WAP-(case) TO ALL THE SWITCH CASES
 
@@ -22,6 +39,7 @@ export function DynamicCmp(props) {
       return (
         <ContainerCmp
           {...props}
+          displayClass={displayClass}
           style={cmp.style}
         />
       )
@@ -29,12 +47,14 @@ export function DynamicCmp(props) {
       return (
         <HeaderCmp
           {...props}
+          displayClass={displayClass}
           style={cmp.style}
         />
       )
     case 'wap-hero':
       return (
         <HeroCmp
+          displayClass={displayClass}
           {...props}
           cmp={cmp}
           style={cmp.style}
@@ -45,6 +65,7 @@ export function DynamicCmp(props) {
         <AboutCmp
           {...props}
           cmp={cmp}
+          displayClass={displayClass}
           style={cmp.style}
         />
       )
@@ -52,6 +73,7 @@ export function DynamicCmp(props) {
       return (
         <GalleryCmp
           {...props}
+          displayClass={displayClass}
           cmp={cmp}
           style={cmp.style}
         />
@@ -60,6 +82,7 @@ export function DynamicCmp(props) {
       return (
         <VideoCmp
           {...props}
+          displayClass={displayClass}
           cmp={cmp}
           style={cmp.style}
           {...props}
@@ -69,6 +92,7 @@ export function DynamicCmp(props) {
       return (
         <FormCmp
           {...props}
+          displayClass={displayClass}
           cmp={cmp}
           style={cmp.style}
         />
@@ -77,6 +101,7 @@ export function DynamicCmp(props) {
       return (
         <MapCmp
           {...props}
+          displayClass={displayClass}
           cmp={cmp}
           style={cmp.style}
         />
@@ -85,6 +110,7 @@ export function DynamicCmp(props) {
       return (
         <WapFooter
           {...props}
+          displayClass={displayClass}
           style={cmp.style}
         />
       )
@@ -92,3 +118,4 @@ export function DynamicCmp(props) {
       return
   }
 }
+

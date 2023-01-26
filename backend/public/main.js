@@ -1,51 +1,51 @@
-import { carService } from './services/car.service.js'
+import { wapService } from './services/wap.service.js'
 import { userService } from './services/user.service.js'
 import { utilService } from './services/util.service.js'
 
 console.log('Simple driver to test some API calls')
 
-window.onLoadCars = onLoadCars
+window.onLoadWaps = onLoadWaps
 window.onLoadUsers = onLoadUsers
-window.onAddCar = onAddCar
-window.onGetCarById = onGetCarById
-window.onRemoveCar = onRemoveCar
-window.onAddCarMsg = onAddCarMsg
+window.onAddWap = onAddWap
+window.onGetWapById = onGetWapById
+window.onRemoveWap = onRemoveWap
+window.onAddWapMsg = onAddWapMsg
 
-async function onLoadCars() {
-    const cars = await carService.query()
-    render('Cars', cars)
+async function onLoadWaps() {
+    const waps = await wapService.query()
+    render('Waps', waps)
 }
 async function onLoadUsers() {
     const users = await userService.query()
     render('Users', users)
 }
 
-async function onGetCarById() {
-    const id = prompt('Car id?')
+async function onGetWapById() {
+    const id = prompt('Wap id?')
     if (!id) return
-    const car = await carService.getById(id)
-    render('Car', car)
+    const wap = await wapService.getById(id)
+    render('Wap', wap)
 }
 
-async function onRemoveCar() {
-    const id = prompt('Car id?')
+async function onRemoveWap() {
+    const id = prompt('Wap id?')
     if (!id) return
-    await carService.remove(id)
-    render('Removed Car')
+    await wapService.remove(id)
+    render('Removed Wap')
 }
 
-async function onAddCar() {
+async function onAddWap() {
     await userService.login({ username: 'muki', password: '123' })
-    const savedCar = await carService.save(carService.getEmptyCar())
-    render('Saved Car', savedCar)
+    const savedWap = await wapService.save(wapService.getEmptyWap())
+    render('Saved Wap', savedWap)
 }
 
-async function onAddCarMsg() {
+async function onAddWapMsg() {
     await userService.login({ username: 'muki', password: '123' })
-    const id = prompt('Car id?')
+    const id = prompt('Wap id?')
     if (!id) return
 
-    const savedMsg = await carService.addCarMsg(id, 'some msg')
+    const savedMsg = await wapService.addWapMsg(id, 'some msg')
     render('Saved Msg', savedMsg)
 }
 

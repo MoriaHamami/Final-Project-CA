@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import { useSelector } from 'react-redux'
 // import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
+export function MapCmp({ style, cmp, onElClick, selectedCmpId, displayClass }) {
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const AnyReactComponent = ({ text }) => <div>{text}</div>
   const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false, img: false, map: false })
@@ -20,7 +20,7 @@ export function MapCmp({ style, cmp, onElClick, selectedCmpId }) {
 
   return (
     <div id={cmp.type}
-      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
+      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + displayClass + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
       onMouseOut={() => setIsOn((prevIsOn) => {
         return { ...prevIsOn, cmp: false }
       })}
