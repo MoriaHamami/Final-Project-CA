@@ -59,6 +59,7 @@ export function Editor() {
     }
 
     function addCmpToBoard(cmp, idx) {
+        console.log('wap:',wap)
         saveCmp(wap, cmp, idx)
     }
 
@@ -74,6 +75,7 @@ export function Editor() {
         } else if (propertyName === 'cords') element[propertyName] = propertyValue
         else element.style[propertyName] = propertyValue
         // console.log('element editorpage line 69:', element)
+        console.log('element.style[propertyName]:',element.style[propertyName])
         console.log('element:', element)
         saveElement(wap, cmpId, element)
     }

@@ -105,6 +105,7 @@ export async function removeCmp(wap, startIdx, endIdx = null) {
 export async function saveCmp(wap, cmp, idx) {
     try {
         const savedWap = await wapService.saveCmp(wap, cmp, idx)
+        console.log('savedWap:',savedWap)
         // const savedWap = wap
         store.dispatch({ type: SET_WAP, wap: savedWap })
         return savedWap._id
@@ -147,7 +148,12 @@ export function saveElement(wap, cmpId, element) {
     const idx = wapService.findCmpIdx(wap, cmp)
     // console.log('cmp action line 136:', wap[idx])
 
-    if(cmp.id === element.id) return saveCmp(wap, cmp, idx)
+    if(cmp.id === element.id){
+        // console.log('cmp:',cmp)
+
+        return saveCmp(wap, element, idx)
+
+    } 
 
     // Update cmp
     if (element.key === 'photos' || element.key === 'inputs'|| element.key === 'btns') {
