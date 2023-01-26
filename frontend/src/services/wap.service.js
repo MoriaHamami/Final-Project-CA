@@ -212,7 +212,7 @@ async function saveCmp(wap, cmp, idx) {
         const cmpCopy = { ...cmp }
         cmpCopy.id = utilService.makeId()
         wap.cmps.splice(idx, 0, cmpCopy)
-        savedWap = await storageService.post(STORAGE_KEY, wap)
+        savedWap = await storageService.put(STORAGE_KEY, wap)
     }
     return savedWap
 }
