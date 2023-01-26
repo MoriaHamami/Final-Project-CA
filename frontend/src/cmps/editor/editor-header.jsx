@@ -52,7 +52,7 @@ export function EditorHeader({ wap }) {
                 <button onClick={changeWapName} className='publish-btn'>Save</button>
             </div>
             <div className="site-actions">
-                <Link key="/preview" to={`/ preview / ${wap._id} `}><button className='preview-btn'>Preview</button></Link>
+                <Link key="/preview" to={`/preview/${wap._id}`}><button className='preview-btn'>Preview</button></Link>
                 <button onClick={() => setIsVisible(!isVisible)} className='publish-btn'>Publish</button>
                 {/* <Link key="/publish" to={`/ publish / ${ wap.name } `}><button className='publish-btn'>Publish</button></Link> */}
             </div>

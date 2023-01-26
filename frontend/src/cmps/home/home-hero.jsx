@@ -9,16 +9,16 @@ export function HomeHero() {
             <HomeHeader />
         <section className="home-page-hero">
             <div className='intro-container'>
-            <h1 className='hero-title'>The <span>best</span> way to build your personal site</h1>
-            <p className='hero-txt'>You're on your way to creating your first professional website.</p>
+            <h1 className='hero-title'>Turning ideas into <span>Websites</span></h1>
+            <p className='hero-txt'>Unleash your creativity and build your own website with ease</p>
             
             <Link to="/WapDemos">
                 <button className='hero-btn'>Create New Site</button>
             </Link>
             </div>
             <div className='img-container'>
-                <img className='demo-hero' src="https://res.cloudinary.com/dimirmc9j/image/upload/v1674494423/hero_web_img_xhroz8.png" alt="" />
-                <img className='demo-template' src="https://res.cloudinary.com/dimirmc9j/image/upload/v1674126517/demi-template-2.1_uitjmw.png" alt="" />
+                <img className='demo-hero' src="https://res.cloudinary.com/dimirmc9j/image/upload/v1674716461/%D7%92%D7%9B%D7%A2%D7%99%D7%97%D7%98%D7%90%D7%A8%D7%92_hkjvg4.png" alt="" />
+                <img className='demo-template' src="https://res.cloudinary.com/dimirmc9j/image/upload/v1674716456/%D7%92%D7%9B%D7%A2%D7%99%D7%97%D7%9C%D7%9F%D7%95%D7%98%D7%90%D7%A8%D7%9B%D7%A2%D7%99_hwjqgt.png" alt="" />
             </div>
         </section >
         <svg className="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

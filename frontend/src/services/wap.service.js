@@ -107,7 +107,7 @@ const mapCmpByCategory = {
     headers: [wapHeader1, wapHeader2, wapHeader3, wapHeader4, wapHeader5, wapHeader6],
     heros: [wapHero1, wapHero2, wapHero3A, wapHero3B, wapHero4, wapHero5, wapHero6],
     about: [wapAbout1, wapAbout2, wapAbout3A, wapAbout3B, wapAbout4, wapAbout5, wapAbout6],
-    containers: [],
+    // containers: [],
     galleries: [wapGallery1, wapGallery2A, wapGallery2B, wapGallery3, wapGallery4A, wapGallery4B, wapGallery5A, wapGallery5B, wapGallery6A, wapGallery6B],
     videos: [wapVideo1, wapVideo2],
     forms: [wapForm1, wapForm2, wapForm3, wapForm4, wapForm5],

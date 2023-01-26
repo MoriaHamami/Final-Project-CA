@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 export function FormCmp({ style, cmp, onElClick, selectedCmpId }) {
 
-    const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false })
+    const [isOn, setIsOn] = useState({})
 
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const info = cmp.info
