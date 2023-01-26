@@ -14,6 +14,7 @@
         padding-bottom: 1.5rem;
         color: $almost-black;
         padding-top: 50px;
+
         @media (min-width: $normal-breakpoint) {
             padding-top: 100px;
         }
@@ -32,6 +33,7 @@
     .login-signup-form {
         display: flex;
         flex-direction: column;
+
         @media (min-width: $normal-breakpoint) {
             flex-direction: row;
             gap: 30px;
@@ -86,38 +88,71 @@
     .login-by-container {
         display: flex;
         flex-direction: column;
-        width: 330px;
-        gap: 0.5rem;
+        width: 250px;
+        gap: 1rem;
+
+        margin: 20px auto 0;
+
         @media (min-width: $normal-breakpoint) {
-            margin-top: 70px;
+            margin: 0;
+            margin-top: 68px;
         }
-        
+
         // padding-left: 40px;
 
-        .google-login,.facebook-login{
-            padding: 1rem;
+        .google-login,
+        .facebook-login {
+            display: flex;
+            padding: 3px;
+            width: 100%;
+            background-color: $clr1;
+            align-items: center;
+            gap: 20px;
+
+            img{
+                width: 15%;
+                padding: 1px;
+                background-color: white;
+            }
+
+            span{
+               font-size:  0.9rem;
+            //    padding: 10px 0;
+               color: white;
+               text-align: center;
+            }
         }
 
-        .facebook-login{
+        .facebook-login {
             background-color: #4267B2;
             cursor: not-allowed;
+
+            img{
+                width: 15%;
+                padding: 2px;
+                background-color: white;
+            }
         }
 
     }
 
-    .middle-line-login-container{
+    .middle-line-login-container {
         gap: 3px;
         display: flex;
+
         @media (min-width: $normal-breakpoint) {
             flex-direction: column;
             width: 0;
             margin: 10px 40px;
         }
+
         align-items: center;
         color: rgb(129, 129, 129);
-        .middle-line-login{
+
+        .middle-line-login {
             border-top: 1px solid lightgrey;
-            width:45%;
+            width: 45%;
+
             @media (min-width: $normal-breakpoint) {
                 border-right: 1px solid lightgrey;
                 height: 48%;

@@ -125,8 +125,14 @@ export function LoginSignup() {
                                 onError={() => {
                                     console.log('Login Failed');
                                 }} /> */}
-                            <button className='google-login' onClick={googleLogin}>Continue with Google</button>
-                            <button className='facebook-login'>Continue with Facebook</button>
+                            <div className='google-login' onClick={googleLogin}>
+                                <img src="https://res.cloudinary.com/dimirmc9j/image/upload/v1674739590/icons8-google-48_serqxw.png" alt="" />
+                                <span className='google-login-txt'>Continue with Google</span>
+                            </div>
+                            <div className='facebook-login' onClick={googleLogin}>
+                                <img src="https://res.cloudinary.com/dimirmc9j/image/upload/v1674740800/facebook-svgrepo-com_sxcc4q.svg" alt="" />
+                            <span className='facebook-login-txt'>Continue with Facebook</span>
+                            </div>
                         </div>
                     </form>
                 </div>}
@@ -138,4 +144,5 @@ export function LoginSignup() {
             </section >
         </div >
     )
+
 }
