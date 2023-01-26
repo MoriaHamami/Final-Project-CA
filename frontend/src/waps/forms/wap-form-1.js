@@ -4,6 +4,7 @@ export const wapForm1 = {
     id: utilService.makeId(),
     type: 'wap-form',
     name: 'wap-form-1',
+    imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674764697/Webix/wap-form-1_bcwxca.jpg',
     info: {
         title: { txt: 'Reservations', style: {}, id: utilService.makeId(), type: 'txt', key: 'title' },
         subtitle: { txt: 'BOOK A TABLE', style: {}, id: utilService.makeId(), type: 'txt', key: 'subtitle' },
@@ -19,6 +20,6 @@ export const wapForm1 = {
         fontFamily: 'fe-serif',
     }
 }
- 
+
 
 

@@ -2,9 +2,12 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { uploadService } from '../../../services/upload.service'
 
 export function SidebarUrl({ title, propertyName, onChange }) {
     const [url, setUrl] = useState('')
+    const [selectedFile, setSelectedFile] = useState(null);
+
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
     useEffect(() => {
@@ -25,15 +28,25 @@ export function SidebarUrl({ title, propertyName, onChange }) {
         onChange(propertyName, url)
     }
 
-    return <div className="map-url">
+    async function uploadImg(e) {
+        const imgUpload = await uploadService.uploadImg(e)
+        setUrl(imgUpload.url)
+    }
+
+
+    return <div className="sidebar-url">
 
         <form onChange={handleChange} onSubmit={submitUrl}>
-            <label className="map">{title}</label>
+            <label className="sidebar-url">{title}</label>
             <input type="url"
                 value={url}
                 placeholder="Enter url" />
             {/* <button onClick={onSubmit}>{info.btn.label}</button> */}
-        </form>
-
+            <input
+                type="file"
+                value={selectedFile}
+                onChange={uploadImg}
+            />        </form>
+        <img src={url} />
     </div>
 }

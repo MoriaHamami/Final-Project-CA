@@ -15,6 +15,7 @@ export const wapDemo5 = {
 	_id: "5e283asdd0asd01785d4e42",
 	name: "Makeup artist",
 	imgUrl: "https://res.cloudinary.com/dimirmc9j/image/upload/v1674668215/demo_5_degecd.png",
+	isDemo: true,
 
 	cmps: [
 		wapHeader5,
