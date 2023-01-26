@@ -26,6 +26,14 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
         'dream-orphans',
         'breamcatcher',
         'handlee',
+        'abel',
+        'open-sans',
+        'playfair-regular',
+        'mont-light',
+        'mont-heavy',
+        'caviar-dreams-Bold',
+        'roboto-light',
+        'roboto-bold'
     ]
 
     return <div className='flex space-between font-family-container'>

@@ -206,7 +206,7 @@ async function save(wap) {
 
 async function saveCmp(wap, cmp, idx) {
     let savedWap
-    if (wap.cmps[idx].id === cmp.id) {
+    if (wap.cmps[idx]?.id === cmp.id) {
         wap.cmps[idx] = cmp
         savedWap = storageService.put(STORAGE_KEY, wap)
     } else {

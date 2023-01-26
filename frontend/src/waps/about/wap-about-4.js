@@ -5,7 +5,7 @@ export const wapAbout4 = {
   id: utilService.makeId(),
   type: 'wap-about',
   name: 'wap-about-4',
-  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674680444/Webix/wap-footer-4_yqax4q.jpg',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674680444/Webix/wap-about-4_dmxqkj.jpg',
 
   info: {
     title: { txt: 'ABOUT', id: utilService.makeId(), style: { fontFamily: 'open-sans', fontSize: '2.8em', color: '#34d1b6', textAlign: 'center', letterSpacing: '0.3em' }, type: 'txt', key: 'title' },

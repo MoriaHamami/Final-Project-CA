@@ -2,7 +2,7 @@ import { HomePage } from './pages/home-page.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
 import { WapDemos } from './pages/wap-demos-page.jsx'
 import { Editor } from './pages/editor-page.jsx'
-import { Drafts } from './pages/drafts.jsx'
+import { Dashboard } from './pages/dashboard.jsx'
 import { Preview } from './pages/preview.jsx'
 import { Publish } from './pages/publish.jsx'
 
@@ -23,9 +23,9 @@ const routes = [
         label: 'Editor',
     },
     {
-        path: '/drafts',
-        component: <Drafts />,
-        label: 'Drafts',
+        path: '/dashboard',
+        component: <Dashboard />,
+        label: 'Dashboard',
     },
     {
         path: '/user',

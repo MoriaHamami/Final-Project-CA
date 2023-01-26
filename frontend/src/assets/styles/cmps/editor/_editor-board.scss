@@ -1,10 +1,15 @@
 .editor-board {
-    max-height: calc(100vh - 90px);
     overflow-y: scroll;
     scroll-behavior: smooth;
     resize: both;
     position: relative;
-    // width: 100%;
+    height: calc(100vh - 147px);
+
+
+    @media (min-width: $narrow-breakpoint) {
+        height: calc(100vh - 79px);
+    }
+
     // container-type: inline-size;
 
     // &.mobile{
@@ -55,7 +60,7 @@
         // outlinen -style: dashed;
         // background-color: lighten($editor-hover, 20%);
     }
-    
+
     .hover {
         background-color: lighten($editor-hover, 17%);
         outline: 2px solid lighten($editor-board-clr, 10%);
@@ -88,8 +93,8 @@
     }
 }
 
-
-.edit-icon.hover,.edit-icon.selected{
+.edit-icon.hover,
+.edit-icon.selected {
     display: block;
     // visibility: visible;
     font-size: 1.5rem;
@@ -105,7 +110,7 @@
     left: 10px;
 }
 
-.edit-icon{
+.edit-icon {
     // visibility: hidden;
     display: none;
 }
