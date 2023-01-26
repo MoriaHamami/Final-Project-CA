@@ -3,14 +3,22 @@ import { faShare, faReply, faDisplay, faTabletScreenButton, faMobileScreenButton
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { height } from '@mui/system';
-import { saveWap } from '../../store/wap.actions';
+import { saveWap, setDisplaySize } from '../../store/wap.actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 export function EditorHeader({ wap }) {
-    const [displayType, setDisplayType] = useState('desktop')
+    // const [displayType, setDisplayType] = useState('desktop')
     const [name, setName] = useState('')
     const [isVisible, setIsVisible] = useState(false)
     const navigate = useNavigate()
+    const { displaySize } = useSelector((storeState) => storeState.wapModule)
 
+    // const dispatch = useDispatch()
+
+  function onSetDisplaySize(size) {
+    setDisplaySize(size)
+    // dispatch(setDisplaySize(size))
+  }
 
     async function changeWapName() {
         try {
@@ -39,9 +47,9 @@ export function EditorHeader({ wap }) {
                 <span className='divider'>|</span>
 
                 <div className='editor-size-container'>
-                    <span onClick={() => setDisplayType('desktop')} className={`material-symbols-outlined editor-action desktop ${displayType === 'desktop' ? 'active' : ''} `}>desktop_windows</span>
-                    <span onClick={() => setDisplayType('tablet')} className={`material-symbols-outlined editor-action ${displayType === 'tablet' ? 'active' : ''} `}>tablet_mac</span>
-                    <span onClick={() => setDisplayType('phone')} className={`material-symbols-outlined editor-action ${displayType === 'phone' ? 'active' : ''} `}>phone_iphone</span>
+                    <span onClick={() => onSetDisplaySize('100%')} className={`material-symbols-outlined editor-action desktop ${displaySize === '100%' ? 'active' : ''} `}>desktop_windows</span>
+                    <span onClick={() => onSetDisplaySize('720px')} className={`material-symbols-outlined editor-action ${displaySize === '720px' ? 'active' : ''} `}>tablet_mac</span>
+                    <span onClick={() => onSetDisplaySize('420px')} className={`material-symbols-outlined editor-action ${displaySize === '420px' ? 'active' : ''} `}>phone_iphone</span>
                     {/* <FontAwesomeIcon className='editor-action' icon={faDisplay} />
                 <FontAwesomeIcon className='editor-action' icon={faTabletScreenButton} />
                 <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} /> */}

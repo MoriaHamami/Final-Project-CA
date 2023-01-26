@@ -105,7 +105,7 @@ export async function removeCmp(wap, startIdx, endIdx = null) {
 export async function saveCmp(wap, cmp, idx) {
     try {
         const savedWap = await wapService.saveCmp(wap, cmp, idx)
-        console.log('savedWap:',savedWap)
+        console.log('savedWap:', savedWap)
         // const savedWap = wap
         store.dispatch({ type: SET_WAP, wap: savedWap })
         return savedWap._id
@@ -148,18 +148,18 @@ export function saveElement(wap, cmpId, element) {
     const idx = wapService.findCmpIdx(wap, cmp)
     // console.log('cmp action line 136:', wap[idx])
 
-    if(cmp.id === element.id){
+    if (cmp.id === element.id) {
         // console.log('cmp:',cmp)
 
         return saveCmp(wap, element, idx)
 
-    } 
+    }
 
     // Update cmp
-    if (element.key === 'photos' || element.key === 'inputs'|| element.key === 'btns') {
+    if (element.key === 'photos' || element.key === 'inputs' || element.key === 'btns') {
         // Run over the array in in it 
         let isFound = false
-        for(let i = 0; i <  cmp.info[element.key].length; i++) {
+        for (let i = 0; i < cmp.info[element.key].length; i++) {
             const elements = cmp.info[element.key][i]
             // Search the key 
             for (const key in elements) {
@@ -169,7 +169,7 @@ export function saveElement(wap, cmpId, element) {
                     break
                 }
             }
-            if(isFound) break
+            if (isFound) break
         }
     } else {
         cmp.info[element.key] = element
@@ -178,12 +178,16 @@ export function saveElement(wap, cmpId, element) {
     saveCmp(wap, cmp, idx)
 }
 
-
+export function setDisplaySize(displaySize) {
+    // return (dispatch) => {
+        store.dispatch({ type: 'SET_DISPLAY_SIZE', displaySize })
+    // }
+}
 
 // TO REMOVEEEEEEEEEEEEEEEEEEE
 // export function saveElement(wap, selectedCmpId, selectedElement, propertyName, propertyValue) {
 //     // export function handleWapEdit(wap, propertyName, propertyValue) {
-//         // const cmp = wap.cmps.find(c=>c.id===selectedCmpId)    
+//         // const cmp = wap.cmps.find(c=>c.id===selectedCmpId)
 
 //     // Find the current edited cmp
 //     const cmpIndex = wap.cmps.findIndex(cmp => cmp.id === selectedCmpId)

@@ -1,4 +1,4 @@
 module.exports = {
-  dbURL: 'mongodb://127.0.0.1:27017',
+  dbURL: 'mongodb+srv://mori:mori@cluster0.nwvypal.mongodb.net/?retryWrites=true&w=majority',
   dbName : 'tester_db'
 }

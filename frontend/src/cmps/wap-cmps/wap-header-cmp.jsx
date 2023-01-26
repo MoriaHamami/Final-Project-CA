@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useSelector } from 'react-redux'
 import { wapHero1 } from '../../waps/heros/wap-hero-1'
 
-export function HeaderCmp({ style, cmp, onElClick, onElementTxtChange, selectedCmpId }) {
+export function HeaderCmp({ style, cmp, onElClick, onElementTxtChange, selectedCmpId, displayClass }) {
   const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false, img: false, logo: false, login: false })
 
 
@@ -13,7 +13,7 @@ export function HeaderCmp({ style, cmp, onElClick, onElementTxtChange, selectedC
 
   return (
     <div id={cmp.type} data-container={JSON.stringify(cmp)} style={style} onClick={onElClick}
-      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
+      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + displayClass + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
       onMouseOut={() => setIsOn((prevIsOn) => {
         return { ...prevIsOn, cmp: false }
       })}

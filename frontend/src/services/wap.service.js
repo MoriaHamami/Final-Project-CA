@@ -77,6 +77,7 @@ import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service'
 import { wapFooter5 } from '../waps/footers/wap-footer-5'
 import { wapForm5 } from '../waps/forms/wap-form-5'
+import { httpService } from './http.service'
 
 
 const STORAGE_KEY = 'waps'
@@ -205,7 +206,7 @@ async function save(wap) {
 
 async function saveCmp(wap, cmp, idx) {
     let savedWap
-    if (wap.cmps[idx].id === cmp.id) {
+    if (wap.cmps[idx]?.id === cmp.id) {
         wap.cmps[idx] = cmp
         savedWap = storageService.put(STORAGE_KEY, wap)
     } else {

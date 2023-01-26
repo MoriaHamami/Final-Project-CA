@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
-export function WapFooter({ style, cmp, onElClick, selectedCmpId }) {
+export function WapFooter({ style, cmp, onElClick, selectedCmpId, displayClass }) {
 
   const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false, img: false, icons: false })
 
@@ -15,7 +15,7 @@ export function WapFooter({ style, cmp, onElClick, selectedCmpId }) {
 
   return (
     <div id={cmp.type} style={style} data-container={JSON.stringify(cmp)} onClick={onElClick}
-      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
+      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + displayClass + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
       onMouseOut={() => setIsOn((prevIsOn) => {
         return { ...prevIsOn, cmp: false }
       })}
