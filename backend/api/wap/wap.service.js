@@ -3,23 +3,22 @@ const logger = require('../../services/logger.service')
 const utilService = require('../../services/util.service')
 const ObjectId = require('mongodb').ObjectId
 
-async function query() {
+async function query(filterBy) {
     try {
-        // const criteria = {
-        //     vendor: { $regex: filterBy.txt, $options: 'i' }
-        // }
-        // const collection = await dbService.getCollection('wap')
-        // var waps = await collection.find(criteria).toArray()
-        return await dbService.getCollection('waps')
+        const criteria = {}
+        if(filterBy === 'demo') criteria.isDemo = { $eq: true }
+        const collection = await dbService.getCollection('wap')
+        var wap = await collection.find(criteria).toArray()
+        return wap
     } catch (err) {
-        logger.error('cannot find waps', err)
+        logger.error('cannot find wap', err)
         throw err
     }
 }
 
 async function getById(wapId) {
     try {
-        const collection = await dbService.getCollection('waps')
+        const collection = await dbService.getCollection('wap')
         const wap = collection.findOne({ _id: ObjectId(wapId) })
         return wap
     } catch (err) {
@@ -30,7 +29,7 @@ async function getById(wapId) {
 
 async function remove(wapId) {
     try {
-        const collection = await dbService.getCollection('waps')
+        const collection = await dbService.getCollection('wap')
         await collection.deleteOne({ _id: ObjectId(wapId) })
         return wapId
     } catch (err) {
@@ -39,9 +38,11 @@ async function remove(wapId) {
     }
 }
 
+
+
 // async function add(wap) {
 //     try {
-//         const collection = await dbService.getCollection('waps')
+//         const collection = await dbService.getCollection('wap')
 //         await collection.insertOne(wap)
 //         return wap
 //     } catch (err) {
@@ -87,6 +88,7 @@ async function remove(wapId) {
 //         throw err
 //     }
 // }
+
 
 module.exports = {
     remove,
