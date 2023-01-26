@@ -26,16 +26,20 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
 
   }
 
+  console.log('borderRadiusVal:',  !!borderRadiusVal )
+
   return <div>
 
     <div className='slider-container'>
-    <label>{title}: </label>
-    <span>{borderRadiusVal}</span>
+      <label>{title}: </label>
     </div>
 
     {/* <Box marginLeft={'5px'} width={226} margin={0} padding={0}> */}
+    <Box className="flex space-between align-center">
+
       <Slider
-      className="range-container"
+        className="range-container"
+        style={{ width: '200px' }}
         size='small'
         key={'fontSizeSlider123'}
         onChange={onChangeRange}
@@ -47,7 +51,8 @@ export function SidebarBorderRadius({ title, propertyName, onChange, chosenConta
         max={3}
         sx={{ color: '#434242' }}
       />
-    {/* </Box> */}
+      { !!borderRadiusVal && <span>{borderRadiusVal}</span>}
+    </Box>
 
   </div>
 }
