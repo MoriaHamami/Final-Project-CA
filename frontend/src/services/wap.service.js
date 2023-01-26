@@ -77,6 +77,7 @@ import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service'
 import { wapFooter5 } from '../waps/footers/wap-footer-5'
 import { wapForm5 } from '../waps/forms/wap-form-5'
+import { httpService } from './http.service'
 
 
 const STORAGE_KEY = 'waps'
@@ -159,6 +160,7 @@ function getCmpById(id) {
 }
 
 async function query() {
+    // return httpService.get()
     // return httpService.get(STORAGE_KEY, filterBy)
 }
 

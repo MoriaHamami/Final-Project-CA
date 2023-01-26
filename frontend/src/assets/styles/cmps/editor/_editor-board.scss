@@ -4,6 +4,7 @@
     scroll-behavior: smooth;
     resize: both;
     position: relative;
+    // width: 100%;
     // container-type: inline-size;
 
     // &.mobile{
@@ -64,8 +65,19 @@
     .hover-cmp {
         box-shadow: inset 0px 0px 0 2px lighten($editor-board-clr, 10%);
     }
-}
 
+    .desktop-layout {
+        width: 100%;
+    }
+    
+    .tablet-layout {
+        width: $narrow-breakpoint;
+    }
+    
+    .mobile-layout {
+        width: $mobile-breakpoint;
+    }
+}
 
 .dragable-container {
 
@@ -75,6 +87,7 @@
         opacity: 0.3;
     }
 }
+
 
 .edit-icon.hover,.edit-icon.selected{
     display: block;

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { useSelector } from 'react-redux'
 
-export function HeroCmp({ style, cmp, onElClick, selectedCmpId, onElementTxtChange }) {
+export function HeroCmp({ style, cmp, onElClick, selectedCmpId, onElementTxtChange, displayClass }) {
   const [isOn, setIsOn] = useState({ cmp: false, title: false, subtitle: false, txt: false, btn: false })
   const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
   const info = cmp.info
@@ -13,7 +13,7 @@ export function HeroCmp({ style, cmp, onElClick, selectedCmpId, onElementTxtChan
       style={style}
       data-container={JSON.stringify(cmp)}
       onClick={onElClick}
-      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
+      className={((selectedCmpId === cmp.id && selectedElement?.id === cmp.id) ? 'selected' : '') + ' ' + cmp.name + ' ' + displayClass + ' ' + (selectedElement?.id !== cmp.id && isOn.cmp && 'hover-cmp')}
       onMouseOut={() => setIsOn((prevIsOn) => {
         return { ...prevIsOn, cmp: false }
       })}
