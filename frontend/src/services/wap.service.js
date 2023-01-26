@@ -160,7 +160,7 @@ function getCmpById(id) {
 }
 
 async function query() {
-    // return httpService.get()
+    return storageService.query(STORAGE_KEY)
     // return httpService.get(STORAGE_KEY, filterBy)
 }
 

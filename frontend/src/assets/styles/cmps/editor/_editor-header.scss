@@ -1,7 +1,16 @@
 .editor-header {
     display: flex;
     justify-content: space-between;
-    padding: 3px 50px;
+    padding: 0 calc($mobile-padding - 5px);
+
+        @media (min-width: $mobile-breakpoint) {
+            padding: 0 calc($narrow-padding - 5px);
+        }
+
+        @media (min-width: $narrow-breakpoint) {
+            padding: 0 calc($normal-padding - 5px);
+        }
+    // padding: 3px 50px;
     // padding: 0 40px;
     // padding-left: calc(40px - 1rem);
     background-color: white;
@@ -89,7 +98,8 @@
 
     .divider {
         font-weight: 100;
-        color: rgb(174, 174, 174);
+        font-family: roboto-light;
+        color: rgb(206, 206, 206);
     }
 
     .editor-actions,
