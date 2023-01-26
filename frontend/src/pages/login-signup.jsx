@@ -116,7 +116,7 @@ export function LoginSignup() {
 
 
                         <div className='login-by-container'>
-                            <GoogleLogin
+                            {/* <GoogleLogin
                                 onSuccess={credentialResponse => {
                                     console.log(credentialResponse);
                                     var decoded = jwt_decode(credentialResponse.credential);
@@ -124,7 +124,7 @@ export function LoginSignup() {
                                 }}
                                 onError={() => {
                                     console.log('Login Failed');
-                                }} />
+                                }} /> */}
                             <button className='google-login' onClick={googleLogin}>Continue with Google</button>
                             <button className='facebook-login'>Continue with Facebook</button>
                         </div>

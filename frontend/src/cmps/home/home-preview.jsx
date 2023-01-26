@@ -29,7 +29,7 @@ export function HomePreview() {
       Whether you're promoting your business, showcasing your work, opening your online store or starting a blog
       - you can do it all with the Webix website builder.</p>
 
-    <h1 style={{ color: 'red', padding: '100px' }}>ANOTHER SECTION</h1>
+    {/* <h1 style={{ color: 'red', padding: '100px' }}>ANOTHER SECTION</h1> */}
 
     <>
       <Swiper
@@ -53,24 +53,6 @@ export function HomePreview() {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {wapService.getWapDemos()?.map((demoWap, idx) => {
-          if (idx === 0) return
-          return <SwiperSlide style={{ width: '200px', aspectRatio: '6/8' }}>
-            <img className="home-preview-demo-img" src={demoWap.imgUrl} onClick={() => onSelectWapDemo(demoWap._id)} />
-          </SwiperSlide>
-        })}
-        {wapService.getWapDemos()?.map((demoWap, idx) => {
-          if (idx === 0) return
-          return <SwiperSlide style={{ width: '200px', aspectRatio: '6/8' }}>
-            <img className="home-preview-demo-img" src={demoWap.imgUrl} onClick={() => onSelectWapDemo(demoWap._id)} />
-          </SwiperSlide>
-        })}
-        {wapService.getWapDemos()?.map((demoWap, idx) => {
-          if (idx === 0) return
-          return <SwiperSlide style={{ width: '200px', aspectRatio: '6/8' }}>
-            <img className="home-preview-demo-img" src={demoWap.imgUrl} onClick={() => onSelectWapDemo(demoWap._id)} />
-          </SwiperSlide>
-        })}
         {wapService.getWapDemos()?.map((demoWap, idx) => {
           if (idx === 0) return
           return <SwiperSlide style={{ width: '200px', aspectRatio: '6/8' }}>
