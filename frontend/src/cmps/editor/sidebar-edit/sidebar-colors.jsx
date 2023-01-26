@@ -37,9 +37,9 @@ export function SidebarColors({ title, onChange, propertyName, selectedElement }
         <label
           htmlFor="color-input"
           style={{
-            height: '28px',
-            width: '28px',
-            borderRadius: '28px',
+            height: '2rem',
+            width: '2rem',
+            borderRadius: '2rem',
             backgroundColor: color,
             cursor: 'pointer',
           }}

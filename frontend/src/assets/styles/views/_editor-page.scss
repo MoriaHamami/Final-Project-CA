@@ -1,7 +1,17 @@
 .editor-page {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    padding: 0;
+
+
+    display: flex;
+    flex-direction: column-reverse;
+    // padding: 0 calc($narrow-padding - 5px);
+
+
+    @media (min-width: $narrow-breakpoint) {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        padding: 0;
+    }
+
 
 }
 

@@ -33,6 +33,9 @@ export function SidebarUrl({ title, propertyName, onChange }) {
                 value={url}
                 placeholder="Enter url" />
             {/* <button onClick={onSubmit}>{info.btn.label}</button> */}
+            <div className='input-img-container' style={{backgroundImage:`url("${url}")`}}>
+            {/* <img src={url} alt="" /> */}
+            </div>
         </form>
 
     </div>
