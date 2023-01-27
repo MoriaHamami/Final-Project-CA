@@ -6,6 +6,7 @@ export const wapVideo1 = {
   type: 'wap-video',
   name: 'wap-video-1',
   themePalette: 'third',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674862204/Webix/wap-video-1_f79nmv.jpg',
   info: {
     title: { txt: 'Discover Us', style: { fontSize: '1.3em' }, id: utilService.makeId(), type: 'txt', key: 'title' },
     subtitle: { txt: 'Watch the Master in Action!', style: { fontWeight: '600', fontSize: '2.5em' }, id: utilService.makeId(), type: 'txt', key: 'subtitle' },

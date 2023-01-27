@@ -5,7 +5,7 @@ export const wapGallery5C = {
     type: 'wap-gallery',
     name: 'wap-gallery-5c',
     themePalette: 'third',
-    imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674688191/Webix/wap-gallery-5a_geyvb7.jpg',
+    imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674861731/Webix/wap-gallery-5c_s03ios.jpg',
 
     info: {
         photos: [

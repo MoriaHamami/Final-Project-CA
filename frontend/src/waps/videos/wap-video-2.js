@@ -6,7 +6,7 @@ export const wapVideo2 = {
   type: 'wap-video',
   name: 'wap-video-2',
   themePalette: 'third',
-  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-video-2_kxnngq.jpg',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674862321/Webix/wap-video-2_hmi6tx.jpg',
   info: {
     title: { txt: 'Get to know us', style: { fontSize: '2em' }, id: utilService.makeId(), type: 'txt', key: 'title' },
     // embedId: '0U7IWgCREik',
