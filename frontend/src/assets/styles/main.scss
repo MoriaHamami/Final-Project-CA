@@ -15,6 +15,7 @@
 @import "views/wap-demos-page";
 @import "views/editor-page";
 @import "views/preview-page";
+@import "views/dashboard";
 @import "views/login";
 
 // Components
@@ -28,8 +29,11 @@
 @import "cmps/home/home-preview";
 @import "cmps/home/home-footer";
 
-// Home Components
+// login Components
 @import "cmps/login/login-header";
+
+// dashboard Components
+@import "cmps/dashboard/dashboard-sidebar";
 
 // Editor Components
 @import "cmps/editor/editor-sidebar";
