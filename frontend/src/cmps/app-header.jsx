@@ -15,8 +15,9 @@ export function AppHeader() {
                     </div>
                     <span className="material-symbols-outlined menu-btn">menu</span>
                     {user ? <Link to="/user" className="header-profile-container">
-                        <span className="material-symbols-outlined profile-img">account_circle</span>
-                        <span className="user-name">{user.fullname}</span>
+                        {/* <span className="material-symbols-outlined profile-img">account_circle</span> */}
+                        {user.imgUrl &&<img className='user-img' src={user.imgUrl} />}
+                        {!user.imgUrl &&<span className="user-name">{user.fullname}</span>}
                     </Link> : <NavLink className="header-profile-container" key="/user" to="/user">Login</NavLink>}
                 </nav>
             </div>
