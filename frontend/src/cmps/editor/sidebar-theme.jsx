@@ -23,7 +23,7 @@ export const SidebarTheme = ({ themeList }) => {
 
     return (
         <>
-            {/* <h3 className='sidebar-action-text'>Choose a theme</h3> */}
+            <h3 className='sidebar-action-text'>Choose a theme</h3>
 
             {wapService.getThemes().map((theme) => {
                 return <section
@@ -35,7 +35,7 @@ export const SidebarTheme = ({ themeList }) => {
                         <p className='theme-header'>{theme.name}</p>
                         <p className='theme-description'>{theme.description}</p>
                     </div>
-                    <div className='theme-colors-container'>
+                    {/* <div className='theme-colors-container'>
                         {Object.entries(theme.colors).map((color, idx) => {
                             return (
                                 <div
@@ -47,7 +47,7 @@ export const SidebarTheme = ({ themeList }) => {
                                 ></div>
                             )
                         })}
-                    </div>
+                    </div> */}
                 </section>
             })}
         </>
