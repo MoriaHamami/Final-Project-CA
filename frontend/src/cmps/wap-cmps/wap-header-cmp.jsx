@@ -33,7 +33,7 @@ export function HeaderCmp({ style, cmp, onElClick, onElementTxtChange, selectedC
         style={info.logo.style}
         onClick={onElClick}
         onInput={ev => onElementTxtChange(ev.currentTarget.textContent)}>{info.logo.txt}</p>
-      {/* <span className="material-symbols-outlined menu-btn">menu</span> */}
+      <span className="material-symbols-outlined menu-btn">menu</span>
       <nav className="nav-bar">
         {info.btns?.map((btn, idx) => {
           return <a suppressContentEditableWarning={true}

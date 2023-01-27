@@ -1,31 +1,142 @@
 .wap-about-5 {
     // width: 100%;
     padding: 0 $normal-padding 8.5rem;
+    max-height: 400px;
+    
+    &.tablet-layout {
+        padding: 0 $narrow-padding 6.5rem;
+        max-height: 250px;
+    }
+    
+    @media (max-width: $narrow-breakpoint) {
+        padding: 0 $narrow-padding 6.5rem;
+        max-height: 250px;
+    }
+    
+    &.mobile-layout {
+        padding: 0 $mobile-padding 2.5rem;
+        max-height: 300px;
+    }
+    @media (max-width: $narrow-breakpoint) {
+        padding: 0 $mobile-padding 2.5rem;
+        max-height: 300px;
+    }
     text-align: center;
     position: relative;
     background-color: #d8b6b6;
-    margin-top: 40rem;
-    max-height: 400px;
-
-
-
-
+    margin-top: 50%;
+    
+    
     .text-container {
         position: relative;
         bottom: 50px;
         z-index: 1;
         display: flex;
         flex-direction: column;
-
+        
         .subtitle {
             align-self: center;
-            max-width: 800px;
+            max-width: 840px;
+            font-size: 1.3rem;
         }
-
+        
         .title {
             margin-bottom: 30px;
+            font-size: 8rem;
         }
     }
+    
+    &.tablet-layout{
+        .text-container {
+            position: relative;
+            bottom: 35px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            
+            .subtitle {
+                align-self: center;
+                max-width: 620px;
+                font-size: 0.9rem;
+
+            }
+            
+            .title {
+                margin-bottom: 30px;
+                font-size: 6rem;
+            }
+        }
+
+      
+    }
+    &.mobile-layout{
+        .text-container {
+            position: relative;
+            bottom: 20px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            
+            .subtitle {
+                align-self: center;
+                max-width: 400px;
+                font-size: 0.9rem;
+
+            }
+            
+            .title {
+                margin-bottom: 30px;
+                font-size: 3.8rem;
+            }
+        }
+
+    }
+
+    @media (max-width: $narrow-breakpoint) {
+        .text-container {
+            position: relative;
+            bottom: 35px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            
+            .subtitle {
+                align-self: center;
+                max-width: 620px;
+                font-size: 0.9rem;
+
+            }
+            
+            .title {
+                margin-bottom: 30px;
+                font-size: 6rem;
+            }
+        }
+    }
+
+
+    @media (max-width: $mobile-breakpoint) {
+        .text-container {
+            position: relative;
+            bottom: 20px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            
+            .subtitle {
+                align-self: center;
+                max-width: 400px;
+                font-size: 0.8rem;
+
+            }
+            
+            .title {
+                margin-bottom: 30px;
+                font-size: 3rem;
+            }
+        }
+    }
+
 
     .img-container {
         background-size: cover;

@@ -30,20 +30,23 @@
     }
 
     .editor-options {
+        position: relative;
         display: flex;
         justify-content: space-between;
+        background-color: white;
         border-top: 1px solid lightgray;
-
+        z-index: 15;
+        
         @media (min-width: $narrow-breakpoint) {
             flex-direction: column;
-
+            
         }
 
         .delete-container {
             display: flex;
             flex-direction: column;
         }
-
+        
         .option-container {
             align-self: center;
             justify-self: center;
@@ -54,7 +57,7 @@
             align-items: center;
             margin: calc(1rem - 10px);
             padding: 3px 10px;
-
+            
             &:hover,
             &.active {
                 opacity: 1;
@@ -63,13 +66,13 @@
                 font-weight: 300;
                 border-radius: 3px;
             }
-
+            
             &.delete:hover {
                 background: none;
                 color: red;
             }
-
-
+            
+            
             .option-name {
                 font-size: 0.8rem;
             }
@@ -80,7 +83,7 @@
                 transition: 0.3s;
                 transform: scale(1.6);
             }
-
+            
             .editor-delete-icon-hidden {
                 transition: 0.1s;
                 transform: scale(1);
@@ -94,17 +97,19 @@
 
 .editor-tools {
     background-color: white;
-    z-index: 15;
+    z-index: 10;
     position: absolute;
-    bottom: 62px;
+    bottom: 49px;
     width: 98.5%;
     height: 0px;
-    overflow-y: hidden;
+    // overflow: hidden;
     transition: height 0.3s ease-in-out;
     font-size: 0.7em;
     border-bottom: 1px solid lightgray;
-
+    // display:none;
+    
     &.open {
+        // display: block;
         border-right: 1px solid rgb(217, 217, 217);
         height: 350px;
         transition: height 0.2s ease-in-out;

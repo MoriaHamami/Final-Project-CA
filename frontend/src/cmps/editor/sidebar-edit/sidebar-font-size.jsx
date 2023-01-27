@@ -25,13 +25,14 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
   return <div>
     <div className='slider-container'>
       <label>{title}: </label>
-      <span>{fontSizeVal}</span>
+      
     </div>
 
 
-    {/* <Box> */}
+    <Box className="flex space-between align-center">
       <Slider
         className="range-container"
+        style={{width:'200px'}}
         size='small'
         key={'fontSize1'}
         color='primary'
@@ -44,7 +45,8 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
         max={4}
         sx={{ color: '#434242' }}
       />
-    {/* </Box> */}
+    {!!fontSizeVal && <span>{fontSizeVal}</span>}
+    </Box>
 
 
   </div>

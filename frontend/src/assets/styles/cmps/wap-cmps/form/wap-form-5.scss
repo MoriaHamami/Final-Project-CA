@@ -1,81 +1,155 @@
 .wap-form-5 {
 
-    background-color: white;
-    // width: 100%;
+  background-color: white;
+  // width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 6rem $normal-padding 9rem;
+  flex-direction: column;
+  color: $almost-black;
+
+  .title {
+    // color: $almost-white;
+    font-size: 8rem;
+    padding: 0 2rem;
+    margin: 0;
+  }
+
+  .subtitle {
+    margin-bottom: 1rem;
+  }
+
+  .txt {
+    margin-bottom: 2rem;
+  }
+
+  form {
     display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    padding: 6rem $normal-padding 9rem;
     flex-direction: column;
-    color: $almost-black;
-  
+    max-height: 100px;
+    flex-wrap: wrap;
+    // align-items: center;
+    // justify-content: space-between;
+    gap: 15px;
+    margin: 0 auto;
+    position: relative;
+    right: 100px;
+
+    input {
+      flex-basis: 48%;
+      // background-color: white;
+      padding: 8px 8px;
+      border: none;
+      margin: 0;
+      // border-bottom: 1px solid white;
+      // padding: 8px 0;
+      border-radius: 0;
+      background-color: rgb(216 182 182);
+      color: white;
+
+      &:nth-of-type(3) {
+        height: 100px;
+        padding-bottom: 55px;
+        background-color: darken(rgb(216 182 182), 10%);
+      }
+
+
+
+      &::placeholder {
+        color: white;
+      }
+
+      &:hover {
+        background-color: darken(rgb(216 182 182), 10%);
+      }
+
+      &:focus-visible {
+        background-color: lighten(black, 40%);
+
+      }
+    }
+
+    button {
+      // flex-basis: 100%;
+      position: relative;
+      right: 95px;
+      top: 80px;
+      padding: 8px 24px;
+      background-color: inherit;
+    }
+  }
+
+  &.mobile-layout {
+    padding: 3rem $mobile-padding 8rem;
+
     .title {
-      // color: $almost-white;
-      padding: 0 2rem;
+      font-size: 5rem;
+      padding: 0;
       margin: 0;
     }
-  
+
     .subtitle {
-      margin-bottom: 1rem;
+      max-width: 390px;
+      margin-bottom: 50px;
     }
-    .txt {
-      margin-bottom: 2rem;
-    }
+  }
   
+  &.tablet-layout {
+    padding: 3rem $narrow-padding 7rem;
+    
+    .title {
+      font-size: 5rem;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .subtitle {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (max-width: $narrow-breakpoint) {
+    padding: 3rem $narrow-padding 7rem;
+    
+    .title {
+      font-size: 4rem;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .subtitle {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 3rem $mobile-padding 8rem;
+
+    .title {
+      font-size: 4rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .subtitle {
+      max-width: 390px;
+      margin-bottom: 50px;
+    }
+
     form {
-      display: flex;
-        flex-direction: column;
-        max-height: 100px;
-      flex-wrap: wrap;
-      // align-items: center;
-      // justify-content: space-between;
-      gap: 15px;
+      // padding: 0 1rem;
+      gap: 10px;
       margin: 0 auto;
-      position: relative;
-      right: 100px;
+      right: 87px;
   
       input {
         flex-basis: 48%;
-        // background-color: white;
-        padding: 8px 8px;
-        border: none;
-        margin: 0;
-        // border-bottom: 1px solid white;
-        // padding: 8px 0;
+        padding: 8px 0 10px 8px ;
         border-radius: 0;
-        background-color: rgb(216 182 182);
-        color: white;
-        
-        &:nth-of-type(3) {
-          height: 100px;
-          padding-bottom: 55px;
-          background-color: darken(rgb(216 182 182), 10%);
-        }
-        
-        
-        
-        &::placeholder {
-          color: white;
-        }
-  
-        &:hover {
-            background-color: darken(rgb(216 182 182), 10%);
-        }
-        
-        &:focus-visible {
-            background-color: lighten(black, 40%);
-  
+
         }
       }
-  
-      button {
-        // flex-basis: 100%;
-        position: relative;
-       right: 95px;
-       top: 80px;
-        padding: 8px 24px;
-        background-color: inherit;
-      }
-    }
   }
+}

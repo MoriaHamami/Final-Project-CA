@@ -32,7 +32,9 @@
         display: flex;
         flex-direction: column;
         border-right: 1px solid lightgray;
-        gap: 10px;
+        @media (min-width: $narrow-breakpoint) {
+            gap: 10px;
+        }
         padding-right: 10px;
 
         >* {
@@ -95,7 +97,7 @@
         } 
         
         img{
-            box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px;
         }
         
     }

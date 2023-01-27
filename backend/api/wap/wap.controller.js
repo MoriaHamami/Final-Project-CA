@@ -1,4 +1,4 @@
-const wapService = require('./wap.service.js.js')
+const wapService = require('./wap.service.js')
 
 const logger = require('../../services/logger.service')
 
@@ -15,15 +15,28 @@ async function getWaps(req, res) {
 
 async function getWapById(req, res) {
   try {
-    const wapId = req.params.id
+    const wapId = req.params.wapId
+    console.log('wapId:', wapId)
     const wap = await wapService.getById(wapId)
+    console.log(wap);
     res.json(wap)
   } catch (err) {
     logger.error('Failed to get wap', err)
     res.status(500).send({ err: 'Failed to get wap' })
   }
 }
+async function getWapDemos(req, res) {
+  try {
+    logger.debug('Getting Waps Demos')
+    const waps = await wapService.query('demo')
+    res.json(waps)
+  } catch (err) {
+    logger.error('Failed to get waps', err)
+    res.status(500).send({ err: 'Failed to get waps' })
+  }}
+async function getPublishedWap(req, res) {
 
+}
 // async function addWap(req, res) {
 //   const {loggedinUser} = req
 
@@ -100,6 +113,8 @@ module.exports = {
   // addWap,
   // updateWap,
   removeWap,
+  getWapDemos,
+  getPublishedWap
   // addWapMsg,
   // removeWapMsg
 }

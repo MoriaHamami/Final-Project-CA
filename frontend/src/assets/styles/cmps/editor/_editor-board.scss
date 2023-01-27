@@ -5,6 +5,11 @@
     position: relative;
     height: calc(100vh - 147px);
 
+    & * {
+        transition: 0.4s width ease;
+    }
+
+    margin: 0 auto;
 
     @media (min-width: $narrow-breakpoint) {
         height: calc(100vh - 79px);
@@ -74,11 +79,11 @@
     .desktop-layout {
         width: 100%;
     }
-    
+
     .tablet-layout {
         width: $narrow-breakpoint;
     }
-    
+
     .mobile-layout {
         width: $mobile-breakpoint;
     }

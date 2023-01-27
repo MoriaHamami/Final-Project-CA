@@ -26,7 +26,14 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
             {/* <FontAwesomeIcon className="edit-btn" icon={faPencil} /> */}
             <span className="option-name">Edit</span>
           </div>
+
+          <div className={`option-container ${editType === 'theme' ? 'active' : ''}`} onClick={() => onOptionClick('theme')}>
+            <span class="material-symbols-outlined">palette</span>
+            {/* <FontAwesomeIcon className="edit-btn" icon={faPencil} /> */}
+            <span className="option-name">Theme</span>
+          </div>
         </div>
+
 
         <div className='option-container delete' onClick={() => onOptionClick('add')}>
           <Droppable droppableId="delete">
@@ -45,10 +52,10 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
         {editType === 'add' && <Droppable droppableId="from-sidebar-add">
           {(provided, snapshot) => (
             <div className="dorppable-container" ref={provided.innerRef}>
-            <SidebarAdd innerRef={provided.innerRef} onPickedCmp={onPickedCmp} />
-            {/* {provided.placeholder} */}
+              <SidebarAdd innerRef={provided.innerRef} onPickedCmp={onPickedCmp} />
+              {/* {provided.placeholder} */}
             </div>
-            )}
+          )}
         </Droppable>}
 
         {editType === 'edit' && <SidebarEdit handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
