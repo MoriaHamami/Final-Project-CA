@@ -45,6 +45,7 @@ export function Dashboard() {
             <AppHeader />
             <div className='flex space-between'>
                 <DashboardSidebar userPublishedWaps={userPublishedWaps} userDraftWaps={userDraftWaps} selectCurrWap={selectCurrWap} />
+                <h2>Welcome {user.username}</h2>
                 <DashboardBoard currWap={currWap} />
             </div>
         </div >
