@@ -5,6 +5,7 @@ export const wapHeader1 = {
   id: utilService.makeId(),
   type: 'wap-header',
   name: 'wap-header-1',
+  themePalette: 'secondary',
   // imgUrl: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674323590/header2_cqdk4t.png',
   imgUrl: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674323679/header1_k18zgy.png',
   info: {
@@ -14,7 +15,7 @@ export const wapHeader1 = {
       { label: 'Reservation', link: '#wc10b', id: utilService.makeId(), style: {}, type: 'btn', key: 'btns' }
     ]
   },
-  theme: 'theme-header-happy',
+  // theme: 'theme-header-happy',
   style: {
     fontFamily: 'fe-serif',
     // backgroundColor: '',

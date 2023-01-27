@@ -4,6 +4,7 @@ export const wapForm1 = {
     id: utilService.makeId(),
     type: 'wap-form',
     name: 'wap-form-1',
+    themePalette: 'secondary',
     imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674764697/Webix/wap-form-1_bcwxca.jpg',
     info: {
         title: { txt: 'Reservations', style: {}, id: utilService.makeId(), type: 'txt', key: 'title' },
@@ -15,7 +16,7 @@ export const wapForm1 = {
         ],
         btn: { label: 'Book Now', link: '#wc03', id: utilService.makeId(), style: {}, type: 'btn', key: 'btn' },
     },
-    theme: 'theme-section-happy',
+    // theme: 'theme-section-happy',
     style: {
         fontFamily: 'fe-serif',
     }

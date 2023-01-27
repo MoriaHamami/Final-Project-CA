@@ -4,6 +4,7 @@ export const wapGallery4A = {
     id: utilService.makeId(),
     type: 'wap-gallery',
     name: 'wap-gallery-4a',
+    themePalette: 'third',
     imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674680445/Webix/wap-gallery-4a_wcnmd0.jpg',
 
     info: {
@@ -69,7 +70,7 @@ export const wapGallery4A = {
             },
         ]
     },
-    theme: 'theme-header-happy',
+    // theme: 'theme-header-happy',
     thumbnail: 'https://i.postimg.cc/7h0qq8v4/wap-cards-1.png',
     style: {
         fontFamily: 'roboto-light',

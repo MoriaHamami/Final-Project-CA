@@ -5,6 +5,7 @@ export const wapAbout6 = {
   id: utilService.makeId(),
   type: 'wap-about',
   name: 'wap-about-6',
+  themePalette: 'primary',
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674683979/Webix/wap-about-6_tenqt1.jpg',
   info: {
     title: { txt: 'ABOUT APEX', id: utilService.makeId(), style: { fontSize: '2.1em', color: 'white', fontFamily: 'mont-heavy', lineHeight: '1em', letterSpacing: '0.1em' }, type: 'txt', key: 'title' },
@@ -18,7 +19,7 @@ export const wapAbout6 = {
     },
 
   },
-  theme: 'theme-section-happy',
+  // theme: 'theme-section-happy',
   style: {
     fontFamily: 'roboto-light',
   }

@@ -5,7 +5,8 @@ export const wapMap6 = {
   id: utilService.makeId(),
   type: 'wap-map',
   name: 'wap-map-6',
-  theme: 'theme-map-exciting',
+  themePalette: 'primary',
+  // theme: 'theme-map-exciting',
   info: {
     map: {
       cords: { lat: 40.83479928947879, lng: 14.106100441161631 },

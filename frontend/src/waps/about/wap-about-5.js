@@ -5,6 +5,7 @@ export const wapAbout5 = {
   id: utilService.makeId(),
   type: 'wap-about',
   name: 'wap-about-5',
+  themePalette: 'primary',
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674688190/Webix/wap-about-5_ypiloe.jpg',
   info: {
     title: { txt: 'Kiss & Makeup', id: utilService.makeId(), style: { fontFamily: 'playfair-regular', color: 'white', textAlign: 'center' }, type: 'txt', key: 'title' },
@@ -17,7 +18,7 @@ export const wapAbout5 = {
     },
 
   },
-  theme: 'theme-section-happy',
+  // theme: 'theme-section-happy',
   style: {
     fontFamily: 'roboto-light',
   }

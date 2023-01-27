@@ -5,6 +5,7 @@ export const wapHeader2 = {
   id: utilService.makeId(),
   type: 'wap-header',
   name: 'wap-header-2',
+  themePalette: 'secondary',
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-header-2_vpirwm.jpg',
   info: {
     logo: { txt: 'Urban Nomad Adventures', style: { fontSize: '1.3em', fontWeight: '700' }, id: utilService.makeId(), type: 'txt', key: 'logo' },
@@ -14,7 +15,7 @@ export const wapHeader2 = {
       { label: 'Book Online', link: '#wc25', id: utilService.makeId(), style: { fontSize: '0.9em' }, type: 'btn', key: 'btns' }
     ]
   },
-  theme: 'theme-header-happy',
+  // theme: 'theme-header-happy',
   style: {
     fontFamily: 'handlee',
   }

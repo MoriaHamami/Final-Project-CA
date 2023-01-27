@@ -4,7 +4,8 @@ export const wapGallery5B = {
     id: utilService.makeId(),
     type: 'wap-gallery',
     name: 'wap-gallery-5b',
-    theme: 'theme-header-happy',
+    themePalette: 'primary',
+    // theme: 'theme-header-happy',
     imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674763545/Webix/wap-gallery-5b_ogtlnl.jpg',
     thumbnail: 'https://i.postimg.cc/7h0qq8v4/wap-cards-1.png',
     info: {

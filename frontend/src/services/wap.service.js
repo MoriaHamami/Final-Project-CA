@@ -244,7 +244,7 @@ function getThemes() {
             id: utilService.makeId(),
             name: 'Business',
             description: 'Nifty & sophisticated',
-            fontFamily: 'Forum',
+            fontFamily: 'forum',
             colors: {
                 primary: {
                     backgroundColor: '#11999E',
@@ -267,7 +267,7 @@ function getThemes() {
             id: utilService.makeId(),
             name: 'Vivid',
             description: 'Bright & Expressive',
-            fontFamily: 'Playfair',
+            fontFamily: 'playfair-regular',
             colors: {
                 primary: {
                     backgroundColor: '#F47C7C',
@@ -290,7 +290,7 @@ function getThemes() {
             id: utilService.makeId(),
             name: 'Earthy',
             description: 'Subtle & Natural',
-            fontFamily: 'Playfair',
+            fontFamily: 'playfair-regular',
             colors: {
                 primary: {
                     backgroundColor: '#F8ECD1',
@@ -314,7 +314,7 @@ function getThemes() {
             id: utilService.makeId(),
             name: 'Creamy',
             description: 'Neutral & Serene',
-            fontFamily: 'Oswald',
+            fontFamily: 'oswald',
             colors: {
                 primary: {
                     backgroundColor: '#628C67',
@@ -360,7 +360,7 @@ function getThemes() {
             id: utilService.makeId(),
             name: 'Calming',
             description: 'Calm & easy-going',
-            fontFamily: 'Arial',
+            fontFamily: 'robboto-regular',
             colors: {
                 primary: {
                     backgroundColor: '#92B4EC',
@@ -378,7 +378,7 @@ function getThemes() {
             id: utilService.makeId(),
             name: 'Warm',
             description: 'Modern & pleasant',
-            fontFamily: 'Roboto',
+            fontFamily: 'roboto-regular',
             colors: {
                 primary: {
                     backgroundColor: '#C6CCCA',
@@ -401,7 +401,7 @@ function getThemes() {
             id: utilService.makeId(),
             name: 'Retro Vibrant',
             description: 'Hip, mod & stylish',
-            fontFamily: 'Oswald',
+            fontFamily: 'oswald',
             colors: {
                 primary: {
                     backgroundColor: 'rgb(11 122 157 / 63%)',
