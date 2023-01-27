@@ -32,7 +32,7 @@ export function HomePreview() {
 
 
   return <div id='home-preview' className='home-preview-page'>
-    <h2 className="preview-title">Introducing <span>Webix</span></h2>
+    <h2 className="preview-title ">Introducing <span>Webix</span></h2>
     <p className="preview-subtitle">We will provide you the freedom to create the Website You want according to your needs.
       Whether you're promoting your business, showcasing your work, opening your online store or starting a blog
       - you can do it all with the Webix website builder.</p>
