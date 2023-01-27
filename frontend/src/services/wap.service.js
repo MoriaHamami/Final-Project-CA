@@ -191,11 +191,14 @@ async function save(wap) {
     let savedWap
     if (wap.createdBy) {
         // const wapCopy = { ...wap }
+        wap.updatedAt = Date.now()
         savedWap = await storageService.put(STORAGE_KEY, wap)
         console.log(savedWap);
         // return storageService.put(STORAGE_KEY, wap)
         // savedWap = await httpService.put(`wap/${wap._id}`, wap)
     } else {
+        wap.isDemo = false
+        wap.createdAt = Date.now()
         // Later, owner is set by the backend
         // delete wap._id
         wap.createdBy = userService.getLoggedinUser()?.username || 'guest'

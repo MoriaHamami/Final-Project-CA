@@ -4,38 +4,6 @@
     resize: both;
     position: relative;
     height: calc(100vh - 138px);
-
-    & * {
-        transition: 0.4s width ease;
-    }
-
-    margin: 0 auto;
-
-    @media (min-width: $narrow-breakpoint) {
-        height: calc(100vh - 79px);
-    }
-
-    // container-type: inline-size;
-
-    // &.mobile{
-    //     width: 380px;
-    // }
-
-    // &.tablet{
-    //     width: 720px;
-    // }
-
-    // &.desktop{
-    //     width: 100%;
-    // }
-
-
-    &.drop-zone {
-        background-image: url('https://res.cloudinary.com/dimirmc9j/image/upload/v1674121344/dot-grid-blank_ekmq4f.webp');
-        background-size: contain;
-
-    }
-
     &::-webkit-scrollbar {
         width: 10px;
     }
@@ -56,24 +24,23 @@
             background-color: #cbcbcb;
         }
     }
-
-    .selected {
-        // border: 1px solid lighten($clr1, 10%);
-        // background-color: lighten($hover-clr1, 40%);
-        // border: 2px dashed lighten($editor-board-clr, 20%);
-        outline: 2px dashed lighten($editor-board-clr, 20%);
-        // outlinen -style: dashed;
-        // background-color: lighten($editor-hover, 20%);
+    
+    &.tablet-layout {
+        max-height: calc(100vh - 160px);
+        border-radius: 2rem;
+        border: 5px solid white;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
-
-    .hover {
-        background-color: lighten($editor-hover, 17%);
-        outline: 2px solid lighten($editor-board-clr, 10%);
-        // box-shadow: inset 0px 0px 0 2px lighten($editor-board-clr, 10%);
-    }
-
-    .hover-cmp {
-        box-shadow: inset 0px 0px 0 2px lighten($editor-board-clr, 10%);
+    
+    &.mobile-layout {
+        max-height: calc(100vh - 160px);
+        border-radius: 2rem;
+        border: 5px solid white;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     .desktop-layout {
@@ -87,6 +54,37 @@
     .mobile-layout {
         width: $mobile-breakpoint;
     }
+
+    & * {
+        transition: 0.4s width ease;
+    }
+
+    margin: auto;
+
+    @media (min-width: $narrow-breakpoint) {
+        height: calc(100vh - 79px);
+    }
+
+    &.drop-zone {
+        background-image: url('https://res.cloudinary.com/dimirmc9j/image/upload/v1674121344/dot-grid-blank_ekmq4f.webp');
+        background-size: contain;
+
+    }
+
+    .selected {
+        outline: 2px dashed lighten($editor-board-clr, 20%);
+    }
+
+    .hover {
+        background-color: lighten($editor-hover, 17%);
+        outline: 2px solid lighten($editor-board-clr, 10%);
+    }
+
+    .hover-cmp {
+        box-shadow: inset 0px 0px 0 2px lighten($editor-board-clr, 10%);
+    }
+
+  
 }
 
 .dragable-container {
@@ -101,7 +99,6 @@
 .edit-icon.hover,
 .edit-icon.selected {
     display: block;
-    // visibility: visible;
     font-size: 1.5rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.694);
@@ -116,6 +113,5 @@
 }
 
 .edit-icon {
-    // visibility: hidden;
     display: none;
 }

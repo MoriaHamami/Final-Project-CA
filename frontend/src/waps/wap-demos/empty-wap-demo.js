@@ -6,7 +6,7 @@ export const emptyWapDemo = {
 	imgUrl: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674393577/plus_blank_template_bn2bok.png',
 	info: {},
 	cmps: [],
-	isPublic: true,
+	isPublished: false,
 	isDemo: true
 }
 
