@@ -1,5 +1,5 @@
 .wap-hero-5 {
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   // width: 100%;
@@ -10,11 +10,31 @@
   flex-direction: column;
   color: whitesmoke;
   padding: 7.5rem $normal-padding;
-
-
   .title {
     max-width: 600px;
     margin-bottom: 2rem;
   }
+  
+  &.tablet-layout{
+    background-position: right;
+    padding: 5rem $narrow-padding;
+  }
+  
+  @media (max-width: $narrow-breakpoint) {
+    background-position: right;
+    padding: 5rem $narrow-padding;
+  }
+
+  &.mobile-layout{
+    background-position: right;
+    padding: 3.5rem $mobile-padding;
+  }
+  @media (max-width: $mobile-breakpoint) {
+    background-position: right;
+    padding: 3.5rem $mobile-padding;
+  }
+
+
+    
 
 }

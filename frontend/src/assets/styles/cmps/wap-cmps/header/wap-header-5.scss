@@ -1,48 +1,104 @@
+.wap-header-5 {
+  display: flex;
+  // z-index: 1;
+  // position: fixed;
+  background-color: white;
+  // width: 97%;
+  justify-content: center;
+  gap: 8rem;
+  padding: 2rem $normal-padding;
+  align-items: center;
+  color: $t2clr1;
 
-  .wap-header-5 {
-    display: flex;
-    // z-index: 1;
-    // position: fixed;
-    background-color: white;
-    // width: 97%;
-    justify-content: center;
-    gap: 8rem;
+  .menu-btn {
+    display: none;
+  }
+
+  &.mobile-layout {
+    padding: 2rem $mobile-padding;
+    font-size: 0.9rem;
+
+    .menu-btn {
+      display: block;
+      font-size: 2em;
+    }
+  }
+
+
+
+  &.tablet-layout {
     padding: 2rem $normal-padding;
+
+    // font-size: 1rem;
+    .menu-btn {
+      display: block;
+      font-size: 2em;
+    }
+  }
+
+  @media (max-width: $narrow-breakpoint) {
+    padding: 2rem $narrow-padding;
+
+    // font-size: 1rem;
+    .menu-btn {
+      display: block;
+      font-size: 2em;
+    }
+
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 2rem $mobile-padding;
+    font-size: 0.9rem;
+
+    .menu-btn {
+      display: block;
+      font-size: 2em;
+    }
+  }
+
+  .logo {
+    margin: 0;
+    font-weight: 100;
+  }
+
+  p {
+    margin: 0;
+  }
+
+
+  .login {
+    margin-left: 100px;
+    display: flex;
+  }
+
+  .nav-bar {
+    display: flex;
     align-items: center;
-    color: $t2clr1;
-  
-    .logo {
-      margin: 0;
-      font-weight: 100;
-    }
-  
-    p {
-      margin: 0;
-    }
-  
-    &.mobile-layout,
-    &.tablet-layout {
-      padding: 1rem 1.5rem;
-    }
+    gap: 1.5rem;
 
-    .login{
-        margin-left: 100px;
-        display: flex;
-    }
-  
-    .nav-bar {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-  
-      a {
-        color: $t2clr1;
-        
+    a {
+      color: $t2clr1;
 
-        &:hover{
-          text-decoration: none;
-          font-weight: 600;
-        }
+
+      &:hover {
+        text-decoration: none;
+        font-weight: 600;
       }
     }
   }
+
+  &.mobile-layout,
+  &.tablet-layout {
+    .nav-bar {
+      display: none;
+    }
+  }
+
+  @media (max-width: $narrow-breakpoint) {
+    .nav-bar {
+      display: none;
+    }
+  }
+
+}
