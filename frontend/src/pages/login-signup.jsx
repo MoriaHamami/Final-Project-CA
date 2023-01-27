@@ -63,7 +63,7 @@ export function LoginSignup() {
                 console.log('data= ', userData.data)
                 loginWithOauth(userData)
                 showSuccessMsg(`Welcome ${userData.name}`)
-                navigate('/')
+                navigate(-1)
             } catch (err) {
                 console.log(err)
             }

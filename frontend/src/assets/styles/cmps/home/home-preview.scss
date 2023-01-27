@@ -8,14 +8,14 @@
   background: linear-gradient(0deg, #2d3236, 1%, white);
   // width: 100%;
   position: relative;
-  padding: 2rem $normal-padding 300px;
+  padding: 3rem $normal-padding 300px;
 
   @media (max-width: $narrow-breakpoint) {
-    padding: 2rem $narrow-padding 200px;
+    padding: 3rem $narrow-padding 200px;
   }
 
   @media (max-width: $mobile-breakpoint) {
-    padding: 2rem $mobile-padding 150px;
+    padding: 3rem $mobile-padding 150px;
   }
 
   // padding-bottom: 300px;
