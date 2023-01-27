@@ -7,7 +7,8 @@ export const wapGallery2B = {
   id: utilService.makeId(),
   type: 'wap-galery',
   name: 'wap-gallery-2b',
-  theme: 'theme-section-happy',
+  themePalette: 'primary',
+//   theme: 'theme-section-happy',
   style: {
     fontFamily: 'handlee',
   },

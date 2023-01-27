@@ -4,6 +4,7 @@ export const wapHero4 = {
   id: utilService.makeId(),
   type: 'wap-hero',
   name: 'wap-hero-4',
+  themePalette: 'third',
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674680444/Webix/wap-hero4_l5twqh.jpg',
 
   info: {
@@ -18,7 +19,7 @@ export const wapHero4 = {
       key: 'photo'
     },
   },
-  theme: 'theme-header-happy',
+  // theme: 'theme-header-happy',
   style: {
     backgroundImage: 'url("https://res.cloudinary.com/dimirmc9j/image/upload/v1674583178/demo4hero_k3i3u6.png")',
     fontFamily: 'roboto-light',

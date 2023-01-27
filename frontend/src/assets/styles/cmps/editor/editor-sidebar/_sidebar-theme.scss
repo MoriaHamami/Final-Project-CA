@@ -1,0 +1,65 @@
+.sidebar-theme {
+
+    padding: 0;
+    h3 {
+        display: none;
+
+        @media (min-width: $narrow-breakpoint) {
+            display: block;
+            text-align: center;
+            // padding-block: 1.65rem;
+            border-bottom: 1px solid lightgray;
+            margin: 0;
+            padding: 20px 7px 20px;
+            font-size: 1.2rem;
+            color: $almost-black;
+        }
+    }
+}
+
+.theme-container {
+    // background-color: white;
+    // width: 100%;
+
+    background-color: #efefef;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px 0px lightgrey;
+    cursor: pointer;
+
+    &:hover {
+        background-color: whitesmoke;
+    }
+
+    .theme-header-info {
+        //   padding: 16px 18px;
+        padding: 5px;
+
+        .theme-header {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .theme-description {
+            color: #858585;
+            font-size: 0.8rem;
+        }
+    }
+
+    .theme-colors-container {
+        display: flex;
+
+        &>*:first-child {
+            flex-grow: 3;
+        }
+
+        &>*:nth-child(2) {
+            flex-grow: 2;
+        }
+
+        &>*:nth-child(3) {
+            flex-grow: 1;
+        }
+    }
+}

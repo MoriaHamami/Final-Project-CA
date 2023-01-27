@@ -6,6 +6,7 @@ import { faAdd, faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import 'animate.css';
 import { wapHero2 } from "../../waps/heros/wap-hero-2";
 import { Droppable } from "react-beautiful-dnd"
+import { SidebarTheme } from "./sidebar-theme.jsx"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onOptionClick, isOpenMenu, editType, isDragging, }) {
@@ -59,6 +60,9 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
         </Droppable>}
 
         {editType === 'edit' && <SidebarEdit handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
+
+        {editType === 'theme' && <SidebarTheme />}
+        {/* {editType === 'theme' && <SidebarTheme handleWapEdit={handleWapEdit} />} */}
 
       </div>
     </div >

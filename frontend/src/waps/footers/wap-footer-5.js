@@ -3,6 +3,7 @@ import { utilService } from '../../services/util.service.js'
 export const wapFooter5 = {
   name: 'wap-footer-5',
   type: 'wap-footer',
+  themePalette: 'third',
   id: utilService.makeId(),
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674688190/Webix/wap-footer-5_arlr6b.jpg',
   info: {

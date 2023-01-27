@@ -5,6 +5,8 @@ export const wapHeader3 = {
   id: utilService.makeId(),
   type: 'wap-header',
   name: 'wap-header-3',
+  themePalette: 'third',
+
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674680444/Webix/wap-header-3_t5svyp.jpg',
   info: {
     logo: { txt: '&', style: { fontSize: '1.3em', color: '#704F4F' }, id: utilService.makeId(), type: 'txt', key: 'logo' },
@@ -16,7 +18,7 @@ export const wapHeader3 = {
     ],
     login: { label: 'Log In', link: '#', id: utilService.makeId(), style: { fontSize: '0.9em', color: '#704F4F' }, type: 'btn', key: 'login' }
   },
-  theme: 'theme-header-happy',
+  // theme: 'theme-header-happy',
   style: {
     fontFamily: 'playfair-regular',
   }

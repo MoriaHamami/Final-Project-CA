@@ -5,6 +5,7 @@ export const wapAbout1 = {
   id: utilService.makeId(),
   type: 'wap-about',
   name: 'wap-about-1',
+  themePalette: 'primary',
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674764334/Webix/wap-about-1_p1sj3k.jpg',
   info: {
     subtitle: { txt: 'THE LOVE FOR PIZZA', id: utilService.makeId(), style: { fontWeight: '600', fontSize: '3.5em' }, type: 'txt', key: 'title' },
@@ -19,7 +20,7 @@ export const wapAbout1 = {
       key: 'photo'
     }
   },
-  theme: 'theme-section-happy',
+  // theme: 'theme-section-happy',
   style: {
     fontFamily: 'fe-serif',
   },
