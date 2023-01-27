@@ -28,10 +28,23 @@ export function HomeFooter() {
                 </div>
             </div>
 
-                
-                <button className='footer-btn'><Link to="/WapDemos">Start now</Link></button>
-            
+
+            <button className='footer-btn'><Link to="/WapDemos">Start now</Link></button>
+
         </div>
+        
+            <div className='lower-footer'>
+                <div className='left'>
+                    <div>
+                        <p className='logo'>Webix</p>
+                    </div>
+                    <hr />
+                    <p> Made by Maor Aknin - Moria Hamami - Guy Agam</p>
+                </div>
+                <div className='right'>
+                    <p>© 2023 Webix LTD.</p>
+                </div>
+            </div>
     </div>
 
 }

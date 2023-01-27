@@ -18,7 +18,16 @@
     // background-color: #282828;
     color: $almost-white;
     // padding-top: 130px;
-    padding: 7rem $normal-padding 6rem;
+    padding: 7rem $normal-padding 8rem;
+
+    @media (max-width: $narrow-breakpoint) {
+        padding: 7rem $narrow-padding 8rem;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 7rem $mobile-padding 8rem;
+    }
+
     // text-align: center;
     // min-height: 80vh;
     display: flex;
@@ -69,12 +78,12 @@
             width: 30%;
             position: absolute;
             // bottom: 150px;
-            top:60%;
+            top: 60%;
             left: 60%;
-            
+
             @media (max-width: 1200px) {
-                top:40%;
-                
+                top: 40%;
+
             }
         }
 
@@ -87,6 +96,9 @@
         top: 650px;
         left: 50%;
         // right: 50%;
+        animation: bounce;
+        animation-duration: 1.5s;
+        animation-delay: 2s;
 
         &.down {
             display: none;

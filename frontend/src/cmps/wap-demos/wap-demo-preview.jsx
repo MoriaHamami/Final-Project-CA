@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export function WapDemoPreview({ demoWap, onSelectDemoWap }) {
-    return <div key={demoWap._id} className="preview-card">
+    return <div key={demoWap._id} className="preview-card ">
         <div className="img-container">
             <img className="preview-img" src={demoWap.imgUrl} />
             {demoWap.isBlack ? <div className="btn-container">
@@ -13,6 +13,6 @@ export function WapDemoPreview({ demoWap, onSelectDemoWap }) {
                     <Link key="/preview" to={`/preview/${demoWap._id}`}><button className="preview-btn">Preview</button></Link>
                 </div>}
         </div>
-        <div className="preview-name">{demoWap.name}</div>
+        <div className="preview-name ">{demoWap.name}</div>
     </div>
 }
