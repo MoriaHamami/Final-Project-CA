@@ -1,7 +1,7 @@
 import { utilService } from '../../services/util.service.js'
 
 
-export const wapVideo2 = {
+export const wapVideo5 = {
   id: utilService.makeId(),
   type: 'wap-video',
   name: 'wap-video-2',
@@ -11,7 +11,7 @@ export const wapVideo2 = {
     title: { txt: 'Get to know us', style: { fontSize: '2em' }, id: utilService.makeId(), type: 'txt', key: 'title' },
     // embedId: '0U7IWgCREik',
     video: {
-      url: 'https://www.youtube.com/embed/0U7IWgCREik',
+      url: 'https://www.youtube.com/watch?v=Yi_ZHBpKmvE',
       id: utilService.makeId(),
       style: {
         width: '70%',

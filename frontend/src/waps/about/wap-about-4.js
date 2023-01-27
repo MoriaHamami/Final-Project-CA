@@ -5,6 +5,7 @@ export const wapAbout4 = {
   id: utilService.makeId(),
   type: 'wap-about',
   name: 'wap-about-4',
+  themePalette: 'primary',
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674680444/Webix/wap-about-4_dmxqkj.jpg',
 
   info: {
@@ -19,7 +20,7 @@ export const wapAbout4 = {
     },
 
   },
-  theme: 'theme-section-happy',
+  // theme: 'theme-section-happy',
   style: {
     fontFamily: 'roboto-light',
   }

@@ -5,6 +5,7 @@ export const wapVideo1 = {
   id: utilService.makeId(),
   type: 'wap-video',
   name: 'wap-video-1',
+  themePalette: 'third',
   info: {
     title: { txt: 'Discover Us', style: { fontSize: '1.3em' }, id: utilService.makeId(), type: 'txt', key: 'title' },
     subtitle: { txt: 'Watch the Master in Action!', style: { fontWeight: '600', fontSize: '2.5em' }, id: utilService.makeId(), type: 'txt', key: 'subtitle' },
@@ -29,7 +30,7 @@ export const wapVideo1 = {
     // }
   },
   // cmps: [],
-  theme: 'theme-section-happy',
+  // theme: 'theme-section-happy',
   style: {
     fontFamily: 'fe-serif',
   },

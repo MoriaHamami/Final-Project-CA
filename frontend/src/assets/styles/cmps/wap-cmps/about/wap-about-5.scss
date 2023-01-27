@@ -1,36 +1,36 @@
 .wap-about-5 {
     // width: 100%;
-    padding: 0 $normal-padding 8.5rem;
-    max-height: 400px;
+    padding: 1rem $normal-padding 5.5rem;
+    // max-height: 400px;
     
     &.tablet-layout {
-        padding: 0 $narrow-padding 6.5rem;
+        padding: 1rem $narrow-padding 6.5rem;
         max-height: 250px;
     }
     
     @media (max-width: $narrow-breakpoint) {
-        padding: 0 $narrow-padding 6.5rem;
+        padding: 1rem $narrow-padding 6.5rem;
         max-height: 250px;
     }
     
     &.mobile-layout {
-        padding: 0 $mobile-padding 2.5rem;
+        padding: 1rem $mobile-padding 2.5rem;
         max-height: 300px;
     }
-    @media (max-width: $narrow-breakpoint) {
-        padding: 0 $mobile-padding 2.5rem;
+    @media (max-width: $mobile-breakpoint) {
+        padding: 1rem $mobile-padding 2.5rem;
         max-height: 300px;
     }
     text-align: center;
     position: relative;
     background-color: #d8b6b6;
-    margin-top: 50%;
+    // margin-top: -40px;
     
     
     .text-container {
         position: relative;
         bottom: 50px;
-        z-index: 1;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         
@@ -92,7 +92,7 @@
 
     }
 
-    @media (max-width: $narrow-breakpoint) {
+    @media (max-width: calc($narrow-breakpoint + 100px)) {
         .text-container {
             position: relative;
             bottom: 35px;
@@ -109,7 +109,7 @@
             
             .title {
                 margin-bottom: 30px;
-                font-size: 6rem;
+                font-size: 5rem;
             }
         }
     }

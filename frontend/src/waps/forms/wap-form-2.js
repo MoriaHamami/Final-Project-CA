@@ -4,6 +4,7 @@ export const wapForm2 = {
   id: utilService.makeId(),
   type: 'wap-form',
   name: 'wap-form-2',
+  themePalette: 'secondary',
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-form-2_aw6wgw.jpg',
 
   info: {
@@ -17,7 +18,7 @@ export const wapForm2 = {
     ],
     btn: { label: 'Submit', link: '#wc03', style: { borderRadius: '0.25em' }, type: 'btn', key: 'btn' },
   },
-  theme: 'theme-section-happy',
+  // theme: 'theme-section-happy',
   style: {
     fontFamily: 'handlee',
   }

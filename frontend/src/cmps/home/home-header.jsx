@@ -28,7 +28,7 @@ export function HomeHeader() {
                     </div>
                     {user ? <Link to="/user" className="header-profile-container">
                         {/* <span className="material-symbols-outlined profile-img">account_circle</span> */}
-                        <img className='user-img' src={user.imgUrl} />
+                        {/* <img className='user-img' src={user.imgUrl} /> */}
                         <span className="user-name">{user.fullname}</span>
                     </Link> :
                         <NavLink className='login-container' key="/user" to="/user">

@@ -4,6 +4,7 @@ export const wapForm4 = {
     id: utilService.makeId(),
     type: 'wap-form',
     name: 'wap-form-4',
+    themePalette: 'secondary',
     imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674680444/Webix/wap-form-4_k54tya.jpg',
 
     info: {
@@ -17,7 +18,7 @@ export const wapForm4 = {
         ],
         btn: { label: 'Send', link: '#wc03', style: { backgroundColor: '#34d1b6', color: 'white' }, type: 'btn', key: 'btn' },
     },
-    theme: 'theme-section-happy',
+    // theme: 'theme-section-happy',
     style: {
         fontFamily: 'roboto-light',
     }

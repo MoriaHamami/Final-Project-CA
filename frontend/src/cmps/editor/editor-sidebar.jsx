@@ -4,6 +4,7 @@ import { SidebarEdit } from './sidebar-edit.jsx'
 import { SidebarAdd } from './sidebar-add.jsx'
 import 'animate.css';
 import { Droppable } from "react-beautiful-dnd"
+import { SidebarTheme } from "./sidebar-theme.jsx"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onOptionClick, isOpenMenu, editType, isDragging, }) {
@@ -57,6 +58,9 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
         </Droppable>}
 
         {editType === 'edit' && <SidebarEdit handleWapEdit={handleWapEdit} chosenComponent={chosenComponent} />}
+
+        {editType === 'theme' && <SidebarTheme />}
+        {/* {editType === 'theme' && <SidebarTheme handleWapEdit={handleWapEdit} />} */}
 
       </div>
     </div >

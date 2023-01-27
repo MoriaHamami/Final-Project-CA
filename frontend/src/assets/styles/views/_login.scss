@@ -6,6 +6,8 @@
     // background: linear-gradient(180deg, $clr1, rgba(185, 203, 219, 0.147));
     height: 90vh;
     font-family: roboto-regular;
+    animation: fadeIn;
+    animation-duration: 0.4s;
 
     .login-title {
         text-align: center;

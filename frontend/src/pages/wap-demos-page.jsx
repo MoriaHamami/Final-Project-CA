@@ -6,6 +6,8 @@ import { createWap, saveWap } from '../store/wap.actions.js'
 // import { WapDemoPreview } from '../cmps/waps/wap-demo-preview.jsx'
 import { WapDemoList } from '../cmps/wap-demos/wap-demo-list'
 import { wapService } from '../services/wap.service.js'
+import 'animate.css';
+
 // import { getWapDemoById } from '../services/wap.service.local.js'
 
 export function WapDemos() {
@@ -34,8 +36,8 @@ export function WapDemos() {
             <AppHeader />
         <div className="wap-demos-page">
 
-            <h2 className='title'>Pick one of our professionally designed templates for your website</h2>
-            <p className='subtitle'>Or express your inner creativity and start from scratch</p>
+            <h2 className='title animate__animated animate__slideInLeft'>Pick one of our professionally designed templates for your website</h2>
+            <p className='subtitle animate__animated animate__slideInLeft'>Or express your inner creativity and start from scratch</p>
             <WapDemoList onSelectDemoWap={onSelectWapDemo} />
         </div>
         </div>

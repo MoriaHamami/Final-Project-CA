@@ -22,7 +22,6 @@
 @import "cmps/app-footer";
 @import "cmps/user-msg";
 
-
 // Home Components
 @import "cmps/home/home-header";
 @import "cmps/home/home-hero";
@@ -36,6 +35,7 @@
 @import "cmps/editor/editor-sidebar";
 @import "cmps/editor/editor-sidebar/sidebar-edit";
 @import "cmps/editor/editor-sidebar/sidebar-add";
+@import "cmps/editor/editor-sidebar/sidebar-theme";
 @import "cmps/editor/sidebar-edit/sidebar-colors";
 @import "cmps/editor/sidebar-edit/sidebar-font-decoration";
 @import "cmps/editor/sidebar-edit/sidebar-font-family";
@@ -57,6 +57,7 @@
 @import "cmps/wap-cmps/gallery/wap-gallery-4b"; 
 @import "cmps/wap-cmps/gallery/wap-gallery-5a"; 
 @import "cmps/wap-cmps/gallery/wap-gallery-5b"; 
+@import "cmps/wap-cmps/gallery/wap-gallery-5c"; 
 @import "cmps/wap-cmps/gallery/wap-gallery-6a"; 
 @import "cmps/wap-cmps/gallery/wap-gallery-6b"; 
 // Footer
