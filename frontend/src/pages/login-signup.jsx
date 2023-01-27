@@ -146,7 +146,7 @@ export function LoginSignup() {
                 </div>}
                 {user && <div className="user-profile">
                     <h2 className="user-greeting">Hello {user.fullname}</h2>
-                    <h3 style={{ color: 'red' }}>This is gonna be a draft page</h3>
+                    <Link to="/dashboard"><button>GO TO DASHBOARD</button></Link>
                     <button className="logout-btn" onClick={onLogout}>Logout</button>
                 </div>}
             </section >

@@ -4,15 +4,43 @@
     resize: both;
     position: relative;
     height: calc(100vh - 138px);
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 1px;
+        background-color: white;
+        border: 1px solid $almost-white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #DDDDDD;
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #cbcbcb;
+        }
+    }
     
     &.tablet-layout {
         max-height: calc(100vh - 160px);
-        border-radius: 10px;
+        border-radius: 2rem;
+        border: 5px solid white;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
     
     &.mobile-layout {
         max-height: calc(100vh - 160px);
-        border-radius: 10px;
+        border-radius: 2rem;
+        border: 5px solid white;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     .desktop-layout {
@@ -43,40 +71,13 @@
 
     }
 
-    &::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    &::-webkit-scrollbar-track {
-        border-radius: 1px;
-        background-color: white;
-        border: 1px solid $almost-white;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 4px;
-        background-color: #DDDDDD;
-        z-index: 1;
-
-        &:hover {
-            cursor: pointer;
-            background-color: #cbcbcb;
-        }
-    }
-
     .selected {
-        // border: 1px solid lighten($clr1, 10%);
-        // background-color: lighten($hover-clr1, 40%);
-        // border: 2px dashed lighten($editor-board-clr, 20%);
         outline: 2px dashed lighten($editor-board-clr, 20%);
-        // outlinen -style: dashed;
-        // background-color: lighten($editor-hover, 20%);
     }
 
     .hover {
         background-color: lighten($editor-hover, 17%);
         outline: 2px solid lighten($editor-board-clr, 10%);
-        // box-shadow: inset 0px 0px 0 2px lighten($editor-board-clr, 10%);
     }
 
     .hover-cmp {
@@ -98,7 +99,6 @@
 .edit-icon.hover,
 .edit-icon.selected {
     display: block;
-    // visibility: visible;
     font-size: 1.5rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.694);
@@ -113,6 +113,5 @@
 }
 
 .edit-icon {
-    // visibility: hidden;
     display: none;
 }

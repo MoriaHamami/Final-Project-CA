@@ -25,7 +25,7 @@ export const wapDemo2 = {
 		wapForm2,
 		wapFooter2
 	],
-	isPublic: true
+	isPublished: false,
 }
 
 
