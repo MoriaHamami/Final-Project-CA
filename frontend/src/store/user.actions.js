@@ -26,13 +26,33 @@ export async function removeUser(userId) {
     }
 }
 
+export function loginWithOauth(userData) {
+    try {
+        store.dispatch({
+            type: SET_USER,
+            user: {
+                fullname: userData.data.name,
+                imgUrl: userData.data.picture,
+                username: userData.data.email,
+                _id: userData.data.email,
+            }
+        })
+    } catch (err) {
+        console.log('Cannot login', err)
+        throw err
+    }
+}
+
+
 export async function login(credentials) {
     try {
         const user = await userService.login(credentials)
+        console.log(user)
         store.dispatch({
             type: SET_USER,
             user
         })
+
         return user
     } catch (err) {
         console.log('Cannot login', err)

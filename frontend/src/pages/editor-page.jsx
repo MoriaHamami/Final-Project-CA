@@ -54,28 +54,34 @@ export function Editor() {
             const destIdx = result.destination.index
             return addCmpToBoard(currCmp, destIdx)
         }
-        if (result.destination.droppableId === 'delete') return removeCmpFromBoard(result)
+        if (result.destination.droppableId === 'delete') {
+            const approved = window.confirm('Are you sure you want to remove this element?')
+            if (!approved) {
+                return
+            }
+            return removeCmpFromBoard(result)
+        }
         reOrder(result.source.index, result.destination.index)
     }
 
     function addCmpToBoard(cmp, idx) {
-        console.log('wap:',wap)
+        console.log('wap:', wap)
         saveCmp(wap, cmp, idx)
     }
 
     // TO CHECKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
     function setElementStyle(wap, cmpId, element, propertyName, propertyValue) {
-        if ( propertyName === 'url') {
-            if(propertyValue.includes('//www.youtube.com')) {
+        if (propertyName === 'url') {
+            if (propertyValue.includes('//www.youtube.com')) {
                 const idx = propertyValue.indexOf('?v=') + 3
-                const newPropertyValue = 'https://www.youtube.com/embed/' + propertyValue.slice(-(propertyValue.length-idx))
+                const newPropertyValue = 'https://www.youtube.com/embed/' + propertyValue.slice(-(propertyValue.length - idx))
                 // console.log('propertyValue:', newPropertyValue)
                 element[propertyName] = newPropertyValue
             } else element[propertyName] = propertyValue
         } else if (propertyName === 'cords') element[propertyName] = propertyValue
         else element.style[propertyName] = propertyValue
         // console.log('element editorpage line 69:', element)
-        console.log('element.style[propertyName]:',element.style[propertyName])
+        console.log('element.style[propertyName]:', element.style[propertyName])
         console.log('element:', element)
         saveElement(wap, cmpId, element)
     }

@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
-
     return (
         <header className="app-header">
             <div className="header-txt-container">
@@ -14,7 +13,7 @@ export function AppHeader() {
                         <NavLink key="/WapDemos" to="/WapDemos" className="margin-inline-start templates">Templates</NavLink>
                         {/* {user && <NavLink key="/drafts" to="/drafts" className="margin-inline-start">Drafts</NavLink>} */}
                     </div>
-                   <span className="material-symbols-outlined menu-btn">menu</span>
+                    <span className="material-symbols-outlined menu-btn">menu</span>
                     {user ? <Link to="/user" className="header-profile-container">
                         <span className="material-symbols-outlined profile-img">account_circle</span>
                         <span className="user-name">{user.fullname}</span>

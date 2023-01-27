@@ -11,14 +11,21 @@ export function EditorHeader({ wap }) {
     const [name, setName] = useState('')
     const [isVisible, setIsVisible] = useState(false)
     const navigate = useNavigate()
-    const { displaySize } = useSelector((storeState) => storeState.wapModule)
+    const { displaySize, user } = useSelector((storeState) => ({ displaySize: storeState.wapModule.displaySize, user: storeState.userModule.user }))
 
     // const dispatch = useDispatch()
 
-  function onSetDisplaySize(size) {
-    setDisplaySize(size)
-    // dispatch(setDisplaySize(size))
-  }
+    function onSetDisplaySize(size) {
+        setDisplaySize(size)
+        // dispatch(setDisplaySize(size))
+    }
+
+    const onPublishClick = () => {
+        if (!user) {
+            return alert('Please login to publish your site')
+        }
+        setIsVisible(!isVisible)
+    }
 
     async function changeWapName() {
         try {
@@ -55,14 +62,13 @@ export function EditorHeader({ wap }) {
                 <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} /> */}
                 </div>
             </div>
-            <div className='publish-container' style={{ display: isVisible ? 'block' : 'none'}}>
+            <div className='publish-container' style={{ display: isVisible ? 'block' : 'none' }}>
                 <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
                 <button onClick={changeWapName} className='publish-btn'>Save</button>
             </div>
             <div className="site-actions">
                 <Link key="/preview" to={`/preview/${wap._id}`}><button className='preview-btn'>Preview</button></Link>
-                <button onClick={() => setIsVisible(!isVisible)} className='publish-btn'>Publish</button>
-                {/* <Link key="/publish" to={`/ publish / ${ wap.name } `}><button className='publish-btn'>Publish</button></Link> */}
+                <button onClick={onPublishClick} className='publish-btn'>Publish</button>
             </div>
 
         </header >

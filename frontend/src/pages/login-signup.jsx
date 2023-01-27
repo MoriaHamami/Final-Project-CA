@@ -6,7 +6,7 @@ import { userService } from '../services/user.service.js'
 import { Fragment, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { signup, login, logout } from '../store/user.actions.js'
+import { signup, login, logout, loginWithOauth } from '../store/user.actions.js'
 import { GoogleLogin, useGoogleLogin } from '@react-oauth/google'
 import jwt_decode from "jwt-decode";
 import axios from 'axios'
@@ -25,16 +25,21 @@ export function LoginSignup() {
         setCredentials((prevCreds) => ({ ...prevCreds, [field]: value }))
     }
 
-    function onSubmit(ev) {
+    async function onSubmit(ev) {
         ev.preventDefault()
         const funcs = { signup, login }
         const method = isSignupState ? 'signup' : 'login'
-        return funcs[method](credentails)
-            .then((user) => {
-                showSuccessMsg(`Welcome ${user.fullname}`)
-                navigate('/')
-            })
-            .catch(() => showErrorMsg('Oops try again'))
+        try {
+
+            const user = await funcs[method](credentails);
+            showSuccessMsg(`Welcome ${user.fullname}`)
+            navigate('/')
+        } catch (e) {
+            console.log(e)
+
+            showErrorMsg('Oops try again: ' + e.message)
+        }
+
     }
 
     function onToggleSignupState(ev) {
@@ -56,6 +61,9 @@ export function LoginSignup() {
                     }
                 })
                 console.log('data= ', userData.data)
+                loginWithOauth(userData)
+                showSuccessMsg(`Welcome ${userData.name}`)
+                navigate('/')
             } catch (err) {
                 console.log(err)
             }
@@ -131,7 +139,7 @@ export function LoginSignup() {
                             </div>
                             <div className='facebook-login' onClick={googleLogin}>
                                 <img src="https://res.cloudinary.com/dimirmc9j/image/upload/v1674740800/facebook-svgrepo-com_sxcc4q.svg" alt="" />
-                            <span className='facebook-login-txt'>Continue with Facebook</span>
+                                <span className='facebook-login-txt'>Continue with Facebook</span>
                             </div>
                         </div>
                     </form>

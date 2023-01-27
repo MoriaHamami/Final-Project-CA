@@ -1,11 +1,12 @@
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { uploadService } from '../../../services/upload.service'
 
 export function SidebarUrl({ title, propertyName, onChange }) {
     const [url, setUrl] = useState('')
+    const urlInputRef = useRef()
     const [selectedFile, setSelectedFile] = useState(null);
 
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
@@ -26,11 +27,19 @@ export function SidebarUrl({ title, propertyName, onChange }) {
         // target.title = target.value
         // setUrl(target.value)
         onChange(propertyName, url)
+        setUrl('')
+        if (urlInputRef.current) {
+            urlInputRef.current.value = ''
+        }
+        setSelectedFile(null)
+
     }
 
     async function uploadImg(e) {
         const imgUpload = await uploadService.uploadImg(e)
         setUrl(imgUpload.url)
+        onChange(propertyName, imgUpload.url)
+        setSelectedFile(null)
     }
 
 
@@ -38,15 +47,19 @@ export function SidebarUrl({ title, propertyName, onChange }) {
 
         <form onChange={handleChange} onSubmit={submitUrl}>
             <label className="sidebar-url">{title}</label>
-            <input type="url"
-                value={url}
-                placeholder="Enter url" />
-            {/* <button onClick={onSubmit}>{info.btn.label}</button> */}
             <input
+                ref={urlInputRef}
+                type="url"
+                placeholder="Enter url" />
+            <input
+                id='upload-file'
+                style={{ display: 'none' }}
                 type="file"
                 value={selectedFile}
                 onChange={uploadImg}
-            />        </form>
+            />
+            <label htmlFor='upload-file' className='btn'>Upload file</label>
+        </form>
         <img src={url} />
     </div>
 }
