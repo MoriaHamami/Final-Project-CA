@@ -1,24 +1,37 @@
 .wap-footer-5 {
-    padding: 1.5rem $normal-padding;
-    background-color: #d8b6b6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  padding: 1.5rem $normal-padding;
 
-    p{
-        margin: 0;
-    }
+  &.tablet-layout {
+    padding: 1.5rem $narrow-padding;
+  }
+
+  &.mobile-layout {
+    padding: 1rem $mobile-padding;
+  }
   
-    .icons-container {
-      display: flex;
-      gap: 20px;
-  
-      .footer-icon {
-        aspect-ratio: 1/1;
-        padding: 0.2rem;
-        color: $almost-white;
-        cursor: pointer;
-      }
+  @media (max-width: $mobile-breakpoint) {
+    padding: 1rem $mobile-padding;
+  }
+
+  background-color: #d8b6b6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  p {
+    margin: 0;
+  }
+
+  .icons-container {
+    display: flex;
+    gap: 20px;
+
+    .footer-icon {
+      aspect-ratio: 1/1;
+      padding: 0.2rem;
+      color: $almost-white;
+      cursor: pointer;
     }
   }
+}
