@@ -8,7 +8,7 @@ export const wapVideo5 = {
   themePalette: 'third',
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-video-2_kxnngq.jpg',
   info: {
-    title: { txt: 'Get to know us', style: { fontSize: '2em', color:'white' }, id: utilService.makeId(), type: 'txt', key: 'title' },
+    title: { txt: 'Get to know us', style: { fontFamily: 'roboto-light', fontSize: '2em', color:'white' }, id: utilService.makeId(), type: 'txt', key: 'title' },
     // embedId: '0U7IWgCREik',
     video: {
       url: 'https://www.youtube.com/embed/JPUbSvsxjsY',
@@ -27,7 +27,6 @@ export const wapVideo5 = {
   // cmps: [],
   // theme: 'theme-section-happy',
   style: {
-    fontFamily: 'handlee',
     backgroundColor: 'rgb(216 182 182)'
   },
 }

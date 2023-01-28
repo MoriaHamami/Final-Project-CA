@@ -45,6 +45,9 @@
             line-height: 1.1;
             font-family: mont-heavy;
             margin-bottom: 0.5em;
+            @media (max-width: $mobile-breakpoint) {
+                font-size: 3.6rem;
+            }
 
             span {
                 background: linear-gradient(140deg, lighten($clr1, 5%), rgb(222, 233, 243));

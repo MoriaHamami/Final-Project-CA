@@ -61,7 +61,7 @@ export function DashboardBoard({ currWap }) {
 
 
 
-    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const labels = ['August', 'September', 'October', 'November', 'December', 'January', 'February',];
 
     const options = {
         responsive: true,
@@ -119,7 +119,7 @@ export function DashboardBoard({ currWap }) {
                         {/* 
                     <div style={{ backgroundColor: 'red' }}><span>created at: </span>{utilService.getFormattedDate(currWap.createdAt)}</div>
                     <div style={{ backgroundColor: 'lightblue' }}><span>Last update at: </span>{utilService.timeSince(currWap.createdAt)}</div>
-                <div style={{ backgroundColor: 'green' }}><span>Website name: </span>{currWap.name}</div> */}
+                    <div style={{ backgroundColor: 'green' }}><span>Website name: </span>{currWap.name}</div> */}
 
                     </div>}
                     {currWap.isPublished && < div >
@@ -135,15 +135,21 @@ export function DashboardBoard({ currWap }) {
                             </div>
 
                         </div>
+
                         {/* <div style={{ backgroundColor: 'red' }} > <span>created at: </span>{utilService.getFormattedDate(currWap.createdAt)}</div>
                     <div style={{ backgroundColor: 'lightblue' }}><span>Last update at: </span>{utilService.timeSince(currWap.createdAt)}</div>
                     <div style={{ backgroundColor: 'green' }}><span>Website name: </span>{currWap.name}</div> */}
                     </div>}
 
                 </div> : <div>
-                    <span>No wap to view</span></div>}
+                    <span>No wap to view</span>
+                </div>}
 
-                    <Line options={options} data={data} />;
+                {currWap?.isPublished && <div>
+                    <Line style={{ height: '300px' }} options={options} data={data} />;
+
+                </div>}
+
             </div>
         </div >
     )

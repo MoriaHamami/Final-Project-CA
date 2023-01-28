@@ -23,12 +23,13 @@
   .preview-title {
     font-weight: 900;
     font-size: 4rem;
+    
     line-height: 1.2;
     font-family: mont-heavy;
 
     
     @media (max-width: $mobile-breakpoint) {
-      font-size: 3.5rem;
+      font-size: 3.3rem;
     }
 
     span {
