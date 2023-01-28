@@ -80,22 +80,22 @@ import { wapForm5 } from '../waps/forms/wap-form-5'
 import { httpService } from './http.service'
 
 
-const STORAGE_KEY = 'waps'
+const STORAGE_KEY = 'wap'
 
 export const wapService = {
     query,
-    getWapDemos,
+    // getWapDemos,
     getWapById,
     save,
     removeWap,
     // removeCmp,
-    getCmpsByCategory,
-    getWapDemoById,
+    getCmpsByType,
+    // getWapDemoById,
     getCmpById,
     getCmpTypes,
     saveCmp,
     findCmpIdx,
-    getWapByName,
+    // getWapByName,
     getThemes
     // getEmptyWap,
     // addWapMsg
@@ -103,104 +103,101 @@ export const wapService = {
 
 window.cs = wapService
 
-_createWaps()
+// _createWaps()
 
-const mapCmpByCategory = {
-    headers: [wapHeader1, wapHeader2, wapHeader3, wapHeader4, wapHeader5, wapHeader6],
-    heros: [wapHero1, wapHero2, wapHero3A, wapHero3B, wapHero4, wapHero5, wapHero6],
-    about: [wapAbout1, wapAbout2, wapAbout3A, wapAbout3B, wapAbout4, wapAbout5, wapAbout6],
-    // containers: [],
-    galleries: [wapGallery1, wapGallery2A, wapGallery2B, wapGallery3, wapGallery4A, wapGallery4B, wapGallery5A, wapGallery5B, wapGallery6A, wapGallery6B],
-    videos: [wapVideo1, wapVideo2],
-    forms: [wapForm1, wapForm2, wapForm3, wapForm4, wapForm5],
-    maps: [wapMap1, wapMap6],
-    footers: [wapFooter1, wapFooter2, wapFooter3, wapFooter4, wapFooter5, wapFooter6],
-}
+// FRONT ONLY
+// const mapCmpByCategory = {
+//     headers: [wapHeader1, wapHeader2, wapHeader3, wapHeader4, wapHeader5, wapHeader6],
+//     heros: [wapHero1, wapHero2, wapHero3A, wapHero3B, wapHero4, wapHero5, wapHero6],
+//     about: [wapAbout1, wapAbout2, wapAbout3A, wapAbout3B, wapAbout4, wapAbout5, wapAbout6],
+//     // containers: [],
+//     galleries: [wapGallery1, wapGallery2A, wapGallery2B, wapGallery3, wapGallery4A, wapGallery4B, wapGallery5A, wapGallery5B, wapGallery6A, wapGallery6B],
+//     videos: [wapVideo1, wapVideo2],
+//     forms: [wapForm1, wapForm2, wapForm3, wapForm4, wapForm5],
+//     maps: [wapMap1, wapMap6],
+//     footers: [wapFooter1, wapFooter2, wapFooter3, wapFooter4, wapFooter5, wapFooter6],
+// }
 
-function getWapDemos() {
-    return [
-        emptyWapDemo,
-        wapDemo5,
-        wapDemo6,
-        wapDemo4,
-        wapDemo3,
-        wapDemo1,
-        wapDemo2,
-        wapDemo7,
-    ]
-}
 
-function getCmpTypes() {
-    return Object.keys(mapCmpByCategory)
-}
+// FRONT ONLY
+// console.log('JSON.stringify(getWapDemos()):', JSON.stringify(getWapDemos()))
+// function getWapDemos() {
+//     return [
+//         emptyWapDemo,
+//         wapDemo5,
+//         wapDemo6,
+//         wapDemo4,
+//         wapDemo3,
+//         wapDemo1,
+//         wapDemo2,
+//         wapDemo7,
+//     ]
+// }
 
-function getCmpsByCategory(category) {
-    // console.log(category );
-    if (mapCmpByCategory[category]) {
-        return mapCmpByCategory[category]
-        //   return mapCmpByCategory[category].map((cmp) => ({
-        //     ...cmp,
-        //     id: utilService.makeId(),
-        //   }))
-    }
-}
+// FRONT ONLY
+// function getCmpTypes() {
+//     return Object.keys(mapCmpByCategory)
+// }
 
-function getWapDemoById(wapDemoId) {
-    // if (wapDemoId === 'blank') return { cmps: [] }
-    return getWapDemos().find((wapDemo) => wapDemo._id === wapDemoId)
-}
 
-function getCmpById(id) {
-    let cmpsToReturn = null
-    Object.keys(mapCmpByCategory).forEach((category) => {
-        const cmp = mapCmpByCategory[category].find((cmp) => cmp.id === id)
-        if (cmp) cmpsToReturn = cmp
-    })
+// FRONT ONLY
+// function getWapDemoById(wapDemoId) {
+//     // if (wapDemoId === 'blank') return { cmps: [] }
+//     return getWapDemos().find((wapDemo) => wapDemo._id === wapDemoId)
+// }
 
-    return cmpsToReturn
-}
+// FRONT ONLY
+// function getCmpById(id) {
+//     let cmpsToReturn = null
+//     Object.keys(mapCmpByCategory).forEach((category) => {
+//         const cmp = mapCmpByCategory[category].find((cmp) => cmp.id === id)
+//         if (cmp) cmpsToReturn = cmp
+//     })
 
-async function query() {
-    return storageService.query(STORAGE_KEY)
-    // return httpService.get(STORAGE_KEY, filterBy)
+//     return cmpsToReturn
+// }
+
+async function query(filterBy = {isPublished: '', isDemo: '', cmpId: ''}) {
+    // return storageService.query(STORAGE_KEY)
+    return httpService.get(STORAGE_KEY, {params: filterBy})
 }
 
 function getWapById(wapId) {
-    return storageService.getById(STORAGE_KEY, wapId)
-    // return httpService.get(`wap/${wapId}`)
+    // return storageService.getById(STORAGE_KEY, wapId)
+    return httpService.get(`wap/${wapId}`)
+}
+
+function getCmpById(cmpId) {
+    // return storageService.getById(STORAGE_KEY, cmpId)
+    return httpService.get(`wap/${cmpId}/cmp`)
 }
 
 
-function getWapByName(wapName) {
-    return storageService.getByName(STORAGE_KEY, wapName)
-    // return httpService.get(`wap/${wapId}`)
-}
+// function getWapByName(wapName) {
+//     return storageService.getByName(STORAGE_KEY, wapName)
+//     // return httpService.get(`wap/${wapId}`)
+// }
 
 async function removeWap(wapId) {
-    await storageService.remove(STORAGE_KEY, wapId)
-    // return httpService.delete(`wap/${wapId}`)
+    // await storageService.remove(STORAGE_KEY, wapId)
+    return httpService.delete(`wap/${wapId}`)
 }
 
 // async function removeCmp(wap, cmpId) {
-
 //     await storageService.remove(STORAGE_KEY, wapId)
 //     // return httpService.delete(`wap/${wapId}`)
 // }
 
 async function save(wap) {
     let savedWap
-    if (wap.createdBy) {
-        // const wapCopy = { ...wap }
-        savedWap = await storageService.put(STORAGE_KEY, wap)
-        console.log(savedWap);
-        // return storageService.put(STORAGE_KEY, wap)
-        // savedWap = await httpService.put(`wap/${wap._id}`, wap)
+    // if (wap.createdBy) {
+    if (wap._id) {
+        // savedWap = await storageService.put(STORAGE_KEY, wap)
+        savedWap = await httpService.put(`wap/${wap._id}`, wap)
     } else {
-        // Later, owner is set by the backend
-        // delete wap._id
-        wap.createdBy = userService.getLoggedinUser()?.username || 'guest'
-        savedWap = await storageService.post(STORAGE_KEY, wap)
-        // savedWap = await httpService.post('wap', wap)
+        // wap.createdBy = userService.getLoggedinUser()?.username || 'guest'
+        // savedWap = await storageService.post(STORAGE_KEY, wap)
+        savedWap = await httpService.post('wap', wap)
     }
     return savedWap
 }
@@ -209,36 +206,39 @@ async function saveCmp(wap, cmp, idx) {
     let savedWap
     if (wap.cmps[idx]?.id === cmp.id) {
         wap.cmps[idx] = cmp
-        savedWap = storageService.put(STORAGE_KEY, wap)
+        savedWap = await httpService.put(`wap/${wap._id}`, wap)
+        // savedWap = storageService.put(STORAGE_KEY, wap)
     } else {
         // Change cmp id so the cmp in sidebar and wap wont be similar
         const cmpCopy = { ...cmp }
         cmpCopy.id = utilService.makeId()
         wap.cmps.splice(idx, 0, cmpCopy)
-        savedWap = await storageService.put(STORAGE_KEY, wap)
+        savedWap = await httpService.put(`wap/${wap._id}`, wap)
+        // savedWap = await storageService.put(STORAGE_KEY, wap)
     }
     return savedWap
 }
 
-// TO CHECKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-function findCmpIdx(parentCmp, cmp) {
-    const idx = parentCmp?.cmps?.findIndex((currCmp) => currCmp.id === cmp.id)
-    if (idx > -1) {
-        return idx
-    } else {
-        parentCmp?.cmps?.forEach((currCmp) => findCmpIdx(currCmp, cmp))
-    }
+
+function getCmpsByType(type) {
+    return httpService.get(`wap/${type}/cmps`)
+
+    // if (mapCmpByCategory[category]) return mapCmpByCategory[category]
+}
+// function getCmpsByCategory(type) {
+//     return httpService.get(`wap/${type}`)
+
+//     // if (mapCmpByCategory[category]) return mapCmpByCategory[category]
+// }
+
+// DONE
+function getCmpTypes() {
+    return ['headers', 'heros', 'about', 'galleries', 'videos', 'forms', 'maps', 'footers']
 }
 
-function _createWaps() {
-    let waps = storageService.loadFromStorage(STORAGE_KEY)
-    if (!waps || !waps.length) {
-        storageService.saveToStorage(STORAGE_KEY, getWapDemos())
-    }
-}
-
+// DONE
 function getThemes() {
-
+    
     return [
         {
             id: utilService.makeId(),
@@ -423,4 +423,39 @@ function getThemes() {
         },
     ]
 
-}    
+}
+
+// TO CHECK
+function findCmpIdx(parentCmp, cmp) {
+    const idx = parentCmp?.cmps?.findIndex((currCmp) => currCmp.id === cmp.id)
+    if (idx > -1) {
+        return idx
+    } else {
+        parentCmp?.cmps?.forEach((currCmp) => findCmpIdx(currCmp, cmp))
+    }
+}
+
+// FOR LOCAL USE
+// function _createWaps() {
+//     let waps = storageService.loadFromStorage(STORAGE_KEY)
+//     if (!waps || !waps.length) {
+//         storageService.saveToStorage(STORAGE_KEY, getWapDemos())
+//     }
+// }
+
+// front service
+// VVV query,==> getWaps
+// VVV save, ==> addWap && updateWap
+// VVV getWapById,==> ''
+// VVV getCmpById,==> '' 
+// vvv removeWap, ==>''
+// XXXXXXXXXXXXXXaddWapCmp,==> '' (To remove in back?)
+// XXXXXXXXXXXXXXupdateWapCmp,==> ''
+// XXXXXXXXXXXXXXremoveWapCmp==> ''
+// VVV getCmpsByCategory, ==> getCmpsByCategory
+// VVV findCmpIdx,
+// VVV getThemes
+
+// To change in rest of front!!!!!!!!
+// VVV getWapDemoById
+// VVV getCmpsByCategory ==> getCmpsByType

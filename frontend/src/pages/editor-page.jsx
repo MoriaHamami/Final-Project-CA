@@ -4,7 +4,7 @@ import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
 
-import { addCmp, loadWap, removeCmp, saveCmp, saveElement, saveWap, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp, saveCmp, saveElement, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'

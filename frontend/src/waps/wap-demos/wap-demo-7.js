@@ -28,5 +28,5 @@ export const wapDemo7 = {
 		// wapGallery6B,
 		// wapFooter6
 	],
-	isPublic: true
+	isPublished: false
 }

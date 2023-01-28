@@ -35,6 +35,6 @@ export function Preview() {
                 <span class="preview-close material-symbols-outlined">close</span>
             </div>
         </div>
-        {wap?.cmps.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
+        {wap?.cmps?.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
     </div>
 }

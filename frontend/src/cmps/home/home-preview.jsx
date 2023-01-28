@@ -1,28 +1,38 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow, Autoplay, Pagination } from 'swiper'
 import { Link, useNavigate } from 'react-router-dom'
-import { saveWap } from '../../store/wap.actions.js'
+import { addWap, loadWaps } from '../../store/wap.actions.js'
 import { wapService } from "../../services/wap.service"
 import 'swiper/css'
 import 'swiper/css/pagination'
 import "swiper/css/effect-coverflow"
+import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
 
 export function HomePreview() {
   const navigate = useNavigate()
+  const waps = useSelector((storeState) => storeState.wapModule.waps)
+
+  useEffect(() => {
+    loadWaps({ isDemo: true })
+  }, [])
 
 
   async function onSelectWapDemo(id) {
     try {
-      let wap = wapService.getWapDemoById(id)
-      const savedWapId = await saveWap(wap)
+      let wap = await wapService.getWapById(id)
+      // let wap = wapService.getWapDemoById(id)
+      // let wap = wapService.getWapDemoById(id)
+      // const savedWapId = await saveWap(wap)
+      const savedWapId = await addWap(wap)
       navigate(`/editor/${savedWapId}`)
     } catch (err) {
       console.log('Had issues in wap editor', err)
     }
   }
 
-
+  // const filterBy = {isDemo: true}
   return <div className='home-preview-page'>
     <h2 className="preview-title">Introducing <span>Webix</span></h2>
     <p className="preview-subtitle">We will provide you the freedom to create the Website You want according to your needs.
@@ -53,7 +63,8 @@ export function HomePreview() {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {wapService.getWapDemos()?.map((demoWap, idx) => {
+        {/* {wapService.getWapDemos()?.map((demoWap, idx) => { */}
+        {waps.map((demoWap, idx) => {
           if (idx === 0) return
           return <SwiperSlide style={{ width: '200px', aspectRatio: '6/8' }}>
             <img className="home-preview-demo-img" src={demoWap.imgUrl} onClick={() => onSelectWapDemo(demoWap._id)} />

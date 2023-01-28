@@ -25,19 +25,19 @@ async function login(username, password) {
 }
    
 
-async function signup(username, password, fullname, isAdmin) {
+async function signup({username, password, fullname, imgUrl}) {
     const saltRounds = 10
 
     logger.debug(`auth.service - signup with username: ${username}, fullname: ${fullname}`)
     if (!username || !password || !fullname) return Promise.reject('fullname, username and password are required!')
 
     const hash = await bcrypt.hash(password, saltRounds)
-    return userService.add({ username, password: hash, fullname, isAdmin })
+    return userService.add({ username, password: hash, fullname, imgUrl })
 }
 
 
 function getLoginToken(user) {
-    const userInfo = {_id : user._id, fullname: user.fullname, isAdmin: user.isAdmin}
+    const userInfo = {_id : user._id, fullname: user.fullname}
     return cryptr.encrypt(JSON.stringify(userInfo))    
 }
 
