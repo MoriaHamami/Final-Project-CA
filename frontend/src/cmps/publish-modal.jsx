@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { saveWap } from "../store/wap.actions";
+import { addWap, saveWap } from "../store/wap.actions";
 
 
 
@@ -22,7 +22,8 @@ export function PublishModal({ currWap }) {
     try {
       const wapToPublish = { ...currWap, name: name, isPublished: true }
       // delete wapToPublish._id
-      await saveWap(wapToPublish)
+      await addWap(wapToPublish)
+      // await saveWap(wapToPublish)
       // setIsVisible(prevState => !prevState)
       window.open(`/publish/${wapToPublish.name}`, '_blank')
     } catch (err) {

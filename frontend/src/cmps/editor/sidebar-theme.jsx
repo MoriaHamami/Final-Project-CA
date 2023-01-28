@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 // import { saveWap } from '../../../../../store/wap/wap.action'
 import { wapService } from '../../services/wap.service'
-import { saveWap } from '../../store/wap.actions'
+import { updateWap } from '../../store/wap.actions'
 // import { ThemePreview } from './theme-preview'
 
 export const SidebarTheme = ({ themeList }) => {
@@ -18,7 +18,8 @@ export const SidebarTheme = ({ themeList }) => {
         wap.cmps.forEach((cmp) => {
             cmp.style = { ...cmp.style, ...colors[cmp.themePalette], fontFamily }
         })
-        saveWap(wap)
+        updateWap(wap)
+        // saveWap(wap)
         // dispatch(saveWap(wap))
     }
 

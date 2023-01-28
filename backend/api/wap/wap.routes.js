@@ -1,23 +1,45 @@
 const express = require('express')
 const { requireAuth } = require('../../middlewares/requireAuth.middleware')
 const { log } = require('../../middlewares/logger.middleware')
-const { getWapDemos, getWapById, addWap, updateWap, removeWap, addWapMsg, removeWapMsg,getWaps } = require('./wap.controller')
+const { getWapById, addWap, updateWap, removeWap, getWaps, getCmpById, getCmpsByType, addWapCmp, updateWapCmp, removeWapCmp } = require('./wap.controller')
 const router = express.Router()
 
 // middleware that is specific to this router
 // router.use(requireAuth)
 
 router.get('/', log, getWaps)
-router.get('/demos', log, getWapDemos)
 router.get('/:wapId', getWapById)
-// router.post('/', requireAuth, addWap)
+// TO CHECK!!!
+router.get('/:cmpId/cmp', getCmpById)
+// TO CHECK!!!
+router.get('/:type/cmps', getCmpsByType)
+router.post('/', addWap)
+router.put('/:id', requireAuth, updateWap)
 router.delete('/:id', requireAuth, removeWap)
+router.post('/:id/cmp', addWapCmp)
+router.put('/:id/cmp', updateWapCmp)
+router.delete('/:id/cmp/:cmpId', removeWapCmp)
+
 // router.delete('/:id', requireAuth, requireAdmin, removeWap)
+// router.get('/published/:wapId', getPublishedWap)
 
 // router.post('/:id/msg', requireAuth, addWapMsg)
 // router.delete('/:id/msg/:msgId', requireAuth, removeWapMsg)
 
+// TO FRONT
+// getCmpsByCategory==> filter on params
+
+
 module.exports = router
+
+// query,
+// save, ==> saveWap
+// saveCmp,
+// getWapById,
+// getCmpById,
+// removeWap,
+// getCmpsByCategory,
+// findCmpIdx,
 
 // {
 //     path: '/',

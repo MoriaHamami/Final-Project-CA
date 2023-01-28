@@ -8,17 +8,21 @@ import { wapService } from "../../services/wap.service"
 
 export function SidebarAdd({ onPickedCmp, innerRef }) {
 
-    const [cmpsByCurrType, setCmpsByCurrType] = useState(wapService.getCmpsByCategory('headers'))
     const [selectedType, setSelectedType] = useState('headers')
+    const [cmpsByCurrType, setCmpsByCurrType] = useState(null)
+    // const [cmpsByCurrType, setCmpsByCurrType] = useState(wapService.getCmpsByType('headers'))
+    // const [cmpsByCurrType, setCmpsByCurrType] = useState(wapService.getCmpsByCategory('headers'))
+
 
     useEffect(() => {
-
-        const cmpsByCurrType = wapService.getCmpsByCategory(selectedType)
-        // console.log('cmpsByCurrType:', cmpsByCurrType)
-        // console.log('setSelectedType:', selectedType)
-        setCmpsByCurrType(cmpsByCurrType)
+        setCmpsByType(selectedType)
     }, [selectedType])
 
+    async function setCmpsByType(selectedType) {
+        const cmpsByCurrType = await wapService.getCmpsByType(selectedType)
+        console.log('cmpsByCurrType:', cmpsByCurrType)
+        setCmpsByCurrType(cmpsByCurrType)
+    }
     // function onSetCmpsByCurrType(type) {
     // }
     // const headerCmps = wapService.getCmpsByCategory('headers')
@@ -34,11 +38,12 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
             <div className="add-sidebar-type">
                 {cmpTypes.map(cmpType => <div key={cmpType} className={cmpType === selectedType ? 'active' : ''} onClick={() => setSelectedType(cmpType)}>{cmpType}</div>)}
             </div>
-
-            <div className="elements-container">
+            {/* {console.log('cmpsByCurrType:', cmpsByCurrType)} */}
+            {cmpsByCurrType && <div className="elements-container">
                 <h2 className="add-header">Add {selectedType}</h2>
                 {cmpsByCurrType.map((cmp, index) => {
                     // return <Draggable draggableId={cmp.name} key={cmp.id} index={index}>
+                    // console.log('cmp:', cmp)
 
                     return <Draggable draggableId={JSON.stringify(cmp)} key={cmp.id} index={index}>
                         {
@@ -51,7 +56,6 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
                                     {provided.placeholder}
                                     {snapshot.isDragging && <img src={cmp.imgUrl} />}
                                 </>
-
                             )
                         }
                     </Draggable>
@@ -68,7 +72,7 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
                     //     }
                     // </Draggable>
                 })}
-            </div>
+            </div>}
         </div>
 
 

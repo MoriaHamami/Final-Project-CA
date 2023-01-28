@@ -28,5 +28,5 @@ export const wapDemo7 = {
 		// wapGallery6B,
 		// wapFooter6
 	],
-	isPublished: false,
+	isPublished: false
 }

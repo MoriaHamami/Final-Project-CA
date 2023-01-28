@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { DynamicCmp } from "../cmps/wap-cmps/wap-dynamic-cmp";
-import { loadPublishWap } from "../store/wap.actions";
+import { addWap, loadPublisedhWap, loadPublishedWap } from "../store/wap.actions";
 import { Loader } from './loader'
 
 
@@ -13,8 +13,9 @@ export function Publish() {
 
   useEffect(() => {
     try {
-      console.log('here:')
-      loadPublishWap(wapName)
+      // console.log('here:')
+      // getWapByName(wapName)
+      loadPublishedWap(wapName)
     } catch (err) {
       console.log('Had issues in wap editor', err)
       navigate('/WapDemos')
@@ -24,9 +25,8 @@ export function Publish() {
   if(!wap) return <Loader />
 
   return (
-
     <div className="preview-page">
-      {wap?.cmps.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
+      {wap && wap[0]?.cmps?.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
     </div>
   )
 }

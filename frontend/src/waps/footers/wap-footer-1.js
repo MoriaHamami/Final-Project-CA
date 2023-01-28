@@ -4,6 +4,7 @@ export const wapFooter1 = {
   name: 'wap-footer-1',
   type: 'wap-footer',
   themePalette: 'third',
+  
   id: utilService.makeId(),
   imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674764822/Webix/wap-footer-1_eqnec9.jpg',
   info: {
