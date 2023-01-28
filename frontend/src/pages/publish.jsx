@@ -24,7 +24,6 @@ export function Publish() {
 
   return (
     <div className="preview-page">
-      {/* {console.log('wap:', wap) } */}
       {wap && wap[0]?.cmps?.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
     </div>
   )
