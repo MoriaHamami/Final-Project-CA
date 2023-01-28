@@ -6,6 +6,7 @@ import { DashboardBoard } from '../cmps/dashboard/dashboard-board.jsx'
 import { wapService } from '../services/wap.service'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
+import { Loader } from './loader'
 
 
 export function Dashboard() {
@@ -38,6 +39,8 @@ export function Dashboard() {
     console.log('currWap:', currWap)
 
 
+
+if(!user) return <Loader />
 
 
     return (

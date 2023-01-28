@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { wapService } from '../services/wap.service.js'
 import { utilService } from '../services/util.service.js'
+import { Loader } from './loader'
 
 
 
@@ -184,6 +185,8 @@ export function Editor() {
         if (element?.type === 'btn' || element?.type === 'map' || element?.type === 'video') ev.preventDefault()
         // console.log('element:', element)
     }
+
+if(!wap) return <Loader />
 
 
     return (

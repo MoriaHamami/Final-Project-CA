@@ -30,6 +30,10 @@ export function PublishModal({ currWap }) {
     }
   }
 
+  function onCloseModal(){
+    setModal(false)
+  }
+
   return (
     <>
       <button onClick={toggleModal} className="btn-modal">
@@ -40,9 +44,11 @@ export function PublishModal({ currWap }) {
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
-            <h2>Publish yor website</h2>
-            <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
-            <button className="close-modal" onClick={changeWapName}>
+            <h2 className="title">Publish your website</h2>
+            <input onChange={(e) => setName(e.target.value)} placeholder='Please enter your website name' type={'text'} required />
+            {/* <button className="close-modal"> X </button> */}
+            <span className="material-symbols-outlined close-modal" onClick={onCloseModal}>close</span>
+            <button className="save-btn" onClick={changeWapName}>
               Save
             </button>
           </div>
