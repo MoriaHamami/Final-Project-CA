@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+
 import { wapService } from "../../services/wap.service"
 import { loadWaps } from "../../store/wap.actions"
 import { WapDemoPreview } from "./wap-demo-preview"
 
-export function WapDemoList({ onSelectDemoWap }) {
-    const waps = useSelector((storeState) => storeState.wapModule.waps)
+export function WapDemoList({ onSelectDemoWap, waps }) {
+
     // getWapDemos()
     // const [wapDemos, setWapDemos] = useState(null)
     

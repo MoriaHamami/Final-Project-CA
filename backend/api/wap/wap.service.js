@@ -7,20 +7,21 @@ const ObjectId = require('mongodb').ObjectId
 async function query(filterBy ={isDemo: '', isPublished:'', cmpId: '', wapName:'', username:''}) {
     try {
         const criteria = {}
+        console.log('filterBy:',filterBy)
         // console.log('filterBy.isDemo:', filterBy.isDemo)
-        if(filterBy.isDemo === 'true') criteria.isDemo = true
-        if(filterBy.isPublished === 'true') criteria.isPublished = { $eq: true }
-        if(filterBy.wapName !== 'undefined') criteria.name = { $eq: filterBy.wapName }
-        if(filterBy.cmpId !== 'undefined') criteria.cmps = { $elemMatch : { id : filterBy.cmpId } }
+        if(filterBy.isDemo && filterBy.isDemo === 'true') criteria.isDemo = true
+        if(filterBy.isPublished && filterBy.isPublished === 'true') criteria.isPublished = { $eq: true }
+        if(filterBy.wapName && filterBy.wapName !== 'undefined') criteria.name = { $eq: filterBy.wapName }
+        if(filterBy.cmpId && filterBy.cmpId !== 'undefined') criteria.cmps = { $elemMatch : { id : filterBy.cmpId } }
         // if(filterBy.username !== 'undefined') criteria.createdBy = filterBy.username 
-        if(filterBy.username !== 'undefined') criteria['createdBy.username'] ={ $eq: filterBy.username }
+        if(filterBy.username && filterBy.username !== 'undefined') criteria['createdBy.username'] ={ $eq: filterBy.username }
         // if(filterBy.category) criteria.cmps = { $elemMatch : { category : filterBy.category } }
         // if(filterBy.category) criteria.cmps = { $elemMatch : { type : filterBy.category } }
         // console.log('criteria:', criteria)
     
         const collection = await dbService.getCollection('wap')
         let waps = await collection.find(criteria).toArray()
-        console.log('waps:', waps)
+        console.log('criteria:', criteria)
         return waps
     } catch (err) {
         logger.error('cannot find waps', err)

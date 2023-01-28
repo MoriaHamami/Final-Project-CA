@@ -19,6 +19,7 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
     }, [selectedType])
 
     async function setCmpsByType(selectedType) {
+        setCmpsByCurrType(null)
         const cmpsByCurrType = await wapService.getCmpsByType(selectedType)
         console.log('cmpsByCurrType:', cmpsByCurrType)
         setCmpsByCurrType(cmpsByCurrType)
@@ -26,6 +27,8 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
     // function onSetCmpsByCurrType(type) {
     // }
     // const headerCmps = wapService.getCmpsByCategory('headers')
+
+    console.log('cmpsByCurrType:',cmpsByCurrType)
 
     const cmpTypes = wapService.getCmpTypes()
 
@@ -39,6 +42,7 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
                 {cmpTypes.map(cmpType => <div key={cmpType} className={cmpType === selectedType ? 'active' : ''} onClick={() => setSelectedType(cmpType)}>{cmpType}</div>)}
             </div>
             {/* {console.log('cmpsByCurrType:', cmpsByCurrType)} */}
+            {!cmpsByCurrType && <div className="elements-container"><div className="mini-loader"></div></div>}
             {cmpsByCurrType && <div className="elements-container">
                 <h2 className="add-header">Add {selectedType}</h2>
                 {cmpsByCurrType.map((cmp, index) => {

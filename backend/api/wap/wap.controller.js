@@ -34,11 +34,12 @@ async function getWaps(req, res) {
 // WORKS
 async function addWap(req, res) {
   const { loggedinUser } = req
-  // console.log('loggedinUser:', loggedinUser)
+
+  console.log('loggedinUser:', loggedinUser)
 
   try {
     const wap = req.body
-    wap.createdBy = loggedinUser
+    if(loggedinUser._id) wap.createdBy = loggedinUser
     wap.isDemo = false
     const addedWap = await wapService.add(wap)
     res.json(addedWap)
@@ -104,20 +105,20 @@ async function getCmpsByType(req, res) {
     if(type === 'galleries') type = 'wap-gallery'
     else if(type === 'about') type = 'wap-about'
     else type = 'wap-' + type.slice(0, -1)
-    // console.log('type:', type)
+    console.log('type:', type)
     // const { filterBy } = req.query.params
-    const waps = await wapService.query()
+    const filterBy = {isDemo: 'true'}
+    const waps = await wapService.query(filterBy)
+    console.log('waps:',waps.length)
     ////////
     // for(const i = 0; i < wap.cmps.length; i++) {
 
     // }
     const cmps = []
     waps.map(wap => {
-      if(wap.isDemo) {
         wap.cmps?.find(cmp => {
           if(type === cmp.type) cmps.push(cmp)
         })
-      }
     })
     res.json(cmps)
   } catch (err) {

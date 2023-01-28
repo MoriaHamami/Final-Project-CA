@@ -29,7 +29,7 @@ export function Dashboard() {
             const filterBy = { username: user.username }
             const userWaps = await wapService.query(filterBy)
             // const userWaps = await loadUserWaps(user.username)
-            // console.log('userWaps:', userWaps)
+            console.log('userWaps:', userWaps)
             setUserPublishedWaps(userWaps.filter(wap => wap.isPublished))
             setUserDraftWaps(userWaps.filter(wap => !wap.isPublished))
         } catch (err) {

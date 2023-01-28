@@ -42,7 +42,7 @@ export async function addWap(wap) {
         const wapCopy = { ...wap }
         if(wapCopy._id) delete wapCopy._id
         const savedWap = await wapService.save(wapCopy)
-        // console.log('Added Car', savedCar)
+        console.log('savedWap:',savedWap)
         store.dispatch({ type: ADD_WAP, wap: savedWap })
         store.dispatch({ type: SET_WAP, wap: savedWap })
         return savedWap._id

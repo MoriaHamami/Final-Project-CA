@@ -107,7 +107,7 @@ export function DashboardBoard({ currWap }) {
                         <div className='dashboard-board-header'>
                             <div className='flex published-msg success'>
                                 <CheckCircleIcon />
-                                <span>"{currWap.name}" is published and available at the web!</span>
+                                <span>"{currWap.name}" is published and available on the web!</span>
                             </div>
                             <img src={currWap.imgUrl} />
                             <div className='btn-container'>
