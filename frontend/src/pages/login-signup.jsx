@@ -6,7 +6,7 @@ import { userService } from '../services/user.service.js'
 import { Fragment, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { signup, login, logout, loginWithOauth } from '../store/user.actions.js'
+import { signup, login, logout, loginWithAuth } from '../store/user.actions.js'
 import { GoogleLogin, useGoogleLogin } from '@react-oauth/google'
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -57,6 +57,7 @@ export function LoginSignup() {
     function onLogout() {
         logout()
         userService.logout()
+
     }
 
     const googleLogin = useGoogleLogin({
@@ -68,7 +69,7 @@ export function LoginSignup() {
                     }
                 })
                 console.log('data= ', userData.data)
-                loginWithOauth(userData)
+                loginWithAuth(userData)
                 showSuccessMsg(`Welcome ${userData.name}`)
                 navigate(-1)
             } catch (err) {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { saveWap } from "../store/wap.actions";
+import { addWap, saveWap } from "../store/wap.actions";
 
 
 
@@ -22,12 +22,17 @@ export function PublishModal({ currWap }) {
     try {
       const wapToPublish = { ...currWap, name: name, isPublished: true }
       // delete wapToPublish._id
-      await saveWap(wapToPublish)
+      await addWap(wapToPublish)
+      // await saveWap(wapToPublish)
       // setIsVisible(prevState => !prevState)
-      window.open(`/publish/${wapToPublish.name}`, '_blank')
+      window.open(`/${wapToPublish.name}`, '_blank')
     } catch (err) {
       console.log('Could not change wap name')
     }
+  }
+
+  function onCloseModal(){
+    setModal(false)
   }
 
   return (
@@ -40,9 +45,11 @@ export function PublishModal({ currWap }) {
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
-            <h2>Publish yor website</h2>
-            <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
-            <button className="close-modal" onClick={changeWapName}>
+            <h2 className="title">Publish your website</h2>
+            <input onChange={(e) => setName(e.target.value)} placeholder='Please enter your website name' type={'text'} required />
+            {/* <button className="close-modal"> X </button> */}
+            <span className="material-symbols-outlined close-modal" onClick={onCloseModal}>close</span>
+            <button className="save-btn" onClick={changeWapName}>
               Save
             </button>
           </div>

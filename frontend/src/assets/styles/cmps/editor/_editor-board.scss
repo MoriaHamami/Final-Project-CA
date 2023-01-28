@@ -4,6 +4,8 @@
     resize: both;
     position: relative;
     height: calc(100vh - 138px);
+    margin: auto;
+
     &::-webkit-scrollbar {
         width: 10px;
     }
@@ -24,20 +26,22 @@
             background-color: #cbcbcb;
         }
     }
-    
+
     &.tablet-layout {
         max-height: calc(100vh - 160px);
         border-radius: 2rem;
         border: 5px solid white;
+
         &::-webkit-scrollbar {
             display: none;
         }
     }
-    
+
     &.mobile-layout {
         max-height: calc(100vh - 160px);
         border-radius: 2rem;
         border: 5px solid white;
+
         &::-webkit-scrollbar {
             display: none;
         }
@@ -45,6 +49,7 @@
 
     .desktop-layout {
         width: 100%;
+
     }
 
     .tablet-layout {
@@ -55,11 +60,13 @@
         width: $mobile-breakpoint;
     }
 
-    & * {
+    * {
         transition: 0.4s width ease;
+        margin: auto;
+
     }
 
-    margin: auto;
+
 
     @media (min-width: $narrow-breakpoint) {
         height: calc(100vh - 79px);
@@ -84,7 +91,7 @@
         box-shadow: inset 0px 0px 0 2px lighten($editor-board-clr, 10%);
     }
 
-  
+
 }
 
 .dragable-container {

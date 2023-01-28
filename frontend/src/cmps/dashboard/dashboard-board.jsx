@@ -79,7 +79,7 @@ export function DashboardBoard({ currWap }) {
 
     return (
         <div className='dashboard-board'>
-            <h2>Welcome {user.username}</h2>
+            <h2>{user.username.charAt(0).toUpperCase() + user.username.substring(1).toLowerCase()}'s workspace</h2>
             <div className='dashboard-data-container'>
                 {currWap ? <div>
                     {!currWap.isPublished && < div >
@@ -107,7 +107,7 @@ export function DashboardBoard({ currWap }) {
                         <div className='dashboard-board-header'>
                             <div className='flex published-msg success'>
                                 <CheckCircleIcon />
-                                <span>"{currWap.name}" is published and available at the web!</span>
+                                <span>"{currWap.name}" is published and available on the web!</span>
                             </div>
                             <img src={currWap.imgUrl} />
                             <div className='btn-container'>

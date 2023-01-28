@@ -2,20 +2,69 @@
 import { utilService } from '../services/util.service.js'
 import { wapService } from '../services/wap.service.js'
 import { store } from '../store/store.js'
-import { SET_WAP, SET_CMP_ID, SET_ELEMENT } from './wap.reducer.js'
+import { SET_WAP, SET_CMP_ID, SET_ELEMENT, REMOVE_WAP, ADD_WAP, UPDATE_WAP, SET_WAPS } from './wap.reducer.js'
 
-export async function saveWap(wap) {
+// export async function saveWap(wap) {
+//     try {
+//         const savedWap = await wapService.save(wap)
+//         // const savedWap = wap
+//         store.dispatch({ type: SET_WAP, wap: savedWap })
+//         // console.log(ssavedWap._id)
+//         return savedWap._id
+//     } catch (err) {
+//         throw new Error('wap not found')
+//     }
+// }
+
+export async function loadWaps(filterBy) {
     try {
-        const savedWap = await wapService.save(wap)
-        // const savedWap = wap
-        store.dispatch({ type: SET_WAP, wap: savedWap })
-        // console.log(ssavedWap._id)
-        return savedWap._id
+        const waps = await wapService.query(filterBy)
+        store.dispatch({ type: SET_WAPS, waps })
     } catch (err) {
-        throw new Error('wap not found')
+        console.log('Had issues loading waps', err)
+        throw err
     }
 }
 
+//////////////////////
+export async function removeWap(wapId) {
+    try {
+        await wapService.remove(wapId)
+        store.dispatch({ type: REMOVE_WAP, wapId })
+    } catch (err) {
+        console.log('Cannot remove wap', err)
+        throw err
+    }
+}
+
+export async function addWap(wap) {
+    try {
+        const wapCopy = { ...wap }
+        if(wapCopy._id) delete wapCopy._id
+        const savedWap = await wapService.save(wapCopy)
+        console.log('savedWap:',savedWap)
+        store.dispatch({ type: ADD_WAP, wap: savedWap })
+        store.dispatch({ type: SET_WAP, wap: savedWap })
+        return savedWap._id
+    } catch (err) {
+        console.log('Cannot add wap', err)
+        throw err
+    }
+}
+
+export async function updateWap(wap) {
+    try {
+        const savedWap = await wapService.save(wap)
+        // console.log('savedWap:', savedWap)
+        store.dispatch({ type: UPDATE_WAP, wap: savedWap })
+        store.dispatch({ type: SET_WAP, wap: savedWap })
+        return savedWap
+    } catch (err) {
+        console.log('Cannot save wap', err)
+        throw err
+    }
+}
+///////////////
 export function setSelectedCmpId(cmpId) {
     store.dispatch({ type: SET_CMP_ID, cmpId })
 }
@@ -52,15 +101,36 @@ export async function loadWap(wapId) {
     }
 }
 
-export async function loadPublishWap(wapPublishedName) {
+
+export async function loadPublishedWap(wapName) {
     try {
-        let wap = await wapService.getWapByName(wapPublishedName)
+        const filterBy = {wapName}
+        console.log('wapName:', wapName)
+        // let wap = await wapService.getWapById(wapId)
+        let wap = await wapService.query(filterBy)
+        // console.log('wap:', wap)
+        // let wap = await wapService.getWapByName(wapName)
         store.dispatch({ type: SET_WAP, wap })
-        console.log(wap)
+        // console.log(wap)
     } catch (err) {
         console.log('err:', err)
     }
 }
+
+// export async function loadUserWaps(username) {
+//     try {
+//         const filterBy = {username}
+//         // let wap = await wapService.getWapById(wapId)
+//         let waps = await wapService.query(filterBy)
+//         // console.log('wap:', waps)
+//         // let wap = await wapService.getWapByName(wapName)
+//         // store.dispatch({ type: SET_WAP, wap })
+//         return waps
+//         // console.log(wap)
+//     } catch (err) {
+//         console.log('err:', err)
+//     }
+// }
 
 // export async function getCmpByName(wapName) {
 //     try {
@@ -85,7 +155,8 @@ export async function removeCmp(wap, startIdx, endIdx = null) {
     try {
         const [removed] = wap.cmps.splice(startIdx, 1)
         if (endIdx !== null) wap.cmps.splice(endIdx, 0, removed)
-        await saveWap(wap)
+        // await saveWap(wap)
+        updateWap(wap)
     } catch (err) {
         console.log('err in removeCmp', err)
         throw err
@@ -180,7 +251,7 @@ export function saveElement(wap, cmpId, element) {
 
 export function setDisplaySize(displaySize) {
     // return (dispatch) => {
-        store.dispatch({ type: 'SET_DISPLAY_SIZE', displaySize })
+    store.dispatch({ type: 'SET_DISPLAY_SIZE', displaySize })
     // }
 }
 

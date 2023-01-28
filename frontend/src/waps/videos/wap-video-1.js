@@ -18,7 +18,8 @@ export const wapVideo1 = {
       url: 'https://www.youtube.com/embed/G-jPoROGHGE',
       key: 'video',
       style: {
-        width: '50%',
+        width: '100%',
+        // width: '50%',
         minWidth: '300px',
         border: 'none',
         aspectRatio: 16 / 9

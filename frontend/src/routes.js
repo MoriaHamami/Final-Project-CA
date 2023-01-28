@@ -38,7 +38,7 @@ const routes = [
         label: '',
     },
     {
-        path: '/publish/:wapName',
+        path: '/:wapName',
         component: <Publish />,
         label: '',
     }

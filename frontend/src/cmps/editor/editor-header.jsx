@@ -3,7 +3,7 @@ import { faShare, faReply, faDisplay, faTabletScreenButton, faMobileScreenButton
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { height } from '@mui/system';
-import { saveWap, setDisplaySize } from '../../store/wap.actions';
+import { setDisplaySize, updateWap } from '../../store/wap.actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -39,9 +39,10 @@ export function EditorHeader({ wap }) {
         try {
             const wapToPublish = { ...wap, name: name, isPublished: true }
             // delete wapToPublish._id
-            await saveWap(wapToPublish)
+            await updateWap(wapToPublish)
+            // await saveWap(wapToPublish)
             setIsVisible(prevState => !prevState)
-            window.open(`/publish/${wapToPublish.name}`, '_blank')
+            window.open(`/${wapToPublish.name}`, '_blank')
         } catch (err) {
             console.log('Could not change wap name')
         }

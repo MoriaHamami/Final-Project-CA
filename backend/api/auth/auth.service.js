@@ -15,6 +15,7 @@ async function login(username, password) {
     logger.debug(`auth.service - login with username: ${username}`)
 
     const user = await userService.getByUsername(username)
+    console.log('user from DATA BASE:', user)
     if (!user) return Promise.reject('Invalid username or password')
     // TODO: un-comment for real login
     const match = await bcrypt.compare(password, user.password)
@@ -25,19 +26,19 @@ async function login(username, password) {
 }
    
 
-async function signup(username, password, fullname, isAdmin) {
+async function signup({username, password, fullname, imgUrl}) {
     const saltRounds = 10
 
     logger.debug(`auth.service - signup with username: ${username}, fullname: ${fullname}`)
     if (!username || !password || !fullname) return Promise.reject('fullname, username and password are required!')
 
     const hash = await bcrypt.hash(password, saltRounds)
-    return userService.add({ username, password: hash, fullname, isAdmin })
+    return userService.add({ username, password: hash, fullname, imgUrl })
 }
 
 
 function getLoginToken(user) {
-    const userInfo = {_id : user._id, fullname: user.fullname, isAdmin: user.isAdmin}
+    const userInfo = {_id : user._id, fullname: user.fullname, username: user.username}
     return cryptr.encrypt(JSON.stringify(userInfo))    
 }
 

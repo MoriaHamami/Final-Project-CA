@@ -6,12 +6,13 @@ import { useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { addCmp, loadWap, removeCmp, saveCmp, saveElement, saveWap, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp, saveCmp, saveElement, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { wapService } from '../services/wap.service.js'
 import { utilService } from '../services/util.service.js'
+import { Loader } from './loader'
 
 
 
@@ -181,6 +182,8 @@ export function Editor() {
         if (element?.type === 'btn' || element?.type === 'map' || element?.type === 'video') ev.preventDefault()
         // console.log('element:', element)
     }
+
+if(!wap) return <Loader />
 
 
     return (

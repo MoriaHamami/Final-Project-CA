@@ -1,7 +1,7 @@
 export const storageService = {
     query,
     getById,
-    getByName,
+    // getByName,
     post,
     put,
     remove,
@@ -17,13 +17,13 @@ function query(entityType, delay = 500) {
     return new Promise(resolve => setTimeout(() => resolve(entities), delay))
 }
 
-function getByName(entityType, entityName) {
-    return query(entityType).then(entities => {
-        const entity = entities.find(entity => entity.name === entityName)
-        if (!entity) throw new Error(`Get failed, cannot find entity with name: ${entityName} in: ${entityType}`)
-        return entity
-    })
-}
+// function getByName(entityType, entityName) {
+//     return query(entityType).then(entities => {
+//         const entity = entities.find(entity => entity.name === entityName)
+//         if (!entity) throw new Error(`Get failed, cannot find entity with name: ${entityName} in: ${entityType}`)
+//         return entity
+//     })
+// }
 
 function getById(entityType, entityId) {
     return query(entityType).then(entities => {

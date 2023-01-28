@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import * as React from "react";
@@ -17,20 +17,22 @@ import { logout } from '../store/user.actions.js'
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
+    const navigate = useNavigate()
 
     function onLogout() {
         logout()
+        navigate(-1)
         userService.logout()
     }
 
-    const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
+        setAnchorEl(event.currentTarget)
+    }
     const handleClose = () => {
-        setAnchorEl(null);
-    };
+        setAnchorEl(null)
+    }
 
 
     return (

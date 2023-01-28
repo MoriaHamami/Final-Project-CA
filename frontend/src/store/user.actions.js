@@ -26,7 +26,8 @@ export async function removeUser(userId) {
     }
 }
 
-export function loginWithOauth(userData) {
+export function loginWithAuth(userData) {
+    console.log('userData:', userData)
     try {
         store.dispatch({
             type: SET_USER,

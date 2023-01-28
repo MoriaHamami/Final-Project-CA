@@ -6,6 +6,7 @@ import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
 import { EditorBoard } from "../cmps/editor/editor-board";
 import { DynamicCmp } from "../cmps/wap-cmps/wap-dynamic-cmp";
 import { loadWap } from "../store/wap.actions";
+import { Loader } from './loader'
 
 export function Preview() {
 
@@ -27,6 +28,7 @@ export function Preview() {
         navigate(-1)
     }
 
+    if(!wap) return <Loader />
     // return <EditorBoard />
     return <div className="preview-page">
         {/* <AppHeader /> */}
@@ -35,6 +37,6 @@ export function Preview() {
                 <span class="preview-close material-symbols-outlined">close</span>
             </div>
         </div>
-        {wap?.cmps.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
+        {wap?.cmps?.map((cmp, index) => <DynamicCmp key={cmp.id} cmp={cmp} />)}
     </div>
 }
