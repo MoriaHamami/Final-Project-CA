@@ -79,7 +79,7 @@ export function DashboardBoard({ currWap }) {
 
     return (
         <div className='dashboard-board'>
-            <h2>Welcome {user.username}</h2>
+            <h2>{user.username.charAt(0).toUpperCase() + user.username.substring(1).toLowerCase()}'s workspace</h2>
             <div className='dashboard-data-container'>
                 {currWap ? <div>
                     {!currWap.isPublished && < div >

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { DynamicCmp } from "../cmps/wap-cmps/wap-dynamic-cmp";
 import { addWap, loadPublisedhWap, loadPublishedWap } from "../store/wap.actions";
+import { Loader } from './loader'
 
 
 export function Publish() {
@@ -21,6 +22,7 @@ export function Publish() {
     }
   }, [])
 
+  if(!wap) return <Loader />
 
   return (
     <div className="preview-page">

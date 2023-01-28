@@ -7,6 +7,7 @@ import { addWap, createWap } from '../store/wap.actions.js'
 import { WapDemoList } from '../cmps/wap-demos/wap-demo-list'
 import { wapService } from '../services/wap.service.js'
 import 'animate.css';
+import { Loader } from './loader'
 
 // import { getWapDemoById } from '../services/wap.service.local.js'
 
@@ -32,6 +33,9 @@ export function WapDemos() {
             console.log('Had issues in wap editor', err)
         }
     }
+
+
+//   if(!wap) return <Loader />
 
     return (
         <div>
