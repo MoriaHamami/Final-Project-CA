@@ -22,6 +22,7 @@ import { Line } from 'react-chartjs-2';
 
 
 import { utilService } from '../../services/util.service'
+import { PublishModal } from '../publish-modal'
 
 
 export function DashboardBoard({ currWap }) {
@@ -36,24 +37,6 @@ export function DashboardBoard({ currWap }) {
     );
     const user = useSelector((storeState => storeState.userModule.user))
     const navigate = useNavigate()
-    const [isVisible, setIsVisible] = useState(false)
-    const [name, setName] = useState('')
-
-    const onPublishClick = () => {
-        setIsVisible(!isVisible)
-    }
-
-    async function changeWapName() {
-        try {
-            const wapToPublish = { ...currWap, name: name, isPublished: true }
-            // delete wapToPublish._id
-            await saveWap(wapToPublish)
-            setIsVisible(prevState => !prevState)
-            window.open(`/publish/${wapToPublish.name}`, '_blank')
-        } catch (err) {
-            console.log('Could not change wap name')
-        }
-    }
 
     function onPreviewClick() {
         navigate(`/preview/${currWap._id}`)
@@ -107,11 +90,9 @@ export function DashboardBoard({ currWap }) {
                             </div>
                             <img src={currWap.imgUrl} />
                             <div className='btn-container'>
-                                <button className='publish-btn' onClick={onPublishClick}>Publish</button>
-                                <div className='publish-container' style={{ display: isVisible ? 'block' : 'none' }}>
-                                    <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
-                                    <button onClick={changeWapName} className='publish-btn'>Save</button>
-                                </div>
+                                <PublishModal currWap={currWap} />
+
+
                                 <button className='edit-btn' onClick={onPreviewClick}>Preview</button>
                                 <button className='edit-btn' onClick={() => navigate(`/editor/:${currWap._id}`)}>Edit</button>
                             </div>
@@ -150,6 +131,7 @@ export function DashboardBoard({ currWap }) {
 
                 </div>}
 
+                <Line options={options} data={data} />;
             </div>
         </div >
     )

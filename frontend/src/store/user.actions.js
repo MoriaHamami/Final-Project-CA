@@ -31,12 +31,13 @@ export function loginWithOauth(userData) {
         store.dispatch({
             type: SET_USER,
             user: {
-                fullname: userData.data.name,
-                imgUrl: userData.data.picture,
-                username: userData.data.email,
-                _id: userData.data.email,
+                fullname: userData.name,
+                imgUrl: userData.picture,
+                username: userData.email,
+                _id: userData.email,
             }
         })
+
     } catch (err) {
         console.log('Cannot login', err)
         throw err
