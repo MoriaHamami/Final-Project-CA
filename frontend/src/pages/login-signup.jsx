@@ -19,7 +19,6 @@ export function LoginSignup() {
     const user = useSelector((storeState => storeState.userModule.user))
     const navigate = useNavigate()
 
-
     function handleChange({ target }) {
         let { value, name: field } = target
         setCredentials((prevCreds) => ({ ...prevCreds, [field]: value }))
@@ -50,6 +49,7 @@ export function LoginSignup() {
     function onLogout() {
         logout()
         userService.logout()
+        
     }
 
     const googleLogin = useGoogleLogin({
