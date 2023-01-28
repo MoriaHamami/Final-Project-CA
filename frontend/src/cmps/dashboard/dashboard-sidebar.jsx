@@ -8,6 +8,8 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import { useSelector } from 'react-redux'
 import WebIcon from '@mui/icons-material/Web'
+import DomainVerificationIcon from '@mui/icons-material/DomainVerification';
+import WebAssetIcon from '@mui/icons-material/WebAsset';
 import { useState } from 'react'
 
 import {
@@ -70,31 +72,18 @@ export function DashboardSidebar(props) {
             </Typography>
 
             <List
-                sx={{
-                    paddingTop: '25px',
-                    backgroundColor: 'rgb(249, 250, 251)',
-                    height: '100%',
-                }}
+                className='dashboard-site-list'
+            sx={{
+                paddingTop: '25px',
+                backgroundColor: 'rgb(249, 250, 251)',
+                height: '100%',
+                maxHeight: 'calc(100vh - 120px)'
+
+            }}
             >
-                {/* {savedWaps &&
-                    savedWaps.map((wap, index) => (
-                        <ListItem
-                            key={index}
-                            onClick={() => {
-                                props.selectCurrWap(wap)
 
-                                setMobileOpen(false)
-                            }}
-                        >
-                            <ListItemButton sx={{ gap: '0.5rem' }}>
-                                <WebIcon />
-                                <ListItemText primary={wap.name} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))} */}
-
-                {props.userPublishedWaps && props.userPublishedWaps.map((wap, index) => (
-                    <ListItem
+            {props.userPublishedWaps && props.userPublishedWaps.map((wap, index) => (
+                <ListItem
                     key={index}
                     onClick={() => {
                         props.selectCurrWap(wap)
@@ -103,13 +92,13 @@ export function DashboardSidebar(props) {
                     }}
                 >
                     <ListItemButton sx={{ gap: '0.5rem' }}>
-                        <WebIcon />
+                        <DomainVerificationIcon />
                         <ListItemText primary={wap.name} />
                     </ListItemButton>
                 </ListItem>
-                ))}
-                {props.userDraftWaps && props.userDraftWaps.map((wap, index) => (
-                    <ListItem
+            ))}
+            {props.userDraftWaps && props.userDraftWaps.map((wap, index) => (
+                <ListItem
                     key={index}
                     onClick={() => {
                         props.selectCurrWap(wap)
@@ -118,18 +107,18 @@ export function DashboardSidebar(props) {
                     }}
                 >
                     <ListItemButton sx={{ gap: '0.5rem' }}>
-                        <WebIcon />
+                        <WebAssetIcon />
                         <ListItemText primary={wap.name} />
                     </ListItemButton>
                 </ListItem>
-                ))}
-            </List>
+            ))}
+        </List>
         </>
     )
 
 
     return (
-        <Box className='dashboard-sidebar' sx={{ display: 'flex', position: { xs: 'absolute', lg: 'unset' } }}>
+        <Box className='dashboard-sidebar' sx={{ display: 'flex', minWidth:'100px', height:'calc(100vh - 50px)'}}>
             <CssBaseline />
 
             <IconButton
@@ -143,10 +132,10 @@ export function DashboardSidebar(props) {
                     alignSelf: 'flex-start',
                     height: '40px',
                     width: '40px',
-                    margin: '30px 0 0 20px',
+                    margin: '20px 0 0 45px',
                 }}
             >
-                <MenuIcon />
+                <MenuIcon style={{fontSize:'2rem'}} />
             </IconButton>
 
             <Box
@@ -193,7 +182,7 @@ export function DashboardSidebar(props) {
                             width: drawerWidth,
                             boxSizing: 'border-box',
                             position: 'relative',
-                            paddingTop: '35px',
+                            paddingTop: '30px',
                             backgroundColor: 'rgb(249, 250, 251)',
                         },
                     }}
