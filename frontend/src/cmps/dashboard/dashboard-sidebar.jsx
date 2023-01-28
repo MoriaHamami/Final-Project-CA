@@ -118,7 +118,7 @@ export function DashboardSidebar(props) {
 
 
     return (
-        <Box className='dashboard-sidebar' sx={{ display: 'flex', minWidth:'100px', height:'calc(100vh - 50px)'}}>
+        <Box className='dashboard-sidebar' sx={{ zIndex:'0' ,display: 'flex', minWidth:'100px', height:'calc(100vh - 50px)'}}>
             <CssBaseline />
 
             <IconButton
