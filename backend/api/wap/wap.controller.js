@@ -7,8 +7,10 @@ const logger = require('../../services/logger.service')
 async function getWaps(req, res) {
   try {
     logger.debug('Getting Waps')
-    const { filterBy } = req.query.params
+    const filterBy  = req.query
+    // console.log('req.query:', req.query)
     const waps = await wapService.query(filterBy)
+    // console.log('waps:', waps)
     res.json(waps)
   } catch (err) {
     logger.error('Failed to get waps', err)
@@ -32,6 +34,7 @@ async function getWaps(req, res) {
 // WORKS
 async function addWap(req, res) {
   const { loggedinUser } = req
+  // console.log('loggedinUser:', loggedinUser)
 
   try {
     const wap = req.body
@@ -140,8 +143,13 @@ async function getCmpsByType(req, res) {
 
 // WORKS
 async function updateWap(req, res) {
+  const { loggedinUser } = req
+  console.log('loggedinUser:', loggedinUser)
+  // console.log('req:', req)
   try {
     const wap = req.body
+    wap.createdBy = loggedinUser
+    wap.updatedAt = Date.now()
     const updatedWap = await wapService.update(wap)
     res.json(updatedWap)
   } catch (err) {

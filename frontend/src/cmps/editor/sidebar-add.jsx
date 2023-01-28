@@ -43,7 +43,7 @@ export function SidebarAdd({ onPickedCmp, innerRef }) {
                 <h2 className="add-header">Add {selectedType}</h2>
                 {cmpsByCurrType.map((cmp, index) => {
                     // return <Draggable draggableId={cmp.name} key={cmp.id} index={index}>
-                    console.log('cmp:', cmp)
+                    // console.log('cmp:', cmp)
 
                     return <Draggable draggableId={JSON.stringify(cmp)} key={cmp.id} index={index}>
                         {

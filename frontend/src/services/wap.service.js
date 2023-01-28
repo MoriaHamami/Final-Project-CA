@@ -157,9 +157,11 @@ window.cs = wapService
 //     return cmpsToReturn
 // }
 
-async function query(filterBy = {isPublished: '', isDemo: '', cmpId: ''}) {
+async function query(filterBy = {isPublished: '', isDemo: '', cmpId: '', wapName: '', username:''}) {
+    const queryParams = `?isPublished=${filterBy.isPublished}&isDemo=${filterBy.isDemo}&cmpId=${filterBy.cmpId}&wapName=${filterBy.wapName}&username=${filterBy.username}`
     // return storageService.query(STORAGE_KEY)
-    return httpService.get(STORAGE_KEY, {params: filterBy})
+    // console.log('filterBy:', filterBy)
+    return httpService.get(STORAGE_KEY + queryParams)
 }
 
 function getWapById(wapId) {

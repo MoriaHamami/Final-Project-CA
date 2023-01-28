@@ -102,16 +102,35 @@ export async function loadWap(wapId) {
 }
 
 
-// FUNC TO REMOVE?
-export async function loadPublishWap(wapPublishedName) {
+export async function loadPublishedWap(wapName) {
     try {
-        let wap = await wapService.getWapByName(wapPublishedName)
+        const filterBy = {wapName}
+        console.log('wapName:', wapName)
+        // let wap = await wapService.getWapById(wapId)
+        let wap = await wapService.query(filterBy)
+        // console.log('wap:', wap)
+        // let wap = await wapService.getWapByName(wapName)
         store.dispatch({ type: SET_WAP, wap })
-        console.log(wap)
+        // console.log(wap)
     } catch (err) {
         console.log('err:', err)
     }
 }
+
+// export async function loadUserWaps(username) {
+//     try {
+//         const filterBy = {username}
+//         // let wap = await wapService.getWapById(wapId)
+//         let waps = await wapService.query(filterBy)
+//         // console.log('wap:', waps)
+//         // let wap = await wapService.getWapByName(wapName)
+//         // store.dispatch({ type: SET_WAP, wap })
+//         return waps
+//         // console.log(wap)
+//     } catch (err) {
+//         console.log('err:', err)
+//     }
+// }
 
 // export async function getCmpByName(wapName) {
 //     try {

@@ -10,7 +10,12 @@ function requireAuth(req, res, next) {
     req.loggedinUser = { _id: '', fullname: 'Guest' }
     return next()
   }
+  // if (!req?.cookies?.loginToken) return res.status(401).send('Not Authenticated')
+  // const loggedinUser = authService.validateToken(req.cookies.loginToken)
+
   if (!loggedinUser) return res.status(401).send('Not Authenticated')
+
+  req.loggedinUser = loggedinUser
   next()
 }
 

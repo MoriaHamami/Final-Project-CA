@@ -11,7 +11,8 @@ export function WapDemoList({ onSelectDemoWap }) {
     
     useEffect(()=> {
         // console.log('waps:', waps)
-        loadWaps({isDemo: true})
+        const filterBy = {isDemo: true}
+        loadWaps(filterBy)
     }, [])
     // useEffect(()=> {
     //     console.log('waps:', waps)

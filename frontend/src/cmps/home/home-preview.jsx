@@ -9,7 +9,6 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import "swiper/css/effect-coverflow"
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
 
 
 export function HomePreview() {

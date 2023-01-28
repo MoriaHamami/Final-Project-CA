@@ -6,6 +6,7 @@ import { DashboardBoard } from '../cmps/dashboard/dashboard-board.jsx'
 import { wapService } from '../services/wap.service'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
+import { loadUserWaps } from '../store/wap.actions'
 
 
 export function Dashboard() {
@@ -15,15 +16,19 @@ export function Dashboard() {
     const [currWap, setCurrWap] = useState(null)
 
     useEffect(() => {
-        loadUserWaps()
+        loadWaps()
     }, [])
 
-    async function loadUserWaps() {
+    async function loadWaps() {
         try {
-            const allWaps = await wapService.query()
-            const userWaps = allWaps.filter((wap) => {
-                return (!wap.isDemo && wap.createdBy === user.username)
-            })
+            // const allWaps = await wapService.query()
+            // const userWaps = allWaps.filter((wap) => {
+            //     return (!wap.isDemo && wap.createdBy === user.username)
+            // })
+            const filterBy = { username: user.username }
+            const userWaps = await wapService.query(filterBy)
+            // const userWaps = await loadUserWaps(user.username)
+            // console.log('userWaps:', userWaps)
             setUserPublishedWaps(userWaps.filter(wap => wap.isPublished))
             setUserDraftWaps(userWaps.filter(wap => !wap.isPublished))
         } catch (err) {
@@ -35,10 +40,7 @@ export function Dashboard() {
         setCurrWap(wap)
     }
 
-    console.log('currWap:', currWap)
-
-
-
+    // console.log('currWap:', currWap)
 
     return (
         <div>

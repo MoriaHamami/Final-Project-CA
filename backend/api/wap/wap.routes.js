@@ -14,7 +14,7 @@ router.get('/:cmpId/cmp', getCmpById)
 // TO CHECK!!!
 router.get('/:type/cmps', getCmpsByType)
 router.post('/', addWap)
-router.put('/:id', updateWap)
+router.put('/:id', requireAuth, updateWap)
 router.delete('/:id', requireAuth, removeWap)
 router.post('/:id/cmp', addWapCmp)
 router.put('/:id/cmp', updateWapCmp)
