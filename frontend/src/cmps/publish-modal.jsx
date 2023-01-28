@@ -25,7 +25,7 @@ export function PublishModal({ currWap }) {
       await addWap(wapToPublish)
       // await saveWap(wapToPublish)
       // setIsVisible(prevState => !prevState)
-      window.open(`/publish/${wapToPublish.name}`, '_blank')
+      window.open(`/${wapToPublish.name}`, '_blank')
     } catch (err) {
       console.log('Could not change wap name')
     }
