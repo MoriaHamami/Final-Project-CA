@@ -5,7 +5,7 @@ export const wapHero2 = {
   type: 'wap-hero',
   name: 'wap-hero-2',
   themePalette: 'third',
-  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557657/Webix/wap-hero-2_rz0crj.jpg',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674917219/Webix/wap-hero-2-_2_-transformed_qwy8vh.jpg',
 
   info: {
     title: { txt: 'Urban Nomad Adventures', style: { fontWeight: '600', fontSize: '3.5em' }, id: utilService.makeId(), type: 'txt', key: 'title' },
@@ -14,7 +14,7 @@ export const wapHero2 = {
   },
   // theme: 'theme-header-happy',
   style: {
-    backgroundImage: 'url("https://res.cloudinary.com/dimirmc9j/image/upload/v1674060120/card1_cbglsw.jpg")',
+    backgroundImage: 'url("https://res.cloudinary.com/dvnxslwcz/image/upload/v1674917219/Webix/wap-hero-2-_2_-transformed_qwy8vh.jpg")',
     fontFamily: 'handlee',
   }
 }

@@ -6,14 +6,14 @@ export const wapAbout1 = {
   type: 'wap-about',
   name: 'wap-about-1',
   themePalette: 'primary',
-  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674764334/Webix/wap-about-1_p1sj3k.jpg',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674915430/Webix/wap-about-1_yvzqng.jpg',
   info: {
     subtitle: { txt: 'THE LOVE FOR PIZZA', id: utilService.makeId(), style: { fontWeight: '600', fontSize: '3.5em' }, type: 'txt', key: 'title' },
     title: { txt: 'Our Story', style: { fontSize: '1.5em' }, id: utilService.makeId(), type: 'txt', key: 'title' },
     txt: { txt: 'Mario takes great pride in crafting each pizza with care. He tirelessly experiments with new recipes to perfect his craft. He takes the time to listen to customers\' feedback to improve his pizzas. His enthusiasm for his work is contagious and it\'s clear that he truly loves what he does.', id: utilService.makeId(), style: {}, type: 'txt', key: 'txt' },
     btn: { label: '', link: '', id: utilService.makeId(), type: 'btn', style: {}, key: 'btn' },
     photo: {
-      url: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674028653/wap-preview-1-img_cd6mey.jpg',
+      url: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674915430/Webix/wap-about-1_yvzqng.jpg',
       type: 'img',
       id: utilService.makeId(),
       style: {},
