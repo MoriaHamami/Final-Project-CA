@@ -8,7 +8,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { signup, login, logout, loginWithAuth } from '../store/user.actions.js'
 import { GoogleLogin, useGoogleLogin } from '@react-oauth/google'
-import jwt_decode from "jwt-decode";
+import { ToastContainer, toast } from 'react-toastify';
+
 import axios from 'axios'
 
 
@@ -19,23 +20,30 @@ export function LoginSignup() {
     const user = useSelector((storeState => storeState.userModule.user))
     const navigate = useNavigate()
 
+    const showLogintFailedMessage = () => {
+        toast.error('Login failed', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        });
+    };
+
     function handleChange({ target }) {
         let { value, name: field } = target
         setCredentials((prevCreds) => ({ ...prevCreds, [field]: value }))
     }
+
 
     async function onSubmit(ev) {
         ev.preventDefault()
         const funcs = { signup, login }
         const method = isSignupState ? 'signup' : 'login'
         try {
-
             const user = await funcs[method](credentails);
-            showSuccessMsg(`Welcome ${user.fullname}`)
-            navigate('/')
-        } catch (e) {
-            console.log(e)
+            if (user) {
+                navigate('/')
+            }
+            else showLogintFailedMessage()
 
+        } catch (e) {
             showErrorMsg('Oops try again: ' + e.message)
         }
 
@@ -49,7 +57,7 @@ export function LoginSignup() {
     function onLogout() {
         logout()
         userService.logout()
-        
+
     }
 
     const googleLogin = useGoogleLogin({
@@ -150,7 +158,9 @@ export function LoginSignup() {
                     <button className="logout-btn" onClick={onLogout}>Logout</button>
                 </div>}
             </section >
+            <ToastContainer autoClose={2000} />
         </div >
+
     )
 
 }

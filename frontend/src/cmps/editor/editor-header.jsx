@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { height } from '@mui/system';
 import { setDisplaySize, updateWap } from '../../store/wap.actions';
 import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
 
 export function EditorHeader({ wap }) {
     // const [displayType, setDisplayType] = useState('desktop')
@@ -20,9 +21,16 @@ export function EditorHeader({ wap }) {
         // dispatch(setDisplaySize(size))
     }
 
+    const showInvalidPublish = () => {
+        toast.warning('please login to publish  !', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        });
+    };
+
+
     const onPublishClick = () => {
         if (!user) {
-            return alert('Please login to publish your site')
+            return showInvalidPublish()
         }
         setIsVisible(!isVisible)
     }
@@ -68,7 +76,7 @@ export function EditorHeader({ wap }) {
                 <Link key="/preview" to={`/preview/${wap._id}`}><button className='preview-btn'>Preview</button></Link>
                 <button onClick={onPublishClick} className='publish-btn'>Publish</button>
             </div>
-
+            <ToastContainer autoClose={2000} />
         </header >
     )
 }

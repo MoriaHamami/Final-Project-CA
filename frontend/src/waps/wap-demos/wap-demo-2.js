@@ -10,8 +10,8 @@ import { wapAbout2 } from "../about/wap-about-2";
 
 export const wapDemo2 = {
 	_id: "5e28393890dd7201a06d4e42",
-	name: "Adventure Tour Company Traveling Agency",
-	imgUrl: "https://res.cloudinary.com/dimirmc9j/image/upload/v1674323391/template2_njflc4.png",
+	name: "Traveling Agency",
+	imgUrl: "https://res.cloudinary.com/dvnxslwcz/image/upload/v1674918514/Webix/wap-2-preview-gy-sL9m88-transformed_ayyq0d.jpg",
 	isDemo: true,
 
 	cmps: [

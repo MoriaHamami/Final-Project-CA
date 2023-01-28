@@ -41,10 +41,14 @@ export function Editor() {
     const reOrder = (startIdx, endIdx) => {
         removeCmp(wap, startIdx, endIdx)
     }
-
-    const showToastMessage = () => {
+    const showAddCmpMessage = () => {
+        toast.success('Section added', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        });
+    };
+    const showCmpDelete = () => {
         toast.success('Delete Success  !', {
-            position: toast.POSITION.TOP_RIGHT
+            position: toast.POSITION.BOTTOM_RIGHT
         });
     };
 
@@ -52,16 +56,9 @@ export function Editor() {
     const onEnd = (result) => {
         setIsDragging(false)
         if (result.source.droppableId === 'from-sidebar-add' && result.destination.droppableId === 'editor') {
-            // const name = result.draggableId.split()[1]   + 's'
-            // const cmpId = wapService.getCmpsByCategory(name)
-            // console.log(cmpId);
-            //   const currCmp = wapService.getCmpById(cmpId)
-            // console.log(currCmp);
-            // console.log('rsult===', result)
             const currCmp = JSON.parse(result.draggableId)
-            // const idx = result.source.index
-            // const currCmp = cmpsByCurrType[idx]
             const destIdx = result.destination.index
+            showAddCmpMessage()
             return addCmpToBoard(currCmp, destIdx)
         }
         if (result.destination.droppableId === 'delete') {
@@ -69,7 +66,7 @@ export function Editor() {
             if (!approved) {
                 return
             }
-            showToastMessage()
+            showCmpDelete()
             return removeCmpFromBoard(result)
         }
         reOrder(result.source.index, result.destination.index)
@@ -223,7 +220,7 @@ if(!wap) return <Loader />
                     </Droppable > */}
 
             </DragDropContext>}
-            <ToastContainer autoClose={1000} />
+            <ToastContainer autoClose={2000} />
 
 
 
