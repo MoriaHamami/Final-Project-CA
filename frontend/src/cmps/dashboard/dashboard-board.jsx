@@ -131,7 +131,7 @@ export function DashboardBoard({ currWap }) {
 
                 </div>}
 
-                <Line options={options} data={data} />;
+                {/* <Line options={options} data={data} />; */}
             </div>
         </div >
     )
