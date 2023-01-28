@@ -220,7 +220,7 @@ export function Editor() {
                     </Droppable > */}
 
             </DragDropContext>}
-            <ToastContainer />
+            <ToastContainer autoClose={1000} />
 
 
 
