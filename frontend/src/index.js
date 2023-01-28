@@ -6,6 +6,7 @@ import * as serviceWorkerRegistration from './service-worker-registration';
 import { store } from './store/store'
 import { RootCmp } from './root-cmp'
 import './assets/styles/main.scss'
+import 'react-toastify/dist/ReactToastify.css';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 

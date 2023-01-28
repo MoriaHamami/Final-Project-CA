@@ -1,0 +1,25 @@
+.dashboard-site-list {
+    background-color: aqua;
+    overflow-y: scroll;
+    
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 1px;
+        background-color: white;
+        border: 1px solid $almost-white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #DDDDDD;
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #cbcbcb;
+        }
+    }
+}

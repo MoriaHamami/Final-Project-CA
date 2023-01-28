@@ -10,7 +10,7 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
 
 
   useEffect(() => {
-    const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('em', '') : 1
+    const fontSize = selectedElement?.style[propertyName] ? +selectedElement.style[propertyName].replace('em', '') : false
     setFontSizeVal(fontSize)
   }, [selectedElement])
 
@@ -42,7 +42,7 @@ export function SidebarFontSize({ title, propertyName, onChange, chosenComponent
         valueLabelDisplay='auto'
         step={0.1}
         min={0.1}
-        max={4}
+        max={10}
         sx={{ color: '#434242' }}
       />
     {!!fontSizeVal && <span>{fontSizeVal}</span>}

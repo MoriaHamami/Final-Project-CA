@@ -11,8 +11,9 @@ export function SidebarUrl({ title, propertyName, onChange }) {
 
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
+    console.log('selectedElement:', selectedElement)
+
     useEffect(() => {
-        // console.log('selectedElement:', selectedElement)
         const url = selectedElement?.url ? selectedElement?.url : ('')
         setUrl(url)
     }, [selectedElement])
@@ -23,9 +24,6 @@ export function SidebarUrl({ title, propertyName, onChange }) {
 
     function submitUrl(ev) {
         ev.preventDefault()
-        // console.log('target.value:', url)
-        // target.title = target.value
-        // setUrl(target.value)
         onChange(propertyName, url)
         setUrl('')
         if (urlInputRef.current) {
@@ -46,7 +44,7 @@ export function SidebarUrl({ title, propertyName, onChange }) {
     return <div className="sidebar-url">
 
         <form onChange={handleChange} onSubmit={submitUrl}>
-            <label className="sidebar-url">{title}</label>
+            {/* <label className="sidebar-url">{title}</label> */}
             <input
                 ref={urlInputRef}
                 type="url"
@@ -58,8 +56,15 @@ export function SidebarUrl({ title, propertyName, onChange }) {
                 value={selectedFile}
                 onChange={uploadImg}
             />
-            <label htmlFor='upload-file' className='btn'>Upload file</label>
         </form>
-        <img src={url} />
+        {selectedElement.type === 'img' && <img src={url} />}
+        {selectedElement.type === 'video' && <iframe
+            style={{ width: '250px', height: '150px' }}
+            src={url}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+            allowFullScreen
+            title="Embedded youtube"
+        />}
+        <label htmlFor='upload-file' className='upload-url-btn'><span class="material-symbols-outlined upload-icon">cloud_upload</span> upload</label>
     </div>
 }

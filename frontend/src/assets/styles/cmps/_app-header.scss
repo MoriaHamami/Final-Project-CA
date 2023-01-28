@@ -3,6 +3,11 @@
     border-bottom: 1px solid lightgray;
     box-shadow: rgba(0, 0, 0, 0.074) 1px 1px 4px 0.5px;
 
+    .user-img{
+        width: 30px;
+        border-radius: 50%
+    }
+
 
     .header-txt-container {
         display: flex;

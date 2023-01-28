@@ -1,21 +1,21 @@
 import { utilService } from '../../services/util.service.js'
 
 
-export const wapVideo2 = {
+export const wapVideo5 = {
   id: utilService.makeId(),
   type: 'wap-video',
-  name: 'wap-video-2',
+  name: 'wap-video-5',
   themePalette: 'third',
-  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674862321/Webix/wap-video-2_hmi6tx.jpg',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674557656/Webix/wap-video-2_kxnngq.jpg',
   info: {
-    title: { txt: 'Get to know us', style: { fontSize: '2em' }, id: utilService.makeId(), type: 'txt', key: 'title' },
+    title: { txt: 'Get to know us', style: { fontFamily: 'roboto-light', fontSize: '2em', color:'white' }, id: utilService.makeId(), type: 'txt', key: 'title' },
     // embedId: '0U7IWgCREik',
     video: {
-      url: 'https://www.youtube.com/embed/0U7IWgCREik',
+      url: 'https://www.youtube.com/embed/JPUbSvsxjsY',
       id: utilService.makeId(),
       style: {
         width: '70%',
-        minWidth: '300px',
+        minWidth: '270px',
         border: 'none',
         aspectRatio: 16 / 8,
         key: 'btns'
@@ -27,6 +27,6 @@ export const wapVideo2 = {
   // cmps: [],
   // theme: 'theme-section-happy',
   style: {
-    fontFamily: 'handlee',
+    backgroundColor: 'rgb(216 182 182)'
   },
 }

@@ -15,12 +15,14 @@
 @import "views/wap-demos-page";
 @import "views/editor-page";
 @import "views/preview-page";
+@import "views/dashboard";
 @import "views/login";
 
 // Components
 @import "cmps/app-header";
 @import "cmps/app-footer";
 @import "cmps/user-msg";
+@import "cmps/publish-modal";
 
 // Home Components
 @import "cmps/home/home-header";
@@ -28,8 +30,12 @@
 @import "cmps/home/home-preview";
 @import "cmps/home/home-footer";
 
-// Home Components
+// login Components
 @import "cmps/login/login-header";
+
+// dashboard Components
+@import "cmps/dashboard/dashboard-sidebar";
+@import "cmps/dashboard/dashboard-board";
 
 // Editor Components
 @import "cmps/editor/editor-sidebar";
@@ -49,30 +55,31 @@
 
 // Wap Cmps
 // Gallery
-@import "cmps/wap-cmps/gallery/wap-gallery-1"; 
-@import "cmps/wap-cmps/gallery/wap-gallery-2a"; 
-@import "cmps/wap-cmps/gallery/wap-gallery-2b"; 
-@import "cmps/wap-cmps/gallery/wap-gallery-3"; 
-@import "cmps/wap-cmps/gallery/wap-gallery-4a"; 
-@import "cmps/wap-cmps/gallery/wap-gallery-4b"; 
-@import "cmps/wap-cmps/gallery/wap-gallery-5a"; 
-@import "cmps/wap-cmps/gallery/wap-gallery-5b"; 
-@import "cmps/wap-cmps/gallery/wap-gallery-6a"; 
-@import "cmps/wap-cmps/gallery/wap-gallery-6b"; 
+@import "cmps/wap-cmps/gallery/wap-gallery-1";
+@import "cmps/wap-cmps/gallery/wap-gallery-2a";
+@import "cmps/wap-cmps/gallery/wap-gallery-2b";
+@import "cmps/wap-cmps/gallery/wap-gallery-3";
+@import "cmps/wap-cmps/gallery/wap-gallery-4a";
+@import "cmps/wap-cmps/gallery/wap-gallery-4b";
+@import "cmps/wap-cmps/gallery/wap-gallery-5a";
+@import "cmps/wap-cmps/gallery/wap-gallery-5b";
+@import "cmps/wap-cmps/gallery/wap-gallery-5c";
+@import "cmps/wap-cmps/gallery/wap-gallery-6a";
+@import "cmps/wap-cmps/gallery/wap-gallery-6b";
 // Footer
-@import "cmps/wap-cmps/footer/wap-footer-1.scss"; 
-@import "cmps/wap-cmps/footer/wap-footer-2.scss"; 
-@import "cmps/wap-cmps/footer/wap-footer-3.scss"; 
-@import "cmps/wap-cmps/footer/wap-footer-4.scss"; 
-@import "cmps/wap-cmps/footer/wap-footer-5.scss"; 
+@import "cmps/wap-cmps/footer/wap-footer-1.scss";
+@import "cmps/wap-cmps/footer/wap-footer-2.scss";
+@import "cmps/wap-cmps/footer/wap-footer-3.scss";
+@import "cmps/wap-cmps/footer/wap-footer-4.scss";
+@import "cmps/wap-cmps/footer/wap-footer-5.scss";
 // Form
-@import "cmps/wap-cmps/form/wap-form-1.scss"; 
+@import "cmps/wap-cmps/form/wap-form-1.scss";
 @import "cmps/wap-cmps/form/wap-form-2.scss";
 @import "cmps/wap-cmps/form/wap-form-3.scss";
 @import "cmps/wap-cmps/form/wap-form-4.scss";
 @import "cmps/wap-cmps/form/wap-form-5.scss";
 // Header
-@import "cmps/wap-cmps/header/wap-header-1.scss"; 
+@import "cmps/wap-cmps/header/wap-header-1.scss";
 @import "cmps/wap-cmps/header/wap-header-2.scss";
 @import "cmps/wap-cmps/header/wap-header-3.scss";
 @import "cmps/wap-cmps/header/wap-header-4.scss";
@@ -80,25 +87,26 @@
 @import "cmps/wap-cmps/header/wap-header-6.scss";
 @import "cmps/wap-cmps/header/wap-header-7.scss";
 // Hero
-@import "cmps/wap-cmps/hero/wap-hero-1.scss"; 
-@import "cmps/wap-cmps/hero/wap-hero-2.scss"; 
-@import "cmps/wap-cmps/hero/wap-hero-3a.scss"; 
-@import "cmps/wap-cmps/hero/wap-hero-3b.scss"; 
-@import "cmps/wap-cmps/hero/wap-hero-4.scss"; 
-@import "cmps/wap-cmps/hero/wap-hero-5.scss"; 
-@import "cmps/wap-cmps/hero/wap-hero-6.scss"; 
-@import "cmps/wap-cmps/hero/wap-hero-7.scss"; 
+@import "cmps/wap-cmps/hero/wap-hero-1.scss";
+@import "cmps/wap-cmps/hero/wap-hero-2.scss";
+@import "cmps/wap-cmps/hero/wap-hero-3a.scss";
+@import "cmps/wap-cmps/hero/wap-hero-3b.scss";
+@import "cmps/wap-cmps/hero/wap-hero-4.scss";
+@import "cmps/wap-cmps/hero/wap-hero-5.scss";
+@import "cmps/wap-cmps/hero/wap-hero-6.scss";
+@import "cmps/wap-cmps/hero/wap-hero-7.scss";
 // About
-@import "cmps/wap-cmps/about/wap-about-1"; 
-@import "cmps/wap-cmps/about/wap-about-2"; 
-@import "cmps/wap-cmps/about/wap-about-3a"; 
-@import "cmps/wap-cmps/about/wap-about-3b"; 
-@import "cmps/wap-cmps/about/wap-about-4"; 
-@import "cmps/wap-cmps/about/wap-about-5"; 
-@import "cmps/wap-cmps/about/wap-about-6"; 
-@import "cmps/wap-cmps/about/wap-about-7"; 
+@import "cmps/wap-cmps/about/wap-about-1";
+@import "cmps/wap-cmps/about/wap-about-2";
+@import "cmps/wap-cmps/about/wap-about-3a";
+@import "cmps/wap-cmps/about/wap-about-3b";
+@import "cmps/wap-cmps/about/wap-about-4";
+@import "cmps/wap-cmps/about/wap-about-5";
+@import "cmps/wap-cmps/about/wap-about-6";
+@import "cmps/wap-cmps/about/wap-about-7";
 // Video
-@import "cmps/wap-cmps/video/wap-video-1.scss"; 
-@import "cmps/wap-cmps/video/wap-video-2.scss"; 
+@import "cmps/wap-cmps/video/wap-video-1.scss";
+@import "cmps/wap-cmps/video/wap-video-2.scss";
+@import "cmps/wap-cmps/video/wap-video-5.scss";
 // Map
 // @import "cmps/wap-cmps/map/wap-map-1.scss"; 

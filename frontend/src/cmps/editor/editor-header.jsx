@@ -44,15 +44,12 @@ export function EditorHeader({ wap }) {
     return (
         <header className="editor-header">
             <div className='user-actions-container'>
-                <div className="editor-actions">
-                    {/* <FontAwesomeIcon className='editor-action' icon={faUserGroup} /> */}
+                {/* <div className="editor-actions">
                     <span className="material-symbols-outlined editor-action">undo</span>
                     <span className="material-symbols-outlined editor-action">redo</span>
-                    {/* <FontAwesomeIcon className='editor-action' icon={faReply} />
-                <FontAwesomeIcon className='editor-action' icon={faShare} /> */}
-                </div>
+                </div> */}
 
-                <span className='divider'>|</span>
+                {/* <span className='divider'>|</span> */}
 
                 <div className='editor-size-container'>
                     <span onClick={() => onSetDisplaySize('100%')} className={`material-symbols-outlined editor-action desktop ${displaySize === '100%' ? 'active' : ''} `}>desktop_windows</span>

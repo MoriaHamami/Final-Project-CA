@@ -26,7 +26,7 @@ export const wapDemo1 = {
 		wapVideo1,
 		wapFooter1
 	],
-	isPublished: false
+	isPublished: false,
 }
 
 

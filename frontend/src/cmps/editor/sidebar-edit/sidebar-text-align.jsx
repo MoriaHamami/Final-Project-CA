@@ -20,7 +20,7 @@ export function SidebarTextAlign({title,  onChange}) {
     }
 
 
-        return <div className='flex space-between'>
+        return <div className='flex space-between align-center'>
           <span>{title}</span>
           <div className="editor-decoration-container">
           <span onClick={() => onAlignClick('left')} className={`material-symbols-outlined ${alignValue === 'left' ? 'active' : ''}`}>format_align_left</span>

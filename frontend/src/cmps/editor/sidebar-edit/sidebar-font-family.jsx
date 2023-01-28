@@ -38,7 +38,7 @@ export function SidebarFontFamily({ title, propertyName, onChange }) {
         'forum'
     ]
 
-    return <div className='flex space-between font-family-container'>
+    return <div className='flex space-between align-center font-family-container'>
         <label className='font-family-label' htmlFor="fonts">{title}</label>
 
         <Select

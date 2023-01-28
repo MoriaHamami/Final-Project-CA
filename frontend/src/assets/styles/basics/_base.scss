@@ -16,6 +16,7 @@ body {
     font-size: rem(18px);
     margin: 0;
     margin: auto;
+
     
 }
 
@@ -59,8 +60,10 @@ a:hover {
     display: flex;
     flex-direction: column;
 
+
     .app-main-container {
         flex-grow: 1;
+
         // max-width: 1500px;
         margin: 0;
         padding: 0;

@@ -18,6 +18,7 @@
 
     .edit-add-container {
         display: flex;
+
         @media (min-width: $narrow-breakpoint) {
             display: block;
 
@@ -36,17 +37,17 @@
         background-color: white;
         border-top: 1px solid lightgray;
         z-index: 15;
-        
+
         @media (min-width: $narrow-breakpoint) {
             flex-direction: column;
-            
+
         }
 
         .delete-container {
             display: flex;
             flex-direction: column;
         }
-        
+
         .option-container {
             align-self: center;
             justify-self: center;
@@ -57,7 +58,7 @@
             align-items: center;
             margin: calc(1rem - 10px);
             padding: 3px 10px;
-            
+
             &:hover,
             &.active {
                 opacity: 1;
@@ -66,13 +67,13 @@
                 font-weight: 300;
                 border-radius: 3px;
             }
-            
+
             &.delete:hover {
                 background: none;
                 color: red;
             }
-            
-            
+
+
             .option-name {
                 font-size: 0.8rem;
             }
@@ -80,10 +81,9 @@
             .editor-delete-icon {
                 font-size: 1.7rem;
                 text-align: center;
-                transition: 0.3s;
-                transform: scale(1.6);
+                transform: scale(1.8);
             }
-            
+
             .editor-delete-icon-hidden {
                 transition: 0.1s;
                 transform: scale(1);
@@ -97,7 +97,7 @@
 
 .editor-tools {
     background-color: white;
-    z-index: 10;
+    z-index: 5;
     position: absolute;
     bottom: 49px;
     width: 98.5%;
@@ -107,20 +107,20 @@
     font-size: 0.7em;
     border-bottom: 1px solid lightgray;
     // display:none;
-    
+
     &.open {
         // display: block;
         border-right: 1px solid rgb(217, 217, 217);
         height: 350px;
         transition: height 0.2s ease-in-out;
         box-shadow: rgba(0, 0, 0, 0.372) 2px 0 4px -2px;
-        z-index: 1;
+        z-index: 5;
     }
 
 
     @media (min-width: $narrow-breakpoint) {
         height: 100%;
-        z-index: 0;
+        z-index: 5;
         position: static;
         width: 0px;
         overflow-x: hidden;
@@ -135,7 +135,7 @@
             height: 100%;
             transition: width 0.2s ease-in-out;
             box-shadow: rgba(0, 0, 0, 0.372) 2px 0 4px -2px;
-            z-index: 1;
+            z-index: 5;
         }
     }
 

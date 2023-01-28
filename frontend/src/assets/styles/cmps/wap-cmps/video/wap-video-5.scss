@@ -1,0 +1,24 @@
+.wap-video-5 {
+    padding: 2rem $normal-padding 3.5rem;
+    color: $almost-black;
+    background-color: $t2clr2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+    @media (max-width: $narrow-breakpoint) {
+        padding: 2rem $narrow-padding 3.5rem;
+        
+    }
+    
+    @media (max-width: $mobile-breakpoint) {
+        padding: 2rem 10px 3.5rem;
+
+    }
+
+    .title {
+        align-self: center;
+        padding: 0.7rem;
+    }
+
+}

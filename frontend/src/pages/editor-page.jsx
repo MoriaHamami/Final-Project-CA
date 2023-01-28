@@ -3,6 +3,8 @@ import { EditorBoard } from '../cmps/editor/editor-board.jsx'
 import { EditorSideBar } from '../cmps/editor/editor-sidebar.jsx'
 import { EditorHeader } from '../cmps/editor/editor-header.jsx'
 import { useSelector } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { addCmp, loadWap, removeCmp, saveCmp, saveElement, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
@@ -39,6 +41,13 @@ export function Editor() {
         removeCmp(wap, startIdx, endIdx)
     }
 
+    const showToastMessage = () => {
+        toast.success('Delete Success  !', {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    };
+
+
     const onEnd = (result) => {
         setIsDragging(false)
         if (result.source.droppableId === 'from-sidebar-add' && result.destination.droppableId === 'editor') {
@@ -59,6 +68,7 @@ export function Editor() {
             if (!approved) {
                 return
             }
+            showToastMessage()
             return removeCmpFromBoard(result)
         }
         reOrder(result.source.index, result.destination.index)
@@ -204,12 +214,13 @@ export function Editor() {
                 {/* <Droppable droppableId="delete">
                     {(provided, snapshot) => (
                         <div ref={provided.innerRef}>
-                            <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
+                        <FontAwesomeIcon className="editor-delete-icon" icon={faTrashCan} />
                         </div>
-                    )}
-                </Droppable > */}
+                        )}
+                    </Droppable > */}
 
             </DragDropContext>}
+            <ToastContainer autoClose={1000} />
 
 
 

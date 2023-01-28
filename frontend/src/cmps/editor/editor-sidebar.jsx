@@ -2,9 +2,7 @@ import { useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SidebarEdit } from './sidebar-edit.jsx'
 import { SidebarAdd } from './sidebar-add.jsx'
-import { faAdd, faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import 'animate.css';
-import { wapHero2 } from "../../waps/heros/wap-hero-2";
 import { Droppable } from "react-beautiful-dnd"
 import { SidebarTheme } from "./sidebar-theme.jsx"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -40,7 +38,7 @@ export function EditorSideBar({ onPickedCmp, handleWapEdit, chosenComponent, onO
           <Droppable droppableId="delete">
             {(provided, snapshot) => (
               <div ref={provided.innerRef} className="delete-container">
-                <span className={`material-symbols-outlined  ${isDragging ? "editor-delete-icon" : "editor-delete-icon-hidden"}`}>delete</span>
+                <span className={`material-symbols-outlined  ${isDragging ? "editor-delete-icon animate__animated animate__heartBeat" : "editor-delete-icon-hidden"}`}>delete</span>
                 {/* {provided.placeholder} */}
               </div>
             )}

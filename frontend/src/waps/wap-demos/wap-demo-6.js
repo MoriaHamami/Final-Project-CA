@@ -24,5 +24,5 @@ export const wapDemo6 = {
 		wapMap6,
 		wapFooter6
 	],
-	isPublished: false
+	isPublished: false,
 }

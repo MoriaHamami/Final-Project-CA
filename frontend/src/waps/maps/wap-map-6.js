@@ -5,6 +5,7 @@ export const wapMap6 = {
   id: utilService.makeId(),
   type: 'wap-map',
   name: 'wap-map-6',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674862106/Webix/wap-map-6_fobbcc.jpg',
   themePalette: 'primary',
   // theme: 'theme-map-exciting',
   info: {

@@ -3,6 +3,8 @@ import { EffectCoverflow, Autoplay, Pagination } from 'swiper'
 import { Link, useNavigate } from 'react-router-dom'
 import { addWap, loadWaps } from '../../store/wap.actions.js'
 import { wapService } from "../../services/wap.service"
+import { useState, useEffect } from 'react'
+
 import 'swiper/css'
 import 'swiper/css/pagination'
 import "swiper/css/effect-coverflow"
@@ -12,12 +14,14 @@ import { useEffect } from 'react'
 
 export function HomePreview() {
   const navigate = useNavigate()
+
+  const [windowWidth, setWindowWidth] = useState(1400)
   const waps = useSelector((storeState) => storeState.wapModule.waps)
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth)
     loadWaps({ isDemo: true })
   }, [])
-
 
   async function onSelectWapDemo(id) {
     try {
@@ -32,9 +36,9 @@ export function HomePreview() {
     }
   }
 
-  // const filterBy = {isDemo: true}
-  return <div className='home-preview-page'>
-    <h2 className="preview-title">Introducing <span>Webix</span></h2>
+
+  return <div id='home-preview' className='home-preview-page'>
+    <h2 className="preview-title ">Introducing <span>Webix</span></h2>
     <p className="preview-subtitle">We will provide you the freedom to create the Website You want according to your needs.
       Whether you're promoting your business, showcasing your work, opening your online store or starting a blog
       - you can do it all with the Webix website builder.</p>
@@ -46,7 +50,7 @@ export function HomePreview() {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={4}
+        slidesPerView={windowWidth > 900 ? 4 : 2}
         loop={true}
         autoplay={{
           delay: 2000,

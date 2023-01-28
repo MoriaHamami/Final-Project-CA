@@ -39,7 +39,7 @@ export function SidebarColors({ title, onChange, propertyName, selectedElement }
           style={{
             height: '2rem',
             width: '2rem',
-            borderRadius: '2rem',
+            borderRadius: '30%',
             backgroundColor: color,
             cursor: 'pointer',
           }}

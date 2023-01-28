@@ -1,5 +1,5 @@
 .hero-container {
-    background-image: url('https://res.cloudinary.com/dimirmc9j/image/upload/v1674491093/hero_home_background_ke00sz.jpg');
+    background-image: url('https://res.cloudinary.com/dimirmc9j/image/upload/v1674860634/hero-home-background-transformed_jda6ym.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -18,7 +18,16 @@
     // background-color: #282828;
     color: $almost-white;
     // padding-top: 130px;
-    padding: 7rem $normal-padding 6rem;
+    padding: 7rem $normal-padding 8rem;
+
+    @media (max-width: $narrow-breakpoint) {
+        padding: 7rem $narrow-padding 8rem;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 7rem $mobile-padding 8rem;
+    }
+
     // text-align: center;
     // min-height: 80vh;
     display: flex;
@@ -32,10 +41,13 @@
 
         .hero-title {
             font-weight: 900;
-            font-size: 4rem;
+            font-size: 5rem;
             line-height: 1.1;
             font-family: mont-heavy;
             margin-bottom: 0.5em;
+            @media (max-width: $mobile-breakpoint) {
+                font-size: 3.6rem;
+            }
 
             span {
                 background: linear-gradient(140deg, lighten($clr1, 5%), rgb(222, 233, 243));
@@ -54,10 +66,16 @@
     }
 
     .img-container {
-        display: flex;
-        position: relative;
-        align-items: flex-start;
-        justify-content: end;
+        display: none;
+
+        @media (min-width: $normal-breakpoint) {
+            display: flex;
+            position: relative;
+            justify-self: flex-end;
+            align-items: flex-start;
+            justify-content: end;
+            
+        }
 
         .demo-hero {
             // width: 600px;
@@ -69,12 +87,12 @@
             width: 30%;
             position: absolute;
             // bottom: 150px;
-            top:60%;
+            top: 40%;
             left: 60%;
-            
+
             @media (max-width: 1200px) {
-                top:40%;
-                
+                top: 30%;
+
             }
         }
 
@@ -84,12 +102,22 @@
         font-size: 5rem;
         position: fixed;
         z-index: 1;
-        top: 650px;
-        left: 50%;
+        top: 600px;
+        left: 39%;
+
         // right: 50%;
+        animation: bounce;
+        animation-duration: 1.5s;
+        animation-delay: 2s;
 
         &.down {
             display: none;
+        }
+
+        @media (min-width: $narrow-breakpoint) {
+            top: 650px;
+            left: 47%;
+
         }
     }
 

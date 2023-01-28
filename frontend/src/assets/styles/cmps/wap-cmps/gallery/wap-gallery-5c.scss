@@ -1,0 +1,39 @@
+.wap-gallery-5c {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 0 $normal-padding;
+    background-color: white;
+
+    .wap-gallery-img-container {
+        width: 100%;
+        margin: 0 auto;
+
+        img {
+            background-position: center;
+            object-fit: cover;
+            width: 100%;
+            transition: filter 0.1s;
+            z-index: 1;
+            position: relative;
+            top: 50px;
+        }
+    }
+    
+    &.tablet-layout {
+        padding: 0 $narrow-padding;
+    }
+    
+    @media (max-width: $narrow-breakpoint) {
+        padding: 0 $narrow-padding;
+    }
+    
+    &.mobile-layout {
+        padding: 0 $mobile-padding;
+    }
+    
+    @media (max-width: $mobile-breakpoint) {
+        top: 0px;
+        padding: 0 $mobile-padding;
+    }
+}
