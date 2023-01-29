@@ -13,27 +13,24 @@ function setupSocketAPI(http) {
         socket.on('disconnect', socket => {
             logger.info(`Socket disconnected [id: ${socket.id}]`)
         })
-        socket.on('chat-set-topic', topic => {
-            if (socket.myTopic === topic) return
-            if (socket.myTopic) {
-                socket.leave(socket.myTopic)
-                logger.info(`Socket is leaving topic ${socket.myTopic} [id: ${socket.id}]`)
+        socket.on('set-site', site => {
+            if (socket.currSite === site) return
+            if (socket.currSite) {
+                socket.leave(socket.currSite)
+                logger.info(`Socket is leaving site ${socket.currSite} [id: ${socket.id}]`)
             }
-            socket.join(topic)
-            socket.myTopic = topic
+            socket.join(site)
+            socket.currSite = site
         })
-        socket.on('chat-send-msg', msg => {
-            logger.info(`New chat msg from socket [id: ${socket.id}], emitting to topic ${socket.myTopic}`)
-            // emits to all sockets:
-            // gIo.emit('chat addMsg', msg)
-            // emits only to sockets in the same room
-            gIo.to(socket.myTopic).emit('chat-add-msg', msg)
+        socket.on('add-site-view', viewsCount => {
+            logger.info(`new site view from socket [id: ${socket.id}], emitting to site ${socket.currSite}`)
+            gIo.to(socket.currSite).emit('update-site-views', viewsCount)
         })
-        socket.on('user-watch', userId => {
-            logger.info(`user-watch from socket [id: ${socket.id}], on user ${userId}`)
-            socket.join('watching:' + userId)
+        // socket.on('user-watch', userId => {
+        //     logger.info(`user-watch from socket [id: ${socket.id}], on user ${userId}`)
+        //     socket.join('watching:' + userId)
             
-        })
+        // })
         socket.on('set-user-socket', userId => {
             logger.info(`Setting socket.userId = ${userId} for socket [id: ${socket.id}]`)
             socket.userId = userId

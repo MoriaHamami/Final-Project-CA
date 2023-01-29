@@ -1,7 +1,7 @@
 const express = require('express')
 const { requireAuth } = require('../../middlewares/requireAuth.middleware')
 const { log } = require('../../middlewares/logger.middleware')
-const { getWapById, addWap, updateWap, removeWap, getWaps, getCmpById, getCmpsByType, addWapCmp, updateWapCmp, removeWapCmp } = require('./wap.controller')
+const { getWapById, addWap, updateWap, removeWap, getWaps, getCmpById, getCmpsByType, addWapCmp, updateWapCmp, removeWapCmp, increaseSiteViews } = require('./wap.controller')
 const router = express.Router()
 
 // middleware that is specific to this router
@@ -15,6 +15,7 @@ router.get('/:cmpId/cmp', getCmpById)
 router.get('/:type/cmps', getCmpsByType)
 router.post('/', requireAuth, addWap)
 router.put('/:id', requireAuth, updateWap)
+router.put('/:id/increaseview', requireAuth, increaseSiteViews)
 router.delete('/:id', requireAuth, removeWap)
 router.post('/:id/cmp', addWapCmp)
 router.put('/:id/cmp', updateWapCmp)

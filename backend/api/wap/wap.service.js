@@ -7,7 +7,7 @@ const ObjectId = require('mongodb').ObjectId
 async function query(filterBy ={isDemo: '', isPublished:'', cmpId: '', wapName:'', username:''}) {
     try {
         const criteria = {}
-        console.log('filterBy:',filterBy)
+        // console.log('filterBy:',filterBy)
         // console.log('filterBy.isDemo:', filterBy.isDemo)
         if(filterBy.isDemo && filterBy.isDemo === 'true') criteria.isDemo = true
         if(filterBy.isPublished && filterBy.isPublished === 'true') criteria.isPublished = { $eq: true }
@@ -72,8 +72,24 @@ async function update(wap) {
         const wapToUpdate = {...wap}
         delete wapToUpdate._id
         const collection = await dbService.getCollection('wap')
+        console.log('wapToUpdate.viewsCount:',wapToUpdate.viewsCount)
         // console.log('wap._id:', wap._id)
         await collection.updateOne({ _id: ObjectId(wap._id) }, { $set: wapToUpdate })
+        return wap
+    } catch (err) {
+        logger.error(`cannot update wap ${wap._id}`, err)
+        throw err
+    }
+}
+
+async function updateWithId(wap) {
+    try {
+        // const wapToUpdate = {...wap}
+        const collection = await dbService.getCollection('wap')
+        console.log('wap:',wap)
+        // console.log('wapToUpdate.viewsCount:',wapToUpdate.viewsCount)
+        // console.log('wap._id:', wap._id)
+        await collection.updateOne({ _id: ObjectId(wap._id) }, { $set: wap })
         return wap
     } catch (err) {
         logger.error(`cannot update wap ${wap._id}`, err)
@@ -156,7 +172,8 @@ module.exports = {
     update,
     addWapCmp,
     removeWapCmp,
-    updateWapCmp
+    updateWapCmp,
+    updateWithId
     // addWapMsg,
     // removeWapMsg
 }
