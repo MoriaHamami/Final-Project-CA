@@ -11,7 +11,6 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { wapService } from '../services/wap.service.js'
-import { utilService } from '../services/util.service.js'
 import { Loader } from './loader'
 
 
