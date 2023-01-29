@@ -120,19 +120,19 @@ window.cs = wapService
 // }
 
 // FRONT ONLY
-// console.log('JSON.stringify(getWapDemos()):', JSON.stringify(getWapDemos()))
-// function getWapDemos() {
-//     return [
-//         emptyWapDemo,
-//         wapDemo5,
-//         wapDemo6,
-//         wapDemo4,
-//         wapDemo3,
-//         wapDemo1,
-//         wapDemo2,
-//         wapDemo7,
-//     ]
-// }
+console.log('JSON.stringify(getWapDemos()):', JSON.stringify(getWapDemos()))
+function getWapDemos() {
+    return [
+        emptyWapDemo,
+        wapDemo5,
+        wapDemo6,
+        wapDemo4,
+        wapDemo3,
+        wapDemo1,
+        wapDemo2,
+        wapDemo7,
+    ]
+}
 
 // FRONT ONLY
 // function getCmpTypes() {

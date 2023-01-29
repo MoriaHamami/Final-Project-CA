@@ -6,6 +6,7 @@ import { height } from '@mui/system';
 import { setDisplaySize, updateWap } from '../../store/wap.actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
+// import { Loader } from './loader'
 
 export function EditorHeader({ wap }) {
     // const [displayType, setDisplayType] = useState('desktop')
@@ -22,10 +23,10 @@ export function EditorHeader({ wap }) {
     }
 
     const showInvalidPublish = () => {
-        toast.warning('please login to publish  !', {
+        toast.warning('Please login to publish  !', {
             position: toast.POSITION.BOTTOM_RIGHT
-        });
-    };
+        })
+    }
 
 
     const onPublishClick = () => {
@@ -65,9 +66,11 @@ export function EditorHeader({ wap }) {
                     <span onClick={() => onSetDisplaySize('420px')} className={`material-symbols-outlined editor-action ${displaySize === '420px' ? 'active' : ''} `}>phone_iphone</span>
                     {/* <FontAwesomeIcon className='editor-action' icon={faDisplay} />
                 <FontAwesomeIcon className='editor-action' icon={faTabletScreenButton} />
-                <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} /> */}
+            <FontAwesomeIcon className='editor-action' icon={faMobileScreenButton} /> */}
                 </div>
             </div>
+            {/* <span class="saving-loader">Saving</span> */}
+
             <div className='publish-container' style={{ display: isVisible ? 'block' : 'none' }}>
                 <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
                 <button onClick={changeWapName} className='publish-btn'>Save</button>

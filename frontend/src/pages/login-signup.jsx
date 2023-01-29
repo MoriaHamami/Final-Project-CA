@@ -23,8 +23,8 @@ export function LoginSignup() {
     const showLogintFailedMessage = () => {
         toast.error('Login failed', {
             position: toast.POSITION.BOTTOM_RIGHT
-        });
-    };
+        })
+    }
 
     function handleChange({ target }) {
         let { value, name: field } = target

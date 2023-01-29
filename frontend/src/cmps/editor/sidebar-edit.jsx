@@ -22,7 +22,6 @@ export function SidebarEdit({ handleWapEdit, chosenComponent }) {
     return <div className='tools-container edit-container'>
         {/* <p>Editing component: {chosenComponent}</p> */}
         {/* <p>Editing container: {selectedElement}</p> */}
-
         {(selectedElement.type === 'txt' ||
             selectedElement.type === 'input' ||
             selectedElement.type === 'btn') &&

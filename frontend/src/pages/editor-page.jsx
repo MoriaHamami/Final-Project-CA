@@ -41,16 +41,16 @@ export function Editor() {
     const reOrder = (startIdx, endIdx) => {
         removeCmp(wap, startIdx, endIdx)
     }
-    const showAddCmpMessage = () => {
-        toast.success('Section added', {
-            position: toast.POSITION.BOTTOM_RIGHT
-        });
-    };
+    // const showAddCmpMessage = () => {
+    //     toast.success('Section added', {
+    //         position: toast.POSITION.BOTTOM_RIGHT
+    //     })
+    // }
     const showCmpDelete = () => {
-        toast.success('Delete Success  !', {
+        toast.success('Section deleted', {
             position: toast.POSITION.BOTTOM_RIGHT
-        });
-    };
+        })
+    }
 
 
     const onEnd = (result) => {
@@ -58,7 +58,7 @@ export function Editor() {
         if (result.source.droppableId === 'from-sidebar-add' && result.destination.droppableId === 'editor') {
             const currCmp = JSON.parse(result.draggableId)
             const destIdx = result.destination.index
-            showAddCmpMessage()
+            // showAddCmpMessage()
             return addCmpToBoard(currCmp, destIdx)
         }
         if (result.destination.droppableId === 'delete') {

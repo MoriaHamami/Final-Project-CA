@@ -19,10 +19,10 @@ export function SidebarUrl({ title, propertyName, onChange }) {
     }, [selectedElement])
 
     const showImgUploadMsg = () => {
-        toast.success('Image upload Success  !', {
-            position: toast.POSITION.TOP_RIGHT
-        });
-    };
+        toast.success('Image uploaded successfully', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        })
+    }
 
     function handleChange({ target }) {
         setUrl(target.value)
