@@ -7,7 +7,7 @@ const logger = require('../../services/logger.service')
 async function getWaps(req, res) {
   try {
     logger.debug('Getting Waps')
-    const filterBy  = req.query
+    const filterBy = req.query
     // console.log('req.query:', req.query)
     const waps = await wapService.query(filterBy)
     // console.log('waps:', waps)
@@ -39,7 +39,8 @@ async function addWap(req, res) {
 
   try {
     const wap = req.body
-    if(loggedinUser._id) wap.createdBy = loggedinUser
+    console.log('loged in:  ', loggedinUser)
+    if (loggedinUser._id) wap.createdBy = loggedinUser
     wap.isDemo = false
     const addedWap = await wapService.add(wap)
     res.json(addedWap)
@@ -74,7 +75,7 @@ async function getCmpById(req, res) {
   try {
     const cmpId = req.params.cmpId
     // console.log('wapId:', wapId)
-    const filterBy = {cmpId}
+    const filterBy = { cmpId }
     const wap = await wapService.query(filterBy)
     const cmp = wap[0].cmps.find(cmp => cmp.id === cmpId)
     // console.log(cmp);
@@ -102,23 +103,23 @@ async function getCmpsByType(req, res) {
   try {
     // logger.debug('Getting Waps')
     let type = req.params.type
-    if(type === 'galleries') type = 'wap-gallery'
-    else if(type === 'about') type = 'wap-about'
+    if (type === 'galleries') type = 'wap-gallery'
+    else if (type === 'about') type = 'wap-about'
     else type = 'wap-' + type.slice(0, -1)
     console.log('type:', type)
     // const { filterBy } = req.query.params
-    const filterBy = {isDemo: 'true'}
+    const filterBy = { isDemo: 'true' }
     const waps = await wapService.query(filterBy)
-    console.log('waps:',waps.length)
+    console.log('waps:', waps.length)
     ////////
     // for(const i = 0; i < wap.cmps.length; i++) {
 
     // }
     const cmps = []
     waps.map(wap => {
-        wap.cmps?.find(cmp => {
-          if(type === cmp.type) cmps.push(cmp)
-        })
+      wap.cmps?.find(cmp => {
+        if (type === cmp.type) cmps.push(cmp)
+      })
     })
     res.json(cmps)
   } catch (err) {
@@ -233,7 +234,7 @@ async function removeWapCmp(req, res) {
   // const {loggedinUser} = req
   try {
     const wapId = req.params.id
-    const {cmpId} = req.params
+    const { cmpId } = req.params
     // const cmpId = req.params.cmpId 
     // console.log('wapId:', wapId)
     // console.log('wapId:', cmpId)

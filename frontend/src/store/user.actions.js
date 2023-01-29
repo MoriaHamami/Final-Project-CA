@@ -26,20 +26,22 @@ export async function removeUser(userId) {
     }
 }
 
-export function loginWithAuth(userData) {
+export async function loginWithAuth(userData) {
     // console.log('userData:',)
     try {
-        console.log('userrrr:', userData)
-        store.dispatch({
-            type: SET_USER,
-            user: {
-                fullname: userData.data.name,
-                imgUrl: userData.data.picture,
-                username: userData.data.email,
-                _id: userData.data.email,
-            }
+        let user = {
+            fullname: userData.data.name,
+            imgUrl: userData.data.picture,
+            username: userData.data.email,
+            _id: userData.data.email,
+        }
+        console.log('userrrr:', user)
 
+        // await userService.login(user)
+        store.dispatch({
+            type: SET_USER, user
         })
+        // userService.saveLocalUser(user)
     } catch (err) {
         console.log('Cannot login', err)
         throw err

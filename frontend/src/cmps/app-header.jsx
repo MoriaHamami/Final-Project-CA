@@ -34,7 +34,6 @@ export function AppHeader() {
         setAnchorEl(null)
     }
 
-
     return (
         <header className="app-header">
             <div className="header-txt-container">
