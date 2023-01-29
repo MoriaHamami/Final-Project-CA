@@ -47,7 +47,7 @@ export function Editor() {
         });
     };
     const showCmpDelete = () => {
-        toast.success('Delete Success  !', {
+        toast.success('Section removed  ', {
             position: toast.POSITION.BOTTOM_RIGHT
         });
     };
@@ -183,7 +183,7 @@ export function Editor() {
         // console.log('element:', element)
     }
 
-if(!wap) return <Loader />
+    if (!wap) return <Loader />
 
 
     return (
