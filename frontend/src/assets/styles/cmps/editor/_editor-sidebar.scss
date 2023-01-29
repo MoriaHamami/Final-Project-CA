@@ -58,7 +58,7 @@
             align-items: center;
             margin: calc(1rem - 10px) 0;
             padding: 3px 9px;
-            @media (min-width: $narrow-breakpoint) {
+            @media (max-width: $narrow-breakpoint) {
                 margin: 0 calc(1rem - 10px);
                 padding: 3px 9px;
     

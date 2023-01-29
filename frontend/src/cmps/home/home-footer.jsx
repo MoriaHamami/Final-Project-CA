@@ -29,7 +29,7 @@ export function HomeFooter() {
             </div>
 
 
-            <button className='footer-btn'><Link to="/WapDemos">Start now</Link></button>
+            <button className='footer-btn'><Link to="/WapDemos/#/">Start now</Link></button>
 
         </div>
         

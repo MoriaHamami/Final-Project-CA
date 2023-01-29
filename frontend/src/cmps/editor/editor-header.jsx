@@ -70,6 +70,7 @@ export function EditorHeader({ wap }) {
                 </div>
             </div>
             {/* <span class="saving-loader">Saving</span> */}
+            <ToastContainer autoClose={2000} />
 
             <div className='publish-container' style={{ display: isVisible ? 'block' : 'none' }}>
                 <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
@@ -79,7 +80,6 @@ export function EditorHeader({ wap }) {
                 <Link key="/preview" to={`/preview/${wap._id}`}><button className='preview-btn'>Preview</button></Link>
                 <button onClick={onPublishClick} className='publish-btn'>Publish</button>
             </div>
-            <ToastContainer autoClose={2000} />
         </header >
     )
 }

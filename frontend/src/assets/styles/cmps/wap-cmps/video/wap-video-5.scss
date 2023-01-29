@@ -5,6 +5,10 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    .videos-container{
+        margin: 0;
+
+    }
     
     @media (max-width: $narrow-breakpoint) {
         padding: 2rem $narrow-padding 3.5rem;

@@ -29,7 +29,7 @@ export function HomePreview() {
       // let wap = wapService.getWapDemoById(id)
       // const savedWapId = await saveWap(wap)
       const savedWapId = await addWap(wap)
-      navigate(`/editor/${savedWapId}`)
+      navigate(`/editor/${savedWapId}/#`)
     } catch (err) {
       console.log('Had issues in wap editor', err)
     }

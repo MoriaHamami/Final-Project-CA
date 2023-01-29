@@ -24,7 +24,7 @@ export function HomeHero() {
                     <h1 className='hero-title'>Turning ideas into <span>Websites</span></h1>
                     <p className='hero-txt'>Unleash your creativity and build your own website with ease</p>
 
-                    <Link to="/WapDemos">
+                    <Link to="/WapDemos/#">
                         <button className='hero-btn'>Create new site</button>
                     </Link>
                 </div>
