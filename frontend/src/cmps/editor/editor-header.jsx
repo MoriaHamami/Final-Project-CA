@@ -54,7 +54,7 @@ export function EditorHeader({ wap }) {
     return (
         <header className="editor-header">
             <div className='user-actions-container'>
-                <PublishModal currWap={wap} />
+                <PublishModal currWap={wap}/>
 
                 {/* <div className="editor-actions">
                     <span className="material-symbols-outlined editor-action">undo</span>
