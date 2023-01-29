@@ -1,4 +1,4 @@
-import { storageService } from './async-storage.service'
+// import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -12,6 +12,7 @@ export const userService = {
     getUsers,
     getById,
     remove,
+    googleLogin,
     // update,
     // changeScore,
     getEmptyCredentials
@@ -52,17 +53,33 @@ function remove(userId) {
 async function login(userCred) {
     // const users = await storageService.query('user')
     // const user = users.find(user => user.username === userCred.username && user.password === userCred.password)
-    try{
+    try {
         const user = await httpService.post('auth/login', userCred)
         if (user) {
             // socketService.login(user._id)
             console.log('user:', user)
             return saveLocalUser(user)
         }
-    }catch(err){
+    } catch (err) {
         console.dir(err)
     }
 }
+
+async function googleLogin(userCred) {
+    // const users = await storageService.query('user')
+    // const user = users.find(user => user.username === userCred.username && user.password === userCred.password)
+    try {
+        const user = await httpService.post('auth/google-login', userCred)
+        if (user) {
+            // socketService.login(user._id)
+            console.log('user:', user)
+            return saveLocalUser(user)
+        }
+    } catch (err) {
+        console.dir(err)
+    }
+}
+
 
 async function signup(userCred) {
     // userCred.score = 10000
