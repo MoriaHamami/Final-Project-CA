@@ -183,7 +183,7 @@ export function Editor() {
         // console.log('element:', element)
     }
 
-if(!wap) return <Loader />
+    if (!wap) return <Loader />
 
 
     return (
