@@ -157,7 +157,7 @@ function getWapDemos() {
 //     return cmpsToReturn
 // }
 
-async function query(filterBy = {isPublished: '', isDemo: '', cmpId: '', wapName: '', username:''}) {
+async function query(filterBy = { isPublished: '', isDemo: '', cmpId: '', wapName: '', username: '' }) {
     const queryParams = `?isPublished=${filterBy.isPublished}&isDemo=${filterBy.isDemo}&cmpId=${filterBy.cmpId}&wapName=${filterBy.wapName}&username=${filterBy.username}`
     // return storageService.query(STORAGE_KEY)
     // console.log('filterBy:', filterBy)
@@ -248,7 +248,7 @@ function getCmpTypes() {
 
 // DONE
 function getThemes() {
-    
+
     return [
         {
             id: utilService.makeId(),
@@ -457,7 +457,7 @@ function findCmpIdx(parentCmp, cmp) {
 // VVV query,==> getWaps
 // VVV save, ==> addWap && updateWap
 // VVV getWapById,==> ''
-// VVV getCmpById,==> '' 
+// VVV getCmpById,==> ''
 // vvv removeWap, ==>''
 // XXXXXXXXXXXXXXaddWapCmp,==> '' (To remove in back?)
 // XXXXXXXXXXXXXXupdateWapCmp,==> ''

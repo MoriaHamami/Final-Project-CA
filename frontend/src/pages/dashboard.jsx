@@ -12,6 +12,7 @@ import { Loader } from './loader'
 
 export function Dashboard() {
     const user = useSelector((storeState => storeState.userModule.user))
+    console.log('user2222', user)
     const [userPublishedWaps, setUserPublishedWaps] = useState([])
     const [userDraftWaps, setUserDraftWaps] = useState([])
     const [currWap, setCurrWap] = useState(null)
@@ -45,7 +46,7 @@ export function Dashboard() {
 
 
 
-if(!user) return <Loader />
+    if (!user) return <Loader />
 
 
     return (

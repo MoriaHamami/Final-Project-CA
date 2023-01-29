@@ -56,7 +56,7 @@ async function increaseSiteViews(req, res) {
   if (!wap.viewsCount) wap.viewsCount = 0
   wap.viewsCount++
   const updatedWaps = await wapService.update(wap)
-  console.log('updatedWaps:',updatedWaps)
+  console.log('updatedWaps:', updatedWaps)
   res.json(updatedWaps)
 
 }
@@ -121,7 +121,7 @@ async function getCmpsByType(req, res) {
     // const { filterBy } = req.query.params
     const filterBy = { isDemo: 'true' }
     const waps = await wapService.query(filterBy)
-    // console.log('waps:', waps.length)
+    console.log('waps:', waps.length)
     ////////
     // for(const i = 0; i < wap.cmps.length; i++) {
 

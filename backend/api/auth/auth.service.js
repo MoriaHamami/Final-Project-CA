@@ -8,7 +8,8 @@ module.exports = {
     signup,
     login,
     getLoginToken,
-    validateToken
+    validateToken,
+    signupGoogle,
 }
 
 async function login(username, password) {
@@ -24,9 +25,9 @@ async function login(username, password) {
     delete user.password
     return user
 }
-   
 
-async function signup({username, password, fullname, imgUrl}) {
+
+async function signup({ username, password, fullname, imgUrl }) {
     const saltRounds = 10
 
     logger.debug(`auth.service - signup with username: ${username}, fullname: ${fullname}`)
@@ -37,9 +38,18 @@ async function signup({username, password, fullname, imgUrl}) {
 }
 
 
+async function signupGoogle({ username, fullname, imgUrl }) {
+    // const saltRounds = 10
+    logger.debug(`auth.service - signup with username: ${username}, fullname: ${fullname}`)
+    if (!username || !fullname) return Promise.reject('fullname and username  are required!')
+    // const hash = await bcrypt.hash(password, saltRounds)
+    return userService.add({ username, fullname, imgUrl })
+}
+
+
 function getLoginToken(user) {
-    const userInfo = {_id : user._id, fullname: user.fullname, username: user.username}
-    return cryptr.encrypt(JSON.stringify(userInfo))    
+    const userInfo = { _id: user._id, fullname: user.fullname, username: user.username }
+    return cryptr.encrypt(JSON.stringify(userInfo))
 }
 
 function validateToken(loginToken) {
@@ -48,7 +58,7 @@ function validateToken(loginToken) {
         const loggedinUser = JSON.parse(json)
         return loggedinUser
 
-    } catch(err) {
+    } catch (err) {
         console.log('Invalid login token')
     }
     return null
