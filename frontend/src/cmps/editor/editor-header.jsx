@@ -30,6 +30,7 @@ export function EditorHeader({ wap }) {
     }
 
 
+
     const onPublishClick = () => {
         if (!user) {
             return showInvalidPublish()

@@ -11,19 +11,17 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { wapService } from '../services/wap.service.js'
+// import { socketService } from '../services/socket.service'
 import { Loader } from './loader'
 
 
 
 export function Editor() {
-    const wap = useSelector((storestate) => storestate.wapModule.wap)
+    const { wap, isCollabMode } = useSelector((storestate) => storestate.wapModule)
     const selectedCmpId = useSelector((storestate) => storestate.wapModule.selectedCmpId)
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
     const [isOpenMenu, setIsOpenMenu] = useState(false)
     const [editOpt, setEditOpt] = useState('')
-    const [isHoverTrash, setisHoverTrash] = useState(false)
-
-
     const [isDragging, setIsDragging] = useState(false)
     const navigate = useNavigate()
     const { wapId } = useParams()
@@ -36,6 +34,14 @@ export function Editor() {
             navigate('/WapDemos')
         }
     }, [])
+
+
+
+    useEffect(() => {
+
+    }, [isCollabMode])
+
+
 
     const reOrder = (startIdx, endIdx) => {
         removeCmp(wap, startIdx, endIdx)
