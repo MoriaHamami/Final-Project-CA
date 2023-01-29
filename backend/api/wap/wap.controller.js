@@ -35,11 +35,10 @@ async function getWaps(req, res) {
 async function addWap(req, res) {
   const { loggedinUser } = req
 
-  console.log('loggedinUser:', loggedinUser)
+  // console.log('loggedinUser:', loggedinUser)
 
   try {
     const wap = req.body
-    console.log('loged in:  ', loggedinUser)
     if (loggedinUser._id) wap.createdBy = loggedinUser
     wap.isDemo = false
     const addedWap = await wapService.add(wap)
@@ -48,6 +47,18 @@ async function addWap(req, res) {
     logger.error('Failed to add wap', err)
     res.status(500).send({ err: 'Failed to add wap' })
   }
+}
+
+
+async function increaseSiteViews(req, res) {
+  const wap = req.body
+  // console.log('wap from increase function:', wap)
+  if (!wap.viewsCount) wap.viewsCount = 0
+  wap.viewsCount++
+  const updatedWaps = await wapService.update(wap)
+  console.log('updatedWaps:', updatedWaps)
+  res.json(updatedWaps)
+
 }
 
 
@@ -106,7 +117,7 @@ async function getCmpsByType(req, res) {
     if (type === 'galleries') type = 'wap-gallery'
     else if (type === 'about') type = 'wap-about'
     else type = 'wap-' + type.slice(0, -1)
-    console.log('type:', type)
+    // console.log('type:', type)
     // const { filterBy } = req.query.params
     const filterBy = { isDemo: 'true' }
     const waps = await wapService.query(filterBy)
@@ -146,7 +157,7 @@ async function getCmpsByType(req, res) {
 // WORKS
 async function updateWap(req, res) {
   const { loggedinUser } = req
-  console.log('loggedinUser:', loggedinUser)
+  // console.log('loggedinUser:', loggedinUser)
   // console.log('req:', req)
   try {
     const wap = req.body
@@ -268,7 +279,8 @@ module.exports = {
   removeWap,
   addWapCmp,
   updateWapCmp,
-  removeWapCmp
+  removeWapCmp,
+  increaseSiteViews
 }
 // getWaps, ==> query(f)
 // getWapById,==> ''
