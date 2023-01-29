@@ -5,7 +5,7 @@ export const wapHero1 = {
   type: 'wap-hero',
   name: 'wap-hero-1',
   themePalette: 'third',
-  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674764160/Webix/wap-hero-1_v9mte8.jpg',
+  imgUrl: 'https://res.cloudinary.com/dvnxslwcz/image/upload/v1674926444/Webix/wap-hero-1-_2_-transformed_an6lfh.jpg',
   info: {
     title: { txt: 'Mario', id: utilService.makeId(), style: { fontWeight: '600', fontSize: '2em' }, type: 'txt', key: 'title' },
     subtitle: { txt: 'PIZZA PLACE', id: utilService.makeId(), style: { fontSize: '3.5em' }, type: 'txt', key: 'subtitle' },
@@ -14,8 +14,8 @@ export const wapHero1 = {
   },
   // theme: 'theme-header-happy',
   style: {
-    backgroundImage: 'url("https://res.cloudinary.com/dimirmc9j/image/upload/v1674028332/wap-hero-background-1_ydwwdf.jpg")',
-    fontFamily: 'fe-serif',
+    backgroundImage: 'url("https://res.cloudinary.com/dvnxslwcz/image/upload/v1674926444/Webix/wap-hero-1-_2_-transformed_an6lfh.jpg")',
+    fontFamily: 'mont-heavy ',
     // backgroundColor: 'red',
   }
 }

@@ -3,6 +3,7 @@ import MenuItem from '@mui/material/MenuItem'
 import { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { uploadService } from '../../../services/upload.service'
+import { ToastContainer, toast } from 'react-toastify';
 
 export function SidebarUrl({ title, propertyName, onChange }) {
     const [url, setUrl] = useState('')
@@ -11,12 +12,17 @@ export function SidebarUrl({ title, propertyName, onChange }) {
 
     const selectedElement = useSelector((storestate) => storestate.wapModule.selectedElement)
 
-    console.log('selectedElement:', selectedElement)
 
     useEffect(() => {
         const url = selectedElement?.url ? selectedElement?.url : ('')
         setUrl(url)
     }, [selectedElement])
+
+    const showImgUploadMsg = () => {
+        toast.success('Image uploaded successfully', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        })
+    }
 
     function handleChange({ target }) {
         setUrl(target.value)
@@ -37,6 +43,7 @@ export function SidebarUrl({ title, propertyName, onChange }) {
         const imgUpload = await uploadService.uploadImg(e)
         setUrl(imgUpload.url)
         onChange(propertyName, imgUpload.url)
+        showImgUploadMsg()
         setSelectedFile(null)
     }
 
@@ -66,5 +73,6 @@ export function SidebarUrl({ title, propertyName, onChange }) {
             title="Embedded youtube"
         />}
         <label htmlFor='upload-file' className='upload-url-btn'><span class="material-symbols-outlined upload-icon">cloud_upload</span> upload</label>
+        <ToastContainer autoClose={1000} />
     </div>
 }
