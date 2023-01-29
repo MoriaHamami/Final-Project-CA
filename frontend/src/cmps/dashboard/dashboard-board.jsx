@@ -1,11 +1,16 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { wapService } from '../../services/wap.service'
+import { utilService } from '../../services/util.service'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { saveWap, setDisplaySize } from '../../store/wap.actions';
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle'
+import EventIcon from '@mui/icons-material/Event'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import PreviewIcon from '@mui/icons-material/Preview'
 import ErrorIcon from '@mui/icons-material/Error';
+import BrowserUpdatedIcon from '@mui/icons-material/BrowserUpdated';
 // import React from 'react';
 import {
     Chart as ChartJS,
@@ -21,7 +26,6 @@ import { Line } from 'react-chartjs-2';
 // import faker from 'faker';
 
 
-import { utilService } from '../../services/util.service'
 import { PublishModal } from '../publish-modal'
 
 
@@ -44,7 +48,7 @@ export function DashboardBoard({ currWap }) {
 
 
 
-    const labels = ['August', 'September', 'October', 'November', 'December', 'January', 'February',];
+    const labels = ['20/01', '21/01', '22/01', '23/01', '24/01', '25/01', '26/01','27/01', '28/01', '29/01', '30/01','31/01'];
 
     const options = {
         responsive: true,
@@ -54,7 +58,7 @@ export function DashboardBoard({ currWap }) {
             },
             title: {
                 display: true,
-                text: 'Chart.js Line Chart',
+                text: 'Views per day',
             },
         },
     }
@@ -63,16 +67,10 @@ export function DashboardBoard({ currWap }) {
         labels,
         datasets: [
             {
-                label: 'Dataset 1',
-                data: labels.map(() => 100),
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-            },
-            {
-                label: 'Dataset 2',
-                data: labels.map(() => 150),
-                borderColor: 'rgb(53, 162, 235)',
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                label: 'number of views',
+                data: labels.map(() => utilService.getRandomIntInclusive(0,20)),
+                borderColor: '#3899ec',
+                backgroundColor: '#3899ec',
             },
         ],
     }
@@ -86,7 +84,7 @@ export function DashboardBoard({ currWap }) {
                         <div className='dashboard-board-header'>
                             <div className='flex published-msg tomato'>
                                 <ErrorIcon />
-                                <span>this website isn't published yet</span>
+                                <span>This website isn't published yet</span>
                             </div>
                             <img src={currWap.imgUrl} />
                             <div className='btn-container'>
@@ -116,7 +114,6 @@ export function DashboardBoard({ currWap }) {
                             </div>
 
                         </div>
-
                         {/* <div style={{ backgroundColor: 'red' }} > <span>created at: </span>{utilService.getFormattedDate(currWap.createdAt)}</div>
                     <div style={{ backgroundColor: 'lightblue' }}><span>Last update at: </span>{utilService.timeSince(currWap.createdAt)}</div>
                     <div style={{ backgroundColor: 'green' }}><span>Website name: </span>{currWap.name}</div> */}
@@ -127,7 +124,46 @@ export function DashboardBoard({ currWap }) {
                 </div>}
 
                 {currWap?.isPublished && <div>
-                    <Line style={{ height: '300px' }} options={options} data={data} />;
+                    <Line style={{ height: '320px', marginTop:'0' }} options={options} data={data} />
+
+                    <div className='cards-container'>
+                        <div className='total-subscribers details-container'>
+                            <div className='dashboard-icon-container'>
+                                <SupervisedUserCircleIcon style={{}} />
+                            </div>
+                            <div className='text'>
+                                <span>Total subscribers</span>
+                                <span>3</span>
+                            </div>
+                        </div>
+                        <div className='total-views details-container'>
+                            <div className='dashboard-icon-container'>
+                                <PreviewIcon />
+                            </div>
+                            <div className='text'>
+                                <span>Total site views</span>
+                                <span>6</span>
+                            </div>
+                        </div>
+                        <div className='creates-at details-container'>
+                            <div className='dashboard-icon-container'>
+                                <EventIcon />
+                            </div>
+                            <div className='text'>
+                                <span>Creation date</span>
+                                <span>{utilService.getFormattedDate(currWap.createdAt)}</span>
+                            </div>
+                        </div>
+                        <div className='creates-at details-container'>
+                            <div className='dashboard-icon-container'>
+                                <BrowserUpdatedIcon />
+                            </div>
+                            <div className='text'>
+                                <span>Latest update</span>
+                                <span>{utilService.timeSince(currWap.updatedAt)}</span>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>}
 

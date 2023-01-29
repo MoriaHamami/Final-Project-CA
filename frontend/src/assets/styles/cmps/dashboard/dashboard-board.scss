@@ -1,8 +1,8 @@
 .dashboard-board {
     margin-top: 30px;
-    
-    
-    .dashboard-data-container{
+
+
+    .dashboard-data-container {
         display: flex;
         height: 400px;
         gap: 200px;
@@ -17,27 +17,30 @@
 
         .published-msg {
             gap: 10px;
-            max-width: 270px;
+            // max-width: 270px;
 
-            &.tomato{
+            &.tomato {
                 color: tomato;
             }
 
-            &.success{
-                color: rgb(107, 233, 107);
+            &.success {
+                color: rgb(96, 198, 96);
             }
         }
-        
-        img{
-            max-width: 200px;
+
+        img {
+            max-width: 220px;
+            margin-top: 20px;
         }
 
 
 
-        .btn-container{
+        .btn-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            margin-top: 22px;
+
             button {
                 font-size: 0.75rem;
                 border-radius: 0.3em;
@@ -47,22 +50,57 @@
                 // min-width: 4rem;
                 margin-inline-end: 0;
             }
-    
+
             .publish-btn {
                 border: 1px solid $clr1;
                 //     background-color: $bgc-almost-white;
             }
-    
+
             .edit-btn {
                 border: 1px solid $clr1;
                 background: none;
                 color: $clr1;
             }
-    
+
             button:hover {
                 opacity: 0.5;
             }
-    
+
+        }
+    }
+
+    .cards-container {
+        display: flex;
+        // gap: 30px;
+        justify-content: space-between;
+        text-align: center;
+        margin-top: 60px;
+        
+        .details-container{
+            padding: 1rem;
+            background-color: lighten($clr1, 35%);
+            // background-color: #3898ec22;
+            
+            border-radius: 5px;
+        }
+
+        .dashboard-icon-container{
+            border-radius: 50%;
+            background: linear-gradient(
+                135deg,
+                rgba(16, 57, 150, 0) 0%,
+                #3898ecc5 100%
+              );
+            width: max-content;
+            line-height: 0.8;
+            padding: 0.5rem;
+            margin: 0 auto 10px;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
     }
 

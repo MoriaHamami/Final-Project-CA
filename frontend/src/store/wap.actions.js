@@ -211,21 +211,26 @@ export async function saveCmp(wap, cmp, idx) {
 
 // TO CHECKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 // TODO ADD KEY TO EVERY ELEMENT
-export function saveElement(wap, cmpId, element) {
 
+
+
+
+
+
+
+
+
+
+export function saveElement(wap, cmpId, element) {
     // Get the cmp
     const cmp = wap.cmps.find(cmp => cmp.id === cmpId)
     // Find cmp idx
     const idx = wapService.findCmpIdx(wap, cmp)
     // console.log('cmp action line 136:', wap[idx])
-
     if (cmp.id === element.id) {
         // console.log('cmp:',cmp)
-
         return saveCmp(wap, element, idx)
-
     }
-
     // Update cmp
     if (element.key === 'photos' || element.key === 'inputs' || element.key === 'btns') {
         // Run over the array in in it 
@@ -248,6 +253,22 @@ export function saveElement(wap, cmpId, element) {
     // console.log('cmp action line 158:', cmp)
     saveCmp(wap, cmp, idx)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export function setDisplaySize(displaySize) {
     // return (dispatch) => {
