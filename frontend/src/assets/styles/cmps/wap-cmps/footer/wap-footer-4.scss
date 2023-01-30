@@ -24,4 +24,11 @@
         cursor: pointer;
       }
     }
+
+    
+  @media (max-width: $narrow-breakpoint) {
+    p {
+      display: none;
+    }
+  }
   }
