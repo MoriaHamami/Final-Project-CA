@@ -47,8 +47,6 @@ export function DashboardBoard({ currWap }) {
     const user = useSelector((storeState => storeState.userModule.user))
     const navigate = useNavigate()
     const [viewsStats, setViewsStats] = useState([2, 6, 4, 9, 13, 15, 19, 7, 14, 21, 27, 31])
-    const [siteViews, setSiteViews] = useState(0)
-    const [siteDemoViews, setSiteDemoViews] = useState(0)
 
     useEffect(() => {
         if (!currWap) return
@@ -75,11 +73,8 @@ export function DashboardBoard({ currWap }) {
 
     function onAddedView(value) {
         console.log('value:', value)
-        const sum = getViewsSum() + value
-        // console.log('sum:', sum)
-        setSiteViews(value)
-        setSiteDemoViews(sum)
         setViewsStats((prevState) => {
+            console.log(' prevState[prevState.length - 1]:', prevState[prevState.length - 1])
             prevState[prevState.length - 1] += 1
             return prevState
         })
