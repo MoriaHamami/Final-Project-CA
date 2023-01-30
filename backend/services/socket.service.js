@@ -13,23 +13,32 @@ function setupSocketAPI(http) {
         socket.on('disconnect', socket => {
             logger.info(`Socket disconnected [id: ${socket.id}]`)
         })
-        socket.on('set-site', site => {
-            if (socket.currSite === site) return
-            if (socket.currSite) {
-                socket.leave(socket.currSite)
-                logger.info(`Socket is leaving site ${socket.currSite} [id: ${socket.id}]`)
-            }
-            socket.join(site)
-            socket.currSite = site
+        socket.on('set-site', updatedWapid => {
+            console.log('hey');
+
         })
-        socket.on('add-site-view', viewsCount => {
-            logger.info(`new site view from socket [id: ${socket.id}], emitting to site ${socket.currSite}`)
-            gIo.to(socket.currSite).emit('update-site-views', viewsCount)
+        socket.on('add-site-view', updatedWap => {
+            // console.log('hey', socket.wapId);
+            // if (socket.wapId === updatedWap._id) return
+            // if (socket.wapId) {
+            //     socket.leave(socket.wapId)
+            //     logger.info(`Socket is leaving site ${socket.wapId} [id: ${socket.id}]`)
+            // }
+            // socket.join(updatedWap._id)
+            // socket.wapId = updatedWap._id
+            logger.info(`new site view from socket [id: ${socket.id}], emitting to site ${updatedWap._id}`)
+            // broadcast(updatedWap._id).emit('update-site-views', updatedWap.viewsCount)
+            broadcast({
+                type: 'update-site-views',
+                data: updatedWap.viewsCount,
+                // room: updatedWap._id,
+                userId: socket.id
+            })
         })
         // socket.on('user-watch', userId => {
         //     logger.info(`user-watch from socket [id: ${socket.id}], on user ${userId}`)
         //     socket.join('watching:' + userId)
-            
+
         // })
         socket.on('set-user-socket', userId => {
             logger.info(`Setting socket.userId = ${userId} for socket [id: ${socket.id}]`)
@@ -55,7 +64,7 @@ async function emitToUser({ type, data, userId }) {
     if (socket) {
         logger.info(`Emiting event: ${type} to user: ${userId} socket [id: ${socket.id}]`)
         socket.emit(type, data)
-    }else {
+    } else {
         logger.info(`No active socket for user: ${userId}`)
         // _printSockets()
     }
@@ -65,7 +74,7 @@ async function emitToUser({ type, data, userId }) {
 // Optionally, broadcast to a room / to all
 async function broadcast({ type, data, room = null, userId }) {
     userId = userId.toString()
-    
+
     logger.info(`Broadcasting event: ${type}`)
     const excludedSocket = await _getUserSocket(userId)
     if (room && excludedSocket) {
@@ -107,9 +116,9 @@ module.exports = {
     // set up the sockets service and define the API
     setupSocketAPI,
     // emit to everyone / everyone in a specific room (label)
-    emitTo, 
+    emitTo,
     // emit to a specific user (if currently active in system)
-    emitToUser, 
+    emitToUser,
     // Send to all sockets BUT not the current socket - if found
     // (otherwise broadcast to a room / to all)
     broadcast,

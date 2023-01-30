@@ -43,7 +43,7 @@ export function DashboardBoard({ currWap }) {
         Tooltip,
         Legend
     );
-    
+
     const user = useSelector((storeState => storeState.userModule.user))
     const navigate = useNavigate()
     const [viewsStats, setViewsStats] = useState([2, 6, 4, 9, 13, 15, 19, 7, 14, 21, 27, 31])
@@ -70,7 +70,7 @@ export function DashboardBoard({ currWap }) {
     }
 
     function onAddedView(value) {
-        // console.log('value:', value)
+        console.log('value:', value)
         const sum = getViewsSum() + value
         // console.log('sum:', sum)
         setSiteViews(value)
@@ -83,7 +83,7 @@ export function DashboardBoard({ currWap }) {
 
     function getViewsSum() {
         return viewsStats.reduce((acc, views, index) => {
-            if (index === viewsStats.length-1) return acc
+            if (index === viewsStats.length - 1) return acc
             return acc += views
 
         }, 0)

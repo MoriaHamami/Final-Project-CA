@@ -15,23 +15,21 @@ export function Publish() {
 
   useEffect(() => {
     getWap()
-  //   return () => {
-  //     socketService.off(SOCKET_EVENT_ADD_MSG, addMsg)
-  //     socketService.off(SOCKET_EVENT_REMOVE_MSG, removeMsg)
-  //     socketService.off(SOCKET_EVENT_IS_TYPING, setTypingState)
-  // }
+    //   return () => {
+    //     socketService.off(SOCKET_EVENT_ADD_MSG, addMsg)
+    //     socketService.off(SOCKET_EVENT_REMOVE_MSG, removeMsg)
+    //     socketService.off(SOCKET_EVENT_IS_TYPING, setTypingState)
+    // }
   }, [])
 
 
   async function getWap() {
     try {
-      let currWaps = await loadPublishedWap(wapName)
-      let currWap = currWaps
-      console.log('currWap:', currWap)
-      const updatedWap = await wapService.increaseViewCount(currWaps)
-      socketService.setup()
+      let currWap = await loadPublishedWap(wapName)
+      console.log(currWap);
+      const updatedWap = await wapService.increaseViewCount(currWap)
       socketService.emit(SOCKET_EMIT_SET_SITE, updatedWap._id)
-      socketService.emit(SOCKET_EVENT_ADD_SITE_VIEW, updatedWap.viewsCount)
+      socketService.emit(SOCKET_EVENT_ADD_SITE_VIEW, updatedWap)
       updateWap(updatedWap)
 
     } catch (err) {
