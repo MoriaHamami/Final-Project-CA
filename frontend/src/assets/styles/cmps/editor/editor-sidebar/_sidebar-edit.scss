@@ -6,13 +6,17 @@
     width: 100%;
 
     >* {
-        border-bottom: 0.1px solid rgb(217, 217, 217);
         padding: 10px 3px;
+    }
+    > *:not(:last-child) {
+        border-bottom: 0.1px solid rgb(217, 217, 217);
     }
     .label {
         padding-bottom: 10px;
         padding-right: 2px;
     }
+
+    
     
 }
 

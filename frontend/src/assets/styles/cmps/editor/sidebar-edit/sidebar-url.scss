@@ -1,8 +1,10 @@
 .sidebar-url {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @media (max-width: $narrow-breakpoint) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: min-content;
+        align-self: center;
     }
 
 
@@ -30,11 +32,18 @@
         margin-bottom: 10px;
     }
 
+    form {
+        width: 100%;
+    }
+
     input {
         background-color: lighten($almost-black, 80%);
         border-radius: 2px;
         border: 1px solid $almost-black;
-        padding: 4px;
+        width: 100%;
+        border-radius: 20px;
+        padding: 5px 10px;
+        border: 1px solid lightgray;
 
         &:focus-visible {
             outline: none;
@@ -58,4 +67,8 @@
         }
 
     }
+
 }
+// .tools-container.edit-container {
+//     align-items: center;
+// }

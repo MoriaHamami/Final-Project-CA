@@ -16,7 +16,7 @@ import { useSelector } from 'react-redux'
 export function DynamicCmp(props) {
   const { cmp } = props
 
-  const { displaySize } = useSelector((storeState) => storeState.wapModule)
+  const displaySize = useSelector((storeState) => storeState.wapModule.displaySize)
   const [displayClass, setDisplayClass] = useState('')
 
   useEffect(() => {
