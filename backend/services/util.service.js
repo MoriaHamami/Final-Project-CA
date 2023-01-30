@@ -107,6 +107,8 @@ function randomPastTime() {
   return Date.now() - pastTime
 }
 
+
+
 module.exports = {
   makeId,
   getRandomInt,
@@ -114,5 +116,5 @@ module.exports = {
   generateRandomName,
   timeAgo,
   generateRandomImg,
-  randomPastTime
+  randomPastTime,
 }

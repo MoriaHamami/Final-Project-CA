@@ -1,5 +1,140 @@
-.dashboard{
-    height: 100%;
-    display: flex;
-    gap: 50px;
+// .dashboard{
+//     height: 100%;
+//     // display: flex;
+//     // gap: 50px;
+//     display: grid;
+//     background-color: rgb(228, 227, 227);
+//     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+// }
+
+///////////////////////////////////////////////////
+/// 
+.dashboard {
+    // height: 100px;
+    // width: 100vw;
+    height: calc(100vh - 41px);
+    overflow-y: hidden;
+    display: grid;
+    // grid-template-columns: auto, 1fr, 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "sites-list   dashboard-board";
+
+    background-color: #dddddd;
+    // min-height: 100vh;
 }
+
+// @media (max-width: $narrow-breakpoint) {
+//     .dashboard {
+//         // grid-template-columns: auto, 1fr;
+//         grid-template-rows: repeat(2, 1fr);
+//         grid-template-areas:
+
+//             "sites-list   dashboard-data-container"
+//             "sites-list   views-graph"
+//             "sites-list   cards"
+//             "sites-list   subs-graph";
+//     }
+// }
+
+.dashboard>* {
+    font-size: 1em;
+    font-family: roboto-regular;
+    // font-weight: bold;
+    text-align: center;
+}
+
+// .cards-container {
+//     // background-color: rgb(230, 186, 173);
+//     grid-area: cards;
+// }
+
+// .views-graph {
+//     // background-color: lightblue;
+//     grid-area: views-graph;
+// }
+
+// .subs-graph {
+//     // background-color: rgb(230, 223, 173);
+//     grid-area: subs-graph;
+// }
+
+// .dashboard-data-container {
+//     // background-color: rgb(140, 170, 42);
+//     grid-area: dashboard-data-container;
+// }
+
+.sites-list {
+    // background-color: rgb(42, 110, 170);
+    grid-area: sites-list;
+}
+
+.dashboard-board {
+    // background-color: rgb(42, 110, 170);
+    grid-area: dashboard-board;
+}
+
+/////////////////////////////////////////////////////
+// .dashboard {
+//     // height: 100px;
+//     // width: 100vw;
+//     height: calc(100vh - 41px);
+//     overflow-y: hidden;
+//     display: grid;
+//     // grid-template-columns: auto, 1fr, 1fr;
+//     grid-template-rows: repeat(3, 1fr);
+//     grid-template-areas:
+
+//         "sites-list   dashboard-data-container cards"
+//         "sites-list   views-graph              views-graph"
+//         "sites-list   subs-graph               subs-graph";
+
+//     background-color: #dddddd;
+//     // min-height: 100vh;
+// }
+
+// @media (max-width: $narrow-breakpoint) {
+//     .dashboard {
+//         // grid-template-columns: auto, 1fr;
+//         grid-template-rows: repeat(2, 1fr);
+//         grid-template-areas:
+
+//             "sites-list   dashboard-data-container"
+//             "sites-list   views-graph"
+//             "sites-list   cards"
+//             "sites-list   subs-graph";
+//     }
+// }
+
+// .dashboard>* {
+//     font-size: 1em;
+//     font-family: roboto-regular;
+//     // font-weight: bold;
+//     text-align: center;
+// }
+
+// .cards-container {
+//     // background-color: rgb(230, 186, 173);
+//     grid-area: cards;
+// }
+
+// .views-graph {
+//     // background-color: lightblue;
+//     grid-area: views-graph;
+// }
+
+// .subs-graph {
+//     // background-color: rgb(230, 223, 173);
+//     grid-area: subs-graph;
+// }
+
+// .dashboard-data-container {
+//     // background-color: rgb(140, 170, 42);
+//     grid-area: dashboard-data-container;
+// }
+
+// .sites-list {
+//     // background-color: rgb(42, 110, 170);
+//     grid-area: sites-list;
+// }

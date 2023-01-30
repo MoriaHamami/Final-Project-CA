@@ -4,16 +4,13 @@
     border-right: none;
     font-family: roboto-regular;
 
-
     flex-direction: column-reverse;
     width: 100%;
-
 
     @media (min-width: $narrow-breakpoint) {
         flex-direction: row;
         width: auto;
         height: calc(100vh - 79px);
-
     }
 
     .edit-add-container {
@@ -21,7 +18,6 @@
 
         @media (min-width: $narrow-breakpoint) {
             display: block;
-
         }
 
     }
@@ -31,6 +27,8 @@
     }
 
     .editor-options {
+
+        padding-top:7px;
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -120,6 +118,11 @@
         transition: height 0.2s ease-in-out;
         box-shadow: rgba(0, 0, 0, 0.372) 2px 0 4px -2px;
         z-index: 5;
+
+        @media (max-width: $narrow-breakpoint) {
+            width: 100%;
+            overflow-y: scroll;
+        }
     }
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AppHeader } from '../cmps/app-header'
 import { DashboardSidebar } from '../cmps/dashboard/dashboard-sidebar.jsx'
 import { DashboardBoard } from '../cmps/dashboard/dashboard-board.jsx'
@@ -29,9 +29,10 @@ export function Dashboard() {
             const filterBy = { username: user.username }
             const userWaps = await wapService.query(filterBy)
             // const userWaps = await loadUserWaps(user.username)
-            console.log('userWaps:', userWaps)
+            // console.log('userWaps:', userWaps)
             setUserPublishedWaps(userWaps.filter(wap => wap.isPublished))
             setUserDraftWaps(userWaps.filter(wap => !wap.isPublished))
+            if (userWaps) setCurrWap(userWaps[0])
         } catch (err) {
             console.error(err)
         }
@@ -41,19 +42,66 @@ export function Dashboard() {
         setCurrWap(wap)
     }
 
-    // console.log('currWap:', currWap)
+    // TAKEN FROM BOARD DASHBOARD /////////////////////
 
+    // const user = useSelector((storeState => storeState.userModule.user))
+    // const navigate = useNavigate()
 
+    // function onWebsiteClick() {
+    //     navigate(`/${currWap.name}`)
+    // }
 
-if(!user) return <Loader />
+    // const labels = ['20/01', '21/01', '22/01', '23/01', '24/01', '25/01', '26/01','27/01', '28/01', '29/01', '30/01','31/01'];
+
+    // const options = {
+    //     responsive: true,
+    //     plugins: {
+    //         legend: {
+    //             position: 'top',
+    //         },
+    //         title: {
+    //             display: true,
+    //             text: 'Views per day',
+    //         },
+    //     },
+    // }
+
+    // const data = {
+    //     labels,
+    //     datasets: [
+    //         {
+    //             label: 'number of views',
+    //             data: labels.map(() => utilService.getRandomIntInclusive(0,20)),
+    //             borderColor: '#3899ec',
+    //             backgroundColor: '#3899ec',
+    //         },
+    //     ],
+    // }
+
+    if (!user) return <Loader />
 
 
     return (
         <div>
             <AppHeader />
-            <div className='dashboard'>
-                <DashboardSidebar userPublishedWaps={userPublishedWaps} userDraftWaps={userDraftWaps} selectCurrWap={selectCurrWap} />
+            <div className="dashboard">
+                <div className="sites-list">
+                    <h3>My websites</h3>
+                    <div className="title">Published</div>
+                    {userPublishedWaps && userPublishedWaps.map((wap, idx) => {
+                        return <div className={currWap._id === wap._id ? 'active' : ''} key={idx} onClick={() => selectCurrWap(wap)}>{wap.name}</div>
+                    })}
+                    <div className="title">Edited</div>
+                    {userDraftWaps && userDraftWaps.map((wap, idx) => {
+                        return <div className={currWap._id === wap._id ? 'active' : ''} key={idx} onClick={() => selectCurrWap(wap)}>{wap.name}</div>
+                    })}
+                </div>
+                {/* <DashboardSidebar userPublishedWaps={userPublishedWaps} userDraftWaps={userDraftWaps} selectCurrWap={selectCurrWap} /> */}
                 <DashboardBoard currWap={currWap} />
+                {/* <div className="data-list">
+
+                </div> */}
+
             </div>
         </div >
     )

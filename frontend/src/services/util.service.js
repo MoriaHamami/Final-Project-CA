@@ -7,7 +7,8 @@ export const utilService = {
     saveToStorage,
     loadFromStorage,
     timeSince,
-    getFormattedDate
+    getFormattedDate,
+    getCapitalizedName
 }
 
 function makeId(length = 6) {
@@ -104,4 +105,15 @@ function getFormattedDate(timestamp) {
 
     return dd + '/' + mm + '/' + yyyy;
 
+}
+
+function getCapitalizedName(fullname) {
+    let capName = ''
+    console.log('fullname:', fullname)
+    fullname.split(' ').map(name => {
+        name = name.charAt(0).toUpperCase() + name.substring(1).toLowerCase()
+        capName += name + ' '
+    })
+    console.log('capName:', capName)
+    return capName
 }
