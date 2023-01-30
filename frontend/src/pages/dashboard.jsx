@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { AppHeader } from '../cmps/app-header'
 import { DashboardSidebar } from '../cmps/dashboard/dashboard-sidebar.jsx'
 import { DashboardBoard } from '../cmps/dashboard/dashboard-board.jsx'
@@ -12,10 +12,11 @@ import { Loader } from './loader'
 
 export function Dashboard() {
     const user = useSelector((storeState => storeState.userModule.user))
-    console.log('user2222', user)
+    // console.log('user2222', user)
     const [userPublishedWaps, setUserPublishedWaps] = useState([])
     const [userDraftWaps, setUserDraftWaps] = useState([])
     const [currWap, setCurrWap] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         loadWaps()
@@ -29,6 +30,7 @@ export function Dashboard() {
             // })
             const filterBy = { username: user.username }
             const userWaps = await wapService.query(filterBy)
+            console.log('userWaps:', userWaps)
             // const userWaps = await loadUserWaps(user.username)
             // console.log('userWaps:', userWaps)
             setUserPublishedWaps(userWaps.filter(wap => wap.isPublished))
@@ -79,8 +81,8 @@ export function Dashboard() {
     //     ],
     // }
 
-        if  (!user) return <Loader />
-
+    if (!user) return navigate('/')
+    // if (!currWap) return <Loader />
 
     return (
         <div>

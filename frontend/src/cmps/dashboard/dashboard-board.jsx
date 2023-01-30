@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { wapService } from '../../services/wap.service'
-import { utilService } from '../../services/util.service'
+// import { utilService } from '../../services/util.service'
 import { socketService, SOCKET_EVENT_UPDATE_SITE_VIEWS, SOCKET_EMIT_SET_SITE } from '../../services/socket.service'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
@@ -12,6 +12,8 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PreviewIcon from '@mui/icons-material/Preview'
 import ErrorIcon from '@mui/icons-material/Error';
 import BrowserUpdatedIcon from '@mui/icons-material/BrowserUpdated';
+import { PublishModal } from '../publish-modal'
+import { utilService } from '../../services/util.service'
 
 // import React from 'react';
 import {
@@ -28,8 +30,7 @@ import { Line } from 'react-chartjs-2';
 // import faker from 'faker';
 
 
-import { PublishModal } from '../publish-modal'
-import { utilService } from '../../services/util.service'
+
 
 
 export function DashboardBoard({ currWap }) {
@@ -42,15 +43,22 @@ export function DashboardBoard({ currWap }) {
         Tooltip,
         Legend
     );
+    
     const user = useSelector((storeState => storeState.userModule.user))
     const navigate = useNavigate()
+    const [viewsStats, setViewsStats] = useState([2, 6, 4, 9, 13, 15, 19, 7, 14, 21, 27, 31])
     const [siteViews, setSiteViews] = useState(0)
+    const [siteDemoViews, setSiteDemoViews] = useState(0)
 
     useEffect(() => {
-        if(!currWap) return
-            socketService.emit(SOCKET_EMIT_SET_SITE, currWap._id)
-            socketService.on(SOCKET_EVENT_UPDATE_SITE_VIEWS, setSiteViews)
-        
+        if (!currWap) return
+        socketService.emit(SOCKET_EMIT_SET_SITE, currWap._id)
+        socketService.on(SOCKET_EVENT_UPDATE_SITE_VIEWS, onAddedView)
+        // return () => {
+        //     socketService.off(SOCKET_EVENT_UPDATE_SITE_VIEWS, onAddedView)
+
+        // }
+
     }, [])
 
     function onWebsiteClick() {
@@ -61,15 +69,24 @@ export function DashboardBoard({ currWap }) {
         navigate(`/preview/${currWap._id}`)
     }
 
-    function getStats(initialVal, minDiff, maxDiff) {
-        let stats = [initialVal]
-        let prevNum = initialVal
-        for (let i = 0; i < 12; i++) {
-            const randDiff = utilService.getRandomIntInclusive(minDiff, maxDiff)
-            stats.push(prevNum + randDiff)
-        }
-        console.log('stats:', stats)
-        return stats
+    function onAddedView(value) {
+        // console.log('value:', value)
+        const sum = getViewsSum() + value
+        // console.log('sum:', sum)
+        setSiteViews(value)
+        setSiteDemoViews(sum)
+        setViewsStats((prevState) => {
+            prevState[prevState.length - 1] += 1
+            return prevState
+        })
+    }
+
+    function getViewsSum() {
+        return viewsStats.reduce((acc, views, index) => {
+            if (index === viewsStats.length-1) return acc
+            return acc += views
+
+        }, 0)
     }
 
 
@@ -106,7 +123,7 @@ export function DashboardBoard({ currWap }) {
         datasets: [
             {
                 // label: 'number of views',
-                data: getStats(20, -1, 4),
+                data: viewsStats,
                 borderColor: '#3899ec',
                 backgroundColor: '#3899ec',
             },
@@ -118,7 +135,7 @@ export function DashboardBoard({ currWap }) {
         datasets: [
             {
                 // label: 'number of views',
-                data: getStats(5, 0, 4),
+                data: [0, 1, 1, 3, 4, 6, 8, 11, 12, 14, 16, 17],
                 borderColor: '#3899ec',
                 backgroundColor: '#3899ec',
             },
@@ -126,18 +143,19 @@ export function DashboardBoard({ currWap }) {
     }
 
     function getDatasetSum(dataset) {
-            const datasetSum =  dataset.datasets[0].data.reduce((acc, data) => {
-                acc += data
-                return acc
-            }, 0)
-            return Math.round(datasetSum)
+        const datasetSum = dataset.datasets[0].data.reduce((acc, data) => {
+            acc += data
+            return acc
+        }, 0)
+
+        return Math.ceil(datasetSum)
     }
 
     // console.log( utilService.getCapitalizedName('moi ha'))
     return (
         <div className='dashboard-board'>
             <h2>{utilService.getCapitalizedName(user.fullname)}'s workspace</h2>
-            <div className={`upper-container ${currWap?.isPublished? 'published' : 'unpublished'}`}>
+            <div className={`upper-container ${currWap?.isPublished ? 'published' : 'unpublished'}`}>
 
 
                 <div className='dashboard-data-container'>
@@ -164,7 +182,7 @@ export function DashboardBoard({ currWap }) {
 
                             </div>
                         </div>}
-                            
+
 
                     </div> : <div>
                         <span>No wap to view</span>
@@ -185,18 +203,18 @@ export function DashboardBoard({ currWap }) {
                                 </div>
                                 <div className='text'>
                                     <span>Total subscribers: </span>
-                                    <span>{getDatasetSum(subsData)*1.2}</span>
+                                    <span>{getDatasetSum(subsData) * 2}</span>
                                 </div>
                             </div>
-                        </div>
-                        <div className='total-views details-container'>
-                            <div className='dashboard-icon-container'>
-                                <PreviewIcon />
-                            </div>
-                            <div className='text'>
-                                <span>Total site views</span>
-                                {/* <span>{getDatasetSum(viewsData)*2}</span> */}
-                                <span>{siteViews}</span>
+                            <div className='total-views details-container'>
+                                <div className='dashboard-icon-container'>
+                                    <PreviewIcon />
+                                </div>
+                                <div className='text'>
+                                    <span>Total site views: </span>
+                                    {/* <span>{getDatasetSum(viewsData)*2}</span> */}
+                                    <span>{siteDemoViews}</span>
+                                </div>
                             </div>
                             <div className='creates-at details-container'>
                                 <div className='dashboard-icon-container'>
@@ -221,18 +239,18 @@ export function DashboardBoard({ currWap }) {
                 </div>}
 
             </div>
-                {currWap?.isPublished && <div className='flex justify-center published-msg success'>
-                                    <CheckCircleIcon />
-                                    <span>"{currWap.name}" is published and available on the web!</span>
-                                </div>}
-                {currWap?.isPublished && <div className='flex column' >
-                    <div className="views-graph">
-                        <Line style={{ height: '320px', marginTop: '0' }} options={viewsOpts} data={viewsData} />
-                    </div>
-                    <div className="subs-graph">
-                        <Line style={{ height: '320px', marginTop: '0' }} options={subsOpts} data={subsData} />
-                    </div>
-                </div>}
+            {currWap?.isPublished && <div className='flex justify-center published-msg success'>
+                <CheckCircleIcon />
+                <span>"{currWap.name}" is published and available on the web!</span>
+            </div>}
+            {currWap?.isPublished && <div className='flex column' >
+                <div className="views-graph">
+                    <Line style={{ height: '320px', marginTop: '0' }} options={viewsOpts} data={viewsData} />
+                </div>
+                <div className="subs-graph">
+                    <Line style={{ height: '320px', marginTop: '0' }} options={subsOpts} data={subsData} />
+                </div>
+            </div>}
 
 
         </div >)
