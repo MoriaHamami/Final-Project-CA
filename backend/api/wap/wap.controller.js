@@ -161,7 +161,7 @@ async function updateWap(req, res) {
   // console.log('req:', req)
   try {
     const wap = req.body
-    wap.createdBy = loggedinUser
+    // wap.createdBy = loggedinUser
     wap.updatedAt = Date.now()
     const updatedWap = await wapService.update(wap)
     res.json(updatedWap)
