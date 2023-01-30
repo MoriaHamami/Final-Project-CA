@@ -29,8 +29,6 @@ export function EditorHeader({ wap }) {
         })
     }
 
-
-
     const onPublishClick = () => {
         if (!user) {
             return showInvalidPublish()
@@ -55,7 +53,6 @@ export function EditorHeader({ wap }) {
     return (
         <header className="editor-header">
             <div className='user-actions-container'>
-                <PublishModal currWap={wap}/>
 
                 {/* <div className="editor-actions">
                     <span className="material-symbols-outlined editor-action">undo</span>
@@ -76,13 +73,18 @@ export function EditorHeader({ wap }) {
             {/* <span class="saving-loader">Saving</span> */}
             <ToastContainer autoClose={2000} />
 
-            <div className='publish-container' style={{ display: isVisible ? 'block' : 'none' }}>
+            {/* <div className='publish-container' style={{ display: isVisible ? 'block' : 'none' }}>
                 <input onChange={(e) => setName(e.target.value)} placeholder='Please enter website name:' type={'text'} required />
                 <button onClick={changeWapName} className='publish-btn'>Save</button>
-            </div>
+            </div> */}
+
+
             <div className="site-actions">
                 <Link key="/preview" to={`/preview/${wap._id}`}><button className='preview-btn'>Preview</button></Link>
-                <button onClick={onPublishClick} className='publish-btn'>Publish</button>
+                <div className="editor-modal">
+                    <PublishModal currWap={wap} />
+                </div>
+                {/* <button onClick={onPublishClick} className='publish-btn'>Publish</button> */}
             </div>
         </header >
     )

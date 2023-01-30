@@ -42,22 +42,23 @@
     min-width: 300px;
   }
 
-  .title{
+  .title {
     margin: 0.5rem 0 1rem;
   }
-  
-  input{
+
+  input {
     margin-bottom: 2rem;
     padding: 5px;
     border-radius: 4px;
     border: 1px solid lightgray;
-    &:focus-visible{
+
+    &:focus-visible {
       outline: none;
     }
   }
 
-  .save-btn{
-align-self: center;
+  .save-btn {
+    align-self: center;
   }
 
   .close-modal {
