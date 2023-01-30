@@ -45,5 +45,22 @@
     .logo {
       margin: 0;
     }
+
+    // TO REMOVE AFTER PRES
+    @media (max-width: $narrow-breakpoint) {
+      padding: 25px 17px;
+      .nav-bar{
+        display: none;
+      }
+      .menu-btn {
+        // display: block;
+        // font-size: 2em;
+    
+        // @container (min-width: 720px) {
+        display: block;
+        color: rgb(52, 209, 182);
+        // }
+      }
+    }
   
   }
