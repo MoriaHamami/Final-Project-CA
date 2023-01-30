@@ -20,7 +20,7 @@
         margin: auto;
         text-align: start;
         padding-bottom: 50px;
-       
+
 
         .txt-container {
             max-width: 250px;
@@ -40,6 +40,7 @@
                 border-left: 1.5px dashed rgb(179, 179, 179);
                 width: 0;
                 height: 10rem;
+
             }
         }
 
@@ -54,10 +55,10 @@
         .gallery-title {
             margin-bottom: 2rem;
         }
-        
-        
-      
-        
+
+
+
+
     }
 
 
@@ -67,4 +68,100 @@
         border-bottom: 0.5px solid $almost-black;
         align-self: center;
     }
+
+    @media (max-width: $narrow-breakpoint) {
+
+        // overflow-x: hidden;
+        .wap-gallery-img-container .photo-container {
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        .wap-gallery-img-container .photo-container:nth-of-type(4) {
+            flex-direction: column;
+        }
+
+        .subtitle {
+            font-size: 30px !important;
+        }
+
+        .photo-container:nth-of-type(odd) {
+            display: none;
+        }
+    }
 }
+
+
+// TO RESTORE AFTER PRESENTATION
+
+
+// .wap-gallery-4a {
+//     color: $almost-black;
+//     padding: 8rem $normal-padding 0;
+//     text-align: center;
+
+//     // .container-txt {
+//     //     padding-bottom: 150px;
+//     //     font-size: 2rem;
+//     //     font-weight: 700;
+//     // }
+//     .subtitle {
+//         padding-bottom: 5rem;
+//     }
+
+//     .wap-gallery-img-container {
+//         display: flex;
+//         flex-direction: column;
+//         align-content: center;
+//         gap: 30px;
+//         margin: auto;
+//         text-align: start;
+//         padding-bottom: 50px;
+
+
+//         .txt-container {
+//             max-width: 250px;
+//         }
+
+//         .photo-container {
+//             align-self: center;
+//             display: flex;
+//             align-items: center;
+//             gap: 200px;
+
+//             &:nth-of-type(4) {
+//                 flex-direction: row-reverse;
+//             }
+
+//             &:nth-of-type(odd) {
+//                 border-left: 1.5px dashed rgb(179, 179, 179);
+//                 width: 0;
+//                 height: 10rem;
+//             }
+//         }
+
+//         img {
+//             width: 14rem;
+//             margin: 50px auto;
+//             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+//         }
+
+
+
+//         .gallery-title {
+//             margin-bottom: 2rem;
+//         }
+
+
+
+
+//     }
+
+
+//     button {
+//         background-color: inherit;
+//         padding: 3px 0;
+//         border-bottom: 0.5px solid $almost-black;
+//         align-self: center;
+//     }
+// }
