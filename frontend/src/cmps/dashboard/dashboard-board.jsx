@@ -72,6 +72,7 @@ export function DashboardBoard({ currWap }) {
     }
 
     function onAddedView(value) {
+        // console.log('here');
         console.log('value:', value)
         setViewsStats((prevState) => {
             console.log(' prevState[prevState.length - 1]:', prevState[prevState.length - 1])
