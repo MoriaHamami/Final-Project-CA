@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { wapService } from '../../services/wap.service'
-// import { utilService } from '../../services/util.service'
+import { utilService } from '../../services/util.service'
+import { socketService, SOCKET_EVENT_UPDATE_SITE_VIEWS, SOCKET_EMIT_SET_SITE } from '../../services/socket.service'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { saveWap, setDisplaySize } from '../../store/wap.actions';
@@ -43,9 +44,21 @@ export function DashboardBoard({ currWap }) {
     );
     const user = useSelector((storeState => storeState.userModule.user))
     const navigate = useNavigate()
+    const [siteViews, setSiteViews] = useState(0)
+
+    useEffect(() => {
+        if(!currWap) return
+            socketService.emit(SOCKET_EMIT_SET_SITE, currWap._id)
+            socketService.on(SOCKET_EVENT_UPDATE_SITE_VIEWS, setSiteViews)
+        
+    }, [])
 
     function onWebsiteClick() {
         navigate(`/${currWap.name}`)
+    }
+
+    function onPreviewClick() {
+        navigate(`/preview/${currWap._id}`)
     }
 
     function getStats(initialVal, minDiff, maxDiff) {
@@ -58,6 +71,7 @@ export function DashboardBoard({ currWap }) {
         console.log('stats:', stats)
         return stats
     }
+
 
     const labels = ['20/01', '21/01', '22/01', '23/01', '24/01', '25/01', '26/01', '27/01', '28/01', '29/01', '30/01', '31/01'];
 
@@ -137,7 +151,7 @@ export function DashboardBoard({ currWap }) {
                                 </div>
                                 <div className='btn-container'>
                                     <PublishModal currWap={currWap} />
-                                    <button className='edit-btn' onClick={onWebsiteClick}>Website</button>
+                                    <button className='edit-btn' onClick={onPreviewClick}>Preview</button>
                                     <button className='edit-btn' onClick={() => navigate(`/editor/:${currWap._id}`)}>Edit</button>
                                 </div>
                             </div>
@@ -174,14 +188,15 @@ export function DashboardBoard({ currWap }) {
                                     <span>{getDatasetSum(subsData)*1.2}</span>
                                 </div>
                             </div>
-                            <div className='total-views details-container'>
-                                <div className='dashboard-icon-container'>
-                                    <PreviewIcon />
-                                </div>
-                                <div className='text'>
-                                    <span>Total site views: </span>
-                                    <span>{getDatasetSum(viewsData)*2}</span>
-                                </div>
+                        </div>
+                        <div className='total-views details-container'>
+                            <div className='dashboard-icon-container'>
+                                <PreviewIcon />
+                            </div>
+                            <div className='text'>
+                                <span>Total site views</span>
+                                {/* <span>{getDatasetSum(viewsData)*2}</span> */}
+                                <span>{siteViews}</span>
                             </div>
                             <div className='creates-at details-container'>
                                 <div className='dashboard-icon-container'>

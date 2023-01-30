@@ -28,7 +28,7 @@ export function WapDemos() {
             let wap = await wapService.getWapById(id)
             // let wap = wapService.getWapDemoById(id)
             // const savedWapId = await saveWap(wap)
-            
+
             const savedWapId = await addWap(wap)
             navigate(`/editor/${savedWapId}`)
         } catch (err) {
@@ -37,16 +37,18 @@ export function WapDemos() {
     }
 
 
-  if(!waps) return <Loader />
+    if (!waps) return <Loader />
 
     return (
         <div>
             <AppHeader />
             <div className="wap-demos-page">
+                <div className="wap-demos-container">
 
-                <h2 className='title animate__animated animate__slideInLeft'>Pick one of our professionally designed templates for your website</h2>
-                <p className='subtitle animate__animated animate__slideInLeft'>Or express your inner creativity and start from scratch</p>
-                <WapDemoList onSelectDemoWap={onSelectDemoWap} waps={waps} />
+                    <h2 className='title animate__animated animate__slideInLeft'>Pick one of our professionally designed templates for your website</h2>
+                    <p className='subtitle animate__animated animate__slideInLeft'>Or express your inner creativity and start from scratch</p>
+                    <WapDemoList onSelectDemoWap={onSelectDemoWap} waps={waps} />
+                </div>
             </div>
         </div>
     )

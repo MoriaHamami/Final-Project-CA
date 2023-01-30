@@ -55,7 +55,6 @@ export async function addWap(wap) {
 export async function updateWap(wap) {
     try {
         const savedWap = await wapService.save(wap)
-        // console.log('savedWap:', savedWap)
         store.dispatch({ type: UPDATE_WAP, wap: savedWap })
         store.dispatch({ type: SET_WAP, wap: savedWap })
         return savedWap
@@ -105,17 +104,17 @@ export async function loadWap(wapId) {
 export async function loadPublishedWap(wapName) {
     try {
         const filterBy = {wapName}
-        console.log('wapName:', wapName)
-        // let wap = await wapService.getWapById(wapId)
-        let wap = await wapService.query(filterBy)
-        // console.log('wap:', wap)
-        // let wap = await wapService.getWapByName(wapName)
+        let waps = await wapService.query(filterBy)
+        let wap = waps[0]
         store.dispatch({ type: SET_WAP, wap })
-        // console.log(wap)
+        return wap
     } catch (err) {
         console.log('err:', err)
     }
 }
+
+
+  
 
 // export async function loadUserWaps(username) {
 //     try {

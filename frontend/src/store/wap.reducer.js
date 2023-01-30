@@ -8,6 +8,7 @@ export const SET_ELEMENT = 'SET_ELEMENT'
 export const SET_SAVED_WAPS = 'SET_SAVED_WAPS'
 export const REMOVE_SAVED_WAP = 'REMOVE_SAVED_WAP'
 export const SET_DISPLAY_SIZE = 'SET_DISPLAY_SIZE'
+export const SET_WORKING_STATE = 'SET_WORKING_STATE'
 
 const initialState = {
     waps: [],
@@ -15,6 +16,7 @@ const initialState = {
     selectedCmpId: null,
     selectedElement: null,
     displaySize: '100%',
+    isCollabMode: false,
     // savedWaps: null,
 }
 
@@ -40,6 +42,9 @@ export function wapReducer(state = initialState, action) {
             return { ...state, selectedElement: action.element }
         case SET_DISPLAY_SIZE:
             return { ...state, displaySize: action.displaySize }
+        case SET_WORKING_STATE:
+            return { ...state, isCollabMode: action.isCollabMode }
+
 
         // case SET_SAVED_WAPS:
         //     return { ...state, savedWaps: action.savedWaps }

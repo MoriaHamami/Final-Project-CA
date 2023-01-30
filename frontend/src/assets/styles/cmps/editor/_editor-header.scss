@@ -1,14 +1,14 @@
 .editor-header {
     display: flex;
     justify-content: space-between;
-    padding: 0 calc($mobile-padding - 5px);
+    padding: 0 $mobile-padding;
 
         @media (min-width: $mobile-breakpoint) {
-            padding: 0 calc($narrow-padding - 5px);
+            padding: 0 $narrow-padding;
         }
 
         @media (min-width: $narrow-breakpoint) {
-            padding: 0 calc($normal-padding - 5px);
+            padding: 0 $normal-padding;
         }
     // padding: 3px 50px;
     // padding: 0 40px;

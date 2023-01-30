@@ -6,6 +6,7 @@ import { height } from '@mui/system';
 import { setDisplaySize, updateWap } from '../../store/wap.actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
+import { PublishModal } from '../publish-modal'
 // import { Loader } from './loader'
 
 export function EditorHeader({ wap }) {
@@ -27,6 +28,7 @@ export function EditorHeader({ wap }) {
             position: toast.POSITION.BOTTOM_RIGHT
         })
     }
+
 
 
     const onPublishClick = () => {
@@ -53,6 +55,8 @@ export function EditorHeader({ wap }) {
     return (
         <header className="editor-header">
             <div className='user-actions-container'>
+                <PublishModal currWap={wap}/>
+
                 {/* <div className="editor-actions">
                     <span className="material-symbols-outlined editor-action">undo</span>
                     <span className="material-symbols-outlined editor-action">redo</span>
