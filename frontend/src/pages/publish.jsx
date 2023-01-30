@@ -15,22 +15,24 @@ export function Publish() {
 
   useEffect(() => {
     getWap()
-    //   return () => {
-    //     socketService.off(SOCKET_EVENT_ADD_MSG, addMsg)
-    //     socketService.off(SOCKET_EVENT_REMOVE_MSG, removeMsg)
-    //     socketService.off(SOCKET_EVENT_IS_TYPING, setTypingState)
-    // }
+    console.log('HEREEEEEE');
+    // socketService.emit(SOCKET_EMIT_SET_SITE, updatedWap._id)
+    // socketService.emit(SOCKET_EVENT_ADD_SITE_VIEW, updatedWap)
+    return () => {
+      // socketService.off(SOCKET_EVENT_ADD_MSG, addMsg)
+      // socketService.off(SOCKET_EVENT_REMOVE_MSG, removeMsg)
+      // socketService.off(SOCKET_EVENT_IS_TYPING, setTypingState)
+      // socketService.off(SOCKET_EMIT_SET_SITE, null)
+    }
   }, [])
 
 
   async function getWap() {
     try {
       let currWap = await loadPublishedWap(wapName)
-      console.log(currWap);
       const updatedWap = await wapService.increaseViewCount(currWap)
-      socketService.emit(SOCKET_EMIT_SET_SITE, updatedWap._id)
-      socketService.emit(SOCKET_EVENT_ADD_SITE_VIEW, updatedWap)
       updateWap(updatedWap)
+      return updatedWap
 
     } catch (err) {
       console.log('Had issues in wap editor', err)

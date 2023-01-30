@@ -4,21 +4,21 @@ const utilService = require('../../services/util.service')
 const ObjectId = require('mongodb').ObjectId
 
 // OK
-async function query(filterBy ={isDemo: '', isPublished:'', cmpId: '', wapName:'', username:''}) {
+async function query(filterBy = { isDemo: '', isPublished: '', cmpId: '', wapName: '', username: '' }) {
     try {
         const criteria = {}
         // console.log('filterBy:',filterBy)
         // console.log('filterBy.isDemo:', filterBy.isDemo)
-        if(filterBy.isDemo && filterBy.isDemo === 'true') criteria.isDemo = true
-        if(filterBy.isPublished && filterBy.isPublished === 'true') criteria.isPublished = { $eq: true }
-        if(filterBy.wapName && filterBy.wapName !== 'undefined') criteria.name = { $eq: filterBy.wapName }
-        if(filterBy.cmpId && filterBy.cmpId !== 'undefined') criteria.cmps = { $elemMatch : { id : filterBy.cmpId } }
+        if (filterBy.isDemo && filterBy.isDemo === 'true') criteria.isDemo = true
+        if (filterBy.isPublished && filterBy.isPublished === 'true') criteria.isPublished = { $eq: true }
+        if (filterBy.wapName && filterBy.wapName !== 'undefined') criteria.name = { $eq: filterBy.wapName }
+        if (filterBy.cmpId && filterBy.cmpId !== 'undefined') criteria.cmps = { $elemMatch: { id: filterBy.cmpId } }
         // if(filterBy.username !== 'undefined') criteria.createdBy = filterBy.username 
-        if(filterBy.username && filterBy.username !== 'undefined') criteria['createdBy.username'] ={ $eq: filterBy.username }
+        if (filterBy.username && filterBy.username !== 'undefined') criteria['createdBy.username'] = { $eq: filterBy.username }
         // if(filterBy.category) criteria.cmps = { $elemMatch : { category : filterBy.category } }
         // if(filterBy.category) criteria.cmps = { $elemMatch : { type : filterBy.category } }
         // console.log('criteria:', criteria)
-    
+
         const collection = await dbService.getCollection('wap')
         let waps = await collection.find(criteria).toArray()
         console.log('criteria:', criteria)
@@ -69,10 +69,10 @@ async function add(wap) {
 // OK
 async function update(wap) {
     try {
-        const wapToUpdate = {...wap}
+        const wapToUpdate = { ...wap }
         delete wapToUpdate._id
         const collection = await dbService.getCollection('wap')
-        console.log('wapToUpdate.viewsCount:',wapToUpdate.viewsCount)
+        // console.log('wapToUpdate.viewsCount:',wapToUpdate.viewsCount)
         // console.log('wap._id:', wap._id)
         await collection.updateOne({ _id: ObjectId(wap._id) }, { $set: wapToUpdate })
         return wap
@@ -86,7 +86,7 @@ async function updateWithId(wap) {
     try {
         // const wapToUpdate = {...wap}
         const collection = await dbService.getCollection('wap')
-        console.log('wap:',wap)
+        console.log('wap:', wap)
         // console.log('wapToUpdate.viewsCount:',wapToUpdate.viewsCount)
         // console.log('wap._id:', wap._id)
         await collection.updateOne({ _id: ObjectId(wap._id) }, { $set: wap })
@@ -153,7 +153,7 @@ async function updateWapCmp(wapId, cmp) {
 async function removeWapCmp(wapId, cmpId) {
     try {
         const collection = await dbService.getCollection('wap')
-        await collection.updateOne({ _id: ObjectId(wapId) }, { $pull: { cmps: {id: cmpId} } })
+        await collection.updateOne({ _id: ObjectId(wapId) }, { $pull: { cmps: { id: cmpId } } })
         // console.log('collection:', collection)
         return cmpId
     } catch (err) {
@@ -179,12 +179,12 @@ module.exports = {
 }
 
 
-// service functions 
-// query, 
+// service functions
+// query,
 // getWapById,
 // getCmpById === query(filterBy.cmpId)
 // remove,
 // add,
-// update, 
+// update,
 // addWapCmp,==> ''
 // removeWapCmp==> ''

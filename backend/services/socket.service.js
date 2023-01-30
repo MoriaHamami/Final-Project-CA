@@ -13,33 +13,30 @@ function setupSocketAPI(http) {
         socket.on('disconnect', socket => {
             logger.info(`Socket disconnected [id: ${socket.id}]`)
         })
-        socket.on('set-site', updatedWapid => {
-            console.log('hey');
+        socket.on('set-site', wapId => {
+            // console.log(wapId);
+
+            if (wapId) socket.join(wapId)
+            else socket.leave()
+
 
         })
-        socket.on('add-site-view', updatedWap => {
-            // console.log('hey', socket.wapId);
-            // if (socket.wapId === updatedWap._id) return
-            // if (socket.wapId) {
-            //     socket.leave(socket.wapId)
-            //     logger.info(`Socket is leaving site ${socket.wapId} [id: ${socket.id}]`)
-            // }
-            // socket.join(updatedWap._id)
-            // socket.wapId = updatedWap._id
-            logger.info(`new site view from socket [id: ${socket.id}], emitting to site ${updatedWap._id}`)
-            // broadcast(updatedWap._id).emit('update-site-views', updatedWap.viewsCount)
-            broadcast({
-                type: 'update-site-views',
-                data: updatedWap.viewsCount,
-                // room: updatedWap._id,
-                userId: socket.id
-            })
-        })
-        // socket.on('user-watch', userId => {
-        //     logger.info(`user-watch from socket [id: ${socket.id}], on user ${userId}`)
-        //     socket.join('watching:' + userId)
-
+        // socket.on('add-site-view', updatedWap => {
+        //     console.log(updatedWap._id);
+        //     logger.info(`new site view from socket [id: ${socket.id}], emitting to site ${updatedWap._id}`)
+        //     socket.broadcast.to(updatedWap._id).emit('update-site-views', updatedWap.viewsCount)
+        //     // broadcast({
+        //     //     type: 'update-site-views',
+        //     //     data: updatedWap.viewsCount,
+        //     //     // room: updatedWap._id,
+        //     //     userId: socket.id
+        //     // })
         // })
+        socket.on('wap-updated', wap => {
+            console.log(wap._id)
+            logger.info(`${wap._id} has been updated by [id: ${socket.id}], emitting to everyone else`)
+            socket.broadcast.emit('send-wap-update', wap)
+        })
         socket.on('set-user-socket', userId => {
             logger.info(`Setting socket.userId = ${userId} for socket [id: ${socket.id}]`)
             socket.userId = userId

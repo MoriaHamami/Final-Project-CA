@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { loadUserWaps } from '../store/wap.actions'
 import { Loader } from './loader'
+import { socketService, SOCKET_EVENT_SEND_WAP } from '../services/socket.service'
 
 
 export function Dashboard() {
@@ -19,6 +20,10 @@ export function Dashboard() {
     const navigate = useNavigate()
 
     useEffect(() => {
+        socketService.on(SOCKET_EVENT_SEND_WAP, (res) => {
+            setCurrWap({ ...res })
+
+        })
         loadWaps()
     }, [])
 

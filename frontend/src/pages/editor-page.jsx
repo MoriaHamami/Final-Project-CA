@@ -6,13 +6,14 @@ import { useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { addCmp, loadWap, removeCmp, saveCmp, saveElement, setSelectedCmpId, setSelectedElement } from '../store/wap.actions.js'
+import { addCmp, loadWap, removeCmp, saveCmp, saveElement, setSelectedCmpId, setSelectedElement, updateWap } from '../store/wap.actions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { wapService } from '../services/wap.service.js'
 // import { socketService } from '../services/socket.service'
 import { Loader } from './loader'
+import { socketService, SOCKET_EVENT_SEND_WAP } from '../services/socket.service'
 
 
 
@@ -27,12 +28,17 @@ export function Editor() {
     const { wapId } = useParams()
 
     useEffect(() => {
+        socketService.on(SOCKET_EVENT_SEND_WAP, (res) => {
+            // console.log(res)
+            updateWap(res)
+        })
         try {
             loadWap(wapId)
         } catch (err) {
             console.log('Had issues in wap editor', err)
             navigate('/WapDemos')
         }
+
     }, [])
 
 

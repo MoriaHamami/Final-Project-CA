@@ -5,6 +5,8 @@ import { userService } from './user.service'
 export const SOCKET_EVENT_ADD_SITE_VIEW = 'add-site-view'
 export const SOCKET_EVENT_UPDATE_SITE_VIEWS = 'update-site-views'
 export const SOCKET_EMIT_SET_SITE = 'set-site'
+export const SOCKET_EMIT_EDIT_WAP = 'wap-updated'
+export const SOCKET_EVENT_SEND_WAP = 'send-wap-update'
 
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
@@ -26,7 +28,7 @@ function createSocketService() {
   const socketService = {
     setup() {
       socket = io(baseUrl)
-      setTimeout(()=>{
+      setTimeout(() => {
         const user = userService.getLoggedinUser()
         if (user) this.login(user._id)
       }, 500)

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { wapService } from '../../services/wap.service'
 // import { utilService } from '../../services/util.service'
-import { socketService, SOCKET_EVENT_UPDATE_SITE_VIEWS, SOCKET_EMIT_SET_SITE } from '../../services/socket.service'
+import { socketService, SOCKET_EVENT_UPDATE_SITE_VIEWS, SOCKET_EMIT_SET_SITE, SOCKET_EVENT_SEND_WAP } from '../../services/socket.service'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { saveWap, setDisplaySize } from '../../store/wap.actions';
@@ -52,8 +52,12 @@ export function DashboardBoard({ currWap }) {
 
     useEffect(() => {
         if (!currWap) return
-        socketService.emit(SOCKET_EMIT_SET_SITE, currWap._id)
-        socketService.on(SOCKET_EVENT_UPDATE_SITE_VIEWS, onAddedView)
+        socketService.on(SOCKET_EVENT_SEND_WAP, (res) => {
+            onAddedView()
+        })
+        // socketService.emit(SOCKET_EMIT_SET_SITE, currWap._id)
+        // socketService.on(SOCKET_EVENT_UPDATE_SITE_VIEWS, onAddedView)
+
         // return () => {
         //     socketService.off(SOCKET_EVENT_UPDATE_SITE_VIEWS, onAddedView)
 
@@ -212,8 +216,8 @@ export function DashboardBoard({ currWap }) {
                                 </div>
                                 <div className='text'>
                                     <span>Total site views: </span>
-                                    {/* <span>{getDatasetSum(viewsData)*2}</span> */}
-                                    <span>{siteDemoViews}</span>
+                                    {/* <span>{getDatasetSum(currWap.viewsCount)*2}</span> */}
+                                    <span>{currWap.viewsCount + 354}</span>
                                 </div>
                             </div>
                             <div className='creates-at details-container'>

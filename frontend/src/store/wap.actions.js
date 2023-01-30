@@ -1,4 +1,5 @@
 // import { getWapDemoById } from '../services/wap.service.local.js'
+import { socketService, SOCKET_EMIT_EDIT_WAP, SOCKET_EVENT_SEND_WAP } from '../services/socket.service.js'
 import { utilService } from '../services/util.service.js'
 import { wapService } from '../services/wap.service.js'
 import { store } from '../store/store.js'
@@ -40,9 +41,9 @@ export async function removeWap(wapId) {
 export async function addWap(wap) {
     try {
         const wapCopy = { ...wap }
-        if(wapCopy._id) delete wapCopy._id
+        if (wapCopy._id) delete wapCopy._id
         const savedWap = await wapService.save(wapCopy)
-        console.log('savedWap:',savedWap)
+        console.log('savedWap:', savedWap)
         store.dispatch({ type: ADD_WAP, wap: savedWap })
         store.dispatch({ type: SET_WAP, wap: savedWap })
         return savedWap._id
@@ -57,6 +58,8 @@ export async function updateWap(wap) {
         const savedWap = await wapService.save(wap)
         store.dispatch({ type: UPDATE_WAP, wap: savedWap })
         store.dispatch({ type: SET_WAP, wap: savedWap })
+        console.log(savedWap.viewsCount);
+        socketService.emit(SOCKET_EMIT_EDIT_WAP, savedWap)
         return savedWap
     } catch (err) {
         console.log('Cannot save wap', err)
@@ -103,7 +106,7 @@ export async function loadWap(wapId) {
 
 export async function loadPublishedWap(wapName) {
     try {
-        const filterBy = {wapName}
+        const filterBy = { wapName }
         let waps = await wapService.query(filterBy)
         let wap = waps[0]
         store.dispatch({ type: SET_WAP, wap })
@@ -114,7 +117,7 @@ export async function loadPublishedWap(wapName) {
 }
 
 
-  
+
 
 // export async function loadUserWaps(username) {
 //     try {
