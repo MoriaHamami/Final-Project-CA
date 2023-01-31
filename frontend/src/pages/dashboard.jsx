@@ -6,7 +6,7 @@ import { DashboardBoard } from '../cmps/dashboard/dashboard-board.jsx'
 import { wapService } from '../services/wap.service'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { loadUserWaps } from '../store/wap.actions'
+import { loadUserWaps, updateWap } from '../store/wap.actions'
 import { Loader } from './loader'
 import { socketService, SOCKET_EVENT_SEND_WAP } from '../services/socket.service'
 
@@ -21,10 +21,14 @@ export function Dashboard() {
 
     useEffect(() => {
         socketService.on(SOCKET_EVENT_SEND_WAP, (res) => {
+            
             setCurrWap({ ...res })
 
         })
         loadWaps()
+        return () => {
+            socketService.off(SOCKET_EVENT_SEND_WAP,null)
+        }
     }, [])
 
     async function loadWaps() {
