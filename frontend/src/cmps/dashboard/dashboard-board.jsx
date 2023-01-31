@@ -203,7 +203,7 @@ export function DashboardBoard({ currWap }) {
                                 </div>
                                 <div className='text'>
                                     <span>Total subscribers: </span>
-                                    <span>{getDatasetSum(subsData) * 2}</span>
+                                    <span>17</span>
                                 </div>
                             </div>
                             <div className='total-views details-container'>
@@ -213,7 +213,7 @@ export function DashboardBoard({ currWap }) {
                                 <div className='text'>
                                     <span>Total site views: </span>
                                     {/* <span>{getDatasetSum(currWap.viewsCount)*2}</span> */}
-                                    <span>{currWap.viewsCount + 354}</span>
+                                    <span>{currWap.viewsCount + 168}</span>
                                 </div>
                             </div>
                             <div className='creates-at details-container'>
