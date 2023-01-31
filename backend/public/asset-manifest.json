@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.68a929e0.css",
+    "main.css": "/static/css/main.10baa9f5.css",
     "main.js": "/static/js/main.e6c9dfb0.js",
     "static/media/OpenSans-VariableFont.ttf": "/static/media/OpenSans-VariableFont.ceb05254cedfa895b512.ttf",
     "static/media/Forum-Regular.ttf": "/static/media/Forum-Regular.6b8e836eb36b2f54db9a.ttf",
@@ -20,11 +20,11 @@
     "static/media/Handlee-Regular.ttf": "/static/media/Handlee-Regular.54590e94ca812eefb4fd.ttf",
     "static/media/Abel-Regular.ttf": "/static/media/Abel-Regular.3843f456cf56d275baf6.ttf",
     "index.html": "/index.html",
-    "main.68a929e0.css.map": "/static/css/main.68a929e0.css.map",
+    "main.10baa9f5.css.map": "/static/css/main.10baa9f5.css.map",
     "main.e6c9dfb0.js.map": "/static/js/main.e6c9dfb0.js.map"
   },
   "entrypoints": [
-    "static/css/main.68a929e0.css",
+    "static/css/main.10baa9f5.css",
     "static/js/main.e6c9dfb0.js"
   ]
 }
