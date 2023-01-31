@@ -8,7 +8,7 @@
     min-width: 122px;
     height: calc(100vh - 62px);
     text-align: left;
-    padding: 10px;
+    padding: 10px 0 10px 0;
     padding-top: 47px;
     font-size: 0.8rem;
     font-weight: 600;
@@ -17,16 +17,31 @@
 
     >* {
         padding-block: 10px;
+
         // border-bottom: 1px solid lightgray;
     }
 
-    .active {
-        background-color: $editor-board-clr;
-        // border-radius: 20px;
-        // padding: 10px;
+    >*:not(.title, :first-child) {
+
+        padding-left: 10px;
+        padding-block: 5px;
+        margin-block: 5px;
+        margin-right: 10px;
+        // border-bottom: 1px solid lightgray;
     }
 
-    h3{
+
+    .active {
+        // background-color: $editor-board-clr;
+        // border-radius: 20px;
+        // padding: 5px;
+        background-color: rgb(221 227 238 / 46%);
+        border: 1px solid rgb(221, 227, 238);
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
+
+    h3 {
         font-size: 1rem;
         position: fixed;
         padding: 16px;
@@ -39,11 +54,13 @@
         // padding: 5px;
     }
 
-    .title{
+    .title {
         font-size: 1rem;
         color: rgb(165, 165, 165);
         border-top: 1px solid lightgray;
         padding-top: 10px;
+        padding: 10px 0 0 10px;
+        // margin-top: 5px;
     }
 
     &::-webkit-scrollbar {
