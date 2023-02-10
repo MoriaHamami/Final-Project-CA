@@ -2,7 +2,6 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  // width: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -12,15 +11,8 @@
 
   .title {
     margin-bottom: 10px;
-    // line-height: 1.2;
     margin-bottom: 2rem;
   }
-
-
-
-  // .txt {
-  //   font-size: 1.3rem;
-  // }
 
   img {
     margin-top: 3rem;
@@ -30,5 +22,21 @@
   button {
     @include btn($bg: inherit, $clr: $almost-white, $padding: em(8px) em(12px), $hover: rgba(255, 255, 255, 0.134));
     border: 0.5px solid rgba(255, 255, 255, 0.795);
+  }
+
+  &.mobile-layout {
+    padding: 7.5rem $mobile-padding;
+  }
+
+  &.tablet-layout {
+    padding: 7.5rem $narrow-padding;
+  }
+
+  @media (max-width: $narrow-breakpoint) {
+    padding: 7.5rem $narrow-padding;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 7.5rem $mobile-padding;
   }
 }

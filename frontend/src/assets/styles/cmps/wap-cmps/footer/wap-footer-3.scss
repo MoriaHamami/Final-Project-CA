@@ -3,7 +3,23 @@
     background-color: white;
     text-align: center;
 
-    p{
+    p {
         margin: 0;
     }
-  }
+
+    &.mobile-layout {
+        padding: 2rem $mobile-padding;
+    }
+
+    &.tablet-layout {
+        padding: 2rem $narrow-padding;
+    }
+
+    @media (max-width: $narrow-breakpoint) {
+        padding: 2rem $narrow-padding;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 2rem $mobile-padding;
+    }
+}
