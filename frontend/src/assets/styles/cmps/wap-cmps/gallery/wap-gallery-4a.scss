@@ -3,11 +3,6 @@
     padding: 8rem $normal-padding 0;
     text-align: center;
 
-    // .container-txt {
-    //     padding-bottom: 150px;
-    //     font-size: 2rem;
-    //     font-weight: 700;
-    // }
     .subtitle {
         padding-bottom: 5rem;
     }
@@ -20,7 +15,6 @@
         margin: auto;
         text-align: start;
         padding-bottom: 50px;
-
 
         .txt-container {
             max-width: 250px;
@@ -40,7 +34,6 @@
                 border-left: 1.5px dashed rgb(179, 179, 179);
                 width: 0;
                 height: 10rem;
-
             }
         }
 
@@ -50,17 +43,10 @@
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
 
-
-
         .gallery-title {
             margin-bottom: 2rem;
         }
-
-
-
-
     }
-
 
     button {
         background-color: inherit;
@@ -69,9 +55,26 @@
         align-self: center;
     }
 
-    @media (max-width: $narrow-breakpoint) {
+    &.mobile-layout {
+        .wap-gallery-img-container .photo-container {
+            flex-direction: column;
+            gap: 0px;
+        }
 
-        // overflow-x: hidden;
+        .wap-gallery-img-container .photo-container:nth-of-type(4) {
+            flex-direction: column;
+        }
+
+        .subtitle {
+            font-size: 30px !important;
+        }
+
+        .photo-container:nth-of-type(odd) {
+            display: none;
+        }
+    }
+
+    @media (max-width: $narrow-breakpoint) {
         .wap-gallery-img-container .photo-container {
             flex-direction: column;
             gap: 0px;

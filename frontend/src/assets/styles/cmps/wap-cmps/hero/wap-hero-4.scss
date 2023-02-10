@@ -52,6 +52,19 @@
   }
 
   // TO REMOVE AFTER PRES
+  &.mobile-layout{
+    padding: 0;
+    display: block;
+
+    img {
+      max-width: 200px;
+    }
+
+    p.title.false {
+      font-size: 2rem !important;
+    }
+  }
+  
   @media (max-width: $narrow-breakpoint) {
 
     padding: 0;
