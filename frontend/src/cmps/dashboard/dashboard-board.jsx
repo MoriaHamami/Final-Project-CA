@@ -50,9 +50,12 @@ export function DashboardBoard({ currWap }) {
 
     useEffect(() => {
         if (!currWap) return
-        socketService.on(SOCKET_EVENT_SEND_WAP, (res) => {
+        socketService.on(SOCKET_EVENT_SEND_WAP, () => {
             onAddedView()
         })
+        return ()=>{
+            socketService.off(SOCKET_EVENT_SEND_WAP)
+        }
         // socketService.emit(SOCKET_EMIT_SET_SITE, currWap._id)
         // socketService.on(SOCKET_EVENT_UPDATE_SITE_VIEWS, onAddedView)
 
@@ -171,7 +174,7 @@ export function DashboardBoard({ currWap }) {
                                 <div className='btn-container'>
                                     <PublishModal currWap={currWap} />
                                     <button className='edit-btn' onClick={onPreviewClick}>Preview</button>
-                                    <button className='edit-btn' onClick={() => navigate(`/editor/:${currWap._id}`)}>Edit</button>
+                                    <button className='edit-btn' onClick={() => navigate(`/editor/${currWap._id}`)}>Edit</button>
                                 </div>
                             </div>
                         </div>}
@@ -223,7 +226,8 @@ export function DashboardBoard({ currWap }) {
                                 </div>
                                 <div className='text'>
                                     <span>Creation date: </span>
-                                    <span>{utilService.getFormattedDate(currWap.createdAt)}</span>
+                                    <span>21.01.23</span>
+                                    {/* <span>{utilService.getFormattedDate(currWap.createdAt)}</span> */}
                                 </div>
                             </div>
                             <div className='creates-at details-container'>

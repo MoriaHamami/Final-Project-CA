@@ -36,6 +36,12 @@ function setupSocketAPI(http) {
             console.log(wap._id)
             logger.info(`${wap._id} has been updated by [id: ${socket.id}], emitting to everyone else`)
             socket.broadcast.emit('send-wap-update', wap)
+            // broadcast({
+            //     type:'send-wap-update',
+            //     data:wap,
+            //     room:wap._id,
+            //     userId:socket.userId
+            // })
         })
         socket.on('set-user-socket', userId => {
             logger.info(`Setting socket.userId = ${userId} for socket [id: ${socket.id}]`)

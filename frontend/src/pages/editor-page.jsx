@@ -28,10 +28,10 @@ export function Editor() {
     const { wapId } = useParams()
 
     useEffect(() => {
-        socketService.on(SOCKET_EVENT_SEND_WAP, (res) => {
-            // console.log(res)
-            updateWap(res)
-        })
+        // socketService.on(SOCKET_EVENT_SEND_WAP, (res) => {
+        //     console.log('from editor socket',res._id===wap._id)
+        //    if(res._id===wap._id) updateWap(res)
+        // })
         try {
             loadWap(wapId)
         } catch (err) {
@@ -45,7 +45,7 @@ export function Editor() {
 
     useEffect(() => {
 
-    }, [isCollabMode])
+    }, [])
 
 
 
