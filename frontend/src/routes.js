@@ -28,9 +28,9 @@ const routes = [
         label: 'Dashboard',
     },
     {
-        path: '/user',
+        path: '/user/:isSignup',
         component: <LoginSignup />,
-        label: 'Login',
+        label: 'LoginSignup',
     },
     {
         path: '/preview/:wapId',

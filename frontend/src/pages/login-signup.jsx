@@ -3,8 +3,8 @@
 import { LoginHeader } from '../cmps/login/login-header.jsx'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
-import { Fragment, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Fragment, useEffect, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { signup, login, logout, loginWithAuth } from '../store/user.actions.js'
 import { GoogleLogin, useGoogleLogin } from '@react-oauth/google'
@@ -19,7 +19,11 @@ export function LoginSignup() {
     const [isSignupState, setIsSignupState] = useState(false)
     const user = useSelector((storeState => storeState.userModule.user))
     const navigate = useNavigate()
+    const { isSignup } = useParams()
 
+    useEffect(()=>{
+        if(isSignup === 'true') setIsSignupState(true)
+    }, [])
     const showLogintFailedMessage = () => {
         toast.error('Login failed', {
             position: toast.POSITION.BOTTOM_RIGHT

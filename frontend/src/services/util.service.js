@@ -8,7 +8,12 @@ export const utilService = {
     loadFromStorage,
     timeSince,
     getFormattedDate,
-    getCapitalizedName
+    getCapitalizedName,
+    toggleMenu
+}
+
+function toggleMenu() {
+    document.body.classList.toggle('menu-open')
 }
 
 function makeId(length = 6) {

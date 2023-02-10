@@ -60,18 +60,18 @@ export function HomeHeader() {
                     {user ? <Link className="header-profile-container">
                         {/* <span className="material-symbols-outlined profile-img">account_circle</span> */}
                         {/* <img className='user-img' src={user.imgUrl} /> */}
-                        <React.Fragment sx={{ overflowY:'scroll'}}>
+                        <React.Fragment sx={{ overflowY: 'scroll' }}>
                             <Box>
                                 <Tooltip title="Account settings">
                                     <IconButton
                                         onClick={handleClick}
                                         size="small"
-                                        sx={{ ml: 1, padding:'2px', color:`${(isDown) ? 'black' : 'white'}`}}
+                                        sx={{ ml: 1, padding: '2px', color: `${(isDown) ? 'black' : 'white'}` }}
                                         aria-controls={open ? "account-menu" : undefined}
                                         aria-haspopup="true"
                                         aria-expanded={open ? "true" : undefined}
                                     >
-                                        <span className="user-name" style={{fontSize:'0.9rem'}}>{user.fullname}</span>
+                                        <span className="user-name" style={{ fontSize: '0.9rem' }}>{user.fullname}</span>
                                         <span class="material-symbols-outlined">expand_more</span>
                                     </IconButton>
                                 </Tooltip>
@@ -113,10 +113,10 @@ export function HomeHeader() {
                             >
                                 <MenuItem onClick={handleClose}>
                                     <Link to="/dashboard">
-                                    <ListItemIcon>
-                                        <DashboardIcon fontSize="small" />
-                                    </ListItemIcon>
-                                    Dashboard
+                                        <ListItemIcon>
+                                            <DashboardIcon fontSize="small" />
+                                        </ListItemIcon>
+                                        Dashboard
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={() => {
@@ -132,10 +132,10 @@ export function HomeHeader() {
                         </React.Fragment>
 
                     </Link> :
-                        <NavLink className='login-container' key="/user" to="/user">
-                            <span className="login-btn">Log in</span>
-                            <span className="signup-btn">Sign Up</span>
-                        </NavLink>
+                        <div className="login-container">
+                            <NavLink className="login-btn" key="/login" to="/user/false">Log in</NavLink>
+                            <NavLink className="signup-btn" key="/signup" to="/user/true">Sign Up</NavLink>
+                        </div>
                     }
                 </nav>
             </div>
