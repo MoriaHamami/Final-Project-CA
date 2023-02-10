@@ -5,21 +5,28 @@
     background-color: #5a363a;
 
 
-    .title{
+
+
+
+
+
+
+
+    .title {
         border-bottom: 4px solid #a69494;
         width: fit-content;
     }
-    
+
     .wap-gallery-img-container {
         border-top: 1px solid #a69494;
         padding-top: 40px;
         display: flex;
         gap: 50px;
-        
+
         img:hover {
             filter: brightness(70%);
         }
-        
+
         .photo-container {
             min-height: 50px;
             display: flex;
@@ -27,17 +34,17 @@
             align-items: center;
             position: relative;
             flex-basis: 33.3%;
-            
-            .txt-container{
+
+            .txt-container {
                 text-align: center;
             }
 
-            .gallery-btn{
+            .gallery-btn {
                 margin: 0 auto;
                 align-self: center;
                 max-width: 200px;
             }
-            
+
             img {
                 min-width: 250px;
                 background-position: center;
@@ -45,6 +52,52 @@
                 transition: filter 0.1s;
                 margin-bottom: 50px;
             }
+        }
+    }
+
+    &.mobile-layout {
+        padding: 5rem $mobile-padding;
+
+        .wap-gallery-img-container {
+            flex-direction: column;
+            gap: 100px;
+
+        }
+    }
+
+    &.tablet-layout {
+        padding: 5rem $narrow-padding;
+
+        .wap-gallery-img-container {
+            gap: 20px;
+
+            .photo-container {
+
+                img {
+                    min-width: 200px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: 1000px) {
+        padding: 5rem $narrow-padding;
+
+        .wap-gallery-img-container {
+            flex-direction: column;
+            gap: 100px;
+        }
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 5rem $mobile-padding;
+
+        .wap-gallery-img-container {
+            flex-direction: column;
+            gap: 100px;
+
         }
     }
 }

@@ -1,55 +1,73 @@
 .wap-about-6 {
-    background-color: #5a363a;
-    // width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: space-between;
-    gap: 200px;
-    justify-items: center;
-    align-items: center;
-    padding: 0 0 0 $normal-padding ;
-    // flex-direction: column;
-    color: $almost-black;
-    
-    .text-container{
-      // padding-left: 110px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      
-      .title {
-        padding-bottom: 1rem;
-        color: $almost-white;
-        text-align: left;
-        border-bottom: 4px solid #a69494;
-      }
-      
-      .subtitle {
-        border-top: 1px solid #a69494;
-        padding-top: 1rem;
-        margin-bottom: 10px;
-      }
-      
-    }
-    
-    
-    .img-container{
-      height: 100%;
-      //   position: relative;
-      //   right: 50px;
-      // display: flex;
-      // flex-direction: column;
-      // flex-grow: 1;
-  
-      img {
-        align-self: center;
-        width: 500px;
-        height: 100%;
-        
-        // max-width: 300px;
-        
-      }
-  
-    }
-  
+  background-color: #5a363a;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  gap: 200px;
+  justify-items: center;
+  align-items: center;
+  padding: 0 0 0 $normal-padding ;
+  color: $almost-black;
+
+  &.mobile-layout {
+    padding: 0 $mobile-padding ;
+    gap: 20px; 
   }
+  
+  &.tablet-layout {
+    padding: 0 $narrow-padding ;
+    gap: 20px;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .title {
+      padding-bottom: 1rem;
+      color: $almost-white;
+      text-align: left;
+      border-bottom: 4px solid #a69494;
+    }
+
+    .subtitle {
+      border-top: 1px solid #a69494;
+      padding-top: 1rem;
+      margin-bottom: 10px;
+    }
+
+  }
+
+
+  .img-container {
+    height: 100%;
+
+    img {
+      align-self: center;
+      width: 500px;
+      height: 100%;
+    }
+  }
+
+  &.mobile-layout,
+  &.tablet-layout {
+    .img-container{
+      display: none;
+    }
+  }
+  @media (max-width: 1100px) {
+    padding: 0 $narrow-padding ;
+    gap: 20px; 
+    .img-container{
+      display: none;
+    }
+
+
+  }
+  @media (max-width: $mobile-breakpoint) {
+    padding: 0 $mobile-padding ;
+    gap: 20px; 
+  }
+
+}

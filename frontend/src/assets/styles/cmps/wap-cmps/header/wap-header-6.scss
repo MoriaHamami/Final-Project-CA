@@ -1,49 +1,97 @@
+.wap-header-6 {
+  display: flex;
+  background-color: inherit;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  padding: 1rem $normal-padding;
+  align-items: bottom;
+  color: $t2clr1;
+  .menu-btn {
+    display: none;
+  }
 
-  .wap-header-6 {
+  .logo {
+    margin: 0;
+    max-width: 140px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &.mobile-layout,
+  &.tablet-layout {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-bar {
     display: flex;
-    // z-index: 1;
-    // position: fixed;
-    background-color: inherit;
-    position:absolute;
-    z-index: 1;
-    left: 0;
-    right: 0;
-    justify-content: space-between;
-    // gap: 4rem;
-    padding: 1rem $normal-padding;
-    align-items: bottom;
-    color: $t2clr1;
-  
-    .logo {
-      margin: 0;
-max-width: 140px;
-    }
-  
-    p {
-      margin: 0;
-    }
-  
-    &.mobile-layout,
-    &.tablet-layout {
-      padding: 1rem 1.5rem;
-    }
+    align-items: flex-end;
+    padding-bottom: 10px;
+    gap: 1.5rem;
+    justify-self: flex-end;
 
-  
-    .nav-bar {
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 10px;
-      gap: 1.5rem;
-      justify-self: flex-end;
-  
-      a {
-        color: $t2clr1;
-        
-
-        &:hover{
-          text-decoration: none;
-          font-weight: 600;
-        }
+    a {
+      color: $t2clr1;
+      &:hover {
+        text-decoration: none;
+        font-weight: 600;
       }
     }
   }
+
+  &.mobile-layout {
+    padding: 2rem $mobile-padding;
+
+    .menu-btn {
+      display: block;
+      font-size: 2.5em;
+      color: rgb(253, 108, 46);
+    }
+  }
+
+  &.tablet-layout {
+    padding: 2rem $narrow-padding;
+
+    .menu-btn {
+      display: block;
+      font-size: 2.5em;
+      color: rgb(253, 108, 46);
+    }
+  }
+  @media (max-width: $narrow-breakpoint) {
+    padding: 2rem $narrow-padding;
+
+    .menu-btn {
+      display: block;
+      font-size: 2.5em;
+      color: rgb(253, 108, 46);
+    }
+
+  }
+  @media (max-width: $mobile-breakpoint) {
+    padding: 1rem $mobile-padding;
+
+    .menu-btn {
+      display: block;
+      font-size: 2.5em;
+      color: rgb(253, 108, 46);
+    }
+  }
+
+  &.mobile-layout,
+  &.tablet-layout {
+    .nav-bar {
+      display: none;
+    }
+  }
+
+  @media (max-width: $narrow-breakpoint) {
+    .nav-bar {
+      display: none;
+    }
+  }
+}

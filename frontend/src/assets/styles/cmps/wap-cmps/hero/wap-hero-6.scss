@@ -14,12 +14,14 @@
         max-width: 800px;
         margin-bottom: 10px;
         margin-left: 100px;
+        font-size: 5.9rem;
     }
 
     .subtitle {
         max-width: 700px;
         margin-left: 100px;
         margin-bottom: 100px;
+        font-size: 2.5rem;
     }
 
     button {
@@ -32,4 +34,66 @@
             color: white;
         }
     }
+
+
+    &.mobile-layout {
+        padding: 15rem $mobile-padding;
+        .title {
+            font-size: 4rem;
+        }
+    
+        .subtitle {
+            font-size: 2rem;
+        }
+
+    }
+
+    &.tablet-layout {
+        padding: 17.5rem $narrow-padding;
+    }
+
+    &.tablet-layout,
+    &.mobile-layout {
+        .title {
+            margin-left: 0px;
+        }
+
+        .subtitle {
+            margin-left: 0px;
+        }
+
+        button {
+            margin-left: 0px;
+        }
+    }
+
+    @media (max-width: $narrow-breakpoint) {
+        padding: 17.5rem $narrow-padding;
+
+        .title {
+            margin-left: 0px;
+            font-size: 4rem;
+        }
+
+        .subtitle {
+            margin-left: 0px;
+        }
+
+        button {
+            margin-left: 0px;
+        }
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 12rem $mobile-padding;
+        .title {
+            font-size: 3rem;
+        }
+    
+        .subtitle {
+            font-size: 1.5rem;
+        }
+    }
+
+
 }
