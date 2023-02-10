@@ -6,17 +6,16 @@
   align-items: center;
   color: $t2clr1;
 
+  .menu-btn {
+    display: none;
+  }
+
   .logo {
     margin: 0;
   }
 
   p {
     margin: 0;
-  }
-
-  &.mobile-layout,
-  &.tablet-layout {
-    padding: 1rem 1.5rem;
   }
 
   .nav-bar {
@@ -26,7 +25,6 @@
 
     a {
       color: $t2clr1;
-      
 
       &:hover{
         text-decoration: none;
@@ -34,4 +32,37 @@
       }
     }
   }
+
+  &.mobile-layout{
+    padding: 1rem $mobile-padding;
+  }
+  &.tablet-layout{
+    padding: 1rem $narrow-padding;
+  }
+
+  &.mobile-layout,
+  &.tablet-layout {
+    .nav-bar {
+      display: none;
+    }
+    .menu-btn {
+      display: block;
+      font-size: 1.7em;
+    }
+  }
+
+  @media (max-width: $narrow-breakpoint) {
+    padding: 1rem $narrow-padding;
+    .nav-bar {
+      display: none;
+    }
+    .menu-btn {
+      display: block;
+      font-size: 1.7em;
+    }
+  }
+  @media (max-width: $mobile-breakpoint) {
+    padding: 1rem $mobile-padding;
+  }
+
 }

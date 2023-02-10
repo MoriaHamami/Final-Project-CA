@@ -12,4 +12,32 @@
         margin-bottom: 50px;
     }
 
+    &.mobile-layout {
+        padding: 5.5rem $mobile-padding;
+
+        .text-container {
+            padding: 0;
+        }
+    }
+
+    &.tablet-layout {
+        padding: 8.5rem $narrow-padding;
+
+        .text-container {
+            padding: 0;
+        }
+    }
+
+    @media (max-width: $narrow-breakpoint) {
+        padding: 8.5rem $narrow-padding;
+
+        .text-container {
+            padding: 0;
+        }
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 8.5rem $mobile-padding;
+    }
+
 }

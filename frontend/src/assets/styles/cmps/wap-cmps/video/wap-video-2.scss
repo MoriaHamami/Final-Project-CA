@@ -12,6 +12,20 @@
         padding: 0.7rem;
     }
 
-   
+    &.mobile-layout {
+        padding: 2rem $mobile-padding 3.5rem;
+      }
+    
+      &.tablet-layout {
+        padding: 2rem $narrow-padding 3.5rem;
+      }
+    
+      @media (max-width: $narrow-breakpoint) {
+        padding: 2rem $narrow-padding 3.5rem;
+      }
+    
+      @media (max-width: $mobile-breakpoint) {
+        padding: 2rem $mobile-padding 3.5rem;
+      }
 
 }

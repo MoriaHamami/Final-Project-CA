@@ -3,7 +3,7 @@
     flex-direction: column;
     color: $almost-black;
     background-color: #ffe8e3;
-    padding: 5rem 2rem;
+    padding: 5rem $normal-padding;
     text-align: center;
 
     .container-txt {
@@ -38,5 +38,42 @@
         padding: 3px 0;
         border-bottom: 0.5px solid $almost-black;
         align-self: center;
+    }
+
+    &.mobile-layout {
+        padding: 5rem $mobile-padding;
+
+        .wap-gallery-img-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, minmax(100px, 1fr));
+
+            img {
+                max-width: 8rem;
+                margin: 20px auto;
+            }
+        }
+    }
+
+    &.tablet-layout {
+        padding: 5rem $narrow-padding;
+    }
+
+    @media (max-width: $narrow-breakpoint) {
+        padding: 5rem $narrow-padding;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 5rem $mobile-padding;
+        .wap-gallery-img-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, minmax(100px, 1fr));
+
+            img {
+                max-width: 8rem;
+                margin: 20px auto;
+            }
+        }
     }
 }
