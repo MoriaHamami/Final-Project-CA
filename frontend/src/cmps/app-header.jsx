@@ -18,6 +18,8 @@ import { utilService } from '../services/util.service.js';
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
+    const [anchorEl, setAnchorEl] = useState(null)
+    // const open = Boolean(anchorEl);
     const navigate = useNavigate()
 
     function onLogout() {
@@ -26,13 +28,13 @@ export function AppHeader() {
         userService.logout()
     }
 
-    const [anchorEl, setAnchorEl] = useState(null)
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget)
-    }
-    const handleClose = () => {
-        setAnchorEl(null)
+    // const handleClick = (event) => {
+    //     setAnchorEl(event.currentTarget)
+    // }
+    function handleClose() {
+        // setAnchorEl(null)
+        document.body.classList.remove('menu-open')
+
     }
 
 
@@ -44,18 +46,19 @@ export function AppHeader() {
             <nav>
                 <ul>
                     <li className="pages-container">
-                        <NavLink key="/WapDemos" to="/WapDemos" className="templates list-item">Templates</NavLink>
-                        {user && <NavLink key="/dashboard" to="/dashboard" className="list-item">Dashboard</NavLink>}
+                        <NavLink key="/WapDemos" to="/WapDemos" className="templates list-item" onClick={handleClose}>Templates</NavLink>
+                        {user && <NavLink key="/dashboard" to="/dashboard" className="list-item" onClick={handleClose}>Dashboard</NavLink>}
                     </li>
-                    {user && <li className="header-profile-container list-item">
+                    {user && <li className="header-profile-container">
                         {user.imgUrl && <img className="user-img" src={user.imgUrl} />}
                         {!user.imgUrl && <span className="user-name">{user.fullname}</span>}
-                        <span onClick={() => {
-                            handleClose()
+                        <div className="list-item" onClick={() => {
+                            // handleClose()
                             onLogout()
-                        }}>Logout</span>
+                            handleClose()
+                        }}>Logout</div>
                     </li>}
-                    {!user && <li><NavLink className="header-profile-container" key="/login" to="/user/false">Login</NavLink></li>}
+                    {!user && <li><NavLink className="header-profile-container list-item" key="/login" to="/user/false" onClick={handleClose}>Login</NavLink></li>}
                 </ul>
             </nav>
             <span className="material-symbols-outlined menu-btn" onClick={utilService.toggleMenu}>menu</span>
