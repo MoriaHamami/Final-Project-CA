@@ -7,6 +7,7 @@ export const wapContainer7 = {
     type: 'wap-container',
     name: 'wap-container-7',
     themePalette: 'secondary',
+    imgUrl: '',
     cmps: [
         {
             id: utilService.makeId(),

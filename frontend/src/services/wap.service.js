@@ -103,8 +103,8 @@ export const wapService = {
 }
 
 window.cs = wapService
+// console.log('waps:', JSON.stringify(getWapDemos()))
 
-// _createWaps()
 
 // FRONT ONLY
 

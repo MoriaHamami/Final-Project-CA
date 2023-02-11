@@ -100,8 +100,9 @@ export function Editor() {
         } else if (propertyName === 'cords') element[propertyName] = propertyValue
         else element.style[propertyName] = propertyValue
         // console.log('element editorpage line 69:', element)
-        console.log('element.style[propertyName]:', element.style[propertyName])
-        console.log('element:', element)
+        // console.log('element.style[propertyName]:', element.style[propertyName])
+        // console.log('element:', element)
+        // console.log('wap:', wap)
         saveElement(wap, cmpId, element)
     }
 

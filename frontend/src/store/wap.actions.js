@@ -225,7 +225,7 @@ export async function saveCmp(wap, cmp, idx) {
 
 export function saveElement(wap, cmpId, element) {
     // Get the cmp
-    const cmp = wap.cmps.find(cmp => cmp.id === cmpId)
+    let cmp = wap.cmps.find(cmp => cmp.id === cmpId)
     // Find cmp idx
     const idx = wapService.findCmpIdx(wap, cmp)
     // console.log('cmp action line 136:', wap[idx])
@@ -233,8 +233,32 @@ export function saveElement(wap, cmpId, element) {
         // console.log('cmp:',cmp)
         return saveCmp(wap, element, idx)
     }
-    // Update cmp
-    if (element.key === 'photos' || element.key === 'inputs' || element.key === 'btns') {
+    // Check if cmp is container
+    if(cmp.cmps){
+        for(let i = 0; i< cmp.cmps.length; i++){
+            const currCmp = cmp.cmps[i]
+            const updatedCmp = _getUpdatedCmp(wap, currCmp, element, idx)
+            if(updatedCmp) {
+                console.log('updatedCmp:', updatedCmp)
+                cmp.cmps[i] = updatedCmp
+                break
+            }
+        }
+        // cmp.cmps.map((currCmp, currIdx) => {
+        // })
+    }else {
+        cmp = _getUpdatedCmp(wap, cmp, element, idx)
+    }
+    saveCmp(wap, cmp, idx)
+}
+
+function _getUpdatedCmp(wap, cmp, element, idx) {
+    // If the element selected was cmp in container
+    if (cmp.id === element.id) {
+        // console.log('hereeeeeeeeeeeeeee', cmp)
+        // element already updated
+        return element
+    } else if (element.key === 'photos' || element.key === 'inputs' || element.key === 'btns') {
         // Run over the array in in it 
         let isFound = false
         for (let i = 0; i < cmp.info[element.key].length; i++) {
@@ -250,10 +274,15 @@ export function saveElement(wap, cmpId, element) {
             if (isFound) break
         }
     } else {
-        cmp.info[element.key] = element
+        if(cmp.info[element.key] && cmp.info[element.key].id === element.id) {
+            cmp.info[element.key] = element
+        } else {
+            // Cmp in container doesnt include element 
+            cmp = null
+        }
     }
+    return cmp
     // console.log('cmp action line 158:', cmp)
-    saveCmp(wap, cmp, idx)
 }
 
 
