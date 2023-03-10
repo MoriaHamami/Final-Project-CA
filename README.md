@@ -1,7 +1,14 @@
 
-# Webix - clone of Wix (React + Node.js). 
+<div id="header" align="center">
+  <h1>
+    Webix
+  </h1>
+  <h3>
+    A clone of Wix (React + Node.js)
+  </h3>
+</div>
 
-Website building platform inspired by wix.com, [Here is my project link](https://webix.onrender.com/ "Skello link").
+Webix is a website building platform inspired by wix.com, [Here is our website link](https://webix.onrender.com/ "Webix link").
 
 If you are not familliar with the app, read about it [here](#webix-description).
 And, if you only want to see some images of the website, [scroll to the bottom...](#showcase)
@@ -32,12 +39,19 @@ More information about the different features on Webix can be found in the [feat
 
 ## Application Features
 ✍ Google login, along with regular ***authentication*** which is encrypted and safe.
+
 🖼 Designer-made ***templates*** to inspire the user.
+
 🎨 ***Editor*** and ***themes*** that provide the ability to change different elements in the website (colors, fonts, text, images, videos, etc.).
+
 📲 The ability to preview the website's ***responsiveness***.
+
 🖐 ***Drag and drop*** technology for all the components on the website, and an ability to add and remove each one!
+
 🖥 The ability to publish a website and get a ***custom domain***.
+
 🗺 Adding a ***map*** and coordinates to the website.
+
 📊 ***Dashboard*** that stores all the important data regarding the website.
 
 ## Technologies
@@ -84,44 +98,44 @@ That's it! The App should be up, running, and open on the web, enjoy!
 ### Homepage
 The landing page in which the user is introduced to Webix, and can select the call to action button which takes you to the templates page.
 
-![Homepage image](frontend/src/assets/imgs/readme/home-page.png "Home-page")
+![Homepage image](frontend/src/assets/img/readme/home-page.png "Home-page")
 
 ### Signup & Login
 We created an e2e authentication flow, including encryption of the users' details, middlewares and ****Google Login***.
 
-![Login image](frontend/src/assets/imgs/readme/login.png "login-page")
+![Login image](frontend/src/assets/img/readme/login.png "login-page")
 
 ### Templates
 Here the user can select his preferred initial website template. The user can also decide to start from scratch.
 
-![Templates image](frontend/src/assets/imgs/readme/templates.png "templates-image")
+![Templates image](frontend/src/assets/img/readme/templates.png "templates-image")
 
 ### Editor
 The menu on the left which is opened automatically by selecting an elemnt on the website or by choosing the "Theme" or "Add" options, enables the user to customize his website easily.
 
 The "Edit" option shows different options (depending which element was chosen). It includes text color, fonts, border-radius, uploading image, changing map coordinates, and much more.
 
-![Editor image](frontend/src/assets/imgs/readme/editor.png "editor-image")
+![Editor image](frontend/src/assets/img/readme/editor.png "editor-image")
 
 The "Theme" option enables the user to change the colors and font of the site with one click. There is a wide range of themes to choose from.
 
-![Theme image](frontend/src/assets/imgs/readme/themes.png "theme-image")
+![Theme image](frontend/src/assets/img/readme/themes.png "theme-image")
 
 The "Add" option opens a list of components to add to the website. Using D&D, the user can add the components to the website, and move them around to different parts of the website. 
 While dragging a component in the website, a trashcan appears on the sidebar, and lets  the user remove the component from the website.
 
-![Add image](frontend/src/assets/imgs/readme/add.png "add-image")
+![Add image](frontend/src/assets/img/readme/add.png "add-image")
 
 ### Dashboard
 The dashboard holds information regarding published websites, such as weekly site views (which is updated in real-time), last website update, creation date, the ability to edit the website again or go to the published website, etc.
 In addition, every edited website is automatically saved to the dashboard and can be edited again, or previewed before publishing the website.
 
-![Dashboard image](frontend/src/assets/imgs/readme/dashboard.png "dashboard-image")
+![Dashboard image](frontend/src/assets/img/readme/dashboard.png "dashboard-image")
 
 ### A mobile fit!
 We used different **mixins** and **conditional rendering** to create a responsive design. Just a taste of the mobile experience:
 
-<img src="frontend/src/assets/imgs/readme/login-mobile.png" width="25%" style="float: left"/><img src="frontend/src/assets/imgs/readme/mobile1.png" width="25%" style="float: left;"/><img src="frontend/src/assets/imgs/readme/mobile2.png" width="25%" style="float: left;"/><img src="frontend/src/assets/imgs/readme/mobile3.png" width="25%" style="float: left;"/>
+<img src="frontend/src/assets/img/readme/mobile1.png" width="25%" style="float: left"/><img src="frontend/src/assets/img/readme/mobile2.png" width="25%" style="float: left;"/><img src="frontend/src/assets/img/readme/mobile3.png" width="25%" style="float: left;"/><img src="frontend/src/assets/img/readme/mobile4.png" width="25%" style="float: left;"/>
 
 ### Authors
  - [Moria Hamami](https://github.com/MoriaHamami)
