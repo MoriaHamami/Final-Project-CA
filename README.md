@@ -1,7 +1,6 @@
 
 <div id="header" align="center">
-    #Webix
-    ##A clone of Wix (React + Node.js)
+    <h1>Webix</h1>
 </div>
 
 Webix is a website building platform inspired by wix.com, [Here is our website link](https://webix.onrender.com/ "Webix link").
