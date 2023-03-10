@@ -5,7 +5,7 @@
 
 Webix is a website building platform inspired by wix.com, [Here is our website link](https://webix.onrender.com/ "Webix link").
 
-If you are not familliar with the app, read about it [here](#webix-description).
+If you are not familiar with the app, read about it [here](#webix-description).
 And, if you only want to see some images of the website, [scroll to the bottom...](#showcase)
 
 ![Main board image](frontend/src/assets/img/readme/home-page.png "Board-main-page")
@@ -23,8 +23,8 @@ ___
 Our easy-to-use editor allows you to create your site just the way you want. 
 You can start from scratch with a blank template or open any designer-made template in the Webix editor. 
 
-Our drag and drop technology lets you add different sections (e.g. heros, videos, maps forms, etc.) and place them wherever you want on your site. 
-In addition, you can choose an element on your site. In response the editor will open  with a wide range of editing options that are relevant for the selected element.
+Our drag and drop technology lets you add different sections (e.g. heroes, videos, maps forms, etc.) and place them wherever you want on your site. 
+In addition, you can choose an element on your site. In response the editor will open with a wide range of editing options that are relevant for the selected element.
 
 You can easily change the theme of your site by choosing a theme from the sidebar editor. It will affect the fonts, text color and background colors throughout the site.
 
@@ -56,7 +56,7 @@ More information about the different features on Webix can be found in the [feat
 
 The technology stack we used was MERN - MongoDB, Express, React, Node.js.
 The app uses webSockets to update the views of each published site in real-time.
-The API calls to the backend are done with the REST API method , and we used middlewares to authenticate and authorize actions.
+The API calls to the backend are done with the REST API method, and we used middlewares to authenticate and authorize actions.
 
 We have used several third side libraries for different goals, such as google-login, D&D and more.
 The layout and templates were made with Sass (functions, mixins, variables). 
@@ -77,7 +77,7 @@ npm i
 npm run server:dev
 ```
 
-You shuold get a console ouput that the server is up and running at port 3030.
+You should get a console output that the server is up and running at port 3030.
 Enter the frontend folder and repeat the same process.
 
 ```
@@ -87,14 +87,14 @@ npm i
 npm start
 ```
 
-You shuold get a console ouput that the server is up and running at localhost:3000.
+You should get a console output that the server is up and running at localhost:3000.
 
 That's it! The App should be up, running, and open on the web, enjoy!
 
 ## Showcase
 
 ### Homepage
-The landing page in which the user is introduced to Webix, and can select the call to action button which takes you to the templates page.
+The landing page in which the user is introduced to Webix and can select the call to action button which takes you to the templates page.
 
 ![Homepage image](frontend/src/assets/img/readme/home-page.png "Home-page")
 
@@ -109,7 +109,7 @@ Here the user can select his preferred initial website template. The user can al
 ![Templates image](frontend/src/assets/img/readme/templates.png "templates-image")
 
 ### Editor
-The menu on the left which is opened automatically by selecting an elemnt on the website or by choosing the "Theme" or "Add" options, enables the user to customize his website easily.
+The menu on the left which is opened automatically by selecting an element on the website or by choosing the "Theme" or "Add" options, enables the user to customize his website easily.
 
 The "Edit" option shows different options (depending which element was chosen). It includes text color, fonts, border-radius, uploading image, changing map coordinates, and much more.
 
@@ -120,7 +120,7 @@ The "Theme" option enables the user to change the colors and font of the site wi
 ![Theme image](frontend/src/assets/img/readme/themes.png "theme-image")
 
 The "Add" option opens a list of components to add to the website. Using D&D, the user can add the components to the website, and move them around to different parts of the website. 
-While dragging a component in the website, a trashcan appears on the sidebar, and lets  the user remove the component from the website.
+While dragging a component in the website, a trashcan appears on the sidebar, and lets the user remove the component from the website.
 
 ![Add image](frontend/src/assets/img/readme/add.png "add-image")
 
