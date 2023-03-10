@@ -1,11 +1,7 @@
 
 <div id="header" align="center">
-  <h1>
-    Webix
-  </h1>
-  <h3>
-    A clone of Wix (React + Node.js)
-  </h3>
+    #Webix
+    ##A clone of Wix (React + Node.js)
 </div>
 
 Webix is a website building platform inspired by wix.com, [Here is our website link](https://webix.onrender.com/ "Webix link").
@@ -27,9 +23,12 @@ ___
 ## Webix Description
 Our easy-to-use editor allows you to create your site just the way you want. 
 You can start from scratch with a blank template or open any designer-made template in the Webix editor. 
+
 Our drag and drop technology lets you add different sections (e.g. heros, videos, maps forms, etc.) and place them wherever you want on your site. 
 In addition, you can choose an element on your site. In response the editor will open  with a wide range of editing options that are relevant for the selected element.
+
 You can easily change the theme of your site by choosing a theme from the sidebar editor. It will affect the fonts, text color and background colors throughout the site.
+
 Edited sites get saved automatically as drafts in your dashboard. 
 Every published website gets a custom domain. Your dashboard contains important information regarding your published and edited sites, including a real-time update of the amount of site views.
 
@@ -101,7 +100,7 @@ The landing page in which the user is introduced to Webix, and can select the ca
 ![Homepage image](frontend/src/assets/img/readme/home-page.png "Home-page")
 
 ### Signup & Login
-We created an e2e authentication flow, including encryption of the users' details, middlewares and ****Google Login***.
+We created an e2e authentication flow, including encryption of the users' details, middlewares and ***Google Login***.
 
 ![Login image](frontend/src/assets/img/readme/login.png "login-page")
 
