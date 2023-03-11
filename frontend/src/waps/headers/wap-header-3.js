@@ -18,7 +18,6 @@ export const wapHeader3 = {
     ],
     login: { label: 'Log In', link: '#', id: utilService.makeId(), style: { fontSize: '0.9em', color: '#704F4F' }, type: 'btn', key: 'login' }
   },
-  // theme: 'theme-header-happy',
   style: {
     fontFamily: 'playfair-regular',
   }
