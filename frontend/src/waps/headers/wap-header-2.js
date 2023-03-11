@@ -15,7 +15,6 @@ export const wapHeader2 = {
       { label: 'Book Online', link: '#wc25', id: utilService.makeId(), style: { fontSize: '0.9em' }, type: 'btn', key: 'btns' }
     ]
   },
-  // theme: 'theme-header-happy',
   style: {
     fontFamily: 'handlee',
   }
