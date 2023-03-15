@@ -1,4 +1,3 @@
-
 <div id="header" align="center">
     <h1>Webix</h1>
 </div>
