@@ -1,2 +1,4 @@
 node_modules
 logs
+dev.js
+prod.js
